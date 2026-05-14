@@ -213,8 +213,36 @@ function normalizeClaudeOrder(value: string): string {
 
 function inferBrand(model: OpenRouterModel, namespace: string): Pick<Brand, 'slug' | 'name'> {
   const namePrefix = model.name.includes(':') ? model.name.split(':')[0]!.trim() : ''
-  const slug = normalizeTag(namePrefix || namespace || 'unknown') || 'unknown'
-  return { slug, name: namePrefix || titleCase(namespace || 'Unknown') }
+  const normalizedNamespace = normalizeBrandText(namespace)
+  const inferredName = namePrefix || inferBrandNameFromUntypedDisplayName(model.name, normalizedNamespace) || titleCase(normalizedNamespace || 'Unknown')
+  const slug = normalizeTag(inferredName || normalizedNamespace || 'unknown') || 'unknown'
+  return { slug, name: normalizeBrandName(inferredName) }
+}
+
+function normalizeBrandText(value: string): string {
+  return value.replace(/^~+/u, '').trim()
+}
+
+function normalizeBrandName(value: string): string {
+  const cleaned = normalizeBrandText(value)
+  const aliases: Record<string, string> = {
+    anthropic: 'Anthropic',
+    moonshotai: 'MoonshotAI',
+    openai: 'OpenAI',
+    google: 'Google',
+  }
+  return aliases[cleaned.toLowerCase()] ?? cleaned
+}
+
+function inferBrandNameFromUntypedDisplayName(name: string, namespace: string): string {
+  const normalizedName = normalizeBrandText(name)
+  const normalizedNamespace = normalizeBrandText(namespace)
+  if (!normalizedName || !normalizedNamespace) return ''
+  const namespaceWords = normalizedNamespace.replace(/[-_]+/gu, ' ').trim().split(/\s+/u).filter(Boolean)
+  if (namespaceWords.length === 0) return ''
+  const firstWords = normalizedName.split(/\s+/u).slice(0, namespaceWords.length).join(' ')
+  if (normalizeTag(firstWords) === normalizeTag(normalizedNamespace)) return firstWords
+  return ''
 }
 
 function displayNameFor(model: OpenRouterModel, canonicalTag: string): string {

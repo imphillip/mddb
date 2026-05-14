@@ -92,6 +92,24 @@ const response: OpenRouterModelsResponse = {
       per_request_limits: null,
     },
     {
+      id: '~moonshotai/kimi-latest',
+      canonical_slug: 'moonshotai/kimi-latest',
+      name: 'MoonshotAI Kimi Latest',
+      created: 1767225600,
+      context_length: 131072,
+      architecture: { modality: 'text->text', input_modalities: ['text'], output_modalities: ['text'] },
+      pricing: { prompt: '0.000001', completion: '0.000003' },
+      top_provider: { context_length: 131072, max_completion_tokens: null, is_moderated: false },
+      supported_parameters: [],
+      default_parameters: null,
+      supported_voices: null,
+      knowledge_cutoff: null,
+      expiration_date: null,
+      hugging_face_id: null,
+      links: { details: '/api/v1/models/moonshotai/kimi-latest/endpoints' },
+      per_request_limits: null,
+    },
+    {
       id: 'qwen/qwen3-235b-a22b',
       canonical_slug: 'qwen/qwen3-235b-a22b',
       name: 'Qwen: Qwen3 235B A22B',
@@ -116,7 +134,7 @@ describe('importOpenRouterModels', () => {
   it('normalizes source ids into logical canonical tags while preserving snapshots and variants', () => {
     const catalog = importOpenRouterModels(response)
 
-    expect(catalog.records.map((record) => record.canonicalTag)).toEqual(['claude-opus-4-7', 'gpt-4o', 'gpt-4o', 'ring-2-6-1t', 'qwen3-235b-a22b'])
+    expect(catalog.records.map((record) => record.canonicalTag)).toEqual(['claude-opus-4-7', 'gpt-4o', 'gpt-4o', 'ring-2-6-1t', 'kimi-latest', 'qwen3-235b-a22b'])
     expect(catalog.records[0]).toMatchObject({
       sourceNamespace: 'anthropic',
       sourceModelId: 'claude-opus-4.7-fast',
@@ -136,6 +154,11 @@ describe('importOpenRouterModels', () => {
       variant: { marker: 'free', kind: 'free' },
     })
     expect(catalog.records[4]).toMatchObject({
+      sourceNamespace: '~moonshotai',
+      canonicalTag: 'kimi-latest',
+      brand: { slug: 'moonshotai', name: 'MoonshotAI' },
+    })
+    expect(catalog.records[5]).toMatchObject({
       canonicalTag: 'qwen3-235b-a22b',
       variant: null,
       snapshot: null,
