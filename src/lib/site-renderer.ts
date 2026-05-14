@@ -102,7 +102,7 @@ function priceShort(value: string): string {
 }
 
 function contextShort(value: string): string {
-  return value.replaceAll('K', ',000').replaceAll('M', ',000,000')
+  return value
 }
 
 function formatDate(value: string): string {

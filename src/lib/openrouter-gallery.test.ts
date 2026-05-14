@@ -93,7 +93,7 @@ describe('buildModelGalleryFromOpenRouterCatalog', () => {
     expect(claude).toMatchObject({
       name: 'Claude Opus 4.7',
       brand: { slug: 'anthropic', name: 'Anthropic' },
-      contextWindow: '1M',
+      contextWindow: '1,000,000',
       inputPrice: '$30 / 1M',
       outputPrice: '$150 / 1M',
       providerNames: ['Anthropic'],

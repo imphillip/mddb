@@ -214,8 +214,6 @@ function inferModalities(records: OpenRouterModelRecord[]): string[] {
 
 function formatContext(value: number | null): string {
   if (!value) return '—'
-  if (value >= 1_000_000) return `${Number(value / 1_000_000).toLocaleString('en-US')}M`
-  if (value >= 1_000) return `${Number(value / 1_000).toLocaleString('en-US')}K`
   return value.toLocaleString('en-US')
 }
 

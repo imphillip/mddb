@@ -51,6 +51,8 @@ describe('site renderer', () => {
     expect(html).toContain('href="/models/claude-sonnet-4/"')
     expect(html.indexOf('Claude Sonnet 4')).toBeLessThan(html.indexOf('DeepSeek R1'))
     expect(html.indexOf('DeepSeek R1')).toBeLessThan(html.indexOf('Llama 3.1 405B Instruct'))
+    expect(html).toContain('<td class="mono">128K</td>')
+    expect(html).not.toContain('131.072,000')
   })
 
   it('removes internal page-specification prompts from public pages', () => {
