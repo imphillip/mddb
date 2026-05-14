@@ -167,6 +167,29 @@ describe('importOpenRouterModels', () => {
     })
   })
 
+  it('merges known OpenRouter brand aliases into stable brand filters', () => {
+    const base = response.data[1]!
+    const catalog = importOpenRouterModels({
+      data: [
+        { ...base, id: 'baidu/qianfan-ocr-fast', canonical_slug: 'baidu/qianfan-ocr-fast', name: 'Baidu Qianfan: OCR Fast' },
+        { ...base, id: 'bytedance-seed/seed-1.6', canonical_slug: 'bytedance-seed/seed-1.6', name: 'ByteDance Seed: Seed 1.6' },
+        { ...base, id: 'meta-llama/llama-3.3-70b', canonical_slug: 'meta-llama/llama-3.3-70b', name: 'Llama: Llama 3.3 70B' },
+        { ...base, id: 'meta-llama/llama-4-maverick', canonical_slug: 'meta-llama/llama-4-maverick', name: 'Meta Llama: Llama 4 Maverick' },
+        { ...base, id: 'mistralai/mistral-large', canonical_slug: 'mistralai/mistral-large', name: 'Mistralai: Mistral Large' },
+        { ...base, id: 'nousresearch/hermes-4-70b', canonical_slug: 'nousresearch/hermes-4-70b', name: 'Nous: Hermes 4 70B' },
+      ],
+    })
+
+    expect(catalog.records.map((record) => record.brand)).toEqual([
+      { slug: 'baidu', name: 'Baidu' },
+      { slug: 'bytedance', name: 'ByteDance' },
+      { slug: 'meta', name: 'Meta' },
+      { slug: 'meta', name: 'Meta' },
+      { slug: 'mistral', name: 'Mistral' },
+      { slug: 'nousresearch', name: 'NousResearch' },
+    ])
+  })
+
   it('maps OpenRouter metadata and derives USD per million plus new-api-compatible ratios', () => {
     const [claude, gpt4o, , ring] = importOpenRouterModels(response).records
 

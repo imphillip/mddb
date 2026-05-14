@@ -228,8 +228,9 @@ function inferBrand(model: OpenRouterModel, namespace: string): Pick<Brand, 'slu
   const namePrefix = model.name.includes(':') ? model.name.split(':')[0]!.trim() : ''
   const normalizedNamespace = normalizeBrandText(namespace)
   const inferredName = namePrefix || inferBrandNameFromUntypedDisplayName(model.name, normalizedNamespace) || titleCase(normalizedNamespace || 'Unknown')
-  const slug = normalizeTag(inferredName || normalizedNamespace || 'unknown') || 'unknown'
-  return { slug, name: normalizeBrandName(inferredName) }
+  const normalizedName = normalizeBrandName(inferredName)
+  const slug = normalizeTag(normalizedName || normalizedNamespace || 'unknown') || 'unknown'
+  return { slug, name: normalizedName }
 }
 
 function normalizeBrandText(value: string): string {
@@ -243,6 +244,12 @@ function normalizeBrandName(value: string): string {
     moonshotai: 'MoonshotAI',
     openai: 'OpenAI',
     google: 'Google',
+    'baidu qianfan': 'Baidu',
+    'bytedance seed': 'ByteDance',
+    llama: 'Meta',
+    'meta llama': 'Meta',
+    mistralai: 'Mistral',
+    nous: 'NousResearch',
   }
   return aliases[cleaned.toLowerCase()] ?? cleaned
 }
