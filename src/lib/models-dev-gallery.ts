@@ -16,6 +16,9 @@ export type ModelsDevIndexModel = {
   name: string
   providerId: string
   updated?: string
+  inputPrice?: number | undefined
+  outputPrice?: number | undefined
+  contextWindow?: number | undefined
   flags: {
     attachment: boolean
     reasoning: boolean
@@ -54,6 +57,12 @@ type VersionGroup = {
   displayName: string
   snapshot: string | null
   models: ModelsDevIndexModel[]
+}
+
+type ModelsDevPricing = {
+  inputPrice: string
+  outputPrice: string
+  contextWindow: string
 }
 
 const UNKNOWN_BRAND: Brand = {
@@ -198,7 +207,19 @@ function normalizeModelsDevApiModel(value: unknown, providerId: string): ModelsD
   }
   const updated = typeof value.last_updated === 'string' ? value.last_updated : typeof value.release_date === 'string' ? value.release_date : undefined
   if (updated !== undefined) model.updated = updated
+  const cost = isRecord(value.cost) ? value.cost : {}
+  const inputPrice = readNumber(cost.input)
+  const outputPrice = readNumber(cost.output)
+  const limit = isRecord(value.limit) ? value.limit : {}
+  const contextWindow = readNumber(limit.context)
+  if (inputPrice !== undefined) model.inputPrice = inputPrice
+  if (outputPrice !== undefined) model.outputPrice = outputPrice
+  if (contextWindow !== undefined) model.contextWindow = contextWindow
   return model
+}
+
+function readNumber(value: unknown): number | undefined {
+  return typeof value === 'number' && Number.isFinite(value) ? value : undefined
 }
 
 function isModelsDevModel(value: unknown): value is ModelsDevIndexModel {
@@ -290,9 +311,7 @@ function toModelDetail(group: CanonicalModelGroup, providers: Map<string, Models
     description: `${group.displayName} 在 models.dev 本地索引中收录了 ${providerNames.length} 个 provider 部署。`,
     longDescription: `${group.displayName} 页面由参考库里的 models.dev 静态索引生成，provider 会作为同一规范模型下的部署属性展示。`,
     modalities,
-    contextWindow: '—',
-    inputPrice: '—',
-    outputPrice: '—',
+    ...pricingForModels(group.models),
     providerNames,
     variantCount: variants.length,
     weeklyTokens: '—',
@@ -390,9 +409,7 @@ function toVariant(versionGroup: VersionGroup, providers: Map<string, ModelsDevI
     id: versionGroup.id,
     name: versionGroup.displayName,
     summary: versionGroup.snapshot ? `snapshot 版本 ${versionGroup.displayName}。` : `同一模型版本在 ${deployments.length} 个 provider 上可用。`,
-    contextWindow: '—',
-    inputPrice: '—',
-    outputPrice: '—',
+    ...pricingForModels(versionGroup.models),
     differences: [versionGroup.snapshot ? `snapshot ${versionGroup.snapshot}` : versionGroup.id, ...updatedDates.map((date) => `更新日期 ${date}`)],
     providers: deployments,
   }
@@ -428,6 +445,30 @@ function inferModalities(models: ModelsDevIndexModel[]): string[] {
     { attachment: false, reasoning: false, tool_call: false },
   )
   return ['文本', ...(flags.attachment ? ['视觉'] : []), ...(flags.reasoning ? ['推理'] : []), ...(flags.tool_call ? ['工具'] : [])]
+}
+
+
+function pricingForModels(models: ModelsDevIndexModel[]): ModelsDevPricing {
+  const inputPrice = firstNumber(models.map((model) => model.inputPrice))
+  const outputPrice = firstNumber(models.map((model) => model.outputPrice))
+  const contextWindow = firstNumber(models.map((model) => model.contextWindow))
+  return {
+    inputPrice: formatPrice(inputPrice),
+    outputPrice: formatPrice(outputPrice),
+    contextWindow: contextWindow === undefined ? '—' : contextWindow.toLocaleString('en-US'),
+  }
+}
+
+function firstNumber(values: Array<number | undefined>): number | undefined {
+  return values.find((value): value is number => typeof value === 'number' && Number.isFinite(value))
+}
+
+function formatPrice(value: number | undefined): string {
+  return value === undefined ? '—' : `$${formatNumber(value)} / 1M`
+}
+
+function formatNumber(value: number): string {
+  return Number.isInteger(value) ? value.toString() : Number(value.toFixed(6)).toString()
 }
 
 function toSummary(detail: ModelDetail): ModelSummary {

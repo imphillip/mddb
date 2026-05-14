@@ -53,6 +53,9 @@ function makeIndex(): ModelsDevIndex {
         id: 'mystery-model',
         name: 'Mystery Model',
         providerId: 'acme',
+        inputPrice: 0.25,
+        outputPrice: 1.5,
+        contextWindow: 8192,
         flags: { attachment: false, reasoning: false, tool_call: false },
       },
       {
@@ -157,6 +160,9 @@ describe('buildModelGalleryFromModelsDevIndex', () => {
 
     const mystery = gallery.models.find((model) => model.tag === 'mystery-model')
     expect(mystery?.releasedAt).toBe('—')
+    expect(mystery?.inputPrice).toBe('$0.25 / 1M')
+    expect(mystery?.outputPrice).toBe('$1.5 / 1M')
+    expect(mystery?.contextWindow).toBe('8,192')
 
     const placeholderDateModel = gallery.models.find((model) => model.tag === 'placeholder-date-model')
     expect(placeholderDateModel?.releasedAt).toBe('—')
