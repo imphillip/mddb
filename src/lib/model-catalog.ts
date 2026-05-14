@@ -42,11 +42,17 @@ export type ModelSummary = {
   releasedAt: string
 }
 
+export type ModelMetaItem = {
+  label: string
+  value: string | string[]
+}
+
 export type ModelDetail = ModelSummary & {
   longDescription: string
   variants: ModelVariant[]
   apiIdentifier: string
   benchmarks: Array<{ name: string; score: string; note: string }>
+  meta: ModelMetaItem[]
 }
 
 export type BrandGroup = Brand & {
@@ -102,6 +108,13 @@ const modelDetails: ModelDetail[] = [
     weeklyTokens: '47.4B',
     releasedAt: '2025-05-22',
     apiIdentifier: 'claude-sonnet-4',
+    meta: [
+      { label: 'API identifier', value: 'claude-sonnet-4' },
+      { label: 'Canonical tag', value: 'claude-sonnet-4' },
+      { label: 'Context window', value: '200K / 1M' },
+      { label: 'Input modalities', value: ['text', 'image'] },
+      { label: 'Output modalities', value: ['text'] },
+    ],
     variants: [
       {
         id: 'standard',
@@ -155,6 +168,13 @@ const modelDetails: ModelDetail[] = [
     weeklyTokens: '63.8B',
     releasedAt: '2024-05-13',
     apiIdentifier: 'gpt-4o',
+    meta: [
+      { label: 'API identifier', value: 'gpt-4o' },
+      { label: 'Canonical tag', value: 'gpt-4o' },
+      { label: 'Context window', value: '128K' },
+      { label: 'Input modalities', value: ['text', 'image', 'audio'] },
+      { label: 'Output modalities', value: ['text'] },
+    ],
     variants: [
       {
         id: 'standard',
@@ -198,6 +218,13 @@ const modelDetails: ModelDetail[] = [
     weeklyTokens: '28.1B',
     releasedAt: '2025-03-25',
     apiIdentifier: 'gemini-2.5-pro',
+    meta: [
+      { label: 'API identifier', value: 'gemini-2.5-pro' },
+      { label: 'Canonical tag', value: 'gemini-2-5-pro' },
+      { label: 'Context window', value: '1M' },
+      { label: 'Input modalities', value: ['text', 'image', 'video'] },
+      { label: 'Output modalities', value: ['text'] },
+    ],
     variants: [
       {
         id: 'standard',
@@ -238,6 +265,13 @@ const modelDetails: ModelDetail[] = [
     weeklyTokens: '39.6B',
     releasedAt: '2025-01-20',
     apiIdentifier: 'deepseek-r1',
+    meta: [
+      { label: 'API identifier', value: 'deepseek-r1' },
+      { label: 'Canonical tag', value: 'deepseek-r1' },
+      { label: 'Context window', value: '64K' },
+      { label: 'Input modalities', value: ['text'] },
+      { label: 'Output modalities', value: ['text'] },
+    ],
     variants: [
       {
         id: 'official',
@@ -278,6 +312,13 @@ const modelDetails: ModelDetail[] = [
     weeklyTokens: '9.4B',
     releasedAt: '2024-07-23',
     apiIdentifier: 'llama-3.1-405b-instruct',
+    meta: [
+      { label: 'API identifier', value: 'llama-3.1-405b-instruct' },
+      { label: 'Canonical tag', value: 'llama-3-1-405b-instruct' },
+      { label: 'Context window', value: '128K' },
+      { label: 'Input modalities', value: ['text'] },
+      { label: 'Output modalities', value: ['text'] },
+    ],
     variants: [
       {
         id: 'high-throughput',

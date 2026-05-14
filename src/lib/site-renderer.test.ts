@@ -42,7 +42,7 @@ describe('site renderer', () => {
     expect(html).not.toContain('Newest')
     expect(html).not.toContain('aria-label="模型类型"')
     expect(html).toContain('<th>Model Name</th>')
-    expect(html).toContain('<th>Weekly Tokens</th>')
+    expect(html).not.toContain('<th>Weekly Tokens</th>')
     expect(html).toContain('<th>Input</th>')
     expect(html).toContain('<th>Output</th>')
     expect(html).toContain('<th>Context</th>')

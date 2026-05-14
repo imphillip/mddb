@@ -265,6 +265,16 @@ function toModelDetail(group: CanonicalModelGroup, providers: Map<string, Models
     apiIdentifier: group.tag,
     variants,
     benchmarks: [],
+    meta: [
+      { label: 'Canonical tag', value: group.tag },
+      { label: 'Display name', value: group.displayName },
+      { label: 'Source', value: 'models.dev' },
+      { label: 'Provider names', value: providerNames },
+      { label: 'Source model ids', value: Array.from(new Set(group.models.map((model) => model.id))).sort() },
+      { label: 'Source provider ids', value: Array.from(new Set(group.models.map((model) => model.providerId))).sort() },
+      { label: 'Input modalities', value: modalities },
+      { label: 'Updated dates', value: Array.from(new Set(group.models.map((model) => model.updated).filter((value): value is string => Boolean(value)))).sort() },
+    ],
   }
 }
 

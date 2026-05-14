@@ -1,5 +1,5 @@
 import { existsSync, readFileSync } from 'node:fs'
-import type { Brand, ModelDetail, ModelGallery, ModelSummary, ModelVariant, ProviderDeployment } from './model-catalog.js'
+import type { Brand, ModelDetail, ModelGallery, ModelMetaItem, ModelSummary, ModelVariant, ProviderDeployment } from './model-catalog.js'
 import { brandDescription, importOpenRouterModels, type OpenRouterCatalog, type OpenRouterModelRecord, type OpenRouterModelsResponse } from './openrouter-importer.js'
 
 export type OpenRouterGallery = ModelGallery & {
@@ -77,7 +77,45 @@ function toModelDetail(tag: string, records: OpenRouterModelRecord[]): ModelDeta
     apiIdentifier: best.sourceModelId,
     variants,
     benchmarks: [],
+    meta: buildMetaItems(best, records),
   }
+}
+
+function buildMetaItems(best: OpenRouterModelRecord, records: OpenRouterModelRecord[]): ModelMetaItem[] {
+  const aliases = Array.from(new Set(records.flatMap((record) => record.aliases))).sort()
+  const sourceIds = Array.from(new Set(records.map((record) => `${record.sourceNamespace}/${record.sourceModelId}`))).sort()
+  return [
+    { label: 'Canonical tag', value: best.canonicalTag },
+    { label: 'Display name', value: best.displayName },
+    { label: 'Source', value: best.source },
+    { label: 'Source namespace', value: best.sourceNamespace },
+    { label: 'Source model id', value: best.sourceModelId },
+    { label: 'Source canonical slug', value: best.sourceCanonicalSlug },
+    { label: 'OpenRouter aliases', value: aliases },
+    { label: 'Observed source ids', value: sourceIds },
+    { label: 'Created', value: best.metadata.created ? new Date(best.metadata.created * 1000).toISOString() : '—' },
+    { label: 'Context length', value: best.metadata.contextLength?.toLocaleString('en-US') ?? '—' },
+    { label: 'Max completion tokens', value: best.metadata.maxCompletionTokens?.toLocaleString('en-US') ?? '—' },
+    { label: 'Input modalities', value: best.metadata.inputModalities },
+    { label: 'Output modalities', value: best.metadata.outputModalities },
+    { label: 'Tokenizer', value: best.metadata.tokenizer ?? '—' },
+    { label: 'Instruct type', value: best.metadata.instructType ?? '—' },
+    { label: 'Supported parameters', value: best.metadata.supportedParameters },
+    { label: 'Supported voices', value: best.metadata.supportedVoices ?? [] },
+    { label: 'Knowledge cutoff', value: best.metadata.knowledgeCutoff ?? '—' },
+    { label: 'Expiration date', value: best.metadata.expirationDate ?? '—' },
+    { label: 'Hugging Face id', value: best.metadata.huggingFaceId ?? '—' },
+    { label: 'Endpoint details path', value: best.metadata.endpointDetailsPath },
+    { label: 'Per-request prompt limit', value: best.metadata.perRequestLimits?.prompt_tokens?.toLocaleString('en-US') ?? '—' },
+    { label: 'Per-request completion limit', value: best.metadata.perRequestLimits?.completion_tokens?.toLocaleString('en-US') ?? '—' },
+    { label: 'Moderated', value: best.metadata.isModerated ? 'yes' : 'no' },
+    { label: 'Prompt price / 1M USD', value: best.pricing.promptPer1mUsd.toLocaleString('en-US', { maximumFractionDigits: 6 }) },
+    { label: 'Completion price / 1M USD', value: best.pricing.completionPer1mUsd.toLocaleString('en-US', { maximumFractionDigits: 6 }) },
+    { label: 'Cache read / 1M USD', value: best.pricing.cacheReadPer1mUsd?.toLocaleString('en-US', { maximumFractionDigits: 6 }) ?? '—' },
+    { label: 'Cache write / 1M USD', value: best.pricing.cacheWritePer1mUsd?.toLocaleString('en-US', { maximumFractionDigits: 6 }) ?? '—' },
+    { label: 'Pricing status', value: best.pricing.ratioStatus },
+    { label: 'Source record fields', value: Object.keys(best.sourceRecord.rawRecord).sort() },
+  ]
 }
 
 function choosePrimaryRecord(records: OpenRouterModelRecord[]): OpenRouterModelRecord {
