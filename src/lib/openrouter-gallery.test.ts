@@ -85,7 +85,7 @@ describe('buildModelGalleryFromOpenRouterCatalog', () => {
   it('groups OpenRouter source records into canonical model pages and variants', () => {
     const gallery = buildModelGalleryFromOpenRouterCatalog(importOpenRouterModels(response), { sourcePath: 'fixtures/openrouter.json' })
 
-    expect(gallery.source).toEqual({ source: 'openrouter', path: 'fixtures/openrouter.json', modelRows: 4, skippedRows: 0 })
+    expect(gallery.source).toEqual({ source: 'openrouter', path: 'fixtures/openrouter.json', modelRows: 4, floatingAliasRows: 0, skippedRows: 0 })
     expect(gallery.models.map((model) => model.tag)).toEqual(['claude-opus-4-7', 'gpt-4o', 'openrouter-free'])
     expect(gallery.stats).toMatchObject({ modelCount: 3, brandCount: 3, providerCount: 3, variantCount: 4 })
 

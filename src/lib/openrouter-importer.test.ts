@@ -134,7 +134,7 @@ describe('importOpenRouterModels', () => {
   it('normalizes source ids into logical canonical tags while preserving snapshots and variants', () => {
     const catalog = importOpenRouterModels(response)
 
-    expect(catalog.records.map((record) => record.canonicalTag)).toEqual(['claude-opus-4-7', 'gpt-4o', 'gpt-4o', 'ring-2-6-1t', 'kimi-latest', 'qwen3-235b-a22b'])
+    expect(catalog.records.map((record) => record.canonicalTag)).toEqual(['claude-opus-4-7', 'gpt-4o', 'gpt-4o', 'ring-2-6-1t', 'qwen3-235b-a22b'])
     expect(catalog.records[0]).toMatchObject({
       sourceNamespace: 'anthropic',
       sourceModelId: 'claude-opus-4.7-fast',
@@ -153,12 +153,14 @@ describe('importOpenRouterModels', () => {
       canonicalTag: 'ring-2-6-1t',
       variant: { marker: 'free', kind: 'free' },
     })
-    expect(catalog.records[4]).toMatchObject({
+    expect(catalog.floatingAliases).toHaveLength(1)
+    expect(catalog.floatingAliases[0]).toMatchObject({
       sourceNamespace: '~moonshotai',
       canonicalTag: 'kimi-latest',
       brand: { slug: 'moonshotai', name: 'MoonshotAI' },
+      sourceAlias: { kind: 'latest', alias: '~moonshotai/kimi-latest', stable: false, targetCanonicalTag: null },
     })
-    expect(catalog.records[5]).toMatchObject({
+    expect(catalog.records[4]).toMatchObject({
       canonicalTag: 'qwen3-235b-a22b',
       variant: null,
       snapshot: null,

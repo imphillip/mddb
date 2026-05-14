@@ -8,6 +8,7 @@ export type OpenRouterGallery = ModelGallery & {
     source: 'openrouter'
     path: string
     modelRows: number
+    floatingAliasRows: number
     skippedRows: number
   }
 }
@@ -25,6 +26,7 @@ export function buildModelGalleryFromOpenRouterFile(sourcePath: string): OpenRou
 
 export function buildModelGalleryFromOpenRouterCatalog(catalog: OpenRouterCatalog, options: { sourcePath: string }): OpenRouterGallery {
   const groups = new Map<string, OpenRouterModelRecord[]>()
+  const floatingAliasesByBrand = groupFloatingAliasesByBrand(catalog.floatingAliases)
   for (const record of catalog.records) {
     const current = groups.get(record.canonicalTag)
     if (current === undefined) groups.set(record.canonicalTag, [record])
@@ -41,6 +43,11 @@ export function buildModelGalleryFromOpenRouterCatalog(catalog: OpenRouterCatalo
     if (current === undefined) brandMap.set(model.brand.slug, { ...model.brand, models: [model] })
     else current.models.push(model)
   }
+  for (const [brandSlug, aliases] of floatingAliasesByBrand) {
+    const current = brandMap.get(brandSlug)
+    if (current !== undefined) current.description = brandDescription(brandSlug)
+    else brandMap.set(brandSlug, { ...aliases[0]!.brand, description: brandDescription(brandSlug), models: [] })
+  }
   const brands = Array.from(brandMap.values()).sort((a, b) => a.name.localeCompare(b.name))
   const providerCount = new Set(catalog.records.map((record) => record.sourceNamespace)).size
   const variantCount = details.reduce((sum, detail) => sum + detail.variants.length, 0)
@@ -49,9 +56,19 @@ export function buildModelGalleryFromOpenRouterCatalog(catalog: OpenRouterCatalo
     brands,
     models,
     details,
-    source: { source: 'openrouter', path: options.sourcePath, modelRows: catalog.records.length, skippedRows: catalog.skipped.length },
+    source: { source: 'openrouter', path: options.sourcePath, modelRows: catalog.records.length, floatingAliasRows: catalog.floatingAliases.length, skippedRows: catalog.skipped.length },
     stats: { modelCount: models.length, brandCount: brands.length, providerCount, variantCount },
   }
+}
+
+function groupFloatingAliasesByBrand(records: OpenRouterModelRecord[]): Map<string, OpenRouterModelRecord[]> {
+  const groups = new Map<string, OpenRouterModelRecord[]>()
+  for (const record of records) {
+    const current = groups.get(record.brand.slug)
+    if (current === undefined) groups.set(record.brand.slug, [record])
+    else current.push(record)
+  }
+  return groups
 }
 
 function toModelDetail(tag: string, records: OpenRouterModelRecord[]): ModelDetail {
@@ -84,6 +101,7 @@ function toModelDetail(tag: string, records: OpenRouterModelRecord[]): ModelDeta
 function buildMetaItems(best: OpenRouterModelRecord, records: OpenRouterModelRecord[]): ModelMetaItem[] {
   const aliases = Array.from(new Set(records.flatMap((record) => record.aliases))).sort()
   const sourceIds = Array.from(new Set(records.map((record) => `${record.sourceNamespace}/${record.sourceModelId}`))).sort()
+  const floatingAliases = records.map((record) => record.sourceAlias?.alias).filter((value): value is string => Boolean(value)).sort()
   return [
     { label: 'Canonical tag', value: best.canonicalTag },
     { label: 'Display name', value: best.displayName },
@@ -92,6 +110,7 @@ function buildMetaItems(best: OpenRouterModelRecord, records: OpenRouterModelRec
     { label: 'Source model id', value: best.sourceModelId },
     { label: 'Source canonical slug', value: best.sourceCanonicalSlug },
     { label: 'OpenRouter aliases', value: aliases },
+    { label: 'Floating aliases', value: floatingAliases },
     { label: 'Observed source ids', value: sourceIds },
     { label: 'Created', value: best.metadata.created ? new Date(best.metadata.created * 1000).toISOString() : '—' },
     { label: 'Context length', value: best.metadata.contextLength?.toLocaleString('en-US') ?? '—' },

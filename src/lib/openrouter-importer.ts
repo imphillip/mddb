@@ -51,6 +51,7 @@ export type OpenRouterModel = {
 
 export type OpenRouterCatalog = {
   records: OpenRouterModelRecord[]
+  floatingAliases: OpenRouterModelRecord[]
   skipped: Array<{ id: string; reason: string }>
 }
 
@@ -64,6 +65,7 @@ export type OpenRouterModelRecord = {
   brand: Pick<Brand, 'slug' | 'name'>
   snapshot: { marker: string; sourceCanonicalSlug: string } | null
   variant: { marker: string; kind: string } | null
+  sourceAlias: { kind: 'latest'; alias: string; stable: false; targetCanonicalTag: string | null } | null
   aliases: string[]
   metadata: {
     description: string | null
@@ -112,6 +114,7 @@ const BRAND_DESCRIPTIONS: Record<string, string> = {
 
 export function importOpenRouterModels(response: OpenRouterModelsResponse): OpenRouterCatalog {
   const records: OpenRouterModelRecord[] = []
+  const floatingAliases: OpenRouterModelRecord[] = []
   const skipped: OpenRouterCatalog['skipped'] = []
 
   for (const model of response.data) {
@@ -125,6 +128,7 @@ export function importOpenRouterModels(response: OpenRouterModelsResponse): Open
     const [namespace, ...modelIdParts] = model.id.split('/')
     const sourceNamespace = namespace ?? ''
     const sourceModelId = modelIdParts.join('/') || (sourceNamespace === 'openrouter' ? sourceNamespace : model.id)
+    const sourceAlias = sourceAliasFromModelId(model.id, sourceModelId)
     const baseIdentity = identityFromSourceId(sourceModelId)
     if (sourceNamespace === 'openrouter' && (sourceModelId === 'free' || sourceModelId === 'auto')) {
       baseIdentity.canonicalTag = `openrouter-${sourceModelId}`
@@ -134,7 +138,7 @@ export function importOpenRouterModels(response: OpenRouterModelsResponse): Open
     const variant = baseIdentity.variant ? { marker: baseIdentity.variant, kind: baseIdentity.variant } : canonicalIdentity.variant ? { marker: canonicalIdentity.variant, kind: canonicalIdentity.variant } : null
     const brand = inferBrand(model, sourceNamespace)
 
-    records.push({
+    const record: OpenRouterModelRecord = {
       source: 'openrouter',
       sourceNamespace,
       sourceModelId,
@@ -144,6 +148,7 @@ export function importOpenRouterModels(response: OpenRouterModelsResponse): Open
       brand,
       snapshot,
       variant,
+      sourceAlias,
       aliases: Array.from(new Set([model.id, model.canonical_slug])),
       metadata: {
         description: model.description ?? null,
@@ -166,10 +171,12 @@ export function importOpenRouterModels(response: OpenRouterModelsResponse): Open
       },
       pricing: derivePricing(prompt ?? 0, completion ?? 0, parsePrice(model.pricing.input_cache_read), parsePrice(model.pricing.input_cache_write)),
       sourceRecord: { rawRecord: model },
-    })
+    }
+    if (record.sourceAlias) floatingAliases.push(record)
+    else records.push(record)
   }
 
-  return { records, skipped }
+  return { records, floatingAliases, skipped }
 }
 
 function identityFromSourceId(sourceModelId: string): { canonicalTag: string; variant: string | null } {
@@ -209,6 +216,12 @@ function stripTrailingSnapshot(value: string): { value: string; snapshot: string
 
 function normalizeClaudeOrder(value: string): string {
   return value.replace(/^claude-(\d+)-(\d+)-(haiku|sonnet|opus)$/u, 'claude-$3-$1-$2')
+}
+
+function sourceAliasFromModelId(sourceId: string, sourceModelId: string): OpenRouterModelRecord['sourceAlias'] {
+  const normalized = normalizeTag(sourceModelId)
+  if (!normalized.endsWith('-latest')) return null
+  return { kind: 'latest', alias: sourceId, stable: false, targetCanonicalTag: null }
 }
 
 function inferBrand(model: OpenRouterModel, namespace: string): Pick<Brand, 'slug' | 'name'> {
