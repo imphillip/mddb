@@ -1,11 +1,12 @@
 import { mkdirSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
-import { buildModelGalleryFromOpenRouterFile } from '../lib/openrouter-gallery.js'
+import { buildModelGalleryWithModelsDevEnrichment } from '../lib/model-gallery-enrichment.js'
 import { renderHomePage, renderModelDetailPage, renderModelsPage } from '../lib/site-renderer.js'
 
 const outputDir = join(process.cwd(), 'public')
 const openRouterSourcePath = join(process.cwd(), 'data', 'openrouter-models.json')
-const modelGallery = buildModelGalleryFromOpenRouterFile(openRouterSourcePath)
+const modelsDevSourcePath = join(process.cwd(), 'data', 'models-dev-api.json')
+const modelGallery = buildModelGalleryWithModelsDevEnrichment(openRouterSourcePath, modelsDevSourcePath)
 
 rmSync(outputDir, { recursive: true, force: true })
 
