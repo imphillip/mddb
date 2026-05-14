@@ -1,0 +1,30 @@
+{
+  "name": "mddb-dev",
+  "version": "1.0.0",
+  "description": "LLM Model Registry: a structured, URL-friendly model metadata registry for humans and machines.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "vitest run --exclude 'dist/**'",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc && node dist/scripts/build-site.js",
+    "data:openrouter": "node scripts/fetch-openrouter-models.mjs",
+    "serve": "npx http-server public -p 4173 -c-1",
+    "deploy": "bash scripts/deploy-static-site.sh",
+    "deploy:dry-run": "DRY_RUN=1 bash scripts/deploy-static-site.sh",
+    "hooks:install": "git config core.hooksPath .githooks"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^25.7.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.6"
+  },
+  "private": true,
+  "type": "module"
+}

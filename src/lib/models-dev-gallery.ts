@@ -1,0 +1,404 @@
+import { existsSync, readFileSync } from 'node:fs'
+import type { Brand, ModelDetail, ModelGallery, ModelSummary, ModelVariant } from './model-catalog.js'
+import { resolveModelsDevIdentity } from './model-identity.js'
+
+export type ModelsDevIndexProvider = {
+  id: string
+  name: string
+  modelCount: number
+  api?: string
+  doc?: string
+  iconURL?: string
+}
+
+export type ModelsDevIndexModel = {
+  id: string
+  name: string
+  providerId: string
+  updated?: string
+  flags: {
+    attachment: boolean
+    reasoning: boolean
+    tool_call: boolean
+  }
+}
+
+export type ModelsDevIndex = {
+  providers: ModelsDevIndexProvider[]
+  models: ModelsDevIndexModel[]
+}
+
+export type ModelsDevGallery = ModelGallery & {
+  details: ModelDetail[]
+  source: {
+    path: string
+    modelRows: number
+    providerRows: number
+  }
+}
+
+export type ModelsDevGalleryOptions = {
+  sourcePath: string
+}
+
+type CanonicalModelGroup = {
+  tag: string
+  displayName: string
+  brand: Brand
+  models: ModelsDevIndexModel[]
+  brandLogoUrl?: string | undefined
+}
+
+type VersionGroup = {
+  id: string
+  displayName: string
+  snapshot: string | null
+  models: ModelsDevIndexModel[]
+}
+
+const UNKNOWN_BRAND: Brand = {
+  slug: 'other',
+  name: 'Other',
+  description: 'models.dev 本地索引中的其他模型厂牌。',
+}
+
+const BRAND_RULES: Array<{ slug: string; name: string; aliases: string[]; description: string }> = [
+  { slug: 'openai', name: 'OpenAI', aliases: ['openai', 'gpt', 'chatgpt', 'o1', 'o3', 'o4'], description: 'GPT、o 系列与 OpenAI 多模态模型。' },
+  { slug: 'anthropic', name: 'Anthropic', aliases: ['anthropic', 'claude'], description: 'Claude 系列，擅长代码、智能体与长文本推理。' },
+  { slug: 'google', name: 'Google', aliases: ['google', 'gemini', 'gemma'], description: 'Gemini 与 Gemma 系列，强调长上下文、多模态与云部署。' },
+  { slug: 'deepseek', name: 'DeepSeek', aliases: ['deepseek'], description: '高性价比推理与代码模型，开放权重生态活跃。' },
+  { slug: 'meta', name: 'Meta', aliases: ['meta', 'llama'], description: 'Llama 开放模型家族，适合私有化与多云托管。' },
+  { slug: 'alibaba', name: 'Alibaba', aliases: ['alibaba', 'qwen', 'qwq', 'qvq', 'tongyi'], description: 'Qwen / 通义千问系列与阿里云模型服务。' },
+  { slug: 'mistral', name: 'Mistral AI', aliases: ['mistral', 'mixtral', 'codestral'], description: 'Mistral、Mixtral 与 Codestral 开放及商用模型。' },
+  { slug: 'xai', name: 'xAI', aliases: ['xai', 'grok'], description: 'Grok 系列模型。' },
+  { slug: 'moonshot', name: 'Moonshot AI', aliases: ['moonshot', 'kimi'], description: 'Kimi / Moonshot 长上下文模型。' },
+  { slug: 'zhipu', name: 'Zhipu AI', aliases: ['zhipu', 'glm'], description: 'GLM / 智谱模型系列。' },
+]
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value)
+}
+
+export function loadModelsDevIndexFromFile(sourcePath: string): ModelsDevIndex {
+  if (!existsSync(sourcePath)) {
+    throw new Error(`models.dev local index not found: ${sourcePath}`)
+  }
+  const parsed: unknown = JSON.parse(readFileSync(sourcePath, 'utf8'))
+  if (!isRecord(parsed) || !Array.isArray(parsed.providers) || !Array.isArray(parsed.models)) {
+    throw new Error(`models.dev local index has unsupported shape: ${sourcePath}`)
+  }
+  return {
+    providers: parsed.providers.filter(isModelsDevProvider),
+    models: parsed.models.filter(isModelsDevModel),
+  }
+}
+
+export function buildModelGalleryFromModelsDevFile(sourcePath: string): ModelsDevGallery {
+  return buildModelGalleryFromModelsDevIndex(loadModelsDevIndexFromFile(sourcePath), { sourcePath })
+}
+
+export function buildModelGalleryFromModelsDevIndex(index: ModelsDevIndex, options: ModelsDevGalleryOptions): ModelsDevGallery {
+  const providers = new Map(index.providers.map((provider) => [provider.id, provider]))
+  const grouped = new Map<string, CanonicalModelGroup>()
+
+  for (const model of index.models) {
+    const tag = canonicalTagForModelsDevModel(model)
+    const brand = inferBrand(model)
+    const brandLogoUrl = providerLogoUrl(providers.get(brand.slug)) ?? (brand.slug === model.providerId ? providerLogoUrl(providers.get(model.providerId)) : undefined)
+    const existing = grouped.get(tag)
+    if (existing === undefined) {
+      grouped.set(tag, { tag, displayName: normalizeDisplayName(model.name || model.id), brand: { ...brand, logoUrl: brandLogoUrl }, models: [model], brandLogoUrl })
+    } else {
+      existing.models.push(model)
+      existing.displayName = chooseDisplayName(existing.displayName, model.name || model.id)
+      if (existing.brand.slug === UNKNOWN_BRAND.slug && brand.slug !== UNKNOWN_BRAND.slug) {
+        existing.brand = { ...brand, logoUrl: brandLogoUrl }
+        existing.brandLogoUrl = brandLogoUrl
+      } else if (existing.brand.logoUrl === undefined && existing.brand.slug === brand.slug && brandLogoUrl !== undefined) {
+        existing.brand.logoUrl = brandLogoUrl
+        existing.brandLogoUrl = brandLogoUrl
+      }
+    }
+  }
+
+  const details = Array.from(grouped.values())
+    .map((group) => toModelDetail(group, providers))
+    .sort((a, b) => compareReleasedDescending(a.releasedAt, b.releasedAt) || a.name.localeCompare(b.name))
+  const models = details.map(toSummary)
+  const brandMap = new Map<string, Brand & { models: ModelSummary[] }>()
+  for (const model of models) {
+    const current = brandMap.get(model.brand.slug)
+    if (current === undefined) {
+      brandMap.set(model.brand.slug, { ...model.brand, models: [model] })
+    } else {
+      current.models.push(model)
+    }
+  }
+  const brands = Array.from(brandMap.values()).sort((a, b) => a.name.localeCompare(b.name))
+  const providerCount = new Set(index.models.map((model) => model.providerId)).size
+  const variantCount = details.reduce((sum, detail) => sum + detail.variants.length, 0)
+
+  return {
+    brands,
+    models,
+    details,
+    source: {
+      path: options.sourcePath,
+      modelRows: index.models.length,
+      providerRows: index.providers.length,
+    },
+    stats: {
+      modelCount: models.length,
+      brandCount: brands.length,
+      providerCount,
+      variantCount,
+    },
+  }
+}
+
+function isModelsDevProvider(value: unknown): value is ModelsDevIndexProvider {
+  return (
+    isRecord(value) &&
+    typeof value.id === 'string' &&
+    typeof value.name === 'string' &&
+    typeof value.modelCount === 'number' &&
+    (value.iconURL === undefined || typeof value.iconURL === 'string')
+  )
+}
+
+function isModelsDevModel(value: unknown): value is ModelsDevIndexModel {
+  return (
+    isRecord(value) &&
+    typeof value.id === 'string' &&
+    typeof value.name === 'string' &&
+    typeof value.providerId === 'string' &&
+    isRecord(value.flags) &&
+    typeof value.flags.attachment === 'boolean' &&
+    typeof value.flags.reasoning === 'boolean' &&
+    typeof value.flags.tool_call === 'boolean'
+  )
+}
+
+function canonicalTagForModelsDevModel(model: ModelsDevIndexModel): string {
+  return resolveModelsDevIdentity(model).canonicalTag
+}
+
+function versionInfoForModelsDevModel(model: ModelsDevIndexModel): { canonicalTag: string; versionId: string; snapshot: string | null } {
+  const identity = resolveModelsDevIdentity(model)
+  const versionId = identity.snapshot ? identity.versionId : isAnthropicClaudeOpus(identity.canonicalTag) ? `${identity.canonicalTag}-thinking` : identity.versionId
+  return {
+    canonicalTag: identity.canonicalTag,
+    versionId,
+    snapshot: identity.snapshot?.marker ?? null,
+  }
+}
+
+function inferBrand(model: ModelsDevIndexModel): Brand {
+  const searchable = `${model.providerId} ${model.id} ${model.name}`.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+  const rule = BRAND_RULES.find((candidate) => candidate.aliases.some((alias) => searchable.includes(alias.toLowerCase().replace(/[^a-z0-9]+/g, '-'))))
+  if (rule === undefined) {
+    return UNKNOWN_BRAND
+  }
+  return { slug: rule.slug, name: rule.name, description: rule.description }
+}
+
+function providerLogoUrl(provider: ModelsDevIndexProvider | undefined): string | undefined {
+  return provider?.iconURL
+}
+
+function normalizeDisplayName(value: string): string {
+  return value
+    .replace(/^[A-Za-z]+:\s*/, '')
+    .replace(/(?<=[a-zA-Z])-(?=\d{4})/g, ' ')
+    .replace(/(?<=\d{4})-(?=\d)/g, ' ')
+    .replace(/(?<=\d{2})-(?=\d{2}\b)/g, ' ')
+    .replace(/(?<=\d{2})-(?=[a-zA-Z])/g, ' ')
+    .replace(/_/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\b[a-z]/g, (match) => match.toUpperCase())
+    .replace(/\bGpt\b/g, 'GPT')
+    .replace(/\bAi\b/g, 'AI')
+    .replace(/\bApi\b/g, 'API')
+    .replace(/\bR1\b/g, 'R1')
+}
+
+function chooseDisplayName(current: string, next: string): string {
+  const normalizedNext = normalizeDisplayName(next)
+  const currentScore = displayNameScore(current)
+  const nextScore = displayNameScore(normalizedNext)
+  return nextScore > currentScore ? normalizedNext : current
+}
+
+function displayNameScore(value: string): number {
+  let score = 100 - value.length
+  if (!value.includes('/')) score += 8
+  if (!/\d{4}/.test(value)) score += 20
+  if (/^[A-Z0-9 ._-]+$/.test(value)) score += 3
+  if (/\b(GPT|Claude|Gemini|DeepSeek|Llama|Qwen)\b/.test(value)) score += 10
+  return score
+}
+
+function toModelDetail(group: CanonicalModelGroup, providers: Map<string, ModelsDevIndexProvider>): ModelDetail {
+  const providerNames = Array.from(new Set(group.models.map((model) => providers.get(model.providerId)?.name ?? model.providerId))).sort()
+  const variants = versionGroupsFor(group.models)
+    .sort((a, b) => Number(Boolean(b.snapshot)) - Number(Boolean(a.snapshot)) || a.displayName.localeCompare(b.displayName))
+    .map((versionGroup) => toVariant(versionGroup, providers))
+  const releasedAt = earliestUpdatedDate(group.models) ?? '—'
+  const modalities = inferModalities(group.models)
+
+  return {
+    tag: group.tag,
+    route: `/models/${group.tag}`,
+    name: group.displayName,
+    brand: group.brand,
+    description: `${group.displayName} 在 models.dev 本地索引中收录了 ${providerNames.length} 个 provider 部署。`,
+    longDescription: `${group.displayName} 页面由参考库里的 models.dev 静态索引生成，provider 会作为同一规范模型下的部署属性展示。`,
+    modalities,
+    contextWindow: '—',
+    inputPrice: '—',
+    outputPrice: '—',
+    providerNames,
+    variantCount: variants.length,
+    weeklyTokens: '—',
+    releasedAt,
+    apiIdentifier: group.tag,
+    variants,
+    benchmarks: [],
+  }
+}
+
+function compareReleasedDescending(a: string, b: string): number {
+  return releaseSortValue(b).localeCompare(releaseSortValue(a))
+}
+
+function releaseSortValue(value: string): string {
+  return /^\d{4}-\d{2}-\d{2}$/.test(value) ? value : '0000-00-00'
+}
+
+function versionGroupsFor(models: ModelsDevIndexModel[]): VersionGroup[] {
+  const groups = new Map<string, VersionGroup>()
+  for (const model of models) {
+    const versionInfo = versionInfoForModelsDevModel(model)
+    const displayName = displayNameForVersion(model, versionInfo.versionId)
+    const current = groups.get(versionInfo.versionId)
+    const existingCanonicalClaudeOpus = isAnthropicClaudeOpus(versionInfo.canonicalTag) && versionInfo.snapshot === null && versionInfo.versionId !== versionInfo.canonicalTag
+      ? groups.get(versionInfo.canonicalTag)
+      : undefined
+    if (existingCanonicalClaudeOpus) {
+      groups.delete(versionInfo.canonicalTag)
+      existingCanonicalClaudeOpus.id = versionInfo.versionId
+      existingCanonicalClaudeOpus.models.push(model)
+      existingCanonicalClaudeOpus.displayName = displayName
+      groups.set(versionInfo.versionId, existingCanonicalClaudeOpus)
+      continue
+    }
+    const firstAnthropicClaudeOpus = isAnthropicClaudeOpus(versionInfo.canonicalTag)
+      ? groups.get(`${versionInfo.canonicalTag}-thinking`) ?? (versionInfo.versionId !== versionInfo.canonicalTag ? groups.get(versionInfo.canonicalTag) : undefined)
+      : undefined
+    if (firstAnthropicClaudeOpus && versionInfo.snapshot === null) {
+      firstAnthropicClaudeOpus.models.push(model)
+      firstAnthropicClaudeOpus.displayName = chooseDisplayName(firstAnthropicClaudeOpus.displayName, displayName)
+      continue
+    }
+    if (current === undefined) {
+      groups.set(versionInfo.versionId, { id: versionInfo.versionId, displayName, snapshot: versionInfo.snapshot, models: [model] })
+    } else {
+      current.models.push(model)
+      current.displayName = chooseDisplayName(current.displayName, displayName)
+    }
+  }
+  return Array.from(groups.values())
+}
+
+function isAnthropicClaudeOpus(canonicalTag: string): boolean {
+  return /^claude-opus-\d+-\d+$/.test(canonicalTag)
+}
+
+function displayNameForVersion(model: ModelsDevIndexModel, versionId: string): string {
+  if (/^claude-opus-\d+-\d+-thinking$/.test(versionId)) {
+    return 'Claude Opus ' + versionId.match(/^claude-opus-(\d+)-(\d+)-thinking$/)!.slice(1).join('.') + ' Thinking'
+  }
+  return normalizeDisplayName(model.name || model.id)
+}
+
+function toVariant(versionGroup: VersionGroup, providers: Map<string, ModelsDevIndexProvider>): ModelVariant {
+  const deployments = uniqueDeployments(
+    versionGroup.models
+      .slice()
+      .sort((a, b) => providerName(a.providerId, providers).localeCompare(providerName(b.providerId, providers)) || a.id.localeCompare(b.id))
+      .map((model) => {
+        const provider = providers.get(model.providerId)
+        return {
+          slug: model.providerId,
+          name: provider?.name ?? model.providerId,
+          logoUrl: providerLogoUrl(provider),
+          region: '—',
+          uptime: '—',
+          latency: '—',
+          throughput: '—',
+        }
+      }),
+  )
+  const updatedDates = Array.from(new Set(versionGroup.models.map((model) => model.updated).filter((value): value is string => Boolean(value)))).sort()
+  return {
+    id: versionGroup.id,
+    name: versionGroup.displayName,
+    summary: versionGroup.snapshot ? `snapshot 版本 ${versionGroup.displayName}。` : `同一模型版本在 ${deployments.length} 个 provider 上可用。`,
+    contextWindow: '—',
+    inputPrice: '—',
+    outputPrice: '—',
+    differences: [versionGroup.snapshot ? `snapshot ${versionGroup.snapshot}` : versionGroup.id, ...updatedDates.map((date) => `更新日期 ${date}`)],
+    providers: deployments,
+  }
+}
+
+function uniqueDeployments(deployments: ModelVariant['providers']): ModelVariant['providers'] {
+  const bySlug = new Map<string, ModelVariant['providers'][number]>()
+  for (const deployment of deployments) {
+    if (!bySlug.has(deployment.slug)) {
+      bySlug.set(deployment.slug, deployment)
+    }
+  }
+  return Array.from(bySlug.values())
+}
+
+function providerName(providerId: string, providers: Map<string, ModelsDevIndexProvider>): string {
+  return providers.get(providerId)?.name ?? providerId
+}
+
+function earliestUpdatedDate(models: ModelsDevIndexModel[]): string | null {
+  const dates = models.map((model) => model.updated).filter((value): value is string => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && value !== '1970-01-01')
+  if (dates.length === 0) return null
+  return dates.sort()[0]!
+}
+
+function inferModalities(models: ModelsDevIndexModel[]): string[] {
+  const flags = models.reduce(
+    (acc, model) => ({
+      attachment: acc.attachment || model.flags.attachment,
+      reasoning: acc.reasoning || model.flags.reasoning,
+      tool_call: acc.tool_call || model.flags.tool_call,
+    }),
+    { attachment: false, reasoning: false, tool_call: false },
+  )
+  return ['文本', ...(flags.attachment ? ['视觉'] : []), ...(flags.reasoning ? ['推理'] : []), ...(flags.tool_call ? ['工具'] : [])]
+}
+
+function toSummary(detail: ModelDetail): ModelSummary {
+  return {
+    tag: detail.tag,
+    route: detail.route,
+    name: detail.name,
+    brand: detail.brand,
+    description: detail.description,
+    modalities: detail.modalities,
+    contextWindow: detail.contextWindow,
+    inputPrice: detail.inputPrice,
+    outputPrice: detail.outputPrice,
+    providerNames: detail.providerNames,
+    variantCount: detail.variantCount,
+    weeklyTokens: detail.weeklyTokens,
+    releasedAt: detail.releasedAt,
+  }
+}
