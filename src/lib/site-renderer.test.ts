@@ -1,4 +1,6 @@
 import { describe, expect, it } from 'vitest'
+import type { ModelGallery } from './model-catalog.js'
+import { buildModelGallery } from './model-catalog.js'
 import { renderHomePage, renderModelDetailPage, renderModelsPage } from './site-renderer.js'
 
 describe('site renderer', () => {
@@ -29,6 +31,7 @@ describe('site renderer', () => {
     expect(html).not.toContain('href="/">模型动态</a>')
     expect(html).toContain('<div class="filterTitle">筛选</div>')
     expect(html).toContain('<span>厂牌</span>')
+    expect(html).toContain('<details class="filterMore"><summary>更多厂牌（5 个 / 5 个模型）</summary>')
     expect(html).toContain('<span>Anthropic</span><small>1</small>')
     expect(html).toContain('<span>OpenAI</span><small>1</small>')
     expect(html).toContain('<span>Google</span><small>1</small>')
@@ -59,6 +62,30 @@ describe('site renderer', () => {
     expect(html.indexOf('DeepSeek R1')).toBeLessThan(html.indexOf('Llama 3.1 405B Instruct'))
     expect(html).toContain('<td class="mono">128K</td>')
     expect(html).not.toContain('131.072,000')
+  })
+
+
+  it('keeps large brand filters visible and hides <=5-model brands behind a disclosure', () => {
+    const base = buildModelGallery()
+    const gallery: ModelGallery = {
+      ...base,
+      brands: [
+        { slug: 'large', name: 'LargeBrand', description: 'Large test brand', models: [...base.models, base.models[0]!] },
+        { slug: 'medium', name: 'MediumBrand', description: 'Medium test brand', models: base.models.slice(0, 5) },
+        { slug: 'small', name: 'SmallBrand', description: 'Small test brand', models: base.models.slice(0, 1) },
+      ],
+    }
+    const html = renderModelsPage(gallery)
+    const largeIndex = html.indexOf('<span>LargeBrand</span><small>6</small>')
+    const disclosureIndex = html.indexOf('<details class="filterMore"><summary>更多厂牌（2 个 / 6 个模型）</summary>')
+    const mediumIndex = html.indexOf('<span>MediumBrand</span><small>5</small>')
+    const smallIndex = html.indexOf('<span>SmallBrand</span><small>1</small>')
+
+    expect(largeIndex).toBeGreaterThan(-1)
+    expect(disclosureIndex).toBeGreaterThan(-1)
+    expect(mediumIndex).toBeGreaterThan(disclosureIndex)
+    expect(smallIndex).toBeGreaterThan(disclosureIndex)
+    expect(largeIndex).toBeLessThan(disclosureIndex)
   })
 
   it('removes internal page-specification prompts from public pages', () => {
