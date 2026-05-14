@@ -8,6 +8,8 @@ describe('site renderer', () => {
     const html = renderHomePage()
 
     expect(html).toContain('mddb.dev')
+    expect(html).toContain('大模型数据库')
+    expect(html).toContain('aria-label="数据库"')
     expect(html).toContain('<meta http-equiv="refresh" content="0;url=/models/">')
     expect(html).toContain('<link rel="canonical" href="/models/">')
     expect(html).toContain('正在跳转到模型广场')
@@ -26,6 +28,8 @@ describe('site renderer', () => {
     const html = renderModelsPage()
 
     expect(html).toContain('<html lang="zh-CN">')
+    expect(html).toContain('大模型数据库')
+    expect(html).toContain('aria-label="数据库"')
     expect(html).toContain('<span class="disabled" aria-disabled="true">模型动态</span>')
     expect(html).toContain('<a class="active" href="/models/">模型广场</a>')
     expect(html).not.toContain('href="/">模型动态</a>')
@@ -120,6 +124,9 @@ describe('site renderer', () => {
     const html = renderModelDetailPage('claude-sonnet-4')
 
     expect(html).toContain('Claude Sonnet 4')
+    expect(html).toContain('href="/models/"')
+    expect(html).toContain('返回模型列表')
+    expect(html).toContain('大模型数据库')
     expect(html).toContain('Overview')
     expect(html).toContain('Providers')
     expect(html).toContain('Variants')
