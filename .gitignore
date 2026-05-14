@@ -7,3 +7,6 @@ public/
 .env.local
 *.log
 .DS_Store
+
+# Local-only workspace files. Keep private notes, scratch code, and non-public artifacts here.
+.internal/
