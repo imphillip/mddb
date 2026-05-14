@@ -55,7 +55,18 @@ function makeIndex(): ModelsDevIndex {
         providerId: 'acme',
         inputPrice: 0.25,
         outputPrice: 1.5,
+        cacheReadPrice: 0.1,
+        cacheWritePrice: 0.4,
         contextWindow: 8192,
+        outputLimit: 2048,
+        inputModalities: ['text', 'image'],
+        outputModalities: ['text'],
+        family: 'mystery',
+        knowledge: '2024-10',
+        releaseDate: '2024-10-31',
+        openWeights: true,
+        temperature: true,
+        structuredOutput: true,
         flags: { attachment: false, reasoning: false, tool_call: false },
       },
       {
@@ -163,6 +174,19 @@ describe('buildModelGalleryFromModelsDevIndex', () => {
     expect(mystery?.inputPrice).toBe('$0.25 / 1M')
     expect(mystery?.outputPrice).toBe('$1.5 / 1M')
     expect(mystery?.contextWindow).toBe('8,192')
+
+    const mysteryDetail = gallery.details.find((model) => model.tag === 'mystery-model')
+    expect(mysteryDetail?.meta).toContainEqual({ label: 'Output modalities', value: ['text'] })
+    expect(mysteryDetail?.meta).toContainEqual({ label: 'Families', value: ['mystery'] })
+    expect(mysteryDetail?.meta).toContainEqual({ label: 'Knowledge cutoffs', value: ['2024-10'] })
+    expect(mysteryDetail?.meta).toContainEqual({ label: 'Release dates', value: ['2024-10-31'] })
+    expect(mysteryDetail?.meta).toContainEqual({ label: 'Output token limits', value: ['2,048'] })
+    expect(mysteryDetail?.meta).toContainEqual({ label: 'Cache read prices', value: ['$0.1 / 1M'] })
+    expect(mysteryDetail?.meta).toContainEqual({ label: 'Cache write prices', value: ['$0.4 / 1M'] })
+    expect(mysteryDetail?.meta).toContainEqual({ label: 'Open weights', value: 'yes' })
+    expect(mysteryDetail?.meta).toContainEqual({ label: 'Temperature control', value: 'yes' })
+    expect(mysteryDetail?.meta).toContainEqual({ label: 'Structured output', value: 'yes' })
+    expect(mysteryDetail?.variants[0]?.differences).toEqual(expect.arrayContaining(['family mystery', 'knowledge 2024-10', 'output limit 2,048', 'open weights yes']))
 
     const placeholderDateModel = gallery.models.find((model) => model.tag === 'placeholder-date-model')
     expect(placeholderDateModel?.releasedAt).toBe('—')

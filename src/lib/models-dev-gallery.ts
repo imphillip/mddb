@@ -18,7 +18,19 @@ export type ModelsDevIndexModel = {
   updated?: string
   inputPrice?: number | undefined
   outputPrice?: number | undefined
+  cacheReadPrice?: number | undefined
+  cacheWritePrice?: number | undefined
   contextWindow?: number | undefined
+  outputLimit?: number | undefined
+  inputModalities?: string[] | undefined
+  outputModalities?: string[] | undefined
+  family?: string | undefined
+  knowledge?: string | undefined
+  releaseDate?: string | undefined
+  openWeights?: boolean | undefined
+  temperature?: boolean | undefined
+  structuredOutput?: boolean | undefined
+  rawRecord?: Record<string, unknown> | undefined
   flags: {
     attachment: boolean
     reasoning: boolean
@@ -207,19 +219,41 @@ function normalizeModelsDevApiModel(value: unknown, providerId: string): ModelsD
   }
   const updated = typeof value.last_updated === 'string' ? value.last_updated : typeof value.release_date === 'string' ? value.release_date : undefined
   if (updated !== undefined) model.updated = updated
+  if (typeof value.release_date === 'string') model.releaseDate = value.release_date
+  if (typeof value.family === 'string') model.family = value.family
+  if (typeof value.knowledge === 'string') model.knowledge = value.knowledge
+  if (typeof value.open_weights === 'boolean') model.openWeights = value.open_weights
+  if (typeof value.temperature === 'boolean') model.temperature = value.temperature
+  if (typeof value.structured_output === 'boolean') model.structuredOutput = value.structured_output
+  const modalities = isRecord(value.modalities) ? value.modalities : {}
+  const inputModalities = readStringArray(modalities.input)
+  const outputModalities = readStringArray(modalities.output)
+  if (inputModalities !== undefined) model.inputModalities = inputModalities
+  if (outputModalities !== undefined) model.outputModalities = outputModalities
   const cost = isRecord(value.cost) ? value.cost : {}
   const inputPrice = readNumber(cost.input)
   const outputPrice = readNumber(cost.output)
-  const limit = isRecord(value.limit) ? value.limit : {}
-  const contextWindow = readNumber(limit.context)
+  const cacheReadPrice = readNumber(cost.cache_read)
+  const cacheWritePrice = readNumber(cost.cache_write)
   if (inputPrice !== undefined) model.inputPrice = inputPrice
   if (outputPrice !== undefined) model.outputPrice = outputPrice
+  if (cacheReadPrice !== undefined) model.cacheReadPrice = cacheReadPrice
+  if (cacheWritePrice !== undefined) model.cacheWritePrice = cacheWritePrice
+  const limit = isRecord(value.limit) ? value.limit : {}
+  const contextWindow = readNumber(limit.context)
+  const outputLimit = readNumber(limit.output)
   if (contextWindow !== undefined) model.contextWindow = contextWindow
+  if (outputLimit !== undefined) model.outputLimit = outputLimit
+  model.rawRecord = value
   return model
 }
 
 function readNumber(value: unknown): number | undefined {
   return typeof value === 'number' && Number.isFinite(value) ? value : undefined
+}
+
+function readStringArray(value: unknown): string[] | undefined {
+  return Array.isArray(value) && value.every((item) => typeof item === 'string') ? value : undefined
 }
 
 function isModelsDevModel(value: unknown): value is ModelsDevIndexModel {
@@ -326,7 +360,7 @@ function toModelDetail(group: CanonicalModelGroup, providers: Map<string, Models
       { label: 'Provider names', value: providerNames },
       { label: 'Source model ids', value: Array.from(new Set(group.models.map((model) => model.id))).sort() },
       { label: 'Source provider ids', value: Array.from(new Set(group.models.map((model) => model.providerId))).sort() },
-      { label: 'Input modalities', value: modalities },
+      ...modelsDevMetaItems(group.models, modalities),
       { label: 'Updated dates', value: Array.from(new Set(group.models.map((model) => model.updated).filter((value): value is string => Boolean(value)))).sort() },
     ],
   }
@@ -410,7 +444,7 @@ function toVariant(versionGroup: VersionGroup, providers: Map<string, ModelsDevI
     name: versionGroup.displayName,
     summary: versionGroup.snapshot ? `snapshot 版本 ${versionGroup.displayName}。` : `同一模型版本在 ${deployments.length} 个 provider 上可用。`,
     ...pricingForModels(versionGroup.models),
-    differences: [versionGroup.snapshot ? `snapshot ${versionGroup.snapshot}` : versionGroup.id, ...updatedDates.map((date) => `更新日期 ${date}`)],
+    differences: [versionGroup.snapshot ? `snapshot ${versionGroup.snapshot}` : versionGroup.id, ...modelsDevDifferenceItems(versionGroup.models), ...updatedDates.map((date) => `更新日期 ${date}`)],
     providers: deployments,
   }
 }
@@ -447,6 +481,48 @@ function inferModalities(models: ModelsDevIndexModel[]): string[] {
   return ['文本', ...(flags.attachment ? ['视觉'] : []), ...(flags.reasoning ? ['推理'] : []), ...(flags.tool_call ? ['工具'] : [])]
 }
 
+
+
+function modelsDevMetaItems(models: ModelsDevIndexModel[], fallbackModalities: string[]): Array<{ label: string; value: string | string[] }> {
+  return [
+    { label: 'Input modalities', value: uniqueStrings(models.flatMap((model) => model.inputModalities ?? [])).length > 0 ? uniqueStrings(models.flatMap((model) => model.inputModalities ?? [])) : fallbackModalities },
+    { label: 'Output modalities', value: uniqueStrings(models.flatMap((model) => model.outputModalities ?? [])) },
+    { label: 'Families', value: uniqueStrings(models.map((model) => model.family).filter((value): value is string => Boolean(value))) },
+    { label: 'Knowledge cutoffs', value: uniqueStrings(models.map((model) => model.knowledge).filter((value): value is string => Boolean(value))) },
+    { label: 'Release dates', value: uniqueStrings(models.map((model) => model.releaseDate).filter((value): value is string => Boolean(value))) },
+    { label: 'Output token limits', value: uniqueStrings(models.map((model) => model.outputLimit).filter((value): value is number => value !== undefined).map((value) => value.toLocaleString('en-US'))) },
+    { label: 'Cache read prices', value: uniqueStrings(models.map((model) => model.cacheReadPrice).filter((value): value is number => value !== undefined).map(formatPrice)) },
+    { label: 'Cache write prices', value: uniqueStrings(models.map((model) => model.cacheWritePrice).filter((value): value is number => value !== undefined).map(formatPrice)) },
+    { label: 'Open weights', value: booleanSummary(models.map((model) => model.openWeights)) },
+    { label: 'Temperature control', value: booleanSummary(models.map((model) => model.temperature)) },
+    { label: 'Structured output', value: booleanSummary(models.map((model) => model.structuredOutput)) },
+  ]
+}
+
+function modelsDevDifferenceItems(models: ModelsDevIndexModel[]): string[] {
+  const items: string[] = []
+  const families = uniqueStrings(models.map((model) => model.family).filter((value): value is string => Boolean(value)))
+  const knowledge = uniqueStrings(models.map((model) => model.knowledge).filter((value): value is string => Boolean(value)))
+  const outputLimits = uniqueStrings(models.map((model) => model.outputLimit).filter((value): value is number => value !== undefined).map((value) => value.toLocaleString('en-US')))
+  if (families.length > 0) items.push(`family ${families.join(' / ')}`)
+  if (knowledge.length > 0) items.push(`knowledge ${knowledge.join(' / ')}`)
+  if (outputLimits.length > 0) items.push(`output limit ${outputLimits.join(' / ')}`)
+  const openWeights = booleanSummary(models.map((model) => model.openWeights))
+  if (openWeights !== '—') items.push(`open weights ${openWeights}`)
+  return items
+}
+
+function uniqueStrings(values: string[]): string[] {
+  return Array.from(new Set(values)).sort((a, b) => a.localeCompare(b))
+}
+
+function booleanSummary(values: Array<boolean | undefined>): string {
+  const defined = values.filter((value): value is boolean => typeof value === 'boolean')
+  if (defined.length === 0) return '—'
+  const unique = Array.from(new Set(defined))
+  if (unique.length > 1) return 'mixed'
+  return unique[0] ? 'yes' : 'no'
+}
 
 function pricingForModels(models: ModelsDevIndexModel[]): ModelsDevPricing {
   const inputPrice = firstNumber(models.map((model) => model.inputPrice))
