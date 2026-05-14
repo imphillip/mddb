@@ -84,22 +84,13 @@ export function loadModelsDevIndexFromFile(sourcePath: string): ModelsDevIndex {
     throw new Error(`models.dev local index not found: ${sourcePath}`)
   }
   const parsed: unknown = JSON.parse(readFileSync(sourcePath, 'utf8'))
-  if (isRecord(parsed) && Array.isArray(parsed.providers) && Array.isArray(parsed.models)) {
-    return {
-      providers: parsed.providers.filter(isModelsDevProvider),
-      models: parsed.models.filter(isModelsDevModel),
-    }
+  if (!isRecord(parsed) || !Array.isArray(parsed.providers) || !Array.isArray(parsed.models)) {
+    throw new Error(`models.dev local index has unsupported shape: ${sourcePath}`)
   }
-  if (isRecord(parsed)) {
-    const providers = Object.values(parsed).map(normalizeModelsDevApiProvider).filter((value): value is ModelsDevIndexProvider => value !== null)
-    const models = providers.flatMap((provider) => {
-      const rawProvider = parsed[provider.id]
-      if (!isRecord(rawProvider) || !isRecord(rawProvider.models)) return []
-      return Object.values(rawProvider.models).map((model) => normalizeModelsDevApiModel(model, provider.id)).filter((value): value is ModelsDevIndexModel => value !== null)
-    })
-    return { providers, models }
+  return {
+    providers: parsed.providers.filter(isModelsDevProvider),
+    models: parsed.models.filter(isModelsDevModel),
   }
-  throw new Error(`models.dev local index has unsupported shape: ${sourcePath}`)
 }
 
 export function buildModelGalleryFromModelsDevFile(sourcePath: string): ModelsDevGallery {
@@ -173,32 +164,6 @@ function isModelsDevProvider(value: unknown): value is ModelsDevIndexProvider {
     typeof value.modelCount === 'number' &&
     (value.iconURL === undefined || typeof value.iconURL === 'string')
   )
-}
-
-function normalizeModelsDevApiProvider(value: unknown): ModelsDevIndexProvider | null {
-  if (!isRecord(value) || typeof value.id !== 'string' || typeof value.name !== 'string') return null
-  const models = isRecord(value.models) ? value.models : {}
-  const provider: ModelsDevIndexProvider = { id: value.id, name: value.name, modelCount: Object.keys(models).length }
-  if (typeof value.iconURL === 'string') provider.iconURL = value.iconURL
-  return provider
-}
-
-function normalizeModelsDevApiModel(value: unknown, providerId: string): ModelsDevIndexModel | null {
-  if (!isRecord(value) || typeof value.id !== 'string') return null
-  const name = typeof value.name === 'string' ? value.name : value.id
-  const model: ModelsDevIndexModel = {
-    id: value.id,
-    name,
-    providerId,
-    flags: {
-      attachment: Boolean(value.attachment),
-      reasoning: Boolean(value.reasoning),
-      tool_call: Boolean(value.tool_call),
-    },
-  }
-  const updated = typeof value.last_updated === 'string' ? value.last_updated : typeof value.release_date === 'string' ? value.release_date : undefined
-  if (updated !== undefined) model.updated = updated
-  return model
 }
 
 function isModelsDevModel(value: unknown): value is ModelsDevIndexModel {
