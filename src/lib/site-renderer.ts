@@ -7,6 +7,9 @@ const css = String.raw`
 
 type ActivePage = 'home' | 'models'
 
+const expandedBrandFilterNames = new Set(['ByteDance', 'MoonshotAI', 'Xiaomi'])
+const collapsedBrandFilterNames = new Set(['Arcee AI', 'NVIDIA'])
+
 function page(title: string, body: string, activePage: ActivePage, headExtra = ''): string {
   return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(title)}</title>${headExtra}<style>${css}</style></head><body>${nav(activePage)}${body}<script>${copyModelTagScript()}</script>${footer()}</body></html>`
 }
@@ -33,14 +36,20 @@ function renderFilterGroups(gallery: ModelGallery): string {
 }
 
 function renderBrandFilterGroup(options: Array<{ label: string; value: string; count: number }>): string {
-  const visibleOptions = options.filter((option) => option.count > 5)
-  const groupedOptions = options.filter((option) => option.count > 0 && option.count <= 5)
+  const visibleOptions = options.filter((option) => option.count > 0 && shouldShowBrandFilter(option))
+  const groupedOptions = options.filter((option) => option.count > 0 && !shouldShowBrandFilter(option))
   const visibleRendered = visibleOptions.map((option) => renderFilterOption('brand', option)).join('')
   const groupedRendered = groupedOptions.map((option) => renderFilterOption('brand', option)).join('')
   const groupedCount = groupedOptions.reduce((sum, option) => sum + option.count, 0)
   const groupedBlock = groupedOptions.length > 0 ? `<details class="filterMore"><summary>更多厂牌（${groupedOptions.length} 个 / ${groupedCount} 个模型）</summary>${groupedRendered}</details>` : ''
 
   return `<div class="filterGroup"><div class="filterHead"><span>厂牌</span><span>⌄</span></div>${visibleRendered}${groupedBlock}</div>`
+}
+
+function shouldShowBrandFilter(option: { label: string; count: number }): boolean {
+  if (expandedBrandFilterNames.has(option.label)) return true
+  if (collapsedBrandFilterNames.has(option.label)) return false
+  return option.count > 5
 }
 
 function renderFilterOption(group: string, option: { label: string; value: string; count: number }): string {

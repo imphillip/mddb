@@ -65,27 +65,34 @@ describe('site renderer', () => {
   })
 
 
-  it('keeps large brand filters visible and hides <=5-model brands behind a disclosure', () => {
+  it('keeps large brand filters visible, supports curated overrides, and hides remaining small brands behind a disclosure', () => {
     const base = buildModelGallery()
     const gallery: ModelGallery = {
       ...base,
       brands: [
         { slug: 'large', name: 'LargeBrand', description: 'Large test brand', models: [...base.models, base.models[0]!] },
+        { slug: 'arcee-ai', name: 'Arcee AI', description: 'Collapsed large test brand', models: [...base.models, base.models[0]!] },
+        { slug: 'bytedance', name: 'ByteDance', description: 'Expanded small test brand', models: base.models.slice(0, 4) },
         { slug: 'medium', name: 'MediumBrand', description: 'Medium test brand', models: base.models.slice(0, 5) },
         { slug: 'small', name: 'SmallBrand', description: 'Small test brand', models: base.models.slice(0, 1) },
       ],
     }
     const html = renderModelsPage(gallery)
     const largeIndex = html.indexOf('<span>LargeBrand</span><small>6</small>')
-    const disclosureIndex = html.indexOf('<details class="filterMore"><summary>更多厂牌（2 个 / 6 个模型）</summary>')
+    const collapsedLargeIndex = html.indexOf('<span>Arcee AI</span><small>6</small>')
+    const expandedSmallIndex = html.indexOf('<span>ByteDance</span><small>4</small>')
+    const disclosureIndex = html.indexOf('<details class="filterMore"><summary>更多厂牌（3 个 / 12 个模型）</summary>')
     const mediumIndex = html.indexOf('<span>MediumBrand</span><small>5</small>')
     const smallIndex = html.indexOf('<span>SmallBrand</span><small>1</small>')
 
     expect(largeIndex).toBeGreaterThan(-1)
+    expect(expandedSmallIndex).toBeGreaterThan(-1)
     expect(disclosureIndex).toBeGreaterThan(-1)
+    expect(largeIndex).toBeLessThan(disclosureIndex)
+    expect(expandedSmallIndex).toBeLessThan(disclosureIndex)
+    expect(collapsedLargeIndex).toBeGreaterThan(disclosureIndex)
     expect(mediumIndex).toBeGreaterThan(disclosureIndex)
     expect(smallIndex).toBeGreaterThan(disclosureIndex)
-    expect(largeIndex).toBeLessThan(disclosureIndex)
   })
 
   it('removes internal page-specification prompts from public pages', () => {
