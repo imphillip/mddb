@@ -2,13 +2,18 @@ import { describe, expect, it } from 'vitest'
 import { renderHomePage, renderModelDetailPage, renderModelsPage } from './site-renderer.js'
 
 describe('site renderer', () => {
-  it('renders the requested primary navigation with model updates as home and model plaza as /models', () => {
+  it('renders the root page as an immediate redirect to the model plaza', () => {
     const html = renderHomePage()
 
     expect(html).toContain('mddb.dev')
-    expect(html).toContain('<a class="active" href="/">模型动态</a>')
-    expect(html).toContain('<a href="/models/">模型广场</a>')
-    expect(html).toContain('首页暂时留空')
+    expect(html).toContain('<meta http-equiv="refresh" content="0;url=/models/">')
+    expect(html).toContain('<link rel="canonical" href="/models/">')
+    expect(html).toContain('正在跳转到模型广场')
+    expect(html).toContain('href="/models/">进入模型广场</a>')
+    expect(html).toContain('<span class="disabled" aria-disabled="true">模型动态</span>')
+    expect(html).toContain('<a class="active" href="/models/">模型广场</a>')
+    expect(html).not.toContain('首页暂时留空')
+    expect(html).not.toContain('href="/">模型动态</a>')
     expect(html).not.toContain('Models</a>')
     expect(html).not.toContain('Providers</a>')
     expect(html).not.toContain('Pricing</a>')
@@ -19,8 +24,9 @@ describe('site renderer', () => {
     const html = renderModelsPage()
 
     expect(html).toContain('<html lang="zh-CN">')
-    expect(html).toContain('<a href="/">模型动态</a>')
+    expect(html).toContain('<span class="disabled" aria-disabled="true">模型动态</span>')
     expect(html).toContain('<a class="active" href="/models/">模型广场</a>')
+    expect(html).not.toContain('href="/">模型动态</a>')
     expect(html).toContain('<div class="filterTitle">筛选</div>')
     expect(html).toContain('<span>厂牌</span>')
     expect(html).toContain('<span>Anthropic</span><small>1</small>')
