@@ -72,6 +72,11 @@ export function parseOpenRouterOfficialPriceSet(args: {
   const warnings: string[] = []
   const rawPricing = { ...args.pricing }
 
+  const isFreeTierObservation = args.sourceModelKey.endsWith(':free')
+  if (isFreeTierObservation) {
+    warnings.push('free-tier-preserved-not-official-price')
+  }
+
   for (const [field, value] of Object.entries(args.pricing)) {
     if (value === undefined || value === null || value === '') continue
     if (field === 'discount') {
@@ -86,6 +91,12 @@ export function parseOpenRouterOfficialPriceSet(args: {
     const mapping = OPENROUTER_PRICE_FIELD_MAP[field]
     if (!mapping) {
       warnings.push(`unknown-pricing-field:${field}`)
+      continue
+    }
+    if (isFreeTierObservation || parsed === 0) {
+      if (!warnings.includes('free-tier-preserved-not-official-price')) {
+        warnings.push('free-tier-preserved-not-official-price')
+      }
       continue
     }
     components.push({
@@ -115,20 +126,16 @@ export function summarizeTokenPrice(components: PriceComponent[], scope: 'input'
 
 export function annotatePriceSetConditions(items: Array<{ priceSet: OfficialPriceSet; contextLength?: number | null }>): OfficialPriceSet[] {
   const contextLengths = new Set(items.map((item) => item.contextLength).filter((value): value is number => typeof value === 'number' && value > 0))
-  const hasFreeTier = items.some((item) => isFreeTierPriceSet(item.priceSet))
-  const hasPaidTier = items.some((item) => !isFreeTierPriceSet(item.priceSet))
   return items.map(({ priceSet, contextLength }) => {
-    const tierCondition: PriceCondition | null = hasFreeTier && hasPaidTier ? { key: 'tier', value: isFreeTierPriceSet(priceSet) ? 'free' : 'paid' } : null
     const contextCondition: PriceCondition | null = contextLengths.size > 1 && contextLength ? { key: 'context_length', value: String(contextLength) } : null
-    if (!tierCondition && !contextCondition) return priceSet
+    if (!contextCondition) return priceSet
     return {
       ...priceSet,
       components: priceSet.components.map((component) => ({
         ...component,
         conditions: [
           ...component.conditions,
-          ...(!tierCondition || hasCondition(component.conditions, tierCondition.key) ? [] : [tierCondition]),
-          ...(!contextCondition || hasCondition(component.conditions, contextCondition.key) ? [] : [contextCondition]),
+          ...(hasCondition(component.conditions, contextCondition.key) ? [] : [contextCondition]),
         ],
       })),
     }
@@ -155,10 +162,6 @@ export function detectUnexplainedPriceConflicts(priceSets: OfficialPriceSet[]): 
 
 function hasCondition(conditions: PriceCondition[], key: PriceCondition['key']): boolean {
   return conditions.some((condition) => condition.key === key)
-}
-
-function isFreeTierPriceSet(priceSet: OfficialPriceSet): boolean {
-  return priceSet.sourceModelKey.endsWith(':free') || (priceSet.components.length > 0 && priceSet.components.every((component) => component.amount === 0))
 }
 
 function parsePriceValue(value: unknown): number | null {

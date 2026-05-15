@@ -75,7 +75,7 @@ describe('pricing facts', () => {
     expect(detectUnexplainedPriceConflicts(annotated)).toEqual([])
   })
 
-  it('marks free route prices as tier conditions instead of unexplained conflicts', () => {
+  it('excludes free route prices from official price components while preserving raw observations', () => {
     const free = parseOpenRouterOfficialPriceSet({ modelTag: 'free-tier-model', sourceModelKey: 'provider/free-tier-model:free', sourceProvider: 'provider', pricing: { prompt: '0', completion: '0' } })
     const paid = parseOpenRouterOfficialPriceSet({ modelTag: 'free-tier-model', sourceModelKey: 'provider/free-tier-model', sourceProvider: 'provider', pricing: { prompt: '0.000001', completion: '0.000002' } })
     const annotated = annotatePriceSetConditions([
@@ -83,8 +83,11 @@ describe('pricing facts', () => {
       { priceSet: paid, contextLength: 128000 },
     ])
 
-    expect(annotated[0]?.components[0]?.conditions).toEqual([{ key: 'tier', value: 'free' }])
-    expect(annotated[1]?.components[0]?.conditions).toEqual([{ key: 'tier', value: 'paid' }])
+    expect(free.components).toEqual([])
+    expect(free.rawPricing).toEqual({ prompt: '0', completion: '0' })
+    expect(free.warnings).toContain('free-tier-preserved-not-official-price')
+    expect(annotated[0]?.components).toEqual([])
+    expect(annotated[1]?.components[0]?.conditions).toEqual([])
     expect(detectUnexplainedPriceConflicts(annotated)).toEqual([])
   })
 })
