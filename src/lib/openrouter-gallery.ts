@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from 'node:fs'
 import type { Brand, ModelDetail, ModelGallery, ModelMetaItem, ModelSummary, ModelVariant, ProviderDeployment } from './model-catalog.js'
 import { brandDescription, importOpenRouterModels, type OpenRouterCatalog, type OpenRouterModelRecord, type OpenRouterModelsResponse } from './openrouter-importer.js'
+import { annotatePriceSetConditions, detectUnexplainedPriceConflicts } from './pricing.js'
 
 export type OpenRouterGallery = ModelGallery & {
   details: ModelDetail[]
@@ -76,6 +77,8 @@ function toModelDetail(tag: string, records: OpenRouterModelRecord[]): ModelDeta
   const variants = buildVariants(records)
   const providerNames = Array.from(new Set(records.map((record) => record.brand.name))).sort()
   const releasedAt = best.metadata.created ? new Date(best.metadata.created * 1000).toISOString().slice(0, 10) : '—'
+  const officialPriceSets = annotatePriceSetConditions(records.map((record) => ({ priceSet: record.officialPriceSet, contextLength: record.metadata.contextLength })))
+  const priceWarnings = detectUnexplainedPriceConflicts(officialPriceSets)
   return {
     tag,
     route: `/models/${tag}`,
@@ -94,8 +97,8 @@ function toModelDetail(tag: string, records: OpenRouterModelRecord[]): ModelDeta
     apiIdentifier: best.sourceModelId,
     variants,
     benchmarks: [],
-    meta: buildMetaItems(best, records),
-    officialPriceSets: records.map((record) => record.officialPriceSet),
+    meta: [...buildMetaItems(best, records), ...(priceWarnings.length > 0 ? [{ label: '价格审核提示', value: priceWarnings }] : [])],
+    officialPriceSets,
   }
 }
 

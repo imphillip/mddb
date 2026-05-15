@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { detectUnexplainedPriceConflicts, parseOpenRouterOfficialPriceSet, summarizeTokenPrice } from './pricing.js'
+import { annotatePriceSetConditions, detectUnexplainedPriceConflicts, parseOpenRouterOfficialPriceSet, summarizeTokenPrice } from './pricing.js'
 
 describe('pricing facts', () => {
   it('converts OpenRouter per-token prices to per-1M official token components', () => {
@@ -60,5 +60,31 @@ describe('pricing facts', () => {
     const second = parseOpenRouterOfficialPriceSet({ modelTag: 'same-model', sourceModelKey: 'b/same-model', sourceProvider: 'b', pricing: { prompt: '0.000002' } })
 
     expect(detectUnexplainedPriceConflicts([first, second])).toEqual(['unexplained-price-conflict:same-model:token:input'])
+  })
+
+  it('does not flag same-tag price differences explained by context length conditions', () => {
+    const shortContext = parseOpenRouterOfficialPriceSet({ modelTag: 'context-priced-model', sourceModelKey: 'provider/context-priced-model-128k', sourceProvider: 'provider', pricing: { prompt: '0.000001' } })
+    const longContext = parseOpenRouterOfficialPriceSet({ modelTag: 'context-priced-model', sourceModelKey: 'provider/context-priced-model-1m', sourceProvider: 'provider', pricing: { prompt: '0.000002' } })
+    const annotated = annotatePriceSetConditions([
+      { priceSet: shortContext, contextLength: 128000 },
+      { priceSet: longContext, contextLength: 1000000 },
+    ])
+
+    expect(annotated[0]?.components[0]?.conditions).toEqual([{ key: 'context_length', value: '128000' }])
+    expect(annotated[1]?.components[0]?.conditions).toEqual([{ key: 'context_length', value: '1000000' }])
+    expect(detectUnexplainedPriceConflicts(annotated)).toEqual([])
+  })
+
+  it('marks free route prices as tier conditions instead of unexplained conflicts', () => {
+    const free = parseOpenRouterOfficialPriceSet({ modelTag: 'free-tier-model', sourceModelKey: 'provider/free-tier-model:free', sourceProvider: 'provider', pricing: { prompt: '0', completion: '0' } })
+    const paid = parseOpenRouterOfficialPriceSet({ modelTag: 'free-tier-model', sourceModelKey: 'provider/free-tier-model', sourceProvider: 'provider', pricing: { prompt: '0.000001', completion: '0.000002' } })
+    const annotated = annotatePriceSetConditions([
+      { priceSet: free, contextLength: 128000 },
+      { priceSet: paid, contextLength: 128000 },
+    ])
+
+    expect(annotated[0]?.components[0]?.conditions).toEqual([{ key: 'tier', value: 'free' }])
+    expect(annotated[1]?.components[0]?.conditions).toEqual([{ key: 'tier', value: 'paid' }])
+    expect(detectUnexplainedPriceConflicts(annotated)).toEqual([])
   })
 })

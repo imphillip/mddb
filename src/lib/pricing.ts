@@ -113,6 +113,28 @@ export function summarizeTokenPrice(components: PriceComponent[], scope: 'input'
   return component ? `$${formatNumber(component.amount)} / 1M` : '—'
 }
 
+export function annotatePriceSetConditions(items: Array<{ priceSet: OfficialPriceSet; contextLength?: number | null }>): OfficialPriceSet[] {
+  const contextLengths = new Set(items.map((item) => item.contextLength).filter((value): value is number => typeof value === 'number' && value > 0))
+  const hasFreeTier = items.some((item) => isFreeTierPriceSet(item.priceSet))
+  const hasPaidTier = items.some((item) => !isFreeTierPriceSet(item.priceSet))
+  return items.map(({ priceSet, contextLength }) => {
+    const tierCondition: PriceCondition | null = hasFreeTier && hasPaidTier ? { key: 'tier', value: isFreeTierPriceSet(priceSet) ? 'free' : 'paid' } : null
+    const contextCondition: PriceCondition | null = contextLengths.size > 1 && contextLength ? { key: 'context_length', value: String(contextLength) } : null
+    if (!tierCondition && !contextCondition) return priceSet
+    return {
+      ...priceSet,
+      components: priceSet.components.map((component) => ({
+        ...component,
+        conditions: [
+          ...component.conditions,
+          ...(!tierCondition || hasCondition(component.conditions, tierCondition.key) ? [] : [tierCondition]),
+          ...(!contextCondition || hasCondition(component.conditions, contextCondition.key) ? [] : [contextCondition]),
+        ],
+      })),
+    }
+  })
+}
+
 export function detectUnexplainedPriceConflicts(priceSets: OfficialPriceSet[]): string[] {
   const seen = new Map<string, PriceComponent>()
   const warnings: string[] = []
@@ -129,6 +151,14 @@ export function detectUnexplainedPriceConflicts(priceSets: OfficialPriceSet[]): 
     }
   }
   return Array.from(new Set(warnings))
+}
+
+function hasCondition(conditions: PriceCondition[], key: PriceCondition['key']): boolean {
+  return conditions.some((condition) => condition.key === key)
+}
+
+function isFreeTierPriceSet(priceSet: OfficialPriceSet): boolean {
+  return priceSet.sourceModelKey.endsWith(':free') || (priceSet.components.length > 0 && priceSet.components.every((component) => component.amount === 0))
 }
 
 function parsePriceValue(value: unknown): number | null {
