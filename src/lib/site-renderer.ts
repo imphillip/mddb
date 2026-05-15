@@ -1,10 +1,11 @@
 import { buildModelGallery, getModelDetail, type ModelDetail, type ModelGallery, type ModelMetaItem, type ModelSummary, type ModelVariant } from './model-catalog.js'
+import { normalizeModelTagCandidate, stripSnapshotSuffix } from './model-normalization.js'
 
 const css = String.raw`
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap');
 :root{--bg:#fff;--fg:#171717;--muted:#666;--soft:#fafafa;--line:#eaeaea;--line2:#f2f2f2;--blue:#2563eb;--green:#0a7f42;--shadow:rgba(0,0,0,.06) 0 1px 2px,rgba(0,0,0,.04) 0 6px 20px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:Geist,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-feature-settings:'liga'}a{color:inherit;text-decoration:none}.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{height:60px;max-width:1360px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:22px}.brandmark{font-weight:600;letter-spacing:-.4px;display:flex;align-items:center;gap:10px}.brandZh{color:#666;font-weight:500;letter-spacing:0;font-size:14px;border-left:1px solid var(--line);padding-left:10px}.logo{width:22px;height:22px;border-radius:7px;background:#171717;display:inline-grid;place-items:center;color:#fff}.logo svg{width:15px;height:15px;display:block}.topSearch{width:260px;height:34px;border:1px solid var(--line);border-radius:999px;background:#fafafa;color:#7a7a7a;display:flex;align-items:center;gap:8px;padding:0 13px;font-size:13px}.navlinks{display:flex;gap:20px;margin-left:auto;font-size:14px;color:#555}.navlinks a,.navlinks span{padding:20px 0 18px;border-bottom:2px solid transparent}.navlinks a.active{color:#111;border-bottom-color:#111}.navlinks .disabled{color:#aaa;cursor:not-allowed;pointer-events:none;border-bottom-color:transparent}.githubLink{width:34px;height:34px;border:1px solid var(--line);border-radius:999px;display:inline-grid;place-items:center;color:#555;background:#fff}.githubLink:hover{color:#111;border-color:#cfcfcf;background:#fafafa}.githubLink svg{width:18px;height:18px;display:block}.wrap{max-width:1180px;margin:0 auto;padding:0 24px}.homeEmpty{min-height:calc(100vh - 60px);display:grid;place-items:center;text-align:center}.homeEmpty h1{font-size:52px;line-height:1;letter-spacing:-2.4px;margin:12px 0}.homeEmpty p{color:var(--muted);font-size:16px}.eyebrow{font:500 12px 'Geist Mono',ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;color:#777}.modelsShell{max-width:1360px;margin:0 auto;display:grid;grid-template-columns:268px minmax(0,1fr);min-height:calc(100vh - 60px)}.filterPanel{border-right:1px solid var(--line);padding:28px 18px 48px;background:#fff}.filterTitle{font-size:13px;font-weight:600;margin:0 0 12px;color:#333}.filterGroup{border-bottom:1px solid var(--line2);padding:14px 0}.filterHead{display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:500}.filterMore{margin-top:6px}.filterMore summary{cursor:pointer;color:#666;font-size:13px;padding:8px 0;list-style:none}.filterMore summary::-webkit-details-marker{display:none}.filterMore summary::after{content:'展开';float:right;color:#999}.filterMore[open] summary::after{content:'收起'}.filterMore[open] summary{color:#333}.filterOption{display:flex;align-items:center;gap:9px;padding:8px 0;color:#555;font-size:14px}.filterLogo{width:18px;height:18px;border:1px solid var(--line);border-radius:5px;background:#fff;display:inline-grid;place-items:center;flex:0 0 auto;font-size:10px;font-weight:600;color:#555;overflow:hidden}.filterLogo img{max-width:13px;max-height:13px}.check{width:16px;height:16px;border:1px solid #cfcfcf;border-radius:4px;display:inline-grid;place-items:center;font-size:11px;color:#fff}.check.on{background:#111;border-color:#111}.mainPanel{padding:30px 32px 80px;overflow:hidden}.plazaHead{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:22px}.plazaHead h1{font-size:38px;letter-spacing:-1.6px;margin:0}.controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.modelSearch{width:260px;height:38px;border:1px solid var(--line);border-radius:8px;padding:0 12px;font:14px inherit}.btn{height:38px;border:1px solid var(--line);border-radius:8px;background:#fff;padding:0 12px;font-weight:500;color:#333}.iconBtn{width:38px;padding:0}.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:8px;overflow:auto}.tab{display:flex;gap:6px;align-items:center;padding:12px 10px 10px;border-bottom:2px solid transparent;color:#666;font-size:14px;white-space:nowrap}.tab.active{color:#111;border-bottom-color:#111}.tab b{font-weight:500}.tableWrap{overflow:auto}.modelTable{width:100%;border-collapse:collapse;min-width:720px}.modelTable th{text-align:left;color:#777;font-size:12px;font-weight:500;padding:13px 12px;border-bottom:1px solid var(--line);white-space:nowrap}.modelTable td{padding:16px 12px;border-bottom:1px solid var(--line2);vertical-align:middle;font-size:14px}.modelName{display:flex;align-items:center;gap:11px;min-width:270px}.modelIcon{width:28px;height:28px;border-radius:8px;border:1px solid var(--line);background:#fafafa;display:grid;place-items:center;font-weight:600;font-size:13px;overflow:hidden}.modelIcon img{max-width:20px;max-height:20px}.providerIcon{width:22px;height:22px;border-radius:6px;border:1px solid var(--line);background:#fff;display:inline-grid;place-items:center;vertical-align:middle;margin-right:8px;overflow:hidden;font-size:11px}.providerIcon img{max-width:16px;max-height:16px}.modelLink{font-weight:500}.modelLink:hover{text-decoration:underline;text-underline-offset:3px}.modelSub{color:#777;font-size:12px;margin-top:4px}.modelTagCopy{display:inline-flex;align-items:center;gap:6px;color:#555}.modelTagCopy code{background:#f5f5f5;border:1px solid var(--line);border-radius:6px;padding:2px 6px;font-size:11px}.copyTagBtn{border:1px solid var(--line);border-radius:999px;background:#fff;color:#555;padding:2px 7px;font:500 11px Geist,system-ui,sans-serif;cursor:pointer}.copyTagBtn:hover{border-color:#cfcfcf;color:#111;background:#fafafa}.pill{display:inline-flex;align-items:center;border-radius:999px;background:#f5f7ff;color:#1d4ed8;padding:2px 8px;font-size:12px;font-weight:500}.mono{font-family:'Geist Mono',ui-monospace,monospace}.muted{color:var(--muted)}.detailHero{border-bottom:1px solid var(--line);padding:64px 0 36px;background:linear-gradient(180deg,#fafafa,#fff)}.detailHero h1{font-size:54px;line-height:1;letter-spacing:-2.4px;margin:12px 0}.detailHero p{max-width:760px;color:#4d4d4d;line-height:1.7;font-size:18px}.detailGrid{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:28px;padding-top:38px;padding-bottom:80px}.toc{display:flex;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding:16px 0;margin-bottom:24px}.toc a{font-size:14px;color:#666}.toc a:hover{color:#171717}.panel{box-shadow:var(--shadow);border:1px solid var(--line);border-radius:12px;background:#fff;padding:22px;margin-bottom:16px}.panel h2{font-size:28px;letter-spacing:-1px;margin:0 0 12px}.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0}.metabox{background:#fafafa;border-radius:8px;padding:10px;border:1px solid var(--line)}.metabox span{display:block;color:#808080;font-size:11px;text-transform:uppercase}.metabox b{font-size:13px;overflow-wrap:anywhere}.metaWide{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.providerRow,.variant{border-top:1px solid var(--line);padding:16px 0}.providerRow:first-of-type,.variant:first-of-type{border-top:0}.rowTop{display:flex;align-items:center;justify-content:space-between;gap:12px}.providers{font-size:13px;color:#4d4d4d;line-height:1.5}.providers strong{color:#171717}.priceGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.apiBox{background:#171717;color:#fff;border-radius:10px;padding:16px;font-family:'Geist Mono',monospace;font-size:13px;overflow:auto}.footer{border-top:1px solid var(--line);padding:28px 24px;color:#666;font-size:13px}@media(max-width:900px){.topSearch{display:none}.navlinks{gap:14px}.modelsShell,.detailGrid{grid-template-columns:1fr}.filterPanel{border-right:0;border-bottom:1px solid var(--line)}.plazaHead{align-items:flex-start;flex-direction:column}.modelSearch{width:100%}.meta{grid-template-columns:1fr}.detailHero h1{font-size:42px}}
 
-.databaseDetail{align-items:start}.detailHeroCompact{padding:52px 0 30px}.summaryStrip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:24px;max-width:900px}.summaryStrip div{border:1px solid var(--line);border-radius:14px;background:#fff;padding:14px 16px;box-shadow:var(--shadow)}.summaryStrip span{display:block;color:#777;font-size:12px;margin-bottom:4px}.summaryStrip b{font-size:18px;letter-spacing:-.3px}.priorityPanel{border-color:#dbe7ff;background:linear-gradient(180deg,#fbfdff,#fff)}.subtlePanel{background:#fcfcfc}.stickyCard{position:sticky;top:82px}.availabilityGrid{display:flex;flex-wrap:wrap;gap:8px}.providerChip{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:#fafafa;padding:7px 11px;font-size:13px;color:#333;line-height:1}.providerCloud{line-height:1.8}.sourceList{display:grid;gap:8px;margin-top:14px}.sourceItem{display:flex;justify-content:space-between;gap:14px;border:1px solid var(--line);border-radius:10px;padding:12px;background:#fafafa}.sourceItem span{color:#666;font-size:13px}.reviewList{margin:0;padding-left:18px;color:#555;line-height:1.7}.specVariant{border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0;background:#fff}.specVariant+.specVariant{border-top:1px solid var(--line)}.moreBlock{margin-top:12px;border:1px dashed var(--line);border-radius:12px;padding:12px;background:#fcfcfc}.moreBlock summary{cursor:pointer;color:#555;font-weight:500}.modelTable th{background:#fafafa}.modelTable td,.modelTable th{line-height:1.45}.modelTable td:nth-child(3){text-align:right}.copyTagBtn svg{width:13px;height:13px;display:block}.copyTagBtn.copied{width:auto;padding:2px 7px}@media(max-width:900px){.summaryStrip{grid-template-columns:repeat(2,1fr)}.stickyCard{position:static}.sourceItem{display:block}.sourceItem span{display:block;margin-top:4px}}
+.detailSingle{display:block;max-width:980px;padding-top:38px;padding-bottom:80px}.backToPlaza{display:inline-flex;margin-bottom:22px}.priceVariantGrid{display:grid;gap:14px}.priceVariantCard{border:1px solid var(--line);border-radius:14px;background:#fff;padding:16px}.priceVariantCard+.priceVariantCard{margin-top:0}.detailHeroCompact{padding:52px 0 30px}.summaryStrip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:24px;max-width:900px}.summaryStrip div{border:1px solid var(--line);border-radius:14px;background:#fff;padding:14px 16px;box-shadow:var(--shadow)}.summaryStrip span{display:block;color:#777;font-size:12px;margin-bottom:4px}.summaryStrip b{font-size:18px;letter-spacing:-.3px}.priorityPanel{border-color:#dbe7ff;background:linear-gradient(180deg,#fbfdff,#fff)}.subtlePanel{background:#fcfcfc}.stickyCard{position:sticky;top:82px}.availabilityGrid{display:flex;flex-wrap:wrap;gap:8px}.providerChip{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:#fafafa;padding:7px 11px;font-size:13px;color:#333;line-height:1}.providerCloud{line-height:1.8}.sourceList{display:grid;gap:8px;margin-top:14px}.sourceItem{display:flex;justify-content:space-between;gap:14px;border:1px solid var(--line);border-radius:10px;padding:12px;background:#fafafa}.sourceItem span{color:#666;font-size:13px}.reviewList{margin:0;padding-left:18px;color:#555;line-height:1.7}.specVariant{border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0;background:#fff}.specVariant+.specVariant{border-top:1px solid var(--line)}.moreBlock{margin-top:12px;border:1px dashed var(--line);border-radius:12px;padding:12px;background:#fcfcfc}.moreBlock summary{cursor:pointer;color:#555;font-weight:500}.modelTable th{background:#fafafa}.modelTable td,.modelTable th{line-height:1.45}.modelTable td:nth-child(3){text-align:right}.copyTagBtn svg{width:13px;height:13px;display:block}.copyTagBtn.copied{width:auto;padding:2px 7px}@media(max-width:900px){.summaryStrip{grid-template-columns:repeat(2,1fr)}.stickyCard{position:static}.sourceItem{display:block}.sourceItem span{display:block;margin-top:4px}}
 `
 
 type ActivePage = 'home' | 'models'
@@ -76,13 +77,8 @@ export function renderModelDetailPage(tag: string, details?: ModelDetail[]): str
     return page('模型未找到 · mddb.dev', `<main class="wrap" style="padding:80px 24px"><h1>模型未找到</h1><p class="muted">没有找到 ${escapeHtml(tag)}。</p></main>`, 'models')
   }
 
-  const providerNames = uniqueProviderNames(model)
-  const variantLimit = 6
-  const visibleVariants = model.variants.slice(0, variantLimit)
-  const hiddenVariantCount = Math.max(0, model.variants.length - visibleVariants.length)
-  const variantsHtml = visibleVariants.map(renderVariant).join('') || '<p class="muted">暂无需要单独展示的规格差异。</p>'
-  const hiddenVariantsHtml = hiddenVariantCount > 0 ? `<details class="moreBlock"><summary>展开其余 ${hiddenVariantCount} 条来源观测 / 规格记录</summary>${model.variants.slice(variantLimit).map(renderVariant).join('')}</details>` : ''
-  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn" href="/models/">← 返回模型列表</a><div class="eyebrow">${escapeHtml(model.brand.name)} / ${renderModelTagCopy(model.tag)}</div><h1>${escapeHtml(model.name)}</h1><p>${escapeHtml(model.longDescription)}</p><div class="summaryStrip"><div><span>输入价格</span><b>${escapeHtml(model.inputPrice)}</b></div><div><span>输出价格</span><b>${escapeHtml(model.outputPrice)}</b></div><div><span>上下文</span><b>${escapeHtml(model.contextWindow)}</b></div><div><span>可用来源</span><b>${providerNames.length}</b></div></div></div></section><div class="wrap detailGrid databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#identity">模型身份</a><a href="#pricing">官方价格</a><a href="#specs">模型规格</a><a href="#variants">规格差异</a><a href="#availability">可用来源</a><a href="#sources">数据来源</a><a href="#review">数据审核</a><a href="#api">mddb API</a></nav><section id="identity" class="panel"><h2>模型身份</h2><p class="muted">${escapeHtml(model.description)}</p><div class="meta"><div class="metabox"><span>规范标签</span><b>${renderModelTagCopy(model.tag)}</b></div><div class="metabox"><span>显示名称</span><b>${escapeHtml(model.name)}</b></div><div class="metabox"><span>厂牌</span><b>${escapeHtml(model.brand.name)}</b></div><div class="metabox"><span>发布日期</span><b>${escapeHtml(formatDate(model.releasedAt))}</b></div></div></section><section id="pricing" class="panel priorityPanel"><h2>官方价格</h2><p class="muted">只展示官方原价与可解释规格条件；free tier、临时促销、有效加权价格只保留为来源观测，不进入官方价格事实。</p><div class="priceGrid"><div class="metabox"><span>输入价格摘要</span><b>${escapeHtml(model.inputPrice)}</b></div><div class="metabox"><span>输出价格摘要</span><b>${escapeHtml(model.outputPrice)}</b></div><div class="metabox"><span>上下文</span><b>${escapeHtml(model.contextWindow)}</b></div><div class="metabox"><span>价格记录</span><b>${model.officialPriceSets.length}</b></div></div>${renderOfficialPricing(model)}</section><section id="specs" class="panel"><h2>模型规格</h2>${renderModelSpecs(model)}</section><section id="variants" class="panel"><h2>规格差异</h2><p class="muted">只有上下文、价格、模态、输出限制或能力不同的记录才作为规格差异展示；单纯 provider 不同不会拆成变体。</p>${variantsHtml}${hiddenVariantsHtml}</section><section id="availability" class="panel"><h2>可用来源</h2><p class="muted">只列出 provider 可用性；除非上下文、价格或能力不同，否则 provider 不构成模型变体。</p>${renderProviders(model)}</section><section id="sources" class="panel"><h2>数据来源</h2>${renderSourceSummary(model)}</section><section id="review" class="panel"><h2>数据审核</h2>${renderReviewSummary(model)}</section><section id="benchmarks" class="panel subtlePanel"><h2>评测</h2>${model.benchmarks.length > 0 ? model.benchmarks.map((b) => `<div class="providerRow"><div class="rowTop"><strong>${escapeHtml(b.name)}</strong><span class="pill">${escapeHtml(b.score)}</span></div><p class="muted">${escapeHtml(b.note)}</p></div>`).join('') : '<p class="muted">暂无结构化评测数据。</p>'}</section><section id="api" class="panel"><h2>mddb API</h2><p class="muted">这是 mddb.dev 的模型数据库记录，不是模型调用接口。</p><div class="apiBox">GET /models/${escapeHtml(model.tag)}<br>{<br>&nbsp;&nbsp;"modelTag": "${escapeHtml(model.tag)}",<br>&nbsp;&nbsp;"officialPriceSets": ${model.officialPriceSets.length},<br>&nbsp;&nbsp;"specVariants": ${model.variants.length}<br>}</div></section></article><aside><div class="panel stickyCard"><h2>核心事实</h2><div class="priceGrid"><div class="metabox"><span>输入</span><b>${escapeHtml(model.inputPrice)}</b></div><div class="metabox"><span>输出</span><b>${escapeHtml(model.outputPrice)}</b></div><div class="metabox"><span>上下文</span><b>${escapeHtml(model.contextWindow)}</b></div><div class="metabox"><span>来源</span><b>${providerNames.length}</b></div></div></div><div class="panel"><h2>可用来源</h2>${renderProviderChips(providerNames)}</div></aside></div></main>`
+  const visibleSpecVariants = displayableVariants(model).filter((variant) => isSnapshotVariant(variant) && !hasPriceDifference(model, variant))
+  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/models/">← 返回模型广场</a><div class="eyebrow">${escapeHtml(model.brand.name)} / ${renderModelTagCopy(model.tag)}</div><h1>${escapeHtml(model.name)}</h1><div class="summaryStrip"><div><span>输入价格</span><b>${escapeHtml(model.inputPrice)}</b></div><div><span>输出价格</span><b>${escapeHtml(model.outputPrice)}</b></div><div><span>上下文</span><b>${escapeHtml(model.contextWindow)}</b></div><div><span>Alias</span><b>${aliasValues(model).length}</b></div></div></div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#specs">模型规格</a><a href="#snapshots">Snapshot 规格差异</a><a href="#pricing">价格</a></nav><section id="specs" class="panel"><h2>模型规格</h2>${renderModelSpecs(model)}</section><section id="snapshots" class="panel subtlePanel"><h2>Snapshot 规格差异</h2>${renderSnapshotSpecs(model, visibleSpecVariants)}</section><section id="pricing" class="panel priorityPanel"><h2>价格</h2>${renderPricingGroups(model)}</section></article></div></main>`
   return page(`${model.name} · mddb.dev`, body, 'models')
 }
 
@@ -93,14 +89,120 @@ function uniqueProviderNames(model: ModelDetail): string[] {
 function renderModelSpecs(model: ModelDetail): string {
   const meta = new Map(model.meta.map((item) => [item.label, formatMetaValue(item.value)]))
   const specItems: Array<[string, string]> = [
+    ['规范标签', model.tag],
+    ['Alias', joinChinese(aliasValues(model)) || '—'],
+    ['显示名称', model.name],
+    ['厂牌', model.brand.name],
+    ['发布日期', formatDate(model.releasedAt)],
     ['上下文窗口', model.contextWindow],
     ['输入模态', meta.get('输入模态') ?? joinChinese(model.modalities)],
     ['输出模态', meta.get('输出模态') ?? '—'],
     ['API 标识符', model.apiIdentifier],
-    ['价格摘要', `${model.inputPrice} / ${model.outputPrice}`],
-    ['规格差异数', String(model.variants.length)],
+    ['最大输出 token', meta.get('最大输出 token') ?? meta.get('单请求 completion 限制') ?? '—'],
+    ['支持参数', meta.get('支持参数') ?? '—'],
   ]
-  return `<div class="meta metaWide">${specItems.map(([label, value]) => `<div class="metabox"><span>${escapeHtml(label)}</span><b>${escapeHtml(value)}</b></div>`).join('')}</div>`
+  return `<div class="meta metaWide">${specItems.map(([label, value]) => `<div class="metabox"><span>${escapeHtml(label)}</span><b>${label === '规范标签' ? renderModelTagCopy(value) : escapeHtml(value)}</b></div>`).join('')}</div>`
+}
+
+function aliasValues(model: ModelDetail): string[] {
+  const labels = new Set(['OpenRouter 别名', '浮动别名', '模型别名/ID', 'Alias', '别名'])
+  const aliases = model.meta
+    .filter((item) => labels.has(item.label))
+    .flatMap((item) => Array.isArray(item.value) ? item.value : item.value.split(/\s*[、,]\s*/))
+    .map((value) => value.trim())
+    .filter((value) => value && value !== '—' && value !== model.tag && value !== model.apiIdentifier)
+  if (model.apiIdentifier && model.apiIdentifier !== model.tag) aliases.push(model.apiIdentifier)
+  return Array.from(new Set(aliases)).sort()
+}
+
+function renderSnapshotSpecs(model: ModelDetail, variants: ModelVariant[]): string {
+  if (variants.length === 0) return '<p class="muted">暂无只影响规格的 snapshot 差异。</p>'
+  return variants.map((variant) => `<div class="variant specVariant"><div class="rowTop"><div><strong>${escapeHtml(variant.name)}</strong><p class="muted">${escapeHtml(variant.summary)}</p></div></div><div class="meta"><div class="metabox"><span>上下文</span><b>${escapeHtml(variant.contextWindow)}</b></div><div class="metabox"><span>输入价格</span><b>${escapeHtml(variant.inputPrice)}</b></div><div class="metabox"><span>输出价格</span><b>${escapeHtml(variant.outputPrice)}</b></div></div><p class="providers"><strong>差异</strong><br>${escapeHtml(joinChinese(meaningfulDifferences(variant)))}</p></div>`).join('')
+}
+
+function renderPricingGroups(model: ModelDetail): string {
+  const { mainSets, variantSets } = splitPriceSets(model)
+  const variants = displayableVariants(model).filter((variant) => hasPriceDifference(model, variant) || !isSnapshotVariant(variant))
+  const cards = [
+    renderMainPriceCard(model, mainSets),
+    ...variantSets.map((group) => renderPriceSetVariantCard(group)),
+    ...variants.map((variant) => renderPriceVariantCard(model, variant)),
+  ]
+  return `<div class="priceVariantGrid"><div class="muted">价格差异</div>${cards.join('')}</div>`
+}
+
+function splitPriceSets(model: ModelDetail): { mainSets: ModelDetail['officialPriceSets']; variantSets: Array<{ name: string; sets: ModelDetail['officialPriceSets'] }> } {
+  const mainSets: ModelDetail['officialPriceSets'] = []
+  const variantMap = new Map<string, ModelDetail['officialPriceSets']>()
+  for (const priceSet of model.officialPriceSets) {
+    if (isSnapshotPriceSetKey(priceSet.sourceModelKey)) {
+      continue
+    }
+    if (isMainPriceSet(model, priceSet)) {
+      mainSets.push(priceSet)
+    } else {
+      const name = priceSet.sourceModelKey.replace(/^[^/]+\//, '')
+      const current = variantMap.get(name)
+      if (current === undefined) variantMap.set(name, [priceSet])
+      else current.push(priceSet)
+    }
+  }
+  return { mainSets, variantSets: Array.from(variantMap.entries()).map(([name, sets]) => ({ name, sets })) }
+}
+
+function isMainPriceSet(model: ModelDetail, priceSet: ModelDetail['officialPriceSets'][number]): boolean {
+  const key = priceSet.sourceModelKey.replace(/^[^/]+\//, '')
+  const api = model.apiIdentifier.replace(/^[^/]+\//, '')
+  return key === model.tag || key === api || key.endsWith(`/${model.tag}`) || key.endsWith(`/${api}`)
+}
+
+function renderMainPriceCard(model: ModelDetail, priceSets: ModelDetail['officialPriceSets'] = model.officialPriceSets): string {
+  return `<div class="priceVariantCard"><div class="rowTop"><div><strong>标准价格</strong><p class="muted">${escapeHtml(model.name)} 主记录</p></div></div><div class="priceGrid"><div class="metabox"><span>输入</span><b>${escapeHtml(model.inputPrice)}</b></div><div class="metabox"><span>输出</span><b>${escapeHtml(model.outputPrice)}</b></div><div class="metabox"><span>上下文</span><b>${escapeHtml(model.contextWindow)}</b></div><div class="metabox"><span>价格记录</span><b>${priceSets.length}</b></div></div>${renderOfficialPricing(priceSets)}</div>`
+}
+
+function renderPriceSetVariantCard(group: { name: string; sets: ModelDetail['officialPriceSets'] }): string {
+  const components = group.sets.flatMap((set) => set.components)
+  const input = components.find((component) => component.scope === 'input')
+  const output = components.find((component) => component.scope === 'output')
+  return `<div class="priceVariantCard"><div class="rowTop"><div><strong>${escapeHtml(group.name)}</strong><p class="muted">价格差异</p></div></div><div class="priceGrid"><div class="metabox"><span>输入</span><b>${input ? escapeHtml(formatMoney(input.amount)) + ' / 1M' : '—'}</b></div><div class="metabox"><span>输出</span><b>${output ? escapeHtml(formatMoney(output.amount)) + ' / 1M' : '—'}</b></div><div class="metabox"><span>价格记录</span><b>${group.sets.length}</b></div></div>${renderOfficialPricing(group.sets)}</div>`
+}
+
+function renderPriceVariantCard(model: ModelDetail, variant: ModelVariant): string {
+  const label = hasPriceDifference(model, variant) ? '价格差异' : '规格/部署差异'
+  return `<div class="priceVariantCard"><div class="rowTop"><div><strong>${escapeHtml(variant.name)}</strong><p class="muted">${escapeHtml(label)}</p></div></div><div class="priceGrid"><div class="metabox"><span>输入</span><b>${escapeHtml(variant.inputPrice)}</b></div><div class="metabox"><span>输出</span><b>${escapeHtml(variant.outputPrice)}</b></div><div class="metabox"><span>上下文</span><b>${escapeHtml(variant.contextWindow)}</b></div><div class="metabox"><span>差异</span><b>${escapeHtml(joinChinese(meaningfulDifferences(variant)) || '—')}</b></div></div></div>`
+}
+
+function displayableVariants(model: ModelDetail): ModelVariant[] {
+  return model.variants.filter((variant) => !isSameAsMainRecord(model, variant))
+}
+
+function isSameAsMainRecord(model: ModelDetail, variant: ModelVariant): boolean {
+  return normalizeComparable(model.contextWindow) === normalizeComparable(variant.contextWindow)
+    && normalizeComparable(model.inputPrice) === normalizeComparable(variant.inputPrice)
+    && normalizeComparable(model.outputPrice) === normalizeComparable(variant.outputPrice)
+    && meaningfulDifferences(variant).length === 0
+}
+
+function hasPriceDifference(model: ModelDetail, variant: ModelVariant): boolean {
+  return normalizeComparable(model.inputPrice) !== normalizeComparable(variant.inputPrice)
+    || normalizeComparable(model.outputPrice) !== normalizeComparable(variant.outputPrice)
+}
+
+function isSnapshotPriceSetKey(sourceModelKey: string): boolean {
+  const key = sourceModelKey.split(':').pop() ?? sourceModelKey
+  return stripSnapshotSuffix(normalizeModelTagCandidate(key)).snapshot !== null
+}
+
+function isSnapshotVariant(variant: ModelVariant): boolean {
+  return variant.id.includes('snapshot') || variant.id.includes('202') || variant.differences.some((difference) => /快照|snapshot|20\d{6}|20\d{2}-\d{2}-\d{2}/i.test(difference))
+}
+
+function meaningfulDifferences(variant: ModelVariant): string[] {
+  return variant.differences.filter((difference) => !/相同模型能力|provider availability|not used as canonical|source model|billing token|billing unknown|ratio_|tag |provider |OpenRouter ID/i.test(difference))
+}
+
+function normalizeComparable(value: string): string {
+  return value.toLowerCase().replace(/,/g, '').replace(/\s+/g, '').replace(/\.0(?=\D|$)/g, '')
 }
 
 function renderSourceSummary(model: ModelDetail): string {
@@ -156,12 +258,12 @@ function renderVariant(variant: ModelVariant): string {
   return `<div class="variant specVariant"><div class="rowTop"><div><strong>${escapeHtml(variant.name)}</strong><p class="muted">${escapeHtml(variant.summary)}</p></div><span class="pill">${variant.providers.length || '私有'} 个可用来源</span></div><div class="meta"><div class="metabox"><span>上下文</span><b>${escapeHtml(variant.contextWindow)}</b></div><div class="metabox"><span>输入价格</span><b>${escapeHtml(variant.inputPrice)}</b></div><div class="metabox"><span>输出价格</span><b>${escapeHtml(variant.outputPrice)}</b></div></div><p class="providers"><strong>规格差异</strong><br>${escapeHtml(joinChinese(variant.differences))}</p><p class="providers"><strong>可用来源</strong><br>${escapeHtml(joinChinese(variant.providers.map((p) => p.name)) || '自托管 / 私有化')}</p></div>`
 }
 
-function renderOfficialPricing(model: ModelDetail): string {
-  const rows = model.officialPriceSets.flatMap((priceSet) =>
-    priceSet.components.map((component) => `<tr><td>${escapeHtml(formatPricingMode(component.mode))}</td><td>${escapeHtml(formatPricingScope(component.scope))}</td><td class="mono">${escapeHtml(formatMoney(component.amount))}</td><td>${escapeHtml(formatPricingUnit(component.unit))}</td><td>${escapeHtml(formatPricingConditions(component.conditions))}</td><td>${escapeHtml(priceSet.priceSetId)}</td></tr>`),
+function renderOfficialPricing(priceSets: ModelDetail['officialPriceSets']): string {
+  const rows = priceSets.flatMap((priceSet) =>
+    priceSet.components.map((component) => `<tr><td>${escapeHtml(formatPricingMode(component.mode))}</td><td>${escapeHtml(formatPricingScope(component.scope))}</td><td class="mono">${escapeHtml(formatMoney(component.amount))}</td><td>${escapeHtml(formatPricingUnit(component.unit))}</td><td>${escapeHtml(formatPricingConditions(component.conditions))}</td></tr>`),
   )
   if (rows.length === 0) return '<p class="muted">暂无可结构化展示的官方价格组件。</p>'
-  return `<div class="tableWrap"><table class="modelTable"><thead><tr><th>计价方式</th><th>范围</th><th>价格</th><th>单位</th><th>条件</th><th>来源</th></tr></thead><tbody>${rows.join('')}</tbody></table></div>`
+  return `<div class="tableWrap"><table class="modelTable"><thead><tr><th>计价方式</th><th>范围</th><th>价格</th><th>单位</th><th>条件</th></tr></thead><tbody>${rows.join('')}</tbody></table></div>`
 }
 
 function formatPricingMode(mode: string): string {
