@@ -78,7 +78,7 @@ export function renderModelDetailPage(tag: string, details?: ModelDetail[]): str
   }
 
   const visibleSpecVariants = displayableVariants(model).filter((variant) => isSnapshotVariant(variant) && !hasPriceDifference(model, variant))
-  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/models/">← 返回模型广场</a><div class="eyebrow">${escapeHtml(model.brand.name)} / ${renderModelTagCopy(model.tag)}</div><h1>${escapeHtml(model.name)}</h1><div class="summaryStrip"><div><span>输入价格</span><b>${escapeHtml(model.inputPrice)}</b></div><div><span>输出价格</span><b>${escapeHtml(model.outputPrice)}</b></div><div><span>上下文</span><b>${escapeHtml(model.contextWindow)}</b></div><div><span>Alias</span><b>${aliasValues(model).length}</b></div></div></div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#specs">模型规格</a><a href="#snapshots">Snapshot 规格差异</a><a href="#pricing">价格</a></nav><section id="specs" class="panel"><h2>模型规格</h2>${renderModelSpecs(model)}</section><section id="snapshots" class="panel subtlePanel"><h2>Snapshot 规格差异</h2>${renderSnapshotSpecs(model, visibleSpecVariants)}</section><section id="pricing" class="panel priorityPanel"><h2>价格</h2>${renderPricingGroups(model)}</section></article></div></main>`
+  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/models/">← 返回模型广场</a><div class="eyebrow">${escapeHtml(model.brand.name)} / ${renderModelTagCopy(model.tag)}</div><h1>${escapeHtml(model.name)}</h1><div class="summaryStrip"><div><span>输入价格</span><b>${escapeHtml(model.inputPrice)}</b></div><div><span>输出价格</span><b>${escapeHtml(model.outputPrice)}</b></div><div><span>上下文</span><b>${escapeHtml(model.contextWindow)}</b></div><div><span>Alias</span><b>${aliasValues(model).length}</b></div></div></div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#specs">模型规格</a><a href="#providers">Provider</a><a href="#snapshots">Snapshot 规格差异</a><a href="#pricing">价格</a></nav><section id="specs" class="panel"><h2>模型规格</h2>${renderModelSpecs(model)}</section><section id="providers" class="panel subtlePanel"><h2>Provider</h2>${renderProviders(model)}</section><section id="snapshots" class="panel subtlePanel"><h2>Snapshot 规格差异</h2>${renderSnapshotSpecs(model, visibleSpecVariants)}</section><section id="pricing" class="panel priorityPanel"><h2>价格</h2>${renderPricingGroups(model)}</section></article></div></main>`
   return page(`${model.name} · mddb.dev`, body, 'models')
 }
 
@@ -117,7 +117,7 @@ function aliasValues(model: ModelDetail): string[] {
 
 function renderSnapshotSpecs(model: ModelDetail, variants: ModelVariant[]): string {
   if (variants.length === 0) return '<p class="muted">暂无只影响规格的 snapshot 差异。</p>'
-  return variants.map((variant) => `<div class="variant specVariant"><div class="rowTop"><div><strong>${escapeHtml(variant.name)}</strong><p class="muted">${escapeHtml(variant.summary)}</p></div></div><div class="meta"><div class="metabox"><span>上下文</span><b>${escapeHtml(variant.contextWindow)}</b></div><div class="metabox"><span>输入价格</span><b>${escapeHtml(variant.inputPrice)}</b></div><div class="metabox"><span>输出价格</span><b>${escapeHtml(variant.outputPrice)}</b></div></div><p class="providers"><strong>差异</strong><br>${escapeHtml(joinChinese(meaningfulDifferences(variant)))}</p></div>`).join('')
+  return variants.map((variant) => `<div class="variant specVariant"><div class="rowTop"><div><strong>${escapeHtml(variant.name)}</strong><p class="muted">${escapeHtml(variant.summary)}</p></div></div><p class="providers"><strong>差异</strong><br>${escapeHtml(joinChinese(meaningfulDifferences(variant)) || '仅记录 snapshot 标识；规格和价格与主记录一致。')}</p></div>`).join('')
 }
 
 function renderPricingGroups(model: ModelDetail): string {
@@ -173,7 +173,7 @@ function renderPriceVariantCard(model: ModelDetail, variant: ModelVariant): stri
 }
 
 function displayableVariants(model: ModelDetail): ModelVariant[] {
-  return model.variants.filter((variant) => !isSameAsMainRecord(model, variant))
+  return model.variants.filter((variant) => !isSourceProviderObservation(model, variant) && !isSameAsMainRecord(model, variant))
 }
 
 function isSameAsMainRecord(model: ModelDetail, variant: ModelVariant): boolean {
@@ -197,8 +197,13 @@ function isSnapshotVariant(variant: ModelVariant): boolean {
   return variant.id.includes('snapshot') || variant.id.includes('202') || variant.differences.some((difference) => /快照|snapshot|20\d{6}|20\d{2}-\d{2}-\d{2}/i.test(difference))
 }
 
+function isSourceProviderObservation(model: ModelDetail, variant: ModelVariant): boolean {
+  return variant.id.startsWith('models-dev-provider-observations')
+    || (variant.id.startsWith('basellm:') && !hasPriceDifference(model, variant))
+}
+
 function meaningfulDifferences(variant: ModelVariant): string[] {
-  return variant.differences.filter((difference) => !/相同模型能力|provider availability|not used as canonical|source model|billing token|billing unknown|ratio_|tag |provider |OpenRouter ID/i.test(difference))
+  return variant.differences.filter((difference) => !/标准记录|相同模型能力|provider availability|not used as canonical|source model|billing token|billing unknown|ratio_|tag |provider |OpenRouter ID/i.test(difference))
 }
 
 function normalizeComparable(value: string): string {

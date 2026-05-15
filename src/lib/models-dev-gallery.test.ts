@@ -282,9 +282,10 @@ describe('models.dev-backed rendering', () => {
     expect(detailHtml).toContain('模型规格')
     expect(detailHtml).toContain('Snapshot 规格差异')
     expect(detailHtml).toContain('价格')
+    expect(detailHtml).toContain('<h2>Provider</h2>')
+    expect(detailHtml).toContain('Azure AI Foundry')
+    expect(detailHtml).toContain('OpenRouter')
     expect(detailHtml).not.toContain('<h2>可用来源</h2>')
-    expect(detailHtml).not.toContain('Azure AI Foundry')
-    expect(detailHtml).not.toContain('OpenRouter')
     expect(detailHtml).not.toContain('GET /models/gpt-4o')
 
     const noDateHtml = renderModelDetailPage('mystery-model', gallery.details)

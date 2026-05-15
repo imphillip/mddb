@@ -1,5 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import { buildModelGallery, getModelDetail, type ModelGallery } from './model-catalog.js'
+import { buildBaseLlmEnrichmentFromFile } from './basellm-gallery.js'
+import { overlayBaseLlmEnrichment } from './basellm-overlay.js'
+import { buildModelGalleryWithModelsDevEnrichment } from './model-gallery-enrichment.js'
 import { renderHomePage, renderModelDetailPage, renderModelsPage } from './site-renderer.js'
 
 describe('site renderer', () => {
@@ -209,4 +212,32 @@ describe('site renderer', () => {
     expect(html).not.toContain('models.dev provider observations')
     expect(html).not.toContain('BaseLLM · Anthropic')
   })
+
+  it('treats source/provider observations as availability, not model variants, and keeps snapshot facts concise', () => {
+    const gallery = overlayBaseLlmEnrichment(
+      buildModelGalleryWithModelsDevEnrichment('data/openrouter-models.json', 'data/models-dev-api.json'),
+      buildBaseLlmEnrichmentFromFile('data/basellm-newapi.json'),
+    )
+    const html = renderModelDetailPage('claude-opus-4-7', gallery.details)
+
+    expect(html).toContain('Provider')
+    expect(html).toContain('Anthropic')
+    expect(html).toContain('OpenRouter')
+    expect(html).not.toContain('models.dev provider observations')
+    expect(html).not.toContain('BaseLLM · 302.AI')
+    expect(html).not.toContain('BaseLLM · Anthropic')
+
+    const snapshotIndex = html.indexOf('<h2>Snapshot 规格差异</h2>')
+    const pricingIndex = html.indexOf('<h2>价格</h2>')
+    const snapshotHtml = html.slice(snapshotIndex, pricingIndex)
+    expect(snapshotHtml).toContain('20260416')
+    expect(snapshotHtml).not.toContain('<span>输入价格</span>')
+    expect(snapshotHtml).not.toContain('<span>输出价格</span>')
+    expect(snapshotHtml).not.toContain('<span>上下文</span>')
+
+    const pricingHtml = html.slice(pricingIndex)
+    expect(pricingHtml).toContain('claude-opus-4.7-fast')
+    expect(pricingHtml).not.toContain('302.AI')
+  })
+
 })
