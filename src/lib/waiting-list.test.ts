@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { renderWaitingListPage, type WaitingListCandidate } from './waiting-list.js'
 
 describe('renderWaitingListPage', () => {
-  it('renders a static admin login gate with candidate review data', () => {
+  it('renders a public static review helper without embedded credentials', () => {
     const candidates: WaitingListCandidate[] = [
       {
         tag: 'lfm-40b',
@@ -14,17 +14,20 @@ describe('renderWaitingListPage', () => {
       },
     ]
 
-    const html = renderWaitingListPage(candidates, { username: 'admin', password: 'mddb-admin-2026' })
+    const html = renderWaitingListPage(candidates)
 
     expect(html).toContain('<title>Waiting List · mddb.dev</title>')
-    expect(html).toContain('id="waitingLogin"')
-    expect(html).toContain('data-admin-user="admin"')
-    expect(html).toContain('data-admin-pass="mddb-admin-2026"')
-    expect(html).toContain('models.dev 候选审核')
+    expect(html).toContain('候选模型审核队列')
+    expect(html).toContain('不是后台管理系统')
+    expect(html).toContain('localStorage')
     expect(html).toContain('lfm-40b')
     expect(html).toContain('Liquid AI')
-    expect(html).toContain('入库')
-    expect(html).toContain('拒绝')
-    expect(html).toContain('localStorage.setItem')
+    expect(html).toContain('建议入库')
+    expect(html).toContain('建议拒绝')
+    expect(html).toContain('导出本机审核标记')
+    expect(html).not.toContain('data-admin-user')
+    expect(html).not.toContain('data-admin-pass')
+    expect(html).not.toContain('mddb-admin')
+    expect(html).not.toContain('password')
   })
 })

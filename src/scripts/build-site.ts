@@ -46,7 +46,7 @@ function writePage(path: string, html: string): void {
 
 writePage('index.html', renderHomePage())
 writePage('models/index.html', renderModelsPage(modelGallery))
-writePage('waitinglist/index.html', renderWaitingListPage(waitingListCandidates, { username: 'admin', password: 'mddb-admin-2026' }))
+writePage('waitinglist/index.html', renderWaitingListPage(waitingListCandidates))
 writePage('waitinglist/candidates.json', JSON.stringify(waitingListCandidates, null, 2))
 writePage('waitinglist/preprocessed.json', JSON.stringify(waitingListPreprocess, null, 2))
 for (const model of modelGallery.details) {

@@ -18,12 +18,12 @@ models.dev should be disabled as the primary source for now. It can later become
 
 ## new-api implementation findings
 
-Reference files:
+Reference files from the upstream new-api project reviewed during implementation:
 
-- `/home/phillip_wu/workspaces/references/new-api/controller/ratio_sync.go`
-- `/home/phillip_wu/workspaces/references/new-api/dto/ratio_sync.go`
-- `/home/phillip_wu/workspaces/references/new-api/web/default/src/features/system-settings/models/upstream-ratio-sync.tsx`
-- `/home/phillip_wu/workspaces/references/new-api/web/default/src/features/system-settings/models/constants.ts`
+- `controller/ratio_sync.go`
+- `dto/ratio_sync.go`
+- `web/default/src/features/system-settings/models/upstream-ratio-sync.tsx`
+- `web/default/src/features/system-settings/models/constants.ts`
 
 new-api's upstream-price sync treats OpenRouter as a special endpoint marker, not a normal `/api/pricing` endpoint.
 

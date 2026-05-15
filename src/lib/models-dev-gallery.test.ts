@@ -139,7 +139,7 @@ function makeIndex(): ModelsDevIndex {
 describe('buildModelGalleryFromModelsDevIndex', () => {
   it('builds canonical model rows from the local models.dev index without fetching the online API', () => {
     const gallery = buildModelGalleryFromModelsDevIndex(makeIndex(), {
-      sourcePath: '/home/phillip_wu/workspaces/references/llm-metadata/dist/api/index.json',
+      sourcePath: 'fixtures/models-dev-api.json',
     })
 
     expect(gallery.stats).toMatchObject({
@@ -149,7 +149,7 @@ describe('buildModelGalleryFromModelsDevIndex', () => {
       variantCount: 9,
     })
     expect(gallery.source).toEqual({
-      path: '/home/phillip_wu/workspaces/references/llm-metadata/dist/api/index.json',
+      path: 'fixtures/models-dev-api.json',
       modelRows: 15,
       providerRows: 7,
     })

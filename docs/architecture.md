@@ -16,11 +16,10 @@ Later phases add local `models.dev` and BaseLLM data as enrichment and pricing-a
 - Canonical model pages stay at `/models/<model-name-tag>/`. Provider, brand, region, route, and snapshot information are attached records, not URL path parents.
 - Downstream consumers need stable JSON files, not only a rendered website.
 - Source imports must be lossless enough to explain where every canonical fact came from.
-- Current local reference inputs:
-  - `/home/phillip_wu/workspaces/references/models.dev`
-  - `/home/phillip_wu/workspaces/references/basellm` or BaseLLM public ratio config
-  - `/home/phillip_wu/workspaces/references/new-api`
-  - `/home/phillip_wu/workspaces/references/sub2api`
+- Current reference inputs are public APIs or checked-in source snapshots:
+  - OpenRouter model catalog: `https://openrouter.ai/api/v1/models`
+  - models.dev API snapshot: `https://models.dev/api.json`
+  - BaseLLM / NewAPI metadata: `https://basellm.github.io/llm-metadata/`
 - Current source priority for the first usable registry:
   1. OpenRouter: base catalog and first imported dataset.
   2. models.dev: later metadata, provider, logo, capability, and price enrichment.

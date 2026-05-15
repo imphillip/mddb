@@ -270,7 +270,7 @@ SQLite is enough for Phase 1 because data volume is small, writes are batch impo
 
 ## Initial implementation milestones
 
-1. Initialize Next.js TypeScript app in `/home/phillip_wu/workspaces/mddb.dev`.
+1. Initialize the TypeScript app in the repository root.
 2. Add DB schema for brands, models, aliases, snapshots, prices.
 3. Add deterministic tag normalization library with tests.
 4. Add seed fixture covering OpenAI, Anthropic, Google, DeepSeek, xAI, Qwen, Mistral.

@@ -1,6 +1,6 @@
 # OpenRouter-first Registry Implementation Plan
 
-> **For Hermes:** Use subagent-driven-development skill to implement this plan task-by-task.
+> Maintainers: implement this plan task-by-task and keep changes covered by tests.
 
 **Goal:** Convert the current OpenRouter-derived site into a registry-first pipeline with canonical data artifacts and machine-readable exports for new-api/sub2api consumers.
 
@@ -12,7 +12,7 @@
 
 ## Preconditions
 
-- Working directory: `/home/phillip_wu/workspaces/mddb.dev`
+- Working directory: repository root
 - Relevant docs:
   - `docs/architecture.md`
   - `docs/model-identity-normalization.md`
