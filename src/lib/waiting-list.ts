@@ -1,4 +1,7 @@
 export type WaitingListCandidate = {
+  source?: 'models.dev' | 'basellm' | undefined
+  action?: 'review' | 'alias' | 'variant' | 'reject' | undefined
+  targetTag?: string | undefined
   tag: string
   name: string
   brand: string
@@ -17,7 +20,7 @@ export function renderWaitingListPage(candidates: WaitingListCandidate[], auth: 
 }
 
 function renderCandidate(candidate: WaitingListCandidate): string {
-  return `<article class="card" data-candidate="${escapeHtml(candidate.tag)}"><div class="row"><div><h2>${escapeHtml(candidate.name)}</h2><code>${escapeHtml(candidate.tag)}</code></div><span class="badge" data-status>待审核</span></div><p><strong>厂牌</strong> ${escapeHtml(candidate.brand)}</p><p><strong>Providers</strong> ${escapeHtml(candidate.providers.join(' · ') || '—')}</p><p><strong>Source IDs</strong> ${escapeHtml(candidate.sourceIds.join(' · ') || '—')}</p><p class="muted">${escapeHtml(candidate.reason)}</p><div class="actions"><button type="button" data-action="approve">入库</button><button type="button" data-action="reject">拒绝</button><button type="button" data-action="reset">重置</button></div></article>`
+  return `<article class="card" data-candidate="${escapeHtml(candidate.tag)}"><div class="row"><div><h2>${escapeHtml(candidate.name)}</h2><code>${escapeHtml(candidate.tag)}</code></div><span class="badge" data-status>待审核</span></div><p><strong>Source</strong> ${escapeHtml(candidate.source ?? 'models.dev')} · ${escapeHtml(candidate.action ?? 'review')}${candidate.targetTag ? ` → <code>${escapeHtml(candidate.targetTag)}</code>` : ''}</p><p><strong>厂牌</strong> ${escapeHtml(candidate.brand)}</p><p><strong>Providers</strong> ${escapeHtml(candidate.providers.join(' · ') || '—')}</p><p><strong>Source IDs</strong> ${escapeHtml(candidate.sourceIds.join(' · ') || '—')}</p><p class="muted">${escapeHtml(candidate.reason)}</p><div class="actions"><button type="button" data-action="approve">入库</button><button type="button" data-action="reject">拒绝</button><button type="button" data-action="reset">重置</button></div></article>`
 }
 
 function script(): string {
