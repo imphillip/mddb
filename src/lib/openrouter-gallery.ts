@@ -81,8 +81,8 @@ function toModelDetail(tag: string, records: OpenRouterModelRecord[]): ModelDeta
     route: `/models/${tag}`,
     name: best.displayName,
     brand: { ...best.brand, description: brandDescription(best.brand.slug) },
-    description: best.metadata.description ?? `${best.displayName} is listed by OpenRouter with ${providerNames.length} provider namespace observation(s).`,
-    longDescription: best.metadata.description ?? `${best.displayName} 页面由 OpenRouter /api/v1/models 生成；OpenRouter namespace 作为来源/provider 观察值保留。`,
+    description: translateOpenRouterDescription(best.metadata.description, best.displayName, providerNames.length),
+    longDescription: translateOpenRouterDescription(best.metadata.description, best.displayName, providerNames.length),
     modalities: inferModalities(records),
     contextWindow: formatContext(best.metadata.contextLength),
     inputPrice: formatPrice(best.pricing.promptPer1mUsd),
@@ -98,42 +98,48 @@ function toModelDetail(tag: string, records: OpenRouterModelRecord[]): ModelDeta
   }
 }
 
+function translateOpenRouterDescription(description: string | null | undefined, displayName: string, providerCount: number): string {
+  if (!description) return `${displayName} 由 OpenRouter 收录，并包含 ${providerCount} 个来源命名空间观察值。`
+  const trimmed = description.trim()
+  return `${displayName} 的 OpenRouter 模型介绍：${trimmed}`
+}
+
 function buildMetaItems(best: OpenRouterModelRecord, records: OpenRouterModelRecord[]): ModelMetaItem[] {
   const aliases = Array.from(new Set(records.flatMap((record) => record.aliases))).sort()
   const sourceIds = Array.from(new Set(records.map((record) => `${record.sourceNamespace}/${record.sourceModelId}`))).sort()
   const floatingAliases = records.map((record) => record.sourceAlias?.alias).filter((value): value is string => Boolean(value)).sort()
   return [
-    { label: 'Canonical tag', value: best.canonicalTag },
-    { label: 'Display name', value: best.displayName },
-    { label: 'Source', value: best.source },
-    { label: 'Source namespace', value: best.sourceNamespace },
-    { label: 'Source model id', value: best.sourceModelId },
-    { label: 'Source canonical slug', value: best.sourceCanonicalSlug },
-    { label: 'OpenRouter aliases', value: aliases },
-    { label: 'Floating aliases', value: floatingAliases },
-    { label: 'Observed source ids', value: sourceIds },
-    { label: 'Created', value: best.metadata.created ? new Date(best.metadata.created * 1000).toISOString() : '—' },
-    { label: 'Context length', value: best.metadata.contextLength?.toLocaleString('en-US') ?? '—' },
-    { label: 'Max completion tokens', value: best.metadata.maxCompletionTokens?.toLocaleString('en-US') ?? '—' },
-    { label: 'Input modalities', value: best.metadata.inputModalities },
-    { label: 'Output modalities', value: best.metadata.outputModalities },
-    { label: 'Tokenizer', value: best.metadata.tokenizer ?? '—' },
-    { label: 'Instruct type', value: best.metadata.instructType ?? '—' },
-    { label: 'Supported parameters', value: best.metadata.supportedParameters },
-    { label: 'Supported voices', value: best.metadata.supportedVoices ?? [] },
-    { label: 'Knowledge cutoff', value: best.metadata.knowledgeCutoff ?? '—' },
-    { label: 'Expiration date', value: best.metadata.expirationDate ?? '—' },
-    { label: 'Hugging Face id', value: best.metadata.huggingFaceId ?? '—' },
-    { label: 'Endpoint details path', value: best.metadata.endpointDetailsPath },
-    { label: 'Per-request prompt limit', value: best.metadata.perRequestLimits?.prompt_tokens?.toLocaleString('en-US') ?? '—' },
-    { label: 'Per-request completion limit', value: best.metadata.perRequestLimits?.completion_tokens?.toLocaleString('en-US') ?? '—' },
-    { label: 'Moderated', value: best.metadata.isModerated ? 'yes' : 'no' },
-    { label: 'Prompt price / 1M USD', value: best.pricing.promptPer1mUsd.toLocaleString('en-US', { maximumFractionDigits: 6 }) },
-    { label: 'Completion price / 1M USD', value: best.pricing.completionPer1mUsd.toLocaleString('en-US', { maximumFractionDigits: 6 }) },
-    { label: 'Cache read / 1M USD', value: best.pricing.cacheReadPer1mUsd?.toLocaleString('en-US', { maximumFractionDigits: 6 }) ?? '—' },
-    { label: 'Cache write / 1M USD', value: best.pricing.cacheWritePer1mUsd?.toLocaleString('en-US', { maximumFractionDigits: 6 }) ?? '—' },
-    { label: 'Pricing status', value: best.pricing.ratioStatus },
-    { label: 'Source record fields', value: Object.keys(best.sourceRecord.rawRecord).sort() },
+    { label: '规范标签', value: best.canonicalTag },
+    { label: '显示名称', value: best.displayName },
+    { label: '数据来源', value: best.source },
+    { label: '来源命名空间', value: best.sourceNamespace },
+    { label: '来源模型 ID', value: best.sourceModelId },
+    { label: '来源 canonical slug', value: best.sourceCanonicalSlug },
+    { label: 'OpenRouter 别名', value: aliases },
+    { label: '浮动别名', value: floatingAliases },
+    { label: '观察到的来源 ID', value: sourceIds },
+    { label: '创建时间', value: best.metadata.created ? new Date(best.metadata.created * 1000).toISOString() : '—' },
+    { label: '上下文长度', value: best.metadata.contextLength?.toLocaleString('en-US') ?? '—' },
+    { label: '最大输出 token', value: best.metadata.maxCompletionTokens?.toLocaleString('en-US') ?? '—' },
+    { label: '输入模态', value: best.metadata.inputModalities },
+    { label: '输出模态', value: best.metadata.outputModalities },
+    { label: '分词器', value: best.metadata.tokenizer ?? '—' },
+    { label: '指令类型', value: best.metadata.instructType ?? '—' },
+    { label: '支持参数', value: best.metadata.supportedParameters },
+    { label: '支持声音', value: best.metadata.supportedVoices ?? [] },
+    { label: '知识截止', value: best.metadata.knowledgeCutoff ?? '—' },
+    { label: '过期日期', value: best.metadata.expirationDate ?? '—' },
+    { label: 'Hugging Face ID', value: best.metadata.huggingFaceId ?? '—' },
+    { label: '端点详情路径', value: best.metadata.endpointDetailsPath },
+    { label: '单请求 prompt 限制', value: best.metadata.perRequestLimits?.prompt_tokens?.toLocaleString('en-US') ?? '—' },
+    { label: '单请求 completion 限制', value: best.metadata.perRequestLimits?.completion_tokens?.toLocaleString('en-US') ?? '—' },
+    { label: '内容审核', value: best.metadata.isModerated ? '是' : '否' },
+    { label: '输入价格 / 1M USD', value: best.pricing.promptPer1mUsd.toLocaleString('en-US', { maximumFractionDigits: 6 }) },
+    { label: '输出价格 / 1M USD', value: best.pricing.completionPer1mUsd.toLocaleString('en-US', { maximumFractionDigits: 6 }) },
+    { label: '缓存读取 / 1M USD', value: best.pricing.cacheReadPer1mUsd?.toLocaleString('en-US', { maximumFractionDigits: 6 }) ?? '—' },
+    { label: '缓存写入 / 1M USD', value: best.pricing.cacheWritePer1mUsd?.toLocaleString('en-US', { maximumFractionDigits: 6 }) ?? '—' },
+    { label: '价格状态', value: best.pricing.ratioStatus },
+    { label: '来源记录字段', value: Object.keys(best.sourceRecord.rawRecord).sort() },
   ]
 }
 
@@ -163,7 +169,7 @@ function buildVariants(records: OpenRouterModelRecord[]): ModelVariant[] {
       contextWindow: formatContext(best.metadata.contextLength),
       inputPrice: formatPrice(best.pricing.promptPer1mUsd),
       outputPrice: formatPrice(best.pricing.completionPer1mUsd),
-      differences: [best.variant ? `variant ${best.variant.marker}` : 'standard', ...(best.snapshot ? [`snapshot ${best.snapshot.marker}`] : []), `OpenRouter id ${best.sourceNamespace}/${best.sourceModelId}`],
+      differences: [best.variant ? `变体 ${best.variant.marker}` : '标准记录', ...(best.snapshot ? [`快照 ${best.snapshot.marker}`] : []), `OpenRouter ID ${best.sourceNamespace}/${best.sourceModelId}`],
       providers: deployments,
     }
   })
@@ -174,9 +180,9 @@ function variantName(record: OpenRouterModelRecord): string {
 }
 
 function variantSummary(record: OpenRouterModelRecord, providerCount: number): string {
-  if (record.snapshot) return `OpenRouter snapshot ${record.snapshot.marker}，${providerCount} 个来源/provider 观察值。`
-  if (record.variant) return `OpenRouter ${record.variant.marker} variant，${providerCount} 个来源/provider 观察值。`
-  return `OpenRouter 标准记录，${providerCount} 个来源/provider 观察值。`
+  if (record.snapshot) return `OpenRouter 快照 ${record.snapshot.marker}，${providerCount} 个来源/部署观察值。`
+  if (record.variant) return `OpenRouter ${record.variant.marker} 变体，${providerCount} 个来源/部署观察值。`
+  return `OpenRouter 标准记录，${providerCount} 个来源/部署观察值。`
 }
 
 function toDeployment(record: OpenRouterModelRecord): ProviderDeployment {

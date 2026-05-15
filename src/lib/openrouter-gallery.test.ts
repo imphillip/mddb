@@ -99,10 +99,11 @@ describe('buildModelGalleryFromOpenRouterCatalog', () => {
       providerNames: ['Anthropic'],
       variantCount: 1,
     })
+    expect(claude?.description).toBe('Claude Opus 4.7 的 OpenRouter 模型介绍：Fast Claude Opus release.')
     expect(claude?.variants[0]).toMatchObject({
       id: 'claude-opus-4-7-fast-20260512',
       name: 'Claude Opus 4.7 · fast · 20260512',
-      differences: ['variant fast', 'snapshot 20260512', 'OpenRouter id anthropic/claude-opus-4.7-fast'],
+      differences: ['变体 fast', '快照 20260512', 'OpenRouter ID anthropic/claude-opus-4.7-fast'],
       providers: [{ slug: 'anthropic', name: 'Anthropic', region: 'OpenRouter' }],
     })
 

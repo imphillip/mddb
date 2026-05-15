@@ -444,7 +444,7 @@ function toVariant(versionGroup: VersionGroup, providers: Map<string, ModelsDevI
     name: versionGroup.displayName,
     summary: versionGroup.snapshot ? `snapshot 版本 ${versionGroup.displayName}。` : `同一模型版本在 ${deployments.length} 个 provider 上可用。`,
     ...pricingForModels(versionGroup.models),
-    differences: [versionGroup.snapshot ? `snapshot ${versionGroup.snapshot}` : versionGroup.id, ...modelsDevDifferenceItems(versionGroup.models), ...updatedDates.map((date) => `更新日期 ${date}`)],
+    differences: [versionGroup.snapshot ? `快照 ${versionGroup.snapshot}` : versionGroup.id, ...modelsDevDifferenceItems(versionGroup.models), ...updatedDates.map((date) => `更新日期 ${date}`)],
     providers: deployments,
   }
 }
@@ -485,17 +485,17 @@ function inferModalities(models: ModelsDevIndexModel[]): string[] {
 
 function modelsDevMetaItems(models: ModelsDevIndexModel[], fallbackModalities: string[]): Array<{ label: string; value: string | string[] }> {
   return [
-    { label: 'Input modalities', value: uniqueStrings(models.flatMap((model) => model.inputModalities ?? [])).length > 0 ? uniqueStrings(models.flatMap((model) => model.inputModalities ?? [])) : fallbackModalities },
-    { label: 'Output modalities', value: uniqueStrings(models.flatMap((model) => model.outputModalities ?? [])) },
-    { label: 'Families', value: uniqueStrings(models.map((model) => model.family).filter((value): value is string => Boolean(value))) },
-    { label: 'Knowledge cutoffs', value: uniqueStrings(models.map((model) => model.knowledge).filter((value): value is string => Boolean(value))) },
-    { label: 'Release dates', value: uniqueStrings(models.map((model) => model.releaseDate).filter((value): value is string => Boolean(value))) },
-    { label: 'Output token limits', value: uniqueStrings(models.map((model) => model.outputLimit).filter((value): value is number => value !== undefined).map((value) => value.toLocaleString('en-US'))) },
-    { label: 'Cache read prices', value: uniqueStrings(models.map((model) => model.cacheReadPrice).filter((value): value is number => value !== undefined).map(formatPrice)) },
-    { label: 'Cache write prices', value: uniqueStrings(models.map((model) => model.cacheWritePrice).filter((value): value is number => value !== undefined).map(formatPrice)) },
-    { label: 'Open weights', value: booleanSummary(models.map((model) => model.openWeights)) },
-    { label: 'Temperature control', value: booleanSummary(models.map((model) => model.temperature)) },
-    { label: 'Structured output', value: booleanSummary(models.map((model) => model.structuredOutput)) },
+    { label: '输入模态', value: uniqueStrings(models.flatMap((model) => model.inputModalities ?? [])).length > 0 ? uniqueStrings(models.flatMap((model) => model.inputModalities ?? [])) : fallbackModalities },
+    { label: '输出模态', value: uniqueStrings(models.flatMap((model) => model.outputModalities ?? [])) },
+    { label: '模型家族', value: uniqueStrings(models.map((model) => model.family).filter((value): value is string => Boolean(value))) },
+    { label: '知识截止', value: uniqueStrings(models.map((model) => model.knowledge).filter((value): value is string => Boolean(value))) },
+    { label: '发布日期', value: uniqueStrings(models.map((model) => model.releaseDate).filter((value): value is string => Boolean(value))) },
+    { label: '输出 token 限制', value: uniqueStrings(models.map((model) => model.outputLimit).filter((value): value is number => value !== undefined).map((value) => value.toLocaleString('en-US'))) },
+    { label: '缓存读取价格', value: uniqueStrings(models.map((model) => model.cacheReadPrice).filter((value): value is number => value !== undefined).map(formatPrice)) },
+    { label: '缓存写入价格', value: uniqueStrings(models.map((model) => model.cacheWritePrice).filter((value): value is number => value !== undefined).map(formatPrice)) },
+    { label: '开放权重', value: booleanSummary(models.map((model) => model.openWeights)) },
+    { label: '温度控制', value: booleanSummary(models.map((model) => model.temperature)) },
+    { label: '结构化输出', value: booleanSummary(models.map((model) => model.structuredOutput)) },
   ]
 }
 
@@ -504,11 +504,11 @@ function modelsDevDifferenceItems(models: ModelsDevIndexModel[]): string[] {
   const families = uniqueStrings(models.map((model) => model.family).filter((value): value is string => Boolean(value)))
   const knowledge = uniqueStrings(models.map((model) => model.knowledge).filter((value): value is string => Boolean(value)))
   const outputLimits = uniqueStrings(models.map((model) => model.outputLimit).filter((value): value is number => value !== undefined).map((value) => value.toLocaleString('en-US')))
-  if (families.length > 0) items.push(`family ${families.join(' / ')}`)
-  if (knowledge.length > 0) items.push(`knowledge ${knowledge.join(' / ')}`)
-  if (outputLimits.length > 0) items.push(`output limit ${outputLimits.join(' / ')}`)
+  if (families.length > 0) items.push(`模型家族 ${families.join(' / ')}`)
+  if (knowledge.length > 0) items.push(`知识截止 ${knowledge.join(' / ')}`)
+  if (outputLimits.length > 0) items.push(`输出限制 ${outputLimits.join(' / ')}`)
   const openWeights = booleanSummary(models.map((model) => model.openWeights))
-  if (openWeights !== '—') items.push(`open weights ${openWeights}`)
+  if (openWeights !== '—') items.push(`开放权重 ${openWeights}`)
   return items
 }
 
@@ -520,8 +520,8 @@ function booleanSummary(values: Array<boolean | undefined>): string {
   const defined = values.filter((value): value is boolean => typeof value === 'boolean')
   if (defined.length === 0) return '—'
   const unique = Array.from(new Set(defined))
-  if (unique.length > 1) return 'mixed'
-  return unique[0] ? 'yes' : 'no'
+  if (unique.length > 1) return '混合'
+  return unique[0] ? '是' : '否'
 }
 
 function pricingForModels(models: ModelsDevIndexModel[]): ModelsDevPricing {

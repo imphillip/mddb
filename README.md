@@ -1,65 +1,67 @@
 # mddb.dev
 
-mddb.dev is an open LLM model registry. It turns scattered model strings from providers, aggregators, pricing presets, and community data sources into a stable, provenance-aware model identity registry for humans and machines.
+mddb.dev 是一个开放的大模型数据库（LLM model registry）。它把分散在模型供应商、聚合网关、价格表和社区数据源里的模型信息，整理成以「规范模型身份」为中心、带来源追踪的数据注册表，供人阅读，也供机器消费。
 
-Public site: <https://mddb.dev/models/>
+公开站点：<https://mddb.dev/models/>
 
-## Core principle
+## 核心原则
 
-**Model identity comes first. Providers are observations, deployments, or distribution channels.**
+**模型身份优先，Provider 只是观察来源、部署方式或分发渠道。**
 
-The same underlying model can appear under many API routes, cloud marketplaces, gateway aliases, dated snapshots, pricing tables, and provider-specific spellings. mddb.dev tries to resolve those observations into one canonical model identity, while preserving the facts that differ as aliases, snapshots, variants, deployments, pricing facts, and source records.
+同一个底层模型可能出现在许多 API 路由、云市场、网关别名、日期快照、价格表和 provider 特定命名里。mddb.dev 的目标是把这些观察归并到一个稳定的 canonical model identity，同时把不同事实保留为 alias、snapshot、variant、deployment、price fact 和 source record。
 
-## What the core asset is
+## 核心资产是什么
 
-The core asset is not just a rendered website and not just one raw JSON file. It is a canonical model identity graph with provenance.
+mddb.dev 的核心资产不是一个渲染后的网页，也不是某一个上游原始 JSON 文件，而是：
 
-In practice, the registry should answer:
+**带 provenance 的 canonical model identity graph。**
 
-- What is the stable canonical model tag?
-- Which upstream strings, routes, aliases, and snapshots point to it?
-- Which differences are meaningful variants rather than new models?
-- Which providers, gateways, clouds, or regions serve it?
-- What prices, context windows, modalities, limits, and capabilities have been observed?
-- Which source supplied each fact, and when was it observed?
-- Which candidate records are still waiting for manual review?
+换句话说，registry 应该能回答：
 
-The website is one projection of that registry. Public machine-readable JSON exports are another projection.
+- 稳定的 canonical model tag 是什么？
+- 哪些上游字符串、路由、别名和快照指向它？
+- 哪些差异是有意义的 variant，而不是新模型？
+- 哪些 provider、gateway、cloud 或 region 正在提供它？
+- 观察到的价格、上下文窗口、模态、限制和能力是什么？
+- 每个事实来自哪个 source，什么时候观察到？
+- 哪些候选记录仍然需要人工审核？
 
-## Current data sources
+网站只是这个 registry 的一种投影。公开的机器可读 JSON 导出是另一种投影。
+
+## 当前数据源
 
 ### OpenRouter
 
-- Endpoint: `https://openrouter.ai/api/v1/models`
-- Local snapshot: `data/openrouter-models.json`
-- Refresh command: `npm run data:openrouter`
-- Optional environment variables:
-  - `OPENROUTER_MODELS_URL`: override the default API URL.
-  - `OPENROUTER_API_KEY`: optional Bearer token for future auth or rate-limit changes.
+- 入口：`https://openrouter.ai/api/v1/models`
+- 本地快照：`data/openrouter-models.json`
+- 刷新命令：`npm run data:openrouter`
+- 可选环境变量：
+  - `OPENROUTER_MODELS_URL`：覆盖默认 API URL。
+  - `OPENROUTER_API_KEY`：可选 Bearer token，用于应对未来鉴权或限流变化。
 
-OpenRouter is currently the first-pass base catalog source. It provides route IDs, display names, canonical slugs, context windows, architecture fields, supported parameters, and token pricing.
+OpenRouter 是当前第一阶段的基础目录来源。它提供 route id、显示名、canonical slug、上下文窗口、architecture 字段、supported parameters 和 token pricing。
 
-mddb.dev uses the OpenRouter route as an observation. The provider namespace in a route such as `anthropic/claude-sonnet-4` is not automatically part of the canonical identity.
+mddb.dev 把 OpenRouter route 视为一条观察记录。像 `anthropic/claude-sonnet-4` 里的 provider namespace 不会自动成为 canonical identity 的一部分。
 
 ### models.dev
 
-- Endpoint: `https://models.dev/api.json`
-- Local snapshot: `data/models-dev-api.json`
+- 入口：`https://models.dev/api.json`
+- 本地快照：`data/models-dev-api.json`
 
-models.dev is a secondary enrichment source. It is useful for provider availability, logos, metadata, pricing observations, and discovery of candidates that OpenRouter does not currently cover.
+models.dev 是辅助 enrichment 来源，主要用于 provider availability、logo、metadata、pricing observation，以及发现 OpenRouter 当前未覆盖的候选模型。
 
-If a models.dev record matches an existing OpenRouter-derived canonical tag, it enriches that model. If it does not match safely, it becomes a waiting-list candidate instead of automatically becoming a canonical model.
+如果 models.dev 记录能安全匹配已有 OpenRouter-derived canonical tag，它会作为补充信息叠加。如果无法安全匹配，则进入 waiting list，而不是直接成为 canonical model。
 
 ### BaseLLM / NewAPI metadata
 
-- Site: `https://basellm.github.io/llm-metadata/`
-- Local snapshot: `data/basellm-newapi.json`
+- 站点：`https://basellm.github.io/llm-metadata/`
+- 本地快照：`data/basellm-newapi.json`
 
-BaseLLM / NewAPI data enriches pricing and availability for the NewAPI ecosystem.
+BaseLLM / NewAPI 数据用于补充 NewAPI 生态里的价格和可用性记录。
 
-BaseLLM records do not replace canonical models. They become pricing or availability variants under the same canonical model when matched safely.
+BaseLLM 记录不会替换 canonical model。安全匹配后，它们会成为同一个 canonical model 下的 pricing / availability variant。
 
-NewAPI ratio conversion uses:
+NewAPI ratio 换算规则：
 
 ```text
 500,000 tokens = $1
@@ -67,30 +69,30 @@ ratio 1 = $2 / 1M tokens
 price_per_1m_usd = ratio * 2
 ```
 
-## Identity model
+## 身份模型
 
 ### Canonical tag
 
-A canonical tag is the stable model ID used in URLs and joins.
+canonical tag 是用于 URL 和 join 的稳定模型 ID。
 
-Rules:
+规则：
 
-- lowercase ASCII;
-- URL-safe: `a-z`, `0-9`, and `-` only;
-- globally unique inside the registry;
-- stable across snapshots and deployments;
-- based on the logical model name after non-identity modifiers are extracted;
-- never reused for a different logical model.
+- 小写 ASCII；
+- URL 安全：只使用 `a-z`、`0-9` 和 `-`；
+- 在 registry 内全局唯一；
+- 跨 snapshot 和 deployment 保持稳定；
+- 基于逻辑模型名，并先抽离非身份修饰符；
+- 不能被复用于另一个不同逻辑模型。
 
-A canonical tag should not contain:
+canonical tag 不应包含：
 
-- provider route prefixes such as `anthropic/`, `openai/`, or `google/`;
-- date snapshot suffixes such as `2024-08-06` or `20250514`;
-- deployment wrappers such as `azure-`, `bedrock-`, `databricks-`, or region prefixes when they only describe serving location;
-- transport or routing suffixes such as `@default`;
-- periods, slashes, or underscores.
+- `anthropic/`、`openai/`、`google/` 这类 provider route prefix；
+- `2024-08-06`、`20250514` 这类日期 snapshot suffix；
+- 仅表示部署位置或渠道的 `azure-`、`bedrock-`、`databricks-`、region prefix；
+- `@default` 这类 transport / routing suffix；
+- period、slash 或 underscore。
 
-Examples:
+例子：
 
 ```text
 openai/gpt-4o                     -> gpt-4o
@@ -102,9 +104,9 @@ gemini-2.5-pro                    -> gemini-2-5-pro
 
 ### Display name
 
-A display name is how humans should read the model name. It may preserve casing, spaces, punctuation, and periods.
+display name 是给人看的模型名称，可以保留大小写、空格、标点和 period。
 
-Examples:
+例子：
 
 ```text
 gemini-2-5-pro       -> Gemini 2.5 Pro
@@ -115,60 +117,60 @@ qwen3-235b-a22b      -> Qwen3 235B A22B
 
 ### Alias
 
-An alias is an external string that resolves to a canonical tag but does not create a new model entity.
+alias 是可以解析到 canonical tag 的外部字符串，但不会创建新的模型实体。
 
-Use aliases for official API identifiers, provider routes, aggregator routes, cloud SKUs, regional deployment IDs, dated snapshot IDs, spelling variations, and common colloquial names.
+适合作为 alias 的内容包括官方 API identifier、provider route、aggregator route、cloud SKU、regional deployment ID、dated snapshot ID、拼写变化和常见俗称。
 
-Aliases should be visible and searchable, but they must not inflate model count.
+alias 应该可搜索、可展示，但不能抬高 model count。
 
 ### Snapshot
 
-A snapshot is a dated or versioned release under the same logical model.
+snapshot 是同一个逻辑模型下的日期或版本发布记录。
 
-Examples:
+例子：
 
 ```text
 gpt-4o-2024-08-06       -> canonical gpt-4o, snapshot 2024-08-06
 claude-opus-4-6-v1      -> canonical claude-opus-4-6, snapshot v1
 ```
 
-Do not strip snapshot markers and discard them. Move them into snapshot or source-record metadata.
+不要把 snapshot marker 简单 strip 后丢弃；应把它移动到 snapshot 或 source record metadata。
 
 ### Variant
 
-A variant is a user-visible difference under the same canonical model. Use variants for meaningful differences in behavior, capability, context window, output limit, pricing, serving tier, or compliance boundary.
+variant 是同一个 canonical model 下对用户有意义的差异。只有当行为、能力、上下文窗口、输出限制、价格、服务等级或合规边界有实际区别时，才应该创建 variant。
 
-Good variant examples:
+典型 variant：
 
-- thinking / no-thinking routes;
-- free, fast, batch, compact, online, or priority tiers when behavior or price differs;
-- different context windows;
-- materially different provider-specific limits or capabilities;
-- quantization or model-size differences for open models.
+- thinking / no-thinking route；
+- free、fast、batch、compact、online、priority 等会影响行为或价格的 tier；
+- 不同 context window；
+- provider-specific limit 或 capability 确实不同；
+- 开源模型里的 quantization 或 model-size 差异。
 
-Do not create variants for mere spelling changes, route namespaces, region prefixes, or cloud wrappers when they only describe deployment.
+不要因为拼写变化、route namespace、region prefix 或 cloud wrapper 就创建 variant，除非它们确实代表行为或能力差异。
 
 ### Deployment
 
-A deployment is a provider, aggregator, cloud, region, route, or channel observation serving a canonical model or variant.
+deployment 是 provider、aggregator、cloud、region、route 或 channel 对 canonical model / variant 的服务观察。
 
-Examples: Anthropic, OpenRouter, Azure AI Foundry, Google Vertex, Amazon Bedrock, Databricks, regional API routes, and gateway channels.
+例子：Anthropic、OpenRouter、Azure AI Foundry、Google Vertex、Amazon Bedrock、Databricks、regional API route、gateway channel。
 
-Deployments should not create new canonical tags unless the served model is genuinely different.
+deployment 不应创建新的 canonical tag，除非它服务的是一个真正不同的模型。
 
-### Source records and provenance
+### Source record 和 provenance
 
-Every upstream observation should remain explainable. When normalization removes or transforms information, preserve the raw value and transformation evidence in source records.
+每条上游观察都应该可解释。只要 normalization 删除或转换了信息，就要在 source record 里保留原始值和转换证据。
 
-Source records should preserve raw IDs, raw names, source provider IDs, route namespaces, stripped region or wrapper prefixes, snapshot markers, variant hints, source-specific metadata, and conflict-lost values.
+source record 应保留 raw id、raw name、source provider id、route namespace、被抽离的 region / wrapper prefix、snapshot marker、variant hint、source-specific metadata 和 conflict-lost value。
 
-Normalization must not become destructive cleanup.
+Normalization 不能变成破坏性清洗。
 
-## Public registry direction
+## 公开 registry 方向
 
-The target public artifacts are stable JSON registry files and projections generated from the same canonical data model.
+目标公开产物是一组稳定 JSON registry 文件，以及从同一 canonical 数据模型生成的 projection。
 
-A likely target layout:
+可能的目标结构：
 
 ```text
 data/
@@ -189,9 +191,9 @@ data/
     sub2api/models.json
 ```
 
-The current implementation is still evolving toward this registry-first shape. Some data is still rendered through TypeScript gallery structures while importers, enrichment logic, and tests are being refactored.
+当前实现仍在向 registry-first 形态演进。有些数据仍通过 TypeScript gallery structure 渲染，同时 importer、enrichment logic 和测试正在逐步重构。
 
-## Repository layout
+## 仓库结构
 
 ```text
 data/
@@ -199,85 +201,85 @@ data/
   models-dev-api.json       models.dev source snapshot
   basellm-newapi.json       BaseLLM/NewAPI source snapshot
 src/
-  lib/                      Importers, normalization, enrichment, renderers, tests
-  scripts/                  Static site build script
+  lib/                      Importer、normalization、enrichment、renderer 和测试
+  scripts/                  静态站点 build script
 scripts/
   fetch-openrouter-models.mjs
   deploy-static-site.sh
-public/                     Generated site output, ignored by git
-.internal/                  Local/private maintainer notes, ignored by git
+public/                     生成的站点输出，git ignored
+.internal/                  本地/私有维护笔记，git ignored
 ```
 
-`docs/` is intentionally not part of the public repository surface. Maintainer planning notes, research notes, and private operating details belong under `.internal/`, which is ignored by git.
+`docs/` 不作为公开仓库表面的一部分。维护者规划、研究笔记和私有运行细节应放在 `.internal/`，该目录被 git ignore。
 
-## Development
+## 开发
 
-Install dependencies:
+安装依赖：
 
 ```bash
 npm install
 ```
 
-Run tests:
+运行测试：
 
 ```bash
 npm test
 ```
 
-Typecheck:
+类型检查：
 
 ```bash
 npm run typecheck
 ```
 
-Build the static site:
+构建静态站点：
 
 ```bash
 npm run build
 ```
 
-Serve the generated site locally:
+本地预览生成站点：
 
 ```bash
 npm run serve
 ```
 
-Refresh OpenRouter data:
+刷新 OpenRouter 数据：
 
 ```bash
 npm run data:openrouter
 ```
 
-## Public contribution process
+## 公开贡献流程
 
-mddb.dev welcomes public contributions, especially corrections that improve canonical identity, source provenance, and pricing accuracy.
+mddb.dev 欢迎公开贡献，尤其欢迎提升 canonical identity、source provenance 和 pricing accuracy 的修正。
 
-### Useful contribution types
+### 有价值的贡献类型
 
-- Add or correct aliases with source URLs.
-- Fix canonical tag normalization rules.
-- Add source-specific importer tests.
-- Improve source adapters without losing raw provenance.
-- Add pricing conversion tests and edge cases.
-- Review waiting-list candidates and explain whether they are canonical models, aliases, variants, deployments, or rejected wrapper records.
-- Improve public JSON projections and schema documentation.
-- Improve website rendering when it is downstream of registry data.
+- 添加或修正带 source URL 的 alias；
+- 修正 canonical tag normalization 规则；
+- 添加 source-specific importer tests；
+- 改进 source adapter，同时保留 raw provenance；
+- 添加 pricing conversion 测试和边界案例；
+- 审核 waiting-list candidate，并说明它应归类为 canonical model、alias、snapshot、variant、deployment，还是 rejected wrapper record；
+- 改进公开 JSON projection 和 schema 文档；
+- 改进由 registry 数据生成的网站展示。
 
-### Required evidence for data changes
+### 数据变更必须提供的证据
 
-For any model-data correction, include:
+任何 model-data correction 都应包含：
 
-- raw upstream model string or route;
-- provider/source name;
-- source URL;
-- proposed canonical tag;
-- classification: canonical model, alias, snapshot, variant, deployment, price fact, or rejected/wrapper;
-- explanation of why the classification is correct;
-- tests or fixture updates when the rule is generalizable.
+- raw upstream model string 或 route；
+- provider / source 名称；
+- source URL；
+- proposed canonical tag；
+- classification：canonical model、alias、snapshot、variant、deployment、price fact 或 rejected/wrapper；
+- 为什么这个分类是正确的；
+- 如果规则可复用，应添加或更新测试 / fixture。
 
-### Pull request checklist
+### Pull Request checklist
 
-Before opening a PR:
+提交 PR 前请运行：
 
 ```bash
 npm test
@@ -285,39 +287,39 @@ npm run typecheck
 npm run build
 ```
 
-PRs should:
+PR 应满足：
 
-- keep generated `public/` and `dist/` out of git;
-- not commit secrets, local tokens, private notes, or `.internal/` files;
-- preserve raw source evidence instead of overwriting it with cleaned strings;
-- avoid replacing OpenRouter canonical identity with secondary-source names;
-- add or update tests for normalization, importer, pricing, or rendering behavior;
-- keep changes focused and reviewable.
+- 不把生成的 `public/`、`dist/` 提交进 git；
+- 不提交 secret、local token、private notes 或 `.internal/` 文件；
+- normalization 时保留 raw source evidence，而不是只留下清洗后的字符串；
+- 不用 secondary source 覆盖 OpenRouter-first canonical identity；
+- 为 normalization、importer、pricing 或 rendering 行为添加 / 更新测试；
+- 保持改动聚焦、可 review。
 
 ### Review policy
 
-Maintainers should review registry changes for:
+维护者应从以下角度 review registry 变更：
 
-- identity correctness;
-- provenance quality;
-- source priority and conflict handling;
-- risk of alias, typo, wrapper, or gateway pollution;
-- deterministic output and stable ordering;
-- compatibility with future machine-readable exports.
+- identity correctness；
+- provenance quality；
+- source priority 和 conflict handling；
+- alias、typo、wrapper、gateway pollution 风险；
+- deterministic output 和 stable ordering；
+- 与未来机器可读导出的兼容性。
 
-A candidate should not be promoted into the canonical registry just because it appears in one upstream list. If identity is ambiguous, keep it in the waiting list until there is enough evidence.
+候选项不应仅因为出现在一个上游列表里就晋升为 canonical registry。如果身份存在歧义，应留在 waiting list，直到证据足够。
 
-## Deployment
+## 部署
 
-The code workspace and runtime directory are intentionally separate.
+代码 workspace 和 runtime directory 有意分离。
 
-`npm run build` writes generated HTML to `public/`. The deploy script publishes generated output to the runtime root configured by `RUNTIME_DIR` when deployment is needed.
+`npm run build` 会把生成的 HTML 写入 `public/`。需要部署时，deploy script 会把生成结果发布到 `RUNTIME_DIR` 配置的 runtime root。
 
 ```bash
 npm run deploy
 ```
 
-Dry run:
+Dry run：
 
 ```bash
 npm run deploy:dry-run
@@ -325,6 +327,6 @@ npm run deploy:dry-run
 
 ## License
 
-mddb.dev is licensed under the GNU Affero General Public License v3.0 or later. See [`LICENSE`](LICENSE).
+mddb.dev 使用 GNU Affero General Public License v3.0 or later 授权。详见 [`LICENSE`](LICENSE)。
 
-The AGPL is intentional: if you modify and run this registry as a network service, users interacting with that service should be able to receive the corresponding source code for your modified version.
+选择 AGPL 是有意为之：如果你修改并以网络服务形式运行这个 registry，与该服务交互的用户应能获得你修改版本对应的源代码。

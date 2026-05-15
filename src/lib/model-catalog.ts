@@ -109,11 +109,11 @@ const modelDetails: ModelDetail[] = [
     releasedAt: '2025-05-22',
     apiIdentifier: 'claude-sonnet-4',
     meta: [
-      { label: 'API identifier', value: 'claude-sonnet-4' },
-      { label: 'Canonical tag', value: 'claude-sonnet-4' },
-      { label: 'Context window', value: '200K / 1M' },
-      { label: 'Input modalities', value: ['text', 'image'] },
-      { label: 'Output modalities', value: ['text'] },
+      { label: 'API 标识符', value: 'claude-sonnet-4' },
+      { label: '规范标签', value: 'claude-sonnet-4' },
+      { label: '上下文窗口', value: '200K / 1M' },
+      { label: '输入模态', value: ['文本', '图像'] },
+      { label: '输出模态', value: ['文本'] },
     ],
     variants: [
       {
@@ -169,11 +169,11 @@ const modelDetails: ModelDetail[] = [
     releasedAt: '2024-05-13',
     apiIdentifier: 'gpt-4o',
     meta: [
-      { label: 'API identifier', value: 'gpt-4o' },
-      { label: 'Canonical tag', value: 'gpt-4o' },
-      { label: 'Context window', value: '128K' },
-      { label: 'Input modalities', value: ['text', 'image', 'audio'] },
-      { label: 'Output modalities', value: ['text'] },
+      { label: 'API 标识符', value: 'gpt-4o' },
+      { label: '规范标签', value: 'gpt-4o' },
+      { label: '上下文窗口', value: '128K' },
+      { label: '输入模态', value: ['文本', '图像', '音频'] },
+      { label: '输出模态', value: ['文本'] },
     ],
     variants: [
       {
@@ -219,11 +219,11 @@ const modelDetails: ModelDetail[] = [
     releasedAt: '2025-03-25',
     apiIdentifier: 'gemini-2.5-pro',
     meta: [
-      { label: 'API identifier', value: 'gemini-2.5-pro' },
-      { label: 'Canonical tag', value: 'gemini-2-5-pro' },
-      { label: 'Context window', value: '1M' },
-      { label: 'Input modalities', value: ['text', 'image', 'video'] },
-      { label: 'Output modalities', value: ['text'] },
+      { label: 'API 标识符', value: 'gemini-2.5-pro' },
+      { label: '规范标签', value: 'gemini-2-5-pro' },
+      { label: '上下文窗口', value: '1M' },
+      { label: '输入模态', value: ['文本', '图像', '视频'] },
+      { label: '输出模态', value: ['文本'] },
     ],
     variants: [
       {
@@ -266,11 +266,11 @@ const modelDetails: ModelDetail[] = [
     releasedAt: '2025-01-20',
     apiIdentifier: 'deepseek-r1',
     meta: [
-      { label: 'API identifier', value: 'deepseek-r1' },
-      { label: 'Canonical tag', value: 'deepseek-r1' },
-      { label: 'Context window', value: '64K' },
-      { label: 'Input modalities', value: ['text'] },
-      { label: 'Output modalities', value: ['text'] },
+      { label: 'API 标识符', value: 'deepseek-r1' },
+      { label: '规范标签', value: 'deepseek-r1' },
+      { label: '上下文窗口', value: '64K' },
+      { label: '输入模态', value: ['文本'] },
+      { label: '输出模态', value: ['文本'] },
     ],
     variants: [
       {
@@ -313,11 +313,11 @@ const modelDetails: ModelDetail[] = [
     releasedAt: '2024-07-23',
     apiIdentifier: 'llama-3.1-405b-instruct',
     meta: [
-      { label: 'API identifier', value: 'llama-3.1-405b-instruct' },
-      { label: 'Canonical tag', value: 'llama-3-1-405b-instruct' },
-      { label: 'Context window', value: '128K' },
-      { label: 'Input modalities', value: ['text'] },
-      { label: 'Output modalities', value: ['text'] },
+      { label: 'API 标识符', value: 'llama-3.1-405b-instruct' },
+      { label: '规范标签', value: 'llama-3-1-405b-instruct' },
+      { label: '上下文窗口', value: '128K' },
+      { label: '输入模态', value: ['文本'] },
+      { label: '输出模态', value: ['文本'] },
     ],
     variants: [
       {
