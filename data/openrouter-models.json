@@ -118,10 +118,10 @@
       }
     },
     {
-      "id": "inclusionai/ring-2.6-1t:free",
+      "id": "inclusionai/ring-2.6-1t",
       "canonical_slug": "inclusionai/ring-2.6-1t-20260508",
       "hugging_face_id": null,
-      "name": "inclusionAI: Ring-2.6-1T (free)",
+      "name": "inclusionAI: Ring-2.6-1T",
       "created": 1778247440,
       "description": "Ring-2.6-1T is a 1T-parameter-scale thinking model with 63B active parameters, built for real-world agent workflows that require both strong capability and operational efficiency. It is optimized for coding agents, tool...",
       "context_length": 262144,
@@ -137,8 +137,9 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0",
-        "completion": "0"
+        "prompt": "0.000000075",
+        "completion": "0.000000625",
+        "input_cache_read": "0.000000015"
       },
       "top_provider": {
         "context_length": 262144,
@@ -153,6 +154,7 @@
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
+        "response_format",
         "seed",
         "stop",
         "temperature",
@@ -16829,8 +16831,10 @@
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
+        "response_format",
         "seed",
         "stop",
+        "structured_outputs",
         "temperature",
         "tool_choice",
         "tools",
