@@ -5,6 +5,32 @@ export type Brand = {
   logoUrl?: string | undefined
 }
 
+export type PriceCondition = {
+  key: string
+  value: string
+}
+
+export type PriceComponent = {
+  mode: string
+  scope: string
+  currency: 'USD'
+  amount: number
+  unit: string
+  conditions: PriceCondition[]
+  sourceField: string
+}
+
+export type OfficialPriceSet = {
+  priceSetId: string
+  modelTag: string
+  source: string
+  sourceModelKey: string
+  sourceProvider: string | null
+  components: PriceComponent[]
+  rawPricing: Record<string, unknown>
+  warnings: string[]
+}
+
 export type ProviderDeployment = {
   slug: string
   name: string
@@ -53,6 +79,7 @@ export type ModelDetail = ModelSummary & {
   apiIdentifier: string
   benchmarks: Array<{ name: string; score: string; note: string }>
   meta: ModelMetaItem[]
+  officialPriceSets: OfficialPriceSet[]
 }
 
 export type BrandGroup = Brand & {
@@ -151,6 +178,7 @@ const modelDetails: ModelDetail[] = [
       { name: 'SWE-bench', score: '72.7%', note: '公开报告中的软件工程任务表现' },
       { name: 'Agentic Coding', score: '强', note: '更稳定的多步代码编辑与检索' },
     ],
+    officialPriceSets: [],
   },
   {
     tag: 'gpt-4o',
@@ -201,6 +229,7 @@ const modelDetails: ModelDetail[] = [
       { name: 'MMLU', score: '88.7%', note: '通用知识能力参考' },
       { name: 'Multimodal', score: '强', note: '视觉和语音入口成熟' },
     ],
+    officialPriceSets: [],
   },
   {
     tag: 'gemini-2-5-pro',
@@ -248,6 +277,7 @@ const modelDetails: ModelDetail[] = [
       },
     ],
     benchmarks: [{ name: 'Long Context', score: '1M', note: '长文档与代码库分析' }],
+    officialPriceSets: [],
   },
   {
     tag: 'deepseek-r1',
@@ -295,6 +325,7 @@ const modelDetails: ModelDetail[] = [
       },
     ],
     benchmarks: [{ name: 'Reasoning', score: '强', note: '数学与代码推理任务' }],
+    officialPriceSets: [],
   },
   {
     tag: 'llama-3-1-405b-instruct',
@@ -342,6 +373,7 @@ const modelDetails: ModelDetail[] = [
       },
     ],
     benchmarks: [{ name: 'Open Weights', score: '405B', note: '开放权重旗舰规模' }],
+    officialPriceSets: [],
   },
 ]
 

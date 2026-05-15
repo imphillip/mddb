@@ -40,6 +40,7 @@ const openRouterGallery: OpenRouterGallery = {
       ],
       benchmarks: [],
       meta: [{ label: 'Source', value: 'openrouter' }],
+      officialPriceSets: [],
     },
     {
       tag: 'palmyra-x5',
@@ -71,6 +72,7 @@ const openRouterGallery: OpenRouterGallery = {
       ],
       benchmarks: [],
       meta: [{ label: 'Source', value: 'openrouter' }],
+      officialPriceSets: [],
     },
   ],
   source: { source: 'openrouter', path: 'data/openrouter-models.json', modelRows: 2, floatingAliasRows: 0, skippedRows: 0 },
@@ -119,6 +121,7 @@ const modelsDevGallery: ModelsDevGallery = {
       ],
       benchmarks: [],
       meta: [{ label: 'Source', value: 'models.dev' }],
+      officialPriceSets: [],
     },
     {
       tag: 'lfm-40b',
@@ -139,6 +142,7 @@ const modelsDevGallery: ModelsDevGallery = {
       variants: [],
       benchmarks: [],
       meta: [{ label: 'Source', value: 'models.dev' }],
+      officialPriceSets: [],
     },
     {
       tag: 'gpt-4o-mini-copy',
@@ -159,6 +163,7 @@ const modelsDevGallery: ModelsDevGallery = {
       variants: [],
       benchmarks: [],
       meta: [{ label: 'Source', value: 'models.dev' }],
+      officialPriceSets: [],
     },
   ],
   source: { path: 'data/models-dev-api.json', modelRows: 3, providerRows: 4 },

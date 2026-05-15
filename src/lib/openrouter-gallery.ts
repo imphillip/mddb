@@ -95,6 +95,7 @@ function toModelDetail(tag: string, records: OpenRouterModelRecord[]): ModelDeta
     variants,
     benchmarks: [],
     meta: buildMetaItems(best, records),
+    officialPriceSets: records.map((record) => record.officialPriceSet),
   }
 }
 

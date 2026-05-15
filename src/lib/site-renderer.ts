@@ -74,7 +74,7 @@ export function renderModelDetailPage(tag: string, details?: ModelDetail[]): str
     return page('模型未找到 · mddb.dev', `<main class="wrap" style="padding:80px 24px"><h1>模型未找到</h1><p class="muted">没有找到 ${escapeHtml(tag)}。</p></main>`, 'models')
   }
 
-  return page(`${model.name} · mddb.dev`, `<main><section class="detailHero"><div class="wrap"><a class="btn" href="/models/">← 返回模型列表</a><div class="eyebrow">${escapeHtml(model.brand.name)} / ${renderModelTagCopy(model.tag)}</div><h1>${escapeHtml(model.name)}</h1><p>${escapeHtml(model.longDescription)}</p></div></section><div class="wrap detailGrid"><article><nav class="toc" aria-label="模型页面章节"><a href="#overview">概览</a><a href="#meta">元数据</a><a href="#providers">部署来源</a><a href="#variants">变体</a><a href="#pricing">价格</a><a href="#benchmarks">评测</a><a href="#api">API</a></nav><section id="overview" class="panel"><h2>概览</h2><p class="muted">${escapeHtml(model.description)}</p><div class="meta"><div class="metabox"><span>模态</span><b>${escapeHtml(joinChinese(model.modalities))}</b></div><div class="metabox"><span>发布日期</span><b>${escapeHtml(formatDate(model.releasedAt))}</b></div><div class="metabox"><span>规范标签</span><b>${renderModelTagCopy(model.tag)}</b></div></div></section><section id="meta" class="panel"><h2>元数据</h2>${renderModelMeta(model)}</section><section id="providers" class="panel"><h2>部署来源</h2>${renderProviders(model)}</section><section id="variants" class="panel"><h2>变体</h2>${model.variants.map(renderVariant).join('')}</section><section id="benchmarks" class="panel"><h2>评测</h2>${model.benchmarks.map((b) => `<div class="providerRow"><div class="rowTop"><strong>${escapeHtml(b.name)}</strong><span class="pill">${escapeHtml(b.score)}</span></div><p class="muted">${escapeHtml(b.note)}</p></div>`).join('')}</section><section id="api" class="panel"><h2>API</h2><div class="apiBox">GET /models/${escapeHtml(model.tag)}<br>{<br>&nbsp;&nbsp;"modelTag": "${escapeHtml(model.tag)}",<br>&nbsp;&nbsp;"variants": ${model.variants.length}<br>}</div></section></article><aside><div id="pricing" class="panel"><h2>价格</h2><div class="priceGrid"><div class="metabox"><span>输入价格</span><b>${escapeHtml(model.inputPrice)}</b></div><div class="metabox"><span>输出价格</span><b>${escapeHtml(model.outputPrice)}</b></div><div class="metabox"><span>上下文</span><b>${escapeHtml(model.contextWindow)}</b></div><div class="metabox"><span>变体数</span><b>${model.variants.length}</b></div></div></div><div class="panel"><h2>部署来源</h2><p class="muted">${escapeHtml(joinChinese(model.providerNames))}</p></div></aside></div></main>`, 'models')
+  return page(`${model.name} · mddb.dev`, `<main><section class="detailHero"><div class="wrap"><a class="btn" href="/models/">← 返回模型列表</a><div class="eyebrow">${escapeHtml(model.brand.name)} / ${renderModelTagCopy(model.tag)}</div><h1>${escapeHtml(model.name)}</h1><p>${escapeHtml(model.longDescription)}</p></div></section><div class="wrap detailGrid"><article><nav class="toc" aria-label="模型页面章节"><a href="#overview">概览</a><a href="#meta">元数据</a><a href="#providers">部署来源</a><a href="#variants">变体</a><a href="#pricing">价格</a><a href="#benchmarks">评测</a><a href="#api">API</a></nav><section id="overview" class="panel"><h2>概览</h2><p class="muted">${escapeHtml(model.description)}</p><div class="meta"><div class="metabox"><span>模态</span><b>${escapeHtml(joinChinese(model.modalities))}</b></div><div class="metabox"><span>发布日期</span><b>${escapeHtml(formatDate(model.releasedAt))}</b></div><div class="metabox"><span>规范标签</span><b>${renderModelTagCopy(model.tag)}</b></div></div></section><section id="meta" class="panel"><h2>元数据</h2>${renderModelMeta(model)}</section><section id="providers" class="panel"><h2>部署来源</h2>${renderProviders(model)}</section><section id="variants" class="panel"><h2>变体</h2>${model.variants.map(renderVariant).join('')}</section><section id="benchmarks" class="panel"><h2>评测</h2>${model.benchmarks.map((b) => `<div class="providerRow"><div class="rowTop"><strong>${escapeHtml(b.name)}</strong><span class="pill">${escapeHtml(b.score)}</span></div><p class="muted">${escapeHtml(b.note)}</p></div>`).join('')}</section><section id="api" class="panel"><h2>API</h2><div class="apiBox">GET /models/${escapeHtml(model.tag)}<br>{<br>&nbsp;&nbsp;"modelTag": "${escapeHtml(model.tag)}",<br>&nbsp;&nbsp;"variants": ${model.variants.length}<br>}</div></section></article><aside><div id="pricing" class="panel"><h2>官方价格</h2><div class="priceGrid"><div class="metabox"><span>输入价格摘要</span><b>${escapeHtml(model.inputPrice)}</b></div><div class="metabox"><span>输出价格摘要</span><b>${escapeHtml(model.outputPrice)}</b></div><div class="metabox"><span>上下文</span><b>${escapeHtml(model.contextWindow)}</b></div><div class="metabox"><span>变体数</span><b>${model.variants.length}</b></div></div>${renderOfficialPricing(model)}</div><div class="panel"><h2>部署来源</h2><p class="muted">${escapeHtml(joinChinese(model.providerNames))}</p></div></aside></div></main>`, 'models')
 }
 
 function renderModelTagCopy(tag: string): string {
@@ -113,6 +113,37 @@ function renderProviders(model: ModelDetail): string {
 
 function renderVariant(variant: ModelVariant): string {
   return `<div class="variant"><div class="rowTop"><div><strong>${escapeHtml(variant.name)}</strong><p class="muted">${escapeHtml(variant.summary)}</p></div><span class="pill">${variant.providers.length || '私有'} 个部署来源</span></div><div class="meta"><div class="metabox"><span>上下文</span><b>${escapeHtml(variant.contextWindow)}</b></div><div class="metabox"><span>输入价格</span><b>${escapeHtml(variant.inputPrice)}</b></div><div class="metabox"><span>输出价格</span><b>${escapeHtml(variant.outputPrice)}</b></div></div><p class="providers"><strong>差异</strong><br>${escapeHtml(joinChinese(variant.differences))}</p><p class="providers"><strong>部署来源</strong><br>${escapeHtml(joinChinese(variant.providers.map((p) => p.name)) || '自托管 / 私有化')}</p></div>`
+}
+
+function renderOfficialPricing(model: ModelDetail): string {
+  const rows = model.officialPriceSets.flatMap((priceSet) =>
+    priceSet.components.map((component) => `<tr><td>${escapeHtml(formatPricingMode(component.mode))}</td><td>${escapeHtml(formatPricingScope(component.scope))}</td><td class="mono">${escapeHtml(formatMoney(component.amount))}</td><td>${escapeHtml(formatPricingUnit(component.unit))}</td><td>${escapeHtml(formatPricingConditions(component.conditions))}</td><td>${escapeHtml(priceSet.priceSetId)}</td></tr>`),
+  )
+  if (rows.length === 0) return '<p class="muted">暂无可结构化展示的官方价格组件。</p>'
+  return `<div class="tableWrap"><table class="modelTable"><thead><tr><th>计价方式</th><th>范围</th><th>价格</th><th>单位</th><th>条件</th><th>来源</th></tr></thead><tbody>${rows.join('')}</tbody></table></div>`
+}
+
+function formatPricingMode(mode: string): string {
+  const labels: Record<string, string> = { token: 'token', request: '按请求', image: '图片', audio: '音频', time: '时长', web_search: '联网搜索', reasoning: '推理', other: '其他' }
+  return labels[mode] ?? mode
+}
+
+function formatPricingScope(scope: string): string {
+  const labels: Record<string, string> = { input: '输入', output: '输出', cache_read: '缓存读取', cache_write: '缓存写入', request: '请求', image_input: '图片输入', image_output: '图片输出', image_token: '图片 token', audio_input: '音频输入', audio_output: '音频输出', audio_cache: '音频缓存', internal_reasoning: '内部推理', web_search: '联网搜索', other: '其他' }
+  return labels[scope] ?? scope
+}
+
+function formatPricingUnit(unit: string): string {
+  const labels: Record<string, string> = { '1m_tokens': '每 1M tokens', request: '每次请求', image: '每张图片', audio_second: '每秒音频', audio_minute: '每分钟音频', hour: '每小时', unit: '每单位' }
+  return labels[unit] ?? unit
+}
+
+function formatPricingConditions(conditions: Array<{ key: string; value: string }>): string {
+  return conditions.length > 0 ? conditions.map((condition) => `${condition.key}=${condition.value}`).join(' · ') : '默认'
+}
+
+function formatMoney(amount: number): string {
+  return `$${amount.toLocaleString('en-US', { maximumFractionDigits: 12 })}`
 }
 
 function countByModality(models: ModelSummary[], modality: string): number {

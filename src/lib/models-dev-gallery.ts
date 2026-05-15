@@ -363,6 +363,7 @@ function toModelDetail(group: CanonicalModelGroup, providers: Map<string, Models
       ...modelsDevMetaItems(group.models, modalities),
       { label: 'Updated dates', value: Array.from(new Set(group.models.map((model) => model.updated).filter((value): value is string => Boolean(value)))).sort() },
     ],
+    officialPriceSets: [],
   }
 }
 

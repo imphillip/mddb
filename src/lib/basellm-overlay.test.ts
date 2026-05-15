@@ -53,6 +53,7 @@ function makeOpenRouterGallery(): OpenRouterGallery {
         ],
         benchmarks: [],
         meta: [],
+        officialPriceSets: [],
       },
     ],
     brands: [{ slug: 'google', name: 'Google', description: 'Google models', models: [] }],

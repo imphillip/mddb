@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import type { ModelGallery } from './model-catalog.js'
-import { buildModelGallery } from './model-catalog.js'
+import { buildModelGallery, getModelDetail, type ModelGallery } from './model-catalog.js'
 import { renderHomePage, renderModelDetailPage, renderModelsPage } from './site-renderer.js'
 
 describe('site renderer', () => {
@@ -119,6 +118,46 @@ describe('site renderer', () => {
     expect(detailHtml).toContain('复制')
     expect(detailHtml).toContain('navigator.clipboard.writeText(tag)')
     expect(plazaHtml).toContain('data-copy-model-tag="claude-sonnet-4"')
+  })
+
+  it('renders complete official pricing components on model detail pages', () => {
+    const model = buildModelGallery().models[0]!
+    const detail = getModelDetail(model.tag)!
+    const html = renderModelDetailPage(model.tag, [
+      {
+        ...detail,
+        officialPriceSets: [
+          {
+            priceSetId: 'openrouter:test/model',
+            modelTag: model.tag,
+            source: 'openrouter',
+            sourceModelKey: 'test/model',
+            sourceProvider: 'test',
+            components: [
+              { mode: 'token', scope: 'input', currency: 'USD', amount: 1.25, unit: '1m_tokens', conditions: [], sourceField: 'prompt' },
+              { mode: 'request', scope: 'request', currency: 'USD', amount: 0.002, unit: 'request', conditions: [], sourceField: 'request' },
+              { mode: 'image', scope: 'image_output', currency: 'USD', amount: 0.01, unit: 'image', conditions: [{ key: 'resolution', value: '1024x1024' }], sourceField: 'image_output' },
+            ],
+            rawPricing: { prompt: '0.00000125', request: '0.002', image_output: '0.01' },
+            warnings: [],
+          },
+        ],
+      },
+    ])
+
+    expect(html).toContain('官方价格')
+    expect(html).toContain('计价方式')
+    expect(html).toContain('范围')
+    expect(html).toContain('单位')
+    expect(html).toContain('条件')
+    expect(html).toContain('来源')
+    expect(html).toContain('token')
+    expect(html).toContain('按请求')
+    expect(html).toContain('图片')
+    expect(html).toContain('$1.25')
+    expect(html).toContain('$0.002')
+    expect(html).toContain('resolution=1024x1024')
+    expect(html).toContain('openrouter:test/model')
   })
 
   it('renders OpenRouter-like model detail sections with providers and provider-specific variants', () => {

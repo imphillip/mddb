@@ -1,4 +1,5 @@
 import type { Brand } from './model-catalog.js'
+import { parseOpenRouterOfficialPriceSet, type OfficialPriceSet } from './pricing.js'
 
 export type OpenRouterModelsResponse = {
   data: OpenRouterModel[]
@@ -97,6 +98,7 @@ export type OpenRouterModelRecord = {
     createCacheRatio?: number
     ratioStatus: 'ok' | 'free' | 'missing-prompt-baseline'
   }
+  officialPriceSet: OfficialPriceSet
   sourceRecord: {
     rawRecord: OpenRouterModel
   }
@@ -170,6 +172,12 @@ export function importOpenRouterModels(response: OpenRouterModelsResponse): Open
         isModerated: model.top_provider.is_moderated,
       },
       pricing: derivePricing(prompt ?? 0, completion ?? 0, parsePrice(model.pricing.input_cache_read), parsePrice(model.pricing.input_cache_write)),
+      officialPriceSet: parseOpenRouterOfficialPriceSet({
+        modelTag: baseIdentity.canonicalTag,
+        sourceModelKey: model.id,
+        sourceProvider: sourceNamespace || null,
+        pricing: model.pricing,
+      }),
       sourceRecord: { rawRecord: model },
     }
     if (record.sourceAlias) floatingAliases.push(record)

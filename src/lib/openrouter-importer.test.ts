@@ -215,6 +215,16 @@ describe('importOpenRouterModels', () => {
       createCacheRatio: 1.25,
     })
     expect(gpt4o?.pricing).toMatchObject({ promptPer1mUsd: 2.5, completionPer1mUsd: 10, modelRatio: 1.25, completionRatio: 4 })
+    expect(claude?.officialPriceSet.components).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ mode: 'token', scope: 'input', amount: 30, unit: '1m_tokens', sourceField: 'prompt' }),
+        expect.objectContaining({ mode: 'token', scope: 'output', amount: 150, unit: '1m_tokens', sourceField: 'completion' }),
+        expect.objectContaining({ mode: 'token', scope: 'cache_read', amount: 3, unit: '1m_tokens', sourceField: 'input_cache_read' }),
+        expect.objectContaining({ mode: 'token', scope: 'cache_write', amount: 37.5, unit: '1m_tokens', sourceField: 'input_cache_write' }),
+        expect.objectContaining({ mode: 'web_search', scope: 'web_search', amount: 0.01, unit: 'request', sourceField: 'web_search' }),
+      ]),
+    )
+    expect(claude?.officialPriceSet.rawPricing).toMatchObject({ web_search: '0.01' })
     expect(ring?.pricing).toMatchObject({ promptPer1mUsd: 0, completionPer1mUsd: 0, modelRatio: 0 })
   })
 
