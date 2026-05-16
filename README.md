@@ -142,12 +142,14 @@ google/gemini-2.5-pro-preview
 
 在这个有向图里，很多 alias、snapshot、deployment、variant 最终都会指向少数更稳定的型号节点。我们把这种被其他 node 指向、用于承载规格/型号语义的节点称为 **spec anchor node**，中文可称为 **型号锚点**。
 
+spec anchor node 必须来自 `source_model`，也就是 source model paths。`endpoint_deployment` 可以指向 spec anchor，但它本身不应成为 spec anchor：endpoint 表示 provider/backend 的部署观察，而不是型号规格本体。
+
 直觉上，spec anchor node 是“有 name tag 的模型型号”：它不是某个云区域、gateway route 或临时别名，而是其他观察最终归向的规格对象。实际计算时需要忽略 `sourced_from`、`same_author_as` 等非身份边，并根据 `alias_of`、`snapshot_of`、`variant_of`、`deployment_of` 这类语义边寻找入度汇聚点。
 
 注意：一个 spec anchor node 仍然可能有 outgoing edges，例如它也有自己的 endpoint observations。因此“只有 incoming、没有 outgoing”是一个有用的图论信号，但不是唯一判定标准。更稳妥的定义是：
 
 ```text
-spec anchor node = 被 alias/snapshot/variant/deployment 等语义边指向的规格承载节点。
+spec anchor node = 位于 source model paths 中、被 alias/snapshot/variant/deployment 等语义边指向的规格承载节点。
 ```
 
 ### Counting rules
