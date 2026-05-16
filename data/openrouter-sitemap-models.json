@@ -1,0 +1,3249 @@
+{
+  "fetchedAt": "2026-05-16T09:47:11.662Z",
+  "source": {
+    "sitemapUrl": "https://openrouter.ai/sitemap.xml",
+    "modelPages": 433,
+    "apiRows": 356,
+    "pageOnly": 89,
+    "apiOnly": 12
+  },
+  "modelPages": [
+    {
+      "id": "ai21/jamba-large-1.7",
+      "namespace": "ai21",
+      "modelId": "jamba-large-1.7",
+      "url": "https://openrouter.ai/ai21/jamba-large-1.7"
+    },
+    {
+      "id": "aion-labs/aion-1.0",
+      "namespace": "aion-labs",
+      "modelId": "aion-1.0",
+      "url": "https://openrouter.ai/aion-labs/aion-1.0"
+    },
+    {
+      "id": "aion-labs/aion-1.0-mini",
+      "namespace": "aion-labs",
+      "modelId": "aion-1.0-mini",
+      "url": "https://openrouter.ai/aion-labs/aion-1.0-mini"
+    },
+    {
+      "id": "aion-labs/aion-2.0",
+      "namespace": "aion-labs",
+      "modelId": "aion-2.0",
+      "url": "https://openrouter.ai/aion-labs/aion-2.0"
+    },
+    {
+      "id": "aion-labs/aion-rp-llama-3.1-8b",
+      "namespace": "aion-labs",
+      "modelId": "aion-rp-llama-3.1-8b",
+      "url": "https://openrouter.ai/aion-labs/aion-rp-llama-3.1-8b"
+    },
+    {
+      "id": "alfredpros/codellama-7b-instruct-solidity",
+      "namespace": "alfredpros",
+      "modelId": "codellama-7b-instruct-solidity",
+      "url": "https://openrouter.ai/alfredpros/codellama-7b-instruct-solidity"
+    },
+    {
+      "id": "alibaba/tongyi-deepresearch-30b-a3b",
+      "namespace": "alibaba",
+      "modelId": "tongyi-deepresearch-30b-a3b",
+      "url": "https://openrouter.ai/alibaba/tongyi-deepresearch-30b-a3b"
+    },
+    {
+      "id": "alibaba/wan-2.6",
+      "namespace": "alibaba",
+      "modelId": "wan-2.6",
+      "url": "https://openrouter.ai/alibaba/wan-2.6"
+    },
+    {
+      "id": "alibaba/wan-2.7",
+      "namespace": "alibaba",
+      "modelId": "wan-2.7",
+      "url": "https://openrouter.ai/alibaba/wan-2.7"
+    },
+    {
+      "id": "allenai/olmo-3-32b-think",
+      "namespace": "allenai",
+      "modelId": "olmo-3-32b-think",
+      "url": "https://openrouter.ai/allenai/olmo-3-32b-think"
+    },
+    {
+      "id": "amazon/nova-2-lite-v1",
+      "namespace": "amazon",
+      "modelId": "nova-2-lite-v1",
+      "url": "https://openrouter.ai/amazon/nova-2-lite-v1"
+    },
+    {
+      "id": "amazon/nova-lite-v1",
+      "namespace": "amazon",
+      "modelId": "nova-lite-v1",
+      "url": "https://openrouter.ai/amazon/nova-lite-v1"
+    },
+    {
+      "id": "amazon/nova-micro-v1",
+      "namespace": "amazon",
+      "modelId": "nova-micro-v1",
+      "url": "https://openrouter.ai/amazon/nova-micro-v1"
+    },
+    {
+      "id": "amazon/nova-premier-v1",
+      "namespace": "amazon",
+      "modelId": "nova-premier-v1",
+      "url": "https://openrouter.ai/amazon/nova-premier-v1"
+    },
+    {
+      "id": "amazon/nova-pro-v1",
+      "namespace": "amazon",
+      "modelId": "nova-pro-v1",
+      "url": "https://openrouter.ai/amazon/nova-pro-v1"
+    },
+    {
+      "id": "anthracite-org/magnum-v4-72b",
+      "namespace": "anthracite-org",
+      "modelId": "magnum-v4-72b",
+      "url": "https://openrouter.ai/anthracite-org/magnum-v4-72b"
+    },
+    {
+      "id": "anthropic/claude-3-haiku",
+      "namespace": "anthropic",
+      "modelId": "claude-3-haiku",
+      "url": "https://openrouter.ai/anthropic/claude-3-haiku"
+    },
+    {
+      "id": "anthropic/claude-3.5-haiku",
+      "namespace": "anthropic",
+      "modelId": "claude-3.5-haiku",
+      "url": "https://openrouter.ai/anthropic/claude-3.5-haiku"
+    },
+    {
+      "id": "anthropic/claude-haiku-4.5",
+      "namespace": "anthropic",
+      "modelId": "claude-haiku-4.5",
+      "url": "https://openrouter.ai/anthropic/claude-haiku-4.5"
+    },
+    {
+      "id": "anthropic/claude-opus-4",
+      "namespace": "anthropic",
+      "modelId": "claude-opus-4",
+      "url": "https://openrouter.ai/anthropic/claude-opus-4"
+    },
+    {
+      "id": "anthropic/claude-opus-4.1",
+      "namespace": "anthropic",
+      "modelId": "claude-opus-4.1",
+      "url": "https://openrouter.ai/anthropic/claude-opus-4.1"
+    },
+    {
+      "id": "anthropic/claude-opus-4.5",
+      "namespace": "anthropic",
+      "modelId": "claude-opus-4.5",
+      "url": "https://openrouter.ai/anthropic/claude-opus-4.5"
+    },
+    {
+      "id": "anthropic/claude-opus-4.6",
+      "namespace": "anthropic",
+      "modelId": "claude-opus-4.6",
+      "url": "https://openrouter.ai/anthropic/claude-opus-4.6"
+    },
+    {
+      "id": "anthropic/claude-opus-4.6-fast",
+      "namespace": "anthropic",
+      "modelId": "claude-opus-4.6-fast",
+      "url": "https://openrouter.ai/anthropic/claude-opus-4.6-fast"
+    },
+    {
+      "id": "anthropic/claude-opus-4.7",
+      "namespace": "anthropic",
+      "modelId": "claude-opus-4.7",
+      "url": "https://openrouter.ai/anthropic/claude-opus-4.7"
+    },
+    {
+      "id": "anthropic/claude-opus-4.7-fast",
+      "namespace": "anthropic",
+      "modelId": "claude-opus-4.7-fast",
+      "url": "https://openrouter.ai/anthropic/claude-opus-4.7-fast"
+    },
+    {
+      "id": "anthropic/claude-sonnet-4",
+      "namespace": "anthropic",
+      "modelId": "claude-sonnet-4",
+      "url": "https://openrouter.ai/anthropic/claude-sonnet-4"
+    },
+    {
+      "id": "anthropic/claude-sonnet-4.5",
+      "namespace": "anthropic",
+      "modelId": "claude-sonnet-4.5",
+      "url": "https://openrouter.ai/anthropic/claude-sonnet-4.5"
+    },
+    {
+      "id": "anthropic/claude-sonnet-4.6",
+      "namespace": "anthropic",
+      "modelId": "claude-sonnet-4.6",
+      "url": "https://openrouter.ai/anthropic/claude-sonnet-4.6"
+    },
+    {
+      "id": "arcee-ai/coder-large",
+      "namespace": "arcee-ai",
+      "modelId": "coder-large",
+      "url": "https://openrouter.ai/arcee-ai/coder-large"
+    },
+    {
+      "id": "arcee-ai/maestro-reasoning",
+      "namespace": "arcee-ai",
+      "modelId": "maestro-reasoning",
+      "url": "https://openrouter.ai/arcee-ai/maestro-reasoning"
+    },
+    {
+      "id": "arcee-ai/spotlight",
+      "namespace": "arcee-ai",
+      "modelId": "spotlight",
+      "url": "https://openrouter.ai/arcee-ai/spotlight"
+    },
+    {
+      "id": "arcee-ai/trinity-large-preview",
+      "namespace": "arcee-ai",
+      "modelId": "trinity-large-preview",
+      "url": "https://openrouter.ai/arcee-ai/trinity-large-preview"
+    },
+    {
+      "id": "arcee-ai/trinity-large-thinking",
+      "namespace": "arcee-ai",
+      "modelId": "trinity-large-thinking",
+      "url": "https://openrouter.ai/arcee-ai/trinity-large-thinking"
+    },
+    {
+      "id": "arcee-ai/trinity-large-thinking:free",
+      "namespace": "arcee-ai",
+      "modelId": "trinity-large-thinking:free",
+      "url": "https://openrouter.ai/arcee-ai/trinity-large-thinking:free"
+    },
+    {
+      "id": "arcee-ai/trinity-mini",
+      "namespace": "arcee-ai",
+      "modelId": "trinity-mini",
+      "url": "https://openrouter.ai/arcee-ai/trinity-mini"
+    },
+    {
+      "id": "arcee-ai/virtuoso-large",
+      "namespace": "arcee-ai",
+      "modelId": "virtuoso-large",
+      "url": "https://openrouter.ai/arcee-ai/virtuoso-large"
+    },
+    {
+      "id": "baai/bge-base-en-v1.5",
+      "namespace": "baai",
+      "modelId": "bge-base-en-v1.5",
+      "url": "https://openrouter.ai/baai/bge-base-en-v1.5"
+    },
+    {
+      "id": "baai/bge-large-en-v1.5",
+      "namespace": "baai",
+      "modelId": "bge-large-en-v1.5",
+      "url": "https://openrouter.ai/baai/bge-large-en-v1.5"
+    },
+    {
+      "id": "baai/bge-m3",
+      "namespace": "baai",
+      "modelId": "bge-m3",
+      "url": "https://openrouter.ai/baai/bge-m3"
+    },
+    {
+      "id": "baidu/cobuddy:free",
+      "namespace": "baidu",
+      "modelId": "cobuddy:free",
+      "url": "https://openrouter.ai/baidu/cobuddy:free"
+    },
+    {
+      "id": "baidu/ernie-4.5-21b-a3b",
+      "namespace": "baidu",
+      "modelId": "ernie-4.5-21b-a3b",
+      "url": "https://openrouter.ai/baidu/ernie-4.5-21b-a3b"
+    },
+    {
+      "id": "baidu/ernie-4.5-21b-a3b-thinking",
+      "namespace": "baidu",
+      "modelId": "ernie-4.5-21b-a3b-thinking",
+      "url": "https://openrouter.ai/baidu/ernie-4.5-21b-a3b-thinking"
+    },
+    {
+      "id": "baidu/ernie-4.5-300b-a47b",
+      "namespace": "baidu",
+      "modelId": "ernie-4.5-300b-a47b",
+      "url": "https://openrouter.ai/baidu/ernie-4.5-300b-a47b"
+    },
+    {
+      "id": "baidu/ernie-4.5-vl-28b-a3b",
+      "namespace": "baidu",
+      "modelId": "ernie-4.5-vl-28b-a3b",
+      "url": "https://openrouter.ai/baidu/ernie-4.5-vl-28b-a3b"
+    },
+    {
+      "id": "baidu/ernie-4.5-vl-424b-a47b",
+      "namespace": "baidu",
+      "modelId": "ernie-4.5-vl-424b-a47b",
+      "url": "https://openrouter.ai/baidu/ernie-4.5-vl-424b-a47b"
+    },
+    {
+      "id": "baidu/qianfan-ocr-fast",
+      "namespace": "baidu",
+      "modelId": "qianfan-ocr-fast",
+      "url": "https://openrouter.ai/baidu/qianfan-ocr-fast"
+    },
+    {
+      "id": "black-forest-labs/flux.2-flex",
+      "namespace": "black-forest-labs",
+      "modelId": "flux.2-flex",
+      "url": "https://openrouter.ai/black-forest-labs/flux.2-flex"
+    },
+    {
+      "id": "black-forest-labs/flux.2-klein-4b",
+      "namespace": "black-forest-labs",
+      "modelId": "flux.2-klein-4b",
+      "url": "https://openrouter.ai/black-forest-labs/flux.2-klein-4b"
+    },
+    {
+      "id": "black-forest-labs/flux.2-max",
+      "namespace": "black-forest-labs",
+      "modelId": "flux.2-max",
+      "url": "https://openrouter.ai/black-forest-labs/flux.2-max"
+    },
+    {
+      "id": "black-forest-labs/flux.2-pro",
+      "namespace": "black-forest-labs",
+      "modelId": "flux.2-pro",
+      "url": "https://openrouter.ai/black-forest-labs/flux.2-pro"
+    },
+    {
+      "id": "bytedance-seed/seed-1.6",
+      "namespace": "bytedance-seed",
+      "modelId": "seed-1.6",
+      "url": "https://openrouter.ai/bytedance-seed/seed-1.6"
+    },
+    {
+      "id": "bytedance-seed/seed-1.6-flash",
+      "namespace": "bytedance-seed",
+      "modelId": "seed-1.6-flash",
+      "url": "https://openrouter.ai/bytedance-seed/seed-1.6-flash"
+    },
+    {
+      "id": "bytedance-seed/seed-2.0-lite",
+      "namespace": "bytedance-seed",
+      "modelId": "seed-2.0-lite",
+      "url": "https://openrouter.ai/bytedance-seed/seed-2.0-lite"
+    },
+    {
+      "id": "bytedance-seed/seed-2.0-mini",
+      "namespace": "bytedance-seed",
+      "modelId": "seed-2.0-mini",
+      "url": "https://openrouter.ai/bytedance-seed/seed-2.0-mini"
+    },
+    {
+      "id": "bytedance-seed/seedream-4.5",
+      "namespace": "bytedance-seed",
+      "modelId": "seedream-4.5",
+      "url": "https://openrouter.ai/bytedance-seed/seedream-4.5"
+    },
+    {
+      "id": "bytedance/seedance-1-5-pro",
+      "namespace": "bytedance",
+      "modelId": "seedance-1-5-pro",
+      "url": "https://openrouter.ai/bytedance/seedance-1-5-pro"
+    },
+    {
+      "id": "bytedance/seedance-2.0",
+      "namespace": "bytedance",
+      "modelId": "seedance-2.0",
+      "url": "https://openrouter.ai/bytedance/seedance-2.0"
+    },
+    {
+      "id": "bytedance/seedance-2.0-fast",
+      "namespace": "bytedance",
+      "modelId": "seedance-2.0-fast",
+      "url": "https://openrouter.ai/bytedance/seedance-2.0-fast"
+    },
+    {
+      "id": "bytedance/ui-tars-1.5-7b",
+      "namespace": "bytedance",
+      "modelId": "ui-tars-1.5-7b",
+      "url": "https://openrouter.ai/bytedance/ui-tars-1.5-7b"
+    },
+    {
+      "id": "canopylabs/orpheus-3b-0.1-ft",
+      "namespace": "canopylabs",
+      "modelId": "orpheus-3b-0.1-ft",
+      "url": "https://openrouter.ai/canopylabs/orpheus-3b-0.1-ft"
+    },
+    {
+      "id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
+      "namespace": "cognitivecomputations",
+      "modelId": "dolphin-mistral-24b-venice-edition:free",
+      "url": "https://openrouter.ai/cognitivecomputations/dolphin-mistral-24b-venice-edition:free"
+    },
+    {
+      "id": "cohere/command-a",
+      "namespace": "cohere",
+      "modelId": "command-a",
+      "url": "https://openrouter.ai/cohere/command-a"
+    },
+    {
+      "id": "cohere/command-r-08-2024",
+      "namespace": "cohere",
+      "modelId": "command-r-08-2024",
+      "url": "https://openrouter.ai/cohere/command-r-08-2024"
+    },
+    {
+      "id": "cohere/command-r-plus-08-2024",
+      "namespace": "cohere",
+      "modelId": "command-r-plus-08-2024",
+      "url": "https://openrouter.ai/cohere/command-r-plus-08-2024"
+    },
+    {
+      "id": "cohere/command-r7b-12-2024",
+      "namespace": "cohere",
+      "modelId": "command-r7b-12-2024",
+      "url": "https://openrouter.ai/cohere/command-r7b-12-2024"
+    },
+    {
+      "id": "cohere/rerank-4-fast",
+      "namespace": "cohere",
+      "modelId": "rerank-4-fast",
+      "url": "https://openrouter.ai/cohere/rerank-4-fast"
+    },
+    {
+      "id": "cohere/rerank-4-pro",
+      "namespace": "cohere",
+      "modelId": "rerank-4-pro",
+      "url": "https://openrouter.ai/cohere/rerank-4-pro"
+    },
+    {
+      "id": "cohere/rerank-v3.5",
+      "namespace": "cohere",
+      "modelId": "rerank-v3.5",
+      "url": "https://openrouter.ai/cohere/rerank-v3.5"
+    },
+    {
+      "id": "deepcogito/cogito-v2.1-671b",
+      "namespace": "deepcogito",
+      "modelId": "cogito-v2.1-671b",
+      "url": "https://openrouter.ai/deepcogito/cogito-v2.1-671b"
+    },
+    {
+      "id": "deepseek/deepseek-chat",
+      "namespace": "deepseek",
+      "modelId": "deepseek-chat",
+      "url": "https://openrouter.ai/deepseek/deepseek-chat"
+    },
+    {
+      "id": "deepseek/deepseek-chat-v3-0324",
+      "namespace": "deepseek",
+      "modelId": "deepseek-chat-v3-0324",
+      "url": "https://openrouter.ai/deepseek/deepseek-chat-v3-0324"
+    },
+    {
+      "id": "deepseek/deepseek-chat-v3.1",
+      "namespace": "deepseek",
+      "modelId": "deepseek-chat-v3.1",
+      "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1"
+    },
+    {
+      "id": "deepseek/deepseek-r1",
+      "namespace": "deepseek",
+      "modelId": "deepseek-r1",
+      "url": "https://openrouter.ai/deepseek/deepseek-r1"
+    },
+    {
+      "id": "deepseek/deepseek-r1-0528",
+      "namespace": "deepseek",
+      "modelId": "deepseek-r1-0528",
+      "url": "https://openrouter.ai/deepseek/deepseek-r1-0528"
+    },
+    {
+      "id": "deepseek/deepseek-r1-distill-llama-70b",
+      "namespace": "deepseek",
+      "modelId": "deepseek-r1-distill-llama-70b",
+      "url": "https://openrouter.ai/deepseek/deepseek-r1-distill-llama-70b"
+    },
+    {
+      "id": "deepseek/deepseek-r1-distill-qwen-32b",
+      "namespace": "deepseek",
+      "modelId": "deepseek-r1-distill-qwen-32b",
+      "url": "https://openrouter.ai/deepseek/deepseek-r1-distill-qwen-32b"
+    },
+    {
+      "id": "deepseek/deepseek-v3.1-terminus",
+      "namespace": "deepseek",
+      "modelId": "deepseek-v3.1-terminus",
+      "url": "https://openrouter.ai/deepseek/deepseek-v3.1-terminus"
+    },
+    {
+      "id": "deepseek/deepseek-v3.2",
+      "namespace": "deepseek",
+      "modelId": "deepseek-v3.2",
+      "url": "https://openrouter.ai/deepseek/deepseek-v3.2"
+    },
+    {
+      "id": "deepseek/deepseek-v3.2-exp",
+      "namespace": "deepseek",
+      "modelId": "deepseek-v3.2-exp",
+      "url": "https://openrouter.ai/deepseek/deepseek-v3.2-exp"
+    },
+    {
+      "id": "deepseek/deepseek-v3.2-speciale",
+      "namespace": "deepseek",
+      "modelId": "deepseek-v3.2-speciale",
+      "url": "https://openrouter.ai/deepseek/deepseek-v3.2-speciale"
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash",
+      "namespace": "deepseek",
+      "modelId": "deepseek-v4-flash",
+      "url": "https://openrouter.ai/deepseek/deepseek-v4-flash"
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash:free",
+      "namespace": "deepseek",
+      "modelId": "deepseek-v4-flash:free",
+      "url": "https://openrouter.ai/deepseek/deepseek-v4-flash:free"
+    },
+    {
+      "id": "deepseek/deepseek-v4-pro",
+      "namespace": "deepseek",
+      "modelId": "deepseek-v4-pro",
+      "url": "https://openrouter.ai/deepseek/deepseek-v4-pro"
+    },
+    {
+      "id": "essentialai/rnj-1-instruct",
+      "namespace": "essentialai",
+      "modelId": "rnj-1-instruct",
+      "url": "https://openrouter.ai/essentialai/rnj-1-instruct"
+    },
+    {
+      "id": "google/chirp-3",
+      "namespace": "google",
+      "modelId": "chirp-3",
+      "url": "https://openrouter.ai/google/chirp-3"
+    },
+    {
+      "id": "google/gemini-2.0-flash-001",
+      "namespace": "google",
+      "modelId": "gemini-2.0-flash-001",
+      "url": "https://openrouter.ai/google/gemini-2.0-flash-001"
+    },
+    {
+      "id": "google/gemini-2.0-flash-lite-001",
+      "namespace": "google",
+      "modelId": "gemini-2.0-flash-lite-001",
+      "url": "https://openrouter.ai/google/gemini-2.0-flash-lite-001"
+    },
+    {
+      "id": "google/gemini-2.5-flash",
+      "namespace": "google",
+      "modelId": "gemini-2.5-flash",
+      "url": "https://openrouter.ai/google/gemini-2.5-flash"
+    },
+    {
+      "id": "google/gemini-2.5-flash-image",
+      "namespace": "google",
+      "modelId": "gemini-2.5-flash-image",
+      "url": "https://openrouter.ai/google/gemini-2.5-flash-image"
+    },
+    {
+      "id": "google/gemini-2.5-flash-lite",
+      "namespace": "google",
+      "modelId": "gemini-2.5-flash-lite",
+      "url": "https://openrouter.ai/google/gemini-2.5-flash-lite"
+    },
+    {
+      "id": "google/gemini-2.5-flash-lite-preview-09-2025",
+      "namespace": "google",
+      "modelId": "gemini-2.5-flash-lite-preview-09-2025",
+      "url": "https://openrouter.ai/google/gemini-2.5-flash-lite-preview-09-2025"
+    },
+    {
+      "id": "google/gemini-2.5-pro",
+      "namespace": "google",
+      "modelId": "gemini-2.5-pro",
+      "url": "https://openrouter.ai/google/gemini-2.5-pro"
+    },
+    {
+      "id": "google/gemini-2.5-pro-preview",
+      "namespace": "google",
+      "modelId": "gemini-2.5-pro-preview",
+      "url": "https://openrouter.ai/google/gemini-2.5-pro-preview"
+    },
+    {
+      "id": "google/gemini-2.5-pro-preview-05-06",
+      "namespace": "google",
+      "modelId": "gemini-2.5-pro-preview-05-06",
+      "url": "https://openrouter.ai/google/gemini-2.5-pro-preview-05-06"
+    },
+    {
+      "id": "google/gemini-3-flash-preview",
+      "namespace": "google",
+      "modelId": "gemini-3-flash-preview",
+      "url": "https://openrouter.ai/google/gemini-3-flash-preview"
+    },
+    {
+      "id": "google/gemini-3-pro-image-preview",
+      "namespace": "google",
+      "modelId": "gemini-3-pro-image-preview",
+      "url": "https://openrouter.ai/google/gemini-3-pro-image-preview"
+    },
+    {
+      "id": "google/gemini-3.1-flash-image-preview",
+      "namespace": "google",
+      "modelId": "gemini-3.1-flash-image-preview",
+      "url": "https://openrouter.ai/google/gemini-3.1-flash-image-preview"
+    },
+    {
+      "id": "google/gemini-3.1-flash-lite",
+      "namespace": "google",
+      "modelId": "gemini-3.1-flash-lite",
+      "url": "https://openrouter.ai/google/gemini-3.1-flash-lite"
+    },
+    {
+      "id": "google/gemini-3.1-flash-lite-preview",
+      "namespace": "google",
+      "modelId": "gemini-3.1-flash-lite-preview",
+      "url": "https://openrouter.ai/google/gemini-3.1-flash-lite-preview"
+    },
+    {
+      "id": "google/gemini-3.1-flash-tts-preview",
+      "namespace": "google",
+      "modelId": "gemini-3.1-flash-tts-preview",
+      "url": "https://openrouter.ai/google/gemini-3.1-flash-tts-preview"
+    },
+    {
+      "id": "google/gemini-3.1-pro-preview",
+      "namespace": "google",
+      "modelId": "gemini-3.1-pro-preview",
+      "url": "https://openrouter.ai/google/gemini-3.1-pro-preview"
+    },
+    {
+      "id": "google/gemini-3.1-pro-preview-customtools",
+      "namespace": "google",
+      "modelId": "gemini-3.1-pro-preview-customtools",
+      "url": "https://openrouter.ai/google/gemini-3.1-pro-preview-customtools"
+    },
+    {
+      "id": "google/gemini-embedding-001",
+      "namespace": "google",
+      "modelId": "gemini-embedding-001",
+      "url": "https://openrouter.ai/google/gemini-embedding-001"
+    },
+    {
+      "id": "google/gemini-embedding-2-preview",
+      "namespace": "google",
+      "modelId": "gemini-embedding-2-preview",
+      "url": "https://openrouter.ai/google/gemini-embedding-2-preview"
+    },
+    {
+      "id": "google/gemma-2-27b-it",
+      "namespace": "google",
+      "modelId": "gemma-2-27b-it",
+      "url": "https://openrouter.ai/google/gemma-2-27b-it"
+    },
+    {
+      "id": "google/gemma-3-12b-it",
+      "namespace": "google",
+      "modelId": "gemma-3-12b-it",
+      "url": "https://openrouter.ai/google/gemma-3-12b-it"
+    },
+    {
+      "id": "google/gemma-3-27b-it",
+      "namespace": "google",
+      "modelId": "gemma-3-27b-it",
+      "url": "https://openrouter.ai/google/gemma-3-27b-it"
+    },
+    {
+      "id": "google/gemma-3-4b-it",
+      "namespace": "google",
+      "modelId": "gemma-3-4b-it",
+      "url": "https://openrouter.ai/google/gemma-3-4b-it"
+    },
+    {
+      "id": "google/gemma-3n-e4b-it",
+      "namespace": "google",
+      "modelId": "gemma-3n-e4b-it",
+      "url": "https://openrouter.ai/google/gemma-3n-e4b-it"
+    },
+    {
+      "id": "google/gemma-4-26b-a4b-it",
+      "namespace": "google",
+      "modelId": "gemma-4-26b-a4b-it",
+      "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it"
+    },
+    {
+      "id": "google/gemma-4-26b-a4b-it:free",
+      "namespace": "google",
+      "modelId": "gemma-4-26b-a4b-it:free",
+      "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it:free"
+    },
+    {
+      "id": "google/gemma-4-31b-it",
+      "namespace": "google",
+      "modelId": "gemma-4-31b-it",
+      "url": "https://openrouter.ai/google/gemma-4-31b-it"
+    },
+    {
+      "id": "google/gemma-4-31b-it:free",
+      "namespace": "google",
+      "modelId": "gemma-4-31b-it:free",
+      "url": "https://openrouter.ai/google/gemma-4-31b-it:free"
+    },
+    {
+      "id": "google/lyria-3-clip-preview",
+      "namespace": "google",
+      "modelId": "lyria-3-clip-preview",
+      "url": "https://openrouter.ai/google/lyria-3-clip-preview"
+    },
+    {
+      "id": "google/lyria-3-pro-preview",
+      "namespace": "google",
+      "modelId": "lyria-3-pro-preview",
+      "url": "https://openrouter.ai/google/lyria-3-pro-preview"
+    },
+    {
+      "id": "google/veo-3.1",
+      "namespace": "google",
+      "modelId": "veo-3.1",
+      "url": "https://openrouter.ai/google/veo-3.1"
+    },
+    {
+      "id": "google/veo-3.1-fast",
+      "namespace": "google",
+      "modelId": "veo-3.1-fast",
+      "url": "https://openrouter.ai/google/veo-3.1-fast"
+    },
+    {
+      "id": "google/veo-3.1-lite",
+      "namespace": "google",
+      "modelId": "veo-3.1-lite",
+      "url": "https://openrouter.ai/google/veo-3.1-lite"
+    },
+    {
+      "id": "gryphe/mythomax-l2-13b",
+      "namespace": "gryphe",
+      "modelId": "mythomax-l2-13b",
+      "url": "https://openrouter.ai/gryphe/mythomax-l2-13b"
+    },
+    {
+      "id": "hexgrad/kokoro-82m",
+      "namespace": "hexgrad",
+      "modelId": "kokoro-82m",
+      "url": "https://openrouter.ai/hexgrad/kokoro-82m"
+    },
+    {
+      "id": "ibm-granite/granite-4.0-h-micro",
+      "namespace": "ibm-granite",
+      "modelId": "granite-4.0-h-micro",
+      "url": "https://openrouter.ai/ibm-granite/granite-4.0-h-micro"
+    },
+    {
+      "id": "ibm-granite/granite-4.1-8b",
+      "namespace": "ibm-granite",
+      "modelId": "granite-4.1-8b",
+      "url": "https://openrouter.ai/ibm-granite/granite-4.1-8b"
+    },
+    {
+      "id": "inception/mercury-2",
+      "namespace": "inception",
+      "modelId": "mercury-2",
+      "url": "https://openrouter.ai/inception/mercury-2"
+    },
+    {
+      "id": "inclusionai/ling-2.6-1t",
+      "namespace": "inclusionai",
+      "modelId": "ling-2.6-1t",
+      "url": "https://openrouter.ai/inclusionai/ling-2.6-1t"
+    },
+    {
+      "id": "inclusionai/ling-2.6-flash",
+      "namespace": "inclusionai",
+      "modelId": "ling-2.6-flash",
+      "url": "https://openrouter.ai/inclusionai/ling-2.6-flash"
+    },
+    {
+      "id": "inclusionai/ring-2.6-1t",
+      "namespace": "inclusionai",
+      "modelId": "ring-2.6-1t",
+      "url": "https://openrouter.ai/inclusionai/ring-2.6-1t"
+    },
+    {
+      "id": "inflection/inflection-3-pi",
+      "namespace": "inflection",
+      "modelId": "inflection-3-pi",
+      "url": "https://openrouter.ai/inflection/inflection-3-pi"
+    },
+    {
+      "id": "inflection/inflection-3-productivity",
+      "namespace": "inflection",
+      "modelId": "inflection-3-productivity",
+      "url": "https://openrouter.ai/inflection/inflection-3-productivity"
+    },
+    {
+      "id": "intfloat/e5-base-v2",
+      "namespace": "intfloat",
+      "modelId": "e5-base-v2",
+      "url": "https://openrouter.ai/intfloat/e5-base-v2"
+    },
+    {
+      "id": "intfloat/e5-large-v2",
+      "namespace": "intfloat",
+      "modelId": "e5-large-v2",
+      "url": "https://openrouter.ai/intfloat/e5-large-v2"
+    },
+    {
+      "id": "intfloat/multilingual-e5-large",
+      "namespace": "intfloat",
+      "modelId": "multilingual-e5-large",
+      "url": "https://openrouter.ai/intfloat/multilingual-e5-large"
+    },
+    {
+      "id": "kwaipilot/kat-coder-pro-v2",
+      "namespace": "kwaipilot",
+      "modelId": "kat-coder-pro-v2",
+      "url": "https://openrouter.ai/kwaipilot/kat-coder-pro-v2"
+    },
+    {
+      "id": "kwaivgi/kling-v3.0-pro",
+      "namespace": "kwaivgi",
+      "modelId": "kling-v3.0-pro",
+      "url": "https://openrouter.ai/kwaivgi/kling-v3.0-pro"
+    },
+    {
+      "id": "kwaivgi/kling-v3.0-std",
+      "namespace": "kwaivgi",
+      "modelId": "kling-v3.0-std",
+      "url": "https://openrouter.ai/kwaivgi/kling-v3.0-std"
+    },
+    {
+      "id": "kwaivgi/kling-video-o1",
+      "namespace": "kwaivgi",
+      "modelId": "kling-video-o1",
+      "url": "https://openrouter.ai/kwaivgi/kling-video-o1"
+    },
+    {
+      "id": "liquid/lfm-2-24b-a2b",
+      "namespace": "liquid",
+      "modelId": "lfm-2-24b-a2b",
+      "url": "https://openrouter.ai/liquid/lfm-2-24b-a2b"
+    },
+    {
+      "id": "liquid/lfm-2.5-1.2b-instruct:free",
+      "namespace": "liquid",
+      "modelId": "lfm-2.5-1.2b-instruct:free",
+      "url": "https://openrouter.ai/liquid/lfm-2.5-1.2b-instruct:free"
+    },
+    {
+      "id": "liquid/lfm-2.5-1.2b-thinking:free",
+      "namespace": "liquid",
+      "modelId": "lfm-2.5-1.2b-thinking:free",
+      "url": "https://openrouter.ai/liquid/lfm-2.5-1.2b-thinking:free"
+    },
+    {
+      "id": "mancer/weaver",
+      "namespace": "mancer",
+      "modelId": "weaver",
+      "url": "https://openrouter.ai/mancer/weaver"
+    },
+    {
+      "id": "meta-llama/llama-3-70b-instruct",
+      "namespace": "meta-llama",
+      "modelId": "llama-3-70b-instruct",
+      "url": "https://openrouter.ai/meta-llama/llama-3-70b-instruct"
+    },
+    {
+      "id": "meta-llama/llama-3-8b-instruct",
+      "namespace": "meta-llama",
+      "modelId": "llama-3-8b-instruct",
+      "url": "https://openrouter.ai/meta-llama/llama-3-8b-instruct"
+    },
+    {
+      "id": "meta-llama/llama-3.1-70b-instruct",
+      "namespace": "meta-llama",
+      "modelId": "llama-3.1-70b-instruct",
+      "url": "https://openrouter.ai/meta-llama/llama-3.1-70b-instruct"
+    },
+    {
+      "id": "meta-llama/llama-3.1-8b-instruct",
+      "namespace": "meta-llama",
+      "modelId": "llama-3.1-8b-instruct",
+      "url": "https://openrouter.ai/meta-llama/llama-3.1-8b-instruct"
+    },
+    {
+      "id": "meta-llama/llama-3.2-11b-vision-instruct",
+      "namespace": "meta-llama",
+      "modelId": "llama-3.2-11b-vision-instruct",
+      "url": "https://openrouter.ai/meta-llama/llama-3.2-11b-vision-instruct"
+    },
+    {
+      "id": "meta-llama/llama-3.2-1b-instruct",
+      "namespace": "meta-llama",
+      "modelId": "llama-3.2-1b-instruct",
+      "url": "https://openrouter.ai/meta-llama/llama-3.2-1b-instruct"
+    },
+    {
+      "id": "meta-llama/llama-3.2-3b-instruct",
+      "namespace": "meta-llama",
+      "modelId": "llama-3.2-3b-instruct",
+      "url": "https://openrouter.ai/meta-llama/llama-3.2-3b-instruct"
+    },
+    {
+      "id": "meta-llama/llama-3.2-3b-instruct:free",
+      "namespace": "meta-llama",
+      "modelId": "llama-3.2-3b-instruct:free",
+      "url": "https://openrouter.ai/meta-llama/llama-3.2-3b-instruct:free"
+    },
+    {
+      "id": "meta-llama/llama-3.3-70b-instruct",
+      "namespace": "meta-llama",
+      "modelId": "llama-3.3-70b-instruct",
+      "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct"
+    },
+    {
+      "id": "meta-llama/llama-3.3-70b-instruct:free",
+      "namespace": "meta-llama",
+      "modelId": "llama-3.3-70b-instruct:free",
+      "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct:free"
+    },
+    {
+      "id": "meta-llama/llama-4-maverick",
+      "namespace": "meta-llama",
+      "modelId": "llama-4-maverick",
+      "url": "https://openrouter.ai/meta-llama/llama-4-maverick"
+    },
+    {
+      "id": "meta-llama/llama-4-scout",
+      "namespace": "meta-llama",
+      "modelId": "llama-4-scout",
+      "url": "https://openrouter.ai/meta-llama/llama-4-scout"
+    },
+    {
+      "id": "meta-llama/llama-guard-3-8b",
+      "namespace": "meta-llama",
+      "modelId": "llama-guard-3-8b",
+      "url": "https://openrouter.ai/meta-llama/llama-guard-3-8b"
+    },
+    {
+      "id": "meta-llama/llama-guard-4-12b",
+      "namespace": "meta-llama",
+      "modelId": "llama-guard-4-12b",
+      "url": "https://openrouter.ai/meta-llama/llama-guard-4-12b"
+    },
+    {
+      "id": "microsoft/phi-4",
+      "namespace": "microsoft",
+      "modelId": "phi-4",
+      "url": "https://openrouter.ai/microsoft/phi-4"
+    },
+    {
+      "id": "microsoft/phi-4-mini-instruct",
+      "namespace": "microsoft",
+      "modelId": "phi-4-mini-instruct",
+      "url": "https://openrouter.ai/microsoft/phi-4-mini-instruct"
+    },
+    {
+      "id": "microsoft/wizardlm-2-8x22b",
+      "namespace": "microsoft",
+      "modelId": "wizardlm-2-8x22b",
+      "url": "https://openrouter.ai/microsoft/wizardlm-2-8x22b"
+    },
+    {
+      "id": "minimax/hailuo-2.3",
+      "namespace": "minimax",
+      "modelId": "hailuo-2.3",
+      "url": "https://openrouter.ai/minimax/hailuo-2.3"
+    },
+    {
+      "id": "minimax/minimax-01",
+      "namespace": "minimax",
+      "modelId": "minimax-01",
+      "url": "https://openrouter.ai/minimax/minimax-01"
+    },
+    {
+      "id": "minimax/minimax-m1",
+      "namespace": "minimax",
+      "modelId": "minimax-m1",
+      "url": "https://openrouter.ai/minimax/minimax-m1"
+    },
+    {
+      "id": "minimax/minimax-m2",
+      "namespace": "minimax",
+      "modelId": "minimax-m2",
+      "url": "https://openrouter.ai/minimax/minimax-m2"
+    },
+    {
+      "id": "minimax/minimax-m2-her",
+      "namespace": "minimax",
+      "modelId": "minimax-m2-her",
+      "url": "https://openrouter.ai/minimax/minimax-m2-her"
+    },
+    {
+      "id": "minimax/minimax-m2.1",
+      "namespace": "minimax",
+      "modelId": "minimax-m2.1",
+      "url": "https://openrouter.ai/minimax/minimax-m2.1"
+    },
+    {
+      "id": "minimax/minimax-m2.5",
+      "namespace": "minimax",
+      "modelId": "minimax-m2.5",
+      "url": "https://openrouter.ai/minimax/minimax-m2.5"
+    },
+    {
+      "id": "minimax/minimax-m2.5:free",
+      "namespace": "minimax",
+      "modelId": "minimax-m2.5:free",
+      "url": "https://openrouter.ai/minimax/minimax-m2.5:free"
+    },
+    {
+      "id": "minimax/minimax-m2.7",
+      "namespace": "minimax",
+      "modelId": "minimax-m2.7",
+      "url": "https://openrouter.ai/minimax/minimax-m2.7"
+    },
+    {
+      "id": "mistralai/codestral-2508",
+      "namespace": "mistralai",
+      "modelId": "codestral-2508",
+      "url": "https://openrouter.ai/mistralai/codestral-2508"
+    },
+    {
+      "id": "mistralai/codestral-embed-2505",
+      "namespace": "mistralai",
+      "modelId": "codestral-embed-2505",
+      "url": "https://openrouter.ai/mistralai/codestral-embed-2505"
+    },
+    {
+      "id": "mistralai/devstral-2512",
+      "namespace": "mistralai",
+      "modelId": "devstral-2512",
+      "url": "https://openrouter.ai/mistralai/devstral-2512"
+    },
+    {
+      "id": "mistralai/devstral-medium",
+      "namespace": "mistralai",
+      "modelId": "devstral-medium",
+      "url": "https://openrouter.ai/mistralai/devstral-medium"
+    },
+    {
+      "id": "mistralai/devstral-small",
+      "namespace": "mistralai",
+      "modelId": "devstral-small",
+      "url": "https://openrouter.ai/mistralai/devstral-small"
+    },
+    {
+      "id": "mistralai/ministral-14b-2512",
+      "namespace": "mistralai",
+      "modelId": "ministral-14b-2512",
+      "url": "https://openrouter.ai/mistralai/ministral-14b-2512"
+    },
+    {
+      "id": "mistralai/ministral-3b-2512",
+      "namespace": "mistralai",
+      "modelId": "ministral-3b-2512",
+      "url": "https://openrouter.ai/mistralai/ministral-3b-2512"
+    },
+    {
+      "id": "mistralai/ministral-8b-2512",
+      "namespace": "mistralai",
+      "modelId": "ministral-8b-2512",
+      "url": "https://openrouter.ai/mistralai/ministral-8b-2512"
+    },
+    {
+      "id": "mistralai/mistral-7b-instruct-v0.1",
+      "namespace": "mistralai",
+      "modelId": "mistral-7b-instruct-v0.1",
+      "url": "https://openrouter.ai/mistralai/mistral-7b-instruct-v0.1"
+    },
+    {
+      "id": "mistralai/mistral-embed-2312",
+      "namespace": "mistralai",
+      "modelId": "mistral-embed-2312",
+      "url": "https://openrouter.ai/mistralai/mistral-embed-2312"
+    },
+    {
+      "id": "mistralai/mistral-large",
+      "namespace": "mistralai",
+      "modelId": "mistral-large",
+      "url": "https://openrouter.ai/mistralai/mistral-large"
+    },
+    {
+      "id": "mistralai/mistral-large-2407",
+      "namespace": "mistralai",
+      "modelId": "mistral-large-2407",
+      "url": "https://openrouter.ai/mistralai/mistral-large-2407"
+    },
+    {
+      "id": "mistralai/mistral-large-2411",
+      "namespace": "mistralai",
+      "modelId": "mistral-large-2411",
+      "url": "https://openrouter.ai/mistralai/mistral-large-2411"
+    },
+    {
+      "id": "mistralai/mistral-large-2512",
+      "namespace": "mistralai",
+      "modelId": "mistral-large-2512",
+      "url": "https://openrouter.ai/mistralai/mistral-large-2512"
+    },
+    {
+      "id": "mistralai/mistral-medium-3",
+      "namespace": "mistralai",
+      "modelId": "mistral-medium-3",
+      "url": "https://openrouter.ai/mistralai/mistral-medium-3"
+    },
+    {
+      "id": "mistralai/mistral-medium-3-5",
+      "namespace": "mistralai",
+      "modelId": "mistral-medium-3-5",
+      "url": "https://openrouter.ai/mistralai/mistral-medium-3-5"
+    },
+    {
+      "id": "mistralai/mistral-medium-3.1",
+      "namespace": "mistralai",
+      "modelId": "mistral-medium-3.1",
+      "url": "https://openrouter.ai/mistralai/mistral-medium-3.1"
+    },
+    {
+      "id": "mistralai/mistral-nemo",
+      "namespace": "mistralai",
+      "modelId": "mistral-nemo",
+      "url": "https://openrouter.ai/mistralai/mistral-nemo"
+    },
+    {
+      "id": "mistralai/mistral-saba",
+      "namespace": "mistralai",
+      "modelId": "mistral-saba",
+      "url": "https://openrouter.ai/mistralai/mistral-saba"
+    },
+    {
+      "id": "mistralai/mistral-small-24b-instruct-2501",
+      "namespace": "mistralai",
+      "modelId": "mistral-small-24b-instruct-2501",
+      "url": "https://openrouter.ai/mistralai/mistral-small-24b-instruct-2501"
+    },
+    {
+      "id": "mistralai/mistral-small-2603",
+      "namespace": "mistralai",
+      "modelId": "mistral-small-2603",
+      "url": "https://openrouter.ai/mistralai/mistral-small-2603"
+    },
+    {
+      "id": "mistralai/mistral-small-3.1-24b-instruct",
+      "namespace": "mistralai",
+      "modelId": "mistral-small-3.1-24b-instruct",
+      "url": "https://openrouter.ai/mistralai/mistral-small-3.1-24b-instruct"
+    },
+    {
+      "id": "mistralai/mistral-small-3.2-24b-instruct",
+      "namespace": "mistralai",
+      "modelId": "mistral-small-3.2-24b-instruct",
+      "url": "https://openrouter.ai/mistralai/mistral-small-3.2-24b-instruct"
+    },
+    {
+      "id": "mistralai/mixtral-8x22b-instruct",
+      "namespace": "mistralai",
+      "modelId": "mixtral-8x22b-instruct",
+      "url": "https://openrouter.ai/mistralai/mixtral-8x22b-instruct"
+    },
+    {
+      "id": "mistralai/pixtral-large-2411",
+      "namespace": "mistralai",
+      "modelId": "pixtral-large-2411",
+      "url": "https://openrouter.ai/mistralai/pixtral-large-2411"
+    },
+    {
+      "id": "mistralai/voxtral-mini-transcribe",
+      "namespace": "mistralai",
+      "modelId": "voxtral-mini-transcribe",
+      "url": "https://openrouter.ai/mistralai/voxtral-mini-transcribe"
+    },
+    {
+      "id": "mistralai/voxtral-mini-tts-2603",
+      "namespace": "mistralai",
+      "modelId": "voxtral-mini-tts-2603",
+      "url": "https://openrouter.ai/mistralai/voxtral-mini-tts-2603"
+    },
+    {
+      "id": "mistralai/voxtral-small-24b-2507",
+      "namespace": "mistralai",
+      "modelId": "voxtral-small-24b-2507",
+      "url": "https://openrouter.ai/mistralai/voxtral-small-24b-2507"
+    },
+    {
+      "id": "moonshotai/kimi-k2",
+      "namespace": "moonshotai",
+      "modelId": "kimi-k2",
+      "url": "https://openrouter.ai/moonshotai/kimi-k2"
+    },
+    {
+      "id": "moonshotai/kimi-k2-0905",
+      "namespace": "moonshotai",
+      "modelId": "kimi-k2-0905",
+      "url": "https://openrouter.ai/moonshotai/kimi-k2-0905"
+    },
+    {
+      "id": "moonshotai/kimi-k2-thinking",
+      "namespace": "moonshotai",
+      "modelId": "kimi-k2-thinking",
+      "url": "https://openrouter.ai/moonshotai/kimi-k2-thinking"
+    },
+    {
+      "id": "moonshotai/kimi-k2.5",
+      "namespace": "moonshotai",
+      "modelId": "kimi-k2.5",
+      "url": "https://openrouter.ai/moonshotai/kimi-k2.5"
+    },
+    {
+      "id": "moonshotai/kimi-k2.6",
+      "namespace": "moonshotai",
+      "modelId": "kimi-k2.6",
+      "url": "https://openrouter.ai/moonshotai/kimi-k2.6"
+    },
+    {
+      "id": "morph/morph-v3-fast",
+      "namespace": "morph",
+      "modelId": "morph-v3-fast",
+      "url": "https://openrouter.ai/morph/morph-v3-fast"
+    },
+    {
+      "id": "morph/morph-v3-large",
+      "namespace": "morph",
+      "modelId": "morph-v3-large",
+      "url": "https://openrouter.ai/morph/morph-v3-large"
+    },
+    {
+      "id": "nex-agi/deepseek-v3.1-nex-n1",
+      "namespace": "nex-agi",
+      "modelId": "deepseek-v3.1-nex-n1",
+      "url": "https://openrouter.ai/nex-agi/deepseek-v3.1-nex-n1"
+    },
+    {
+      "id": "nousresearch/hermes-2-pro-llama-3-8b",
+      "namespace": "nousresearch",
+      "modelId": "hermes-2-pro-llama-3-8b",
+      "url": "https://openrouter.ai/nousresearch/hermes-2-pro-llama-3-8b"
+    },
+    {
+      "id": "nousresearch/hermes-3-llama-3.1-405b",
+      "namespace": "nousresearch",
+      "modelId": "hermes-3-llama-3.1-405b",
+      "url": "https://openrouter.ai/nousresearch/hermes-3-llama-3.1-405b"
+    },
+    {
+      "id": "nousresearch/hermes-3-llama-3.1-405b:free",
+      "namespace": "nousresearch",
+      "modelId": "hermes-3-llama-3.1-405b:free",
+      "url": "https://openrouter.ai/nousresearch/hermes-3-llama-3.1-405b:free"
+    },
+    {
+      "id": "nousresearch/hermes-3-llama-3.1-70b",
+      "namespace": "nousresearch",
+      "modelId": "hermes-3-llama-3.1-70b",
+      "url": "https://openrouter.ai/nousresearch/hermes-3-llama-3.1-70b"
+    },
+    {
+      "id": "nousresearch/hermes-4-405b",
+      "namespace": "nousresearch",
+      "modelId": "hermes-4-405b",
+      "url": "https://openrouter.ai/nousresearch/hermes-4-405b"
+    },
+    {
+      "id": "nousresearch/hermes-4-70b",
+      "namespace": "nousresearch",
+      "modelId": "hermes-4-70b",
+      "url": "https://openrouter.ai/nousresearch/hermes-4-70b"
+    },
+    {
+      "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+      "namespace": "nvidia",
+      "modelId": "llama-3.3-nemotron-super-49b-v1.5",
+      "url": "https://openrouter.ai/nvidia/llama-3.3-nemotron-super-49b-v1.5"
+    },
+    {
+      "id": "nvidia/llama-nemotron-embed-vl-1b-v2:free",
+      "namespace": "nvidia",
+      "modelId": "llama-nemotron-embed-vl-1b-v2:free",
+      "url": "https://openrouter.ai/nvidia/llama-nemotron-embed-vl-1b-v2:free"
+    },
+    {
+      "id": "nvidia/nemotron-3-nano-30b-a3b",
+      "namespace": "nvidia",
+      "modelId": "nemotron-3-nano-30b-a3b",
+      "url": "https://openrouter.ai/nvidia/nemotron-3-nano-30b-a3b"
+    },
+    {
+      "id": "nvidia/nemotron-3-nano-30b-a3b:free",
+      "namespace": "nvidia",
+      "modelId": "nemotron-3-nano-30b-a3b:free",
+      "url": "https://openrouter.ai/nvidia/nemotron-3-nano-30b-a3b:free"
+    },
+    {
+      "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "namespace": "nvidia",
+      "modelId": "nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "url": "https://openrouter.ai/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free"
+    },
+    {
+      "id": "nvidia/nemotron-3-super-120b-a12b",
+      "namespace": "nvidia",
+      "modelId": "nemotron-3-super-120b-a12b",
+      "url": "https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b"
+    },
+    {
+      "id": "nvidia/nemotron-3-super-120b-a12b:free",
+      "namespace": "nvidia",
+      "modelId": "nemotron-3-super-120b-a12b:free",
+      "url": "https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b:free"
+    },
+    {
+      "id": "nvidia/nemotron-nano-12b-v2-vl:free",
+      "namespace": "nvidia",
+      "modelId": "nemotron-nano-12b-v2-vl:free",
+      "url": "https://openrouter.ai/nvidia/nemotron-nano-12b-v2-vl:free"
+    },
+    {
+      "id": "nvidia/nemotron-nano-9b-v2",
+      "namespace": "nvidia",
+      "modelId": "nemotron-nano-9b-v2",
+      "url": "https://openrouter.ai/nvidia/nemotron-nano-9b-v2"
+    },
+    {
+      "id": "nvidia/nemotron-nano-9b-v2:free",
+      "namespace": "nvidia",
+      "modelId": "nemotron-nano-9b-v2:free",
+      "url": "https://openrouter.ai/nvidia/nemotron-nano-9b-v2:free"
+    },
+    {
+      "id": "openai/gpt-3.5-turbo",
+      "namespace": "openai",
+      "modelId": "gpt-3.5-turbo",
+      "url": "https://openrouter.ai/openai/gpt-3.5-turbo"
+    },
+    {
+      "id": "openai/gpt-3.5-turbo-0613",
+      "namespace": "openai",
+      "modelId": "gpt-3.5-turbo-0613",
+      "url": "https://openrouter.ai/openai/gpt-3.5-turbo-0613"
+    },
+    {
+      "id": "openai/gpt-3.5-turbo-16k",
+      "namespace": "openai",
+      "modelId": "gpt-3.5-turbo-16k",
+      "url": "https://openrouter.ai/openai/gpt-3.5-turbo-16k"
+    },
+    {
+      "id": "openai/gpt-3.5-turbo-instruct",
+      "namespace": "openai",
+      "modelId": "gpt-3.5-turbo-instruct",
+      "url": "https://openrouter.ai/openai/gpt-3.5-turbo-instruct"
+    },
+    {
+      "id": "openai/gpt-4",
+      "namespace": "openai",
+      "modelId": "gpt-4",
+      "url": "https://openrouter.ai/openai/gpt-4"
+    },
+    {
+      "id": "openai/gpt-4-0314",
+      "namespace": "openai",
+      "modelId": "gpt-4-0314",
+      "url": "https://openrouter.ai/openai/gpt-4-0314"
+    },
+    {
+      "id": "openai/gpt-4-1106-preview",
+      "namespace": "openai",
+      "modelId": "gpt-4-1106-preview",
+      "url": "https://openrouter.ai/openai/gpt-4-1106-preview"
+    },
+    {
+      "id": "openai/gpt-4-turbo",
+      "namespace": "openai",
+      "modelId": "gpt-4-turbo",
+      "url": "https://openrouter.ai/openai/gpt-4-turbo"
+    },
+    {
+      "id": "openai/gpt-4-turbo-preview",
+      "namespace": "openai",
+      "modelId": "gpt-4-turbo-preview",
+      "url": "https://openrouter.ai/openai/gpt-4-turbo-preview"
+    },
+    {
+      "id": "openai/gpt-4.1",
+      "namespace": "openai",
+      "modelId": "gpt-4.1",
+      "url": "https://openrouter.ai/openai/gpt-4.1"
+    },
+    {
+      "id": "openai/gpt-4.1-mini",
+      "namespace": "openai",
+      "modelId": "gpt-4.1-mini",
+      "url": "https://openrouter.ai/openai/gpt-4.1-mini"
+    },
+    {
+      "id": "openai/gpt-4.1-nano",
+      "namespace": "openai",
+      "modelId": "gpt-4.1-nano",
+      "url": "https://openrouter.ai/openai/gpt-4.1-nano"
+    },
+    {
+      "id": "openai/gpt-4o",
+      "namespace": "openai",
+      "modelId": "gpt-4o",
+      "url": "https://openrouter.ai/openai/gpt-4o"
+    },
+    {
+      "id": "openai/gpt-4o-2024-05-13",
+      "namespace": "openai",
+      "modelId": "gpt-4o-2024-05-13",
+      "url": "https://openrouter.ai/openai/gpt-4o-2024-05-13"
+    },
+    {
+      "id": "openai/gpt-4o-2024-08-06",
+      "namespace": "openai",
+      "modelId": "gpt-4o-2024-08-06",
+      "url": "https://openrouter.ai/openai/gpt-4o-2024-08-06"
+    },
+    {
+      "id": "openai/gpt-4o-2024-11-20",
+      "namespace": "openai",
+      "modelId": "gpt-4o-2024-11-20",
+      "url": "https://openrouter.ai/openai/gpt-4o-2024-11-20"
+    },
+    {
+      "id": "openai/gpt-4o-audio-preview",
+      "namespace": "openai",
+      "modelId": "gpt-4o-audio-preview",
+      "url": "https://openrouter.ai/openai/gpt-4o-audio-preview"
+    },
+    {
+      "id": "openai/gpt-4o-mini",
+      "namespace": "openai",
+      "modelId": "gpt-4o-mini",
+      "url": "https://openrouter.ai/openai/gpt-4o-mini"
+    },
+    {
+      "id": "openai/gpt-4o-mini-2024-07-18",
+      "namespace": "openai",
+      "modelId": "gpt-4o-mini-2024-07-18",
+      "url": "https://openrouter.ai/openai/gpt-4o-mini-2024-07-18"
+    },
+    {
+      "id": "openai/gpt-4o-mini-search-preview",
+      "namespace": "openai",
+      "modelId": "gpt-4o-mini-search-preview",
+      "url": "https://openrouter.ai/openai/gpt-4o-mini-search-preview"
+    },
+    {
+      "id": "openai/gpt-4o-mini-transcribe",
+      "namespace": "openai",
+      "modelId": "gpt-4o-mini-transcribe",
+      "url": "https://openrouter.ai/openai/gpt-4o-mini-transcribe"
+    },
+    {
+      "id": "openai/gpt-4o-mini-tts-2025-12-15",
+      "namespace": "openai",
+      "modelId": "gpt-4o-mini-tts-2025-12-15",
+      "url": "https://openrouter.ai/openai/gpt-4o-mini-tts-2025-12-15"
+    },
+    {
+      "id": "openai/gpt-4o-search-preview",
+      "namespace": "openai",
+      "modelId": "gpt-4o-search-preview",
+      "url": "https://openrouter.ai/openai/gpt-4o-search-preview"
+    },
+    {
+      "id": "openai/gpt-4o-transcribe",
+      "namespace": "openai",
+      "modelId": "gpt-4o-transcribe",
+      "url": "https://openrouter.ai/openai/gpt-4o-transcribe"
+    },
+    {
+      "id": "openai/gpt-5",
+      "namespace": "openai",
+      "modelId": "gpt-5",
+      "url": "https://openrouter.ai/openai/gpt-5"
+    },
+    {
+      "id": "openai/gpt-5-chat",
+      "namespace": "openai",
+      "modelId": "gpt-5-chat",
+      "url": "https://openrouter.ai/openai/gpt-5-chat"
+    },
+    {
+      "id": "openai/gpt-5-codex",
+      "namespace": "openai",
+      "modelId": "gpt-5-codex",
+      "url": "https://openrouter.ai/openai/gpt-5-codex"
+    },
+    {
+      "id": "openai/gpt-5-image",
+      "namespace": "openai",
+      "modelId": "gpt-5-image",
+      "url": "https://openrouter.ai/openai/gpt-5-image"
+    },
+    {
+      "id": "openai/gpt-5-image-mini",
+      "namespace": "openai",
+      "modelId": "gpt-5-image-mini",
+      "url": "https://openrouter.ai/openai/gpt-5-image-mini"
+    },
+    {
+      "id": "openai/gpt-5-mini",
+      "namespace": "openai",
+      "modelId": "gpt-5-mini",
+      "url": "https://openrouter.ai/openai/gpt-5-mini"
+    },
+    {
+      "id": "openai/gpt-5-nano",
+      "namespace": "openai",
+      "modelId": "gpt-5-nano",
+      "url": "https://openrouter.ai/openai/gpt-5-nano"
+    },
+    {
+      "id": "openai/gpt-5-pro",
+      "namespace": "openai",
+      "modelId": "gpt-5-pro",
+      "url": "https://openrouter.ai/openai/gpt-5-pro"
+    },
+    {
+      "id": "openai/gpt-5.1",
+      "namespace": "openai",
+      "modelId": "gpt-5.1",
+      "url": "https://openrouter.ai/openai/gpt-5.1"
+    },
+    {
+      "id": "openai/gpt-5.1-chat",
+      "namespace": "openai",
+      "modelId": "gpt-5.1-chat",
+      "url": "https://openrouter.ai/openai/gpt-5.1-chat"
+    },
+    {
+      "id": "openai/gpt-5.1-codex",
+      "namespace": "openai",
+      "modelId": "gpt-5.1-codex",
+      "url": "https://openrouter.ai/openai/gpt-5.1-codex"
+    },
+    {
+      "id": "openai/gpt-5.1-codex-max",
+      "namespace": "openai",
+      "modelId": "gpt-5.1-codex-max",
+      "url": "https://openrouter.ai/openai/gpt-5.1-codex-max"
+    },
+    {
+      "id": "openai/gpt-5.1-codex-mini",
+      "namespace": "openai",
+      "modelId": "gpt-5.1-codex-mini",
+      "url": "https://openrouter.ai/openai/gpt-5.1-codex-mini"
+    },
+    {
+      "id": "openai/gpt-5.2",
+      "namespace": "openai",
+      "modelId": "gpt-5.2",
+      "url": "https://openrouter.ai/openai/gpt-5.2"
+    },
+    {
+      "id": "openai/gpt-5.2-chat",
+      "namespace": "openai",
+      "modelId": "gpt-5.2-chat",
+      "url": "https://openrouter.ai/openai/gpt-5.2-chat"
+    },
+    {
+      "id": "openai/gpt-5.2-codex",
+      "namespace": "openai",
+      "modelId": "gpt-5.2-codex",
+      "url": "https://openrouter.ai/openai/gpt-5.2-codex"
+    },
+    {
+      "id": "openai/gpt-5.2-pro",
+      "namespace": "openai",
+      "modelId": "gpt-5.2-pro",
+      "url": "https://openrouter.ai/openai/gpt-5.2-pro"
+    },
+    {
+      "id": "openai/gpt-5.3-chat",
+      "namespace": "openai",
+      "modelId": "gpt-5.3-chat",
+      "url": "https://openrouter.ai/openai/gpt-5.3-chat"
+    },
+    {
+      "id": "openai/gpt-5.3-codex",
+      "namespace": "openai",
+      "modelId": "gpt-5.3-codex",
+      "url": "https://openrouter.ai/openai/gpt-5.3-codex"
+    },
+    {
+      "id": "openai/gpt-5.4",
+      "namespace": "openai",
+      "modelId": "gpt-5.4",
+      "url": "https://openrouter.ai/openai/gpt-5.4"
+    },
+    {
+      "id": "openai/gpt-5.4-image-2",
+      "namespace": "openai",
+      "modelId": "gpt-5.4-image-2",
+      "url": "https://openrouter.ai/openai/gpt-5.4-image-2"
+    },
+    {
+      "id": "openai/gpt-5.4-mini",
+      "namespace": "openai",
+      "modelId": "gpt-5.4-mini",
+      "url": "https://openrouter.ai/openai/gpt-5.4-mini"
+    },
+    {
+      "id": "openai/gpt-5.4-nano",
+      "namespace": "openai",
+      "modelId": "gpt-5.4-nano",
+      "url": "https://openrouter.ai/openai/gpt-5.4-nano"
+    },
+    {
+      "id": "openai/gpt-5.4-pro",
+      "namespace": "openai",
+      "modelId": "gpt-5.4-pro",
+      "url": "https://openrouter.ai/openai/gpt-5.4-pro"
+    },
+    {
+      "id": "openai/gpt-5.5",
+      "namespace": "openai",
+      "modelId": "gpt-5.5",
+      "url": "https://openrouter.ai/openai/gpt-5.5"
+    },
+    {
+      "id": "openai/gpt-5.5-pro",
+      "namespace": "openai",
+      "modelId": "gpt-5.5-pro",
+      "url": "https://openrouter.ai/openai/gpt-5.5-pro"
+    },
+    {
+      "id": "openai/gpt-audio",
+      "namespace": "openai",
+      "modelId": "gpt-audio",
+      "url": "https://openrouter.ai/openai/gpt-audio"
+    },
+    {
+      "id": "openai/gpt-audio-mini",
+      "namespace": "openai",
+      "modelId": "gpt-audio-mini",
+      "url": "https://openrouter.ai/openai/gpt-audio-mini"
+    },
+    {
+      "id": "openai/gpt-chat-latest",
+      "namespace": "openai",
+      "modelId": "gpt-chat-latest",
+      "url": "https://openrouter.ai/openai/gpt-chat-latest"
+    },
+    {
+      "id": "openai/gpt-oss-120b",
+      "namespace": "openai",
+      "modelId": "gpt-oss-120b",
+      "url": "https://openrouter.ai/openai/gpt-oss-120b"
+    },
+    {
+      "id": "openai/gpt-oss-120b:free",
+      "namespace": "openai",
+      "modelId": "gpt-oss-120b:free",
+      "url": "https://openrouter.ai/openai/gpt-oss-120b:free"
+    },
+    {
+      "id": "openai/gpt-oss-20b",
+      "namespace": "openai",
+      "modelId": "gpt-oss-20b",
+      "url": "https://openrouter.ai/openai/gpt-oss-20b"
+    },
+    {
+      "id": "openai/gpt-oss-20b:free",
+      "namespace": "openai",
+      "modelId": "gpt-oss-20b:free",
+      "url": "https://openrouter.ai/openai/gpt-oss-20b:free"
+    },
+    {
+      "id": "openai/gpt-oss-safeguard-20b",
+      "namespace": "openai",
+      "modelId": "gpt-oss-safeguard-20b",
+      "url": "https://openrouter.ai/openai/gpt-oss-safeguard-20b"
+    },
+    {
+      "id": "openai/o1",
+      "namespace": "openai",
+      "modelId": "o1",
+      "url": "https://openrouter.ai/openai/o1"
+    },
+    {
+      "id": "openai/o1-pro",
+      "namespace": "openai",
+      "modelId": "o1-pro",
+      "url": "https://openrouter.ai/openai/o1-pro"
+    },
+    {
+      "id": "openai/o3",
+      "namespace": "openai",
+      "modelId": "o3",
+      "url": "https://openrouter.ai/openai/o3"
+    },
+    {
+      "id": "openai/o3-deep-research",
+      "namespace": "openai",
+      "modelId": "o3-deep-research",
+      "url": "https://openrouter.ai/openai/o3-deep-research"
+    },
+    {
+      "id": "openai/o3-mini",
+      "namespace": "openai",
+      "modelId": "o3-mini",
+      "url": "https://openrouter.ai/openai/o3-mini"
+    },
+    {
+      "id": "openai/o3-mini-high",
+      "namespace": "openai",
+      "modelId": "o3-mini-high",
+      "url": "https://openrouter.ai/openai/o3-mini-high"
+    },
+    {
+      "id": "openai/o3-pro",
+      "namespace": "openai",
+      "modelId": "o3-pro",
+      "url": "https://openrouter.ai/openai/o3-pro"
+    },
+    {
+      "id": "openai/o4-mini",
+      "namespace": "openai",
+      "modelId": "o4-mini",
+      "url": "https://openrouter.ai/openai/o4-mini"
+    },
+    {
+      "id": "openai/o4-mini-deep-research",
+      "namespace": "openai",
+      "modelId": "o4-mini-deep-research",
+      "url": "https://openrouter.ai/openai/o4-mini-deep-research"
+    },
+    {
+      "id": "openai/o4-mini-high",
+      "namespace": "openai",
+      "modelId": "o4-mini-high",
+      "url": "https://openrouter.ai/openai/o4-mini-high"
+    },
+    {
+      "id": "openai/sora-2-pro",
+      "namespace": "openai",
+      "modelId": "sora-2-pro",
+      "url": "https://openrouter.ai/openai/sora-2-pro"
+    },
+    {
+      "id": "openai/text-embedding-3-large",
+      "namespace": "openai",
+      "modelId": "text-embedding-3-large",
+      "url": "https://openrouter.ai/openai/text-embedding-3-large"
+    },
+    {
+      "id": "openai/text-embedding-3-small",
+      "namespace": "openai",
+      "modelId": "text-embedding-3-small",
+      "url": "https://openrouter.ai/openai/text-embedding-3-small"
+    },
+    {
+      "id": "openai/text-embedding-ada-002",
+      "namespace": "openai",
+      "modelId": "text-embedding-ada-002",
+      "url": "https://openrouter.ai/openai/text-embedding-ada-002"
+    },
+    {
+      "id": "openai/whisper-1",
+      "namespace": "openai",
+      "modelId": "whisper-1",
+      "url": "https://openrouter.ai/openai/whisper-1"
+    },
+    {
+      "id": "openai/whisper-large-v3",
+      "namespace": "openai",
+      "modelId": "whisper-large-v3",
+      "url": "https://openrouter.ai/openai/whisper-large-v3"
+    },
+    {
+      "id": "openai/whisper-large-v3-turbo",
+      "namespace": "openai",
+      "modelId": "whisper-large-v3-turbo",
+      "url": "https://openrouter.ai/openai/whisper-large-v3-turbo"
+    },
+    {
+      "id": "openrouter/owl-alpha",
+      "namespace": "openrouter",
+      "modelId": "owl-alpha",
+      "url": "https://openrouter.ai/openrouter/owl-alpha"
+    },
+    {
+      "id": "perceptron/perceptron-mk1",
+      "namespace": "perceptron",
+      "modelId": "perceptron-mk1",
+      "url": "https://openrouter.ai/perceptron/perceptron-mk1"
+    },
+    {
+      "id": "perplexity/pplx-embed-v1-0.6b",
+      "namespace": "perplexity",
+      "modelId": "pplx-embed-v1-0.6b",
+      "url": "https://openrouter.ai/perplexity/pplx-embed-v1-0.6b"
+    },
+    {
+      "id": "perplexity/pplx-embed-v1-4b",
+      "namespace": "perplexity",
+      "modelId": "pplx-embed-v1-4b",
+      "url": "https://openrouter.ai/perplexity/pplx-embed-v1-4b"
+    },
+    {
+      "id": "perplexity/sonar",
+      "namespace": "perplexity",
+      "modelId": "sonar",
+      "url": "https://openrouter.ai/perplexity/sonar"
+    },
+    {
+      "id": "perplexity/sonar-deep-research",
+      "namespace": "perplexity",
+      "modelId": "sonar-deep-research",
+      "url": "https://openrouter.ai/perplexity/sonar-deep-research"
+    },
+    {
+      "id": "perplexity/sonar-pro",
+      "namespace": "perplexity",
+      "modelId": "sonar-pro",
+      "url": "https://openrouter.ai/perplexity/sonar-pro"
+    },
+    {
+      "id": "perplexity/sonar-pro-search",
+      "namespace": "perplexity",
+      "modelId": "sonar-pro-search",
+      "url": "https://openrouter.ai/perplexity/sonar-pro-search"
+    },
+    {
+      "id": "perplexity/sonar-reasoning-pro",
+      "namespace": "perplexity",
+      "modelId": "sonar-reasoning-pro",
+      "url": "https://openrouter.ai/perplexity/sonar-reasoning-pro"
+    },
+    {
+      "id": "poolside/laguna-m.1:free",
+      "namespace": "poolside",
+      "modelId": "laguna-m.1:free",
+      "url": "https://openrouter.ai/poolside/laguna-m.1:free"
+    },
+    {
+      "id": "poolside/laguna-xs.2:free",
+      "namespace": "poolside",
+      "modelId": "laguna-xs.2:free",
+      "url": "https://openrouter.ai/poolside/laguna-xs.2:free"
+    },
+    {
+      "id": "prime-intellect/intellect-3",
+      "namespace": "prime-intellect",
+      "modelId": "intellect-3",
+      "url": "https://openrouter.ai/prime-intellect/intellect-3"
+    },
+    {
+      "id": "qwen/qwen-2.5-72b-instruct",
+      "namespace": "qwen",
+      "modelId": "qwen-2.5-72b-instruct",
+      "url": "https://openrouter.ai/qwen/qwen-2.5-72b-instruct"
+    },
+    {
+      "id": "qwen/qwen-2.5-7b-instruct",
+      "namespace": "qwen",
+      "modelId": "qwen-2.5-7b-instruct",
+      "url": "https://openrouter.ai/qwen/qwen-2.5-7b-instruct"
+    },
+    {
+      "id": "qwen/qwen-2.5-coder-32b-instruct",
+      "namespace": "qwen",
+      "modelId": "qwen-2.5-coder-32b-instruct",
+      "url": "https://openrouter.ai/qwen/qwen-2.5-coder-32b-instruct"
+    },
+    {
+      "id": "qwen/qwen-plus",
+      "namespace": "qwen",
+      "modelId": "qwen-plus",
+      "url": "https://openrouter.ai/qwen/qwen-plus"
+    },
+    {
+      "id": "qwen/qwen-plus-2025-07-28",
+      "namespace": "qwen",
+      "modelId": "qwen-plus-2025-07-28",
+      "url": "https://openrouter.ai/qwen/qwen-plus-2025-07-28"
+    },
+    {
+      "id": "qwen/qwen-plus-2025-07-28:thinking",
+      "namespace": "qwen",
+      "modelId": "qwen-plus-2025-07-28:thinking",
+      "url": "https://openrouter.ai/qwen/qwen-plus-2025-07-28:thinking"
+    },
+    {
+      "id": "qwen/qwen2.5-vl-72b-instruct",
+      "namespace": "qwen",
+      "modelId": "qwen2.5-vl-72b-instruct",
+      "url": "https://openrouter.ai/qwen/qwen2.5-vl-72b-instruct"
+    },
+    {
+      "id": "qwen/qwen3-14b",
+      "namespace": "qwen",
+      "modelId": "qwen3-14b",
+      "url": "https://openrouter.ai/qwen/qwen3-14b"
+    },
+    {
+      "id": "qwen/qwen3-235b-a22b",
+      "namespace": "qwen",
+      "modelId": "qwen3-235b-a22b",
+      "url": "https://openrouter.ai/qwen/qwen3-235b-a22b"
+    },
+    {
+      "id": "qwen/qwen3-235b-a22b-2507",
+      "namespace": "qwen",
+      "modelId": "qwen3-235b-a22b-2507",
+      "url": "https://openrouter.ai/qwen/qwen3-235b-a22b-2507"
+    },
+    {
+      "id": "qwen/qwen3-235b-a22b-thinking-2507",
+      "namespace": "qwen",
+      "modelId": "qwen3-235b-a22b-thinking-2507",
+      "url": "https://openrouter.ai/qwen/qwen3-235b-a22b-thinking-2507"
+    },
+    {
+      "id": "qwen/qwen3-30b-a3b",
+      "namespace": "qwen",
+      "modelId": "qwen3-30b-a3b",
+      "url": "https://openrouter.ai/qwen/qwen3-30b-a3b"
+    },
+    {
+      "id": "qwen/qwen3-30b-a3b-instruct-2507",
+      "namespace": "qwen",
+      "modelId": "qwen3-30b-a3b-instruct-2507",
+      "url": "https://openrouter.ai/qwen/qwen3-30b-a3b-instruct-2507"
+    },
+    {
+      "id": "qwen/qwen3-30b-a3b-thinking-2507",
+      "namespace": "qwen",
+      "modelId": "qwen3-30b-a3b-thinking-2507",
+      "url": "https://openrouter.ai/qwen/qwen3-30b-a3b-thinking-2507"
+    },
+    {
+      "id": "qwen/qwen3-32b",
+      "namespace": "qwen",
+      "modelId": "qwen3-32b",
+      "url": "https://openrouter.ai/qwen/qwen3-32b"
+    },
+    {
+      "id": "qwen/qwen3-8b",
+      "namespace": "qwen",
+      "modelId": "qwen3-8b",
+      "url": "https://openrouter.ai/qwen/qwen3-8b"
+    },
+    {
+      "id": "qwen/qwen3-asr-flash-2026-02-10",
+      "namespace": "qwen",
+      "modelId": "qwen3-asr-flash-2026-02-10",
+      "url": "https://openrouter.ai/qwen/qwen3-asr-flash-2026-02-10"
+    },
+    {
+      "id": "qwen/qwen3-coder",
+      "namespace": "qwen",
+      "modelId": "qwen3-coder",
+      "url": "https://openrouter.ai/qwen/qwen3-coder"
+    },
+    {
+      "id": "qwen/qwen3-coder-30b-a3b-instruct",
+      "namespace": "qwen",
+      "modelId": "qwen3-coder-30b-a3b-instruct",
+      "url": "https://openrouter.ai/qwen/qwen3-coder-30b-a3b-instruct"
+    },
+    {
+      "id": "qwen/qwen3-coder-flash",
+      "namespace": "qwen",
+      "modelId": "qwen3-coder-flash",
+      "url": "https://openrouter.ai/qwen/qwen3-coder-flash"
+    },
+    {
+      "id": "qwen/qwen3-coder-next",
+      "namespace": "qwen",
+      "modelId": "qwen3-coder-next",
+      "url": "https://openrouter.ai/qwen/qwen3-coder-next"
+    },
+    {
+      "id": "qwen/qwen3-coder-plus",
+      "namespace": "qwen",
+      "modelId": "qwen3-coder-plus",
+      "url": "https://openrouter.ai/qwen/qwen3-coder-plus"
+    },
+    {
+      "id": "qwen/qwen3-coder:free",
+      "namespace": "qwen",
+      "modelId": "qwen3-coder:free",
+      "url": "https://openrouter.ai/qwen/qwen3-coder:free"
+    },
+    {
+      "id": "qwen/qwen3-embedding-4b",
+      "namespace": "qwen",
+      "modelId": "qwen3-embedding-4b",
+      "url": "https://openrouter.ai/qwen/qwen3-embedding-4b"
+    },
+    {
+      "id": "qwen/qwen3-embedding-8b",
+      "namespace": "qwen",
+      "modelId": "qwen3-embedding-8b",
+      "url": "https://openrouter.ai/qwen/qwen3-embedding-8b"
+    },
+    {
+      "id": "qwen/qwen3-max",
+      "namespace": "qwen",
+      "modelId": "qwen3-max",
+      "url": "https://openrouter.ai/qwen/qwen3-max"
+    },
+    {
+      "id": "qwen/qwen3-max-thinking",
+      "namespace": "qwen",
+      "modelId": "qwen3-max-thinking",
+      "url": "https://openrouter.ai/qwen/qwen3-max-thinking"
+    },
+    {
+      "id": "qwen/qwen3-next-80b-a3b-instruct",
+      "namespace": "qwen",
+      "modelId": "qwen3-next-80b-a3b-instruct",
+      "url": "https://openrouter.ai/qwen/qwen3-next-80b-a3b-instruct"
+    },
+    {
+      "id": "qwen/qwen3-next-80b-a3b-instruct:free",
+      "namespace": "qwen",
+      "modelId": "qwen3-next-80b-a3b-instruct:free",
+      "url": "https://openrouter.ai/qwen/qwen3-next-80b-a3b-instruct:free"
+    },
+    {
+      "id": "qwen/qwen3-next-80b-a3b-thinking",
+      "namespace": "qwen",
+      "modelId": "qwen3-next-80b-a3b-thinking",
+      "url": "https://openrouter.ai/qwen/qwen3-next-80b-a3b-thinking"
+    },
+    {
+      "id": "qwen/qwen3-vl-235b-a22b-instruct",
+      "namespace": "qwen",
+      "modelId": "qwen3-vl-235b-a22b-instruct",
+      "url": "https://openrouter.ai/qwen/qwen3-vl-235b-a22b-instruct"
+    },
+    {
+      "id": "qwen/qwen3-vl-235b-a22b-thinking",
+      "namespace": "qwen",
+      "modelId": "qwen3-vl-235b-a22b-thinking",
+      "url": "https://openrouter.ai/qwen/qwen3-vl-235b-a22b-thinking"
+    },
+    {
+      "id": "qwen/qwen3-vl-30b-a3b-instruct",
+      "namespace": "qwen",
+      "modelId": "qwen3-vl-30b-a3b-instruct",
+      "url": "https://openrouter.ai/qwen/qwen3-vl-30b-a3b-instruct"
+    },
+    {
+      "id": "qwen/qwen3-vl-30b-a3b-thinking",
+      "namespace": "qwen",
+      "modelId": "qwen3-vl-30b-a3b-thinking",
+      "url": "https://openrouter.ai/qwen/qwen3-vl-30b-a3b-thinking"
+    },
+    {
+      "id": "qwen/qwen3-vl-32b-instruct",
+      "namespace": "qwen",
+      "modelId": "qwen3-vl-32b-instruct",
+      "url": "https://openrouter.ai/qwen/qwen3-vl-32b-instruct"
+    },
+    {
+      "id": "qwen/qwen3-vl-8b-instruct",
+      "namespace": "qwen",
+      "modelId": "qwen3-vl-8b-instruct",
+      "url": "https://openrouter.ai/qwen/qwen3-vl-8b-instruct"
+    },
+    {
+      "id": "qwen/qwen3-vl-8b-thinking",
+      "namespace": "qwen",
+      "modelId": "qwen3-vl-8b-thinking",
+      "url": "https://openrouter.ai/qwen/qwen3-vl-8b-thinking"
+    },
+    {
+      "id": "qwen/qwen3.5-122b-a10b",
+      "namespace": "qwen",
+      "modelId": "qwen3.5-122b-a10b",
+      "url": "https://openrouter.ai/qwen/qwen3.5-122b-a10b"
+    },
+    {
+      "id": "qwen/qwen3.5-27b",
+      "namespace": "qwen",
+      "modelId": "qwen3.5-27b",
+      "url": "https://openrouter.ai/qwen/qwen3.5-27b"
+    },
+    {
+      "id": "qwen/qwen3.5-35b-a3b",
+      "namespace": "qwen",
+      "modelId": "qwen3.5-35b-a3b",
+      "url": "https://openrouter.ai/qwen/qwen3.5-35b-a3b"
+    },
+    {
+      "id": "qwen/qwen3.5-397b-a17b",
+      "namespace": "qwen",
+      "modelId": "qwen3.5-397b-a17b",
+      "url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b"
+    },
+    {
+      "id": "qwen/qwen3.5-9b",
+      "namespace": "qwen",
+      "modelId": "qwen3.5-9b",
+      "url": "https://openrouter.ai/qwen/qwen3.5-9b"
+    },
+    {
+      "id": "qwen/qwen3.5-flash-02-23",
+      "namespace": "qwen",
+      "modelId": "qwen3.5-flash-02-23",
+      "url": "https://openrouter.ai/qwen/qwen3.5-flash-02-23"
+    },
+    {
+      "id": "qwen/qwen3.5-plus-02-15",
+      "namespace": "qwen",
+      "modelId": "qwen3.5-plus-02-15",
+      "url": "https://openrouter.ai/qwen/qwen3.5-plus-02-15"
+    },
+    {
+      "id": "qwen/qwen3.5-plus-20260420",
+      "namespace": "qwen",
+      "modelId": "qwen3.5-plus-20260420",
+      "url": "https://openrouter.ai/qwen/qwen3.5-plus-20260420"
+    },
+    {
+      "id": "qwen/qwen3.6-27b",
+      "namespace": "qwen",
+      "modelId": "qwen3.6-27b",
+      "url": "https://openrouter.ai/qwen/qwen3.6-27b"
+    },
+    {
+      "id": "qwen/qwen3.6-35b-a3b",
+      "namespace": "qwen",
+      "modelId": "qwen3.6-35b-a3b",
+      "url": "https://openrouter.ai/qwen/qwen3.6-35b-a3b"
+    },
+    {
+      "id": "qwen/qwen3.6-flash",
+      "namespace": "qwen",
+      "modelId": "qwen3.6-flash",
+      "url": "https://openrouter.ai/qwen/qwen3.6-flash"
+    },
+    {
+      "id": "qwen/qwen3.6-max-preview",
+      "namespace": "qwen",
+      "modelId": "qwen3.6-max-preview",
+      "url": "https://openrouter.ai/qwen/qwen3.6-max-preview"
+    },
+    {
+      "id": "qwen/qwen3.6-plus",
+      "namespace": "qwen",
+      "modelId": "qwen3.6-plus",
+      "url": "https://openrouter.ai/qwen/qwen3.6-plus"
+    },
+    {
+      "id": "recraft/recraft-v3",
+      "namespace": "recraft",
+      "modelId": "recraft-v3",
+      "url": "https://openrouter.ai/recraft/recraft-v3"
+    },
+    {
+      "id": "recraft/recraft-v4",
+      "namespace": "recraft",
+      "modelId": "recraft-v4",
+      "url": "https://openrouter.ai/recraft/recraft-v4"
+    },
+    {
+      "id": "recraft/recraft-v4-pro",
+      "namespace": "recraft",
+      "modelId": "recraft-v4-pro",
+      "url": "https://openrouter.ai/recraft/recraft-v4-pro"
+    },
+    {
+      "id": "recraft/recraft-v4-pro-vector",
+      "namespace": "recraft",
+      "modelId": "recraft-v4-pro-vector",
+      "url": "https://openrouter.ai/recraft/recraft-v4-pro-vector"
+    },
+    {
+      "id": "recraft/recraft-v4-vector",
+      "namespace": "recraft",
+      "modelId": "recraft-v4-vector",
+      "url": "https://openrouter.ai/recraft/recraft-v4-vector"
+    },
+    {
+      "id": "recraft/recraft-v4.1",
+      "namespace": "recraft",
+      "modelId": "recraft-v4.1",
+      "url": "https://openrouter.ai/recraft/recraft-v4.1"
+    },
+    {
+      "id": "recraft/recraft-v4.1-pro",
+      "namespace": "recraft",
+      "modelId": "recraft-v4.1-pro",
+      "url": "https://openrouter.ai/recraft/recraft-v4.1-pro"
+    },
+    {
+      "id": "recraft/recraft-v4.1-pro-vector",
+      "namespace": "recraft",
+      "modelId": "recraft-v4.1-pro-vector",
+      "url": "https://openrouter.ai/recraft/recraft-v4.1-pro-vector"
+    },
+    {
+      "id": "recraft/recraft-v4.1-utility",
+      "namespace": "recraft",
+      "modelId": "recraft-v4.1-utility",
+      "url": "https://openrouter.ai/recraft/recraft-v4.1-utility"
+    },
+    {
+      "id": "recraft/recraft-v4.1-utility-pro",
+      "namespace": "recraft",
+      "modelId": "recraft-v4.1-utility-pro",
+      "url": "https://openrouter.ai/recraft/recraft-v4.1-utility-pro"
+    },
+    {
+      "id": "recraft/recraft-v4.1-vector",
+      "namespace": "recraft",
+      "modelId": "recraft-v4.1-vector",
+      "url": "https://openrouter.ai/recraft/recraft-v4.1-vector"
+    },
+    {
+      "id": "rekaai/reka-edge",
+      "namespace": "rekaai",
+      "modelId": "reka-edge",
+      "url": "https://openrouter.ai/rekaai/reka-edge"
+    },
+    {
+      "id": "rekaai/reka-flash-3",
+      "namespace": "rekaai",
+      "modelId": "reka-flash-3",
+      "url": "https://openrouter.ai/rekaai/reka-flash-3"
+    },
+    {
+      "id": "relace/relace-apply-3",
+      "namespace": "relace",
+      "modelId": "relace-apply-3",
+      "url": "https://openrouter.ai/relace/relace-apply-3"
+    },
+    {
+      "id": "relace/relace-search",
+      "namespace": "relace",
+      "modelId": "relace-search",
+      "url": "https://openrouter.ai/relace/relace-search"
+    },
+    {
+      "id": "sao10k/l3-euryale-70b",
+      "namespace": "sao10k",
+      "modelId": "l3-euryale-70b",
+      "url": "https://openrouter.ai/sao10k/l3-euryale-70b"
+    },
+    {
+      "id": "sao10k/l3-lunaris-8b",
+      "namespace": "sao10k",
+      "modelId": "l3-lunaris-8b",
+      "url": "https://openrouter.ai/sao10k/l3-lunaris-8b"
+    },
+    {
+      "id": "sao10k/l3.1-70b-hanami-x1",
+      "namespace": "sao10k",
+      "modelId": "l3.1-70b-hanami-x1",
+      "url": "https://openrouter.ai/sao10k/l3.1-70b-hanami-x1"
+    },
+    {
+      "id": "sao10k/l3.1-euryale-70b",
+      "namespace": "sao10k",
+      "modelId": "l3.1-euryale-70b",
+      "url": "https://openrouter.ai/sao10k/l3.1-euryale-70b"
+    },
+    {
+      "id": "sao10k/l3.3-euryale-70b",
+      "namespace": "sao10k",
+      "modelId": "l3.3-euryale-70b",
+      "url": "https://openrouter.ai/sao10k/l3.3-euryale-70b"
+    },
+    {
+      "id": "sentence-transformers/all-minilm-l12-v2",
+      "namespace": "sentence-transformers",
+      "modelId": "all-minilm-l12-v2",
+      "url": "https://openrouter.ai/sentence-transformers/all-minilm-l12-v2"
+    },
+    {
+      "id": "sentence-transformers/all-minilm-l6-v2",
+      "namespace": "sentence-transformers",
+      "modelId": "all-minilm-l6-v2",
+      "url": "https://openrouter.ai/sentence-transformers/all-minilm-l6-v2"
+    },
+    {
+      "id": "sentence-transformers/all-mpnet-base-v2",
+      "namespace": "sentence-transformers",
+      "modelId": "all-mpnet-base-v2",
+      "url": "https://openrouter.ai/sentence-transformers/all-mpnet-base-v2"
+    },
+    {
+      "id": "sentence-transformers/multi-qa-mpnet-base-dot-v1",
+      "namespace": "sentence-transformers",
+      "modelId": "multi-qa-mpnet-base-dot-v1",
+      "url": "https://openrouter.ai/sentence-transformers/multi-qa-mpnet-base-dot-v1"
+    },
+    {
+      "id": "sentence-transformers/paraphrase-minilm-l6-v2",
+      "namespace": "sentence-transformers",
+      "modelId": "paraphrase-minilm-l6-v2",
+      "url": "https://openrouter.ai/sentence-transformers/paraphrase-minilm-l6-v2"
+    },
+    {
+      "id": "sesame/csm-1b",
+      "namespace": "sesame",
+      "modelId": "csm-1b",
+      "url": "https://openrouter.ai/sesame/csm-1b"
+    },
+    {
+      "id": "sourceful/riverflow-v2-fast",
+      "namespace": "sourceful",
+      "modelId": "riverflow-v2-fast",
+      "url": "https://openrouter.ai/sourceful/riverflow-v2-fast"
+    },
+    {
+      "id": "sourceful/riverflow-v2-fast-preview",
+      "namespace": "sourceful",
+      "modelId": "riverflow-v2-fast-preview",
+      "url": "https://openrouter.ai/sourceful/riverflow-v2-fast-preview"
+    },
+    {
+      "id": "sourceful/riverflow-v2-max-preview",
+      "namespace": "sourceful",
+      "modelId": "riverflow-v2-max-preview",
+      "url": "https://openrouter.ai/sourceful/riverflow-v2-max-preview"
+    },
+    {
+      "id": "sourceful/riverflow-v2-pro",
+      "namespace": "sourceful",
+      "modelId": "riverflow-v2-pro",
+      "url": "https://openrouter.ai/sourceful/riverflow-v2-pro"
+    },
+    {
+      "id": "sourceful/riverflow-v2-standard-preview",
+      "namespace": "sourceful",
+      "modelId": "riverflow-v2-standard-preview",
+      "url": "https://openrouter.ai/sourceful/riverflow-v2-standard-preview"
+    },
+    {
+      "id": "spawn/claude",
+      "namespace": "spawn",
+      "modelId": "claude",
+      "url": "https://openrouter.ai/spawn/claude"
+    },
+    {
+      "id": "spawn/codex",
+      "namespace": "spawn",
+      "modelId": "codex",
+      "url": "https://openrouter.ai/spawn/codex"
+    },
+    {
+      "id": "spawn/cursor",
+      "namespace": "spawn",
+      "modelId": "cursor",
+      "url": "https://openrouter.ai/spawn/cursor"
+    },
+    {
+      "id": "spawn/hermes",
+      "namespace": "spawn",
+      "modelId": "hermes",
+      "url": "https://openrouter.ai/spawn/hermes"
+    },
+    {
+      "id": "spawn/junie",
+      "namespace": "spawn",
+      "modelId": "junie",
+      "url": "https://openrouter.ai/spawn/junie"
+    },
+    {
+      "id": "spawn/kilocode",
+      "namespace": "spawn",
+      "modelId": "kilocode",
+      "url": "https://openrouter.ai/spawn/kilocode"
+    },
+    {
+      "id": "spawn/openclaw",
+      "namespace": "spawn",
+      "modelId": "openclaw",
+      "url": "https://openrouter.ai/spawn/openclaw"
+    },
+    {
+      "id": "spawn/opencode",
+      "namespace": "spawn",
+      "modelId": "opencode",
+      "url": "https://openrouter.ai/spawn/opencode"
+    },
+    {
+      "id": "spawn/pi",
+      "namespace": "spawn",
+      "modelId": "pi",
+      "url": "https://openrouter.ai/spawn/pi"
+    },
+    {
+      "id": "spawn/t3code",
+      "namespace": "spawn",
+      "modelId": "t3code",
+      "url": "https://openrouter.ai/spawn/t3code"
+    },
+    {
+      "id": "stepfun/step-3.5-flash",
+      "namespace": "stepfun",
+      "modelId": "step-3.5-flash",
+      "url": "https://openrouter.ai/stepfun/step-3.5-flash"
+    },
+    {
+      "id": "switchpoint/router",
+      "namespace": "switchpoint",
+      "modelId": "router",
+      "url": "https://openrouter.ai/switchpoint/router"
+    },
+    {
+      "id": "tencent/hunyuan-a13b-instruct",
+      "namespace": "tencent",
+      "modelId": "hunyuan-a13b-instruct",
+      "url": "https://openrouter.ai/tencent/hunyuan-a13b-instruct"
+    },
+    {
+      "id": "tencent/hy3-preview",
+      "namespace": "tencent",
+      "modelId": "hy3-preview",
+      "url": "https://openrouter.ai/tencent/hy3-preview"
+    },
+    {
+      "id": "thedrummer/cydonia-24b-v4.1",
+      "namespace": "thedrummer",
+      "modelId": "cydonia-24b-v4.1",
+      "url": "https://openrouter.ai/thedrummer/cydonia-24b-v4.1"
+    },
+    {
+      "id": "thedrummer/rocinante-12b",
+      "namespace": "thedrummer",
+      "modelId": "rocinante-12b",
+      "url": "https://openrouter.ai/thedrummer/rocinante-12b"
+    },
+    {
+      "id": "thedrummer/skyfall-36b-v2",
+      "namespace": "thedrummer",
+      "modelId": "skyfall-36b-v2",
+      "url": "https://openrouter.ai/thedrummer/skyfall-36b-v2"
+    },
+    {
+      "id": "thedrummer/unslopnemo-12b",
+      "namespace": "thedrummer",
+      "modelId": "unslopnemo-12b",
+      "url": "https://openrouter.ai/thedrummer/unslopnemo-12b"
+    },
+    {
+      "id": "thenlper/gte-base",
+      "namespace": "thenlper",
+      "modelId": "gte-base",
+      "url": "https://openrouter.ai/thenlper/gte-base"
+    },
+    {
+      "id": "thenlper/gte-large",
+      "namespace": "thenlper",
+      "modelId": "gte-large",
+      "url": "https://openrouter.ai/thenlper/gte-large"
+    },
+    {
+      "id": "undi95/remm-slerp-l2-13b",
+      "namespace": "undi95",
+      "modelId": "remm-slerp-l2-13b",
+      "url": "https://openrouter.ai/undi95/remm-slerp-l2-13b"
+    },
+    {
+      "id": "upstage/solar-pro-3",
+      "namespace": "upstage",
+      "modelId": "solar-pro-3",
+      "url": "https://openrouter.ai/upstage/solar-pro-3"
+    },
+    {
+      "id": "writer/palmyra-x5",
+      "namespace": "writer",
+      "modelId": "palmyra-x5",
+      "url": "https://openrouter.ai/writer/palmyra-x5"
+    },
+    {
+      "id": "x-ai/grok-4.20",
+      "namespace": "x-ai",
+      "modelId": "grok-4.20",
+      "url": "https://openrouter.ai/x-ai/grok-4.20"
+    },
+    {
+      "id": "x-ai/grok-4.20-multi-agent",
+      "namespace": "x-ai",
+      "modelId": "grok-4.20-multi-agent",
+      "url": "https://openrouter.ai/x-ai/grok-4.20-multi-agent"
+    },
+    {
+      "id": "x-ai/grok-4.3",
+      "namespace": "x-ai",
+      "modelId": "grok-4.3",
+      "url": "https://openrouter.ai/x-ai/grok-4.3"
+    },
+    {
+      "id": "x-ai/grok-voice-tts-1.0",
+      "namespace": "x-ai",
+      "modelId": "grok-voice-tts-1.0",
+      "url": "https://openrouter.ai/x-ai/grok-voice-tts-1.0"
+    },
+    {
+      "id": "xiaomi/mimo-v2-flash",
+      "namespace": "xiaomi",
+      "modelId": "mimo-v2-flash",
+      "url": "https://openrouter.ai/xiaomi/mimo-v2-flash"
+    },
+    {
+      "id": "xiaomi/mimo-v2-omni",
+      "namespace": "xiaomi",
+      "modelId": "mimo-v2-omni",
+      "url": "https://openrouter.ai/xiaomi/mimo-v2-omni"
+    },
+    {
+      "id": "xiaomi/mimo-v2-pro",
+      "namespace": "xiaomi",
+      "modelId": "mimo-v2-pro",
+      "url": "https://openrouter.ai/xiaomi/mimo-v2-pro"
+    },
+    {
+      "id": "xiaomi/mimo-v2.5",
+      "namespace": "xiaomi",
+      "modelId": "mimo-v2.5",
+      "url": "https://openrouter.ai/xiaomi/mimo-v2.5"
+    },
+    {
+      "id": "xiaomi/mimo-v2.5-pro",
+      "namespace": "xiaomi",
+      "modelId": "mimo-v2.5-pro",
+      "url": "https://openrouter.ai/xiaomi/mimo-v2.5-pro"
+    },
+    {
+      "id": "z-ai/glm-4-32b",
+      "namespace": "z-ai",
+      "modelId": "glm-4-32b",
+      "url": "https://openrouter.ai/z-ai/glm-4-32b"
+    },
+    {
+      "id": "z-ai/glm-4.5",
+      "namespace": "z-ai",
+      "modelId": "glm-4.5",
+      "url": "https://openrouter.ai/z-ai/glm-4.5"
+    },
+    {
+      "id": "z-ai/glm-4.5-air",
+      "namespace": "z-ai",
+      "modelId": "glm-4.5-air",
+      "url": "https://openrouter.ai/z-ai/glm-4.5-air"
+    },
+    {
+      "id": "z-ai/glm-4.5-air:free",
+      "namespace": "z-ai",
+      "modelId": "glm-4.5-air:free",
+      "url": "https://openrouter.ai/z-ai/glm-4.5-air:free"
+    },
+    {
+      "id": "z-ai/glm-4.5v",
+      "namespace": "z-ai",
+      "modelId": "glm-4.5v",
+      "url": "https://openrouter.ai/z-ai/glm-4.5v"
+    },
+    {
+      "id": "z-ai/glm-4.6",
+      "namespace": "z-ai",
+      "modelId": "glm-4.6",
+      "url": "https://openrouter.ai/z-ai/glm-4.6"
+    },
+    {
+      "id": "z-ai/glm-4.6v",
+      "namespace": "z-ai",
+      "modelId": "glm-4.6v",
+      "url": "https://openrouter.ai/z-ai/glm-4.6v"
+    },
+    {
+      "id": "z-ai/glm-4.7",
+      "namespace": "z-ai",
+      "modelId": "glm-4.7",
+      "url": "https://openrouter.ai/z-ai/glm-4.7"
+    },
+    {
+      "id": "z-ai/glm-4.7-flash",
+      "namespace": "z-ai",
+      "modelId": "glm-4.7-flash",
+      "url": "https://openrouter.ai/z-ai/glm-4.7-flash"
+    },
+    {
+      "id": "z-ai/glm-5",
+      "namespace": "z-ai",
+      "modelId": "glm-5",
+      "url": "https://openrouter.ai/z-ai/glm-5"
+    },
+    {
+      "id": "z-ai/glm-5-turbo",
+      "namespace": "z-ai",
+      "modelId": "glm-5-turbo",
+      "url": "https://openrouter.ai/z-ai/glm-5-turbo"
+    },
+    {
+      "id": "z-ai/glm-5.1",
+      "namespace": "z-ai",
+      "modelId": "glm-5.1",
+      "url": "https://openrouter.ai/z-ai/glm-5.1"
+    },
+    {
+      "id": "z-ai/glm-5v-turbo",
+      "namespace": "z-ai",
+      "modelId": "glm-5v-turbo",
+      "url": "https://openrouter.ai/z-ai/glm-5v-turbo"
+    },
+    {
+      "id": "zyphra/zonos-v0.1-hybrid",
+      "namespace": "zyphra",
+      "modelId": "zonos-v0.1-hybrid",
+      "url": "https://openrouter.ai/zyphra/zonos-v0.1-hybrid"
+    },
+    {
+      "id": "zyphra/zonos-v0.1-transformer",
+      "namespace": "zyphra",
+      "modelId": "zonos-v0.1-transformer",
+      "url": "https://openrouter.ai/zyphra/zonos-v0.1-transformer"
+    }
+  ],
+  "pageOnly": [
+    {
+      "id": "alibaba/wan-2.6",
+      "namespace": "alibaba",
+      "modelId": "wan-2.6",
+      "url": "https://openrouter.ai/alibaba/wan-2.6",
+      "inferredType": "video"
+    },
+    {
+      "id": "alibaba/wan-2.7",
+      "namespace": "alibaba",
+      "modelId": "wan-2.7",
+      "url": "https://openrouter.ai/alibaba/wan-2.7",
+      "inferredType": "video"
+    },
+    {
+      "id": "baai/bge-base-en-v1.5",
+      "namespace": "baai",
+      "modelId": "bge-base-en-v1.5",
+      "url": "https://openrouter.ai/baai/bge-base-en-v1.5",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "baai/bge-large-en-v1.5",
+      "namespace": "baai",
+      "modelId": "bge-large-en-v1.5",
+      "url": "https://openrouter.ai/baai/bge-large-en-v1.5",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "baai/bge-m3",
+      "namespace": "baai",
+      "modelId": "bge-m3",
+      "url": "https://openrouter.ai/baai/bge-m3",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "black-forest-labs/flux.2-flex",
+      "namespace": "black-forest-labs",
+      "modelId": "flux.2-flex",
+      "url": "https://openrouter.ai/black-forest-labs/flux.2-flex",
+      "inferredType": "image"
+    },
+    {
+      "id": "black-forest-labs/flux.2-klein-4b",
+      "namespace": "black-forest-labs",
+      "modelId": "flux.2-klein-4b",
+      "url": "https://openrouter.ai/black-forest-labs/flux.2-klein-4b",
+      "inferredType": "image"
+    },
+    {
+      "id": "black-forest-labs/flux.2-max",
+      "namespace": "black-forest-labs",
+      "modelId": "flux.2-max",
+      "url": "https://openrouter.ai/black-forest-labs/flux.2-max",
+      "inferredType": "image"
+    },
+    {
+      "id": "black-forest-labs/flux.2-pro",
+      "namespace": "black-forest-labs",
+      "modelId": "flux.2-pro",
+      "url": "https://openrouter.ai/black-forest-labs/flux.2-pro",
+      "inferredType": "image"
+    },
+    {
+      "id": "bytedance-seed/seedream-4.5",
+      "namespace": "bytedance-seed",
+      "modelId": "seedream-4.5",
+      "url": "https://openrouter.ai/bytedance-seed/seedream-4.5",
+      "inferredType": "image"
+    },
+    {
+      "id": "bytedance/seedance-1-5-pro",
+      "namespace": "bytedance",
+      "modelId": "seedance-1-5-pro",
+      "url": "https://openrouter.ai/bytedance/seedance-1-5-pro",
+      "inferredType": "video"
+    },
+    {
+      "id": "bytedance/seedance-2.0",
+      "namespace": "bytedance",
+      "modelId": "seedance-2.0",
+      "url": "https://openrouter.ai/bytedance/seedance-2.0",
+      "inferredType": "video"
+    },
+    {
+      "id": "bytedance/seedance-2.0-fast",
+      "namespace": "bytedance",
+      "modelId": "seedance-2.0-fast",
+      "url": "https://openrouter.ai/bytedance/seedance-2.0-fast",
+      "inferredType": "video"
+    },
+    {
+      "id": "canopylabs/orpheus-3b-0.1-ft",
+      "namespace": "canopylabs",
+      "modelId": "orpheus-3b-0.1-ft",
+      "url": "https://openrouter.ai/canopylabs/orpheus-3b-0.1-ft",
+      "inferredType": "audio_or_speech"
+    },
+    {
+      "id": "cohere/rerank-4-fast",
+      "namespace": "cohere",
+      "modelId": "rerank-4-fast",
+      "url": "https://openrouter.ai/cohere/rerank-4-fast",
+      "inferredType": "rerank"
+    },
+    {
+      "id": "cohere/rerank-4-pro",
+      "namespace": "cohere",
+      "modelId": "rerank-4-pro",
+      "url": "https://openrouter.ai/cohere/rerank-4-pro",
+      "inferredType": "rerank"
+    },
+    {
+      "id": "cohere/rerank-v3.5",
+      "namespace": "cohere",
+      "modelId": "rerank-v3.5",
+      "url": "https://openrouter.ai/cohere/rerank-v3.5",
+      "inferredType": "rerank"
+    },
+    {
+      "id": "google/chirp-3",
+      "namespace": "google",
+      "modelId": "chirp-3",
+      "url": "https://openrouter.ai/google/chirp-3",
+      "inferredType": "audio_or_speech"
+    },
+    {
+      "id": "google/gemini-3.1-flash-tts-preview",
+      "namespace": "google",
+      "modelId": "gemini-3.1-flash-tts-preview",
+      "url": "https://openrouter.ai/google/gemini-3.1-flash-tts-preview",
+      "inferredType": "audio_or_speech"
+    },
+    {
+      "id": "google/gemini-embedding-001",
+      "namespace": "google",
+      "modelId": "gemini-embedding-001",
+      "url": "https://openrouter.ai/google/gemini-embedding-001",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "google/gemini-embedding-2-preview",
+      "namespace": "google",
+      "modelId": "gemini-embedding-2-preview",
+      "url": "https://openrouter.ai/google/gemini-embedding-2-preview",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "google/veo-3.1",
+      "namespace": "google",
+      "modelId": "veo-3.1",
+      "url": "https://openrouter.ai/google/veo-3.1",
+      "inferredType": "video"
+    },
+    {
+      "id": "google/veo-3.1-fast",
+      "namespace": "google",
+      "modelId": "veo-3.1-fast",
+      "url": "https://openrouter.ai/google/veo-3.1-fast",
+      "inferredType": "video"
+    },
+    {
+      "id": "google/veo-3.1-lite",
+      "namespace": "google",
+      "modelId": "veo-3.1-lite",
+      "url": "https://openrouter.ai/google/veo-3.1-lite",
+      "inferredType": "video"
+    },
+    {
+      "id": "hexgrad/kokoro-82m",
+      "namespace": "hexgrad",
+      "modelId": "kokoro-82m",
+      "url": "https://openrouter.ai/hexgrad/kokoro-82m",
+      "inferredType": "audio_or_speech"
+    },
+    {
+      "id": "intfloat/e5-base-v2",
+      "namespace": "intfloat",
+      "modelId": "e5-base-v2",
+      "url": "https://openrouter.ai/intfloat/e5-base-v2",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "intfloat/e5-large-v2",
+      "namespace": "intfloat",
+      "modelId": "e5-large-v2",
+      "url": "https://openrouter.ai/intfloat/e5-large-v2",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "intfloat/multilingual-e5-large",
+      "namespace": "intfloat",
+      "modelId": "multilingual-e5-large",
+      "url": "https://openrouter.ai/intfloat/multilingual-e5-large",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "kwaivgi/kling-v3.0-pro",
+      "namespace": "kwaivgi",
+      "modelId": "kling-v3.0-pro",
+      "url": "https://openrouter.ai/kwaivgi/kling-v3.0-pro",
+      "inferredType": "video"
+    },
+    {
+      "id": "kwaivgi/kling-v3.0-std",
+      "namespace": "kwaivgi",
+      "modelId": "kling-v3.0-std",
+      "url": "https://openrouter.ai/kwaivgi/kling-v3.0-std",
+      "inferredType": "video"
+    },
+    {
+      "id": "kwaivgi/kling-video-o1",
+      "namespace": "kwaivgi",
+      "modelId": "kling-video-o1",
+      "url": "https://openrouter.ai/kwaivgi/kling-video-o1",
+      "inferredType": "video"
+    },
+    {
+      "id": "minimax/hailuo-2.3",
+      "namespace": "minimax",
+      "modelId": "hailuo-2.3",
+      "url": "https://openrouter.ai/minimax/hailuo-2.3",
+      "inferredType": "video"
+    },
+    {
+      "id": "mistralai/codestral-embed-2505",
+      "namespace": "mistralai",
+      "modelId": "codestral-embed-2505",
+      "url": "https://openrouter.ai/mistralai/codestral-embed-2505",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "mistralai/mistral-embed-2312",
+      "namespace": "mistralai",
+      "modelId": "mistral-embed-2312",
+      "url": "https://openrouter.ai/mistralai/mistral-embed-2312",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "mistralai/voxtral-mini-transcribe",
+      "namespace": "mistralai",
+      "modelId": "voxtral-mini-transcribe",
+      "url": "https://openrouter.ai/mistralai/voxtral-mini-transcribe",
+      "inferredType": "audio_or_speech"
+    },
+    {
+      "id": "mistralai/voxtral-mini-tts-2603",
+      "namespace": "mistralai",
+      "modelId": "voxtral-mini-tts-2603",
+      "url": "https://openrouter.ai/mistralai/voxtral-mini-tts-2603",
+      "inferredType": "audio_or_speech"
+    },
+    {
+      "id": "nvidia/llama-nemotron-embed-vl-1b-v2:free",
+      "namespace": "nvidia",
+      "modelId": "llama-nemotron-embed-vl-1b-v2:free",
+      "url": "https://openrouter.ai/nvidia/llama-nemotron-embed-vl-1b-v2:free",
+      "inferredType": "free_or_promotional"
+    },
+    {
+      "id": "openai/gpt-4o-mini-transcribe",
+      "namespace": "openai",
+      "modelId": "gpt-4o-mini-transcribe",
+      "url": "https://openrouter.ai/openai/gpt-4o-mini-transcribe",
+      "inferredType": "audio_or_speech"
+    },
+    {
+      "id": "openai/gpt-4o-mini-tts-2025-12-15",
+      "namespace": "openai",
+      "modelId": "gpt-4o-mini-tts-2025-12-15",
+      "url": "https://openrouter.ai/openai/gpt-4o-mini-tts-2025-12-15",
+      "inferredType": "audio_or_speech"
+    },
+    {
+      "id": "openai/gpt-4o-transcribe",
+      "namespace": "openai",
+      "modelId": "gpt-4o-transcribe",
+      "url": "https://openrouter.ai/openai/gpt-4o-transcribe",
+      "inferredType": "audio_or_speech"
+    },
+    {
+      "id": "openai/sora-2-pro",
+      "namespace": "openai",
+      "modelId": "sora-2-pro",
+      "url": "https://openrouter.ai/openai/sora-2-pro",
+      "inferredType": "video"
+    },
+    {
+      "id": "openai/text-embedding-3-large",
+      "namespace": "openai",
+      "modelId": "text-embedding-3-large",
+      "url": "https://openrouter.ai/openai/text-embedding-3-large",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "openai/text-embedding-3-small",
+      "namespace": "openai",
+      "modelId": "text-embedding-3-small",
+      "url": "https://openrouter.ai/openai/text-embedding-3-small",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "openai/text-embedding-ada-002",
+      "namespace": "openai",
+      "modelId": "text-embedding-ada-002",
+      "url": "https://openrouter.ai/openai/text-embedding-ada-002",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "openai/whisper-1",
+      "namespace": "openai",
+      "modelId": "whisper-1",
+      "url": "https://openrouter.ai/openai/whisper-1",
+      "inferredType": "audio_or_speech"
+    },
+    {
+      "id": "openai/whisper-large-v3",
+      "namespace": "openai",
+      "modelId": "whisper-large-v3",
+      "url": "https://openrouter.ai/openai/whisper-large-v3",
+      "inferredType": "audio_or_speech"
+    },
+    {
+      "id": "openai/whisper-large-v3-turbo",
+      "namespace": "openai",
+      "modelId": "whisper-large-v3-turbo",
+      "url": "https://openrouter.ai/openai/whisper-large-v3-turbo",
+      "inferredType": "audio_or_speech"
+    },
+    {
+      "id": "perplexity/pplx-embed-v1-0.6b",
+      "namespace": "perplexity",
+      "modelId": "pplx-embed-v1-0.6b",
+      "url": "https://openrouter.ai/perplexity/pplx-embed-v1-0.6b",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "perplexity/pplx-embed-v1-4b",
+      "namespace": "perplexity",
+      "modelId": "pplx-embed-v1-4b",
+      "url": "https://openrouter.ai/perplexity/pplx-embed-v1-4b",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "qwen/qwen3-asr-flash-2026-02-10",
+      "namespace": "qwen",
+      "modelId": "qwen3-asr-flash-2026-02-10",
+      "url": "https://openrouter.ai/qwen/qwen3-asr-flash-2026-02-10",
+      "inferredType": "unknown_page_only"
+    },
+    {
+      "id": "qwen/qwen3-embedding-4b",
+      "namespace": "qwen",
+      "modelId": "qwen3-embedding-4b",
+      "url": "https://openrouter.ai/qwen/qwen3-embedding-4b",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "qwen/qwen3-embedding-8b",
+      "namespace": "qwen",
+      "modelId": "qwen3-embedding-8b",
+      "url": "https://openrouter.ai/qwen/qwen3-embedding-8b",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "recraft/recraft-v3",
+      "namespace": "recraft",
+      "modelId": "recraft-v3",
+      "url": "https://openrouter.ai/recraft/recraft-v3",
+      "inferredType": "image"
+    },
+    {
+      "id": "recraft/recraft-v4",
+      "namespace": "recraft",
+      "modelId": "recraft-v4",
+      "url": "https://openrouter.ai/recraft/recraft-v4",
+      "inferredType": "image"
+    },
+    {
+      "id": "recraft/recraft-v4-pro",
+      "namespace": "recraft",
+      "modelId": "recraft-v4-pro",
+      "url": "https://openrouter.ai/recraft/recraft-v4-pro",
+      "inferredType": "image"
+    },
+    {
+      "id": "recraft/recraft-v4-pro-vector",
+      "namespace": "recraft",
+      "modelId": "recraft-v4-pro-vector",
+      "url": "https://openrouter.ai/recraft/recraft-v4-pro-vector",
+      "inferredType": "image"
+    },
+    {
+      "id": "recraft/recraft-v4-vector",
+      "namespace": "recraft",
+      "modelId": "recraft-v4-vector",
+      "url": "https://openrouter.ai/recraft/recraft-v4-vector",
+      "inferredType": "image"
+    },
+    {
+      "id": "recraft/recraft-v4.1",
+      "namespace": "recraft",
+      "modelId": "recraft-v4.1",
+      "url": "https://openrouter.ai/recraft/recraft-v4.1",
+      "inferredType": "image"
+    },
+    {
+      "id": "recraft/recraft-v4.1-pro",
+      "namespace": "recraft",
+      "modelId": "recraft-v4.1-pro",
+      "url": "https://openrouter.ai/recraft/recraft-v4.1-pro",
+      "inferredType": "image"
+    },
+    {
+      "id": "recraft/recraft-v4.1-pro-vector",
+      "namespace": "recraft",
+      "modelId": "recraft-v4.1-pro-vector",
+      "url": "https://openrouter.ai/recraft/recraft-v4.1-pro-vector",
+      "inferredType": "image"
+    },
+    {
+      "id": "recraft/recraft-v4.1-utility",
+      "namespace": "recraft",
+      "modelId": "recraft-v4.1-utility",
+      "url": "https://openrouter.ai/recraft/recraft-v4.1-utility",
+      "inferredType": "image"
+    },
+    {
+      "id": "recraft/recraft-v4.1-utility-pro",
+      "namespace": "recraft",
+      "modelId": "recraft-v4.1-utility-pro",
+      "url": "https://openrouter.ai/recraft/recraft-v4.1-utility-pro",
+      "inferredType": "image"
+    },
+    {
+      "id": "recraft/recraft-v4.1-vector",
+      "namespace": "recraft",
+      "modelId": "recraft-v4.1-vector",
+      "url": "https://openrouter.ai/recraft/recraft-v4.1-vector",
+      "inferredType": "image"
+    },
+    {
+      "id": "sentence-transformers/all-minilm-l12-v2",
+      "namespace": "sentence-transformers",
+      "modelId": "all-minilm-l12-v2",
+      "url": "https://openrouter.ai/sentence-transformers/all-minilm-l12-v2",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "sentence-transformers/all-minilm-l6-v2",
+      "namespace": "sentence-transformers",
+      "modelId": "all-minilm-l6-v2",
+      "url": "https://openrouter.ai/sentence-transformers/all-minilm-l6-v2",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "sentence-transformers/all-mpnet-base-v2",
+      "namespace": "sentence-transformers",
+      "modelId": "all-mpnet-base-v2",
+      "url": "https://openrouter.ai/sentence-transformers/all-mpnet-base-v2",
+      "inferredType": "unknown_page_only"
+    },
+    {
+      "id": "sentence-transformers/multi-qa-mpnet-base-dot-v1",
+      "namespace": "sentence-transformers",
+      "modelId": "multi-qa-mpnet-base-dot-v1",
+      "url": "https://openrouter.ai/sentence-transformers/multi-qa-mpnet-base-dot-v1",
+      "inferredType": "unknown_page_only"
+    },
+    {
+      "id": "sentence-transformers/paraphrase-minilm-l6-v2",
+      "namespace": "sentence-transformers",
+      "modelId": "paraphrase-minilm-l6-v2",
+      "url": "https://openrouter.ai/sentence-transformers/paraphrase-minilm-l6-v2",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "sesame/csm-1b",
+      "namespace": "sesame",
+      "modelId": "csm-1b",
+      "url": "https://openrouter.ai/sesame/csm-1b",
+      "inferredType": "unknown_page_only"
+    },
+    {
+      "id": "sourceful/riverflow-v2-fast",
+      "namespace": "sourceful",
+      "modelId": "riverflow-v2-fast",
+      "url": "https://openrouter.ai/sourceful/riverflow-v2-fast",
+      "inferredType": "unknown_page_only"
+    },
+    {
+      "id": "sourceful/riverflow-v2-fast-preview",
+      "namespace": "sourceful",
+      "modelId": "riverflow-v2-fast-preview",
+      "url": "https://openrouter.ai/sourceful/riverflow-v2-fast-preview",
+      "inferredType": "unknown_page_only"
+    },
+    {
+      "id": "sourceful/riverflow-v2-max-preview",
+      "namespace": "sourceful",
+      "modelId": "riverflow-v2-max-preview",
+      "url": "https://openrouter.ai/sourceful/riverflow-v2-max-preview",
+      "inferredType": "unknown_page_only"
+    },
+    {
+      "id": "sourceful/riverflow-v2-pro",
+      "namespace": "sourceful",
+      "modelId": "riverflow-v2-pro",
+      "url": "https://openrouter.ai/sourceful/riverflow-v2-pro",
+      "inferredType": "unknown_page_only"
+    },
+    {
+      "id": "sourceful/riverflow-v2-standard-preview",
+      "namespace": "sourceful",
+      "modelId": "riverflow-v2-standard-preview",
+      "url": "https://openrouter.ai/sourceful/riverflow-v2-standard-preview",
+      "inferredType": "unknown_page_only"
+    },
+    {
+      "id": "spawn/claude",
+      "namespace": "spawn",
+      "modelId": "claude",
+      "url": "https://openrouter.ai/spawn/claude",
+      "inferredType": "agent_or_app"
+    },
+    {
+      "id": "spawn/codex",
+      "namespace": "spawn",
+      "modelId": "codex",
+      "url": "https://openrouter.ai/spawn/codex",
+      "inferredType": "agent_or_app"
+    },
+    {
+      "id": "spawn/cursor",
+      "namespace": "spawn",
+      "modelId": "cursor",
+      "url": "https://openrouter.ai/spawn/cursor",
+      "inferredType": "agent_or_app"
+    },
+    {
+      "id": "spawn/hermes",
+      "namespace": "spawn",
+      "modelId": "hermes",
+      "url": "https://openrouter.ai/spawn/hermes",
+      "inferredType": "agent_or_app"
+    },
+    {
+      "id": "spawn/junie",
+      "namespace": "spawn",
+      "modelId": "junie",
+      "url": "https://openrouter.ai/spawn/junie",
+      "inferredType": "agent_or_app"
+    },
+    {
+      "id": "spawn/kilocode",
+      "namespace": "spawn",
+      "modelId": "kilocode",
+      "url": "https://openrouter.ai/spawn/kilocode",
+      "inferredType": "agent_or_app"
+    },
+    {
+      "id": "spawn/openclaw",
+      "namespace": "spawn",
+      "modelId": "openclaw",
+      "url": "https://openrouter.ai/spawn/openclaw",
+      "inferredType": "agent_or_app"
+    },
+    {
+      "id": "spawn/opencode",
+      "namespace": "spawn",
+      "modelId": "opencode",
+      "url": "https://openrouter.ai/spawn/opencode",
+      "inferredType": "agent_or_app"
+    },
+    {
+      "id": "spawn/pi",
+      "namespace": "spawn",
+      "modelId": "pi",
+      "url": "https://openrouter.ai/spawn/pi",
+      "inferredType": "agent_or_app"
+    },
+    {
+      "id": "spawn/t3code",
+      "namespace": "spawn",
+      "modelId": "t3code",
+      "url": "https://openrouter.ai/spawn/t3code",
+      "inferredType": "agent_or_app"
+    },
+    {
+      "id": "thenlper/gte-base",
+      "namespace": "thenlper",
+      "modelId": "gte-base",
+      "url": "https://openrouter.ai/thenlper/gte-base",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "thenlper/gte-large",
+      "namespace": "thenlper",
+      "modelId": "gte-large",
+      "url": "https://openrouter.ai/thenlper/gte-large",
+      "inferredType": "embedding"
+    },
+    {
+      "id": "x-ai/grok-voice-tts-1.0",
+      "namespace": "x-ai",
+      "modelId": "grok-voice-tts-1.0",
+      "url": "https://openrouter.ai/x-ai/grok-voice-tts-1.0",
+      "inferredType": "audio_or_speech"
+    },
+    {
+      "id": "zyphra/zonos-v0.1-hybrid",
+      "namespace": "zyphra",
+      "modelId": "zonos-v0.1-hybrid",
+      "url": "https://openrouter.ai/zyphra/zonos-v0.1-hybrid",
+      "inferredType": "audio_or_speech"
+    },
+    {
+      "id": "zyphra/zonos-v0.1-transformer",
+      "namespace": "zyphra",
+      "modelId": "zonos-v0.1-transformer",
+      "url": "https://openrouter.ai/zyphra/zonos-v0.1-transformer",
+      "inferredType": "audio_or_speech"
+    }
+  ],
+  "apiOnly": [
+    "~anthropic/claude-haiku-latest",
+    "~anthropic/claude-opus-latest",
+    "~anthropic/claude-sonnet-latest",
+    "~google/gemini-flash-latest",
+    "~google/gemini-pro-latest",
+    "~moonshotai/kimi-latest",
+    "~openai/gpt-latest",
+    "~openai/gpt-mini-latest",
+    "openrouter/auto",
+    "openrouter/bodybuilder",
+    "openrouter/free",
+    "openrouter/pareto-code"
+  ]
+}
