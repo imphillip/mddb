@@ -5,9 +5,11 @@ import { dirname, join } from 'node:path'
 const OPENROUTER_BASE_URL = process.env.OPENROUTER_BASE_URL ?? 'https://openrouter.ai'
 const MODELS_URL = process.env.OPENROUTER_MODELS_URL ?? `${OPENROUTER_BASE_URL}/api/v1/models`
 const SITEMAP_URL = process.env.OPENROUTER_SITEMAP_URL ?? `${OPENROUTER_BASE_URL}/sitemap.xml`
-const USER_AGENT = process.env.OPENROUTER_USER_AGENT ?? 'mddb.dev data refresh (+https://mddb.dev)'
+const USER_AGENT = process.env.OPENROUTER_USER_AGENT ?? 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36 mddb.dev-data-refresh'
 const FETCH_ENDPOINTS = process.env.OPENROUTER_FETCH_ENDPOINTS !== '0'
+const FETCH_PAGES = process.env.OPENROUTER_FETCH_PAGES !== '0'
 const ENDPOINT_CONCURRENCY = Number.parseInt(process.env.OPENROUTER_ENDPOINT_CONCURRENCY ?? '6', 10)
+const PAGE_CONCURRENCY = Number.parseInt(process.env.OPENROUTER_PAGE_CONCURRENCY ?? '4', 10)
 
 const NON_MODEL_NAMESPACES = new Set([
   'about',
@@ -29,14 +31,76 @@ const NON_MODEL_NAMESPACES = new Set([
   'works-with-openrouter',
 ])
 
+
+const MODEL_PAGE_KEYS = [
+  'displayName',
+  'author',
+  'isLatestAlias',
+  'tildeLatestSlug',
+  'aliasTarget',
+  'description',
+  'model_version_group_id',
+  'context_length',
+  'input_modalities',
+  'output_modalities',
+  'has_text_output',
+  'group',
+  'instruct_type',
+  'default_system',
+  'default_stops',
+  'hidden',
+  'router',
+  'warning_message',
+  'promotion_message',
+  'routing_error_message',
+  'is_private',
+  'permaslug',
+  'supports_reasoning',
+  'reasoning_config',
+  'features',
+  'default_parameters',
+  'default_order',
+  'quick_start_example_type',
+  'is_trainable_text',
+  'is_trainable_image',
+  'knowledge_cutoff',
+  'limit_rpm',
+  'limit_rpd',
+  'supported_tts_voices',
+  'endpoint',
+  'provider_display_name',
+  'provider_slug',
+  'provider_model_id',
+  'quantization',
+  'variant',
+  'is_free',
+  'can_abort',
+  'max_prompt_tokens',
+  'max_completion_tokens',
+  'max_tokens_per_image',
+  'supported_parameters',
+  'is_byok',
+  'moderation_required',
+  'data_policy',
+  'pricing',
+  'display_pricing',
+  'pricing_json',
+  'pricing_version_id',
+  'is_hidden',
+  'is_deranked',
+  'is_disabled',
+]
+
 const paths = {
   models: process.argv[2] ?? join(process.cwd(), 'data', 'openrouter-models.json'),
   endpoints: process.env.OPENROUTER_ENDPOINTS_TARGET ?? join(process.cwd(), 'data', 'openrouter-endpoints.json'),
   sitemap: process.env.OPENROUTER_SITEMAP_TARGET ?? join(process.cwd(), 'data', 'openrouter-sitemap-models.json'),
+  pages: process.env.OPENROUTER_PAGES_TARGET ?? join(process.cwd(), 'data', 'openrouter-model-pages.json'),
 }
 
-const headers = { Accept: 'application/json', 'User-Agent': USER_AGENT }
-if (process.env.OPENROUTER_API_KEY) headers.Authorization = `Bearer ${process.env.OPENROUTER_API_KEY}`
+const jsonHeaders = { Accept: 'application/json', 'User-Agent': USER_AGENT }
+const htmlHeaders = { Accept: 'text/html,application/xhtml+xml', 'User-Agent': USER_AGENT }
+if (process.env.OPENROUTER_API_KEY) jsonHeaders.Authorization = `Bearer ${process.env.OPENROUTER_API_KEY}`
 
 const fetchedAt = new Date().toISOString()
 
@@ -58,9 +122,7 @@ if (FETCH_ENDPOINTS) {
     try {
       const response = await fetchJson(detailsUrl)
       const endpoints = Array.isArray(response?.data?.endpoints) ? response.data.endpoints : []
-      if ((index + 1) % 25 === 0 || index + 1 === modelPayload.data.length) {
-        console.log(`Fetched endpoint details ${index + 1}/${modelPayload.data.length}`)
-      }
+      logEvery('Fetched endpoint details', index, modelPayload.data.length, 25)
       return {
         modelId: model.id,
         canonicalSlug: model.canonical_slug ?? null,
@@ -97,8 +159,49 @@ if (FETCH_ENDPOINTS) {
   console.log('Skipped endpoint detail fetch because OPENROUTER_FETCH_ENDPOINTS=0')
 }
 
+if (FETCH_PAGES) {
+  const pages = await mapWithConcurrency(sitemap.modelPages, safeConcurrency(PAGE_CONCURRENCY), async (page, index) => {
+    try {
+      const html = await fetchHtml(page.url)
+      logEvery('Fetched model pages', index, sitemap.modelPages.length, 25)
+      return {
+        id: page.id,
+        provider: 'openrouter',
+        modelId: page.id,
+        route: `/models/openrouter/${encodeURIComponent(page.id)}`,
+        sourceUrl: page.url,
+        htmlLength: html.length,
+        extracted: extractNextFlightData(html),
+      }
+    } catch (error) {
+      return {
+        id: page.id,
+        provider: 'openrouter',
+        modelId: page.id,
+        route: `/models/openrouter/${encodeURIComponent(page.id)}`,
+        sourceUrl: page.url,
+        error: error instanceof Error ? error.message : String(error),
+      }
+    }
+  })
+  const pagePayload = {
+    fetchedAt,
+    source: {
+      baseUrl: OPENROUTER_BASE_URL,
+      sitemapUrl: SITEMAP_URL,
+      pages: pages.length,
+      failedRows: pages.filter((row) => row.error).length,
+    },
+    data: pages,
+  }
+  writeJson(paths.pages, pagePayload)
+  console.log(`Wrote extracted page data for ${pages.length} OpenRouter model pages (${pagePayload.source.failedRows} failed) to ${paths.pages}`)
+} else {
+  console.log('Skipped model page fetch because OPENROUTER_FETCH_PAGES=0')
+}
+
 async function fetchJson(url) {
-  const response = await fetch(url, { headers })
+  const response = await fetch(url, { headers: jsonHeaders })
   if (!response.ok) {
     const body = await response.text().catch(() => '')
     throw new Error(`OpenRouter fetch failed: ${response.status} ${response.statusText} ${url}${body ? `\n${body.slice(0, 500)}` : ''}`)
@@ -107,12 +210,16 @@ async function fetchJson(url) {
 }
 
 async function fetchText(url, accept = 'text/plain') {
-  const response = await fetch(url, { headers: { ...headers, Accept: accept } })
+  const response = await fetch(url, { headers: { ...htmlHeaders, Accept: accept } })
   if (!response.ok) {
     const body = await response.text().catch(() => '')
     throw new Error(`OpenRouter fetch failed: ${response.status} ${response.statusText} ${url}${body ? `\n${body.slice(0, 500)}` : ''}`)
   }
   return response.text()
+}
+
+async function fetchHtml(url) {
+  return fetchText(url, 'text/html,application/xhtml+xml')
 }
 
 async function fetchSitemapModelIndex(url, apiIds) {
@@ -154,6 +261,123 @@ function modelPageFromUrl(rawUrl) {
   return { id: `${namespace}/${modelId}`, namespace, modelId, url: url.toString() }
 }
 
+function extractNextFlightData(html) {
+  const decodedChunks = []
+  for (const match of html.matchAll(/self\.__next_f\.push\(\[1,"([\s\S]*?)"\]\)<\/script>/gu)) {
+    decodedChunks.push(decodeJsStringLiteral(match[1]))
+  }
+  const text = decodedChunks.join('\n')
+  const raw = {}
+  for (const key of MODEL_PAGE_KEYS) {
+    const value = extractJsonValueAfterKey(text, key)
+    if (value.found) raw[key] = value.value
+  }
+  const endpoint = extractObjectContainingKey(text, 'provider_model_id')
+  const model = extractObjectContainingKey(text, 'permaslug')
+  return {
+    raw,
+    model,
+    endpoint,
+    nextFlightTextLength: text.length,
+    extractedKeys: Object.keys(raw).sort(),
+  }
+}
+
+function decodeJsStringLiteral(value) {
+  try {
+    return JSON.parse(`"${value}"`)
+  } catch {
+    return value
+      .replace(/\\n/gu, '\n')
+      .replace(/\\"/gu, '"')
+      .replace(/\\\\/gu, '\\')
+  }
+}
+
+function extractJsonValueAfterKey(text, key) {
+  const marker = `"${key}":`
+  const start = text.indexOf(marker)
+  if (start === -1) return { found: false, value: null }
+  const valueStart = start + marker.length
+  const parsed = parseJsonValuePrefix(text.slice(valueStart))
+  if (!parsed.ok) return { found: false, value: null }
+  return { found: true, value: parsed.value }
+}
+
+function extractObjectContainingKey(text, key) {
+  const marker = `"${key}":`
+  const keyIndex = text.indexOf(marker)
+  if (keyIndex === -1) return null
+  for (let start = keyIndex; start >= 0; start -= 1) {
+    if (text[start] !== '{') continue
+    const parsed = parseJsonValuePrefix(text.slice(start))
+    if (parsed.ok && parsed.type === 'object' && Object.prototype.hasOwnProperty.call(parsed.value, key)) return parsed.value
+  }
+  return null
+}
+
+function parseJsonValuePrefix(text) {
+  const trimmed = text.trimStart()
+  const offset = text.length - trimmed.length
+  const first = trimmed[0]
+  if (first === '{' || first === '[') {
+    const end = findBalancedEnd(trimmed)
+    if (end === -1) return { ok: false }
+    try {
+      const value = JSON.parse(trimmed.slice(0, end + 1))
+      return { ok: true, value, type: Array.isArray(value) ? 'array' : 'object', end: offset + end + 1 }
+    } catch {
+      return { ok: false }
+    }
+  }
+  if (first === '"') {
+    const end = findStringEnd(trimmed, 0)
+    if (end === -1) return { ok: false }
+    try {
+      return { ok: true, value: JSON.parse(trimmed.slice(0, end + 1)), type: 'string', end: offset + end + 1 }
+    } catch {
+      return { ok: false }
+    }
+  }
+  const primitive = trimmed.match(/^(true|false|null|-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?)/u)?.[1]
+  if (!primitive) return { ok: false }
+  return { ok: true, value: JSON.parse(primitive), type: 'primitive', end: offset + primitive.length }
+}
+
+function findBalancedEnd(text) {
+  const stack = []
+  let inString = false
+  let escaped = false
+  for (let i = 0; i < text.length; i += 1) {
+    const char = text[i]
+    if (inString) {
+      if (escaped) escaped = false
+      else if (char === '\\') escaped = true
+      else if (char === '"') inString = false
+      continue
+    }
+    if (char === '"') inString = true
+    else if (char === '{' || char === '[') stack.push(char)
+    else if (char === '}' || char === ']') {
+      const open = stack.pop()
+      if ((char === '}' && open !== '{') || (char === ']' && open !== '[')) return -1
+      if (stack.length === 0) return i
+    }
+  }
+  return -1
+}
+
+function findStringEnd(text, start) {
+  let escaped = false
+  for (let i = start + 1; i < text.length; i += 1) {
+    const char = text[i]
+    if (escaped) escaped = false
+    else if (char === '\\') escaped = true
+    else if (char === '"') return i
+  }
+  return -1
+}
+
 function inferPageOnlyType(id) {
   const value = id.toLowerCase()
   if (value.startsWith('spawn/')) return 'agent_or_app'
@@ -177,6 +401,12 @@ async function mapWithConcurrency(items, concurrency, mapper) {
   })
   await Promise.all(workers)
   return results
+}
+
+function logEvery(prefix, index, total, interval) {
+  if ((index + 1) % interval === 0 || index + 1 === total) {
+    console.log(`${prefix} ${index + 1}/${total}`)
+  }
 }
 
 function safeConcurrency(value) {

@@ -13,13 +13,15 @@ describe('deployment separation', () => {
     expect(readProjectFile('.gitignore')).toContain('public/')
   })
 
-  it('builds the production site from checked-in OpenRouter data plus checked-in models.dev enrichment by default', () => {
+  it('builds the production site from checked-in OpenRouter raw provider-graph data by default', () => {
     const buildScript = readProjectFile('src/scripts/build-site.ts')
     const packageJson = JSON.parse(readProjectFile('package.json')) as { scripts?: Record<string, string> }
 
     expect(buildScript).toContain("'data', 'openrouter-models.json'")
-    expect(buildScript).toContain("'data', 'models-dev-api.json'")
-    expect(buildScript).toContain('buildModelGalleryWithModelsDevEnrichment(openRouterSourcePath, modelsDevSourcePath)')
+    expect(buildScript).toContain("'data', 'openrouter-endpoints.json'")
+    expect(buildScript).toContain("'data', 'openrouter-sitemap-models.json'")
+    expect(buildScript).toContain("'data', 'openrouter-model-pages.json'")
+    expect(buildScript).toContain('buildOpenRouterRawGraphFromFiles')
     expect(buildScript).not.toContain('MDDB_OPENROUTER_SOURCE')
     expect(packageJson.scripts?.['data:openrouter']).toBe('node scripts/fetch-openrouter-models.mjs')
   })
