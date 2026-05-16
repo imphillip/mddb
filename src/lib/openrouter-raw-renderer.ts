@@ -11,10 +11,7 @@ type ActivePage = 'home' | 'models'
 
 export function renderOpenRouterRawHome(graph: OpenRouterRawGraph): string {
   const authorOptions = authorFilterOptions(graph)
-  const nodeById = new Map(graph.nodes.map((node) => [node.id, node]))
-  const searchableDeploymentNodeIds = new Set(graph.edges.filter((edge) => edge.type === 'deployment_of').map((edge) => edge.from))
-  const searchableAliasNodeIds = new Set(graph.edges.filter((edge) => edge.type === 'alias_of' && (nodeById.get(edge.from)?.derived.endpointCount ?? 0) === 0).map((edge) => edge.from))
-  const searchOnlyNodeIds = new Set([...searchableDeploymentNodeIds, ...searchableAliasNodeIds])
+  const searchOnlyNodeIds = modelPlazaSearchOnlyNodeIds(graph)
   const visibleRows = graph.nodes.filter((node) => !searchOnlyNodeIds.has(node.id)).length
   const rows = graph.nodes.map((node) => renderModelRow(node, searchOnlyNodeIds.has(node.id))).join('')
   const body = `<main class="modelsShell"><aside class="filterPanel" aria-label="模型筛选"><div class="filterTitle">筛选</div>${renderAuthorFilterGroup(authorOptions, visibleRows)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>模型广场</h1></div></div><div class="listToolbar"><div class="listCount"><b id="visibleCount">${visibleRows}</b> items</div><div class="quickFilters" aria-label="快速筛选"><button class="quickFilter active" type="button" data-status-filter="all">全部</button><button class="quickFilter" type="button" data-status-filter="api">API</button><button class="quickFilter" type="button" data-status-filter="page_only">Page-only</button><button class="quickFilter" type="button" data-status-filter="endpoint">Endpoints</button></div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型名称</th><th>Provider</th><th>Author</th><th>上下文</th><th>Endpoints</th><th>状态</th></tr></thead><tbody id="rows">${rows}</tbody></table></div><script>${modelFilterScript()}</script></section></main>`
@@ -58,18 +55,20 @@ function footer(): string {
 
 function authorFilterOptions(graph: OpenRouterRawGraph): Array<{ label: string; value: string; count: number }> {
   const counts = new Map<string, { label: string; value: string; count: number }>()
-  const nodeById = new Map(graph.nodes.map((node) => [node.id, node]))
-  const searchableDeploymentNodeIds = new Set(graph.edges.filter((edge) => edge.type === 'deployment_of').map((edge) => edge.from))
-  const searchableAliasNodeIds = new Set(graph.edges.filter((edge) => edge.type === 'alias_of' && (nodeById.get(edge.from)?.derived.endpointCount ?? 0) === 0).map((edge) => edge.from))
+  const searchOnlyNodeIds = modelPlazaSearchOnlyNodeIds(graph)
   for (const node of graph.nodes) {
-    if (searchableDeploymentNodeIds.has(node.id)) continue
-    if (searchableAliasNodeIds.has(node.id)) continue
+    if (searchOnlyNodeIds.has(node.id)) continue
     const author = node.derived.author ?? 'unknown'
     const current = counts.get(author)
     if (current === undefined) counts.set(author, { label: author, value: author, count: 1 })
     else current.count += 1
   }
   return Array.from(counts.values()).sort((a, b) => b.count - a.count || a.label.localeCompare(b.label)).slice(0, 40)
+}
+
+function modelPlazaSearchOnlyNodeIds(graph: OpenRouterRawGraph): Set<string> {
+  const resolvedEdgeTypes = new Set(['deployment_of', 'alias_of', 'snapshot_of', 'variant_of'])
+  return new Set(graph.edges.filter((edge) => resolvedEdgeTypes.has(edge.type)).map((edge) => edge.from))
 }
 
 function renderAuthorFilterGroup(options: Array<{ label: string; value: string; count: number }>, total: number): string {
