@@ -22,8 +22,53 @@ export function renderOpenRouterRawDetail(graph: OpenRouterRawGraph, node: OpenR
   const outEdges = graph.edges.filter((edge) => edge.from === node.id)
   const inEdges = graph.edges.filter((edge) => edge.to === node.id && edge.from !== node.id)
   const endpointRows = endpointList(node).map((endpoint, index) => `<tr><td>${index + 1}</td><td>${escapeHtml(String(endpoint.provider_name ?? '—'))}<br><small>${escapeHtml(String(endpoint.tag ?? ''))}</small></td><td>${escapeHtml(String(endpoint.context_length ?? '—'))}</td><td><code>${escapeHtml(JSON.stringify(endpoint.pricing ?? {}, null, 2))}</code></td><td>${escapeHtml(arrayValue(endpoint.supported_parameters).join(', ') || '—')}</td></tr>`).join('')
-  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/models/">← 返回模型广场</a><div class="eyebrow">${escapeHtml(node.providerName)} / ${renderModelTagCopy(`${node.provider}/${node.modelId}`)}</div><h1>${escapeHtml(node.displayName)}</h1><div class="summaryStrip"><div><span>Provider</span><b>${escapeHtml(node.provider)}</b></div><div><span>Model ID</span><b>${escapeHtml(node.modelId)}</b></div><div><span>上下文</span><b>${escapeHtml(node.derived.endpointContextLengths.map(String).join(', ') || '—')}</b></div><div><span>Endpoints</span><b>${node.derived.endpointCount}</b></div></div></div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#summary">模型规格</a><a href="#endpoints">Endpoints</a></nav><section id="summary" class="panel"><h2>模型规格</h2><div class="meta metaWide">${kv('Provider', `${escapeHtml(node.providerName)} <code>${escapeHtml(node.provider)}</code>`)}${kv('Provider model-id', renderModelTagCopy(node.modelId))}${kv('Data source', node.dataSource)}${kv('Source ID', renderModelTagCopy(node.sourceId))}${kv('Source URL', `<a href="${escapeHtml(node.sourceUrl)}">${escapeHtml(node.sourceUrl)}</a>`)}${kv('Author', node.derived.author ?? '—')}${kv('Canonical slug', node.derived.canonicalSlug ?? '—')}${kv('Input modalities', node.derived.inputModalities.join(' · ') || '—')}${kv('Output modalities', node.derived.outputModalities.join(' · ') || '—')}${kv('Endpoint providers', node.derived.endpointProviders.join(' · ') || '—')}${kv('Pricing keys', node.derived.pricingKeys.join(' · ') || '—')}</div></section><section id="endpoints" class="panel priorityPanel"><h2>Endpoint observations</h2><div class="tableWrap"><table class="modelTable"><thead><tr><th>#</th><th>Provider/tag</th><th>Context</th><th>Raw pricing</th><th>Supported parameters</th></tr></thead><tbody>${endpointRows || '<tr><td colspan="5" class="muted">无 endpoint rows</td></tr>'}</tbody></table></div></section></article></div></main>`
+  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/models/">← 返回模型广场</a><div class="eyebrow">${escapeHtml(node.providerName)} / ${renderModelTagCopy(`${node.provider}/${node.modelId}`)}</div><h1>${escapeHtml(node.displayName)}</h1><div class="summaryStrip"><div><span>Provider</span><b>${escapeHtml(node.provider)}</b></div><div><span>Model ID</span><b>${escapeHtml(node.modelId)}</b></div><div><span>上下文</span><b>${escapeHtml(node.derived.endpointContextLengths.map(String).join(', ') || '—')}</b></div><div><span>Endpoints</span><b>${node.derived.endpointCount}</b></div></div></div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#relations">关联模型</a><a href="#spec">规格</a><a href="#pricing">价格</a><a href="#source">数据来源与源数据</a></nav>${renderRelatedModels(graph, node, outEdges, inEdges)}${renderSpecSection(node)}${renderPricingSection(node, endpointRows)}${renderSourceSection(node, outEdges, inEdges)}</article></div></main>`
   return page(`${node.displayName} · mddb.dev`, body, 'models')
+}
+
+function renderRelatedModels(graph: OpenRouterRawGraph, node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[], inEdges: OpenRouterRawEdge[]): string {
+  const anchorEdges = outEdges.filter((edge) => ['deployment_of', 'alias_of', 'snapshot_of', 'variant_of'].includes(edge.type) && edge.from !== edge.to)
+  const referenceEdges = inEdges.filter((edge) => ['has_endpoint', 'deployment_of', 'alias_of', 'snapshot_of', 'variant_of'].includes(edge.type))
+  const anchorNotice = anchorEdges.length > 0 ? `<div class="metabox"><span>建议查看 anchor</span><b>${anchorEdges.map((edge) => renderEdgeNodeLink(graph, edge.to, edge.label)).join('<br>')}</b></div>` : `<div class="metabox"><span>Anchor 状态</span><b>当前节点可作为 anchor 或仍待判定</b></div>`
+  return `<section id="relations" class="panel priorityPanel"><h2>关联模型</h2><div class="meta metaWide">${anchorNotice}${kv('Outgoing relations', String(anchorEdges.length))}${kv('Incoming references', String(referenceEdges.length))}</div><div class="two"><div><h3>本节点指向</h3>${renderRelationList(graph, anchorEdges)}</div><div><h3>指向本节点</h3>${renderRelationList(graph, referenceEdges)}</div></div></section>`
+}
+
+function renderRelationList(graph: OpenRouterRawGraph, edges: OpenRouterRawEdge[]): string {
+  if (edges.length === 0) return '<p class="muted">无</p>'
+  return edges.map((edge) => `<div class="edge"><strong>${escapeHtml(edge.type)}</strong> → ${renderEdgeNodeLink(graph, edge.to, edge.label)}<br><small>${escapeHtml(edge.label)}</small>${edge.raw ? `<details><summary>引用标注 / raw edge</summary>${rawBlock(edge.raw)}</details>` : ''}</div>`).join('')
+}
+
+function renderEdgeNodeLink(graph: OpenRouterRawGraph, nodeId: string, fallback: string): string {
+  const target = graph.nodes.find((candidate) => candidate.id === nodeId)
+  if (!target) return `<code>${escapeHtml(nodeId || fallback)}</code>`
+  return `<a class="modelLink" href="${escapeHtml(target.route)}/">${escapeHtml(target.sourceId)}</a>`
+}
+
+function renderSpecSection(node: OpenRouterRawNode): string {
+  return `<section id="spec" class="panel"><h2>规格</h2><div class="meta metaWide">${kv('Provider', `${escapeHtml(node.providerName)} <code>${escapeHtml(node.provider)}</code>`)}${kv('Provider model-id', renderModelTagCopy(node.modelId))}${kv('Author', node.derived.author ?? '—')}${kv('Node kind', node.nodeKind)}${kv('Status', node.status)}${kv('Canonical slug', node.derived.canonicalSlug ?? '—')}${kv('Input modalities', node.derived.inputModalities.join(' · ') || '—')}${kv('Output modalities', node.derived.outputModalities.join(' · ') || '—')}${kv('Context lengths', node.derived.endpointContextLengths.map(String).join(', ') || '—')}${kv('Endpoint providers', node.derived.endpointProviders.join(' · ') || '—')}</div></section>`
+}
+
+function renderPricingSection(node: OpenRouterRawNode, endpointRows: string): string {
+  const sourcePricing = sourcePricingBlocks(node)
+  return `<section id="pricing" class="panel"><h2>价格</h2>${sourcePricing}<h3>Endpoint pricing observations</h3><div class="tableWrap"><table class="modelTable"><thead><tr><th>#</th><th>Provider/tag</th><th>Context</th><th>Raw pricing</th><th>Supported parameters</th></tr></thead><tbody>${endpointRows || '<tr><td colspan="5" class="muted">无 endpoint rows；如本节点为 alias/snapshot/deployment，请先看上方关联模型跳转到 anchor。</td></tr>'}</tbody></table></div></section>`
+}
+
+function sourcePricingBlocks(node: OpenRouterRawNode): string {
+  const modelPricing = rawPricingValue(node.raw.model, 'pricing')
+  const pagePricing = rawPricingValue(node.raw.page, 'pricing') ?? rawPricingValue(node.raw.page, 'pricing_json')
+  const blocks = [
+    modelPricing ? `<div class="specVariant"><strong>OpenRouter models API pricing</strong>${rawBlock(modelPricing)}</div>` : '',
+    pagePricing ? `<div class="specVariant"><strong>OpenRouter page pricing</strong>${rawBlock(pagePricing)}</div>` : '',
+  ].filter(Boolean).join('')
+  return blocks || '<p class="muted">无 source-level pricing；查看 endpoint observations 或关联 anchor。</p>'
+}
+
+function rawPricingValue(value: unknown, key: string): unknown | null {
+  return isRecord(value) && value[key] !== undefined ? value[key] : null
+}
+
+function renderSourceSection(node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[], inEdges: OpenRouterRawEdge[]): string {
+  return `<section id="source" class="panel subtlePanel"><h2>数据来源与源数据</h2><div class="meta metaWide">${kv('Data source', node.dataSource)}${kv('Source ID', renderModelTagCopy(node.sourceId))}${kv('Source URL', `<a href="${escapeHtml(node.sourceUrl)}">${escapeHtml(node.sourceUrl)}</a>`)}${kv('Pricing keys', node.derived.pricingKeys.join(' · ') || '—')}${kv('Outgoing edges', String(outEdges.length))}${kv('Incoming edges', String(inEdges.length))}</div><details class="moreBlock"><summary>节点 raw data</summary>${rawBlock(node.raw)}</details><details class="moreBlock"><summary>Outgoing raw edges</summary>${renderEdges(outEdges)}</details><details class="moreBlock"><summary>Incoming raw edges</summary>${renderEdges(inEdges)}</details></section>`
 }
 
 function renderModelRow(node: OpenRouterRawNode, searchOnly = false): string {
