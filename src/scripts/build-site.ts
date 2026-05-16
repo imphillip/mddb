@@ -10,6 +10,7 @@ const graph = buildOpenRouterRawGraphFromFiles({
   sitemapPath: join(process.cwd(), 'data', 'openrouter-sitemap-models.json'),
   pagesPath: join(process.cwd(), 'data', 'openrouter-model-pages.json'),
   modelsDevPath: join(process.cwd(), 'data', 'models-dev-api.json'),
+  baseLlmPath: join(process.cwd(), 'data', 'basellm-newapi.json'),
 })
 
 rmSync(outputDir, { recursive: true, force: true })

@@ -41,6 +41,19 @@ export type OpenRouterRawGraph = {
       providerRows: number
       brandLogos: Record<string, string>
     }
+    baseLlm?: {
+      path: string
+      source: string
+      modelRows: number
+      uniqueModelNames: number
+      providerRows: number
+      tokenPricedRows: number
+      unitPricedRows: number
+      unknownPricedRows: number
+      exactSourceMatches: number
+      modelIdOnlyMatches: number
+      normalizedNameMatches: number
+    }
   }
 }
 
@@ -91,12 +104,13 @@ export type OpenRouterRawEdge = {
 
 type JsonRecord = Record<string, unknown>
 
-export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; endpointsPath: string; sitemapPath: string; pagesPath: string; modelsDevPath?: string }): OpenRouterRawGraph {
+export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; endpointsPath: string; sitemapPath: string; pagesPath: string; modelsDevPath?: string; baseLlmPath?: string }): OpenRouterRawGraph {
   const modelsPayload = readJson(paths.modelsPath) as { data?: JsonRecord[] }
   const endpointsPayload = readJson(paths.endpointsPath) as { data?: JsonRecord[] }
   const sitemapPayload = readJson(paths.sitemapPath) as { modelPages?: JsonRecord[]; pageOnly?: JsonRecord[]; apiOnly?: string[]; source?: JsonRecord }
   const pagesPayload = existsSync(paths.pagesPath) ? readJson(paths.pagesPath) as { data?: JsonRecord[] } : { data: [] }
   const modelsDevPayload = paths.modelsDevPath && existsSync(paths.modelsDevPath) ? readJson(paths.modelsDevPath) as Record<string, JsonRecord> : {}
+  const baseLlmPayload = paths.baseLlmPath && existsSync(paths.baseLlmPath) ? readJson(paths.baseLlmPath) as { source?: string; models?: JsonRecord[] } : { models: [] }
 
   const apiModels = Array.isArray(modelsPayload.data) ? modelsPayload.data : []
   const endpointRows = Array.isArray(endpointsPayload.data) ? endpointsPayload.data : []
@@ -219,7 +233,7 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
     providerMap.set(node.provider, { id: node.provider, name: node.providerName, currency: 'USD', raw: { inferredFrom: node.nodeKind === 'endpoint_deployment' ? 'OpenRouter endpoint tag' : 'OpenRouter author namespace', dataSource: 'openrouter' } })
   }
 
-  const enrichment = buildModelsDevGraphEnrichment(modelsDevPayload, paths.modelsDevPath)
+  const enrichment = buildGraphEnrichment(modelsDevPayload, paths.modelsDevPath, baseLlmPayload, paths.baseLlmPath, sourceNodes)
   const graph: OpenRouterRawGraph = {
     generatedAt: new Date().toISOString(),
     schema: { urlShape: '/models/<provider>/<model-id>', rawPolicy: 'preserve-upstream-key-values', providerPolicy: 'actual-deployment-provider-not-data-source', dataSource: 'openrouter' },
@@ -255,19 +269,71 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
   return graph
 }
 
-function buildModelsDevGraphEnrichment(modelsDevPayload: Record<string, JsonRecord>, path: string | undefined): OpenRouterRawGraph['enrichment'] {
+function buildGraphEnrichment(modelsDevPayload: Record<string, JsonRecord>, modelsDevPath: string | undefined, baseLlmPayload: { source?: string; models?: JsonRecord[] }, baseLlmPath: string | undefined, sourceNodes: OpenRouterRawNode[]): OpenRouterRawGraph['enrichment'] {
+  const enrichment: NonNullable<OpenRouterRawGraph['enrichment']> = {}
+  const modelsDev = buildModelsDevGraphEnrichment(modelsDevPayload, modelsDevPath)
+  const baseLlm = buildBaseLlmGraphEnrichment(baseLlmPayload, baseLlmPath, sourceNodes)
+  if (modelsDev) enrichment.modelsDev = modelsDev
+  if (baseLlm) enrichment.baseLlm = baseLlm
+  return enrichment
+}
+
+function buildModelsDevGraphEnrichment(modelsDevPayload: Record<string, JsonRecord>, path: string | undefined): NonNullable<OpenRouterRawGraph['enrichment']>['modelsDev'] {
   const brandLogos = Object.fromEntries(Object.values(modelsDevPayload).flatMap((provider) => {
     const id = typeof provider.id === 'string' ? provider.id : null
     const logo = modelsDevLogoUrl(provider)
     return id && logo ? [[normalizeLogoSlug(id), logo] as const] : []
   }).sort((left, right) => left[0].localeCompare(right[0])))
   return {
-    modelsDev: {
-      path: path ?? '',
-      providerRows: Object.keys(modelsDevPayload).length,
-      brandLogos,
-    },
+    path: path ?? '',
+    providerRows: Object.keys(modelsDevPayload).length,
+    brandLogos,
   }
+}
+
+function buildBaseLlmGraphEnrichment(baseLlmPayload: { source?: string; models?: JsonRecord[] }, path: string | undefined, sourceNodes: OpenRouterRawNode[]): NonNullable<OpenRouterRawGraph['enrichment']>['baseLlm'] {
+  const rows = Array.isArray(baseLlmPayload.models) ? baseLlmPayload.models : []
+  const sourceIds = new Set(sourceNodes.map((node) => node.sourceId.toLowerCase()))
+  const modelIds = new Set(sourceNodes.map((node) => node.modelId.toLowerCase()))
+  const normalizedModelIds = new Set(sourceNodes.map((node) => normalizedModelKey(node.modelId)))
+  const uniqueModelNames = new Set<string>()
+  const providers = new Set<string>()
+  let tokenPricedRows = 0
+  let unitPricedRows = 0
+  let exactSourceMatches = 0
+  let modelIdOnlyMatches = 0
+  let normalizedNameMatches = 0
+  for (const row of rows) {
+    const modelName = String(row.model_name ?? '')
+    const modelNameLower = modelName.toLowerCase()
+    uniqueModelNames.add(modelNameLower)
+    providers.add(String(row.vendor_name ?? 'unknown'))
+    if (row.ratio_model !== null && row.ratio_model !== undefined || row.price_per_m_input !== null && row.price_per_m_input !== undefined) tokenPricedRows += 1
+    if (row.model_price !== null && row.model_price !== undefined) unitPricedRows += 1
+    if (sourceIds.has(modelNameLower)) exactSourceMatches += 1
+    else if (modelIds.has(modelNameLower)) modelIdOnlyMatches += 1
+    else if (normalizedModelIds.has(normalizedModelKey(modelName))) normalizedNameMatches += 1
+  }
+  return {
+    path: path ?? '',
+    source: baseLlmPayload.source ?? '',
+    modelRows: rows.length,
+    uniqueModelNames: uniqueModelNames.size,
+    providerRows: providers.size,
+    tokenPricedRows,
+    unitPricedRows,
+    unknownPricedRows: rows.length - tokenPricedRows - unitPricedRows,
+    exactSourceMatches,
+    modelIdOnlyMatches,
+    normalizedNameMatches,
+  }
+}
+
+function normalizedModelKey(value: string): string {
+  return cleanLeadingMarker(value).toLowerCase()
+    .replace(/^(openai|anthropic|google|qwen|alibaba|deepseek|x-ai|xai|moonshotai|mistralai|meta-llama|cohere|z-ai|bytedance-seed|bytedance)\//u, '')
+    .replace(/:(free|beta|preview)$/u, '')
+    .trim()
 }
 
 function modelsDevLogoUrl(provider: JsonRecord): string | null {

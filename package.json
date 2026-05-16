@@ -13,6 +13,7 @@
     "build": "tsc && node dist/scripts/build-site.js",
     "data:openrouter": "node scripts/fetch-openrouter-models.mjs",
     "data:openrouter:models-only": "OPENROUTER_FETCH_ENDPOINTS=0 node scripts/fetch-openrouter-models.mjs",
+    "data:basellm": "node scripts/fetch-basellm-newapi.mjs",
     "serve": "npx http-server public -p 4173 -c-1",
     "deploy": "bash scripts/deploy-static-site.sh",
     "deploy:dry-run": "DRY_RUN=1 bash scripts/deploy-static-site.sh",
