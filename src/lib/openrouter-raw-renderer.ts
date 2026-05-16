@@ -50,7 +50,7 @@ function relationChips(graph: OpenRouterRawGraph, outEdges: OpenRouterRawEdge[],
 function relationLabel(type: string): string {
   if (type === 'alias_of') return '别称'
   if (type === 'snapshot_of') return '快照'
-  if (type === 'deployment_of') return 'anchor'
+  if (type === 'deployment_of') return 'provider'
   if (type === 'spec_same_as') return '相同规格'
   if (type === 'variant_of') return '变体'
   return type
