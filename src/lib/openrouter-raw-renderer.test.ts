@@ -84,8 +84,9 @@ describe('renderOpenRouterRawHome currency toggle', () => {
     expect(html).toContain('data-cny="8.5"')
     expect(html).toContain('data-usd="10"')
     expect(html).toContain('data-cny="68"')
-    expect(html).toContain('class="fxInline"')
-    expect(html).toContain('1 USD ≈ 6.8 CNY')
+    expect(html).toContain('>1 USD</button>')
+    expect(html).toContain('>6.8 CNY</button>')
+    expect(html).not.toContain('1 USD ≈ 6.8 CNY')
   })
 })
 
