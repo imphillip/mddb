@@ -263,6 +263,33 @@ ratio 1 = $2 / 1M tokens
 price_per_1m_usd = ratio * 2
 ```
 
+## 数据质量与 refresh gate
+
+构建时会同时输出面向审计的数据质量 artifact：
+
+```text
+public/graph/data-quality.json
+public/graph/missing-pricing.json
+public/graph/missing-release-date.json
+public/graph/missing-context-window.json
+public/graph/missing-provider-observation.json
+public/graph/page-only-candidates.json
+```
+
+`data-quality.json` 汇总模型覆盖率、价格/供应商 observation 数量、BaseLLM/models.dev 补充规模和 page-only 分类。缺数据队列用于把后续清洗工作变成可 review 的任务列表，而不是靠肉眼浏览发现问题。
+
+当前 page-only candidate 分类会先把 OpenRouter API 漏掉的 sitemap/page-only 记录分桶，例如 embedding、rerank、image、video、audio/speech、agent/app、unknown。默认只进入候选/审核 artifact，不直接提升为 canonical identity。
+
+refresh gate 用于上游数据刷新后的异常拦截：
+
+```bash
+npm run data:quality
+# 或在已 build 后只检查 gate
+npm run data:gate -- public/graph/data-quality.json .internal/last-data-quality.json .internal/refresh-gate-report.json
+```
+
+如果 source model 数量、pricing coverage 或 pricing/provider observations 大幅下降，gate 返回非零并写 `.internal/refresh-gate-report.json`。这类异常应该暂停 deploy，只发报告；确认是合理上游变化后，再更新 `.internal/last-data-quality.json` 作为下一次比较基线。
+
 ## 身份模型（迁移中）
 
 历史实现使用全局 canonical tag 作为 URL 和 join key。接下来的 provider graph schema 会把主身份迁移到 provider-scoped model node：

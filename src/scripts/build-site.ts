@@ -1,5 +1,6 @@
 import { mkdirSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
+import { buildDataQualityReport } from '../lib/data-quality.js'
 import { buildOpenRouterRawGraphFromFiles } from '../lib/openrouter-raw-graph.js'
 import { renderOpenRouterRawDetail, renderOpenRouterRawHome } from '../lib/openrouter-raw-renderer.js'
 
@@ -18,6 +19,13 @@ rmSync(outputDir, { recursive: true, force: true })
 writePage('index.html', renderRootRedirect())
 writePage('models/index.html', renderOpenRouterRawHome(graph))
 writePage('graph/openrouter.json', JSON.stringify(graph, null, 2))
+const dataQuality = buildDataQualityReport(graph)
+writePage('graph/data-quality.json', JSON.stringify(dataQuality, null, 2))
+writePage('graph/missing-pricing.json', JSON.stringify(dataQuality.missing.pricing, null, 2))
+writePage('graph/missing-release-date.json', JSON.stringify(dataQuality.missing.releaseDate, null, 2))
+writePage('graph/missing-context-window.json', JSON.stringify(dataQuality.missing.contextWindow, null, 2))
+writePage('graph/missing-provider-observation.json', JSON.stringify(dataQuality.missing.providerObservation, null, 2))
+writePage('graph/page-only-candidates.json', JSON.stringify(dataQuality.pageOnly.candidates, null, 2))
 
 for (const node of graph.nodes) {
   writePage(`models/${node.urlProvider}/${node.urlModelId}/index.html`, renderOpenRouterRawDetail(graph, node))
