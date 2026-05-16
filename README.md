@@ -1,8 +1,30 @@
 # mddb.dev
 
-mddb.dev 是一个面向 AI 中转服务 / new-api 生态的开放模型数据库（LLM model registry）。它把 OpenRouter 等上游来源中的模型路由、部署 provider、规格、价格和来源证据整理成可由人阅读、也可由机器消费的数据注册表。
+mddb.dev 是一个面向 AI 中转服务 / new-api 生态的开放模型数据库（LLM model registry）。它把 OpenRouter 等上游来源中的模型路由、部署 provider、规格、价格和来源证据整理成可由人阅读、也可由机器消费的 **有向模型图谱**。
 
 公开站点：<https://mddb.dev/models/>
+
+## 图谱化特色
+
+mddb.dev 的核心不是扁平模型表，而是类似科学文献引用网络的 provider model graph：模型名称、provider deployment、alias、snapshot、variant、价格、规格和 source record 都通过有向边互相引用。
+
+这个设计让 registry 可以同时表达：
+
+- 同一个模型在不同 provider / gateway / cloud channel 中的真实 API model-id；
+- `latest`、日期 snapshot、preview、deployment route 与稳定型号锚点之间的关系；
+- 哪些事实来自 OpenRouter，哪些只是 BaseLLM / models.dev 等 secondary source 的补充 observation；
+- provider-specific pricing：同一个 model id 可以在不同 provider 下有不同计费模式，例如 token、request、image、audio、video、duration 或自定义单位；
+- 冲突或差异不会被覆盖，而是作为带 provenance 的 observation 或关系保留下来。
+
+公开 JSON 中的 `graphModel` 与 `observations` 字段是这条路线的第一步：
+
+```text
+graphModel.version = v2-observation-graph
+observations.pricing[] = provider-specific pricing facts
+observations.providers[] = provider / availability facts
+```
+
+现有 `nodes` / `edges` 仍保持兼容；新的 observation layer 用于逐步把价格、provider 可用性和来源证据节点化。
 
 ## 当前重构方向
 
@@ -217,16 +239,23 @@ OpenRouter endpoint detail 用于补充真实部署 provider（如 Anthropic、G
 - 入口：`https://models.dev/api.json`
 - 本地快照：`data/models-dev-api.json`
 
-models.dev 当前暂停扩展。后续会作为 provider observation、logo、metadata、pricing observation 和候选发现来源重新接入，但不会覆盖 OpenRouter-first provider graph。
+models.dev 当前作为 provider / brand logo enrichment 来源接入。它的 provider/logo 信息可进入 `enrichment.modelsDev.brandLogos`，但 messy model id 不会直接覆盖 OpenRouter-first identity；后续 unmatched rows 会进入候选/审核队列。
 
 ### BaseLLM / NewAPI metadata
 
 - 站点：`https://basellm.github.io/llm-metadata/`
 - 本地快照：`data/basellm-newapi.json`
+- 刷新命令：`npm run data:basellm`
 
-BaseLLM / NewAPI metadata 当前暂停扩展。后续会作为 new-api 生态价格/可用性来源重新接入，并输出面向 new-api 的 projection。
+BaseLLM / NewAPI metadata 当前作为价格/可用性补充来源接入：
 
-NewAPI ratio 换算规则仍保留为后续兼容目标：
+- 只自动挂接 exact source-id 或 model-id-only match；
+- 过滤 `:free` route，不把免费 promotional route 当官方价格；
+- 不覆盖 OpenRouter endpoint price；
+- 当 OpenRouter 缺 endpoint price 时，详情页可以显示 `BaseLLM / NewAPI 补充价格`；
+- 同时写入 `observations.pricing[]` / `observations.providers[]`，保留 provider-specific billing mode，例如 token 与 request 计费可以并存。
+
+NewAPI ratio 换算规则：
 
 ```text
 500,000 tokens = $1

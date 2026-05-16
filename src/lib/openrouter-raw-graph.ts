@@ -8,6 +8,12 @@ export type OpenRouterRawGraph = {
     providerPolicy: 'actual-deployment-provider-not-data-source'
     dataSource: 'openrouter'
   }
+  graphModel: {
+    version: 'v2-observation-graph'
+    identityBoundary: 'openrouter-source-id'
+    pricingPolicy: 'provider-specific-observations-preserve-billing-mode'
+    provenancePolicy: 'facts-are-nodes-or-observations-with-source-links'
+  }
   source: {
     modelsPath: string
     endpointsPath: string
@@ -20,6 +26,8 @@ export type OpenRouterRawGraph = {
     pageOnlyModels: number
     endpointWrappers: number
     endpointRows: number
+    pricingObservations: number
+    providerObservations: number
     sourceNodes: number
     endpointNodes: number
     pageRows: number
@@ -34,6 +42,10 @@ export type OpenRouterRawGraph = {
     byRoute: Record<string, string>
     pageOnlyNodeIds: string[]
     apiNodeIds: string[]
+  }
+  observations?: {
+    pricing: PricingObservation[]
+    providers: ProviderObservation[]
   }
   enrichment?: {
     modelsDev?: {
@@ -56,6 +68,29 @@ export type OpenRouterRawGraph = {
       pricingBySourceId: Record<string, BaseLlmSupplementalPrice[]>
     }
   }
+}
+
+export type PricingObservation = {
+  id: string
+  source: 'openrouter' | 'basellm'
+  sourceId: string
+  providerName: string
+  billingMode: 'token_input' | 'token_output' | 'cache_read' | 'cache_write' | 'request' | 'image' | 'audio' | 'video' | 'time' | 'custom'
+  unit: '1M_tokens' | 'request' | 'image' | 'audio' | 'video' | 'second' | 'custom'
+  amountUsd: number
+  confidence: 'canonical' | 'provider_observation' | 'supplemental_exact' | 'supplemental_model_id'
+  conditions?: Record<string, unknown> | undefined
+  provenance: Record<string, unknown>
+}
+
+export type ProviderObservation = {
+  id: string
+  source: 'openrouter' | 'basellm' | 'models.dev'
+  providerName: string
+  relation: 'deployment_of' | 'priced_by' | 'logo_for'
+  targetSourceId?: string | undefined
+  confidence: 'canonical' | 'provider_observation' | 'supplemental_exact' | 'supplemental_model_id'
+  provenance: Record<string, unknown>
 }
 
 export type BaseLlmSupplementalPrice = {
@@ -253,9 +288,11 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
   }
 
   const enrichment = buildGraphEnrichment(modelsDevPayload, paths.modelsDevPath, baseLlmPayload, paths.baseLlmPath, sourceNodes)
+  const observations = buildObservations(sourceNodes, enrichment)
   const graph: OpenRouterRawGraph = {
     generatedAt: new Date().toISOString(),
     schema: { urlShape: '/models/<provider>/<model-id>', rawPolicy: 'preserve-upstream-key-values', providerPolicy: 'actual-deployment-provider-not-data-source', dataSource: 'openrouter' },
+    graphModel: { version: 'v2-observation-graph', identityBoundary: 'openrouter-source-id', pricingPolicy: 'provider-specific-observations-preserve-billing-mode', provenancePolicy: 'facts-are-nodes-or-observations-with-source-links' },
     source: {
       modelsPath: paths.modelsPath,
       endpointsPath: paths.endpointsPath,
@@ -268,6 +305,8 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
       pageOnlyModels: pageOnlyRows.length,
       endpointWrappers: endpointRows.length,
       endpointRows: endpointRows.reduce((sum, row) => sum + endpointList(row).length, 0),
+      pricingObservations: observations.pricing.length,
+      providerObservations: observations.providers.length,
       sourceNodes: sourceNodes.length,
       endpointNodes: endpointNodes.length,
       pageRows: pageRows.length,
@@ -284,8 +323,77 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
       apiNodeIds: sourceNodes.filter((node) => node.status === 'api').map((node) => node.id),
     },
   }
+  if (observations.pricing.length || observations.providers.length) graph.observations = observations
   if (enrichment) graph.enrichment = enrichment
   return graph
+}
+
+function buildObservations(sourceNodes: OpenRouterRawNode[], enrichment: OpenRouterRawGraph['enrichment']): NonNullable<OpenRouterRawGraph['observations']> {
+  const pricing: PricingObservation[] = []
+  const providers: ProviderObservation[] = []
+  for (const node of sourceNodes) {
+    for (const obs of pricingObservationsFromRawPricing('openrouter', node.sourceId, node.providerName, node.raw.model, 'canonical')) pricing.push(obs)
+    for (const endpoint of endpointList(node.raw.endpointWrapper)) {
+      const providerName = String(endpoint.provider_name ?? endpoint.name ?? endpoint.tag ?? 'unknown')
+      providers.push({ id: `provider:openrouter:${node.sourceId}:${normalizeSlug(providerName)}`, source: 'openrouter', providerName, relation: 'deployment_of', targetSourceId: node.sourceId, confidence: 'provider_observation', provenance: { endpointTag: endpoint.tag, sourceId: node.sourceId } })
+      for (const obs of pricingObservationsFromRawPricing('openrouter', node.sourceId, providerName, endpoint, 'provider_observation')) pricing.push(obs)
+    }
+  }
+  for (const [sourceId, prices] of Object.entries(enrichment?.baseLlm?.pricingBySourceId ?? {})) {
+    for (const price of prices) {
+      providers.push({ id: `provider:basellm:${sourceId}:${normalizeSlug(price.providerName)}`, source: 'basellm', providerName: price.providerName, relation: 'priced_by', targetSourceId: sourceId, confidence: price.sourceModelId.toLowerCase() === sourceId.toLowerCase() ? 'supplemental_exact' : 'supplemental_model_id', provenance: { sourceModelId: price.sourceModelId, tags: price.tags } })
+      const confidence = price.sourceModelId.toLowerCase() === sourceId.toLowerCase() ? 'supplemental_exact' : 'supplemental_model_id'
+      if (typeof price.pricePerMillionInput === 'number') pricing.push({ id: `pricing:basellm:${sourceId}:${normalizeSlug(price.providerName)}:input`, source: 'basellm', sourceId, providerName: price.providerName, billingMode: 'token_input', unit: '1M_tokens', amountUsd: price.pricePerMillionInput, confidence, conditions: baseLlmConditions(price), provenance: { sourceModelId: price.sourceModelId, ratioModel: price.ratioModel, tags: price.tags } })
+      if (typeof price.pricePerMillionOutput === 'number') pricing.push({ id: `pricing:basellm:${sourceId}:${normalizeSlug(price.providerName)}:output`, source: 'basellm', sourceId, providerName: price.providerName, billingMode: 'token_output', unit: '1M_tokens', amountUsd: price.pricePerMillionOutput, confidence, conditions: baseLlmConditions(price), provenance: { sourceModelId: price.sourceModelId, ratioCompletion: price.ratioCompletion, tags: price.tags } })
+      if (typeof price.unitPrice === 'number') pricing.push({ id: `pricing:basellm:${sourceId}:${normalizeSlug(price.providerName)}:request`, source: 'basellm', sourceId, providerName: price.providerName, billingMode: 'request', unit: 'request', amountUsd: price.unitPrice, confidence, conditions: baseLlmConditions(price), provenance: { sourceModelId: price.sourceModelId, tags: price.tags } })
+    }
+  }
+  return { pricing: dedupeObservations(pricing), providers: dedupeObservations(providers) }
+}
+
+function pricingObservationsFromRawPricing(source: 'openrouter', sourceId: string, providerName: string, raw: unknown, confidence: PricingObservation['confidence']): PricingObservation[] {
+  const record = isRecord(raw) ? raw : {}
+  const pricing = isRecord(record.pricing) ? record.pricing : {}
+  const rows: PricingObservation[] = []
+  for (const [key, value] of Object.entries(pricing)) {
+    const amount = priceNumber(value)
+    if (amount === null) continue
+    const shape = pricingShape(key)
+    rows.push({ id: `pricing:${source}:${sourceId}:${normalizeSlug(providerName)}:${key}`, source, sourceId, providerName, billingMode: shape.billingMode, unit: shape.unit, amountUsd: amount, confidence, conditions: openRouterConditions(record), provenance: { rawPricingKey: key } })
+  }
+  return rows
+}
+
+function pricingShape(key: string): Pick<PricingObservation, 'billingMode' | 'unit'> {
+  if (key === 'prompt') return { billingMode: 'token_input', unit: '1M_tokens' }
+  if (key === 'completion') return { billingMode: 'token_output', unit: '1M_tokens' }
+  if (key === 'cache_read') return { billingMode: 'cache_read', unit: '1M_tokens' }
+  if (key === 'cache_write') return { billingMode: 'cache_write', unit: '1M_tokens' }
+  if (key.includes('image')) return { billingMode: 'image', unit: 'image' }
+  if (key.includes('request')) return { billingMode: 'request', unit: 'request' }
+  if (key.includes('audio')) return { billingMode: 'audio', unit: 'audio' }
+  if (key.includes('video')) return { billingMode: 'video', unit: 'video' }
+  return { billingMode: 'custom', unit: 'custom' }
+}
+
+function openRouterConditions(record: JsonRecord): Record<string, unknown> | undefined {
+  const conditions: Record<string, unknown> = {}
+  if (record.context_length !== undefined) conditions.contextLength = record.context_length
+  if (record.max_completion_tokens !== undefined) conditions.maxOutputTokens = record.max_completion_tokens
+  return Object.keys(conditions).length ? conditions : undefined
+}
+
+function baseLlmConditions(price: BaseLlmSupplementalPrice): Record<string, unknown> | undefined {
+  return price.contextWindow && price.contextWindow !== '—' ? { contextWindow: price.contextWindow } : undefined
+}
+
+function priceNumber(value: unknown): number | null {
+  const num = typeof value === 'number' ? value : typeof value === 'string' ? Number(value) : NaN
+  return Number.isFinite(num) ? num : null
+}
+
+function dedupeObservations<T extends { id: string }>(rows: T[]): T[] {
+  return Array.from(new Map(rows.map((row) => [row.id, row])).values())
 }
 
 function buildGraphEnrichment(modelsDevPayload: Record<string, JsonRecord>, modelsDevPath: string | undefined, baseLlmPayload: { source?: string; models?: JsonRecord[] }, baseLlmPath: string | undefined, sourceNodes: OpenRouterRawNode[]): OpenRouterRawGraph['enrichment'] {
