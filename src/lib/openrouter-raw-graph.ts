@@ -135,6 +135,32 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
       })
     }
 
+    for (const [signature, endpoints] of groupEndpointsBySpec(endpointList(node.raw.endpointWrapper))) {
+      if (endpoints.length < 2) continue
+      const canonicalEndpoint = canonicalEndpointForSpec(node, endpoints)
+      const canonicalNode = endpointNodeFor(node, canonicalEndpoint)
+      for (const endpoint of endpoints) {
+        const endpointNode = endpointNodeFor(node, endpoint)
+        if (endpointNode.id === canonicalNode.id) continue
+        edges.push({
+          id: `edge:${endpointNode.id}:spec_same_as:${canonicalNode.id}`,
+          from: endpointNode.id,
+          to: canonicalNode.id,
+          type: 'spec_same_as',
+          label: `same specs/pricing as ${canonicalNode.sourceId}`,
+          raw: {
+            referenceType: 'identical_endpoint_spec_anchor',
+            anchorStatus: 'derived',
+            anchorSource: 'openrouter_endpoint_signature',
+            signature,
+            sourceModel: node.sourceId,
+            endpointSourceId: endpointNode.sourceId,
+            anchorSourceId: canonicalNode.sourceId,
+          },
+        })
+      }
+    }
+
     const aliasTarget = aliasTargetFor(node, sourceById)
     if (aliasTarget && aliasTarget.id !== node.id) {
       edges.push({ id: `edge:${node.id}:alias_of:${aliasTarget.id}`, from: node.id, to: aliasTarget.id, type: 'alias_of', label: `alias of ${aliasTarget.sourceId}`, raw: aliasEvidenceFor(node, aliasTarget) })
@@ -363,6 +389,41 @@ function endpointList(wrapper: unknown): JsonRecord[] {
   const response = wrapper.response
   if (!isRecord(response) || !isRecord(response.data) || !Array.isArray(response.data.endpoints)) return []
   return response.data.endpoints.filter(isRecord)
+}
+
+function groupEndpointsBySpec(endpoints: JsonRecord[]): Map<string, JsonRecord[]> {
+  const groups = new Map<string, JsonRecord[]>()
+  for (const endpoint of endpoints) {
+    const signature = stableJson({
+      context_length: endpoint.context_length ?? null,
+      max_completion_tokens: endpoint.max_completion_tokens ?? null,
+      pricing: endpoint.pricing ?? null,
+      supported_parameters: normalizedStringArray(endpoint.supported_parameters),
+      quantization: endpoint.quantization ?? null,
+    })
+    const group = groups.get(signature) ?? []
+    group.push(endpoint)
+    groups.set(signature, group)
+  }
+  return groups
+}
+
+function canonicalEndpointForSpec(sourceNode: OpenRouterRawNode, endpoints: JsonRecord[]): JsonRecord {
+  const sourceProvider = normalizeSlug(sourceNode.provider)
+  const sameProvider = endpoints.find((endpoint) => endpointProviderSlug(endpoint) === sourceProvider)
+  const sortedFirst = endpoints.slice().sort((a, b) => endpointProviderSlug(a).localeCompare(endpointProviderSlug(b)))[0]
+  return sameProvider ?? sortedFirst ?? {}
+}
+
+function stableJson(value: unknown): string {
+  if (Array.isArray(value)) return `[${value.map(stableJson).join(',')}]`
+  if (!isRecord(value)) return JSON.stringify(value)
+  return `{${Object.keys(value).sort().map((key) => `${JSON.stringify(key)}:${stableJson(value[key])}`).join(',')}}`
+}
+
+function normalizedStringArray(value: unknown): string[] | null {
+  if (!Array.isArray(value)) return null
+  return value.map(String).sort((a, b) => a.localeCompare(b))
 }
 
 function getPageRaw(page: unknown): JsonRecord | null {
