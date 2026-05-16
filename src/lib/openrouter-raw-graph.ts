@@ -137,7 +137,7 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
 
     const aliasTarget = aliasTargetFor(node, sourceById)
     if (aliasTarget && aliasTarget.id !== node.id) {
-      edges.push({ id: `edge:${node.id}:alias_of:${aliasTarget.id}`, from: node.id, to: aliasTarget.id, type: 'alias_of', label: `alias of ${aliasTarget.sourceId}` })
+      edges.push({ id: `edge:${node.id}:alias_of:${aliasTarget.id}`, from: node.id, to: aliasTarget.id, type: 'alias_of', label: `alias of ${aliasTarget.sourceId}`, raw: aliasEvidenceFor(node, aliasTarget) })
     }
 
     const canonicalSlug = node.derived.canonicalSlug
@@ -320,8 +320,34 @@ function preferredSpecTarget(node: OpenRouterRawNode, sourceById: Map<string, Op
 }
 
 function aliasTargetFor(node: OpenRouterRawNode, sourceById: Map<string, OpenRouterRawNode>): OpenRouterRawNode | null {
+  const explicitLatestAnchors: Record<string, string> = {
+    '~anthropic/claude-haiku-latest': 'anthropic/claude-haiku-4.5',
+    '~anthropic/claude-opus-latest': 'anthropic/claude-opus-4.7',
+    '~anthropic/claude-sonnet-latest': 'anthropic/claude-sonnet-4.6',
+    '~google/gemini-flash-latest': 'google/gemini-3.1-flash-lite',
+    '~google/gemini-pro-latest': 'google/gemini-3.1-pro-preview',
+    '~moonshotai/kimi-latest': 'moonshotai/kimi-k2.6',
+    '~openai/gpt-latest': 'openai/gpt-5.5',
+    '~openai/gpt-mini-latest': 'openai/gpt-5.4-mini',
+  }
+  const explicitTarget = explicitLatestAnchors[node.sourceId]
+  if (explicitTarget) return sourceById.get(explicitTarget) ?? null
   if (node.sourceId === 'google/gemini-2.5-pro') return sourceById.get('google/gemini-2.5-pro-preview') ?? null
   return null
+}
+
+function aliasEvidenceFor(node: OpenRouterRawNode, target: OpenRouterRawNode): JsonRecord {
+  if (node.sourceId.startsWith('~') && node.sourceId.endsWith('-latest')) {
+    return {
+      referenceType: 'latest_alias_anchor',
+      anchorStatus: 'accepted',
+      anchorSource: 'human_reviewed_openrouter_latest_mapping',
+      aliasSourceId: node.sourceId,
+      anchorSourceId: target.sourceId,
+      note: 'OpenRouter latest alias source path folded into the selected source-model anchor for default plaza display; remains searchable by route/source id.',
+    }
+  }
+  return { referenceType: 'source_alias_anchor', aliasSourceId: node.sourceId, anchorSourceId: target.sourceId }
 }
 
 function snapshotTargetFor(node: OpenRouterRawNode, sourceById: Map<string, OpenRouterRawNode>): OpenRouterRawNode | null {
