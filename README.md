@@ -210,6 +210,8 @@ route = /models/<namespace>/<model-id>
 
 OpenRouter endpoint detail 用于补充真实部署 provider（如 Anthropic、Google Vertex、Amazon Bedrock）的上下文长度、价格、参数和来源证据。sitemap/page-only 页面用于发现 `/api/v1/models` 未列出的 embedding、rerank、image、video、audio、TTS/STT 等模型类型。
 
+`data/openrouter-model-pages.json` 是从 OpenRouter 模型详情页 HTML 中抽取的 page raw 中间快照，体积较大且可通过 `npm run data:openrouter` 重新生成；它默认不纳入 git。缺少该文件时，build 会退化为只使用 API、endpoint detail 和 sitemap index 中已有的数据。
+
 ### models.dev
 
 - 入口：`https://models.dev/api.json`
@@ -365,6 +367,8 @@ data/
 ```text
 data/
   openrouter-models.json    OpenRouter source snapshot
+  openrouter-endpoints.json OpenRouter endpoint detail snapshot
+  openrouter-sitemap-models.json OpenRouter sitemap model-page index
   models-dev-api.json       models.dev source snapshot
   basellm-newapi.json       BaseLLM/NewAPI source snapshot
 src/

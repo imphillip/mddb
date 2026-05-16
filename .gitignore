@@ -10,3 +10,6 @@ public/
 
 # Local-only workspace files. Keep private notes, scratch code, and non-public artifacts here.
 .internal/
+
+# Large reproducible OpenRouter page extraction snapshots (regenerate with npm run data:openrouter)
+data/openrouter-model-pages.json
