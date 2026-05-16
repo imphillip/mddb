@@ -35,6 +35,13 @@ export type OpenRouterRawGraph = {
     pageOnlyNodeIds: string[]
     apiNodeIds: string[]
   }
+  enrichment?: {
+    modelsDev?: {
+      path: string
+      providerRows: number
+      brandLogos: Record<string, string>
+    }
+  }
 }
 
 export type OpenRouterRawNode = {
@@ -84,11 +91,12 @@ export type OpenRouterRawEdge = {
 
 type JsonRecord = Record<string, unknown>
 
-export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; endpointsPath: string; sitemapPath: string; pagesPath: string }): OpenRouterRawGraph {
+export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; endpointsPath: string; sitemapPath: string; pagesPath: string; modelsDevPath?: string }): OpenRouterRawGraph {
   const modelsPayload = readJson(paths.modelsPath) as { data?: JsonRecord[] }
   const endpointsPayload = readJson(paths.endpointsPath) as { data?: JsonRecord[] }
   const sitemapPayload = readJson(paths.sitemapPath) as { modelPages?: JsonRecord[]; pageOnly?: JsonRecord[]; apiOnly?: string[]; source?: JsonRecord }
   const pagesPayload = existsSync(paths.pagesPath) ? readJson(paths.pagesPath) as { data?: JsonRecord[] } : { data: [] }
+  const modelsDevPayload = paths.modelsDevPath && existsSync(paths.modelsDevPath) ? readJson(paths.modelsDevPath) as Record<string, JsonRecord> : {}
 
   const apiModels = Array.isArray(modelsPayload.data) ? modelsPayload.data : []
   const endpointRows = Array.isArray(endpointsPayload.data) ? endpointsPayload.data : []
@@ -211,10 +219,16 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
     providerMap.set(node.provider, { id: node.provider, name: node.providerName, currency: 'USD', raw: { inferredFrom: node.nodeKind === 'endpoint_deployment' ? 'OpenRouter endpoint tag' : 'OpenRouter author namespace', dataSource: 'openrouter' } })
   }
 
-  return {
+  const enrichment = buildModelsDevGraphEnrichment(modelsDevPayload, paths.modelsDevPath)
+  const graph: OpenRouterRawGraph = {
     generatedAt: new Date().toISOString(),
     schema: { urlShape: '/models/<provider>/<model-id>', rawPolicy: 'preserve-upstream-key-values', providerPolicy: 'actual-deployment-provider-not-data-source', dataSource: 'openrouter' },
-    source: paths,
+    source: {
+      modelsPath: paths.modelsPath,
+      endpointsPath: paths.endpointsPath,
+      sitemapPath: paths.sitemapPath,
+      pagesPath: paths.pagesPath,
+    },
     stats: {
       apiModels: apiModels.length,
       sitemapModelPages: sitemapRows.length,
@@ -237,6 +251,37 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
       apiNodeIds: sourceNodes.filter((node) => node.status === 'api').map((node) => node.id),
     },
   }
+  if (enrichment) graph.enrichment = enrichment
+  return graph
+}
+
+function buildModelsDevGraphEnrichment(modelsDevPayload: Record<string, JsonRecord>, path: string | undefined): OpenRouterRawGraph['enrichment'] {
+  const brandLogos = Object.fromEntries(Object.values(modelsDevPayload).flatMap((provider) => {
+    const id = typeof provider.id === 'string' ? provider.id : null
+    const logo = modelsDevLogoUrl(provider)
+    return id && logo ? [[normalizeLogoSlug(id), logo] as const] : []
+  }).sort((left, right) => left[0].localeCompare(right[0])))
+  return {
+    modelsDev: {
+      path: path ?? '',
+      providerRows: Object.keys(modelsDevPayload).length,
+      brandLogos,
+    },
+  }
+}
+
+function modelsDevLogoUrl(provider: JsonRecord): string | null {
+  const direct = provider.logoUrl ?? provider.logoURL ?? provider.iconUrl ?? provider.iconURL ?? provider.logo ?? provider.icon
+  if (typeof direct === 'string' && /^https?:\/\//u.test(direct)) return direct
+  const id = typeof provider.id === 'string' ? normalizeLogoSlug(provider.id) : ''
+  return id ? `https://models.dev/logos/${encodeURIComponent(id)}.svg` : null
+}
+
+function normalizeLogoSlug(value: string): string {
+  const slug = normalizeSlug(value)
+  if (slug === 'xai') return 'x-ai'
+  if (slug === 'alibaba') return 'qwen'
+  return slug
 }
 
 function makeSourceNode(sourceId: string, model: JsonRecord | undefined, endpointWrapper: JsonRecord | undefined, sitemap: JsonRecord | undefined, page: JsonRecord | undefined, pageOnlyType: string | undefined, apiOnly: boolean): OpenRouterRawNode {

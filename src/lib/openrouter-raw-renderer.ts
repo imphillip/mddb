@@ -14,7 +14,7 @@ export function renderOpenRouterRawHome(graph: OpenRouterRawGraph): string {
   const searchOnlyNodeIds = modelPlazaSearchOnlyNodeIds(graph)
   const visibleRows = graph.nodes.filter((node) => !searchOnlyNodeIds.has(node.id)).length
   const rows = graph.nodes.slice().sort(compareNodesByReleaseDesc).map((node) => renderModelRow(node, searchOnlyNodeIds.has(node.id))).join('')
-  const body = `<main class="modelsShell"><aside class="filterPanel" aria-label="模型筛选">${renderAuthorFilterGroup(authorOptions, visibleRows)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>模型广场</h1></div></div><div class="listToolbar"><div class="listCount"><b id="visibleCount">${visibleRows}</b> items</div><div class="quickFilters" aria-label="模态筛选"><button class="quickFilter active" type="button" data-output-filter="all">全部</button><button class="quickFilter" type="button" data-output-filter="text">Text</button><button class="quickFilter" type="button" data-output-filter="image">Image</button><button class="quickFilter" type="button" data-output-filter="embeddings">Embedding</button><button class="quickFilter" type="button" data-output-filter="audio">Audio</button><button class="quickFilter" type="button" data-output-filter="video">Video</button><button class="quickFilter" type="button" data-output-filter="rerank">Rerank</button><button class="quickFilter" type="button" data-output-filter="speech">Speech</button><button class="quickFilter" type="button" data-output-filter="transcription">Transcription</button></div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small>/M tokens</small></th><th>输出<br><small>/M tokens</small></th><th>读取<br><small>/M tokens</small></th><th>发布时间</th></tr></thead><tbody id="rows">${rows}</tbody></table></div><script>${modelFilterScript()}</script></section></main>`
+  const body = `<main class="modelsShell"><aside class="filterPanel" aria-label="模型筛选">${renderAuthorFilterGroup(graph, authorOptions, visibleRows)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>模型广场</h1></div></div><div class="listToolbar"><div class="listCount"><b id="visibleCount">${visibleRows}</b> items</div><div class="quickFilters" aria-label="模态筛选"><button class="quickFilter active" type="button" data-output-filter="all">全部</button><button class="quickFilter" type="button" data-output-filter="text">Text</button><button class="quickFilter" type="button" data-output-filter="image">Image</button><button class="quickFilter" type="button" data-output-filter="embeddings">Embedding</button><button class="quickFilter" type="button" data-output-filter="audio">Audio</button><button class="quickFilter" type="button" data-output-filter="video">Video</button><button class="quickFilter" type="button" data-output-filter="rerank">Rerank</button><button class="quickFilter" type="button" data-output-filter="speech">Speech</button><button class="quickFilter" type="button" data-output-filter="transcription">Transcription</button></div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small>/M tokens</small></th><th>输出<br><small>/M tokens</small></th><th>读取<br><small>/M tokens</small></th><th>发布时间</th></tr></thead><tbody id="rows">${rows}</tbody></table></div><script>${modelFilterScript()}</script></section></main>`
   return page('模型广场 · mddb.dev', body, 'models')
 }
 
@@ -263,12 +263,12 @@ function modelPlazaSearchOnlyNodeIds(graph: OpenRouterRawGraph): Set<string> {
   return new Set(graph.edges.filter((edge) => edge.from !== edge.to && resolvedEdgeTypes.has(edge.type)).map((edge) => edge.from))
 }
 
-function renderAuthorFilterGroup(options: Array<{ label: string; value: string; count: number }>, total: number): string {
+function renderAuthorFilterGroup(graph: OpenRouterRawGraph, options: Array<{ label: string; value: string; count: number }>, total: number): string {
   const featured = new Set(featuredAuthorValues())
   const primary = options.filter((option) => featured.has(option.value))
   const other = options.filter((option) => !featured.has(option.value))
-  const others = other.length > 0 ? `<details class="filterMore"><summary>其他厂牌 <small>${other.reduce((sum, option) => sum + option.count, 0)}</small></summary>${other.map((option) => renderFilterOption('author', option)).join('')}</details>` : ''
-  return `<div class="filterGroup"><div class="filterHead"><span>厂牌</span><span>⌄</span></div>${renderFilterOption('author', { label: '全部', value: 'all', count: total }, true)}${primary.map((option) => renderFilterOption('author', option)).join('')}${others}</div>`
+  const others = other.length > 0 ? `<details class="filterMore"><summary>其他厂牌 <small>${other.reduce((sum, option) => sum + option.count, 0)}</small></summary>${other.map((option) => renderFilterOption(graph, 'author', option)).join('')}</details>` : ''
+  return `<div class="filterGroup"><div class="filterHead"><span>厂牌</span><span>⌄</span></div>${renderFilterOption(graph, 'author', { label: '全部', value: 'all', count: total }, true)}${primary.map((option) => renderFilterOption(graph, 'author', option)).join('')}${others}</div>`
 }
 
 function featuredAuthorValues(): string[] {
@@ -298,8 +298,13 @@ function authorLabel(value: string): string {
   return labels[value] ?? value
 }
 
-function renderFilterOption(group: string, option: { label: string; value: string; count: number }, checked = false): string {
-  return `<label class="filterOption"><input type="radio" name="${escapeHtml(group)}-filter" data-filter-group="${escapeHtml(group)}" data-filter-value="${escapeHtml(option.value)}"${checked ? ' checked' : ''}>${renderLogoIcon(undefined, `${option.label} logo`, option.label.slice(0, 1), 'filterLogo')}<span>${escapeHtml(option.label)}</span><small>${option.count}</small></label>`
+function renderFilterOption(graph: OpenRouterRawGraph, group: string, option: { label: string; value: string; count: number }, checked = false): string {
+  return `<label class="filterOption"><input type="radio" name="${escapeHtml(group)}-filter" data-filter-group="${escapeHtml(group)}" data-filter-value="${escapeHtml(option.value)}"${checked ? ' checked' : ''}>${renderLogoIcon(brandLogoUrl(graph, option.value), `${option.label} logo`, option.label.slice(0, 1), 'filterLogo')}<span>${escapeHtml(option.label)}</span><small>${option.count}</small></label>`
+}
+
+function brandLogoUrl(graph: OpenRouterRawGraph, value: string): string | undefined {
+  if (value === 'all') return undefined
+  return graph.enrichment?.modelsDev?.brandLogos?.[value]
 }
 
 function renderLogoIcon(logoUrl: string | undefined, alt: string, fallback: string, className: string): string {
