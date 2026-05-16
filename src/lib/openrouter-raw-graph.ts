@@ -47,6 +47,14 @@ export type OpenRouterRawGraph = {
     pricing: PricingObservation[]
     providers: ProviderObservation[]
   }
+  currency?: {
+    base: 'USD'
+    quote: 'CNY'
+    rate: number
+    rawRate: number
+    source: string
+    updatedAt: string
+  }
   enrichment?: {
     modelsDev?: {
       path: string

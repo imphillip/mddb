@@ -1,4 +1,4 @@
-import { mkdirSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { buildDataQualityReport } from '../lib/data-quality.js'
 import { buildOpenRouterRawGraphFromFiles } from '../lib/openrouter-raw-graph.js'
@@ -13,6 +13,7 @@ const graph = buildOpenRouterRawGraphFromFiles({
   modelsDevPath: join(process.cwd(), 'data', 'models-dev-api.json'),
   baseLlmPath: join(process.cwd(), 'data', 'basellm-newapi.json'),
 })
+attachCurrency(graph, join(process.cwd(), 'data', 'exchange-rate-usd-cny.json'))
 
 rmSync(outputDir, { recursive: true, force: true })
 
@@ -33,6 +34,22 @@ for (const node of graph.nodes) {
 
 function renderRootRedirect(): string {
   return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>正在跳转到模型列表 · mddb.dev</title><meta http-equiv="refresh" content="0;url=/models/"><link rel="canonical" href="/models/"><script>location.replace('/models/')</script></head><body><p>正在跳转到 <a href="/models/">/models/</a>。</p></body></html>`
+}
+
+function attachCurrency(graph: { currency?: unknown }, path: string): void {
+  if (!existsSync(path)) return
+  const record = JSON.parse(readFileSync(path, 'utf8')) as Record<string, unknown>
+  const rawRate = Number(record.rawRate ?? record.rate)
+  const rate = Number(record.rate)
+  if (record.base !== 'USD' || record.quote !== 'CNY' || !Number.isFinite(rate) || !Number.isFinite(rawRate)) return
+  graph.currency = {
+    base: 'USD',
+    quote: 'CNY',
+    rate: Math.round(rate * 10) / 10,
+    rawRate,
+    source: String(record.source ?? 'https://open.er-api.com/v6/latest/USD'),
+    updatedAt: String(record.updatedAt ?? new Date().toISOString()),
+  }
 }
 
 function writePage(path: string, content: string): void {

@@ -60,6 +60,34 @@ function graph(): OpenRouterRawGraph {
   }
 }
 
+describe('renderOpenRouterRawHome currency toggle', () => {
+  it('renders a nav currency toggle and dual USD/CNY prices with 4 decimal places using rounded exchange rate', () => {
+    const testGraph = graph()
+    testGraph.currency = {
+      base: 'USD',
+      quote: 'CNY',
+      rate: 6.8,
+      rawRate: 6.822857,
+      source: 'https://open.er-api.com/v6/latest/USD',
+      updatedAt: '2026-05-16T00:02:31.000Z',
+    }
+    testGraph.nodes[0]!.raw.endpointWrapper = { response: { data: { endpoints: [{ tag: 'openai', provider_name: 'OpenAI', pricing: { prompt: '0.00000125', completion: '0.00001', input_cache_read: '0.000000125' } }] } } }
+
+    const html = renderOpenRouterRawHome(testGraph)
+
+    expect(html).toContain('class="currencyToggle"')
+    expect(html).toContain('data-currency-toggle')
+    expect(html).toContain('USD')
+    expect(html).toContain('CNY')
+    expect(html).toContain('data-usd="1.2500"')
+    expect(html).toContain('data-cny="8.5000"')
+    expect(html).toContain('data-usd="10.0000"')
+    expect(html).toContain('data-cny="68.0000"')
+    expect(html).toContain('1 USD ≈ 6.8 CNY')
+  })
+})
+
+
 describe('renderOpenRouterRawHome logo enrichment', () => {
   it('renders models.dev brand logos in the plaza brand filter without changing canonical rows', () => {
     const html = renderOpenRouterRawHome(graph())
@@ -106,11 +134,11 @@ describe('renderOpenRouterRawDetail BaseLLM price enrichment', () => {
 
     const missingHtml = renderOpenRouterRawDetail(testGraph, missingPriceNode)
     expect(missingHtml).toContain('BaseLLM / NewAPI 补充价格')
-    expect(missingHtml).toContain('$0.02')
+    expect(missingHtml).toContain('data-usd="0.0200"')
     expect(missingHtml).toContain('BaseLLM Provider')
 
     const canonicalHtml = renderOpenRouterRawDetail(testGraph, openRouterPricedNode)
-    expect(canonicalHtml).toContain('$1.25')
+    expect(canonicalHtml).toContain('data-usd="1.2500"')
     expect(canonicalHtml).not.toContain('Cheap Proxy')
     expect(canonicalHtml).not.toContain('$0.01')
 
