@@ -14,7 +14,7 @@ export function renderOpenRouterRawHome(graph: OpenRouterRawGraph): string {
   const searchOnlyNodeIds = modelPlazaSearchOnlyNodeIds(graph)
   const visibleRows = graph.nodes.filter((node) => !searchOnlyNodeIds.has(node.id)).length
   const rows = graph.nodes.slice().sort(compareNodesByReleaseDesc).map((node) => renderModelRow(node, searchOnlyNodeIds.has(node.id))).join('')
-  const body = `<main class="modelsShell"><aside class="filterPanel" aria-label="模型筛选"><div class="filterTitle">筛选</div>${renderAuthorFilterGroup(authorOptions, visibleRows)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>模型广场</h1></div></div><div class="listToolbar"><div class="listCount"><b id="visibleCount">${visibleRows}</b> items</div><div class="quickFilters" aria-label="快速筛选"><button class="quickFilter active" type="button" data-status-filter="all">全部</button><button class="quickFilter" type="button" data-status-filter="api">API</button><button class="quickFilter" type="button" data-status-filter="page_only">Page-only</button><button class="quickFilter" type="button" data-status-filter="endpoint">Endpoints</button></div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入</th><th>输出</th><th>读取</th><th>发布时间</th></tr></thead><tbody id="rows">${rows}</tbody></table></div><script>${modelFilterScript()}</script></section></main>`
+  const body = `<main class="modelsShell"><aside class="filterPanel" aria-label="模型筛选"><div class="filterTitle">筛选</div>${renderAuthorFilterGroup(authorOptions, visibleRows)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>模型广场</h1></div></div><div class="listToolbar"><div class="listCount"><b id="visibleCount">${visibleRows}</b> items</div><div class="quickFilters" aria-label="快速筛选"><button class="quickFilter active" type="button" data-status-filter="all">全部</button><button class="quickFilter" type="button" data-status-filter="api">API</button><button class="quickFilter" type="button" data-status-filter="page_only">Page-only</button><button class="quickFilter" type="button" data-status-filter="endpoint">Endpoints</button></div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small>/M tokens</small></th><th>输出<br><small>/M tokens</small></th><th>读取<br><small>/M tokens</small></th><th>发布时间</th></tr></thead><tbody id="rows">${rows}</tbody></table></div><script>${modelFilterScript()}</script></section></main>`
   return page('模型广场 · mddb.dev', body, 'models')
 }
 
@@ -212,7 +212,7 @@ function modelPriceCell(node: OpenRouterRawNode, key: string): string {
   if (!endpoint || !isRecord(endpoint.pricing)) return '—'
   const value = endpoint.pricing[key]
   if (value === null || value === undefined || value === '') return '—'
-  return `${formatUsdPerMillionTokens(value)}<br><span class="muted">/M tokens</span>`
+  return `${formatUsdPerMillionTokens(value)}`
 }
 
 function page(title: string, body: string, activePage: ActivePage): string {
