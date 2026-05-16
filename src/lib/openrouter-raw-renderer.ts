@@ -13,9 +13,20 @@ export function renderOpenRouterRawHome(graph: OpenRouterRawGraph): string {
   const authorOptions = authorFilterOptions(graph)
   const searchOnlyNodeIds = modelPlazaSearchOnlyNodeIds(graph)
   const visibleRows = graph.nodes.filter((node) => !searchOnlyNodeIds.has(node.id)).length
-  const rows = graph.nodes.map((node) => renderModelRow(node, searchOnlyNodeIds.has(node.id))).join('')
-  const body = `<main class="modelsShell"><aside class="filterPanel" aria-label="模型筛选"><div class="filterTitle">筛选</div>${renderAuthorFilterGroup(authorOptions, visibleRows)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>模型广场</h1></div></div><div class="listToolbar"><div class="listCount"><b id="visibleCount">${visibleRows}</b> items</div><div class="quickFilters" aria-label="快速筛选"><button class="quickFilter active" type="button" data-status-filter="all">全部</button><button class="quickFilter" type="button" data-status-filter="api">API</button><button class="quickFilter" type="button" data-status-filter="page_only">Page-only</button><button class="quickFilter" type="button" data-status-filter="endpoint">Endpoints</button></div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型名称</th><th>Provider</th><th>Author</th><th>上下文</th><th>Endpoints</th><th>状态</th></tr></thead><tbody id="rows">${rows}</tbody></table></div><script>${modelFilterScript()}</script></section></main>`
+  const rows = graph.nodes.slice().sort(compareNodesByReleaseDesc).map((node) => renderModelRow(node, searchOnlyNodeIds.has(node.id))).join('')
+  const body = `<main class="modelsShell"><aside class="filterPanel" aria-label="模型筛选"><div class="filterTitle">筛选</div>${renderAuthorFilterGroup(authorOptions, visibleRows)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>模型广场</h1></div></div><div class="listToolbar"><div class="listCount"><b id="visibleCount">${visibleRows}</b> items</div><div class="quickFilters" aria-label="快速筛选"><button class="quickFilter active" type="button" data-status-filter="all">全部</button><button class="quickFilter" type="button" data-status-filter="api">API</button><button class="quickFilter" type="button" data-status-filter="page_only">Page-only</button><button class="quickFilter" type="button" data-status-filter="endpoint">Endpoints</button></div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入</th><th>输出</th><th>读取</th><th>发布时间</th></tr></thead><tbody id="rows">${rows}</tbody></table></div><script>${modelFilterScript()}</script></section></main>`
   return page('模型广场 · mddb.dev', body, 'models')
+}
+
+function compareNodesByReleaseDesc(a: OpenRouterRawNode, b: OpenRouterRawNode): number {
+  const diff = modelReleaseTimestamp(b) - modelReleaseTimestamp(a)
+  return diff !== 0 ? diff : a.displayName.localeCompare(b.displayName)
+}
+
+function modelReleaseTimestamp(node: OpenRouterRawNode): number {
+  const created = rawModelField(node, 'created')
+  const timestamp = Number(created)
+  return Number.isFinite(timestamp) ? timestamp : 0
 }
 
 export function renderOpenRouterRawDetail(graph: OpenRouterRawGraph, node: OpenRouterRawNode): string {
@@ -193,7 +204,15 @@ function renderSourceSection(node: OpenRouterRawNode, outEdges: OpenRouterRawEdg
 
 function renderModelRow(node: OpenRouterRawNode, searchOnly = false): string {
   const modalities = `${node.derived.inputModalities.join(' · ') || '—'} → ${node.derived.outputModalities.join(' · ') || '—'}`
-  return `<tr data-model-row data-search-only="${searchOnly ? 'true' : 'false'}" data-model-status="${escapeHtml(node.status)}" data-model-provider="${escapeHtml(node.provider)}" data-model-author="${escapeHtml(node.derived.author ?? '')}" data-model-name="${escapeHtml(`${node.displayName} ${node.provider} ${node.modelId} ${node.sourceId} ${node.derived.author ?? ''}`.toLowerCase())}"><td><div class="modelName">${renderLogoIcon(undefined, `${node.providerName} logo`, node.providerName.slice(0, 1), 'modelIcon')}<div><a class="modelLink" href="${escapeHtml(node.route)}/">${escapeHtml(node.displayName)}</a><div class="modelSub">${renderModelTagCopy(`${node.provider}/${node.modelId}`)}</div><div class="modelSub rawSource">source: ${escapeHtml(node.sourceId)} · ${escapeHtml(modalities)}</div></div></div></td><td>${escapeHtml(node.providerName)}<div class="providerSummary"><code>${escapeHtml(node.provider)}</code></div></td><td>${escapeHtml(node.derived.author ?? '—')}</td><td class="mono">${escapeHtml(node.derived.endpointContextLengths.map(String).join(', ') || '—')}</td><td class="mono">${node.derived.endpointCount}</td><td><div class="statusLine"><span class="badge ${node.status}">${escapeHtml(node.status)}</span>${node.derived.pageOnlyType ? `<span class="badge">${escapeHtml(node.derived.pageOnlyType)}</span>` : ''}<span class="badge">${escapeHtml(node.dataSource)}</span></div></td></tr>`
+  return `<tr data-model-row data-search-only="${searchOnly ? 'true' : 'false'}" data-model-status="${escapeHtml(node.status)}" data-model-provider="${escapeHtml(node.provider)}" data-model-author="${escapeHtml(node.derived.author ?? '')}" data-model-name="${escapeHtml(`${node.displayName} ${node.provider} ${node.modelId} ${node.sourceId} ${node.derived.author ?? ''}`.toLowerCase())}"><td><div class="modelName">${renderLogoIcon(undefined, `${node.providerName} logo`, node.providerName.slice(0, 1), 'modelIcon')}<div><a class="modelLink" href="${escapeHtml(node.route)}/">${escapeHtml(node.displayName)}</a><div class="modelSub">${renderModelTagCopy(`${node.provider}/${node.modelId}`)}</div><div class="modelSub rawSource">${escapeHtml(node.derived.author ?? '—')} · ${escapeHtml(modalities)}</div></div></div></td><td class="mono">${escapeHtml(modelContextLength(node))}</td><td class="mono">${modelPriceCell(node, 'prompt')}</td><td class="mono">${modelPriceCell(node, 'completion')}</td><td class="mono">${modelPriceCell(node, 'input_cache_read')}</td><td class="mono">${escapeHtml(modelReleasedDate(node))}</td></tr>`
+}
+
+function modelPriceCell(node: OpenRouterRawNode, key: string): string {
+  const endpoint = currentProviderEndpoints(node)[0]
+  if (!endpoint || !isRecord(endpoint.pricing)) return '—'
+  const value = endpoint.pricing[key]
+  if (value === null || value === undefined || value === '') return '—'
+  return `${formatUsdPerMillionTokens(value)}<br><span class="muted">/M tokens</span>`
 }
 
 function page(title: string, body: string, activePage: ActivePage): string {
