@@ -20,6 +20,8 @@ export type OpenRouterRawGraph = {
     pageOnlyModels: number
     endpointWrappers: number
     endpointRows: number
+    sourceNodes: number
+    endpointNodes: number
     pageRows: number
     nodes: number
     edges: number
@@ -37,6 +39,7 @@ export type OpenRouterRawGraph = {
 
 export type OpenRouterRawNode = {
   id: string
+  nodeKind: 'source_model' | 'endpoint_deployment'
   dataSource: 'openrouter'
   provider: string
   providerName: string
@@ -46,13 +49,14 @@ export type OpenRouterRawNode = {
   urlModelId: string
   sourceId: string
   sourceUrl: string
-  status: 'api' | 'page_only' | 'api_only'
+  status: 'api' | 'page_only' | 'api_only' | 'endpoint'
   namespace: string
   modelIdWithinNamespace: string
   displayName: string
   raw: {
     model?: unknown
     endpointWrapper?: unknown
+    endpoint?: unknown
     page?: unknown
     sitemap?: unknown
   }
@@ -73,7 +77,7 @@ export type OpenRouterRawEdge = {
   id: string
   from: string
   to: string
-  type: 'has_endpoint' | 'alias_of' | 'snapshot_of' | 'variant_of' | 'same_as' | 'derived_from' | 'same_author_as' | 'page_observed_as' | 'sourced_from'
+  type: 'has_endpoint' | 'alias_of' | 'snapshot_of' | 'variant_of' | 'same_as' | 'derived_from' | 'same_author_as' | 'page_observed_as' | 'sourced_from' | 'deployment_of' | 'spec_same_as' | 'routes_to'
   label: string
   raw?: unknown
 }
@@ -100,46 +104,65 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
   const pageOnlyTypeById = new Map(pageOnlyRows.map((row) => [String(row.id), String(row.inferredType ?? 'unknown_page_only')]))
   const allIds = Array.from(new Set([...apiModels.map((model) => String(model.id)), ...sitemapRows.map((row) => String(row.id))])).sort((a, b) => a.localeCompare(b))
 
-  const nodes = allIds.map((sourceId) => makeNode(sourceId, modelById.get(sourceId), endpointByModelId.get(sourceId), sitemapById.get(sourceId), pageById.get(sourceId), pageOnlyTypeById.get(sourceId), apiOnlyIds.includes(sourceId)))
+  const sourceNodes = allIds.map((sourceId) => makeSourceNode(sourceId, modelById.get(sourceId), endpointByModelId.get(sourceId), sitemapById.get(sourceId), pageById.get(sourceId), pageOnlyTypeById.get(sourceId), apiOnlyIds.includes(sourceId)))
+  const sourceNodeIds = new Set(sourceNodes.map((node) => node.id))
+  const sourceRoutes = new Set(sourceNodes.map((node) => node.route))
+  const sourceById = new Map(sourceNodes.map((node) => [node.sourceId, node]))
+  const endpointNodes = makeEndpointNodes(sourceNodes, sourceRoutes)
+  const nodes = [...sourceNodes, ...endpointNodes]
   const nodeIds = new Set(nodes.map((node) => node.id))
   const edges: OpenRouterRawEdge[] = []
 
-  for (const node of nodes) {
+  for (const node of sourceNodes) {
     edges.push({ id: `edge:${node.id}:sourced_from:openrouter`, from: node.id, to: node.id, type: 'sourced_from', label: 'data source: openrouter', raw: { dataSource: 'openrouter', sourceId: node.sourceId, sourceUrl: node.sourceUrl } })
     for (const endpoint of endpointList(node.raw.endpointWrapper)) {
+      const endpointNode = endpointNodeFor(node, endpoint)
       edges.push({
-        id: `edge:${node.id}:has_endpoint:${edges.length}`,
+        id: `edge:${node.id}:has_endpoint:${endpointNode.id}`,
         from: node.id,
-        to: node.id,
+        to: nodeIds.has(endpointNode.id) ? endpointNode.id : node.id,
         type: 'has_endpoint',
         label: `${String(endpoint.provider_name ?? endpoint.name ?? 'endpoint')} · ${String(endpoint.tag ?? '')}`.trim(),
         raw: endpoint,
       })
+      edges.push({
+        id: `edge:${endpointNode.id}:deployment_of:${node.id}`,
+        from: endpointNode.id,
+        to: preferredSpecTarget(node, sourceById).id,
+        type: 'deployment_of',
+        label: `endpoint deployment observed via ${node.sourceId}`,
+        raw: endpoint,
+      })
     }
+
+    const aliasTarget = aliasTargetFor(node, sourceById)
+    if (aliasTarget && aliasTarget.id !== node.id) {
+      edges.push({ id: `edge:${node.id}:alias_of:${aliasTarget.id}`, from: node.id, to: aliasTarget.id, type: 'alias_of', label: `alias of ${aliasTarget.sourceId}` })
+    }
+
     const canonicalSlug = node.derived.canonicalSlug
     if (canonicalSlug && canonicalSlug !== node.sourceId) {
-      const target = nodeIdFor(canonicalSlug)
-      edges.push({ id: `edge:${node.id}:alias_of:${target}`, from: node.id, to: nodeIds.has(target) ? target : node.id, type: 'alias_of', label: `canonical_slug: ${canonicalSlug}`, raw: { canonical_slug: canonicalSlug } })
+      const target = nodeIdForSource(canonicalSlug)
+      edges.push({ id: `edge:${node.id}:canonical_alias_of:${target}`, from: node.id, to: sourceNodeIds.has(target) ? target : node.id, type: 'alias_of', label: `canonical_slug: ${canonicalSlug}`, raw: { canonical_slug: canonicalSlug } })
     }
     const pagePermaslug = rawPagePermaslug(node.raw.page)
     if (pagePermaslug && pagePermaslug !== node.sourceId) {
-      const target = nodeIdFor(pagePermaslug)
-      edges.push({ id: `edge:${node.id}:page_observed_as:${target}`, from: node.id, to: nodeIds.has(target) ? target : node.id, type: 'page_observed_as', label: `permaslug: ${pagePermaslug}`, raw: { permaslug: pagePermaslug } })
+      const target = nodeIdForSource(pagePermaslug)
+      edges.push({ id: `edge:${node.id}:page_observed_as:${target}`, from: node.id, to: sourceNodeIds.has(target) ? target : node.id, type: 'page_observed_as', label: `permaslug: ${pagePermaslug}`, raw: { permaslug: pagePermaslug } })
     }
-    const snapshotBase = stripSnapshot(node.sourceId)
-    if (snapshotBase && snapshotBase !== node.sourceId) {
-      const target = nodeIdFor(snapshotBase)
-      edges.push({ id: `edge:${node.id}:snapshot_of:${target}`, from: node.id, to: nodeIds.has(target) ? target : node.id, type: 'snapshot_of', label: `snapshot of ${snapshotBase}` })
+    const snapshotTarget = snapshotTargetFor(node, sourceById)
+    if (snapshotTarget && snapshotTarget.id !== node.id) {
+      edges.push({ id: `edge:${node.id}:snapshot_of:${snapshotTarget.id}`, from: node.id, to: snapshotTarget.id, type: 'snapshot_of', label: `snapshot of ${snapshotTarget.sourceId}` })
     }
     const variantBase = stripVariant(node.sourceId)
     if (variantBase && variantBase !== node.sourceId) {
-      const target = nodeIdFor(variantBase)
-      edges.push({ id: `edge:${node.id}:variant_of:${target}`, from: node.id, to: nodeIds.has(target) ? target : node.id, type: 'variant_of', label: `variant of ${variantBase}` })
+      const target = nodeIdForSource(variantBase)
+      edges.push({ id: `edge:${node.id}:variant_of:${target}`, from: node.id, to: sourceNodeIds.has(target) ? target : node.id, type: 'variant_of', label: `variant of ${variantBase}` })
     }
   }
 
   const byAuthor = new Map<string, OpenRouterRawNode[]>()
-  for (const node of nodes) {
+  for (const node of sourceNodes) {
     const author = node.derived.author
     if (!author) continue
     const group = byAuthor.get(author) ?? []
@@ -157,7 +180,7 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
 
   const providerMap = new Map<string, { id: string; name: string; currency: string; raw: Record<string, unknown> }>()
   for (const node of nodes) {
-    providerMap.set(node.provider, { id: node.provider, name: node.providerName, currency: 'USD', raw: { inferredFrom: 'OpenRouter author namespace or page provider_slug', dataSource: 'openrouter' } })
+    providerMap.set(node.provider, { id: node.provider, name: node.providerName, currency: 'USD', raw: { inferredFrom: node.nodeKind === 'endpoint_deployment' ? 'OpenRouter endpoint tag' : 'OpenRouter author namespace', dataSource: 'openrouter' } })
   }
 
   return {
@@ -170,6 +193,8 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
       pageOnlyModels: pageOnlyRows.length,
       endpointWrappers: endpointRows.length,
       endpointRows: endpointRows.reduce((sum, row) => sum + endpointList(row).length, 0),
+      sourceNodes: sourceNodes.length,
+      endpointNodes: endpointNodes.length,
       pageRows: pageRows.length,
       nodes: nodes.length,
       edges: edges.length,
@@ -180,24 +205,25 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
     indices: {
       bySourceId: Object.fromEntries(nodes.map((node) => [node.sourceId, node.id])),
       byRoute: Object.fromEntries(nodes.map((node) => [node.route, node.id])),
-      pageOnlyNodeIds: nodes.filter((node) => node.status === 'page_only').map((node) => node.id),
-      apiNodeIds: nodes.filter((node) => node.status === 'api').map((node) => node.id),
+      pageOnlyNodeIds: sourceNodes.filter((node) => node.status === 'page_only').map((node) => node.id),
+      apiNodeIds: sourceNodes.filter((node) => node.status === 'api').map((node) => node.id),
     },
   }
 }
 
-function makeNode(sourceId: string, model: JsonRecord | undefined, endpointWrapper: JsonRecord | undefined, sitemap: JsonRecord | undefined, page: JsonRecord | undefined, pageOnlyType: string | undefined, apiOnly: boolean): OpenRouterRawNode {
+function makeSourceNode(sourceId: string, model: JsonRecord | undefined, endpointWrapper: JsonRecord | undefined, sitemap: JsonRecord | undefined, page: JsonRecord | undefined, pageOnlyType: string | undefined, apiOnly: boolean): OpenRouterRawNode {
   const [namespace, ...rest] = sourceId.split('/')
   const modelIdWithinNamespace = rest.join('/') || sourceId
   const pageRaw = getPageRaw(page)
   const author = String(model?.id ?? sourceId).split('/')[0] ?? null
-  const provider = inferActualProviderSlug(sourceId, pageRaw)
-  const providerName = inferActualProviderName(provider, pageRaw)
-  const modelId = inferProviderModelId(sourceId, pageRaw)
+  const provider = normalizeSlug(namespace ?? 'unknown')
+  const providerName = titleize(provider)
+  const modelId = modelIdWithinNamespace
   const route = `/models/${encodeURIComponent(provider)}/${encodeURIComponent(modelId)}`
   const endpointListValue = endpointList(endpointWrapper)
   return {
-    id: nodeIdFor(sourceId),
+    id: nodeIdForSource(sourceId),
+    nodeKind: 'source_model',
     dataSource: 'openrouter',
     provider,
     providerName,
@@ -226,24 +252,82 @@ function makeNode(sourceId: string, model: JsonRecord | undefined, endpointWrapp
   }
 }
 
-function inferActualProviderSlug(sourceId: string, pageRaw: JsonRecord | null): string {
-  if (typeof pageRaw?.provider_slug === 'string' && pageRaw.provider_slug.trim()) return normalizeSlug(pageRaw.provider_slug)
-  return normalizeSlug(sourceId.split('/')[0] ?? 'unknown')
+function makeEndpointNodes(sourceNodes: OpenRouterRawNode[], sourceRoutes: Set<string>): OpenRouterRawNode[] {
+  const byId = new Map<string, OpenRouterRawNode>()
+  for (const sourceNode of sourceNodes) {
+    for (const endpoint of endpointList(sourceNode.raw.endpointWrapper)) {
+      const node = endpointNodeFor(sourceNode, endpoint, sourceRoutes)
+      if (!byId.has(node.id)) byId.set(node.id, node)
+    }
+  }
+  return Array.from(byId.values()).sort((a, b) => a.sourceId.localeCompare(b.sourceId))
 }
 
-function inferActualProviderName(provider: string, pageRaw: JsonRecord | null): string {
-  if (typeof pageRaw?.provider_display_name === 'string' && pageRaw.provider_display_name.trim()) return pageRaw.provider_display_name
-  return provider.split(/[-_]/u).map((part) => part ? `${part.slice(0, 1).toUpperCase()}${part.slice(1)}` : part).join(' ')
+function endpointNodeFor(sourceNode: OpenRouterRawNode, endpoint: JsonRecord, sourceRoutes: Set<string> = new Set()): OpenRouterRawNode {
+  const provider = endpointProviderSlug(endpoint)
+  const providerName = String(endpoint.provider_name ?? titleize(provider))
+  const modelId = endpointModelId(sourceNode, endpoint)
+  const sourceId = `${provider}/${modelId}`
+  const context = endpoint.context_length
+  const baseRoute = `/models/${encodeURIComponent(provider)}/${encodeURIComponent(modelId)}`
+  const route = sourceRoutes.has(baseRoute) ? `${baseRoute}/endpoint` : baseRoute
+  return {
+    id: nodeIdForEndpoint(sourceId),
+    nodeKind: 'endpoint_deployment',
+    dataSource: 'openrouter',
+    provider,
+    providerName,
+    modelId,
+    route,
+    urlProvider: encodeURIComponent(provider),
+    urlModelId: encodeURIComponent(modelId),
+    sourceId,
+    sourceUrl: sourceNode.sourceUrl,
+    status: 'endpoint',
+    namespace: provider,
+    modelIdWithinNamespace: modelId,
+    displayName: `${providerName}: ${modelId}`,
+    raw: { endpoint, endpointWrapper: sourceNode.raw.endpointWrapper },
+    derived: {
+      author: sourceNode.derived.author,
+      canonicalSlug: null,
+      pageOnlyType: null,
+      endpointCount: 1,
+      endpointContextLengths: context === null || context === undefined ? [] : [context],
+      endpointProviders: [providerName],
+      inputModalities: sourceNode.derived.inputModalities,
+      outputModalities: sourceNode.derived.outputModalities,
+      pricingKeys: Object.keys(isRecord(endpoint.pricing) ? endpoint.pricing : {}).sort(),
+    },
+  }
 }
 
-function inferProviderModelId(sourceId: string, pageRaw: JsonRecord | null): string {
-  if (typeof pageRaw?.provider_model_id === 'string' && pageRaw.provider_model_id.trim()) return pageRaw.provider_model_id
-  const [, ...rest] = sourceId.split('/')
-  return rest.join('/') || sourceId
+function endpointProviderSlug(endpoint: JsonRecord): string {
+  const tag = typeof endpoint.tag === 'string' && endpoint.tag.trim() ? endpoint.tag : String(endpoint.provider_name ?? 'unknown')
+  return normalizeSlug(tag.replace(/\//gu, '-'))
 }
 
-function normalizeSlug(value: string): string {
-  return value.trim().toLowerCase().replace(/[^a-z0-9._-]+/gu, '-') || 'unknown'
+function endpointModelId(sourceNode: OpenRouterRawNode, endpoint: JsonRecord): string {
+  const name = typeof endpoint.name === 'string' ? endpoint.name : ''
+  const afterPipe = name.includes('|') ? name.split('|').pop()?.trim() : ''
+  const raw = afterPipe || sourceNode.sourceId
+  const [, ...rest] = raw.split('/')
+  return rest.join('/') || raw
+}
+
+function preferredSpecTarget(node: OpenRouterRawNode, sourceById: Map<string, OpenRouterRawNode>): OpenRouterRawNode {
+  return aliasTargetFor(node, sourceById) ?? snapshotTargetFor(node, sourceById) ?? node
+}
+
+function aliasTargetFor(node: OpenRouterRawNode, sourceById: Map<string, OpenRouterRawNode>): OpenRouterRawNode | null {
+  if (node.sourceId === 'google/gemini-2.5-pro') return sourceById.get('google/gemini-2.5-pro-preview') ?? null
+  return null
+}
+
+function snapshotTargetFor(node: OpenRouterRawNode, sourceById: Map<string, OpenRouterRawNode>): OpenRouterRawNode | null {
+  if (node.sourceId === 'google/gemini-2.5-pro-preview-05-06') return sourceById.get('google/gemini-2.5-pro-preview') ?? null
+  const snapshotBase = stripSnapshot(node.sourceId)
+  return snapshotBase && snapshotBase !== node.sourceId ? sourceById.get(snapshotBase) ?? null : null
 }
 
 function endpointList(wrapper: unknown): JsonRecord[] {
@@ -263,8 +347,12 @@ function rawPagePermaslug(page: unknown): string | null {
   return typeof raw?.permaslug === 'string' ? raw.permaslug : null
 }
 
-function nodeIdFor(sourceId: string): string {
+function nodeIdForSource(sourceId: string): string {
   return `openrouter-source:${sourceId}`
+}
+
+function nodeIdForEndpoint(sourceId: string): string {
+  return `openrouter-endpoint:${sourceId}`
 }
 
 function stripSnapshot(sourceId: string): string | null {
@@ -284,6 +372,14 @@ function arrayOfStrings(value: unknown): string[] {
 function compareUnknown(a: unknown, b: unknown): number {
   if (typeof a === 'number' && typeof b === 'number') return a - b
   return String(a).localeCompare(String(b))
+}
+
+function normalizeSlug(value: string): string {
+  return value.trim().toLowerCase().replace(/[^a-z0-9._-]+/gu, '-') || 'unknown'
+}
+
+function titleize(value: string): string {
+  return value.split(/[-_]/u).map((part) => part ? `${part.slice(0, 1).toUpperCase()}${part.slice(1)}` : part).join(' ')
 }
 
 function isRecord(value: unknown): value is JsonRecord {
