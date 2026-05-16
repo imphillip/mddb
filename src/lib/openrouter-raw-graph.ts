@@ -3,9 +3,10 @@ import { existsSync, readFileSync } from 'node:fs'
 export type OpenRouterRawGraph = {
   generatedAt: string
   schema: {
-    provider: 'openrouter'
     urlShape: '/models/<provider>/<model-id>'
     rawPolicy: 'preserve-upstream-key-values'
+    providerPolicy: 'actual-deployment-provider-not-data-source'
+    dataSource: 'openrouter'
   }
   source: {
     modelsPath: string
@@ -36,9 +37,12 @@ export type OpenRouterRawGraph = {
 
 export type OpenRouterRawNode = {
   id: string
-  provider: 'openrouter'
+  dataSource: 'openrouter'
+  provider: string
+  providerName: string
   modelId: string
   route: string
+  urlProvider: string
   urlModelId: string
   sourceId: string
   sourceUrl: string
@@ -69,7 +73,7 @@ export type OpenRouterRawEdge = {
   id: string
   from: string
   to: string
-  type: 'has_endpoint' | 'alias_of' | 'snapshot_of' | 'variant_of' | 'same_as' | 'derived_from' | 'same_author_as' | 'page_observed_as'
+  type: 'has_endpoint' | 'alias_of' | 'snapshot_of' | 'variant_of' | 'same_as' | 'derived_from' | 'same_author_as' | 'page_observed_as' | 'sourced_from'
   label: string
   raw?: unknown
 }
@@ -101,6 +105,7 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
   const edges: OpenRouterRawEdge[] = []
 
   for (const node of nodes) {
+    edges.push({ id: `edge:${node.id}:sourced_from:openrouter`, from: node.id, to: node.id, type: 'sourced_from', label: 'data source: openrouter', raw: { dataSource: 'openrouter', sourceId: node.sourceId, sourceUrl: node.sourceUrl } })
     for (const endpoint of endpointList(node.raw.endpointWrapper)) {
       edges.push({
         id: `edge:${node.id}:has_endpoint:${edges.length}`,
@@ -150,9 +155,14 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
     }
   }
 
+  const providerMap = new Map<string, { id: string; name: string; currency: string; raw: Record<string, unknown> }>()
+  for (const node of nodes) {
+    providerMap.set(node.provider, { id: node.provider, name: node.providerName, currency: 'USD', raw: { inferredFrom: 'OpenRouter author namespace or page provider_slug', dataSource: 'openrouter' } })
+  }
+
   return {
     generatedAt: new Date().toISOString(),
-    schema: { provider: 'openrouter', urlShape: '/models/<provider>/<model-id>', rawPolicy: 'preserve-upstream-key-values' },
+    schema: { urlShape: '/models/<provider>/<model-id>', rawPolicy: 'preserve-upstream-key-values', providerPolicy: 'actual-deployment-provider-not-data-source', dataSource: 'openrouter' },
     source: paths,
     stats: {
       apiModels: apiModels.length,
@@ -164,7 +174,7 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
       nodes: nodes.length,
       edges: edges.length,
     },
-    providers: [{ id: 'openrouter', name: 'OpenRouter', currency: 'USD', raw: { baseUrl: 'https://openrouter.ai' } }],
+    providers: Array.from(providerMap.values()).sort((a, b) => a.id.localeCompare(b.id)),
     nodes,
     edges,
     indices: {
@@ -180,14 +190,21 @@ function makeNode(sourceId: string, model: JsonRecord | undefined, endpointWrapp
   const [namespace, ...rest] = sourceId.split('/')
   const modelIdWithinNamespace = rest.join('/') || sourceId
   const pageRaw = getPageRaw(page)
-  const route = `/models/openrouter/${encodeURIComponent(sourceId)}`
+  const author = String(model?.id ?? sourceId).split('/')[0] ?? null
+  const provider = inferActualProviderSlug(sourceId, pageRaw)
+  const providerName = inferActualProviderName(provider, pageRaw)
+  const modelId = inferProviderModelId(sourceId, pageRaw)
+  const route = `/models/${encodeURIComponent(provider)}/${encodeURIComponent(modelId)}`
   const endpointListValue = endpointList(endpointWrapper)
   return {
     id: nodeIdFor(sourceId),
-    provider: 'openrouter',
-    modelId: sourceId,
+    dataSource: 'openrouter',
+    provider,
+    providerName,
+    modelId,
     route,
-    urlModelId: encodeURIComponent(sourceId),
+    urlProvider: encodeURIComponent(provider),
+    urlModelId: encodeURIComponent(modelId),
     sourceId,
     sourceUrl: String(sitemap?.url ?? `https://openrouter.ai/${sourceId}`),
     status: model ? 'api' : pageOnlyType ? 'page_only' : apiOnly ? 'api_only' : 'page_only',
@@ -196,7 +213,7 @@ function makeNode(sourceId: string, model: JsonRecord | undefined, endpointWrapp
     displayName: String(model?.name ?? pageRaw?.displayName ?? sourceId),
     raw: { model, endpointWrapper, page, sitemap },
     derived: {
-      author: String(model?.id ?? sourceId).split('/')[0] ?? null,
+      author,
       canonicalSlug: typeof model?.canonical_slug === 'string' ? model.canonical_slug : null,
       pageOnlyType: pageOnlyType ?? null,
       endpointCount: endpointListValue.length,
@@ -207,6 +224,26 @@ function makeNode(sourceId: string, model: JsonRecord | undefined, endpointWrapp
       pricingKeys: Array.from(new Set([...Object.keys(isRecord(model?.pricing) ? model.pricing : {}), ...Object.keys(isRecord(pageRaw?.pricing) ? pageRaw.pricing : {}), ...Object.keys(isRecord(pageRaw?.pricing_json) ? pageRaw.pricing_json : {})])).sort(),
     },
   }
+}
+
+function inferActualProviderSlug(sourceId: string, pageRaw: JsonRecord | null): string {
+  if (typeof pageRaw?.provider_slug === 'string' && pageRaw.provider_slug.trim()) return normalizeSlug(pageRaw.provider_slug)
+  return normalizeSlug(sourceId.split('/')[0] ?? 'unknown')
+}
+
+function inferActualProviderName(provider: string, pageRaw: JsonRecord | null): string {
+  if (typeof pageRaw?.provider_display_name === 'string' && pageRaw.provider_display_name.trim()) return pageRaw.provider_display_name
+  return provider.split(/[-_]/u).map((part) => part ? `${part.slice(0, 1).toUpperCase()}${part.slice(1)}` : part).join(' ')
+}
+
+function inferProviderModelId(sourceId: string, pageRaw: JsonRecord | null): string {
+  if (typeof pageRaw?.provider_model_id === 'string' && pageRaw.provider_model_id.trim()) return pageRaw.provider_model_id
+  const [, ...rest] = sourceId.split('/')
+  return rest.join('/') || sourceId
+}
+
+function normalizeSlug(value: string): string {
+  return value.trim().toLowerCase().replace(/[^a-z0-9._-]+/gu, '-') || 'unknown'
 }
 
 function endpointList(wrapper: unknown): JsonRecord[] {
@@ -227,7 +264,7 @@ function rawPagePermaslug(page: unknown): string | null {
 }
 
 function nodeIdFor(sourceId: string): string {
-  return `openrouter:${sourceId}`
+  return `openrouter-source:${sourceId}`
 }
 
 function stripSnapshot(sourceId: string): string | null {

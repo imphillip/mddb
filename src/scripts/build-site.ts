@@ -18,7 +18,7 @@ writePage('models/index.html', renderOpenRouterRawHome(graph))
 writePage('graph/openrouter.json', JSON.stringify(graph, null, 2))
 
 for (const node of graph.nodes) {
-  writePage(`models/openrouter/${node.urlModelId}/index.html`, renderOpenRouterRawDetail(graph, node))
+  writePage(`models/${node.urlProvider}/${node.urlModelId}/index.html`, renderOpenRouterRawDetail(graph, node))
 }
 
 function writePage(path: string, content: string): void {
