@@ -78,6 +78,8 @@ describe('renderOpenRouterRawHome currency toggle', () => {
     expect(html).toContain('class="currencyToggle"')
     expect(html).toContain('data-currency-toggle')
     expect(html).toContain('class="githubLink"')
+    expect(html).toContain('.githubLink{width:34px')
+    expect(html).toContain('.githubLink svg{width:18px')
     expect(html).toContain('USD')
     expect(html).toContain('CNY')
     expect(html).toContain('data-usd="1.25"')
