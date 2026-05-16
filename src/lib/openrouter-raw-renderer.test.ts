@@ -61,7 +61,7 @@ function graph(): OpenRouterRawGraph {
 }
 
 describe('renderOpenRouterRawHome currency toggle', () => {
-  it('renders a nav currency toggle and dual USD/CNY prices with 4 decimal places using rounded exchange rate', () => {
+  it('renders a nav currency toggle with inline FX rate and dual USD/CNY prices capped at 4 decimals', () => {
     const testGraph = graph()
     testGraph.currency = {
       base: 'USD',
@@ -77,12 +77,14 @@ describe('renderOpenRouterRawHome currency toggle', () => {
 
     expect(html).toContain('class="currencyToggle"')
     expect(html).toContain('data-currency-toggle')
+    expect(html).toContain('class="githubLink"')
     expect(html).toContain('USD')
     expect(html).toContain('CNY')
-    expect(html).toContain('data-usd="1.2500"')
-    expect(html).toContain('data-cny="8.5000"')
-    expect(html).toContain('data-usd="10.0000"')
-    expect(html).toContain('data-cny="68.0000"')
+    expect(html).toContain('data-usd="1.25"')
+    expect(html).toContain('data-cny="8.5"')
+    expect(html).toContain('data-usd="10"')
+    expect(html).toContain('data-cny="68"')
+    expect(html).toContain('class="fxInline"')
     expect(html).toContain('1 USD ≈ 6.8 CNY')
   })
 })
@@ -134,11 +136,11 @@ describe('renderOpenRouterRawDetail BaseLLM price enrichment', () => {
 
     const missingHtml = renderOpenRouterRawDetail(testGraph, missingPriceNode)
     expect(missingHtml).toContain('BaseLLM / NewAPI 补充价格')
-    expect(missingHtml).toContain('data-usd="0.0200"')
+    expect(missingHtml).toContain('data-usd="0.02"')
     expect(missingHtml).toContain('BaseLLM Provider')
 
     const canonicalHtml = renderOpenRouterRawDetail(testGraph, openRouterPricedNode)
-    expect(canonicalHtml).toContain('data-usd="1.2500"')
+    expect(canonicalHtml).toContain('data-usd="1.25"')
     expect(canonicalHtml).not.toContain('Cheap Proxy')
     expect(canonicalHtml).not.toContain('$0.01')
 
