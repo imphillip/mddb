@@ -272,7 +272,7 @@ function renderAuthorFilterGroup(options: Array<{ label: string; value: string; 
 }
 
 function featuredAuthorValues(): string[] {
-  return ['openai', 'anthropic', 'google', 'deepseek', 'z-ai', 'minimax', 'bytedance', 'moonshotai', 'xiaomi', 'x-ai']
+  return ['openai', 'qwen', 'anthropic', 'google', 'deepseek', 'z-ai', 'minimax', 'bytedance', 'moonshotai', 'xiaomi', 'x-ai']
 }
 
 function normalizedAuthorValue(author: string | null | undefined): string {
@@ -283,6 +283,7 @@ function normalizedAuthorValue(author: string | null | undefined): string {
 
 function authorLabel(value: string): string {
   const labels: Record<string, string> = {
+    qwen: 'Qwen',
     openai: 'OpenAI',
     anthropic: 'Anthropic',
     google: 'Google',
