@@ -143,13 +143,10 @@ function endpointProviderSlug(endpoint: Record<string, unknown>): string {
 function renderEndpointPricingCard(endpoint: Record<string, unknown>): string {
   const pricing = isRecord(endpoint.pricing) ? endpoint.pricing : {}
   const rows = [
-    priceRow('Context length', endpoint.context_length, ''),
-    priceRow('Max output tokens', endpoint.max_completion_tokens, ''),
-    priceRow('Input / prompt', pricing.prompt, 'USD/token'),
-    priceRow('Output / completion', pricing.completion, 'USD/token'),
-    priceRow('Cache read', pricing.input_cache_read, 'USD/token'),
+    priceRow('Input / prompt', pricing.prompt, 'USD/1M tokens'),
+    priceRow('Output / completion', pricing.completion, 'USD/1M tokens'),
+    priceRow('Cache read', pricing.input_cache_read, 'USD/1M tokens'),
     priceRow('Web search', pricing.web_search, 'USD/request'),
-    priceRow('Discount', pricing.discount, ''),
   ].filter(Boolean).join('')
   return `<div class="priceVariantCard"><dl class="priceList">${rows}</dl></div>`
 }
@@ -160,8 +157,20 @@ function priceRow(label: string, value: unknown, unit: string): string {
 }
 
 function formatPrice(value: unknown, unit: string): string {
-  const formatted = unit.startsWith('USD/') ? `$${escapeHtml(String(value))}` : escapeHtml(String(value))
-  return `<code>${formatted}</code>${unit ? ` <span class="muted">${escapeHtml(unit.replace('USD/', 'per '))}</span>` : ''}`
+  if (unit === 'USD/1M tokens') return `<code>${formatUsdPerMillionTokens(value)}</code> <span class="muted">per 1M tokens</span>`
+  if (unit === 'USD/request') return `<code>$${escapeHtml(String(value))}</code> <span class="muted">per request</span>`
+  return `<code>${escapeHtml(String(value))}</code>${unit ? ` <span class="muted">${escapeHtml(unit)}</span>` : ''}`
+}
+
+function formatUsdPerMillionTokens(value: unknown): string {
+  const numeric = Number(value)
+  if (!Number.isFinite(numeric)) return `$${escapeHtml(String(value))}`
+  return `$${formatCompactNumber(numeric * 1_000_000)}`
+}
+
+function formatCompactNumber(value: number): string {
+  if (Number.isInteger(value)) return String(value)
+  return value.toFixed(6).replace(/0+$/u, '').replace(/\.$/u, '')
 }
 
 function sourcePricingBlocks(node: OpenRouterRawNode): string {
