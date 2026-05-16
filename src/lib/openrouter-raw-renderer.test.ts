@@ -118,3 +118,19 @@ describe('renderOpenRouterRawDetail BaseLLM price enrichment', () => {
     expect(freeHtml).not.toContain('Free Route')
   })
 })
+
+describe('renderOpenRouterRawDetail release date fallback', () => {
+  it('uses a date snapshot suffix as Released when OpenRouter created is missing, without overriding existing created timestamps', () => {
+    const snapshotNode = sourceNode('openai/gpt-4o-2024-08-06', 'openai')
+    snapshotNode.raw.model = { id: snapshotNode.sourceId, pricing: {} }
+    const compactSnapshotNode = sourceNode('anthropic/claude-sonnet-4-20250514', 'anthropic')
+    compactSnapshotNode.raw.model = { id: compactSnapshotNode.sourceId, pricing: {} }
+    const datedNode = sourceNode('google/gemini-2.5-pro-preview-05-06', 'google')
+    datedNode.raw.model = { id: datedNode.sourceId, created: 1715558400, pricing: {} }
+    const testGraph: OpenRouterRawGraph = { ...graph(), nodes: [snapshotNode, compactSnapshotNode, datedNode] }
+
+    expect(renderOpenRouterRawDetail(testGraph, snapshotNode)).toContain('<span>Released</span><b>2024-08-06</b>')
+    expect(renderOpenRouterRawDetail(testGraph, compactSnapshotNode)).toContain('<span>Released</span><b>2025-05-14</b>')
+    expect(renderOpenRouterRawDetail(testGraph, datedNode)).toContain('<span>Released</span><b>2024-05-13</b>')
+  })
+})

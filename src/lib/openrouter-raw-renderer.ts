@@ -106,10 +106,23 @@ function modelDescription(node: OpenRouterRawNode): string {
 
 function modelReleasedDate(node: OpenRouterRawNode): string {
   const created = rawModelField(node, 'created')
-  if (created === '—') return '—'
+  if (created === '—') return snapshotDateFromModelId(node.sourceId) ?? snapshotDateFromModelId(node.modelId) ?? '—'
   const timestamp = Number(created)
   if (!Number.isFinite(timestamp)) return escapeHtml(created)
   return new Date(timestamp * 1000).toISOString().slice(0, 10)
+}
+
+function snapshotDateFromModelId(value: string): string | null {
+  const hyphenated = value.match(/(?:^|[-/])(20\d{2})-(\d{2})-(\d{2})(?:$|[-_:])/u)
+  if (hyphenated) return validIsoDate(`${hyphenated[1]}-${hyphenated[2]}-${hyphenated[3]}`)
+  const compact = value.match(/(?:^|[-/])(20\d{2})(\d{2})(\d{2})(?:$|[-_:])/u)
+  if (compact) return validIsoDate(`${compact[1]}-${compact[2]}-${compact[3]}`)
+  return null
+}
+
+function validIsoDate(value: string): string | null {
+  const date = new Date(`${value}T00:00:00.000Z`)
+  return Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== value ? null : value
 }
 
 function modelMaxOutputTokens(node: OpenRouterRawNode): string {
