@@ -143,7 +143,9 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
     const canonicalSlug = node.derived.canonicalSlug
     if (canonicalSlug && canonicalSlug !== node.sourceId) {
       const target = nodeIdForSource(canonicalSlug)
-      edges.push({ id: `edge:${node.id}:canonical_alias_of:${target}`, from: node.id, to: sourceNodeIds.has(target) ? target : node.id, type: 'alias_of', label: `canonical_slug: ${canonicalSlug}`, raw: { canonical_slug: canonicalSlug } })
+      if (sourceNodeIds.has(target)) {
+        edges.push({ id: `edge:${node.id}:canonical_alias_of:${target}`, from: node.id, to: target, type: 'alias_of', label: `canonical_slug: ${canonicalSlug}`, raw: { canonical_slug: canonicalSlug } })
+      }
     }
     const pagePermaslug = rawPagePermaslug(node.raw.page)
     if (pagePermaslug && pagePermaslug !== node.sourceId) {

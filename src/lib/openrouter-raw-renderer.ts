@@ -67,8 +67,8 @@ function authorFilterOptions(graph: OpenRouterRawGraph): Array<{ label: string; 
 }
 
 function modelPlazaSearchOnlyNodeIds(graph: OpenRouterRawGraph): Set<string> {
-  const resolvedEdgeTypes = new Set(['deployment_of', 'alias_of', 'snapshot_of', 'variant_of'])
-  return new Set(graph.edges.filter((edge) => resolvedEdgeTypes.has(edge.type)).map((edge) => edge.from))
+  const resolvedEdgeTypes = new Set(['deployment_of', 'alias_of', 'snapshot_of'])
+  return new Set(graph.edges.filter((edge) => edge.from !== edge.to && resolvedEdgeTypes.has(edge.type)).map((edge) => edge.from))
 }
 
 function renderAuthorFilterGroup(options: Array<{ label: string; value: string; count: number }>, total: number): string {
