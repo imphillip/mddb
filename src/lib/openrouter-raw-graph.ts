@@ -215,8 +215,8 @@ function makeSourceNode(sourceId: string, model: JsonRecord | undefined, endpoin
   const [namespace, ...rest] = sourceId.split('/')
   const modelIdWithinNamespace = rest.join('/') || sourceId
   const pageRaw = getPageRaw(page)
-  const author = String(model?.id ?? sourceId).split('/')[0] ?? null
-  const provider = normalizeSlug(namespace ?? 'unknown')
+  const author = cleanLeadingMarker(String(model?.id ?? sourceId).split('/')[0] ?? '') || null
+  const provider = normalizeSlug(cleanLeadingMarker(namespace ?? 'unknown'))
   const providerName = titleize(provider)
   const modelId = modelIdWithinNamespace
   const route = `/models/${encodeURIComponent(provider)}/${encodeURIComponent(modelId)}`
@@ -375,7 +375,11 @@ function compareUnknown(a: unknown, b: unknown): number {
 }
 
 function normalizeSlug(value: string): string {
-  return value.trim().toLowerCase().replace(/[^a-z0-9._-]+/gu, '-') || 'unknown'
+  return cleanLeadingMarker(value).trim().toLowerCase().replace(/[^a-z0-9._-]+/gu, '-') || 'unknown'
+}
+
+function cleanLeadingMarker(value: string): string {
+  return value.trim().replace(/^[~-]+/u, '')
 }
 
 function titleize(value: string): string {
