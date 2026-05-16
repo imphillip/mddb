@@ -13,12 +13,16 @@ const graph = buildOpenRouterRawGraphFromFiles({
 
 rmSync(outputDir, { recursive: true, force: true })
 
-writePage('index.html', renderOpenRouterRawHome(graph))
+writePage('index.html', renderRootRedirect())
 writePage('models/index.html', renderOpenRouterRawHome(graph))
 writePage('graph/openrouter.json', JSON.stringify(graph, null, 2))
 
 for (const node of graph.nodes) {
   writePage(`models/${node.urlProvider}/${node.urlModelId}/index.html`, renderOpenRouterRawDetail(graph, node))
+}
+
+function renderRootRedirect(): string {
+  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>正在跳转到模型列表 · mddb.dev</title><meta http-equiv="refresh" content="0;url=/models/"><link rel="canonical" href="/models/"><script>location.replace('/models/')</script></head><body><p>正在跳转到 <a href="/models/">/models/</a>。</p></body></html>`
 }
 
 function writePage(path: string, content: string): void {
