@@ -53,8 +53,27 @@ export type OpenRouterRawGraph = {
       exactSourceMatches: number
       modelIdOnlyMatches: number
       normalizedNameMatches: number
+      pricingBySourceId: Record<string, BaseLlmSupplementalPrice[]>
     }
   }
+}
+
+export type BaseLlmSupplementalPrice = {
+  providerName: string
+  sourceModelId: string
+  billingKind: 'token' | 'unit' | 'unknown'
+  pricePerMillionInput?: number | undefined
+  pricePerMillionOutput?: number | undefined
+  pricePerMillionCacheRead?: number | undefined
+  pricePerMillionCacheWrite?: number | undefined
+  ratioModel?: number | undefined
+  ratioCompletion?: number | undefined
+  ratioCache?: number | undefined
+  derivedInputPriceFromRatio?: number | undefined
+  derivedOutputPriceFromRatio?: number | undefined
+  unitPrice?: number | undefined
+  contextWindow: string
+  tags: string[]
 }
 
 export type OpenRouterRawNode = {
@@ -293,6 +312,7 @@ function buildModelsDevGraphEnrichment(modelsDevPayload: Record<string, JsonReco
 
 function buildBaseLlmGraphEnrichment(baseLlmPayload: { source?: string; models?: JsonRecord[] }, path: string | undefined, sourceNodes: OpenRouterRawNode[]): NonNullable<OpenRouterRawGraph['enrichment']>['baseLlm'] {
   const rows = Array.isArray(baseLlmPayload.models) ? baseLlmPayload.models : []
+  const pricingBySourceId = new Map<string, BaseLlmSupplementalPrice[]>()
   const sourceIds = new Set(sourceNodes.map((node) => node.sourceId.toLowerCase()))
   const modelIds = new Set(sourceNodes.map((node) => node.modelId.toLowerCase()))
   const normalizedModelIds = new Set(sourceNodes.map((node) => normalizedModelKey(node.modelId)))
@@ -313,6 +333,13 @@ function buildBaseLlmGraphEnrichment(baseLlmPayload: { source?: string; models?:
     if (sourceIds.has(modelNameLower)) exactSourceMatches += 1
     else if (modelIds.has(modelNameLower)) modelIdOnlyMatches += 1
     else if (normalizedModelIds.has(normalizedModelKey(modelName))) normalizedNameMatches += 1
+    const matchedSourceId = matchedBaseLlmSourceId(row, sourceNodes)
+    const supplementalPrice = matchedSourceId ? baseLlmSupplementalPrice(row) : null
+    if (matchedSourceId && supplementalPrice) {
+      const current = pricingBySourceId.get(matchedSourceId) ?? []
+      current.push(supplementalPrice)
+      pricingBySourceId.set(matchedSourceId, current)
+    }
   }
   return {
     path: path ?? '',
@@ -326,7 +353,95 @@ function buildBaseLlmGraphEnrichment(baseLlmPayload: { source?: string; models?:
     exactSourceMatches,
     modelIdOnlyMatches,
     normalizedNameMatches,
+    pricingBySourceId: Object.fromEntries(Array.from(pricingBySourceId.entries()).map(([sourceId, prices]) => [sourceId, prices.sort(compareBaseLlmPrices).slice(0, 12)])),
   }
+}
+
+function matchedBaseLlmSourceId(row: JsonRecord, sourceNodes: OpenRouterRawNode[]): string | null {
+  const modelName = String(row.model_name ?? '')
+  if (!modelName || isFreeRoute(modelName)) return null
+  const lower = modelName.toLowerCase()
+  const exact = sourceNodes.find((node) => node.sourceId.toLowerCase() === lower)
+  if (exact) return exact.sourceId
+  const modelIdOnly = sourceNodes.find((node) => node.modelId.toLowerCase() === lower)
+  if (modelIdOnly) return modelIdOnly.sourceId
+  return null
+}
+
+function baseLlmSupplementalPrice(row: JsonRecord): BaseLlmSupplementalPrice | null {
+  const tags = parseTags(String(row.tags ?? ''))
+  const pricePerMillionInput = numberOrUndefined(row.price_per_m_input)
+  const pricePerMillionOutput = numberOrUndefined(row.price_per_m_output)
+  const ratioModel = numberOrUndefined(row.ratio_model)
+  const ratioCompletion = numberOrUndefined(row.ratio_completion)
+  const unitPrice = numberOrUndefined(row.model_price)
+  const billingKind: BaseLlmSupplementalPrice['billingKind'] = unitPrice !== undefined ? 'unit' : pricePerMillionInput !== undefined || ratioModel !== undefined ? 'token' : 'unknown'
+  const derivedInputPriceFromRatio = ratioModel === undefined ? undefined : ratioToUsdPerMillion(ratioModel)
+  const derivedOutputPriceFromRatio = ratioModel === undefined || ratioCompletion === undefined ? undefined : roundMoney(ratioToUsdPerMillion(ratioModel) * ratioCompletion)
+  const effectiveInput = pricePerMillionInput ?? derivedInputPriceFromRatio
+  const effectiveOutput = pricePerMillionOutput ?? derivedOutputPriceFromRatio
+  if (billingKind === 'unknown') return null
+  if (billingKind === 'token' && !positiveNumber(effectiveInput) && !positiveNumber(effectiveOutput)) return null
+  if (billingKind === 'unit' && !positiveNumber(unitPrice)) return null
+  return {
+    providerName: String(row.vendor_name ?? 'unknown'),
+    sourceModelId: String(row.model_name ?? ''),
+    billingKind,
+    pricePerMillionInput,
+    pricePerMillionOutput,
+    pricePerMillionCacheRead: numberOrUndefined(row.price_per_m_cache_read),
+    pricePerMillionCacheWrite: numberOrUndefined(row.price_per_m_cache_write),
+    ratioModel,
+    ratioCompletion,
+    ratioCache: numberOrUndefined(row.ratio_cache),
+    derivedInputPriceFromRatio,
+    derivedOutputPriceFromRatio,
+    unitPrice,
+    contextWindow: contextWindowFromTags(tags),
+    tags,
+  }
+}
+
+function compareBaseLlmPrices(a: BaseLlmSupplementalPrice, b: BaseLlmSupplementalPrice): number {
+  return priceRank(a) - priceRank(b) || a.providerName.localeCompare(b.providerName) || a.contextWindow.localeCompare(b.contextWindow)
+}
+
+function priceRank(price: BaseLlmSupplementalPrice): number {
+  return price.pricePerMillionInput ?? price.derivedInputPriceFromRatio ?? price.unitPrice ?? Number.POSITIVE_INFINITY
+}
+
+function ratioToUsdPerMillion(ratio: number): number {
+  return roundMoney(ratio * 2)
+}
+
+function numberOrUndefined(value: unknown): number | undefined {
+  return typeof value === 'number' && Number.isFinite(value) ? value : undefined
+}
+
+function roundMoney(value: number): number {
+  return Number(value.toFixed(6))
+}
+
+function positiveNumber(value: number | undefined): boolean {
+  return typeof value === 'number' && Number.isFinite(value) && value > 0
+}
+
+function parseTags(value: string): string[] {
+  return value.trim() === '' ? [] : value.split(',').map((tag) => tag.trim()).filter(Boolean)
+}
+
+function contextWindowFromTags(tags: string[]): string {
+  const tag = tags.find((item) => /^\d+(?:\.\d+)?[KkMm]$/u.test(item))
+  if (!tag) return '—'
+  const match = tag.match(/^(\d+(?:\.\d+)?)([KkMm])$/u)
+  if (!match) return '—'
+  const amount = Number(match[1])
+  const scale = match[2]!.toLowerCase() === 'm' ? 1_000_000 : 1_000
+  return Math.round(amount * scale).toLocaleString('en-US')
+}
+
+function isFreeRoute(value: string): boolean {
+  return /(^|:)free$/iu.test(value)
 }
 
 function normalizedModelKey(value: string): string {

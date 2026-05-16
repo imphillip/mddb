@@ -1,4 +1,4 @@
-import type { OpenRouterRawEdge, OpenRouterRawGraph, OpenRouterRawNode } from './openrouter-raw-graph.js'
+import type { BaseLlmSupplementalPrice, OpenRouterRawEdge, OpenRouterRawGraph, OpenRouterRawNode } from './openrouter-raw-graph.js'
 
 const css = String.raw`
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap');
@@ -32,7 +32,7 @@ function modelReleaseTimestamp(node: OpenRouterRawNode): number {
 export function renderOpenRouterRawDetail(graph: OpenRouterRawGraph, node: OpenRouterRawNode): string {
   const outEdges = graph.edges.filter((edge) => edge.from === node.id)
   const inEdges = graph.edges.filter((edge) => edge.to === node.id && edge.from !== node.id)
-  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/models/">← 返回模型广场</a><div class="eyebrow">Author · ${escapeHtml(node.derived.author ?? '—')}</div><h1>${escapeHtml(node.displayName)}</h1><div class="modelIdHero">Model ID ${renderModelTagCopy(node.modelId)}</div><div hidden>${modelDescription(node)}</div>${renderHeroRelations(graph, node, outEdges, inEdges)}</div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#spec">规格</a><a href="#pricing">价格</a><a href="#source">数据来源与源数据</a></nav>${renderSpecSection(node)}${renderPricingSection(node)}${renderSourceSection(node, outEdges, inEdges)}</article></div></main>`
+  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/models/">← 返回模型广场</a><div class="eyebrow">Author · ${escapeHtml(node.derived.author ?? '—')}</div><h1>${escapeHtml(node.displayName)}</h1><div class="modelIdHero">Model ID ${renderModelTagCopy(node.modelId)}</div><div hidden>${modelDescription(node)}</div>${renderHeroRelations(graph, node, outEdges, inEdges)}</div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#spec">规格</a><a href="#pricing">价格</a><a href="#source">数据来源与源数据</a></nav>${renderSpecSection(node)}${renderPricingSection(graph, node)}${renderSourceSection(node, outEdges, inEdges)}</article></div></main>`
   return page(`${node.displayName} · mddb.dev`, body, 'models')
 }
 
@@ -130,9 +130,36 @@ function rawModelArray(node: OpenRouterRawNode, key: string): string[] {
   return node.raw.model[key].map(String)
 }
 
-function renderPricingSection(node: OpenRouterRawNode): string {
+function renderPricingSection(graph: OpenRouterRawGraph, node: OpenRouterRawNode): string {
   const endpointPricing = endpointPricingCards(node)
-  return `<section id="pricing" class="panel"><h2>价格</h2>${endpointPricing || '<p class="muted">无结构化 provider pricing；如本节点为 alias/snapshot/deployment，请先看上方关联模型跳转到 anchor。</p>'}</section>`
+  const supplementalPricing = endpointPricing ? '' : baseLlmSupplementalPricingCards(graph, node)
+  return `<section id="pricing" class="panel"><h2>价格</h2>${endpointPricing || supplementalPricing || '<p class="muted">无结构化 provider pricing；如本节点为 alias/snapshot/deployment，请先看上方关联模型跳转到 anchor。</p>'}</section>`
+}
+
+function baseLlmSupplementalPricingCards(graph: OpenRouterRawGraph, node: OpenRouterRawNode): string {
+  if (node.sourceId.toLowerCase().endsWith(':free')) return ''
+  const prices = graph.enrichment?.baseLlm?.pricingBySourceId?.[node.sourceId] ?? []
+  const usable = prices.filter((price) => price.billingKind !== 'unknown')
+  if (usable.length === 0) return ''
+  return `<div class="priceVariantGrid"><div class="muted">BaseLLM / NewAPI 补充价格；仅用于 OpenRouter 缺失结构化价格时，不覆盖 OpenRouter 官方/endpoint 价格。</div>${usable.map(renderBaseLlmPricingCard).join('')}</div>`
+}
+
+function renderBaseLlmPricingCard(price: BaseLlmSupplementalPrice): string {
+  const rows = price.billingKind === 'unit' ? [
+    priceRow('Request / unit', price.unitPrice, 'USD/direct'),
+  ] : [
+    priceRow('Input / prompt', price.pricePerMillionInput ?? price.derivedInputPriceFromRatio, 'USD/direct_per_1M'),
+    priceRow('Output / completion', price.pricePerMillionOutput ?? price.derivedOutputPriceFromRatio, 'USD/direct_per_1M'),
+    priceRow('Cache read', price.pricePerMillionCacheRead, 'USD/direct_per_1M'),
+    priceRow('Cache write', price.pricePerMillionCacheWrite, 'USD/direct_per_1M'),
+  ]
+  const meta = [
+    `provider ${price.providerName}`,
+    `source ${price.sourceModelId}`,
+    `context ${price.contextWindow}`,
+    ...price.tags.map((tag) => `tag ${tag}`),
+  ].map((item) => `<span class="badge">${escapeHtml(item)}</span>`).join('')
+  return `<div class="priceVariantCard"><h3>BaseLLM / NewAPI 补充价格 · ${escapeHtml(price.providerName)}</h3><dl class="priceList">${rows.filter(Boolean).join('')}</dl><div class="statusLine">${meta}</div></div>`
 }
 
 function endpointPricingCards(node: OpenRouterRawNode): string {
@@ -169,7 +196,9 @@ function priceRow(label: string, value: unknown, unit: string): string {
 
 function formatPrice(value: unknown, unit: string): string {
   if (unit === 'USD/1M tokens') return `<code>${formatUsdPerMillionTokens(value)}</code> <span class="muted">per 1M tokens</span>`
+  if (unit === 'USD/direct_per_1M') return `<code>$${formatCompactNumber(Number(value))}</code> <span class="muted">per 1M tokens</span>`
   if (unit === 'USD/request') return `<code>$${escapeHtml(String(value))}</code> <span class="muted">per request</span>`
+  if (unit === 'USD/direct') return `<code>$${escapeHtml(String(value))}</code> <span class="muted">per request</span>`
   return `<code>${escapeHtml(String(value))}</code>${unit ? ` <span class="muted">${escapeHtml(unit)}</span>` : ''}`
 }
 
