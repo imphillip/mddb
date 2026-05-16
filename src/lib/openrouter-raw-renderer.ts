@@ -14,7 +14,7 @@ export function renderOpenRouterRawHome(graph: OpenRouterRawGraph): string {
   const searchOnlyNodeIds = modelPlazaSearchOnlyNodeIds(graph)
   const visibleRows = graph.nodes.filter((node) => !searchOnlyNodeIds.has(node.id)).length
   const rows = graph.nodes.slice().sort(compareNodesByReleaseDesc).map((node) => renderModelRow(node, searchOnlyNodeIds.has(node.id))).join('')
-  const body = `<main class="modelsShell"><aside class="filterPanel" aria-label="模型筛选"><div class="filterTitle">筛选</div>${renderAuthorFilterGroup(authorOptions, visibleRows)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>模型广场</h1></div></div><div class="listToolbar"><div class="listCount"><b id="visibleCount">${visibleRows}</b> items</div><div class="quickFilters" aria-label="快速筛选"><button class="quickFilter active" type="button" data-status-filter="all">全部</button><button class="quickFilter" type="button" data-status-filter="api">API</button><button class="quickFilter" type="button" data-status-filter="page_only">Page-only</button><button class="quickFilter" type="button" data-status-filter="endpoint">Endpoints</button></div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small>/M tokens</small></th><th>输出<br><small>/M tokens</small></th><th>读取<br><small>/M tokens</small></th><th>发布时间</th></tr></thead><tbody id="rows">${rows}</tbody></table></div><script>${modelFilterScript()}</script></section></main>`
+  const body = `<main class="modelsShell"><aside class="filterPanel" aria-label="模型筛选">${renderAuthorFilterGroup(authorOptions, visibleRows)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>模型广场</h1></div></div><div class="listToolbar"><div class="listCount"><b id="visibleCount">${visibleRows}</b> items</div><div class="quickFilters" aria-label="模态筛选"><button class="quickFilter active" type="button" data-output-filter="all">全部</button><button class="quickFilter" type="button" data-output-filter="text">Text</button><button class="quickFilter" type="button" data-output-filter="image">Image</button><button class="quickFilter" type="button" data-output-filter="embeddings">Embedding</button><button class="quickFilter" type="button" data-output-filter="audio">Audio</button><button class="quickFilter" type="button" data-output-filter="video">Video</button><button class="quickFilter" type="button" data-output-filter="rerank">Rerank</button><button class="quickFilter" type="button" data-output-filter="speech">Speech</button><button class="quickFilter" type="button" data-output-filter="transcription">Transcription</button></div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small>/M tokens</small></th><th>输出<br><small>/M tokens</small></th><th>读取<br><small>/M tokens</small></th><th>发布时间</th></tr></thead><tbody id="rows">${rows}</tbody></table></div><script>${modelFilterScript()}</script></section></main>`
   return page('模型广场 · mddb.dev', body, 'models')
 }
 
@@ -204,7 +204,7 @@ function renderSourceSection(node: OpenRouterRawNode, outEdges: OpenRouterRawEdg
 
 function renderModelRow(node: OpenRouterRawNode, searchOnly = false): string {
   const modalities = `${node.derived.inputModalities.join(' · ') || '—'} → ${node.derived.outputModalities.join(' · ') || '—'}`
-  return `<tr data-model-row data-search-only="${searchOnly ? 'true' : 'false'}" data-model-status="${escapeHtml(node.status)}" data-model-provider="${escapeHtml(node.provider)}" data-model-author="${escapeHtml(node.derived.author ?? '')}" data-model-name="${escapeHtml(`${node.displayName} ${node.provider} ${node.modelId} ${node.sourceId} ${node.derived.author ?? ''}`.toLowerCase())}"><td><div class="modelName">${renderLogoIcon(undefined, `${node.providerName} logo`, node.providerName.slice(0, 1), 'modelIcon')}<div><a class="modelLink" href="${escapeHtml(node.route)}/">${escapeHtml(node.displayName)}</a><div class="modelSub">${renderModelTagCopy(`${node.provider}/${node.modelId}`)}</div><div class="modelSub rawSource">${escapeHtml(node.derived.author ?? '—')} · ${escapeHtml(modalities)}</div></div></div></td><td class="mono">${escapeHtml(modelContextLength(node))}</td><td class="mono">${modelPriceCell(node, 'prompt')}</td><td class="mono">${modelPriceCell(node, 'completion')}</td><td class="mono">${modelPriceCell(node, 'input_cache_read')}</td><td class="mono">${escapeHtml(modelReleasedDate(node))}</td></tr>`
+  return `<tr data-model-row data-search-only="${searchOnly ? 'true' : 'false'}" data-model-status="${escapeHtml(node.status)}" data-model-provider="${escapeHtml(node.provider)}" data-model-author="${escapeHtml(normalizedAuthorValue(node.derived.author))}" data-output-modalities="${escapeHtml(node.derived.outputModalities.join(' ').toLowerCase())}" data-model-name="${escapeHtml(`${node.displayName} ${node.provider} ${node.modelId} ${node.sourceId} ${node.derived.author ?? ''}`.toLowerCase())}"><td><div class="modelName">${renderLogoIcon(undefined, `${node.providerName} logo`, node.providerName.slice(0, 1), 'modelIcon')}<div><a class="modelLink" href="${escapeHtml(node.route)}/">${escapeHtml(node.displayName)}</a><div class="modelSub">${renderModelTagCopy(`${node.provider}/${node.modelId}`)}</div><div class="modelSub rawSource">${escapeHtml(node.derived.author ?? '—')} · ${escapeHtml(modalities)}</div></div></div></td><td class="mono">${escapeHtml(modelContextLength(node))}</td><td class="mono">${modelPriceCell(node, 'prompt')}</td><td class="mono">${modelPriceCell(node, 'completion')}</td><td class="mono">${modelPriceCell(node, 'input_cache_read')}</td><td class="mono">${escapeHtml(modelReleasedDate(node))}</td></tr>`
 }
 
 function modelPriceCell(node: OpenRouterRawNode, key: string): string {
@@ -242,12 +242,20 @@ function authorFilterOptions(graph: OpenRouterRawGraph): Array<{ label: string; 
   const searchOnlyNodeIds = modelPlazaSearchOnlyNodeIds(graph)
   for (const node of graph.nodes) {
     if (searchOnlyNodeIds.has(node.id)) continue
-    const author = node.derived.author ?? 'unknown'
-    const current = counts.get(author)
-    if (current === undefined) counts.set(author, { label: author, value: author, count: 1 })
+    const value = normalizedAuthorValue(node.derived.author)
+    const label = authorLabel(value)
+    const current = counts.get(value)
+    if (current === undefined) counts.set(value, { label, value, count: 1 })
     else current.count += 1
   }
-  return Array.from(counts.values()).sort((a, b) => b.count - a.count || a.label.localeCompare(b.label)).slice(0, 40)
+  const featured = featuredAuthorValues()
+  const rows = Array.from(counts.values()).sort((a, b) => {
+    const ai = featured.indexOf(a.value)
+    const bi = featured.indexOf(b.value)
+    if (ai !== -1 || bi !== -1) return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi)
+    return b.count - a.count || a.label.localeCompare(b.label)
+  })
+  return rows
 }
 
 function modelPlazaSearchOnlyNodeIds(graph: OpenRouterRawGraph): Set<string> {
@@ -256,7 +264,37 @@ function modelPlazaSearchOnlyNodeIds(graph: OpenRouterRawGraph): Set<string> {
 }
 
 function renderAuthorFilterGroup(options: Array<{ label: string; value: string; count: number }>, total: number): string {
-  return `<div class="filterGroup"><div class="filterHead"><span>Author</span><span>⌄</span></div>${renderFilterOption('author', { label: 'All', value: 'all', count: total }, true)}${options.map((option) => renderFilterOption('author', option)).join('')}</div>`
+  const featured = new Set(featuredAuthorValues())
+  const primary = options.filter((option) => featured.has(option.value))
+  const other = options.filter((option) => !featured.has(option.value))
+  const others = other.length > 0 ? `<details class="filterMore"><summary>其他厂牌 <small>${other.reduce((sum, option) => sum + option.count, 0)}</small></summary>${other.map((option) => renderFilterOption('author', option)).join('')}</details>` : ''
+  return `<div class="filterGroup"><div class="filterHead"><span>厂牌</span><span>⌄</span></div>${renderFilterOption('author', { label: '全部', value: 'all', count: total }, true)}${primary.map((option) => renderFilterOption('author', option)).join('')}${others}</div>`
+}
+
+function featuredAuthorValues(): string[] {
+  return ['openai', 'anthropic', 'google', 'deepseek', 'z-ai', 'minimax', 'bytedance', 'moonshotai', 'xiaomi', 'x-ai']
+}
+
+function normalizedAuthorValue(author: string | null | undefined): string {
+  const raw = (author ?? 'unknown').trim().toLowerCase() || 'unknown'
+  if (raw === 'bytedance-seed') return 'bytedance'
+  return raw
+}
+
+function authorLabel(value: string): string {
+  const labels: Record<string, string> = {
+    openai: 'OpenAI',
+    anthropic: 'Anthropic',
+    google: 'Google',
+    deepseek: 'DeepSeek',
+    'z-ai': 'Z.ai',
+    minimax: 'MiniMax',
+    bytedance: 'ByteDance',
+    moonshotai: 'Moonshot',
+    xiaomi: 'Xiaomi',
+    'x-ai': 'xAI',
+  }
+  return labels[value] ?? value
 }
 
 function renderFilterOption(group: string, option: { label: string; value: string; count: number }, checked = false): string {
@@ -309,11 +347,11 @@ buttons.forEach(button=>button.addEventListener('click',async()=>{
 function modelFilterScript(): string {
   return String.raw`(function(){
 const filterInputs=Array.from(document.querySelectorAll('[data-filter-group]'));
-const statusButtons=Array.from(document.querySelectorAll('[data-status-filter]'));
+const outputButtons=Array.from(document.querySelectorAll('[data-output-filter]'));
 const modelRows=Array.from(document.querySelectorAll('[data-model-row]'));
 const q=document.getElementById('q');
 const visibleCount=document.getElementById('visibleCount');
-let statusFilter='all';
+let outputFilter='all';
 function selected(group){const input=filterInputs.find(input=>input.dataset.filterGroup===group&&input.checked);return input?input.dataset.filterValue:'all'}
 function applyModelFilters(){
   const author=selected('author');
@@ -322,17 +360,17 @@ function applyModelFilters(){
   modelRows.forEach(row=>{
     const authorOk=author==='all'||author===(row.dataset.modelAuthor||'');
     const searchOnly=row.dataset.searchOnly==='true';
-    const statusOk=statusFilter==='all'||(statusFilter==='endpoint'?searchOnly:statusFilter===(row.dataset.modelStatus||''));
+    const outputOk=outputFilter==='all'||(row.dataset.outputModalities||'').split(/\s+/).includes(outputFilter);
     const queryOk=!query||(row.dataset.modelName||row.innerText||'').toLowerCase().includes(query);
-    const visibilityOk=!searchOnly||!!query||statusFilter==='endpoint';
-    const visible=authorOk&&statusOk&&queryOk&&visibilityOk;
+    const visibilityOk=!searchOnly||!!query;
+    const visible=authorOk&&outputOk&&queryOk&&visibilityOk;
     row.hidden=!visible;
     if(visible) count+=1;
   });
   if(visibleCount) visibleCount.textContent=String(count);
 }
 filterInputs.forEach(input=>input.addEventListener('change',applyModelFilters));
-statusButtons.forEach(button=>button.addEventListener('click',()=>{statusFilter=button.dataset.statusFilter||'all';statusButtons.forEach(item=>item.classList.toggle('active',item===button));applyModelFilters();}));
+outputButtons.forEach(button=>button.addEventListener('click',()=>{outputFilter=button.dataset.outputFilter||'all';outputButtons.forEach(item=>item.classList.toggle('active',item===button));applyModelFilters();}));
 if(q) q.addEventListener('input',applyModelFilters);
 window.applyModelFilters=applyModelFilters;
 applyModelFilters();
