@@ -1,6 +1,6 @@
 {
   "source": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
-  "fetchedAt": "2026-05-16T20:41:42.788Z",
+  "fetchedAt": "2026-05-16T22:18:50.494Z",
   "baseRule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens",
   "models": [
     {
