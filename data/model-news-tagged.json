@@ -1,7 +1,244 @@
 {
-  "generatedAt": "2026-05-17T08:41:55.899Z",
+  "generatedAt": "2026-05-17T14:48:13.280Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
+    {
+      "id": "cmp9vjiw50u1lslnz9frgznel",
+      "title": "Apple Silicon本地运行LLM成本高于云端API",
+      "title_en": "Apple Silicon 的成本高于 OpenRouter",
+      "url": "https://www.williamangel.net/blog/2026/05/17/offline-llm-energy-use.html",
+      "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+      "publishedAt": "2026-05-17T14:29:53.989Z",
+      "summary": "分析显示，在Apple Silicon芯片（如M2 Ultra）上本地运行Llama 3.1 405B等大型语言模型，其成本高于使用OpenRouter等云端API服务。具体而言，本地运行每百万tokens成本约为0.73美元，而通过OpenRouter仅需0.59美元，成本高出约24%。这突显了对于大规模模型推理，云端服务目前可能比高端本地硬件更具经济性。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "openrouter"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Openrouter"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "openrouter": "/models/openrouter/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9urjzb0twnslnzmfve1876",
+      "title": "手机端小模型展现巨大潜力",
+      "title_en": "So much possibilities for on-device small models. Here @adrgrondin is running Google's Gemma 4 E2B …",
+      "url": "https://x.com/rohanpaul_ai/status/2056010095562256696",
+      "source": "X：Rohan Paul (@rohanpaul_ai)",
+      "publishedAt": "2026-05-17T13:53:00.000Z",
+      "summary": "设备端小模型拥有如此多的可能性。\n\n这里 @adrgrondin 正在 iPhone 17 Pro 上运行 Google 的 Gemma 4 E2B。\n针对 Apple Silicon 优化的 MLX 实现约 40tk/s 的速度\n在移动端实现 SOTA 编程与数学能力，支持 128K 上下文。完全离线运行并具备思考模式。",
+      "category": "industry",
+      "tags": {
+        "providers": [
+          "google"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Google"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "google": "/models/google/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9qh7iv0sy3slnzw9f4rwz6",
+      "title": "谷歌新论文提出Nexus框架：预测需要事件背景，而非仅依赖历史数据",
+      "title_en": "New Google paper： A forecast needs context， not just history. Some patterns are caused by events， n…",
+      "url": "https://x.com/rohanpaul_ai/status/2055978135246807138",
+      "source": "X：Rohan Paul (@rohanpaul_ai)",
+      "publishedAt": "2026-05-17T11:46:00.000Z",
+      "summary": "谷歌新论文提出Nexus框架，将预测重构为推理问题，强调结合事件背景而非仅依赖历史数据。该框架采用多智能体分工：一个从文本中提取清晰事件时间线，一个分析宏观态势，另一个追踪局部冲击，最后由合成器结合时间序列进行校准。在Zillow的测试中，基于Claude的某个版本将平均绝对百分比误差降低了86.6%。研究表明，结构化的上下文能帮助语言模型有效利用信息而不丢失时间序列特性。尽管当前证据仅涵盖房地产数据和少数股票，但方向明确：未来预测不仅会推断曲线，还将解释曲线变动的原因。",
+      "category": "paper",
+      "tags": {
+        "providers": [
+          "google"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Google"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "google": "/models/google/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9pk4xq0spnslnzcwnab6yv",
+      "title": "无预算约束，OpenClaw 团队一个月烧掉 130 万美元 API 费用",
+      "title_en": null,
+      "url": "https://www.ithome.com/0/951/549.htm",
+      "source": "IT之家（RSS）",
+      "publishedAt": "2026-05-17T11:40:43.000Z",
+      "summary": "奥地利开发者彼得・施泰因贝格尔披露，其领导的OpenClaw项目在30天内消耗OpenAI API费用高达130万美元，涉及760万次请求和6030亿词元。这笔费用由约100个Codex实例产生，用于自动化代码审核、漏洞修复等任务。施泰因贝格尔解释，这是\"极速模式\"下的结果，关闭后成本可降至约30万美元。该实验旨在无预算约束下探索AI辅助软件开发的极限，所有成果保持开源。",
+      "category": "industry",
+      "tags": {
+        "providers": [
+          "openai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "OpenAI"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "openai": "/models/openai/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9olpf00shzslnzglege2vo",
+      "title": "Grok Build一夜巨变，性能提升十倍",
+      "title_en": "Grok Build is improving like lightning",
+      "url": "https://x.com/elonmusk/status/2055965456146821584",
+      "source": "X：Elon Musk (@elonmusk, xAI)",
+      "publishedAt": "2026-05-17T10:55:37.000Z",
+      "summary": "用户@morganlinton分享了对Grok Build的体验更新。xAI团队在一夜之间进行了更新，使该工具的性能得到显著提升。此前，Grok Build仅能运行一两分钟，更新后任务可以持续运行直至完成。用户认为团队可能彻夜工作，使得Grok Build在一天内变得比之前好十倍，其测试版评分也从6/10跃升至8/10。用户预计接下来一周的发展将非常迅猛。",
+      "category": "ai-products",
+      "tags": {
+        "providers": [
+          "xai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "xAI"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "xai": "/models/xai/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9n1c040s55slnzuroftb4b",
+      "title": "微软AI CEO预测18个月内AI自动化所有白领工作",
+      "title_en": "Mustafa Suleyman says 18 months until AI automates all white-collar work. Microsoft AI CEO Mustafa …",
+      "url": "https://x.com/kimmonismus/status/2055952702908355012",
+      "source": "X：Kim (@kimmonismus)",
+      "publishedAt": "2026-05-17T10:04:56.000Z",
+      "summary": "微软AI CEO Mustafa Suleyman预测，AI将在18个月内实现人类水平的性能，自动化大多数专业任务，包括会计、法律、营销和项目管理。他在Fortune采访中指出，所有涉及\"坐在电脑前\"的白领工作都将被AI完全取代。Suleyman透露自己的使命是构建\"超级智能\"，并展望未来创建新AI模型将像制作播客或写博客一样便捷。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "microsoft"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Microsoft"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "microsoft": "/models/microsoft/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9lt3k40rvcslnz7gxfhcvd",
+      "title": "Greg Brockman 整合 OpenAI 产品团队以构建\"智能体未来\"",
+      "title_en": "Greg Brockman consolidates OpenAI's product teams to build an \"agentic future\"",
+      "url": "https://the-decoder.com/greg-brockman-consolidates-openais-product-teams-to-build-an-agentic-future",
+      "source": "The Decoder：AI News（RSS）",
+      "publishedAt": "2026-05-17T09:51:41.000Z",
+      "summary": "OpenAI 正将 ChatGPT、代码智能体 Codex 和开发者 API 合并为一个由 Codex 负责人 Thibault Sottiaux 领导的产品团队。联合创始人 Greg Brockman 正式接管产品战略，目标是打造一个集成 Atlas 浏览器的\"超级应用\"，以推动其\"智能体化未来\"的愿景。此次整合旨在统一核心产品线，强化各服务间的协同，为开发者和用户提供更一体化的智能体体验。",
+      "category": "industry",
+      "tags": {
+        "providers": [
+          "openai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "OpenAI"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "openai": "/models/openai/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9l4a9v0rq0slnzxfngd0y1",
+      "title": "阿里研究展示AI新威胁：多智能体协作可自动生成软件漏洞利用代码",
+      "title_en": "Alibaba's published a paper giving a strong example of what Sundar Pichai is warning about. Shows A…",
+      "url": "https://x.com/rohanpaul_ai/status/2055943658080514243",
+      "source": "X：Rohan Paul (@rohanpaul_ai)",
+      "publishedAt": "2026-05-17T09:29:00.000Z",
+      "summary": "阿里巴巴的研究论文表明，AI正从发现漏洞转向实际生成可利用的攻击代码。其提出的VulnSage框架采用多智能体协作工作流，将过程分解为数据流提取、自然语言约束重写、候选攻击生成及沙箱验证与反思等步骤。该系统的关键突破在于将代码理解转化为对代码使用方式的推理，从而能在更复杂、现实的软件上成功生成漏洞利用。评估显示，其在SecBench.js上的成功率比传统工具高34.64%，并在真实软件包中发现146个零日漏洞，印证了谷歌CEO关于前沿模型可能颠覆软件安全的警告。",
+      "category": "paper",
+      "tags": {
+        "providers": [
+          "alibaba"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Alibaba"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "alibaba": "/models/alibaba/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9kqiar0rluslnz96c0unol",
+      "title": "Mistral CEO Arthur Mensch 警告法国勿让 Anthropic 的 Mythos 扫描军事代码库",
+      "title_en": "Mistral CEO Arthur Mensch warns France against letting Anthropic's Mythos scan military code bases",
+      "url": "https://the-decoder.com/mistral-ceo-arthur-mensch-warns-france-against-letting-anthropics-mythos-scan-military-code-bases",
+      "source": "The Decoder：AI News（RSS）",
+      "publishedAt": "2026-05-17T09:15:30.000Z",
+      "summary": "Mistral 公司 CEO Arthur Mensch 就欧洲日益增长的网络安全依赖发出警告，明确反对法国允许美国 Anthropic 公司的 AI 模型 Mythos 扫描其军事代码库。他指出，包括 Mistral 自身模型在内的现代 AI 具备策划攻击和提供漏洞利用建议的能力。Mensch 排除了出售公司的可能性，并表示 Mistral 的目标是进行首次公开募股。",
+      "category": "industry",
+      "tags": {
+        "providers": [
+          "anthropic",
+          "mistral"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Anthropic",
+          "Mistral"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "anthropic": "/models/anthropic/",
+        "mistral": "/models/mistral/"
+      },
+      "modelRoutes": {}
+    },
     {
       "id": "cmp9iqwh20r68slnzrkitfo82",
       "title": "2026年科技盛会之旅：亲历AI与自动驾驶前沿",
@@ -25,6 +262,88 @@
         ],
         "models": []
       },
+      "providerRoutes": {
+        "google": "/models/google/",
+        "nvidia": "/models/nvidia/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9iz3pm0r8fslnz5hy4hbp7",
+      "title": "DeepMind研究揭示AI智能体核心安全风险在于其交互环境",
+      "title_en": "Google DeepMind's paper shows that the real security problem for AI agents is not just the model， bu…",
+      "url": "https://x.com/rohanpaul_ai/status/2055925035618160824",
+      "source": "X：Rohan Paul (@rohanpaul_ai)",
+      "publishedAt": "2026-05-17T08:15:00.000Z",
+      "summary": "Google DeepMind论文指出，AI智能体的安全威胁不仅源于模型本身，更在于其实时交互的信息环境。研究首次系统阐述了如何将网络武器化以攻击自主智能体，并提出了针对感知、推理、记忆、行动等维度的\"AI智能体陷阱\"分类法。关键发现是，对智能体构成威胁的网页无需呈现恶意外观，因为它们可能解析人类不可见的隐藏内容。一旦引入RAG等记忆机制，潜伏的记忆污染攻击成功率可超过80%。研究强调，当智能体能在推理时摄取网络信息，每个页面、文档和记忆写入都成为了安全边界的一部分。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "google"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Google"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "google": "/models/google/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9iz3pm0r8gslnzdyksygfq",
+      "title": "谷歌CEO称前沿模型或能破解多数软件",
+      "title_en": "Google CEO Sundar Pichai on current frontier model's ability to break the security of almost all cur…",
+      "url": "https://x.com/rohanpaul_ai/status/2055923917546745907",
+      "source": "X：Rohan Paul (@rohanpaul_ai)",
+      "publishedAt": "2026-05-17T08:10:33.000Z",
+      "summary": "谷歌CEO Sundar Pichai谈当前前沿模型破解几乎所有现有软件安全的能力。\n\n\"这些模型几乎肯定会破解现有的所有软件，也许已经做到了，我们还不确定。\"",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "google"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Google"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "google": "/models/google/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9j4ej70r9gslnzxhf4w6oc",
+      "title": "DeepSeek-V4写作人工率100%引用户热议",
+      "title_en": "我都说了deepseek-v4写出来的人工率100% 黑子出来说话，我可什么都没做，都是AI写的",
+      "url": "https://x.com/Astronaut_1216/status/2055922951841591360",
+      "source": "X：Astronaut (@Astronaut_1216)",
+      "publishedAt": "2026-05-17T08:06:43.000Z",
+      "summary": "deepseek-v4生成的内容经朱雀AI检测显示人工率100%，用户以此反驳质疑者，强调内容全由AI创作。引用推文指出deepseek是内容创作的高效工具，仅花费两毛钱就完成五个稿件，效果出色，检测结果同样为人工率100%，凸显其低成本与高质量特性。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "deepseek"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "DeepSeek"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "deepseek": "/models/deepseek/"
+      },
       "modelRoutes": {}
     },
     {
@@ -47,6 +366,9 @@
           "Nvidia"
         ],
         "models": []
+      },
+      "providerRoutes": {
+        "nvidia": "/models/nvidia/"
       },
       "modelRoutes": {}
     },
@@ -75,6 +397,9 @@
           "gpt-4"
         ]
       },
+      "providerRoutes": {
+        "openai": "/models/openai/"
+      },
       "modelRoutes": {
         "gpt-4": "/models/openai/gpt-4/"
       }
@@ -102,6 +427,10 @@
         ],
         "models": []
       },
+      "providerRoutes": {
+        "anthropic": "/models/anthropic/",
+        "deepseek": "/models/deepseek/"
+      },
       "modelRoutes": {}
     },
     {
@@ -124,6 +453,9 @@
           "xAI"
         ],
         "models": []
+      },
+      "providerRoutes": {
+        "xai": "/models/xai/"
       },
       "modelRoutes": {}
     },
@@ -148,6 +480,9 @@
         ],
         "models": []
       },
+      "providerRoutes": {
+        "openai": "/models/openai/"
+      },
       "modelRoutes": {}
     },
     {
@@ -170,6 +505,9 @@
           "Anthropic"
         ],
         "models": []
+      },
+      "providerRoutes": {
+        "anthropic": "/models/anthropic/"
       },
       "modelRoutes": {}
     },
@@ -194,6 +532,9 @@
         ],
         "models": []
       },
+      "providerRoutes": {
+        "anthropic": "/models/anthropic/"
+      },
       "modelRoutes": {}
     },
     {
@@ -216,6 +557,9 @@
           "xAI"
         ],
         "models": []
+      },
+      "providerRoutes": {
+        "xai": "/models/xai/"
       },
       "modelRoutes": {}
     },
@@ -240,6 +584,9 @@
         ],
         "models": []
       },
+      "providerRoutes": {
+        "openai": "/models/openai/"
+      },
       "modelRoutes": {}
     },
     {
@@ -262,6 +609,9 @@
           "Qwen"
         ],
         "models": []
+      },
+      "providerRoutes": {
+        "qwen": "/models/qwen/"
       },
       "modelRoutes": {}
     },
@@ -286,6 +636,9 @@
         ],
         "models": []
       },
+      "providerRoutes": {
+        "openai": "/models/openai/"
+      },
       "modelRoutes": {}
     },
     {
@@ -309,6 +662,9 @@
         ],
         "models": []
       },
+      "providerRoutes": {
+        "openai": "/models/openai/"
+      },
       "modelRoutes": {}
     },
     {
@@ -331,6 +687,9 @@
           "OpenAI"
         ],
         "models": []
+      },
+      "providerRoutes": {
+        "openai": "/models/openai/"
       },
       "modelRoutes": {}
     },
@@ -357,6 +716,10 @@
         ],
         "models": []
       },
+      "providerRoutes": {
+        "anthropic": "/models/anthropic/",
+        "openai": "/models/openai/"
+      },
       "modelRoutes": {}
     },
     {
@@ -379,6 +742,9 @@
           "OpenAI"
         ],
         "models": []
+      },
+      "providerRoutes": {
+        "openai": "/models/openai/"
       },
       "modelRoutes": {}
     },
@@ -403,6 +769,9 @@
         ],
         "models": []
       },
+      "providerRoutes": {
+        "openai": "/models/openai/"
+      },
       "modelRoutes": {}
     },
     {
@@ -426,6 +795,9 @@
         ],
         "models": []
       },
+      "providerRoutes": {
+        "google": "/models/google/"
+      },
       "modelRoutes": {}
     },
     {
@@ -448,6 +820,9 @@
           "OpenAI"
         ],
         "models": []
+      },
+      "providerRoutes": {
+        "openai": "/models/openai/"
       },
       "modelRoutes": {}
     },
@@ -474,6 +849,10 @@
         ],
         "models": []
       },
+      "providerRoutes": {
+        "anthropic": "/models/anthropic/",
+        "google": "/models/google/"
+      },
       "modelRoutes": {}
     },
     {
@@ -496,6 +875,9 @@
           "OpenAI"
         ],
         "models": []
+      },
+      "providerRoutes": {
+        "openai": "/models/openai/"
       },
       "modelRoutes": {}
     },
@@ -522,6 +904,10 @@
         ],
         "models": []
       },
+      "providerRoutes": {
+        "anthropic": "/models/anthropic/",
+        "google": "/models/google/"
+      },
       "modelRoutes": {}
     },
     {
@@ -544,6 +930,9 @@
           "Anthropic"
         ],
         "models": []
+      },
+      "providerRoutes": {
+        "anthropic": "/models/anthropic/"
       },
       "modelRoutes": {}
     }
