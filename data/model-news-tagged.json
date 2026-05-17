@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-17T21:12:22.638Z",
+  "generatedAt": "2026-05-17T21:20:31.566Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
     {
@@ -170,11 +170,13 @@
       },
       "tagLabels": {
         "providers": [
-          "xai"
+          "xAI"
         ],
         "models": []
       },
-      "providerRoutes": {},
+      "providerRoutes": {
+        "xai": "/models/x-ai/"
+      },
       "modelRoutes": {}
     },
     {
@@ -249,11 +251,13 @@
       },
       "tagLabels": {
         "providers": [
-          "together"
+          "Together"
         ],
         "models": []
       },
-      "providerRoutes": {},
+      "providerRoutes": {
+        "together": "/models/?provider=together"
+      },
       "modelRoutes": {}
     },
     {
@@ -351,11 +355,13 @@
       },
       "tagLabels": {
         "providers": [
-          "xai"
+          "xAI"
         ],
         "models": []
       },
-      "providerRoutes": {},
+      "providerRoutes": {
+        "xai": "/models/x-ai/"
+      },
       "modelRoutes": {}
     },
     {
@@ -401,11 +407,13 @@
       },
       "tagLabels": {
         "providers": [
-          "xai"
+          "xAI"
         ],
         "models": []
       },
-      "providerRoutes": {},
+      "providerRoutes": {
+        "xai": "/models/x-ai/"
+      },
       "modelRoutes": {}
     },
     {
@@ -555,11 +563,13 @@
       },
       "tagLabels": {
         "providers": [
-          "xai"
+          "xAI"
         ],
         "models": []
       },
-      "providerRoutes": {},
+      "providerRoutes": {
+        "xai": "/models/x-ai/"
+      },
       "modelRoutes": {}
     },
     {
@@ -659,12 +669,13 @@
       "tagLabels": {
         "providers": [
           "Anthropic",
-          "mistral"
+          "Mistral"
         ],
         "models": []
       },
       "providerRoutes": {
-        "anthropic": "/models/anthropic/"
+        "anthropic": "/models/anthropic/",
+        "mistral": "/models/?provider=mistral"
       },
       "modelRoutes": {}
     },
@@ -879,11 +890,13 @@
       },
       "tagLabels": {
         "providers": [
-          "xai"
+          "xAI"
         ],
         "models": []
       },
-      "providerRoutes": {},
+      "providerRoutes": {
+        "xai": "/models/x-ai/"
+      },
       "modelRoutes": {}
     },
     {
@@ -981,11 +994,13 @@
       },
       "tagLabels": {
         "providers": [
-          "xai"
+          "xAI"
         ],
         "models": []
       },
-      "providerRoutes": {},
+      "providerRoutes": {
+        "xai": "/models/x-ai/"
+      },
       "modelRoutes": {}
     },
     {
