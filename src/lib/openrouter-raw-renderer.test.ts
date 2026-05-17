@@ -92,6 +92,33 @@ describe('shared navigation contract', () => {
   })
 })
 
+describe('mobile responsive layout', () => {
+  it('renders mobile CSS that makes nav wrap compactly and keeps plaza/provider/detail pages usable on narrow screens', () => {
+    const testGraph = graph()
+    const pages = [
+      renderOpenRouterRawHome(testGraph),
+      renderOpenRouterProviderDetail(testGraph, 'openai', { generatedAt: '2026-05-17T00:00:00.000Z', source: 'fixture', items: [] }),
+      renderOpenRouterRawDetail(testGraph, testGraph.nodes[0]!),
+    ]
+
+    for (const html of pages) {
+      expect(html).toContain('@media(max-width:720px)')
+      expect(html).toContain('.nav{height:auto;min-height:56px')
+      expect(html).toContain('.brandZh{display:none}')
+      expect(html).toContain('.topSearch{order:5;width:100%')
+      expect(html).toContain('.navlinks{order:3;margin-left:0')
+      expect(html).toContain('.currencyControl{order:4;margin-left:auto')
+      expect(html).toContain('.modelsShell{display:block')
+      expect(html).toContain('.filterPanel{position:static')
+      expect(html).toContain('.mainPanel{padding:20px 14px 56px')
+      expect(html).toContain('.tableWrap{margin:0 -14px;padding:0 14px')
+      expect(html).toContain('.modelTable{min-width:760px')
+      expect(html).toContain('.detailHero h1{font-size:34px')
+      expect(html).toContain('.detailSingle{padding-top:22px')
+    }
+  })
+})
+
 describe('renderOpenRouterRawHome currency toggle', () => {
   it('renders a nav currency toggle with inline FX rate and dual USD/CNY prices capped at 4 decimals', () => {
     const testGraph = graph()
