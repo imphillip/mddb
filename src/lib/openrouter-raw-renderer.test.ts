@@ -35,6 +35,18 @@ function sourceNode(sourceId: string, author: string): OpenRouterRawNode {
   }
 }
 
+function endpointNode(sourceId: string, provider: string, author: string): OpenRouterRawNode {
+  const node = sourceNode(sourceId, provider)
+  node.id = `openrouter-endpoint:${sourceId}`
+  node.nodeKind = 'endpoint_deployment'
+  node.provider = provider
+  node.providerName = provider
+  node.namespace = provider
+  node.displayName = `${provider}: ${node.modelId}`
+  node.derived.author = author
+  return node
+}
+
 function graph(): OpenRouterRawGraph {
   const nodes = [sourceNode('openai/gpt-5.5', 'openai'), sourceNode('qwen/qwen3-max', 'qwen')]
   return {
@@ -171,6 +183,30 @@ describe('renderOpenRouterRawHome modality filter counts', () => {
 })
 
 
+describe('renderOpenRouterRawHome URL query state', () => {
+  it('hydrates provider query params so tag links can reveal search-only deployment rows', () => {
+    const testGraph = graph()
+    const togetherEndpoint = endpointNode('together/gpt-oss-120b', 'together', 'openai')
+    testGraph.nodes.push(togetherEndpoint)
+    testGraph.edges.push({
+      id: 'edge:together:gpt-oss',
+      from: togetherEndpoint.id,
+      to: testGraph.nodes[0]!.id,
+      type: 'deployment_of',
+      label: 'endpoint deployment observed via openai/gpt-oss-120b',
+    })
+
+    const html = renderOpenRouterRawHome(testGraph)
+
+    expect(html).toContain('data-model-provider="together"')
+    expect(html).toContain('data-search-only="true"')
+    expect(html).toContain("params.get('provider')")
+    expect(html).toContain("/models/?provider=")
+    expect(html).toContain('history.replaceState')
+  })
+})
+
+
 describe('renderOpenRouterRawHome logo enrichment', () => {
   it('renders models.dev brand logos in the plaza brand filter without changing canonical rows', () => {
     const html = renderOpenRouterRawHome(graph())
@@ -209,6 +245,8 @@ describe('provider pages', () => {
     expect(html).toContain('OpenAI 动态 10')
     expect(html).not.toContain('OpenAI 动态 11')
     expect(html).toContain('<section class="mainPanel"><div class="plazaHead"><div><h1>OpenAI</h1>')
+    expect(html).toContain('<div class="listToolbar"><div class="quickFilters" aria-label="模态筛选"><button class="quickFilter active" type="button" data-output-filter="all">全部 <span class="quickFilterCount" id="visibleCount">1</span></button>')
+    expect(html).toContain('<button class="quickFilter" type="button" data-output-filter="text">Text <span class="quickFilterCount">1</span></button>')
     expect(html).toContain('<div class="tableWrap"><table class="modelTable">')
     expect(html).toContain('<thead><tr><th>模型</th><th>上下文</th><th>输入<br><small data-price-unit>/M tokens</small></th><th>输出<br><small data-price-unit>/M tokens</small></th><th>读取<br><small data-price-unit>/M tokens</small></th><th>发布时间</th></tr></thead>')
     expect(html).toContain('<a class="modelLink" href="/models/openai/gpt-5.5/">gpt-5.5</a>')

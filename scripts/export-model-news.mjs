@@ -9,7 +9,7 @@ const SOURCE_URL = process.env.AIHOT_ITEMS_URL ?? 'https://aihot.virxact.com/api
 
 const vocabulary = JSON.parse(readFileSync(VOCAB_PATH, 'utf8'))
 const modelRouteById = new Map(vocabulary.models.map((model) => [model.modelId, model.route]))
-const providerRouteById = new Map(vocabulary.providers.map((provider) => [provider.id, `/models/${provider.id}/`]))
+const providerRouteById = new Map(vocabulary.providers.map((provider) => [provider.id, provider.route]))
 const providerNameById = new Map(vocabulary.providers.map((provider) => [provider.id, provider.name]))
 const db = openSqliteDatabase(DB_PATH)
 

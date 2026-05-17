@@ -36,6 +36,25 @@ function renderOutputQuickFilters(graph: OpenRouterRawGraph, searchOnlyNodeIds: 
   return filters.map((filter, index) => `<button class="quickFilter${index === 0 ? ' active' : ''}" type="button" data-output-filter="${escapeHtml(filter.value)}">${escapeHtml(filter.label)} <span class="quickFilterCount"${filter.value === 'all' ? ' id="visibleCount"' : ''}>${filter.count}</span></button>`).join('')
 }
 
+function renderOutputQuickFiltersForNodes(nodes: OpenRouterRawNode[]): string {
+  const filters = [
+    { value: 'all', label: '全部', count: nodes.length },
+    { value: 'text', label: 'Text', count: nodeOutputModalityCount(nodes, 'text') },
+    { value: 'image', label: 'Image', count: nodeOutputModalityCount(nodes, 'image') },
+    { value: 'embeddings', label: 'Embedding', count: nodeOutputModalityCount(nodes, 'embeddings') },
+    { value: 'audio', label: 'Audio', count: nodeOutputModalityCount(nodes, 'audio') },
+    { value: 'video', label: 'Video', count: nodeOutputModalityCount(nodes, 'video') },
+    { value: 'rerank', label: 'Rerank', count: nodeOutputModalityCount(nodes, 'rerank') },
+    { value: 'speech', label: 'Speech', count: nodeOutputModalityCount(nodes, 'speech') },
+    { value: 'transcription', label: 'Transcription', count: nodeOutputModalityCount(nodes, 'transcription') },
+  ]
+  return filters.map((filter, index) => `<button class="quickFilter${index === 0 ? ' active' : ''}" type="button" data-output-filter="${escapeHtml(filter.value)}">${escapeHtml(filter.label)} <span class="quickFilterCount"${filter.value === 'all' ? ' id="visibleCount"' : ''}>${filter.count}</span></button>`).join('')
+}
+
+function nodeOutputModalityCount(nodes: OpenRouterRawNode[], modality: string): number {
+  return nodes.filter((node) => node.derived.outputModalities.map((value) => value.toLowerCase()).includes(modality)).length
+}
+
 function outputModalityCount(graph: OpenRouterRawGraph, searchOnlyNodeIds: Set<string>, modality: string): number {
   return graph.nodes.filter((node) => !searchOnlyNodeIds.has(node.id) && node.derived.outputModalities.map((value) => value.toLowerCase()).includes(modality)).length
 }
@@ -54,7 +73,8 @@ export function renderOpenRouterProviderDetail(graph: OpenRouterRawGraph, provid
   const newsItems = providerNewsItems(feed, providerId)
   const modelRows = models.map((node) => renderModelRow(node, false, graph)).join('') || '<tr><td class="muted" colspan="6">暂无模型</td></tr>'
   const newsRows = newsItems.slice(0, 10).map(renderProviderRailNewsCard).join('') || '<p class="filterHint">暂无相关动态。</p>'
-  const body = `<main class="modelsShell providerShell"><aside class="filterPanel providerNewsRail"><a class="btn backToPlaza" href="/models/">← 返回模型广场</a><div class="filterGroup"><h3>模型动态</h3><p class="filterHint">${escapeHtml(label)} 相关 · 最新 ${Math.min(newsItems.length, 10)} 条</p><div class="providerRailNewsList">${newsRows}</div></div></aside><section class="mainPanel"><div class="plazaHead"><div><h1>${escapeHtml(label)}</h1><p class="rawIntro">${models.length} 个模型</p></div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small data-price-unit>/M tokens</small></th><th>输出<br><small data-price-unit>/M tokens</small></th><th>读取<br><small data-price-unit>/M tokens</small></th><th>发布时间</th></tr></thead><tbody id="rows">${modelRows}</tbody></table></div><script>${modelFilterScript()}${currencyToggleScript()}</script></section></main>`
+  const quickFilters = renderOutputQuickFiltersForNodes(models)
+  const body = `<main class="modelsShell providerShell"><aside class="filterPanel providerNewsRail"><a class="btn backToPlaza" href="/models/">← 返回模型广场</a><div class="filterGroup"><h3>模型动态</h3><p class="filterHint">${escapeHtml(label)} 相关 · 最新 ${Math.min(newsItems.length, 10)} 条</p><div class="providerRailNewsList">${newsRows}</div></div></aside><section class="mainPanel"><div class="plazaHead"><div><h1>${escapeHtml(label)}</h1><p class="rawIntro">${models.length} 个模型</p></div></div><div class="listToolbar"><div class="quickFilters" aria-label="模态筛选">${quickFilters}</div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small data-price-unit>/M tokens</small></th><th>输出<br><small data-price-unit>/M tokens</small></th><th>读取<br><small data-price-unit>/M tokens</small></th><th>发布时间</th></tr></thead><tbody id="rows">${modelRows}</tbody></table></div><script>${modelFilterScript()}${currencyToggleScript()}</script></section></main>`
   return page(`${label} · Provider · mddb.dev`, body, 'models', currencyToggle(graph))
 }
 
@@ -517,28 +537,49 @@ const outputButtons=Array.from(document.querySelectorAll('[data-output-filter]')
 const modelRows=Array.from(document.querySelectorAll('[data-model-row]'));
 const q=document.getElementById('q');
 const visibleCount=document.getElementById('visibleCount');
-let outputFilter='all';
+const params=new URLSearchParams(window.location.search);
+let outputFilter=params.get('output')||'all';
+let providerFilter=(params.get('provider')||'all').toLowerCase();
 function selected(group){const input=filterInputs.find(input=>input.dataset.filterGroup===group&&input.checked);return input?input.dataset.filterValue:'all'}
+function setSelected(group,value){const input=filterInputs.find(input=>input.dataset.filterGroup===group&&input.dataset.filterValue===value);if(input)input.checked=true}
+function updateUrl(){
+  const next=new URLSearchParams(window.location.search);
+  const query=(q&&q.value||'').trim();
+  const author=selected('author');
+  if(query)next.set('q',query);else next.delete('q');
+  if(providerFilter&&providerFilter!=='all')next.set('provider',providerFilter);else next.delete('provider');
+  if(author&&author!=='all')next.set('author',author);else next.delete('author');
+  if(outputFilter&&outputFilter!=='all')next.set('output',outputFilter);else next.delete('output');
+  const suffix=next.toString()?('?'+next.toString()):window.location.pathname;
+  const url=next.toString()?window.location.pathname+'?'+next.toString():window.location.pathname;
+  if(window.location.search!==suffix&&history.replaceState)history.replaceState(null,'',url);
+}
 function applyModelFilters(){
   const author=selected('author');
   const query=(q&&q.value||'').toLowerCase();
   let count=0;
   modelRows.forEach(row=>{
     const authorOk=author==='all'||author===(row.dataset.modelAuthor||'');
+    const providerOk=providerFilter==='all'||providerFilter===(row.dataset.modelProvider||'').toLowerCase();
     const searchOnly=row.dataset.searchOnly==='true';
     const outputOk=outputFilter==='all'||(row.dataset.outputModalities||'').split(/\s+/).includes(outputFilter);
     const queryOk=!query||(row.dataset.modelName||row.innerText||'').toLowerCase().includes(query);
-    const visibilityOk=!searchOnly||!!query;
-    const visible=authorOk&&outputOk&&queryOk&&visibilityOk;
+    const visibilityOk=!searchOnly||!!query||providerFilter!=='all'||author!=='all';
+    const visible=authorOk&&providerOk&&outputOk&&queryOk&&visibilityOk;
     row.hidden=!visible;
     if(visible) count+=1;
   });
   if(visibleCount) visibleCount.textContent=String(count);
+  updateUrl();
 }
+if(q&&params.get('q'))q.value=params.get('q')||'';
+if(params.get('author'))setSelected('author',params.get('author'));
+outputButtons.forEach(item=>item.classList.toggle('active',(item.dataset.outputFilter||'all')===outputFilter));
 filterInputs.forEach(input=>input.addEventListener('change',applyModelFilters));
 outputButtons.forEach(button=>button.addEventListener('click',()=>{outputFilter=button.dataset.outputFilter||'all';outputButtons.forEach(item=>item.classList.toggle('active',item===button));applyModelFilters();}));
 if(q) q.addEventListener('input',applyModelFilters);
 window.applyModelFilters=applyModelFilters;
+window.modelPlazaProviderUrl=function(provider){return '/models/?provider='+encodeURIComponent(provider)};
 applyModelFilters();
 })();`
 }

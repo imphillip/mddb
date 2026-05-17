@@ -1,31 +1,51 @@
+import { normalizeOrganization, normalizeProviderVariant } from './organization-normalization.mjs'
+
 export function buildModelNewsVocabulary(graph) {
   const visibleProviderIds = new Set(
     graph.nodes.filter((node) => node.nodeKind === 'source_model').map((node) => node.provider),
   )
+  const sourceProviderRoutesByOrg = new Map()
+  const sourceProviderLabelsByOrg = new Map()
+  const sourceProviderIds = new Set()
+  for (const node of graph.nodes) {
+    if (node.nodeKind !== 'source_model') continue
+    sourceProviderIds.add(normalizeProviderVariant(node.provider))
+    const org = normalizeOrganization(node.providerName || node.provider)
+    if (!sourceProviderRoutesByOrg.has(org.id)) sourceProviderRoutesByOrg.set(org.id, `/models/${node.urlProvider ?? node.provider}/`)
+    if (!sourceProviderLabelsByOrg.has(org.id)) sourceProviderLabelsByOrg.set(org.id, org.name)
+  }
   const providerByName = new Map()
   for (const provider of graph.providers) {
     if (!visibleProviderIds.has(provider.id)) continue
     const existing = providerByName.get(provider.name.toLowerCase())
-    if (!existing || provider.id === provider.name.toLowerCase() || provider.id.length < existing.id.length) {
+    if (!existing || provider.id === provider.name.toLowerCase() || provider.id === normalizeProviderVariant(provider.id) || provider.id.length < existing.id.length) {
       providerByName.set(provider.name.toLowerCase(), provider)
     }
   }
   const providerById = new Map()
   for (const provider of providerByName.values()) {
-    providerById.set(provider.id, {
+      providerById.set(provider.id, {
       id: provider.id,
       name: provider.name,
+      route: `/models/${provider.id}/`,
       aliases: unique([provider.name, provider.id, provider.id.replace(/-/g, ' '), provider.name.replace(/-/g, ' ')]),
     })
   }
   for (const node of graph.nodes) {
-    if (node.nodeKind !== 'source_model') continue
-    if (!providerById.has(node.provider) && !providerByName.has(node.providerName.toLowerCase())) {
-      providerById.set(node.provider, {
-        id: node.provider,
-        name: node.providerName,
-        aliases: unique([node.providerName, node.provider, node.provider.replace(/-/g, ' '), node.providerName.replace(/-/g, ' ')]),
+    const org = normalizeOrganization(node.providerName || node.provider)
+    const providerRouteId = normalizeProviderVariant(node.provider)
+    const route = sourceProviderRoutesByOrg.get(org.id) ?? (sourceProviderIds.has(providerRouteId) ? `/models/${providerRouteId}/` : `/models/?provider=${encodeURIComponent(providerRouteId)}`)
+    if (!providerById.has(org.id)) {
+      providerById.set(org.id, {
+        id: org.id,
+        name: sourceProviderLabelsByOrg.get(org.id) ?? org.name,
+        route,
+        aliases: unique([node.providerName, node.provider, org.name, org.id, node.provider.replace(/-/g, ' '), node.providerName?.replace(/-/g, ' ')]),
       })
+    } else {
+      const existing = providerById.get(org.id)
+      existing.aliases = unique([...existing.aliases, node.providerName, node.provider, node.provider.replace(/-/g, ' '), node.providerName?.replace(/-/g, ' ')])
+      if (!existing.route && route) existing.route = route
     }
   }
 
