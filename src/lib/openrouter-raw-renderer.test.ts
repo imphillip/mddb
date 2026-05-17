@@ -150,36 +150,49 @@ describe('renderOpenRouterRawHome logo enrichment', () => {
 })
 
 describe('provider pages', () => {
-  it('renders a provider detail intended for /models/<provider-name> with models and related news columns', () => {
+  it('renders provider models with the model plaza table style and puts recent provider news in the left rail', () => {
     const feed = {
       generatedAt: '2026-05-17T00:00:00.000Z',
       source: 'fixture',
-      items: [{
-        id: 'news-openai',
-        title: 'OpenAI 发布新模型能力',
-        url: 'https://example.com/openai-news',
+      items: Array.from({ length: 12 }, (_, index) => ({
+        id: `news-openai-${index}`,
+        title: `OpenAI 动态 ${index + 1}`,
+        url: `https://example.com/openai-news-${index}`,
         source: 'AIHOT',
-        publishedAt: '2026-05-17T09:00:00.000Z',
+        publishedAt: `2026-05-${String(17 - index).padStart(2, '0')}T09:00:00.000Z`,
         summary: 'OpenAI 相关行业动态。',
         tags: { providers: ['openai'], models: ['gpt-5.5'] },
         tagLabels: { providers: ['OpenAI'], models: ['gpt-5.5'] },
-      }],
+      })),
     }
 
     const html = renderOpenRouterProviderDetail(graph(), 'openai', feed)
 
     expect(html).toContain('OpenAI')
-    expect(html).toContain('class="providerDetailGrid"')
-    expect(html).toContain('<h2>OpenAI 的模型</h2>')
+    expect(html).toContain('<aside class="filterPanel providerNewsRail">')
+    expect(html).toContain('<a class="btn backToPlaza" href="/models/">← 返回模型广场</a>')
+    expect(html).toContain('<h3>模型动态</h3>')
+    expect(html).toContain('OpenAI 动态 1')
+    expect(html).toContain('OpenAI 动态 10')
+    expect(html).not.toContain('OpenAI 动态 11')
+    expect(html).toContain('<section class="mainPanel"><div class="plazaHead"><div><h1>OpenAI</h1>')
+    expect(html).toContain('<div class="tableWrap"><table class="modelTable">')
+    expect(html).toContain('<thead><tr><th>模型</th><th>上下文</th><th>输入<br><small data-price-unit>/M tokens</small></th><th>输出<br><small data-price-unit>/M tokens</small></th><th>读取<br><small data-price-unit>/M tokens</small></th><th>发布时间</th></tr></thead>')
     expect(html).toContain('<a class="modelLink" href="/models/openai/gpt-5.5/">gpt-5.5</a>')
-    expect(html).toContain('<h2>OpenAI 相关动态</h2>')
-    expect(html).toContain('OpenAI 发布新模型能力')
+    expect(html).toContain('data-model-row')
+    expect(html).toContain(`${modelFilterScriptMarker()}`)
     expect(html).toContain('href="/models/"')
+    expect(html).not.toContain('class="providerDetailGrid"')
+    expect(html).not.toContain('<h2>OpenAI 相关动态</h2>')
     expect(html).not.toContain('/models/providers/')
     expect(html).not.toContain('Provider 列表')
     expect(html).not.toContain('qwen3-max')
   })
 })
+
+function modelFilterScriptMarker(): string {
+  return 'window.applyModelFilters=applyModelFilters;'
+}
 
 describe('renderOpenRouterRawDetail BaseLLM price enrichment', () => {
   it('uses BaseLLM as supplemental pricing for missing OpenRouter prices without replacing canonical endpoint prices or free routes', () => {
