@@ -245,6 +245,8 @@ describe('provider pages', () => {
     expect(html).toContain('OpenAI 动态 10')
     expect(html).not.toContain('OpenAI 动态 11')
     expect(html).toContain('<section class="mainPanel"><div class="plazaHead"><div><h1>OpenAI</h1>')
+    expect(html).toContain('<div class="listToolbar"><div class="quickFilters" aria-label="模态筛选"><button class="quickFilter active" type="button" data-output-filter="all">全部 <span class="quickFilterCount" id="visibleCount">1</span></button>')
+    expect(html).toContain('<button class="quickFilter" type="button" data-output-filter="text">Text <span class="quickFilterCount">1</span></button>')
     expect(html).toContain('<div class="tableWrap"><table class="modelTable">')
     expect(html).toContain('<thead><tr><th>模型</th><th>上下文</th><th>输入<br><small data-price-unit>/M tokens</small></th><th>输出<br><small data-price-unit>/M tokens</small></th><th>读取<br><small data-price-unit>/M tokens</small></th><th>发布时间</th></tr></thead>')
     expect(html).toContain('<a class="modelLink" href="/models/openai/gpt-5.5/">gpt-5.5</a>')
