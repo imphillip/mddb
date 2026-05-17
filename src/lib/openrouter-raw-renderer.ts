@@ -517,28 +517,49 @@ const outputButtons=Array.from(document.querySelectorAll('[data-output-filter]')
 const modelRows=Array.from(document.querySelectorAll('[data-model-row]'));
 const q=document.getElementById('q');
 const visibleCount=document.getElementById('visibleCount');
-let outputFilter='all';
+const params=new URLSearchParams(window.location.search);
+let outputFilter=params.get('output')||'all';
+let providerFilter=(params.get('provider')||'all').toLowerCase();
 function selected(group){const input=filterInputs.find(input=>input.dataset.filterGroup===group&&input.checked);return input?input.dataset.filterValue:'all'}
+function setSelected(group,value){const input=filterInputs.find(input=>input.dataset.filterGroup===group&&input.dataset.filterValue===value);if(input)input.checked=true}
+function updateUrl(){
+  const next=new URLSearchParams(window.location.search);
+  const query=(q&&q.value||'').trim();
+  const author=selected('author');
+  if(query)next.set('q',query);else next.delete('q');
+  if(providerFilter&&providerFilter!=='all')next.set('provider',providerFilter);else next.delete('provider');
+  if(author&&author!=='all')next.set('author',author);else next.delete('author');
+  if(outputFilter&&outputFilter!=='all')next.set('output',outputFilter);else next.delete('output');
+  const suffix=next.toString()?('?'+next.toString()):window.location.pathname;
+  const url=next.toString()?window.location.pathname+'?'+next.toString():window.location.pathname;
+  if(window.location.search!==suffix&&history.replaceState)history.replaceState(null,'',url);
+}
 function applyModelFilters(){
   const author=selected('author');
   const query=(q&&q.value||'').toLowerCase();
   let count=0;
   modelRows.forEach(row=>{
     const authorOk=author==='all'||author===(row.dataset.modelAuthor||'');
+    const providerOk=providerFilter==='all'||providerFilter===(row.dataset.modelProvider||'').toLowerCase();
     const searchOnly=row.dataset.searchOnly==='true';
     const outputOk=outputFilter==='all'||(row.dataset.outputModalities||'').split(/\s+/).includes(outputFilter);
     const queryOk=!query||(row.dataset.modelName||row.innerText||'').toLowerCase().includes(query);
-    const visibilityOk=!searchOnly||!!query;
-    const visible=authorOk&&outputOk&&queryOk&&visibilityOk;
+    const visibilityOk=!searchOnly||!!query||providerFilter!=='all'||author!=='all';
+    const visible=authorOk&&providerOk&&outputOk&&queryOk&&visibilityOk;
     row.hidden=!visible;
     if(visible) count+=1;
   });
   if(visibleCount) visibleCount.textContent=String(count);
+  updateUrl();
 }
+if(q&&params.get('q'))q.value=params.get('q')||'';
+if(params.get('author'))setSelected('author',params.get('author'));
+outputButtons.forEach(item=>item.classList.toggle('active',(item.dataset.outputFilter||'all')===outputFilter));
 filterInputs.forEach(input=>input.addEventListener('change',applyModelFilters));
 outputButtons.forEach(button=>button.addEventListener('click',()=>{outputFilter=button.dataset.outputFilter||'all';outputButtons.forEach(item=>item.classList.toggle('active',item===button));applyModelFilters();}));
 if(q) q.addEventListener('input',applyModelFilters);
 window.applyModelFilters=applyModelFilters;
+window.modelPlazaProviderUrl=function(provider){return '/models/?provider='+encodeURIComponent(provider)};
 applyModelFilters();
 })();`
 }

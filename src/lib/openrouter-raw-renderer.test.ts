@@ -35,6 +35,18 @@ function sourceNode(sourceId: string, author: string): OpenRouterRawNode {
   }
 }
 
+function endpointNode(sourceId: string, provider: string, author: string): OpenRouterRawNode {
+  const node = sourceNode(sourceId, provider)
+  node.id = `openrouter-endpoint:${sourceId}`
+  node.nodeKind = 'endpoint_deployment'
+  node.provider = provider
+  node.providerName = provider
+  node.namespace = provider
+  node.displayName = `${provider}: ${node.modelId}`
+  node.derived.author = author
+  return node
+}
+
 function graph(): OpenRouterRawGraph {
   const nodes = [sourceNode('openai/gpt-5.5', 'openai'), sourceNode('qwen/qwen3-max', 'qwen')]
   return {
@@ -167,6 +179,30 @@ describe('renderOpenRouterRawHome modality filter counts', () => {
     expect(html).toContain('<button class="quickFilter" type="button" data-output-filter="image">Image <span class="quickFilterCount">1</span></button>')
     expect(html).toContain('<button class="quickFilter" type="button" data-output-filter="embeddings">Embedding <span class="quickFilterCount">0</span></button>')
     expect(html).toContain('.quickFilterCount')
+  })
+})
+
+
+describe('renderOpenRouterRawHome URL query state', () => {
+  it('hydrates provider query params so tag links can reveal search-only deployment rows', () => {
+    const testGraph = graph()
+    const togetherEndpoint = endpointNode('together/gpt-oss-120b', 'together', 'openai')
+    testGraph.nodes.push(togetherEndpoint)
+    testGraph.edges.push({
+      id: 'edge:together:gpt-oss',
+      from: togetherEndpoint.id,
+      to: testGraph.nodes[0]!.id,
+      type: 'deployment_of',
+      label: 'endpoint deployment observed via openai/gpt-oss-120b',
+    })
+
+    const html = renderOpenRouterRawHome(testGraph)
+
+    expect(html).toContain('data-model-provider="together"')
+    expect(html).toContain('data-search-only="true"')
+    expect(html).toContain("params.get('provider')")
+    expect(html).toContain("/models/?provider=")
+    expect(html).toContain('history.replaceState')
   })
 })
 

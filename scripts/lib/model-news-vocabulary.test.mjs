@@ -45,41 +45,49 @@ describe('buildModelNewsVocabulary', () => {
     expect(vocab.models.map((model) => model.modelId).sort()).toEqual(['gpt-4', 'gpt-4.6', 'gpt-4.7'])
   })
 
-  it('keeps endpoint-only providers out of provider news tags because provider overview pages are generated only for visible source providers', () => {
+  it('maps tagged provider names to valid entity routes, including canonical organizations and endpoint-only providers', () => {
     const graph = {
       providers: [
+        { id: 'x-ai', name: 'X Ai' },
         { id: 'xai', name: 'xAI' },
+        { id: 'together', name: 'Together' },
         { id: 'anthropic', name: 'Anthropic' },
       ],
       nodes: [
+        sourceNode({ id: 'node:x-ai/grok', sourceId: 'x-ai/grok', modelId: 'grok', providerName: 'X Ai' }),
         sourceNode({ id: 'node:anthropic/claude', sourceId: 'anthropic/claude', modelId: 'claude' }),
-        endpointNode({ id: 'endpoint:xai/grok', sourceId: 'openrouter/grok:endpoint', modelId: 'grok', provider: 'xai', providerName: 'xAI' }),
+        endpointNode({ id: 'endpoint:xai/grok', sourceId: 'xai/grok', modelId: 'grok', provider: 'xai', providerName: 'xAI', author: 'x-ai' }),
+        endpointNode({ id: 'endpoint:together/qwen', sourceId: 'together/qwen', modelId: 'qwen', provider: 'together', providerName: 'Together', author: 'qwen' }),
       ],
       edges: [],
     }
 
     const vocab = buildModelNewsVocabulary(graph)
 
-    expect(vocab.providers.map((provider) => provider.id)).toContain('anthropic')
-    expect(vocab.providers.map((provider) => provider.id)).not.toContain('xai')
+    expect(vocab.providers).toEqual(expect.arrayContaining([
+      expect.objectContaining({ id: 'xai', name: 'xAI', route: '/models/x-ai/' }),
+      expect.objectContaining({ id: 'together', name: 'Together', route: '/models/?provider=together' }),
+      expect.objectContaining({ id: 'anthropic', name: 'Anthropic', route: '/models/anthropic/' }),
+    ]))
   })
 })
 
 function sourceNode(overrides) {
   const sourceId = overrides.sourceId
   const modelId = overrides.modelId
+  const provider = overrides.provider ?? sourceId.split('/')[0]
   return {
     id: overrides.id,
     nodeKind: 'source_model',
-    provider: sourceId.split('/')[0],
-    providerName: sourceId.split('/')[0] === 'openai' ? 'OpenAI' : 'Anthropic',
+    provider,
+    providerName: overrides.providerName ?? (provider === 'openai' ? 'OpenAI' : provider === 'x-ai' ? 'X Ai' : 'Anthropic'),
     modelId,
     sourceId,
     displayName: modelId,
     modelIdWithinNamespace: modelId,
-    urlProvider: sourceId.split('/')[0],
+    urlProvider: overrides.urlProvider ?? provider,
     urlModelId: modelId,
-    derived: {},
+    derived: { author: overrides.author },
   }
 }
 
