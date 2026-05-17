@@ -31,5 +31,8 @@
     "vitest": "^4.1.6"
   },
   "private": true,
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "better-sqlite3": "^12.10.0"
+  }
 }
