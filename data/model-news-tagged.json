@@ -1,0 +1,524 @@
+{
+  "generatedAt": "2026-05-17T07:57:43.619Z",
+  "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
+  "items": [
+    {
+      "id": "cmp9gyuu80qqqslnzxwshaklt",
+      "title": "Anthropic对Claude实施严格人脸识别验证，中国用户面临使用困境",
+      "title_en": "喵个咪，我查了下，这个\"刷脸才能用Claude\"的梗，居然一半是真的。 先是封号，然后是认证，现在又来个人脸识别，感觉Claude要对中国用户赶尽杀绝的节奏啊，damn😲 已查证，Anthrop…",
+      "url": "https://x.com/AYi_AInotes/status/2055913588737351999",
+      "source": "X：阿易 AI Notes (@AYi_AInotes)",
+      "publishedAt": "2026-05-17T07:29:31.000Z",
+      "summary": "Anthropic已对Claude实施强制KYC验证，高用量或疑似滥用账号需提供政府证件原件及实时活体自拍，合作方为Persona。此举对中国用户造成显著障碍：Persona对中国大陆身份证支持差、护照通过率低，且验证后个人信息终身可追溯，隐私风险高。此前封号已导致用户工作流与数据丢失。建议受影响用户立即导出对话历史，转用ChatGPT或本地模型（如Ollama+DeepSeek），并使用住宅IP及备份账号。相关趋势反映西方AI平台正加强对中国用户的访问限制。",
+      "category": "industry",
+      "tags": {
+        "providers": [
+          "anthropic",
+          "deepseek"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Anthropic",
+          "DeepSeek"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9915hq0oy3slnz0yd7r54b",
+      "title": "OpenAI 与马耳他政府合作，向全体公民推出 ChatGPT Plus",
+      "title_en": null,
+      "url": "https://openai.com/index/malta-chatgpt-plus-partnership",
+      "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+      "publishedAt": "2026-05-17T03:42:02.459Z",
+      "summary": "OpenAI与马耳他政府达成合作，向马耳他全体公民推出ChatGPT Plus服务。ChatGPT Plus是OpenAI的高级订阅版本，提供更快的响应速度、优先访问新功能以及更稳定的性能。此次合作使得所有马耳他公民能够获得该服务的访问权限，标志着人工智能工具首次在一个国家范围内全面普及。这一举措旨在扩大AI技术的公众应用，促进数字创新。",
+      "category": "ai-products",
+      "tags": {
+        "providers": [
+          "openai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "OpenAI"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp976l4m0ojislnzay8b9gea",
+      "title": "Anthropic CEO谈AI双重影响：高增长与高失业并存",
+      "title_en": "Anthropic CEO Dario Amodei： \"AI will take us to a world where we have very high GDP growth and pot…",
+      "url": "https://x.com/rohanpaul_ai/status/2055843419000594452",
+      "source": "X：Rohan Paul (@rohanpaul_ai)",
+      "publishedAt": "2026-05-17T02:50:41.000Z",
+      "summary": "Anthropic CEO Dario Amodei 指出，AI将引领一个前所未有的颠覆性时代：经济可能实现5%-10%的高GDP增长，但同时伴随高失业率与不平等加剧。他举例称，软件成本将大幅下降甚至近乎免费，传统软件商业模式的前提或将瓦解。尽管目前工程师可转向编辑或升级工作，但AI模型将持续承担更多任务，导致许多延续数十年的职业逐渐消失。他强调，社会尚未充分意识到这场变革的巨大规模与冲击，对此他既感到兴奋又深表担忧。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "anthropic"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Anthropic"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp976l4m0ojjslnzqoaxuhwd",
+      "title": "Anthropic CEO预言软件免费化与职业结构巨变",
+      "title_en": "Anthropic CEO Dario Amodei ： \"Software is going to become cheap， maybe essentially free. The premi…",
+      "url": "https://x.com/rohanpaul_ai/status/2055841486714147177",
+      "source": "X：Rohan Paul (@rohanpaul_ai)",
+      "publishedAt": "2026-05-17T02:43:00.000Z",
+      "summary": "Anthropic CEO Dario Amodei在《华尔街日报》YouTube频道采访中表示，软件成本将急剧下降，可能基本免费，传统软件需百万用户分摊成本的前提将不再成立。同时，数十年来建立的许多工作和职业可能消失。Amodei认为社会能够应对并适应这种变化，但他警告人们目前完全未意识到即将到来的变革及其巨大规模。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "anthropic"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Anthropic"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp966j3r0oa6slnzxr0cyo2d",
+      "title": "Jensen Huang谈低MFU策略与智能系统设计",
+      "title_en": "At Stanford CS153 Frontier Systems， Jensen states word for word that he \"would like to be at low MFU…",
+      "url": "https://x.com/SemiAnalysis_/status/2055835722783830311",
+      "source": "X：SemiAnalysis (@SemiAnalysis_)",
+      "publishedAt": "2026-05-17T02:20:06.000Z",
+      "summary": "在斯坦福CS153前沿系统课程中，Jensen Huang逐字表示他\"希望始终保持低MFU\"，其给出的理由是：他希望系统足够智能，以至于超额配置了如浮点运算、网络、内存等工作负载。或许@xai的内核团队也在遵循这一理念。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "xai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "xAI"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp94ozpw0nxzslnzwgx0iquf",
+      "title": "Hermes框架在代码质量与稳定性上优于OpenClaw，支持多机器人独立配置与远程协同",
+      "title_en": "跟小龙虾（OpenClaw）比，Hermes代码质量和稳定性都好很多！ 搭个Hermes硅基飞书群，每个机器人用独立模型和网关，远程协同工作。 1. 终端中执行 hermes profile cr…",
+      "url": "https://x.com/vista8/status/2055825358503764329",
+      "source": "X：Vista (@vista8)",
+      "publishedAt": "2026-05-17T01:38:55.000Z",
+      "summary": "Hermes框架在代码质量和稳定性方面显著优于OpenClaw。用户可通过命令行快速创建多个独立机器人角色，并为每个角色分别配置不同的AI模型（如OpenAI GPT、GLM、Kimi等）和即时通讯平台（如飞书、微信）连接。配置过程通过引导式指令和扫码完成，简化了网关设置，实现了多机器人的远程协同工作流。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "openai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "OpenAI"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp92agu90ndtslnzbujamtzp",
+      "title": "Atomic Bot发布Qwen 35B任务视频对比，引发OpenClaw与Hermes创始人性能辩论",
+      "title_en": "Atomic Bot 发布的基于本地模型 Qwen 35B真实任务视频对比，引发 OpenClaw 和 Hermes Agent 两位大佬辩论 OpenClaw 创始人 @steipete 转发了这…",
+      "url": "https://x.com/shao__meng/status/2055812741890510899",
+      "source": "X：邵猛 (@shao__meng)",
+      "publishedAt": "2026-05-17T00:48:47.000Z",
+      "summary": "Atomic Bot发布基于本地模型Qwen 35B的真实任务对比视频，显示OpenClaw在任务完成时间（12分01秒）和token效率上优于Hermes Agent（33分01秒）。OpenClaw创始人@steipete转发结果并强调性能策略见效。Hermes联创@Teknium反驳基准不科学，指出单次运行、模型随机性等问题，并引用公开质量基准及真实用户数据证明Hermes领先，如用户日token量已达OpenClaw的2.5倍。双方各执己见，凸显了AI代理评估标准的争议。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "qwen"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Qwen"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp92jrs30nfpslnzs81a9rdq",
+      "title": "OpenAI 正推进 Codex 的跨设备远程控制能力",
+      "title_en": "OpenAI 正在偷偷做两件事 把 Codex 的「远程控制」从手机控自己电脑，往「手机控任意电脑」的方向推进… 5 月 14 日，OpenAI 给 ChatGPT 手机 App 加了个功能：…",
+      "url": "https://x.com/xiaohu/status/2055808836074979576",
+      "source": "X：小互 (@xiaohu)",
+      "publishedAt": "2026-05-17T00:33:16.000Z",
+      "summary": "OpenAI 正秘密开发新功能，旨在让 Codex 的远程控制能力从\"手机控制自己电脑\"向\"手机控制任意电脑\"演进。当前手机 App 虽能远程查看并指挥 Mac 上的 Codex，但要求 Mac 必须唤醒且解锁。关键突破在于让底层\"Computer Use\"功能在 Mac 锁屏或睡眠时也能持续工作，从而实现真正的远程任务派遣，如运行测试或操作模拟器，用户无需返回解锁电脑。",
+      "category": "ai-products",
+      "tags": {
+        "providers": [
+          "openai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "OpenAI"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp92lm860ngkslnzxvk9cu8a",
+      "title": "OpenAI 正通过 Plaid 将 ChatGPT 与银行账户连接起来",
+      "title_en": null,
+      "url": "https://firethering.com/chatgpt-bank-account-plaid-openai",
+      "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+      "publishedAt": "2026-05-17T00:30:10.625Z",
+      "summary": "OpenAI正通过金融科技公司Plaid将ChatGPT与用户银行账户连接。这一集成将允许ChatGPT直接访问个人财务数据，旨在提供个性化的理财分析与建议。目前该功能的具体技术细节、数据安全措施及正式上线时间尚未公布，但其标志着AI助手向更深入的金融服务领域迈出关键一步，引发了关于数据隐私与安全的广泛讨论。",
+      "category": "ai-products",
+      "tags": {
+        "providers": [
+          "openai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "OpenAI"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp92btuu0neaslnzefsqkgkk",
+      "title": "OpenAI在ChatGPT上线个人理财体验预览版",
+      "title_en": "OpenAI 在 ChatGPT 里上线了个人理财体验的预览版，面向美国 Pro 用户。核心能力是通过 Plaid 连接超过 1.2 万家金融机构，把用户的真实账户数据接进来，然后基于这些数据回答财务…",
+      "url": "https://x.com/hongming731/status/2055799563357917334",
+      "source": "X：洪明 (@hongming731)",
+      "publishedAt": "2026-05-16T23:56:25.000Z",
+      "summary": "OpenAI面向美国Pro用户推出个人理财体验预览版。该功能通过Plaid连接超1.2万家金融机构，接入用户真实账户数据，使AI能基于银行流水、投资账户等提供具体财务建议，突破金融领域的高信任门槛。产品引入\"Financial memories\"机制，可记住用户长期目标以实现持续陪伴；权限上AI仅能读取分析数据，不能发起交易，确保了安全起点。此举将大幅提升ChatGPT已有超2亿财务咨询用户的服务质量。",
+      "category": "ai-products",
+      "tags": {
+        "providers": [
+          "openai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "OpenAI"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp906nx40mw9slnzf23ll6w2",
+      "title": "企业AI竞争焦点转向智能体控制平面",
+      "title_en": "下一个企业战场不是模型：而是智能体控制平面 过去两年，大家关注企业 AI 的视角主要是「哪个模型更好」，谁的基准更高，谁的上下文更长，谁的推理更准。VentureBeat 这篇调查报告提出了一个不…",
+      "url": "https://x.com/hongming731/status/2055798584403230989",
+      "source": "X：洪明 (@hongming731)",
+      "publishedAt": "2026-05-16T23:52:32.000Z",
+      "summary": "企业AI的竞争维度正从模型性能转向智能体控制平面，即管理AI任务规划、工具调用、数据访问与安全权限的基础设施层。VentureBeat调查显示，微软以38.6%份额领先，OpenAI占25.7%，Anthropic首次以5.7%进入榜单，标志其Claude从被调用模型转变为编排基础设施。企业选择编排平台时，安全与权限管理已超越模型性能成为首要考量，反映企业更重视部署AI时的合规、审计与责任归属。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "anthropic",
+          "openai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Anthropic",
+          "OpenAI"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp906nx40mwaslnzmh5myp13",
+      "title": "AI护城河之争：金融落地、控制平面与情感连接",
+      "title_en": "#BestBlogs 早报 2026-05-17 今天的 BestBlogs 早报聊了一个核心问题：AI 的护城河到底在哪？ OpenAI 把 ChatGPT 接进了真实银行账户，冲着金融这块最难…",
+      "url": "https://x.com/hongming731/status/2055795762676879685",
+      "source": "X：洪明 (@hongming731)",
+      "publishedAt": "2026-05-16T23:41:19.000Z",
+      "summary": "围绕AI护城河的核心问题，目前呈现三个关键竞争方向。OpenAI正将ChatGPT接入真实银行账户，试图攻克金融等高信任垂直领域。VentureBeat调查指出，下一阶段的竞争焦点并非模型本身，而在于谁能掌控智能体的控制平面。创业者Albert则提出，当技术普及后，真正的稀缺资源是能够产生情感连接的\"回响\"。这标志着AI竞争从底层技术转向应用、平台与用户体验的深层维度。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "openai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "OpenAI"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp906nx40mwbslnzw0n9ua78",
+      "title": "ChatGPT进军个人理财，智能体控制平面成企业竞争焦点，情感连接被视作AI时代稀缺价值",
+      "title_en": "http：//x.com/i/article/2055794569309261824",
+      "url": "https://x.com/hongming731/status/2055795385793409309",
+      "source": "X：洪明 (@hongming731)",
+      "publishedAt": "2026-05-16T23:39:49.000Z",
+      "summary": "OpenAI推出ChatGPT个人理财功能预览版，正式进军高信任金融领域。同时，企业AI竞争焦点正从模型能力转向智能体控制平面，微软以38.6%份额领先，安全与权限管理成为企业首要考量。此外，连续创业者Albert指出，在AI降低产品开发门槛的背景下，智能本身不再是最高价值，人与人、人与产品之间的情感连接（\"回响\"）才是稀缺资源。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "openai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "OpenAI"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp8zsonc0mslslnz5yrgqt34",
+      "title": "谷歌云控制台现Gemini 3.2 Flash-lite-live踪迹",
+      "title_en": "GOOGLE 🔥： Traces of Gemini 3.2 Flash-lite-live have been spotted on Google Cloud Console. Even ch…",
+      "url": "https://x.com/testingcatalog/status/2055794741782929617",
+      "source": "X：Testing Catalog (@testingcatalog)",
+      "publishedAt": "2026-05-16T23:37:15.000Z",
+      "summary": "GOOGLE 🔥：在谷歌云控制台上发现了Gemini 3.2 Flash-lite-live的踪迹。\n\n难道是更便宜的低延迟模型？👀",
+      "category": "industry",
+      "tags": {
+        "providers": [
+          "google"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Google"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp8y1iyy0meyslnzdu2fvggn",
+      "title": "OpenAI将Codex升级为个人AI设备网络",
+      "title_en": "兄弟们，OpenAI 这个设计很牛啊！ 直接把Codex升级成个人AI设备网络了。 未来，只要在其他设备上装好Codex，你的Mac Mini、工作站，甚至爷爷奶奶家闲置的老电脑，都能连成一个\"C…",
+      "url": "https://x.com/berryxia/status/2055781678237544597",
+      "source": "X：Berry Xia (@berryxia)",
+      "publishedAt": "2026-05-16T22:45:21.000Z",
+      "summary": "OpenAI计划将Codex升级为个人AI设备网络。用户可在多台设备上安装Codex，将Mac Mini、工作站甚至闲置旧电脑连接成\"Codex network\"。通过主设备即可远程调用这些设备的Computer Use能力，执行任务、处理文件和自动化操作。配合即将推出的\"Locked Use\"设置，该功能在提升控制权的同时保障了安全性。此举使用户能从单一设备运行单个Agent，转变为随时调度分布式Agent集群，从而将闲置硬件转化为生产力，标志着个人算力时代的到来。",
+      "category": "ai-products",
+      "tags": {
+        "providers": [
+          "openai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "OpenAI"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp8y1iyy0mezslnzclognz5h",
+      "title": "Claude Mythos模型悄然现身Google Cloud Console，预示企业级发布",
+      "title_en": "我去，Claude Mythos 突然在 Google Cloud Console 现身了。 昨天还没有，今天直接出现了，连 preview 标签都彻底消失。 跟之前 Opus 4.7 的路子一模…",
+      "url": "https://x.com/berryxia/status/2055780944074920257",
+      "source": "X：Berry Xia (@berryxia)",
+      "publishedAt": "2026-05-16T22:42:26.000Z",
+      "summary": "Claude Mythos模型近日悄然出现在Google Cloud Console中，其预览标签已消失，发布模式与之前Opus 4.7类似，预示可能即将正式落地。Anthropic曾称该模型\"太危险\"不适合公开发布，但目前迹象表明，公司可能不会推出公开版本，而是转而作为模型提供商，通过Google Cloud Platform让已接入的企业客户直接在自有环境中调用和使用。这一举动被视为Anthropic以最安静的方式将其高级思考模型推向生产环境，并逆转了此前关于该模型危险的叙事。",
+      "category": "ai-models",
+      "tags": {
+        "providers": [
+          "anthropic",
+          "google"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Anthropic",
+          "Google"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp8xdosx0m99slnzj1ise267",
+      "title": "马耳他全国开通 ChatGPT Plus 访问",
+      "title_en": "Countrywide ChatGPT Plus access for Malta：",
+      "url": "https://x.com/gdb/status/2055774659379908926",
+      "source": "X：Greg Brockman (@gdb)",
+      "publishedAt": "2026-05-16T22:17:27.000Z",
+      "summary": "马耳他全国范围内的 ChatGPT Plus 访问：\n【引用 @Reuters】：OpenAI 在马耳他达成协议，为所有马耳他人提供 ChatGPT Plus 访问 http：//reut.rs/4drXSf3 http：//reut.rs/4drXSf3",
+      "category": "industry",
+      "tags": {
+        "providers": [
+          "openai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "OpenAI"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp8w82h30m0bslnzsievcfgh",
+      "title": "Claude Mythos惊现Google Cloud控制台引困惑",
+      "title_en": "Im seriously confused. Apparently Claude Mythos now appears in the Google Cloud console. After all…",
+      "url": "https://x.com/kimmonismus/status/2055767238636933494",
+      "source": "X：Kim (@kimmonismus)",
+      "publishedAt": "2026-05-16T21:47:58.000Z",
+      "summary": "Claude Mythos模型近日意外出现在Google Cloud控制台，且其预览标签已消失，观察者据此猜测Anthropic可能正准备公开发布该模型，类似此前Opus 4.7发布前的先例。然而，Anthropic曾多次公开表示，出于风险考虑不会发布Mythos，且该模型已被证实能力极强，因此部分观点认为该公司此刻进行彻底转向并发布该模型的可能性极低，这也会使其显得不够专业。用户对此表示困惑，强调无法想象任何发布场景，并引用推文示例佐证模型实力。整体上，事件引发猜测，但基于官方立场，实际发布概率被认为较小。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "anthropic",
+          "google"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Anthropic",
+          "Google"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp8vwbg40lxdslnz2emsu11c",
+      "title": "MagicPath与Codex深度整合，设计开发流程合二为一",
+      "title_en": "兄弟们，设计和开发终于真正合体了。 @skirano（MagicPathAI CEO，前Anthropic、Brex、Uber、Facebook）刚刚放出重磅演示： 你现在可以把MagicPa…",
+      "url": "https://x.com/berryxia/status/2055766210512560416",
+      "source": "X：Berry Xia (@berryxia)",
+      "publishedAt": "2026-05-16T21:43:53.000Z",
+      "summary": "MagicPath AI CEO @skirano 演示了其产品与Codex的深度整合。用户现可将MagicPath作为原生画布直接在Codex中运行，通过拖拽设计UI，Codex能实时感知项目并自动生成、编辑代码，实现设计与开发的无缝衔接，无需在Figma和IDE间切换。安装简便，只需在Codex中粘贴一条命令即可完成配置。此举将\"设计-开发-迭代\"流程整合于单一窗口，显著缩短了从创意到可运行应用的距离。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "anthropic"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Anthropic"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp8vicl60lu1slnz24h3yl0d",
+      "title": "Claude Mythos模型现身谷歌云控制台",
+      "title_en": "ANTHROPIC 🔥： Claude Mythos model has been spotted on Google Cloud Console. -claude-mythos 👀 It …",
+      "url": "https://x.com/testingcatalog/status/2055765220123939272",
+      "source": "X：Testing Catalog (@testingcatalog)",
+      "publishedAt": "2026-05-16T21:39:57.000Z",
+      "summary": "Anthropic的Claude Mythos模型已被发现在谷歌云控制台出现，且其预览标签已消失。这一迹象与之前Opus 4.7发布前的模式相似，引发了关于Anthropic可能准备公开发布该模型的猜测。尽管作者认为Anthropic改变主意直接向公众发布的可能性不大，但推测其可能作为模型提供商，为有权限的公司提供在谷歌云平台上运行该模型的服务。",
+      "category": "ai-models",
+      "tags": {
+        "providers": [
+          "anthropic",
+          "google"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Anthropic",
+          "Google"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp8ufq4c0lm5slnzx0zawhjb",
+      "title": "X Premium+用户现可在Hermes中使用Grok",
+      "title_en": "HERMES 🔥： X Premium+ accounts can now use their subscription with Grok in Hermes Agent！ Besides t…",
+      "url": "https://x.com/testingcatalog/status/2055755847448297495",
+      "source": "X：Testing Catalog (@testingcatalog)",
+      "publishedAt": "2026-05-16T21:02:42.000Z",
+      "summary": "HERMES 🔥： X Premium+ 用户现可在 Hermes Agent 中使用其订阅权益访问 Grok！\n\n此外，他们还能使用 X 搜索工具，这使 Hermes 目前处于相当独特的位置。\n\n现在已不仅是 OpenClaw 与 Hermes 的较量。\n\n这再次成为 OpenAI 与 xAI 的对决 👀",
+      "category": "ai-products",
+      "tags": {
+        "providers": [
+          "openai",
+          "xai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "OpenAI",
+          "xAI"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp8tanqm0lbzslnz5om6t5pi",
+      "title": "AMD代码贡献获NVIDIA接纳，开源社区迎里程碑",
+      "title_en": "SERIOUS & COOL： AIPerf -- a sub-repo of the Nvidia Dynamo project focused on benchmarking LLM worklo…",
+      "url": "https://x.com/SemiAnalysis_/status/2055746972523336120",
+      "source": "X：SemiAnalysis (@SemiAnalysis_)",
+      "publishedAt": "2026-05-16T20:27:26.000Z",
+      "summary": "NVIDIA的AI性能基准测试项目AIPerf接受了来自AMD的上游代码贡献，这被认为是AMD代码首次被纳入NVIDIA官方仓库。此举被视为开源社区的重要时刻，意味着高质量的、不依赖特定厂商的代码将能供所有人使用。社区期待未来能有更多此类合作，例如将AMD的RIXL部分代码整合进NVIDIA的NIXL，而非维持独立分支。",
+      "category": "industry",
+      "tags": {
+        "providers": [
+          "nvidia"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Nvidia"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    }
+  ]
+}
