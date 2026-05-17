@@ -45,23 +45,23 @@ describe('buildModelNewsVocabulary', () => {
     expect(vocab.models.map((model) => model.modelId).sort()).toEqual(['gpt-4', 'gpt-4.6', 'gpt-4.7'])
   })
 
-  it('resolves endpoint deployment/spec aliases to the visible source model row', () => {
+  it('keeps endpoint-only providers out of provider news tags because provider overview pages are generated only for visible source providers', () => {
     const graph = {
-      providers: [{ id: 'openai', name: 'OpenAI' }],
+      providers: [
+        { id: 'xai', name: 'xAI' },
+        { id: 'anthropic', name: 'Anthropic' },
+      ],
       nodes: [
-        sourceNode({ id: 'node:openai/gpt-5', sourceId: 'openai/gpt-5', modelId: 'gpt-5' }),
-        endpointNode({ id: 'endpoint:openai/gpt-5:azure', sourceId: 'openai/gpt-5:azure', modelId: 'gpt-5:azure' }),
+        sourceNode({ id: 'node:anthropic/claude', sourceId: 'anthropic/claude', modelId: 'claude' }),
+        endpointNode({ id: 'endpoint:xai/grok', sourceId: 'openrouter/grok:endpoint', modelId: 'grok', provider: 'xai', providerName: 'xAI' }),
       ],
-      edges: [
-        { id: 'edge:endpoint:deployment', from: 'endpoint:openai/gpt-5:azure', to: 'node:openai/gpt-5', type: 'deployment_of', label: 'deployment' },
-      ],
+      edges: [],
     }
 
     const vocab = buildModelNewsVocabulary(graph)
 
-    expect(vocab.models).toHaveLength(1)
-    expect(vocab.models[0].modelId).toBe('gpt-5')
-    expect(vocab.models[0].aliases).toContain('gpt-5:azure')
+    expect(vocab.providers.map((provider) => provider.id)).toContain('anthropic')
+    expect(vocab.providers.map((provider) => provider.id)).not.toContain('xai')
   })
 })
 

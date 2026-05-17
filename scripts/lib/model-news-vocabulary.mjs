@@ -1,6 +1,10 @@
 export function buildModelNewsVocabulary(graph) {
+  const visibleProviderIds = new Set(
+    graph.nodes.filter((node) => node.nodeKind === 'source_model').map((node) => node.provider),
+  )
   const providerByName = new Map()
   for (const provider of graph.providers) {
+    if (!visibleProviderIds.has(provider.id)) continue
     const existing = providerByName.get(provider.name.toLowerCase())
     if (!existing || provider.id === provider.name.toLowerCase() || provider.id.length < existing.id.length) {
       providerByName.set(provider.name.toLowerCase(), provider)
@@ -15,6 +19,7 @@ export function buildModelNewsVocabulary(graph) {
     })
   }
   for (const node of graph.nodes) {
+    if (node.nodeKind !== 'source_model') continue
     if (!providerById.has(node.provider) && !providerByName.has(node.providerName.toLowerCase())) {
       providerById.set(node.provider, {
         id: node.provider,
