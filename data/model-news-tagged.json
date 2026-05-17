@@ -1,7 +1,33 @@
 {
-  "generatedAt": "2026-05-17T20:41:12.150Z",
+  "generatedAt": "2026-05-17T21:01:16.879Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
+    {
+      "id": "cmpa8ivde0wyuslnzz8q1bpsd",
+      "title": "AI芯片能源领域必读书单推荐",
+      "title_en": "What are some of the must-read books you'd recommend for staying informed and gaining a deep underst…",
+      "url": "https://x.com/kimmonismus/status/2056105222485709158",
+      "source": "X：Kim (@kimmonismus)",
+      "publishedAt": "2026-05-17T20:11:00.000Z",
+      "summary": "为保持前沿认知并深入理解人工智能、芯片和能源领域，有哪些必读书目值得推荐？\n\n目前我想到的是@firstadopter的《The NVIDIA Way》和Chris Miller的《芯片战争》，不过主要还是读Substack上的内容。\n\n但我想重新开始多读些书。有什么推荐吗？",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "nvidia"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Nvidia"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "nvidia": "/models/nvidia/"
+      },
+      "modelRoutes": {}
+    },
     {
       "id": "cmpa5b49v0w99slnzhoi0h9av",
       "title": "反对\"AI垃圾\"标签，倡导基于内容的实质批评",
