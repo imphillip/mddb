@@ -3,7 +3,7 @@ import type { OpenRouterRawGraph } from './openrouter-raw-graph.js'
 import { renderModelNewsHome } from './model-news-renderer.js'
 import type { ModelNewsFeed } from './model-news.js'
 
-const emptyGraph = {} as OpenRouterRawGraph
+const emptyGraph = { currency: { base: 'USD', quote: 'CNY', rate: 6.8, rawRate: 6.822857, source: 'https://open.er-api.com/v6/latest/USD', updatedAt: '2026-05-16T00:02:31.000Z' } } as OpenRouterRawGraph
 
 describe('renderModelNewsHome', () => {
   it('renders tagged items and excludes untagged items on the homepage', () => {
@@ -26,15 +26,21 @@ describe('renderModelNewsHome', () => {
     expect(html).not.toContain('/models/news/')
   })
 
-  it('uses the same light header contract and page shell as the model plaza', () => {
+  it('uses the shared header contract and page shell as the model plaza', () => {
     const html = renderModelNewsHome(emptyGraph, feedFixture())
 
     expect(html).toContain(':root{--bg:#fff;--fg:#171717')
     expect(html).toContain('body{margin:0;background:var(--bg);color:var(--fg)')
     expect(html).toContain('<header class="topbar"><nav class="nav"><a class="brandmark" href="/">')
-    expect(html).toContain('<div class="topSearch">⌕ 搜索模型</div>')
+    expect(html).toContain('<label class="topSearch">⌕ <input id="q" type="search" placeholder="搜索模型 / provider / author / source" autocomplete="off"></label>')
     expect(html).toContain('<a class="githubLink" href="https://github.com/imphillip/mddb"')
-    expect(html).toContain('<a class="active" href="/">模型动态</a><a href="/models/">模型广场</a>')
+    expect(html).toContain('<div class="navlinks"><a class="active" href="/">模型动态</a><a href="/models/">模型广场</a></div>')
+    expect(html).toContain('class="currencyToggle"')
+    expect(html).toContain('data-currency-toggle')
+    expect(html.indexOf('class="brandmark"')).toBeLessThan(html.indexOf('class="topSearch"'))
+    expect(html.indexOf('class="topSearch"')).toBeLessThan(html.indexOf('class="githubLink"'))
+    expect(html.indexOf('class="githubLink"')).toBeLessThan(html.indexOf('class="navlinks"'))
+    expect(html.indexOf('class="navlinks"')).toBeLessThan(html.indexOf('data-currency-toggle'))
     expect(html).toContain('<main class="newsShell"')
     expect(html).toContain('<section class="mainPanel newsPanel">')
     expect(html).toContain('.newsShell{max-width:920px')

@@ -34,7 +34,7 @@ export function renderOpenRouterProviderDetail(graph: OpenRouterRawGraph, provid
   const modelRows = models.map((node) => `<li class="providerModelItem"><a class="modelLink" href="${escapeHtml(node.route)}/">${escapeHtml(node.modelId)}</a><span>${escapeHtml(modelContextLength(node))} · ${escapeHtml(modelReleasedDate(node))}</span></li>`).join('') || '<li class="providerModelItem muted">暂无模型</li>'
   const newsRows = newsItems.map(renderProviderNewsCard).join('') || '<p class="muted">暂无相关动态。</p>'
   const body = `<main class="modelsShell providerShell"><aside class="filterPanel"><a class="btn" href="/models/">← 返回模型广场</a><div class="filterGroup"><h3>${escapeHtml(label)}</h3><p class="filterHint">${models.length} 个模型 · ${newsItems.length} 条相关动态</p></div></aside><section class="mainPanel"><div class="plazaHead"><div><h1>${escapeHtml(label)}</h1><p class="rawIntro">${escapeHtml(label)} 在模型广场中的模型与模型动态中的相关行业新闻。</p></div></div><div class="providerDetailGrid"><section class="providerPanel"><h2>${escapeHtml(label)} 的模型</h2><ul class="providerModelList">${modelRows}</ul></section><section class="providerPanel"><h2>${escapeHtml(label)} 相关动态</h2><div class="providerNewsList">${newsRows}</div></section></div></section></main>`
-  return page(`${label} · Provider · mddb.dev`, body, 'models')
+  return page(`${label} · Provider · mddb.dev`, body, 'models', currencyToggle(graph))
 }
 
 function compareNodesByReleaseDesc(a: OpenRouterRawNode, b: OpenRouterRawNode): number {
@@ -52,7 +52,7 @@ export function renderOpenRouterRawDetail(graph: OpenRouterRawGraph, node: OpenR
   const outEdges = graph.edges.filter((edge) => edge.from === node.id)
   const inEdges = graph.edges.filter((edge) => edge.to === node.id && edge.from !== node.id)
   const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/models/">← 返回模型广场</a><div class="eyebrow">Author · ${escapeHtml(node.derived.author ?? '—')}</div><h1>${escapeHtml(node.displayName)}</h1><div class="modelIdHero">Model ID ${renderModelTagCopy(node.modelId)}</div><div hidden>${modelDescription(node)}</div>${renderHeroRelations(graph, node, outEdges, inEdges)}</div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#spec">规格</a><a href="#pricing">价格</a><a href="#source">数据来源与源数据</a></nav>${renderSpecSection(node)}${renderPricingSection(graph, node)}${renderSourceSection(node, outEdges, inEdges)}</article></div></main>`
-  return page(`${node.displayName} · mddb.dev`, body, 'models')
+  return page(`${node.displayName} · mddb.dev`, body, 'models', currencyToggle(graph))
 }
 
 function providerSummaries(graph: OpenRouterRawGraph, feed: ModelNewsFeed): Array<{ id: string; label: string; modelCount: number; newsCount: number }> {

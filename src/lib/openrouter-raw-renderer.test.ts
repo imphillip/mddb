@@ -47,6 +47,14 @@ function graph(): OpenRouterRawGraph {
     nodes,
     edges: [],
     indices: { bySourceId: {}, byRoute: {}, pageOnlyNodeIds: [], apiNodeIds: nodes.map((node) => node.id) },
+    currency: {
+      base: 'USD',
+      quote: 'CNY',
+      rate: 6.8,
+      rawRate: 6.822857,
+      source: 'https://open.er-api.com/v6/latest/USD',
+      updatedAt: '2026-05-16T00:02:31.000Z',
+    },
     enrichment: {
       modelsDev: {
         path: 'data/models-dev-api.json',
@@ -60,17 +68,33 @@ function graph(): OpenRouterRawGraph {
   }
 }
 
+describe('shared navigation contract', () => {
+  it('uses the same brand, search, menu, GitHub and currency controls on plaza, provider and detail pages', () => {
+    const testGraph = graph()
+    const pages = [
+      renderOpenRouterRawHome(testGraph),
+      renderOpenRouterProviderDetail(testGraph, 'openai', { generatedAt: '2026-05-17T00:00:00.000Z', source: 'fixture', items: [] }),
+      renderOpenRouterRawDetail(testGraph, testGraph.nodes[0]!),
+    ]
+
+    for (const html of pages) {
+      expect(html).toContain('<header class="topbar"><nav class="nav"><a class="brandmark" href="/">')
+      expect(html).toContain('<label class="topSearch">⌕ <input id="q" type="search" placeholder="搜索模型 / provider / author / source" autocomplete="off"></label>')
+      expect(html).toContain('<a class="githubLink" href="https://github.com/imphillip/mddb"')
+      expect(html).toContain('<div class="navlinks"><a href="/">模型动态</a><a class="active" href="/models/">模型广场</a></div>')
+      expect(html).toContain('class="currencyToggle"')
+      expect(html).toContain('data-currency-toggle')
+      expect(html.indexOf('class="brandmark"')).toBeLessThan(html.indexOf('class="topSearch"'))
+      expect(html.indexOf('class="topSearch"')).toBeLessThan(html.indexOf('class="githubLink"'))
+      expect(html.indexOf('class="githubLink"')).toBeLessThan(html.indexOf('class="navlinks"'))
+      expect(html.indexOf('class="navlinks"')).toBeLessThan(html.indexOf('data-currency-toggle'))
+    }
+  })
+})
+
 describe('renderOpenRouterRawHome currency toggle', () => {
   it('renders a nav currency toggle with inline FX rate and dual USD/CNY prices capped at 4 decimals', () => {
     const testGraph = graph()
-    testGraph.currency = {
-      base: 'USD',
-      quote: 'CNY',
-      rate: 6.8,
-      rawRate: 6.822857,
-      source: 'https://open.er-api.com/v6/latest/USD',
-      updatedAt: '2026-05-16T00:02:31.000Z',
-    }
     testGraph.nodes[0]!.raw.endpointWrapper = { response: { data: { endpoints: [{ tag: 'openai', provider_name: 'OpenAI', pricing: { prompt: '0.00000125', completion: '0.00001', input_cache_read: '0.000000125' } }] } } }
 
     const html = renderOpenRouterRawHome(testGraph)
