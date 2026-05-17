@@ -26,6 +26,21 @@ describe('renderModelNewsHome', () => {
     expect(html).not.toContain('/models/news/')
   })
 
+  it('uses the same light header contract and page shell as the model plaza', () => {
+    const html = renderModelNewsHome(emptyGraph, feedFixture())
+
+    expect(html).toContain(':root{--bg:#fff;--fg:#171717')
+    expect(html).toContain('body{margin:0;background:var(--bg);color:var(--fg)')
+    expect(html).toContain('<header class="topbar"><nav class="nav"><a class="brandmark" href="/">')
+    expect(html).toContain('<div class="topSearch">⌕ 搜索模型</div>')
+    expect(html).toContain('<a class="githubLink" href="https://github.com/imphillip/mddb"')
+    expect(html).toContain('<a class="active" href="/">模型动态</a><a href="/models/">模型广场</a>')
+    expect(html).toContain('<main class="modelsShell newsShell">')
+    expect(html).toContain('<section class="mainPanel newsPanel">')
+    expect(html).not.toContain('radial-gradient')
+    expect(html).not.toContain('#070b12')
+  })
+
   it('groups news by date in descending order', () => {
     const html = renderModelNewsHome(emptyGraph, feedFixture())
 
