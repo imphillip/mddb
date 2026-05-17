@@ -1,7 +1,39 @@
 {
-  "generatedAt": "2026-05-17T18:00:59.283Z",
+  "generatedAt": "2026-05-17T18:21:07.668Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
+    {
+      "id": "cmpa3ahs50vudslnz09jr4b85",
+      "title": "GPT-5.5 Pro接受幽默生成挑战，产出荒诞词对",
+      "title_en": "GPT-5.5 Pro faces its hardest academic challenge： to apply the technique from a paper analyzing whic…",
+      "url": "https://x.com/emollick/status/2056067610303672422",
+      "source": "X：Ethan Mollick (@emollick)",
+      "publishedAt": "2026-05-17T17:41:32.000Z",
+      "summary": "GPT-5.5 Pro面临一项学术挑战，要求其应用一篇研究幽默的论文技术，该论文通过分析发现，含义对比强烈的词对最引人发笑。模型据此生成了一系列荒诞的词组组合，如\"scrotum snorkel\"和\"diarrhea tiara\"等，以测试其对幽默原理的理解和创造性应用能力。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "openai"
+        ],
+        "models": [
+          "gpt-5.5"
+        ]
+      },
+      "tagLabels": {
+        "providers": [
+          "OpenAI"
+        ],
+        "models": [
+          "gpt-5.5"
+        ]
+      },
+      "providerRoutes": {
+        "openai": "/models/openai/"
+      },
+      "modelRoutes": {
+        "gpt-5.5": "/models/openai/gpt-5.5/"
+      }
+    },
     {
       "id": "cmpa1ilk60verslnz3u690kzq",
       "title": "Grok将推出个人任务自动化功能",
