@@ -72,7 +72,7 @@ function modelReleaseTimestamp(node: OpenRouterRawNode): number {
 export function renderOpenRouterRawDetail(graph: OpenRouterRawGraph, node: OpenRouterRawNode): string {
   const outEdges = graph.edges.filter((edge) => edge.from === node.id)
   const inEdges = graph.edges.filter((edge) => edge.to === node.id && edge.from !== node.id)
-  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/models/">← 返回模型广场</a><div class="eyebrow">Author · ${escapeHtml(node.derived.author ?? '—')}</div><h1>${escapeHtml(node.displayName)}</h1><div class="modelIdHero">Model ID ${renderModelTagCopy(node.modelId)}</div><div hidden>${modelDescription(node)}</div>${renderHeroRelations(graph, node, outEdges, inEdges)}</div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#spec">规格</a><a href="#pricing">价格</a><a href="#source">数据来源与源数据</a></nav>${renderSpecSection(node)}${renderPricingSection(graph, node)}${renderSourceSection(node, outEdges, inEdges)}</article></div></main>`
+  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/models/">← 返回模型广场</a><div class="eyebrow">Author · ${escapeHtml(node.derived.author ?? '—')}</div><h1>${escapeHtml(node.displayName)}</h1><div class="modelIdHero">Model ID ${renderModelTagCopy(node.modelId)}</div><div hidden>${modelDescription(node)}</div>${renderHeroRelations(graph, node, outEdges, inEdges)}</div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#spec">规格</a><a href="#pricing">价格</a><a href="#source">数据来源与源数据</a></nav>${renderSpecSection(node)}${renderPricingSection(graph, node)}${renderSourceSection(node, outEdges, inEdges)}</article></div><script>${currencyToggleScript()}</script></main>`
   return page(`${node.displayName} · mddb.dev`, body, 'models', currencyToggle(graph))
 }
 
@@ -232,7 +232,7 @@ function rawModelArray(node: OpenRouterRawNode, key: string): string[] {
 }
 
 function renderPricingSection(graph: OpenRouterRawGraph, node: OpenRouterRawNode): string {
-  const endpointPricing = endpointPricingCards(node)
+  const endpointPricing = endpointPricingCards(node, graph.currency?.rate)
   const supplementalPricing = endpointPricing ? '' : baseLlmSupplementalPricingCards(graph, node)
   return `<section id="pricing" class="panel"><h2>价格</h2>${endpointPricing || supplementalPricing || '<p class="muted">无结构化 provider pricing；如本节点为 alias/snapshot/deployment，请先看上方关联模型跳转到 anchor。</p>'}</section>`
 }
@@ -242,17 +242,17 @@ function baseLlmSupplementalPricingCards(graph: OpenRouterRawGraph, node: OpenRo
   const prices = graph.enrichment?.baseLlm?.pricingBySourceId?.[node.sourceId] ?? []
   const usable = prices.filter((price) => price.billingKind !== 'unknown')
   if (usable.length === 0) return ''
-  return `<div class="priceVariantGrid"><div class="muted">BaseLLM / NewAPI 补充价格；仅用于 OpenRouter 缺失结构化价格时，不覆盖 OpenRouter 官方/endpoint 价格。</div>${usable.map(renderBaseLlmPricingCard).join('')}</div>`
+  return `<div class="priceVariantGrid"><div class="muted">BaseLLM / NewAPI 补充价格；仅用于 OpenRouter 缺失结构化价格时，不覆盖 OpenRouter 官方/endpoint 价格。</div>${usable.map((price) => renderBaseLlmPricingCard(price, graph.currency?.rate)).join('')}</div>`
 }
 
-function renderBaseLlmPricingCard(price: BaseLlmSupplementalPrice): string {
+function renderBaseLlmPricingCard(price: BaseLlmSupplementalPrice, cnyRate?: number): string {
   const rows = price.billingKind === 'unit' ? [
-    priceRow('Request / unit', price.unitPrice, 'USD/direct'),
+    priceRow('Request / unit', price.unitPrice, 'USD/direct', cnyRate),
   ] : [
-    priceRow('Input / prompt', price.pricePerMillionInput ?? price.derivedInputPriceFromRatio, 'USD/direct_per_1M'),
-    priceRow('Output / completion', price.pricePerMillionOutput ?? price.derivedOutputPriceFromRatio, 'USD/direct_per_1M'),
-    priceRow('Cache read', price.pricePerMillionCacheRead, 'USD/direct_per_1M'),
-    priceRow('Cache write', price.pricePerMillionCacheWrite, 'USD/direct_per_1M'),
+    priceRow('Input / prompt', price.pricePerMillionInput ?? price.derivedInputPriceFromRatio, 'USD/direct_per_1M', cnyRate),
+    priceRow('Output / completion', price.pricePerMillionOutput ?? price.derivedOutputPriceFromRatio, 'USD/direct_per_1M', cnyRate),
+    priceRow('Cache read', price.pricePerMillionCacheRead, 'USD/direct_per_1M', cnyRate),
+    priceRow('Cache write', price.pricePerMillionCacheWrite, 'USD/direct_per_1M', cnyRate),
   ]
   const meta = [
     `provider ${price.providerName}`,
@@ -263,10 +263,10 @@ function renderBaseLlmPricingCard(price: BaseLlmSupplementalPrice): string {
   return `<div class="priceVariantCard"><h3>BaseLLM / NewAPI 补充价格 · ${escapeHtml(price.providerName)}</h3><dl class="priceList">${rows.filter(Boolean).join('')}</dl><div class="statusLine">${meta}</div></div>`
 }
 
-function endpointPricingCards(node: OpenRouterRawNode): string {
+function endpointPricingCards(node: OpenRouterRawNode, cnyRate?: number): string {
   const endpoints = currentProviderEndpoints(node)
   if (endpoints.length === 0) return ''
-  return `<div class="priceVariantGrid">${endpoints.map(renderEndpointPricingCard).join('')}</div>`
+  return `<div class="priceVariantGrid">${endpoints.map((endpoint) => renderEndpointPricingCard(endpoint, cnyRate)).join('')}</div>`
 }
 
 function currentProviderEndpoints(node: OpenRouterRawNode): Record<string, unknown>[] {
@@ -279,27 +279,27 @@ function endpointProviderSlug(endpoint: Record<string, unknown>): string {
   return tag.replace(/\//gu, '-').trim().toLowerCase().replace(/[^a-z0-9._-]+/gu, '-') || 'unknown'
 }
 
-function renderEndpointPricingCard(endpoint: Record<string, unknown>): string {
+function renderEndpointPricingCard(endpoint: Record<string, unknown>, cnyRate?: number): string {
   const pricing = isRecord(endpoint.pricing) ? endpoint.pricing : {}
   const rows = [
-    priceRow('Input / prompt', pricing.prompt, 'USD/1M tokens'),
-    priceRow('Output / completion', pricing.completion, 'USD/1M tokens'),
-    priceRow('Cache read', pricing.input_cache_read, 'USD/1M tokens'),
-    priceRow('Web search', pricing.web_search, 'USD/request'),
+    priceRow('Input / prompt', pricing.prompt, 'USD/1M tokens', cnyRate),
+    priceRow('Output / completion', pricing.completion, 'USD/1M tokens', cnyRate),
+    priceRow('Cache read', pricing.input_cache_read, 'USD/1M tokens', cnyRate),
+    priceRow('Web search', pricing.web_search, 'USD/request', cnyRate),
   ].filter(Boolean).join('')
   return `<div class="priceVariantCard"><dl class="priceList">${rows}</dl></div>`
 }
 
-function priceRow(label: string, value: unknown, unit: string): string {
+function priceRow(label: string, value: unknown, unit: string, cnyRate?: number): string {
   if (value === null || value === undefined || value === '') return ''
-  return `<div class="priceItem"><dt>${escapeHtml(label)}</dt><dd>${formatPrice(value, unit)}</dd></div>`
+  return `<div class="priceItem"><dt>${escapeHtml(label)}</dt><dd>${formatPrice(value, unit, cnyRate)}</dd></div>`
 }
 
-function formatPrice(value: unknown, unit: string): string {
-  if (unit === 'USD/1M tokens') return `${currencyPriceHtml(Number(value) * 1_000_000)} <span class="muted">per 1M tokens</span>`
-  if (unit === 'USD/direct_per_1M') return `${currencyPriceHtml(Number(value))} <span class="muted">per 1M tokens</span>`
-  if (unit === 'USD/request') return `${currencyPriceHtml(Number(value))} <span class="muted">per request</span>`
-  if (unit === 'USD/direct') return `${currencyPriceHtml(Number(value))} <span class="muted">per request</span>`
+function formatPrice(value: unknown, unit: string, cnyRate?: number): string {
+  if (unit === 'USD/1M tokens') return `${currencyPriceHtml(Number(value) * 1_000_000, cnyRate)} <span class="muted">per 1M tokens</span>`
+  if (unit === 'USD/direct_per_1M') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per 1M tokens</span>`
+  if (unit === 'USD/request') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per request</span>`
+  if (unit === 'USD/direct') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per request</span>`
   return `<code>${escapeHtml(String(value))}</code>${unit ? ` <span class="muted">${escapeHtml(unit)}</span>` : ''}`
 }
 
