@@ -14,6 +14,8 @@ describe('renderModelNewsHome', () => {
     expect(html).toContain('data-news-card')
     expect(html).toContain('Claude 新模型发布')
     expect(html).toContain('<a class="newsTag provider" href="/models/anthropic/">Anthropic</a>')
+    expect(html).toContain('<span class="newsTag provider">xai</span>')
+    expect(html).not.toContain('href="/models/xai/"')
     expect(html).toContain('<a class="newsTag model" href="/models/anthropic/claude-opus-4.7/">claude-opus-4.7</a>')
     expect(html).not.toContain('泛 AI 行业新闻')
   })
@@ -91,6 +93,17 @@ function feedFixture(): ModelNewsFeed {
         tagLabels: { providers: ['Anthropic'], models: ['claude-opus-4.7'] },
         providerRoutes: { anthropic: '/models/anthropic/' },
         modelRoutes: { 'claude-opus-4.7': '/models/anthropic/claude-opus-4.7/' },
+      },
+      {
+        id: 'endpoint-only-provider',
+        title: 'xAI 动态',
+        url: 'https://example.com/xai',
+        source: 'xAI',
+        publishedAt: '2026-05-17T03:30:00.000Z',
+        summary: 'endpoint-only provider 没有 provider 页面时不要生成坏链接。',
+        category: 'ai-models',
+        tags: { providers: ['xai'], models: [] },
+        tagLabels: { providers: ['xai'], models: [] },
       },
       {
         id: 'untagged',

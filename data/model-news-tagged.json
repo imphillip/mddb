@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-17T17:40:27.416Z",
+  "generatedAt": "2026-05-17T17:45:50.467Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
     {
@@ -24,6 +24,35 @@
         "models": []
       },
       "providerRoutes": {},
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmpa2c9xr0vm1slnzhg37fzh6",
+      "title": "公司测试多种AI工具，Perplexity AI的Slack集成表现突出",
+      "title_en": "This week， the company has been trying out all types of different AI tools including Devin， Mistral，…",
+      "url": "https://x.com/SemiAnalysis_/status/2056060948394221828",
+      "source": "X：SemiAnalysis (@SemiAnalysis_)",
+      "publishedAt": "2026-05-17T17:15:04.000Z",
+      "summary": "本周，公司尝试了包括Devin、Mistral、Grok、Perplexity在内的多种AI工具，大多数因价值有限将被快速淘汰。但Perplexity AI的企业Slack集成表现惊人，优于Claude，能直接在Slack中发送图像并返回详细研究报告与可视化内容。目前，公司96%的token预算仍流向Anthropic（Claude提供商），但基于使用模式，部分预算可能转向Perplexity。作者希望Claude的Slack集成也能添加类似功能，以提升效率。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "anthropic",
+          "perplexity"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Anthropic",
+          "Perplexity"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "anthropic": "/models/anthropic/",
+        "perplexity": "/models/perplexity/"
+      },
       "modelRoutes": {}
     },
     {
