@@ -1,7 +1,74 @@
 {
-  "generatedAt": "2026-05-17T18:21:07.668Z",
+  "generatedAt": "2026-05-17T20:26:48.317Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
+    {
+      "id": "cmpa5b49v0w99slnzhoi0h9av",
+      "title": "反对\"AI垃圾\"标签，倡导基于内容的实质批评",
+      "title_en": "I often find the term \"AI slop\" rather unhelpful. Let me explain what I mean. I regularly read abou…",
+      "url": "https://x.com/kimmonismus/status/2056087495872590064",
+      "source": "X：Kim (@kimmonismus)",
+      "publishedAt": "2026-05-17T19:00:33.000Z",
+      "summary": "作者认为\"AI slop\"一词无益，人们常因内容由AI生成而愤怒，却未批评内容本身。AI模型如GPT-4、Claude已能生成高质量文本，OpenAI Image 2的图像也逼真难辨。批评应基于实质内容，而非来源；AI生成内容可好可坏，取决于提示、研究等因素。社会需要更多有根据的批评，而非纯粹怨恨。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "openai"
+        ],
+        "models": [
+          "gpt-4"
+        ]
+      },
+      "tagLabels": {
+        "providers": [
+          "OpenAI"
+        ],
+        "models": [
+          "gpt-4"
+        ]
+      },
+      "providerRoutes": {
+        "openai": "/models/openai/"
+      },
+      "modelRoutes": {
+        "gpt-4": "/models/openai/gpt-4/"
+      }
+    },
+    {
+      "id": "cmpa4wygl0w6tslnzp2lmv57s",
+      "title": "谷歌DeepMind CEO谈AI模型竞争格局",
+      "title_en": "Uhh",
+      "url": "https://x.com/pmarca/status/2056084739732246850",
+      "source": "X：Marc Andreessen (@pmarca, a16z)",
+      "publishedAt": "2026-05-17T18:49:36.000Z",
+      "summary": "谷歌DeepMind CEO Demis Hassabis：\n我们拥有Gemini、Gemma和Veo。\nOpenAI拥有GPT-4o。\nAnthropic拥有Claude。\nMeta拥有Llama。\nxAI拥有Grok。\n微软拥有Copilot。\n苹果拥有…Siri？",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "anthropic",
+          "openai"
+        ],
+        "models": [
+          "gpt-4o"
+        ]
+      },
+      "tagLabels": {
+        "providers": [
+          "Anthropic",
+          "OpenAI"
+        ],
+        "models": [
+          "gpt-4o"
+        ]
+      },
+      "providerRoutes": {
+        "anthropic": "/models/anthropic/",
+        "openai": "/models/openai/"
+      },
+      "modelRoutes": {
+        "gpt-4o": "/models/openai/gpt-4o/"
+      }
+    },
     {
       "id": "cmpa3ahs50vudslnz09jr4b85",
       "title": "GPT-5.5 Pro接受幽默生成挑战，产出荒诞词对",
