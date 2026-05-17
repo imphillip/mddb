@@ -1,7 +1,241 @@
 {
-  "generatedAt": "2026-05-17T15:03:40.406Z",
+  "generatedAt": "2026-05-17T17:14:16.120Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
+    {
+      "id": "cmpa0t1i50v97slnzg0uqvxsm",
+      "title": "Anthropic发布官方Skill构建指南",
+      "title_en": "Anthropic 官方发布的 Skill 构建指南 我用 AI 翻译了一个双语版本，放下面了",
+      "url": "https://x.com/op7418/status/2056048680290103504",
+      "source": "X：歸藏 (@op7418)",
+      "publishedAt": "2026-05-17T16:26:19.000Z",
+      "summary": "Anthropic 官方发布的 Skill 构建指南\n\n我用 AI 翻译了一个双语版本，放下面了",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "anthropic"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Anthropic"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "anthropic": "/models/anthropic/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9zz24b0v2tslnz2ajhvpnc",
+      "title": "使用Codex互联设备，随时随地开发",
+      "title_en": "link together your devices with Codex to develop from anywhere， anytime",
+      "url": "https://x.com/gdb/status/2056046844921172243",
+      "source": "X：Greg Brockman (@gdb)",
+      "publishedAt": "2026-05-17T16:19:01.000Z",
+      "summary": "用户通过Codex应用将手机、MacBook和Mac mini互联，构建跨设备开发环境。Mac mini作为始终在线且连接稳定的\"家庭基站\"，手机和MacBook作为可移动的\"卫星设备\"。用户可在任一设备上启动或恢复Codex线程，并通过SSH实现文件互访。这一设置使Codex不再绑定于单一前台设备，成为可通过任何设备访问、线程持续运行（包括24/7心跳线程）的持久化开发环境。尽管当前方案仍显粗糙，但其形态预示着未来跨设备无缝开发的工作模式。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "together"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Together"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "together": "/models/together/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmpa0moej0v8mslnzs3ph0b54",
+      "title": "Anthropic Claude 5天攻破Apple M5 macOS内核漏洞：5年数十亿防线，被AI一举击穿",
+      "title_en": "http：//x.com/i/article/2056041643103715328",
+      "url": "https://x.com/berryxia/status/2056043674446995887",
+      "source": "X：Berry Xia (@berryxia)",
+      "publishedAt": "2026-05-17T16:06:26.000Z",
+      "summary": "Anthropic的Claude Mythos Preview在5天内，协助安全团队Calif成功构建并演示了首个公开的、针对Apple M5芯片macOS内核的内存破坏提权利用链。该攻击绕过了苹果耗时5年、投入数十亿美元打造的MIE硬件级内存完整性防护，从普通用户权限通过纯数据操作即可获得root权限。苹果已在后续更新中修复漏洞并致谢。此事件标志着AI驱动的安全研究能力已能极速突破顶尖硬件防护，显著改变了攻防的速度与平衡。",
+      "category": "paper",
+      "tags": {
+        "providers": [
+          "anthropic"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Anthropic"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "anthropic": "/models/anthropic/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9zb0t00ux3slnzs30o3ofq",
+      "title": "Perplexity正在开发\"个人CFO\"标签，整合多源金融数据",
+      "title_en": "Perplexity is working on a dedicated \"Personal CFO\" tab that highlights Portfolio， Transactions， and…",
+      "url": "https://x.com/testingcatalog/status/2056043029148922060",
+      "source": "X：Testing Catalog (@testingcatalog)",
+      "publishedAt": "2026-05-17T16:03:52.000Z",
+      "summary": "Perplexity正在开发一个专门的\"个人CFO\"标签，该功能将突出显示投资组合、交易与负债三大板块。它整合了来自多家数据提供商的信息，包括Financial Modeling Prep的财务数据、Unusual Whales的期权数据、Quartr提供的收益电话会议记录与文档，以及Fiscal AI的营收与每股收益数据、标普全球的预测数据和Polymarket的预测市场数据。平台明确声明，所有数据仅用于提供信息，不适用于交易或作为财务、投资、税务等建议。这一功能布局暗示Perplexity可能正在构建一款类似金融终端的创新产品。",
+      "category": "ai-products",
+      "tags": {
+        "providers": [
+          "perplexity"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Perplexity"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "perplexity": "/models/perplexity/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9zdml80uxzslnz7x1v9l1m",
+      "title": "拒绝浮夸营销话术的后果：AIE视频被每日搬运且不标注原作者",
+      "title_en": "we do not post AIE videos with bullshit brainrot hype lingo， and this is the consequence： the entir…",
+      "url": "https://x.com/swyx/status/2056040043106521096",
+      "source": "X：swyx (@swyx)",
+      "publishedAt": "2026-05-17T15:52:00.000Z",
+      "summary": "主推文作者因拒绝使用浮夸营销话术发布AIE视频，导致其全部历史内容被\"影响力操盘手\"每日搬运，且未标注原作者（如@trq212）。作者呼吁观众若见到此类内容，请帮忙标注并致谢原创者。文中整合的引用推文指出，Anthropic发布了一个由Claude Code工程师主讲的2小时完整课程，详细教授如何构建能自主运行、访问终端、管理文件系统内存、通过Hooks防止幻觉，并能安全在大型代码库上操作的Claude智能体。该课程被评价为内容全面，其价值超过许多高价付费课程。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "anthropic"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Anthropic"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "anthropic": "/models/anthropic/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9yhhwp0ur3slnz15xv7j9y",
+      "title": "xAI算法开源引泛滥解读，多数分析未触源码",
+      "title_en": "xAI 算法开源后，解读内容铺天盖地。 我敢说一句颠覆多数人认知的实话： 市面上 95% 的分析，是 AI 批量生产的同质化废话， 连源码文件名都没翻过一次。 「多互动」「多发帖」「账号要垂直」…",
+      "url": "https://x.com/berryxia/status/2056038614283555191",
+      "source": "X：Berry Xia (@berryxia)",
+      "publishedAt": "2026-05-17T15:46:19.000Z",
+      "summary": "作者指出，xAI开源后，市面上95%的解读内容是由AI批量生产的同质化废话，分析者甚至没有查看过源码文件。这些内容充斥着\"多互动\"\"账号要垂直\"等泛泛而谈的建议，缺乏实际价值。真正隐藏在xAI算法深处的关键机制，大多数讨论者连名字都未曾提及，却在指导他人如何运营X平台。作者呼吁推荐真正有价值的深度解读，并暗示自己通过仔细研读源码获得了不断惊喜的发现。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "xai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "xAI"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "xai": "/models/xai/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9xop410uj9slnzp00r4uez",
+      "title": "安全研究人员称微软在BitLocker中植入了后门，并发布了利用程序",
+      "title_en": null,
+      "url": "https://www.techspot.com/news/112410-security-researcher-microsoft-secretly-built-backdoor-bitlocker-releases.html",
+      "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+      "publishedAt": "2026-05-17T15:18:01.171Z",
+      "summary": "安全研究人员指控微软在BitLocker加密功能中秘密植入了后门，并已公开发布了相关的利用程序。该指控引发了关于微软操作系统安全性和用户数据隐私的严重担忧。目前，该事件在技术社区引发广泛关注，相关讨论在Hacker News上获得了超过120个关注点。",
+      "category": "industry",
+      "tags": {
+        "providers": [
+          "microsoft"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Microsoft"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "microsoft": "/models/microsoft/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9yhhwp0ur5slnzp2fld9cz",
+      "title": "Grok免费接入Hermes Agent教程：强化实时信息处理能力",
+      "title_en": "http：//x.com/i/article/2056013843718156289",
+      "url": "https://x.com/berryxia/status/2056027788092776674",
+      "source": "X：Berry Xia (@berryxia)",
+      "publishedAt": "2026-05-17T15:03:18.000Z",
+      "summary": "xAI与Nous Research合作，允许Grok订阅用户免费将模型接入Hermes Agent。此举旨在结合Grok的实时信息检索优势与Hermes Agent的24小时持续运行能力，用户可在Agent内使用Grok进行对话、语音合成及图像生成。安装过程主要分为三步：安装Hermes Agent、选择xAI提供商并授权、安装所需服务后启动。若遇问题，可借助Claude等工具修复。未来预计有更多开源Agent集成计划。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "xai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "xAI"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "xai": "/models/xai/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9wwvz90uebslnzkbi1jk4b",
+      "title": "新加坡后台相聚，旧友新朋共话迭代",
+      "title_en": "@aiDotEngineer Singapore backstage vibe ✨ So much fun meeting old friends and new！ Always excited t…",
+      "url": "https://x.com/MiniMax_AI/status/2056023500440400312",
+      "source": "X：MiniMax (@MiniMax_AI)",
+      "publishedAt": "2026-05-17T14:46:16.000Z",
+      "summary": "@aiDotEngineer 新加坡后台氛围 ✨\n\n见到老朋友和新朋友真是太开心了！一直很兴奋能和大家一起持续迭代。很快旧金山再见！\n\n@ZixuanLi_ @calcsam @GeoffreyHuntley @zwuvincent @sarahookr @swyx",
+      "category": "industry",
+      "tags": {
+        "providers": [
+          "minimax"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Minimax"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "minimax": "/models/minimax/"
+      },
+      "modelRoutes": {}
+    },
     {
       "id": "cmp9vjiw50u1lslnz9frgznel",
       "title": "Apple Silicon本地运行LLM成本高于云端API",
