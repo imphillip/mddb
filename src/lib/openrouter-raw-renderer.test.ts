@@ -78,6 +78,8 @@ describe('renderOpenRouterRawHome currency toggle', () => {
     expect(html).toContain('class="currencyToggle"')
     expect(html).toContain('data-currency-toggle')
     expect(html).toContain('class="githubLink"')
+    expect(html).toContain('<a class="brandmark" href="/">')
+    expect(html).toContain('<a href="/">模型动态</a>')
     expect(html.indexOf('class="githubLink"')).toBeLessThan(html.indexOf('模型动态'))
     expect(html.indexOf('data-currency-toggle')).toBeGreaterThan(html.indexOf('模型广场'))
     expect(html).toContain('.githubLink{width:34px')

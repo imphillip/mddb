@@ -287,7 +287,7 @@ function page(title: string, body: string, activePage: ActivePage, navExtra = ''
 function nav(activePage: ActivePage, navExtra = ''): string {
   const modelsClass = activePage === 'models' ? ' class="active"' : ''
   const search = activePage === 'models' ? '<label class="topSearch">⌕ <input id="q" type="search" placeholder="搜索模型 / provider / author / source" autocomplete="off"></label>' : '<div class="topSearch">⌕ 搜索</div>'
-  return `<header class="topbar"><nav class="nav"><a class="brandmark" href="/models/">${databaseLogo()}<span>mddb.dev</span><span class="brandZh">大模型数据库</span></a>${search}<a class="githubLink" href="https://github.com/imphillip/mddb" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库">${githubLogo()}</a><div class="navlinks"><span class="disabled" aria-disabled="true">模型动态</span><a${modelsClass} href="/models/">模型广场</a></div>${navExtra}</nav></header>`
+  return `<header class="topbar"><nav class="nav"><a class="brandmark" href="/">${databaseLogo()}<span>mddb.dev</span><span class="brandZh">大模型数据库</span></a>${search}<a class="githubLink" href="https://github.com/imphillip/mddb" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库">${githubLogo()}</a><div class="navlinks"><a href="/">模型动态</a><a${modelsClass} href="/models/">模型广场</a></div>${navExtra}</nav></header>`
 }
 
 function currencyToggle(graph: OpenRouterRawGraph): string {
