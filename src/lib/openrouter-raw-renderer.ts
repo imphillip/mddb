@@ -1,3 +1,4 @@
+import type { ModelNewsFeed } from './model-news.js'
 import type { BaseLlmSupplementalPrice, OpenRouterRawEdge, OpenRouterRawGraph, OpenRouterRawNode } from './openrouter-raw-graph.js'
 
 const css = String.raw`
@@ -18,6 +19,24 @@ export function renderOpenRouterRawHome(graph: OpenRouterRawGraph): string {
   return page('模型广场 · mddb.dev', body, 'models', currencyToggle(graph))
 }
 
+
+export function renderOpenRouterProviderIndex(graph: OpenRouterRawGraph, feed: ModelNewsFeed): string {
+  const providers = providerSummaries(graph, feed)
+  const rows = providers.map((provider) => `<a class="providerDirectoryLink providerDirectoryCard" href="/models/providers/${escapeHtml(provider.id)}/"><div><span>${escapeHtml(provider.label)}</span><p>${provider.modelCount} 个模型 · ${provider.newsCount} 条相关动态</p></div><strong>→</strong></a>`).join('')
+  const body = `<main class="modelsShell providerShell"><aside class="filterPanel"><div class="filterGroup"><h3>Provider</h3><p class="filterHint">按模型广场的 provider 维度聚合模型，并联动模型动态里的行业新闻。</p></div></aside><section class="mainPanel"><div class="plazaHead"><div><h1>Provider 列表</h1><p class="rawIntro">${providers.length} 个 Provider · ${providers.reduce((sum, provider) => sum + provider.modelCount, 0)} 个模型。查看每个 provider 下的模型清单和相关行业动态。</p></div></div><div class="providerDirectoryGrid">${rows}</div></section></main>`
+  return page('Provider 列表 · mddb.dev', body, 'models')
+}
+
+export function renderOpenRouterProviderDetail(graph: OpenRouterRawGraph, providerId: string, feed: ModelNewsFeed): string {
+  const models = visibleProviderModels(graph, providerId)
+  const label = providerDisplayName(graph, providerId)
+  const newsItems = providerNewsItems(feed, providerId).slice(0, 30)
+  const modelRows = models.map((node) => `<li class="providerModelItem"><a class="modelLink" href="${escapeHtml(node.route)}/">${escapeHtml(node.modelId)}</a><span>${escapeHtml(modelContextLength(node))} · ${escapeHtml(modelReleasedDate(node))}</span></li>`).join('') || '<li class="providerModelItem muted">暂无模型</li>'
+  const newsRows = newsItems.map(renderProviderNewsCard).join('') || '<p class="muted">暂无相关动态。</p>'
+  const body = `<main class="modelsShell providerShell"><aside class="filterPanel"><a class="btn" href="/models/">← 返回模型广场</a><div class="filterGroup"><h3>${escapeHtml(label)}</h3><p class="filterHint">${models.length} 个模型 · ${newsItems.length} 条相关动态</p></div></aside><section class="mainPanel"><div class="plazaHead"><div><h1>${escapeHtml(label)}</h1><p class="rawIntro">${escapeHtml(label)} 在模型广场中的模型与模型动态中的相关行业新闻。</p></div></div><div class="providerDetailGrid"><section class="providerPanel"><h2>${escapeHtml(label)} 的模型</h2><ul class="providerModelList">${modelRows}</ul></section><section class="providerPanel"><h2>${escapeHtml(label)} 相关动态</h2><div class="providerNewsList">${newsRows}</div></section></div></section></main>`
+  return page(`${label} · Provider · mddb.dev`, body, 'models')
+}
+
 function compareNodesByReleaseDesc(a: OpenRouterRawNode, b: OpenRouterRawNode): number {
   const diff = modelReleaseTimestamp(b) - modelReleaseTimestamp(a)
   return diff !== 0 ? diff : a.displayName.localeCompare(b.displayName)
@@ -34,6 +53,50 @@ export function renderOpenRouterRawDetail(graph: OpenRouterRawGraph, node: OpenR
   const inEdges = graph.edges.filter((edge) => edge.to === node.id && edge.from !== node.id)
   const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/models/">← 返回模型广场</a><div class="eyebrow">Author · ${escapeHtml(node.derived.author ?? '—')}</div><h1>${escapeHtml(node.displayName)}</h1><div class="modelIdHero">Model ID ${renderModelTagCopy(node.modelId)}</div><div hidden>${modelDescription(node)}</div>${renderHeroRelations(graph, node, outEdges, inEdges)}</div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#spec">规格</a><a href="#pricing">价格</a><a href="#source">数据来源与源数据</a></nav>${renderSpecSection(node)}${renderPricingSection(graph, node)}${renderSourceSection(node, outEdges, inEdges)}</article></div></main>`
   return page(`${node.displayName} · mddb.dev`, body, 'models')
+}
+
+function providerSummaries(graph: OpenRouterRawGraph, feed: ModelNewsFeed): Array<{ id: string; label: string; modelCount: number; newsCount: number }> {
+  const ids = new Set(graph.nodes.map((node) => node.provider))
+  return Array.from(ids)
+    .map((id) => ({ id, label: providerDisplayName(graph, id), modelCount: visibleProviderModels(graph, id).length, newsCount: providerNewsItems(feed, id).length }))
+    .filter((provider) => provider.modelCount > 0)
+    .sort((a, b) => b.modelCount - a.modelCount || a.label.localeCompare(b.label))
+}
+
+function visibleProviderModels(graph: OpenRouterRawGraph, providerId: string): OpenRouterRawNode[] {
+  const searchOnlyNodeIds = modelPlazaSearchOnlyNodeIds(graph)
+  return graph.nodes.filter((node) => node.provider === providerId && !searchOnlyNodeIds.has(node.id)).sort(compareNodesByReleaseDesc)
+}
+
+function providerDisplayName(graph: OpenRouterRawGraph, providerId: string): string {
+  const node = graph.nodes.find((candidate) => candidate.provider === providerId)
+  return displayProviderLabel(node?.providerName ?? providerId)
+}
+
+function providerNewsItems(feed: ModelNewsFeed, providerId: string) {
+  return feed.items.filter((item) => item.tags.providers.includes(providerId)).sort((a, b) => Date.parse(b.publishedAt ?? '') - Date.parse(a.publishedAt ?? ''))
+}
+
+function renderProviderNewsCard(item: ModelNewsFeed['items'][number]): string {
+  return `<article class="providerNewsCard"><time datetime="${escapeHtml(item.publishedAt ?? '')}">${escapeHtml(shortZhDate(item.publishedAt))}</time><h3><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a></h3>${item.summary ? `<p>${escapeHtml(item.summary)}</p>` : ''}<a class="modelLink" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">查看原文 ↗</a></article>`
+}
+
+function displayProviderLabel(value: string): string {
+  if (!value) return value
+  const canonical = value.toLowerCase()
+  if (canonical === 'openai') return 'OpenAI'
+  if (canonical === 'xai') return 'xAI'
+  if (canonical === 'qwen') return 'Qwen'
+  if (canonical === 'deepseek') return 'DeepSeek'
+  if (value === value.toLowerCase()) return value.split(/[-_]/u).map((part) => part ? `${part.slice(0, 1).toUpperCase()}${part.slice(1)}` : part).join(' ')
+  return value
+}
+
+function shortZhDate(value: string | null | undefined): string {
+  if (!value) return '时间未知'
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) return '时间未知'
+  return new Intl.DateTimeFormat('zh-CN', { month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Shanghai' }).format(date)
 }
 
 function renderHeroRelations(graph: OpenRouterRawGraph, node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[], inEdges: OpenRouterRawEdge[]): string {

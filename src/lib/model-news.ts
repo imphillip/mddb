@@ -21,5 +21,6 @@ export type ModelNewsItem = {
     providers?: string[]
     models?: string[]
   }
+  providerRoutes?: Record<string, string>
   modelRoutes?: Record<string, string>
 }

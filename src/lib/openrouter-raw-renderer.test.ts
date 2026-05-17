@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { OpenRouterRawGraph, OpenRouterRawNode } from './openrouter-raw-graph.js'
-import { renderOpenRouterRawDetail, renderOpenRouterRawHome } from './openrouter-raw-renderer.js'
+import { renderOpenRouterProviderDetail, renderOpenRouterRawDetail, renderOpenRouterRawHome } from './openrouter-raw-renderer.js'
 
 function sourceNode(sourceId: string, author: string): OpenRouterRawNode {
   const [, modelId = sourceId] = sourceId.split('/')
@@ -105,6 +105,38 @@ describe('renderOpenRouterRawHome logo enrichment', () => {
     expect(html).toContain('src="https://models.dev/logos/alibaba.svg"')
     expect(html).toContain('data-filter-value="openai"')
     expect(html).toContain('data-filter-value="qwen"')
+  })
+})
+
+describe('provider pages', () => {
+  it('renders a provider detail intended for /models/<provider-name> with models and related news columns', () => {
+    const feed = {
+      generatedAt: '2026-05-17T00:00:00.000Z',
+      source: 'fixture',
+      items: [{
+        id: 'news-openai',
+        title: 'OpenAI 发布新模型能力',
+        url: 'https://example.com/openai-news',
+        source: 'AIHOT',
+        publishedAt: '2026-05-17T09:00:00.000Z',
+        summary: 'OpenAI 相关行业动态。',
+        tags: { providers: ['openai'], models: ['gpt-5.5'] },
+        tagLabels: { providers: ['OpenAI'], models: ['gpt-5.5'] },
+      }],
+    }
+
+    const html = renderOpenRouterProviderDetail(graph(), 'openai', feed)
+
+    expect(html).toContain('OpenAI')
+    expect(html).toContain('class="providerDetailGrid"')
+    expect(html).toContain('<h2>OpenAI 的模型</h2>')
+    expect(html).toContain('<a class="modelLink" href="/models/openai/gpt-5.5/">gpt-5.5</a>')
+    expect(html).toContain('<h2>OpenAI 相关动态</h2>')
+    expect(html).toContain('OpenAI 发布新模型能力')
+    expect(html).toContain('href="/models/"')
+    expect(html).not.toContain('/models/providers/')
+    expect(html).not.toContain('Provider 列表')
+    expect(html).not.toContain('qwen3-max')
   })
 })
 

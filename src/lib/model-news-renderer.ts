@@ -39,7 +39,7 @@ function formatTime(value){if(!value)return '时间未知';return new Intl.DateT
 function renderCard(item){
  const providerLabels=(item.tagLabels&&item.tagLabels.providers&&item.tagLabels.providers.length)?item.tagLabels.providers:item.tags.providers;
  const modelLabels=(item.tagLabels&&item.tagLabels.models&&item.tagLabels.models.length)?item.tagLabels.models:item.tags.models;
- const providerTags=providerLabels.map(function(label,index){return '<span class="newsTag provider">'+escapeHtml(label||item.tags.providers[index]||'')+'</span>'}).join('');
+ const providerTags=providerLabels.map(function(label,index){const providerId=item.tags.providers[index]||label;const route=(item.providerRoutes&&item.providerRoutes[providerId])||(providerId?'/models/'+encodeURIComponent(providerId)+'/':'');return route?'<a class="newsTag provider" href="'+escapeHtml(route)+'">'+escapeHtml(label)+'</a>':'<span class="newsTag provider">'+escapeHtml(label||providerId||'')+'</span>'}).join('');
  const modelTags=modelLabels.map(function(label,index){const modelId=item.tags.models[index]||label;const route=item.modelRoutes&&item.modelRoutes[modelId];return route?'<a class="newsTag model" href="'+escapeHtml(route)+'">'+escapeHtml(label)+'</a>':'<span class="newsTag model">'+escapeHtml(label)+'</span>'}).join('');
  return '<article class="newsCard" data-news-card><div class="newsMeta"><time datetime="'+escapeHtml(item.publishedAt||'')+'">'+escapeHtml(formatTime(item.publishedAt))+'</time><span>'+escapeHtml(item.source)+'</span></div><h3><a href="'+escapeHtml(item.url)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(item.title)+'</a></h3>'+(item.summary?'<p>'+escapeHtml(item.summary)+'</p>':'')+'<div class="newsTags">'+providerTags+modelTags+'</div><div class="newsActions"><a href="'+escapeHtml(item.url)+'" target="_blank" rel="noopener noreferrer">查看原文 ↗</a></div></article>';
 }
@@ -74,7 +74,11 @@ function renderDateGroup(group: { date: string; items: ModelNewsItem[] }): strin
 function renderNewsCard(item: ModelNewsItem): string {
   const providerLabels = item.tagLabels?.providers?.length ? item.tagLabels.providers : item.tags.providers
   const modelLabels = item.tagLabels?.models?.length ? item.tagLabels.models : item.tags.models
-  const providerTags = providerLabels.map((label, index) => `<span class="newsTag provider">${escapeHtml(label ?? item.tags.providers[index] ?? '')}</span>`).join('')
+  const providerTags = providerLabels.map((label, index) => {
+    const providerId = item.tags.providers[index] ?? label
+    const route = item.providerRoutes?.[providerId] ?? (providerId ? `/models/${encodeURIComponent(providerId)}/` : '')
+    return route ? `<a class="newsTag provider" href="${escapeHtml(route)}">${escapeHtml(label)}</a>` : `<span class="newsTag provider">${escapeHtml(label ?? providerId ?? '')}</span>`
+  }).join('')
   const modelTags = modelLabels.map((label, index) => {
     const modelId = item.tags.models[index] ?? label
     const route = item.modelRoutes?.[modelId]

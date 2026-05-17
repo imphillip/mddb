@@ -3,7 +3,7 @@ import { dirname, join } from 'node:path'
 import { buildDataQualityReport } from '../lib/data-quality.js'
 import { buildOpenRouterRawGraphFromFiles } from '../lib/openrouter-raw-graph.js'
 import { readModelNews, renderModelNewsHome } from '../lib/model-news-renderer.js'
-import { renderOpenRouterRawDetail, renderOpenRouterRawHome } from '../lib/openrouter-raw-renderer.js'
+import { renderOpenRouterProviderDetail, renderOpenRouterRawDetail, renderOpenRouterRawHome } from '../lib/openrouter-raw-renderer.js'
 
 const outputDir = join(process.cwd(), 'public')
 const graph = buildOpenRouterRawGraphFromFiles({
@@ -18,7 +18,8 @@ attachCurrency(graph, join(process.cwd(), 'data', 'exchange-rate-usd-cny.json'))
 
 rmSync(outputDir, { recursive: true, force: true })
 
-writePage('index.html', renderModelNewsHome(graph, readModelNews(join(process.cwd(), 'data', 'model-news-tagged.json'))))
+const feed = readModelNews(join(process.cwd(), 'data', 'model-news-tagged.json'))
+writePage('index.html', renderModelNewsHome(graph, feed))
 writePage('models/index.html', renderOpenRouterRawHome(graph))
 writePage('graph/openrouter.json', JSON.stringify(graph, null, 2))
 const dataQuality = buildDataQualityReport(graph)
@@ -31,6 +32,12 @@ writePage('graph/page-only-candidates.json', JSON.stringify(dataQuality.pageOnly
 
 for (const node of graph.nodes) {
   writePage(`models/${node.urlProvider}/${node.urlModelId}/index.html`, renderOpenRouterRawDetail(graph, node))
+}
+
+for (const providerId of Array.from(new Set(graph.nodes.map((node) => node.provider)))) {
+  if (graph.nodes.some((node) => node.provider === providerId && node.nodeKind === 'source_model')) {
+    writePage(`models/${providerId}/index.html`, renderOpenRouterProviderDetail(graph, providerId, feed))
+  }
 }
 
 function attachCurrency(graph: { currency?: unknown }, path: string): void {

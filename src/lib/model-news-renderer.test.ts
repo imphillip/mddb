@@ -13,8 +13,8 @@ describe('renderModelNewsHome', () => {
     expect(html).toContain('追踪全球 AI 模型发布')
     expect(html).toContain('data-news-card')
     expect(html).toContain('Claude 新模型发布')
-    expect(html).toContain('Anthropic')
-    expect(html).toContain('/models/anthropic/claude-opus-4.7/')
+    expect(html).toContain('<a class="newsTag provider" href="/models/anthropic/">Anthropic</a>')
+    expect(html).toContain('<a class="newsTag model" href="/models/anthropic/claude-opus-4.7/">claude-opus-4.7</a>')
     expect(html).not.toContain('泛 AI 行业新闻')
   })
 
@@ -76,6 +76,7 @@ function feedFixture(): ModelNewsFeed {
         category: 'ai-models',
         tags: { providers: ['anthropic'], models: ['claude-opus-4.7'] },
         tagLabels: { providers: ['Anthropic'], models: ['claude-opus-4.7'] },
+        providerRoutes: { anthropic: '/models/anthropic/' },
         modelRoutes: { 'claude-opus-4.7': '/models/anthropic/claude-opus-4.7/' },
       },
       {
