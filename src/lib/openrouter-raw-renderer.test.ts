@@ -120,6 +120,23 @@ describe('renderOpenRouterRawHome currency toggle', () => {
   })
 })
 
+describe('renderOpenRouterRawHome modality filter counts', () => {
+  it('moves total items into the All quick filter and shows counts on each modality section', () => {
+    const testGraph = graph()
+    testGraph.nodes[0]!.derived.outputModalities = ['text', 'image']
+    testGraph.nodes[1]!.derived.outputModalities = ['text']
+
+    const html = renderOpenRouterRawHome(testGraph)
+
+    expect(html).not.toContain('<div class="listCount"><b id="visibleCount">2</b> items</div>')
+    expect(html).toContain('<button class="quickFilter active" type="button" data-output-filter="all">全部 <span class="quickFilterCount" id="visibleCount">2</span></button>')
+    expect(html).toContain('<button class="quickFilter" type="button" data-output-filter="text">Text <span class="quickFilterCount">2</span></button>')
+    expect(html).toContain('<button class="quickFilter" type="button" data-output-filter="image">Image <span class="quickFilterCount">1</span></button>')
+    expect(html).toContain('<button class="quickFilter" type="button" data-output-filter="embeddings">Embedding <span class="quickFilterCount">0</span></button>')
+    expect(html).toContain('.quickFilterCount')
+  })
+})
+
 
 describe('renderOpenRouterRawHome logo enrichment', () => {
   it('renders models.dev brand logos in the plaza brand filter without changing canonical rows', () => {
