@@ -35,7 +35,7 @@ describe('renderModelNewsHome', () => {
     expect(html).toContain('<div class="topSearch">⌕ 搜索模型</div>')
     expect(html).toContain('<a class="githubLink" href="https://github.com/imphillip/mddb"')
     expect(html).toContain('<a class="active" href="/">模型动态</a><a href="/models/">模型广场</a>')
-    expect(html).toContain('<main class="newsShell">')
+    expect(html).toContain('<main class="newsShell"')
     expect(html).toContain('<section class="mainPanel newsPanel">')
     expect(html).toContain('.newsShell{max-width:920px')
     expect(html).not.toContain('filterPanel newsInfoPanel')
@@ -46,10 +46,18 @@ describe('renderModelNewsHome', () => {
     expect(html).not.toContain('#070b12')
   })
 
-  it('groups news by date in descending order', () => {
-    const html = renderModelNewsHome(emptyGraph, feedFixture())
+  it('renders the first 20 tagged items and includes an infinite-scroll loader for the next page', () => {
+    const html = renderModelNewsHome(emptyGraph, manyTaggedItemsFeed(25))
 
-    expect(html.indexOf('5月17日')).toBeLessThan(html.indexOf('5月16日'))
+    const initialHtml = html.split('<script type="application/json" id="newsData">')[0] ?? html
+    expect(countOccurrences(initialHtml, '<article class="newsCard" data-news-card>')).toBe(20)
+    expect(countOccurrences(html, 'data-news-card')).toBe(21)
+    expect(html).toContain('data-news-page-size="20"')
+    expect(html).toContain('id="newsSentinel"')
+    expect(html).toContain('loadNextNewsPage')
+    expect(initialHtml).toContain('第 20 条动态')
+    expect(initialHtml).not.toContain('第 21 条动态')
+    expect(html).toContain('第 21 条动态')
   })
 })
 
@@ -93,4 +101,31 @@ function feedFixture(): ModelNewsFeed {
       },
     ],
   }
+}
+
+
+function manyTaggedItemsFeed(count: number): ModelNewsFeed {
+  return {
+    generatedAt: '2026-05-17T00:00:00.000Z',
+    source: 'https://aihot.virxact.com/api/public/items?mode=all&take=100',
+    items: Array.from({ length: count }, (_, index) => {
+      const number = index + 1
+      const hour = String(23 - (index % 20)).padStart(2, '0')
+      return {
+        id: `tagged-${number}`,
+        title: `第 ${number} 条动态`,
+        url: `https://example.com/news-${number}`,
+        source: 'AIHOT',
+        publishedAt: `2026-05-${String(17 - Math.floor(index / 20)).padStart(2, '0')}T${hour}:00:00.000Z`,
+        summary: `第 ${number} 条摘要`,
+        category: 'tip',
+        tags: { providers: ['openai'], models: [] },
+        tagLabels: { providers: ['OpenAI'], models: [] },
+      }
+    }),
+  }
+}
+
+function countOccurrences(value: string, needle: string): number {
+  return value.split(needle).length - 1
 }

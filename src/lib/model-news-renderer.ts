@@ -16,9 +16,55 @@ export function readModelNews(path: string): ModelNewsFeed {
 
 export function renderModelNewsHome(_graph: OpenRouterRawGraph, feed: ModelNewsFeed): string {
   const items = feed.items.filter(hasTags).sort(compareNewsItems)
-  const groups = groupByDate(items)
-  const body = `<main class="newsShell"><section class="mainPanel newsPanel"><div class="plazaHead newsHead"><div><h1>模型动态</h1><p class="rawIntro">追踪全球 AI 模型发布、更新、评测、使用技巧、用户反馈与应用场景。</p></div></div><div class="newsTimeline">${groups.map(renderDateGroup).join('') || '<p class="muted">暂无已标注模型动态。</p>'}</div></section></main>`
+  const initialItems = items.slice(0, NEWS_PAGE_SIZE)
+  const groups = groupByDate(initialItems)
+  const body = `<main class="newsShell" data-news-page-size="${NEWS_PAGE_SIZE}"><section class="mainPanel newsPanel"><div class="plazaHead newsHead"><div><h1>模型动态</h1><p class="rawIntro">追踪全球 AI 模型发布、更新、评测、使用技巧、用户反馈与应用场景。</p></div></div><div class="newsTimeline" id="newsTimeline">${groups.map(renderDateGroup).join('') || '<p class="muted">暂无已标注模型动态。</p>'}</div><div id="newsSentinel" class="newsSentinel" aria-hidden="true"></div></section></main>${renderNewsPaginationScript(items)}`
   return page('模型动态 · mddb.dev', body, 'home')
+}
+
+
+function renderNewsPaginationScript(items: ModelNewsItem[]): string {
+  if (items.length <= NEWS_PAGE_SIZE) return ''
+  const payload = escapeScriptJson(JSON.stringify(items.slice(NEWS_PAGE_SIZE)))
+  return `<script type="application/json" id="newsData">${payload}</script><script>(function(){
+const pageSize=${NEWS_PAGE_SIZE};
+const timeline=document.getElementById('newsTimeline');
+const sentinel=document.getElementById('newsSentinel');
+const dataNode=document.getElementById('newsData');
+let remaining=[];
+try{remaining=JSON.parse(dataNode&&dataNode.textContent||'[]')}catch(error){remaining=[]}
+function escapeHtml(value){return String(value==null?'':value).replace(/[&<>'"]/g,function(char){return {'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]||char})}
+function formatDate(value){if(!value)return '未知日期';return new Intl.DateTimeFormat('zh-CN',{month:'long',day:'numeric',timeZone:'Asia/Shanghai'}).format(new Date(value))}
+function formatTime(value){if(!value)return '时间未知';return new Intl.DateTimeFormat('zh-CN',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Asia/Shanghai'}).format(new Date(value))}
+function renderCard(item){
+ const providerLabels=(item.tagLabels&&item.tagLabels.providers&&item.tagLabels.providers.length)?item.tagLabels.providers:item.tags.providers;
+ const modelLabels=(item.tagLabels&&item.tagLabels.models&&item.tagLabels.models.length)?item.tagLabels.models:item.tags.models;
+ const providerTags=providerLabels.map(function(label,index){return '<span class="newsTag provider">'+escapeHtml(label||item.tags.providers[index]||'')+'</span>'}).join('');
+ const modelTags=modelLabels.map(function(label,index){const modelId=item.tags.models[index]||label;const route=item.modelRoutes&&item.modelRoutes[modelId];return route?'<a class="newsTag model" href="'+escapeHtml(route)+'">'+escapeHtml(label)+'</a>':'<span class="newsTag model">'+escapeHtml(label)+'</span>'}).join('');
+ return '<article class="newsCard" data-news-card><div class="newsMeta"><time datetime="'+escapeHtml(item.publishedAt||'')+'">'+escapeHtml(formatTime(item.publishedAt))+'</time><span>'+escapeHtml(item.source)+'</span></div><h3><a href="'+escapeHtml(item.url)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(item.title)+'</a></h3>'+(item.summary?'<p>'+escapeHtml(item.summary)+'</p>':'')+'<div class="newsTags">'+providerTags+modelTags+'</div><div class="newsActions"><a href="'+escapeHtml(item.url)+'" target="_blank" rel="noopener noreferrer">查看原文 ↗</a></div></article>';
+}
+function appendItems(items){
+ const groups=new Map();
+ items.forEach(function(item){const date=formatDate(item.publishedAt);if(!groups.has(date))groups.set(date,[]);groups.get(date).push(item)});
+ groups.forEach(function(groupItems,date){
+   let section=Array.from(timeline.querySelectorAll('.newsDateGroup')).find(function(node){return (node.querySelector('h2')||{}).textContent===date});
+   if(!section){section=document.createElement('section');section.className='newsDateGroup';section.innerHTML='<h2>'+escapeHtml(date)+'</h2><div class="newsDateItems"></div>';timeline.appendChild(section)}
+   const list=section.querySelector('.newsDateItems');
+   list.insertAdjacentHTML('beforeend',groupItems.map(renderCard).join(''));
+ });
+}
+window.loadNextNewsPage=function loadNextNewsPage(){
+ if(!remaining.length){if(sentinel)sentinel.remove();return}
+ appendItems(remaining.splice(0,pageSize));
+ if(!remaining.length&&sentinel)sentinel.remove();
+}
+if('IntersectionObserver' in window&&sentinel){new IntersectionObserver(function(entries){if(entries.some(function(entry){return entry.isIntersecting}))window.loadNextNewsPage()},{rootMargin:'600px'}).observe(sentinel)}
+else if(sentinel){window.addEventListener('scroll',function(){if(sentinel.getBoundingClientRect().top<window.innerHeight+600)window.loadNextNewsPage()},{passive:true})}
+})();</script>`
+}
+
+function escapeScriptJson(value: string): string {
+  return value.replace(/</g, '\\u003c').replace(/>/g, '\\u003e').replace(/&/g, '\\u0026')
 }
 
 function renderDateGroup(group: { date: string; items: ModelNewsItem[] }): string {
@@ -68,6 +114,8 @@ function formatTime(value: string | null | undefined): string {
   if (!value) return '时间未知'
   return new Intl.DateTimeFormat('zh-CN', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Shanghai' }).format(new Date(value))
 }
+
+const NEWS_PAGE_SIZE = 20
 
 type ActivePage = 'home' | 'models'
 
