@@ -1,7 +1,33 @@
 {
-  "generatedAt": "2026-05-17T21:01:16.879Z",
+  "generatedAt": "2026-05-17T21:12:22.638Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
+    {
+      "id": "cmpa9h3oj0x6tslnzw3m4g13u",
+      "title": "AI时代开发者核心价值探索",
+      "title_en": "When AI handles the syntax， what's a developer's actual value？ Next Wednesday in Mountain View， we'…",
+      "url": "https://x.com/StepFun_ai/status/2056115766068383749",
+      "source": "X：阶跃星辰 StepFun (@StepFun_ai)",
+      "publishedAt": "2026-05-17T20:52:54.000Z",
+      "summary": "当AI处理语法时，开发者的真正价值是什么？\n下周三在Mountain View，我们将与@EazoAI、Agora和SEAMATE一起探索从AI编码到AI创造的转变。\n我们的团队将在台上。来深入探讨。\n5月21日·下午5-7点\nRSVP： http：//lu.ma/eqpg9qy3",
+      "category": "industry",
+      "tags": {
+        "providers": [
+          "stepfun"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Stepfun"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "stepfun": "/models/stepfun/"
+      },
+      "modelRoutes": {}
+    },
     {
       "id": "cmpa8ivde0wyuslnzz8q1bpsd",
       "title": "AI芯片能源领域必读书单推荐",
