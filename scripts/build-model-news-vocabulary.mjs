@@ -13,20 +13,27 @@ const graph = buildOpenRouterRawGraphFromFiles({
   baseLlmPath: join(process.cwd(), 'data', 'basellm-newapi-models.json'),
 })
 
-const providerById = new Map()
+const providerByName = new Map()
 for (const provider of graph.providers) {
+  const existing = providerByName.get(provider.name.toLowerCase())
+  if (!existing || provider.id === provider.name.toLowerCase() || provider.id.length < existing.id.length) {
+    providerByName.set(provider.name.toLowerCase(), provider)
+  }
+}
+const providerById = new Map()
+for (const provider of providerByName.values()) {
   providerById.set(provider.id, {
     id: provider.id,
     name: provider.name,
-    aliases: unique([provider.id, provider.name, provider.id.replace(/-/g, ' '), provider.name.replace(/-/g, ' ')]),
+    aliases: unique([provider.name, provider.id, provider.id.replace(/-/g, ' '), provider.name.replace(/-/g, ' ')]),
   })
 }
 for (const node of graph.nodes) {
-  if (!providerById.has(node.provider)) {
+  if (!providerById.has(node.provider) && !providerByName.has(node.providerName.toLowerCase())) {
     providerById.set(node.provider, {
       id: node.provider,
       name: node.providerName,
-      aliases: unique([node.provider, node.providerName, node.provider.replace(/-/g, ' '), node.providerName.replace(/-/g, ' ')]),
+      aliases: unique([node.providerName, node.provider, node.provider.replace(/-/g, ' '), node.providerName.replace(/-/g, ' ')]),
     })
   }
 }
