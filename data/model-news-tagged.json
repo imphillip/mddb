@@ -1,7 +1,59 @@
 {
-  "generatedAt": "2026-05-17T08:02:01.844Z",
+  "generatedAt": "2026-05-17T08:19:33.097Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
+    {
+      "id": "cmp9hwi0k0r0cslnzx978sf78",
+      "title": "ASML：AI与芯片革命的无形支柱",
+      "title_en": "ASML is the invisible backbone of AI and semiconductor revolution. Without ASML： 🚫 No NVIDIA H100 …",
+      "url": "https://x.com/rohanpaul_ai/status/2055920572119535836",
+      "source": "X：Rohan Paul (@rohanpaul_ai)",
+      "publishedAt": "2026-05-17T07:57:16.000Z",
+      "summary": "ASML是人工智能和半导体革命的无形支柱。\n\n没有ASML：\n🚫 就没有英伟达H100\n🚫 就没有AI超级计算机\n🚫 就没有GPT-3/4/5或Claude\n🚫 就没有可扩展的数据中心\n\n他们制造这些价值4亿美元的机器，基本上支撑着所有先进芯片的生产。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "nvidia"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Nvidia"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmp9hwi0k0r0dslnzgpk9c6x0",
+      "title": "研究揭示LLM智能体记忆重写机制损害可靠性",
+      "title_en": "New Illinois+ Tsinghua University and other labs study finds that LLM agents still have unreliable m…",
+      "url": "https://x.com/rohanpaul_ai/status/2055919204591902771",
+      "source": "X：Rohan Paul (@rohanpaul_ai)",
+      "publishedAt": "2026-05-17T07:51:50.000Z",
+      "summary": "伊利诺伊大学与清华大学等机构的研究发现，LLM智能体虽能从经验中学习，但其通过LLM将原始经历压缩成书面教训的记忆重写机制会损害记忆可靠性。在网页购物、模拟世界及ARC风格谜题等任务测试中，反复重写记忆会导致错误分组、规则过度泛化或过拟合，使智能体遗忘细节或混淆任务类型。例如，GPT-4在无记忆时可100%解决小型ARC-AGI问题集，而建立记忆并流式更新后，性能降至约54%。研究主张智能体记忆系统应重视原始经历作为关键证据，而非自动将所有经验重写为摘要，保留原始证据并选择性摘要效果更佳。",
+      "category": "paper",
+      "tags": {
+        "providers": [
+          "openai"
+        ],
+        "models": [
+          "gpt-4"
+        ]
+      },
+      "tagLabels": {
+        "providers": [
+          "OpenAI"
+        ],
+        "models": [
+          "gpt-4"
+        ]
+      },
+      "modelRoutes": {
+        "gpt-4": "/models/openai/gpt-4/"
+      }
+    },
     {
       "id": "cmp9gyuu80qqqslnzxwshaklt",
       "title": "Anthropic对Claude实施严格人脸识别验证，中国用户面临使用困境",
@@ -164,6 +216,35 @@
         "models": []
       },
       "modelRoutes": {}
+    },
+    {
+      "id": "cmp92xysc0nk1slnzwuk3v2u8",
+      "title": "GPT 4.6至4.7分词器技术解析",
+      "title_en": "Technical breakdown of tokenizer improvements from GPT 4.6 to 4.7",
+      "url": "https://x.com/SemiAnalysis_/status/2055815691211608442",
+      "source": "X：SemiAnalysis (@SemiAnalysis_)",
+      "publishedAt": "2026-05-17T01:00:30.000Z",
+      "summary": "GPT 4.6到4.7的分词器改进技术分析",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "openai"
+        ],
+        "models": [
+          "gpt-4"
+        ]
+      },
+      "tagLabels": {
+        "providers": [
+          "OpenAI"
+        ],
+        "models": [
+          "gpt-4"
+        ]
+      },
+      "modelRoutes": {
+        "gpt-4": "/models/openai/gpt-4/"
+      }
     },
     {
       "id": "cmp92agu90ndtslnzbujamtzp",
@@ -490,54 +571,6 @@
         "providers": [
           "Anthropic",
           "Google"
-        ],
-        "models": []
-      },
-      "modelRoutes": {}
-    },
-    {
-      "id": "cmp8ufq4c0lm5slnzx0zawhjb",
-      "title": "X Premium+用户现可在Hermes中使用Grok",
-      "title_en": "HERMES 🔥： X Premium+ accounts can now use their subscription with Grok in Hermes Agent！ Besides t…",
-      "url": "https://x.com/testingcatalog/status/2055755847448297495",
-      "source": "X：Testing Catalog (@testingcatalog)",
-      "publishedAt": "2026-05-16T21:02:42.000Z",
-      "summary": "HERMES 🔥： X Premium+ 用户现可在 Hermes Agent 中使用其订阅权益访问 Grok！\n\n此外，他们还能使用 X 搜索工具，这使 Hermes 目前处于相当独特的位置。\n\n现在已不仅是 OpenClaw 与 Hermes 的较量。\n\n这再次成为 OpenAI 与 xAI 的对决 👀",
-      "category": "ai-products",
-      "tags": {
-        "providers": [
-          "openai",
-          "xai"
-        ],
-        "models": []
-      },
-      "tagLabels": {
-        "providers": [
-          "OpenAI",
-          "xAI"
-        ],
-        "models": []
-      },
-      "modelRoutes": {}
-    },
-    {
-      "id": "cmp8tanqm0lbzslnz5om6t5pi",
-      "title": "AMD代码贡献获NVIDIA接纳，开源社区迎里程碑",
-      "title_en": "SERIOUS & COOL： AIPerf -- a sub-repo of the Nvidia Dynamo project focused on benchmarking LLM worklo…",
-      "url": "https://x.com/SemiAnalysis_/status/2055746972523336120",
-      "source": "X：SemiAnalysis (@SemiAnalysis_)",
-      "publishedAt": "2026-05-16T20:27:26.000Z",
-      "summary": "NVIDIA的AI性能基准测试项目AIPerf接受了来自AMD的上游代码贡献，这被认为是AMD代码首次被纳入NVIDIA官方仓库。此举被视为开源社区的重要时刻，意味着高质量的、不依赖特定厂商的代码将能供所有人使用。社区期待未来能有更多此类合作，例如将AMD的RIXL部分代码整合进NVIDIA的NIXL，而非维持独立分支。",
-      "category": "industry",
-      "tags": {
-        "providers": [
-          "nvidia"
-        ],
-        "models": []
-      },
-      "tagLabels": {
-        "providers": [
-          "Nvidia"
         ],
         "models": []
       },
