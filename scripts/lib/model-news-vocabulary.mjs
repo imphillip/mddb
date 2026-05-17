@@ -32,9 +32,11 @@ export function buildModelNewsVocabulary(graph) {
     anchorEdgeByFrom.set(edge.from, edge.to)
   }
 
+  const searchOnlyNodeIds = modelPlazaSearchOnlyNodeIds(graph)
   const modelByKey = new Map()
   for (const node of graph.nodes) {
-    const anchor = anchorModelForNode(node, nodeById, anchorEdgeByFrom)
+    const visibleAnchor = node.nodeKind === 'source_model' && !searchOnlyNodeIds.has(node.id) ? node : undefined
+    const anchor = visibleAnchor ?? anchorModelForNode(node, nodeById, anchorEdgeByFrom, searchOnlyNodeIds)
     if (!anchor || anchor.nodeKind !== 'source_model') continue
     const key = `${anchor.provider}/${anchor.modelId}`
     const existing = modelByKey.get(key) ?? {
@@ -59,19 +61,25 @@ export function buildModelNewsVocabulary(graph) {
   }
 }
 
-function anchorModelForNode(node, nodeById, anchorEdgeByFrom) {
+function anchorModelForNode(node, nodeById, anchorEdgeByFrom, searchOnlyNodeIds) {
   let current = node
   const seen = new Set()
   for (let depth = 0; depth < 8; depth += 1) {
-    if (!current || seen.has(current.id)) return node.nodeKind === 'source_model' ? node : undefined
+    if (!current || seen.has(current.id)) return node.nodeKind === 'source_model' && !searchOnlyNodeIds.has(node.id) ? node : undefined
     seen.add(current.id)
     const nextId = anchorEdgeByFrom.get(current.id)
-    if (!nextId) return current.nodeKind === 'source_model' ? current : undefined
+    if (!nextId) return current.nodeKind === 'source_model' && !searchOnlyNodeIds.has(current.id) ? current : undefined
     const next = nodeById.get(nextId)
-    if (!next) return current.nodeKind === 'source_model' ? current : undefined
+    if (!next) return current.nodeKind === 'source_model' && !searchOnlyNodeIds.has(current.id) ? current : undefined
+    if (next.nodeKind === 'source_model' && !searchOnlyNodeIds.has(next.id)) return next
     current = next
   }
-  return current?.nodeKind === 'source_model' ? current : node.nodeKind === 'source_model' ? node : undefined
+  return current?.nodeKind === 'source_model' && !searchOnlyNodeIds.has(current.id) ? current : node.nodeKind === 'source_model' && !searchOnlyNodeIds.has(node.id) ? node : undefined
+}
+
+function modelPlazaSearchOnlyNodeIds(graph) {
+  const resolvedEdgeTypes = new Set(['deployment_of', 'alias_of', 'snapshot_of'])
+  return new Set((graph.edges ?? []).filter((edge) => edge.from !== edge.to && resolvedEdgeTypes.has(edge.type)).map((edge) => edge.from))
 }
 
 function modelAliasesForNode(node) {

@@ -1,7 +1,32 @@
 {
-  "generatedAt": "2026-05-17T08:19:33.097Z",
+  "generatedAt": "2026-05-17T08:41:55.899Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
+    {
+      "id": "cmp9iqwh20r68slnzrkitfo82",
+      "title": "2026年科技盛会之旅：亲历AI与自动驾驶前沿",
+      "title_en": "2026 has been the craziest - and honestly the best - year of my life so far. - I got to attend NVID…",
+      "url": "https://x.com/kimmonismus/status/2055928634959966351",
+      "source": "X：Kim (@kimmonismus)",
+      "publishedAt": "2026-05-17T08:29:18.000Z",
+      "summary": "作者回顾2026年密集参与的全球顶级科技活动。在NVIDIA GTC期间，与副总裁探讨世界模型和Nemotron等AI前沿话题，并体验了NVIDIA Alpamayo自动驾驶系统。随后首次访问中国小鹏汽车，考察其人形机器人及自动驾驶进展。即将启程参加Google I/O和微软Build大会，计划进行深度采访并报道最新技术发布。作者正整理多场对话、幕后影像，坦言旅程唯一遗憾是与幼子的短暂分别。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "google",
+          "nvidia"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Google",
+          "Nvidia"
+        ],
+        "models": []
+      },
+      "modelRoutes": {}
+    },
     {
       "id": "cmp9hwi0k0r0cslnzx978sf78",
       "title": "ASML：AI与芯片革命的无形支柱",
@@ -216,35 +241,6 @@
         "models": []
       },
       "modelRoutes": {}
-    },
-    {
-      "id": "cmp92xysc0nk1slnzwuk3v2u8",
-      "title": "GPT 4.6至4.7分词器技术解析",
-      "title_en": "Technical breakdown of tokenizer improvements from GPT 4.6 to 4.7",
-      "url": "https://x.com/SemiAnalysis_/status/2055815691211608442",
-      "source": "X：SemiAnalysis (@SemiAnalysis_)",
-      "publishedAt": "2026-05-17T01:00:30.000Z",
-      "summary": "GPT 4.6到4.7的分词器改进技术分析",
-      "category": "tip",
-      "tags": {
-        "providers": [
-          "openai"
-        ],
-        "models": [
-          "gpt-4"
-        ]
-      },
-      "tagLabels": {
-        "providers": [
-          "OpenAI"
-        ],
-        "models": [
-          "gpt-4"
-        ]
-      },
-      "modelRoutes": {
-        "gpt-4": "/models/openai/gpt-4/"
-      }
     },
     {
       "id": "cmp92agu90ndtslnzbujamtzp",
@@ -546,31 +542,6 @@
       "tagLabels": {
         "providers": [
           "Anthropic"
-        ],
-        "models": []
-      },
-      "modelRoutes": {}
-    },
-    {
-      "id": "cmp8vicl60lu1slnz24h3yl0d",
-      "title": "Claude Mythos模型现身谷歌云控制台",
-      "title_en": "ANTHROPIC 🔥： Claude Mythos model has been spotted on Google Cloud Console. -claude-mythos 👀 It …",
-      "url": "https://x.com/testingcatalog/status/2055765220123939272",
-      "source": "X：Testing Catalog (@testingcatalog)",
-      "publishedAt": "2026-05-16T21:39:57.000Z",
-      "summary": "Anthropic的Claude Mythos模型已被发现在谷歌云控制台出现，且其预览标签已消失。这一迹象与之前Opus 4.7发布前的模式相似，引发了关于Anthropic可能准备公开发布该模型的猜测。尽管作者认为Anthropic改变主意直接向公众发布的可能性不大，但推测其可能作为模型提供商，为有权限的公司提供在谷歌云平台上运行该模型的服务。",
-      "category": "ai-models",
-      "tags": {
-        "providers": [
-          "anthropic",
-          "google"
-        ],
-        "models": []
-      },
-      "tagLabels": {
-        "providers": [
-          "Anthropic",
-          "Google"
         ],
         "models": []
       },

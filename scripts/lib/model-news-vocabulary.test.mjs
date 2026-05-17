@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { buildModelNewsVocabulary } from './model-news-vocabulary.mjs'
 
 describe('buildModelNewsVocabulary', () => {
-  it('uses the anchor source model as the public model-id tag while keeping alias source ids matchable', () => {
+  it('uses visible Model Plaza source rows as model-id tags and keeps resolved aliases matchable', () => {
     const graph = {
       providers: [{ id: 'anthropic', name: 'Anthropic' }],
       nodes: [
@@ -20,14 +20,32 @@ describe('buildModelNewsVocabulary', () => {
     expect(vocab.models[0]).toMatchObject({
       modelId: 'claude-4.7',
       sourceId: 'anthropic/claude-4.7',
-      anchorNodeId: 'node:anthropic/claude-4.7',
       route: '/models/anthropic/claude-4.7/',
     })
     expect(vocab.models[0].aliases).toContain('claude-4.7-fast')
     expect(vocab.models[0].aliasSourceIds).toContain('anthropic/claude-4.7-fast')
   })
 
-  it('resolves endpoint deployment/spec aliases to the source model anchor', () => {
+  it('keeps separate visible source rows for meaningful model versions and series members', () => {
+    const graph = {
+      providers: [{ id: 'openai', name: 'OpenAI' }],
+      nodes: [
+        sourceNode({ id: 'node:openai/gpt-4', sourceId: 'openai/gpt-4', modelId: 'gpt-4' }),
+        sourceNode({ id: 'node:openai/gpt-4.6', sourceId: 'openai/gpt-4.6', modelId: 'gpt-4.6' }),
+        sourceNode({ id: 'node:openai/gpt-4.7', sourceId: 'openai/gpt-4.7', modelId: 'gpt-4.7' }),
+      ],
+      edges: [
+        { id: 'edge:gpt-4.6:variant', from: 'node:openai/gpt-4.6', to: 'node:openai/gpt-4', type: 'variant_of', label: 'variant of gpt-4' },
+        { id: 'edge:gpt-4.7:variant', from: 'node:openai/gpt-4.7', to: 'node:openai/gpt-4', type: 'variant_of', label: 'variant of gpt-4' },
+      ],
+    }
+
+    const vocab = buildModelNewsVocabulary(graph)
+
+    expect(vocab.models.map((model) => model.modelId).sort()).toEqual(['gpt-4', 'gpt-4.6', 'gpt-4.7'])
+  })
+
+  it('resolves endpoint deployment/spec aliases to the visible source model row', () => {
     const graph = {
       providers: [{ id: 'openai', name: 'OpenAI' }],
       nodes: [

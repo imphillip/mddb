@@ -29,13 +29,15 @@ export function deterministicTags(item, vocab) {
     if (providers.length >= 4) break
   }
 
+  const prunedModels = pruneBroaderFamilyMatches(models)
+
   for (const providerId of providerIds) {
     if (!providers.some((provider) => provider.value === providerId)) {
       providers.push({ value: providerId, confidence: 0.9, evidence: 'Provider inferred from matched model tag' })
     }
   }
 
-  return { providers, models }
+  return { providers, models: prunedModels }
 }
 
 function searchableText(item) {
@@ -50,11 +52,49 @@ function longestAliasLength(aliases) {
   return aliases.reduce((max, alias) => Math.max(max, alias.length), 0)
 }
 
+function pruneBroaderFamilyMatches(models) {
+  return models.filter((model) => !models.some((other) => other !== model && isFinerVersionOf(other.value, model.value)))
+}
+
+function isFinerVersionOf(candidate, family) {
+  const familyTokens = versionTokens(family)
+  const candidateTokens = versionTokens(candidate)
+  if (!familyTokens || !candidateTokens) return false
+  if (candidateTokens.prefix !== familyTokens.prefix) return false
+  if (candidateTokens.numbers.length <= familyTokens.numbers.length) return false
+  return familyTokens.numbers.every((number, index) => candidateTokens.numbers[index] === number)
+}
+
+function versionTokens(value) {
+  const match = String(value).toLowerCase().match(/^([a-z]+)-([0-9]+(?:[.-][0-9]+)*)(.*)$/)
+  if (!match) return undefined
+  return {
+    prefix: match[1],
+    numbers: match[2].split(/[.-]/).map(Number),
+    suffix: match[3] ?? '',
+  }
+}
+
 function matchesModelAlias(text, alias, model) {
-  if (shouldConsiderModelAlias(alias, model) && matchesAlias(text, alias)) return true
   const normalized = alias.toLowerCase()
   const tokens = tokenAliases(alias)
+  const hasFinerMention = tokens.some((token) => shouldConsiderModelAlias(token, model) && hasFinerVersionMention(text, token))
+  if (hasFinerMention) return false
+  if (shouldConsiderModelAlias(alias, model) && matchesAlias(text, alias)) return true
   return tokens.some((token) => token !== normalized && shouldConsiderModelAlias(token, model) && matchesAlias(text, token))
+}
+
+function hasFinerVersionMention(text, alias) {
+  const tokens = versionTokens(String(alias).toLowerCase())
+  if (!tokens) return false
+  const major = `${tokens.prefix}-${tokens.numbers.join('.')}`
+  const spacedMajor = major.replace('-', ' ')
+  const forms = [major, spacedMajor]
+  return forms.some((form) => {
+    const escaped = form.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\\ /g, '[\\s-]+')
+    const pattern = new RegExp(`(^|[^a-z0-9])${escaped}[\\s.-]+[0-9]+([^a-z0-9]|$)`, 'i')
+    return pattern.test(text)
+  })
 }
 
 function tokenAliases(alias) {
