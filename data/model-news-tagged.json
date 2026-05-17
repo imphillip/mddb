@@ -1,7 +1,68 @@
 {
-  "generatedAt": "2026-05-17T22:41:13.492Z",
+  "generatedAt": "2026-05-17T23:01:19.014Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
+    {
+      "id": "cmpadbaj40y1nslnzxh0c32ig",
+      "title": "Cloudflare部署体验优于Vercel",
+      "title_en": "ok tried the same on cloudflare for our x-rank tracking thing was just as easy and the built in sql…",
+      "url": "https://x.com/thdxr/status/2056141119109443886",
+      "source": "X：dax (@thdxr)",
+      "publishedAt": "2026-05-17T22:33:38.000Z",
+      "summary": "好的，为我们的x-rank追踪项目在Cloudflare上尝试了相同操作\n\n同样简单，内置的sqlite确实很棒，我之前在vercel都是把东西塞进blob存储",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "cloudflare"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Cloudflare"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "cloudflare": "/models/?provider=cloudflare-fp8"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmpacy5gg0xysslnztm5e2ijz",
+      "title": "AI作为\"赛博队友\"提升生产力的条件与机制",
+      "title_en": "And， yes， our experiments used a mix of GPT-4 &amp； GPT-4o （publishing takes awhile）. I think we wou…",
+      "url": "https://x.com/emollick/status/2056137281715556459",
+      "source": "X：Ethan Mollick (@emollick)",
+      "publishedAt": "2026-05-17T22:18:23.000Z",
+      "summary": "一项名为\"赛博队友\"的实地实验发现，AI可以通过在员工技能薄弱任务上提供高于平均水平的性能来提升生产力，其作用方式类似于人类团队协作。实验表明，配备AI的个体工作者能达到未配备AI的人类团队的工作绩效，并能弥补个人单独工作时解决方案过度依赖自身专长导致的\"不平衡\"缺陷。研究进一步预测，AI的生产力增益在以下条件下更显著：人类专业分工更细、AI能力与人类技能呈负相关（即擅长人类不擅长的任务），且双方整体能力相当。实验使用了GPT-4系列模型，研究者认为采用更新的模型和智能体工具效果会更大。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "openai"
+        ],
+        "models": [
+          "gpt-4",
+          "gpt-4o"
+        ]
+      },
+      "tagLabels": {
+        "providers": [
+          "OpenAI"
+        ],
+        "models": [
+          "gpt-4",
+          "gpt-4o"
+        ]
+      },
+      "providerRoutes": {
+        "openai": "/models/openai/"
+      },
+      "modelRoutes": {
+        "gpt-4": "/models/openai/gpt-4/",
+        "gpt-4o": "/models/openai/gpt-4o/"
+      }
+    },
     {
       "id": "cmpa9h3oj0x6tslnzw3m4g13u",
       "title": "AI时代开发者核心价值探索",
