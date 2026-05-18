@@ -1,9 +1,0 @@
-{
-  "base": "USD",
-  "quote": "CNY",
-  "rate": 6.8,
-  "rawRate": 6.8263,
-  "source": "https://open.er-api.com/v6/latest/USD",
-  "provider": "https://www.exchangerate-api.com",
-  "updatedAt": "2026-05-17T00:02:31.000Z"
-}

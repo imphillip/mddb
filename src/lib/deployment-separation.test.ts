@@ -17,7 +17,7 @@ describe('deployment separation', () => {
     const buildScript = readProjectFile('src/scripts/build-site.ts')
     const packageJson = JSON.parse(readProjectFile('package.json')) as { scripts?: Record<string, string> }
 
-    expect(buildScript).toContain("'data', 'openrouter-raw.json'")
+    expect(buildScript).toContain("'.internal', 'source-data', 'openrouter.raw.json'")
     expect(buildScript).toContain('buildOpenRouterRawGraphFromFiles')
     expect(buildScript).not.toContain('MDDB_OPENROUTER_SOURCE')
     expect(packageJson.scripts?.['data:openrouter']).toBe('node scripts/fetch-openrouter-models.mjs')

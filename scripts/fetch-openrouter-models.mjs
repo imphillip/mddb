@@ -92,11 +92,11 @@ const MODEL_PAGE_KEYS = [
 ]
 
 const paths = {
-  models: process.argv[2] ?? join(process.cwd(), 'data', 'openrouter-models.json'),
-  raw: process.env.OPENROUTER_RAW_TARGET ?? join(process.cwd(), 'data', 'openrouter-raw.json'),
-  endpoints: process.env.OPENROUTER_ENDPOINTS_TARGET ?? join(process.cwd(), 'data', 'openrouter-endpoints.json'),
-  sitemap: process.env.OPENROUTER_SITEMAP_TARGET ?? join(process.cwd(), 'data', 'openrouter-sitemap-models.json'),
-  pages: process.env.OPENROUTER_PAGES_TARGET ?? join(process.cwd(), 'data', 'openrouter-model-pages.json'),
+  models: process.argv[2] ?? join(process.cwd(), '.internal', 'source-data', 'openrouter-models.raw.json'),
+  raw: process.env.OPENROUTER_RAW_TARGET ?? join(process.cwd(), '.internal', 'source-data', 'openrouter.raw.json'),
+  endpoints: process.env.OPENROUTER_ENDPOINTS_TARGET ?? join(process.cwd(), '.internal', 'source-data', 'openrouter-endpoints.raw.json'),
+  sitemap: process.env.OPENROUTER_SITEMAP_TARGET ?? join(process.cwd(), '.internal', 'source-data', 'openrouter-sitemap-models.raw.json'),
+  pages: process.env.OPENROUTER_PAGES_TARGET ?? join(process.cwd(), '.internal', 'source-data', 'openrouter-model-pages.raw.json'),
 }
 
 const jsonHeaders = { Accept: 'application/json', 'User-Agent': USER_AGENT }
@@ -205,6 +205,12 @@ function mergeOpenRouterRawPayload(modelPayload, endpointPayload, sitemapPayload
     source: {
       ...(modelPayload.source ?? {}),
       baseUrl: OPENROUTER_BASE_URL,
+      modelFiles: {
+        raw: paths.raw,
+        models: paths.models,
+        endpoints: paths.endpoints,
+        sitemap: paths.sitemap,
+      },
       modelsUrl: MODELS_URL,
       sitemapUrl: SITEMAP_URL,
       endpointDetailsMerged: Boolean(endpointPayload),

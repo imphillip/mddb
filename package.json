@@ -13,6 +13,8 @@
     "build": "tsc && node dist/scripts/build-site.js",
     "data:openrouter": "node scripts/fetch-openrouter-models.mjs",
     "data:openrouter:models-only": "OPENROUTER_FETCH_ENDPOINTS=0 node scripts/fetch-openrouter-models.mjs",
+    "data:models-dev": "node scripts/fetch-models-dev-api.mjs",
+    "data:litellm": "node scripts/fetch-litellm-model-prices.mjs",
     "data:basellm": "node scripts/fetch-basellm-newapi.mjs",
     "data:fx": "node scripts/fetch-exchange-rate.mjs",
     "data:aihot": "node scripts/fetch-aihot-model-news.mjs",

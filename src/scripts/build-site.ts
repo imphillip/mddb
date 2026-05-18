@@ -8,14 +8,14 @@ import { renderOpenRouterProviderDetail, renderOpenRouterRawDetail, renderOpenRo
 
 const outputDir = join(process.cwd(), 'public')
 const graph = buildOpenRouterRawGraphFromFiles({
-  modelsPath: join(process.cwd(), 'data', 'openrouter-raw.json'),
-  endpointsPath: join(process.cwd(), 'data', 'openrouter-endpoints.json'),
-  sitemapPath: join(process.cwd(), 'data', 'openrouter-sitemap-models.json'),
-  pagesPath: join(process.cwd(), 'data', 'openrouter-model-pages.json'),
-  modelsDevPath: join(process.cwd(), 'data', 'models-dev-api.json'),
-  baseLlmPath: join(process.cwd(), 'data', 'basellm-newapi.json'),
+  modelsPath: join(process.cwd(), '.internal', 'source-data', 'openrouter.raw.json'),
+  endpointsPath: join(process.cwd(), '.internal', 'source-data', 'openrouter-endpoints.raw.json'),
+  sitemapPath: join(process.cwd(), '.internal', 'source-data', 'openrouter-sitemap-models.raw.json'),
+  pagesPath: join(process.cwd(), '.internal', 'source-data', 'openrouter-model-pages.raw.json'),
+  modelsDevPath: join(process.cwd(), '.internal', 'source-data', 'models-dev-api.raw.json'),
+  baseLlmPath: join(process.cwd(), '.internal', 'source-data', 'basellm-newapi.raw.json'),
 })
-attachCurrency(graph, join(process.cwd(), 'data', 'exchange-rate-usd-cny.json'))
+attachCurrency(graph, join(process.cwd(), '.internal', 'source-data', 'exchange-rate-usd-cny.raw.json'))
 
 rmSync(outputDir, { recursive: true, force: true })
 

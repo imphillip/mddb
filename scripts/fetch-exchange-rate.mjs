@@ -1,7 +1,8 @@
-import { readFileSync, writeFileSync } from 'node:fs'
+import { mkdirSync, writeFileSync } from 'node:fs'
+import { dirname } from 'node:path'
 
 const source = 'https://open.er-api.com/v6/latest/USD'
-const outputPath = process.argv[2] ?? 'data/exchange-rate-usd-cny.json'
+const outputPath = process.argv[2] ?? '.internal/source-data/exchange-rate-usd-cny.raw.json'
 
 const response = await fetch(source)
 if (!response.ok) {
@@ -24,5 +25,6 @@ const record = {
   provider: payload?.provider ?? 'https://www.exchangerate-api.com',
   updatedAt,
 }
+mkdirSync(dirname(outputPath), { recursive: true })
 writeFileSync(outputPath, `${JSON.stringify(record, null, 2)}\n`)
 console.log(JSON.stringify(record))

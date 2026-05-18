@@ -4,6 +4,7 @@ import { dirname, join } from 'node:path'
 
 const ROOT = process.cwd()
 const OUT_DIR = join(ROOT, '.internal/next-registry')
+const SOURCE_DATA_DIR = join(ROOT, '.internal/source-data')
 const RAW_DIR = join(OUT_DIR, 'raw')
 const PROVIDERS_DIR = join(OUT_DIR, 'providers')
 const REPORTS_DIR = join(OUT_DIR, 'reports')
@@ -47,6 +48,11 @@ function writeJson(path, value) {
 }
 
 async function loadLiteLlm() {
+  const localRawPath = join(SOURCE_DATA_DIR, 'litellm-model-prices.raw.json')
+  if (existsSync(localRawPath) && process.env.FORCE_FETCH !== '1') {
+    const raw = readJson(localRawPath)
+    return raw?.data ?? raw
+  }
   const cachePath = join(RAW_DIR, 'litellm-model-prices.json')
   if (existsSync(cachePath) && process.env.FORCE_FETCH !== '1') return readJson(cachePath)
   const res = await fetch(LITELLM_URL, { headers: { 'user-agent': 'mddb.dev next-registry experiment' } })
@@ -57,14 +63,10 @@ async function loadLiteLlm() {
 }
 
 async function loadModelsDev() {
+  const localRawPath = join(SOURCE_DATA_DIR, 'models-dev-api.raw.json')
+  if (existsSync(localRawPath) && process.env.FORCE_FETCH !== '1') return readJson(localRawPath)
   const cachePath = join(RAW_DIR, 'models-dev-api.json')
   if (existsSync(cachePath) && process.env.FORCE_FETCH !== '1') return readJson(cachePath)
-  const localPath = join(ROOT, 'data', 'models-dev-api.json')
-  if (existsSync(localPath) && process.env.FORCE_FETCH !== '1') {
-    const data = readJson(localPath)
-    writeJson(cachePath, data)
-    return data
-  }
   const res = await fetch(MODELS_DEV_URL, { headers: { 'user-agent': 'mddb.dev next-registry experiment' } })
   if (!res.ok) throw new Error(`models.dev fetch failed: ${res.status}`)
   const data = await res.json()
@@ -303,8 +305,8 @@ function openRouterPrice(pricing) {
 }
 
 function augmentOpenRouter(providers) {
-  const modelsData = readJson(join(ROOT, 'data/openrouter-models.json'), null)
-  const endpointsData = readJson(join(ROOT, 'data/openrouter-endpoints.json'), null)
+  const modelsData = readJson(join(SOURCE_DATA_DIR, 'openrouter.raw.json'), readJson(join(ROOT, 'data/openrouter-raw.json'), null))
+  const endpointsData = readJson(join(SOURCE_DATA_DIR, 'openrouter-endpoints.raw.json'), readJson(join(ROOT, 'data/openrouter-endpoints.json'), null))
   if (!modelsData && !endpointsData) return { addedOffers: 0 }
 
   const provider = providers.get('openrouter') ?? {
@@ -344,7 +346,7 @@ function augmentOpenRouter(providers) {
     addedOffers += 1
   }
 
-  const endpointRows = Array.isArray(endpointsData) ? endpointsData : []
+  const endpointRows = Array.isArray(endpointsData?.data) ? endpointsData.data : Array.isArray(endpointsData) ? endpointsData : []
   let endpointOfferPrices = 0
   const bySource = new Map(provider.offers.map((o) => [o.source_model_id, o]))
   for (const wrap of endpointRows) {

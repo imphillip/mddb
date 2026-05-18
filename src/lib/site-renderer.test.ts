@@ -215,8 +215,8 @@ describe('site renderer', () => {
 
   it('treats source/provider observations as availability, not model variants, and keeps snapshot facts concise', () => {
     const gallery = overlayBaseLlmEnrichment(
-      buildModelGalleryWithModelsDevEnrichment('data/openrouter-models.json', 'data/models-dev-api.json'),
-      buildBaseLlmEnrichmentFromFile('data/basellm-newapi.json'),
+      buildModelGalleryWithModelsDevEnrichment('.internal/source-data/openrouter.raw.json', '.internal/source-data/models-dev-api.raw.json'),
+      buildBaseLlmEnrichmentFromFile('.internal/source-data/basellm-newapi.raw.json'),
     )
     const html = renderModelDetailPage('claude-opus-4-7', gallery.details)
 
