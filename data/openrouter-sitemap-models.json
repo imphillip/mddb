@@ -1,10 +1,10 @@
 {
-  "fetchedAt": "2026-05-16T22:17:58.243Z",
+  "fetchedAt": "2026-05-18T20:53:39.171Z",
   "source": {
     "sitemapUrl": "https://openrouter.ai/sitemap.xml",
-    "modelPages": 433,
+    "modelPages": 435,
     "apiRows": 356,
-    "pageOnly": 89,
+    "pageOnly": 91,
     "apiOnly": 12
   },
   "modelPages": [
@@ -2481,6 +2481,18 @@
       "url": "https://openrouter.ai/x-ai/grok-4.3"
     },
     {
+      "id": "x-ai/grok-imagine-image-quality",
+      "namespace": "x-ai",
+      "modelId": "grok-imagine-image-quality",
+      "url": "https://openrouter.ai/x-ai/grok-imagine-image-quality"
+    },
+    {
+      "id": "x-ai/grok-imagine-video",
+      "namespace": "x-ai",
+      "modelId": "grok-imagine-video",
+      "url": "https://openrouter.ai/x-ai/grok-imagine-video"
+    },
+    {
       "id": "x-ai/grok-voice-tts-1.0",
       "namespace": "x-ai",
       "modelId": "grok-voice-tts-1.0",
@@ -3209,6 +3221,20 @@
       "modelId": "gte-large",
       "url": "https://openrouter.ai/thenlper/gte-large",
       "inferredType": "embedding"
+    },
+    {
+      "id": "x-ai/grok-imagine-image-quality",
+      "namespace": "x-ai",
+      "modelId": "grok-imagine-image-quality",
+      "url": "https://openrouter.ai/x-ai/grok-imagine-image-quality",
+      "inferredType": "image"
+    },
+    {
+      "id": "x-ai/grok-imagine-video",
+      "namespace": "x-ai",
+      "modelId": "grok-imagine-video",
+      "url": "https://openrouter.ai/x-ai/grok-imagine-video",
+      "inferredType": "video"
     },
     {
       "id": "x-ai/grok-voice-tts-1.0",

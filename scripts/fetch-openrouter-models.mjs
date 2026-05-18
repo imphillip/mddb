@@ -153,10 +153,45 @@ if (FETCH_ENDPOINTS) {
     },
     data: endpointRows,
   }
+  const mergedPayload = mergeModelEndpointPayload(modelPayload, endpointPayload)
+  writeJson(paths.models, mergedPayload)
   writeJson(paths.endpoints, endpointPayload)
+  console.log(`Merged endpoint details into ${paths.models}`)
   console.log(`Wrote endpoint details for ${endpointRows.length} OpenRouter models (${endpointPayload.source.failedRows} failed) to ${paths.endpoints}`)
 } else {
   console.log('Skipped endpoint detail fetch because OPENROUTER_FETCH_ENDPOINTS=0')
+}
+
+function mergeModelEndpointPayload(modelPayload, endpointPayload) {
+  const endpointByModelId = new Map(endpointPayload.data.map((row) => [row.modelId, row]))
+  const endpointByCanonicalSlug = new Map(endpointPayload.data.filter((row) => row.canonicalSlug).map((row) => [row.canonicalSlug, row]))
+  const data = modelPayload.data.map((model) => {
+    const endpointRow = endpointByModelId.get(model.id) || endpointByCanonicalSlug.get(model.canonical_slug)
+    const endpointData = endpointRow?.response?.data
+    return {
+      ...model,
+      openrouter_endpoint_details: endpointRow ? {
+        details_path: endpointRow.detailsPath,
+        details_url: endpointRow.detailsUrl,
+        endpoint_count: endpointRow.endpointCount ?? (Array.isArray(endpointData?.endpoints) ? endpointData.endpoints.length : 0),
+        failed: Boolean(endpointRow.error),
+        error: endpointRow.error ?? undefined,
+        endpoints: Array.isArray(endpointData?.endpoints) ? endpointData.endpoints : [],
+      } : null,
+    }
+  })
+  return {
+    ...modelPayload,
+    fetchedAt,
+    source: {
+      ...(modelPayload.source ?? {}),
+      modelsUrl: MODELS_URL,
+      endpointDetailsMerged: true,
+      endpointRows: endpointPayload.source.endpointRows,
+      failedEndpointRows: endpointPayload.source.failedRows,
+    },
+    data,
+  }
 }
 
 if (FETCH_PAGES) {
