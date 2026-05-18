@@ -1,7 +1,33 @@
 {
-  "generatedAt": "2026-05-18T01:20:21.837Z",
+  "generatedAt": "2026-05-18T01:40:28.321Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
+    {
+      "id": "cmpaio35a0z94slnz2j9v2h5w",
+      "title": "AI未来三年发展展望",
+      "title_en": "Where will AI be in 1， 2 or 3 years？",
+      "url": "https://x.com/elonmusk/status/2056179413901877551",
+      "source": "X：Elon Musk (@elonmusk, xAI)",
+      "publishedAt": "2026-05-18T01:05:48.000Z",
+      "summary": "AI在1年、2年或3年后将发展到什么程度？",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "xai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "xAI"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "xai": "/models/x-ai/"
+      },
+      "modelRoutes": {}
+    },
     {
       "id": "cmpai1r620z48slnzp4fowo3o",
       "title": "今天出发去硅谷参加Google I/O大会 根据目前我看到的一些资料 本次大会会有很多猛料，各种新模型和新的产品要发布，还有Google面向编程方面也要发力了… 有木有硅谷面基的X友🫡",
