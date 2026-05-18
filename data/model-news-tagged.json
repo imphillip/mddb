@@ -1,7 +1,69 @@
 {
-  "generatedAt": "2026-05-18T00:21:16.472Z",
+  "generatedAt": "2026-05-18T00:40:19.342Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
+    {
+      "id": "cmpagz33t0yu1slnznbzb3d48",
+      "title": "Hermes 可配置的国内外 AI 模型及使用方法",
+      "title_en": "Hermes 目前值得配置的国内外模型： 1. 订阅ChatGPT plus或以上，用 OpenAI Codex 的Auth 配置 gpt-5.5 2. xAI如果买了Premium，可以配置 g…",
+      "url": "https://x.com/vista8/status/2056170241147977741",
+      "source": "X：Vista (@vista8)",
+      "publishedAt": "2026-05-18T00:29:21.000Z",
+      "summary": "Hermes 支持配置多种国内外主流 AI 模型，包括 OpenAI GPT-5.5、xAI Grok-4.3、谷歌 Gemini 系列、DeepSeek V4 系列、智谱 GLM-5 系列、Kimi K2.6 以及小米 Mimo V2.5-pro。用户需通过相应服务的订阅或 API 进行配置，完成后可使用 /model 指令指定模型及提供者来切换对话模型，例如输入\"/model gpt-5.5 --provider openai-codex\"即可切换至对应模型。该功能方便用户根据需求灵活调用不同模型的优势。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "deepseek",
+          "moonshotai",
+          "openai",
+          "x-ai",
+          "xai",
+          "xiaomi",
+          "z-ai"
+        ],
+        "models": [
+          "glm-5",
+          "grok-4.3",
+          "kimi-k2",
+          "kimi-k2.6",
+          "mimo-v2.5"
+        ]
+      },
+      "tagLabels": {
+        "providers": [
+          "DeepSeek",
+          "Moonshotai",
+          "OpenAI",
+          "X Ai",
+          "xAI",
+          "Xiaomi",
+          "Z.AI"
+        ],
+        "models": [
+          "glm-5",
+          "grok-4.3",
+          "kimi-k2",
+          "kimi-k2.6",
+          "mimo-v2.5"
+        ]
+      },
+      "providerRoutes": {
+        "deepseek": "/models/deepseek/",
+        "moonshotai": "/models/moonshotai/",
+        "openai": "/models/openai/",
+        "x-ai": "/models/x-ai/",
+        "xai": "/models/x-ai/",
+        "xiaomi": "/models/xiaomi/",
+        "z-ai": "/models/z-ai/"
+      },
+      "modelRoutes": {
+        "glm-5": "/models/z-ai/glm-5/",
+        "grok-4.3": "/models/x-ai/grok-4.3/",
+        "kimi-k2": "/models/moonshotai/kimi-k2/",
+        "kimi-k2.6": "/models/moonshotai/kimi-k2.6/",
+        "mimo-v2.5": "/models/xiaomi/mimo-v2.5/"
+      }
+    },
     {
       "id": "cmpafmw7m0yl5slnzmr9kely1",
       "title": "用户盼Google速推新模型，会员到期在即",
