@@ -1,7 +1,33 @@
 {
-  "generatedAt": "2026-05-18T01:00:17.795Z",
+  "generatedAt": "2026-05-18T01:20:21.837Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
+    {
+      "id": "cmpai1r620z48slnzp4fowo3o",
+      "title": "今天出发去硅谷参加Google I/O大会 根据目前我看到的一些资料 本次大会会有很多猛料，各种新模型和新的产品要发布，还有Google面向编程方面也要发力了… 有木有硅谷面基的X友🫡",
+      "title_en": null,
+      "url": "https://x.com/xiaohu/status/2056177573680549999",
+      "source": "X：小互 (@xiaohu)",
+      "publishedAt": "2026-05-18T00:58:30.000Z",
+      "summary": "今天出发去硅谷参加Google I/O大会\n\n根据目前我看到的一些资料\n\n本次大会会有很多猛料，各种新模型和新的产品要发布，还有Google面向编程方面也要发力了…\n\n有木有硅谷面基的X友🫡",
+      "category": "industry",
+      "tags": {
+        "providers": [
+          "google"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Google"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "google": "/models/google/"
+      },
+      "modelRoutes": {}
+    },
     {
       "id": "cmpagz33t0yu1slnznbzb3d48",
       "title": "Hermes 可配置的国内外 AI 模型及使用方法",
@@ -63,6 +89,32 @@
         "kimi-k2.6": "/models/moonshotai/kimi-k2.6/",
         "mimo-v2.5": "/models/xiaomi/mimo-v2.5/"
       }
+    },
+    {
+      "id": "cmpahs8180z2sslnzwf6m3tik",
+      "title": "Google Nexus框架革新时间序列预测逻辑",
+      "title_en": "兄弟们，Google最新论文直接把时间序列预测的底层逻辑翻了个个儿。 过去所有模型都在死磕历史数据：曲线怎么走，就怎么预测。 Nexus却说：预测需要的不只是历史，而是\"事件上下文\"。 数…",
+      "url": "https://x.com/berryxia/status/2056163285318471707",
+      "source": "X：Berry Xia (@berryxia)",
+      "publishedAt": "2026-05-18T00:01:43.000Z",
+      "summary": "Google论文提出的Nexus框架颠覆了传统时间序列预测仅依赖历史数据的模式，强调\"事件上下文\"的核心作用。该框架采用多智能体协作架构：分别从文本中提取事件时间线、解读宏观态势、追踪局部冲击，最终通过合成器整合信息并校准误差。在Zillow数据集测试中，基于Claude的版本将平均预测误差（MAPE）大幅降低86.6%，实现了从\"识别模式\"到\"理解因果\"的范式转变。这标志着预测方法正从统计外推转向结构化推理，为未来预测系统指明了新方向。",
+      "category": "paper",
+      "tags": {
+        "providers": [
+          "google"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Google"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "google": "/models/google/"
+      },
+      "modelRoutes": {}
     },
     {
       "id": "cmpafmw7m0yl5slnzmr9kely1",
