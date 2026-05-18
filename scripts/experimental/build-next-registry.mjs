@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 
 const ROOT = process.cwd()
@@ -8,6 +8,8 @@ const RAW_DIR = join(OUT_DIR, 'raw')
 const PROVIDERS_DIR = join(OUT_DIR, 'providers')
 const REPORTS_DIR = join(OUT_DIR, 'reports')
 const LITELLM_URL = 'https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json'
+const INCLUDE_OPENROUTER_SUPPLEMENT = process.env.INCLUDE_OPENROUTER_SUPPLEMENT === '1'
+const SOURCE_MODE = INCLUDE_OPENROUTER_SUPPLEMENT ? 'litellm+openrouter' : 'litellm-only'
 
 const KNOWN_AUTHOR_PROVIDERS = new Set([
   'openai', 'anthropic', 'deepseek', 'gemini', 'google', 'mistral', 'cohere', 'xai', 'zai', 'zhipu', 'qwen', 'moonshot', 'minimax', 'ai21', 'meta', 'perplexity'
@@ -17,6 +19,9 @@ const GATEWAY_PROVIDERS = new Set(['openrouter', 'deepinfra', 'together_ai', 'fi
 
 function ensureDirs() {
   for (const dir of [OUT_DIR, RAW_DIR, PROVIDERS_DIR, REPORTS_DIR]) mkdirSync(dir, { recursive: true })
+  for (const file of existsSync(PROVIDERS_DIR) ? readdirSync(PROVIDERS_DIR) : []) {
+    if (file.endsWith('.json')) rmSync(join(PROVIDERS_DIR, file), { force: true })
+  }
 }
 
 function slugify(value) {
@@ -261,6 +266,7 @@ function reportsFor(providers, models, openrouterStats) {
   const allOffers = [...providers.values()].flatMap((p) => p.offers.map((o) => ({ provider: p.id, ...o })))
   return {
     sourceStats: {
+      source_mode: SOURCE_MODE,
       provider_count: providers.size,
       model_candidate_count: models.length,
       offer_count: allOffers.length,
@@ -279,10 +285,10 @@ async function main() {
   ensureDirs()
   const lite = await loadLiteLlm()
   const { providers, models } = buildFromLiteLlm(lite)
-  const openrouterStats = augmentOpenRouter(providers)
+  const openrouterStats = INCLUDE_OPENROUTER_SUPPLEMENT ? augmentOpenRouter(providers) : { skipped: true, reason: 'litellm-only' }
 
   const sortedProviders = [...providers.values()].sort((a, b) => a.id.localeCompare(b.id))
-  writeJson(join(OUT_DIR, 'models.json'), { schema_version: 0, generated_from: ['litellm'], models })
+  writeJson(join(OUT_DIR, 'models.json'), { schema_version: 0, generated_from: [SOURCE_MODE], models })
   for (const p of sortedProviders) writeJson(join(PROVIDERS_DIR, `${p.id}.json`), p)
 
   const reports = reportsFor(providers, models, openrouterStats)
