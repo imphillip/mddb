@@ -8,8 +8,10 @@ const RAW_DIR = join(OUT_DIR, 'raw')
 const PROVIDERS_DIR = join(OUT_DIR, 'providers')
 const REPORTS_DIR = join(OUT_DIR, 'reports')
 const LITELLM_URL = 'https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json'
+const MODELS_DEV_URL = 'https://models.dev/api.json'
+const SOURCE_INPUT = process.env.NEXT_REGISTRY_SOURCE ?? 'litellm'
 const INCLUDE_OPENROUTER_SUPPLEMENT = process.env.INCLUDE_OPENROUTER_SUPPLEMENT === '1'
-const SOURCE_MODE = INCLUDE_OPENROUTER_SUPPLEMENT ? 'litellm+openrouter' : 'litellm-only'
+const SOURCE_MODE = SOURCE_INPUT === 'models.dev' ? 'models.dev-only' : INCLUDE_OPENROUTER_SUPPLEMENT ? 'litellm+openrouter' : 'litellm-only'
 
 const KNOWN_AUTHOR_PROVIDERS = new Set([
   'openai', 'anthropic', 'deepseek', 'gemini', 'google', 'mistral', 'cohere', 'xai', 'zai', 'zhipu', 'qwen', 'moonshot', 'minimax', 'ai21', 'meta', 'perplexity'
@@ -49,6 +51,22 @@ async function loadLiteLlm() {
   if (existsSync(cachePath) && process.env.FORCE_FETCH !== '1') return readJson(cachePath)
   const res = await fetch(LITELLM_URL, { headers: { 'user-agent': 'mddb.dev next-registry experiment' } })
   if (!res.ok) throw new Error(`LiteLLM fetch failed: ${res.status}`)
+  const data = await res.json()
+  writeJson(cachePath, data)
+  return data
+}
+
+async function loadModelsDev() {
+  const cachePath = join(RAW_DIR, 'models-dev-api.json')
+  if (existsSync(cachePath) && process.env.FORCE_FETCH !== '1') return readJson(cachePath)
+  const localPath = join(ROOT, 'data', 'models-dev-api.json')
+  if (existsSync(localPath) && process.env.FORCE_FETCH !== '1') {
+    const data = readJson(localPath)
+    writeJson(cachePath, data)
+    return data
+  }
+  const res = await fetch(MODELS_DEV_URL, { headers: { 'user-agent': 'mddb.dev next-registry experiment' } })
+  if (!res.ok) throw new Error(`models.dev fetch failed: ${res.status}`)
   const data = await res.json()
   writeJson(cachePath, data)
   return data
@@ -125,6 +143,101 @@ function modelMatch(sourceId, modelId) {
   if (/latest|preview|beta|experimental/i.test(sourceId)) return 'candidate_alias_or_preview'
   if (/\d{4}[-]?\d{2}[-]?\d{2}/.test(sourceId)) return 'variant_candidate'
   return 'candidate'
+}
+
+function priceFromModelsDev(cost) {
+  if (!cost || typeof cost !== 'object') return []
+  const p = {}
+  const map = {
+    input: 'input',
+    output: 'output',
+    cache_read: 'cache_read',
+    cache_write: 'cache_write',
+    cache_audio_read: 'cache_audio_read',
+    cache_audio_write: 'cache_audio_write',
+  }
+  for (const [src, dst] of Object.entries(map)) {
+    const n = Number(cost[src])
+    if (Number.isFinite(n) && n > 0) p[dst] = Number(n.toPrecision(10))
+  }
+  if (!Object.keys(p).length) return []
+  return [{ currency: 'USD', unit: 'per_1m_tokens', ...p, source: MODELS_DEV_URL }]
+}
+
+function modeFromModelsDev(model) {
+  const input = Array.isArray(model?.modalities?.input) ? model.modalities.input : []
+  const output = Array.isArray(model?.modalities?.output) ? model.modalities.output : []
+  if (output.includes('embedding')) return 'embedding'
+  if (output.includes('image')) return 'image_generation'
+  if (output.includes('audio')) return 'speech'
+  if (input.includes('audio')) return 'transcription'
+  return 'chat'
+}
+
+function offerFromModelsDev(providerId, modelId, model) {
+  const mode = modeFromModelsDev(model)
+  return {
+    source: 'models.dev',
+    source_model_id: modelId,
+    api_model_id: String(model?.id ?? modelId),
+    model: inferModelId(model?.id ?? modelId, providerId),
+    model_match: modelMatch(modelId, modelId),
+    mode,
+    path: pathForMode(mode),
+    prices: priceFromModelsDev(model?.cost),
+    limits: {
+      context_window: typeof model?.limit?.context === 'number' ? model.limit.context : undefined,
+      max_output_tokens: typeof model?.limit?.output === 'number' ? model.limit.output : undefined,
+    },
+    features: ['attachment', 'reasoning', 'tool_call', 'temperature'].filter((k) => model?.[k] === true),
+    name: typeof model?.name === 'string' ? model.name : undefined,
+    family: typeof model?.family === 'string' ? model.family : undefined,
+    modalities: model?.modalities && typeof model.modalities === 'object' ? model.modalities : undefined,
+    release_date: typeof model?.release_date === 'string' ? model.release_date : undefined,
+    last_updated: typeof model?.last_updated === 'string' ? model.last_updated : undefined,
+    open_weights: typeof model?.open_weights === 'boolean' ? model.open_weights : undefined,
+  }
+}
+
+function buildFromModelsDev(payload) {
+  const providers = new Map()
+  const modelCandidates = new Map()
+  for (const [providerKey, provider] of Object.entries(payload ?? {})) {
+    if (!provider || typeof provider !== 'object') continue
+    const providerId = slugify(provider.id ?? providerKey)
+    const models = provider.models && typeof provider.models === 'object' ? provider.models : {}
+    providers.set(providerId, {
+      schema_version: 0,
+      id: providerId,
+      name: provider.name ?? providerId,
+      roles: rolesForProvider(providerId),
+      base_url: provider.api ?? null,
+      source: 'models.dev',
+      docs: provider.doc ?? null,
+      package: provider.npm ?? null,
+      env: Array.isArray(provider.env) ? provider.env : [],
+      endpoints: [],
+      offers: [],
+    })
+    const out = providers.get(providerId)
+    for (const [modelId, model] of Object.entries(models)) {
+      const offer = offerFromModelsDev(providerId, modelId, model)
+      out.offers.push(offer)
+      if (!modelCandidates.has(offer.model)) {
+        modelCandidates.set(offer.model, {
+          id: offer.model,
+          name: offer.name ?? offer.model,
+          author: providerId,
+          status: 'candidate',
+          family: offer.family,
+          modalities: offer.modalities,
+          limits: offer.limits,
+          sources: [{ type: 'models.dev', provider: providerId, id: modelId }],
+        })
+      }
+    }
+  }
+  return { providers, models: [...modelCandidates.values()] }
 }
 
 function offerFromLiteLlm(sourceId, row) {
@@ -283,9 +396,9 @@ function reportsFor(providers, models, openrouterStats) {
 
 async function main() {
   ensureDirs()
-  const lite = await loadLiteLlm()
-  const { providers, models } = buildFromLiteLlm(lite)
-  const openrouterStats = INCLUDE_OPENROUTER_SUPPLEMENT ? augmentOpenRouter(providers) : { skipped: true, reason: 'litellm-only' }
+  const sourcePayload = SOURCE_INPUT === 'models.dev' ? await loadModelsDev() : await loadLiteLlm()
+  const { providers, models } = SOURCE_INPUT === 'models.dev' ? buildFromModelsDev(sourcePayload) : buildFromLiteLlm(sourcePayload)
+  const openrouterStats = SOURCE_INPUT === 'models.dev' ? { skipped: true, reason: 'models.dev-only' } : INCLUDE_OPENROUTER_SUPPLEMENT ? augmentOpenRouter(providers) : { skipped: true, reason: 'litellm-only' }
 
   const sortedProviders = [...providers.values()].sort((a, b) => a.id.localeCompare(b.id))
   writeJson(join(OUT_DIR, 'models.json'), { schema_version: 0, generated_from: [SOURCE_MODE], models })

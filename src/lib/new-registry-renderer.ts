@@ -41,7 +41,7 @@ type Provider = {
 type NewRegistry = {
   providers: Provider[]
   offers: Array<Offer & { provider: Provider; route: string; endpoint: string }>
-  stats: { providerCount: number; offerCount: number; pricedOfferCount: number }
+  stats: { providerCount: number; offerCount: number; pricedOfferCount: number; sourceMode: string }
 }
 
 export function readNewRegistry(root = process.cwd()): NewRegistry | null {
@@ -64,6 +64,7 @@ export function readNewRegistry(root = process.cwd()): NewRegistry | null {
       providerCount: providers.length,
       offerCount: offers.length,
       pricedOfferCount: offers.filter((offer) => (offer.prices ?? []).length > 0).length,
+      sourceMode: sourceModeFor(root),
     },
   }
 }
@@ -75,7 +76,7 @@ export function renderNewModelsHome(registry: NewRegistry): string {
     .sort((a, b) => providerLabel(a.provider).localeCompare(providerLabel(b.provider)) || displayModel(a).localeCompare(displayModel(b)))
     .map(renderOfferRow)
     .join('')
-  const body = `<main class="modelsShell"><aside class="filterPanel" aria-label="新模型筛选"><div class="filterGroup"><div class="filterHead"><span>Provider</span><span>⌄</span></div>${renderProviderFilterOption({ label: '全部', value: 'all', count: registry.offers.length }, true)}${providerOptions.map((option) => renderProviderFilterOption(option)).join('')}</div><div class="filterGroup"><h3>实验数据</h3><p class="filterHint">LiteLLM-first，OpenRouter 补充。用于观察新 schema，不代表正式目录。</p><p class="filterHint">${registry.stats.providerCount} providers · ${registry.stats.offerCount} offers · ${registry.stats.pricedOfferCount} priced</p></div></aside><section class="mainPanel"><div class="plazaHead"><div><h1>New Models 实验目录</h1><p class="rawIntro">基于 .internal/next-registry 的 provider/offer 数据预览。</p></div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small>/M tokens</small></th><th>输出<br><small>/M tokens</small></th><th>读取<br><small>/M tokens</small></th><th>Endpoint</th></tr></thead><tbody id="rows">${rows}</tbody></table></div><script>${newModelsFilterScript()}</script></section></main>`
+  const body = `<main class="modelsShell"><aside class="filterPanel" aria-label="新模型筛选"><div class="filterGroup"><div class="filterHead"><span>Provider</span><span>⌄</span></div>${renderProviderFilterOption({ label: '全部', value: 'all', count: registry.offers.length }, true)}${providerOptions.map((option) => renderProviderFilterOption(option)).join('')}</div><div class="filterGroup"><h3>实验数据</h3><p class="filterHint">${escapeHtml(registry.stats.sourceMode)}。用于观察新 schema，不代表正式目录。</p><p class="filterHint">${registry.stats.providerCount} providers · ${registry.stats.offerCount} offers · ${registry.stats.pricedOfferCount} priced</p></div></aside><section class="mainPanel"><div class="plazaHead"><div><h1>New Models 实验目录</h1><p class="rawIntro">基于 .internal/next-registry 的 provider/offer 数据预览。</p></div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small>/M tokens</small></th><th>输出<br><small>/M tokens</small></th><th>读取<br><small>/M tokens</small></th><th>Endpoint</th></tr></thead><tbody id="rows">${rows}</tbody></table></div><script>${newModelsFilterScript()}</script></section></main>`
   return page('New Models · mddb.dev', body, 'models')
 }
 
@@ -122,6 +123,17 @@ function renderProviderFilterOption(option: { label: string; value: string; coun
 function endpointFor(provider: Provider, offer: Offer): string {
   if (!provider.base_url || !offer.path) return ''
   return `${provider.base_url.replace(/\/$/u, '')}/${offer.path.replace(/^\//u, '')}`
+}
+
+function sourceModeFor(root: string): string {
+  const path = join(root, '.internal', 'next-registry', 'reports', 'source-stats.json')
+  if (!existsSync(path)) return 'unknown'
+  try {
+    const stats = JSON.parse(readFileSync(path, 'utf8')) as { source_mode?: string }
+    return stats.source_mode ?? 'unknown'
+  } catch {
+    return 'unknown'
+  }
 }
 
 function displayModel(offer: Offer): string { return offer.model ?? offer.api_model_id ?? offer.source_model_id ?? 'unknown' }
