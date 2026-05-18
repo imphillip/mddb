@@ -151,7 +151,7 @@ apply();
 }
 
 function page(title: string, body: string, activePage: 'models'): string {
-  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(title)}</title><link rel="stylesheet" href="/assets/new-models.css"></head><body>${nav(activePage)}${body}<script>${copyModelTagScript()}</script>${footer()}</body></html>`
+  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(title)}</title><link rel="stylesheet" href="/assets/new-models.css?v=20260518-scroll"><style>.filterPanel{position:static!important;top:auto!important;align-self:start!important}</style></head><body>${nav(activePage)}${body}<script>${copyModelTagScript()}</script>${footer()}</body></html>`
 }
 
 function nav(activePage: 'models'): string {
