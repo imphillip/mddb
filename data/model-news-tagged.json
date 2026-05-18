@@ -1,7 +1,33 @@
 {
-  "generatedAt": "2026-05-18T15:40:44.322Z",
+  "generatedAt": "2026-05-18T16:00:49.626Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
+    {
+      "id": "cmpbdm08z16i9slnzirnwb4su",
+      "title": "主打能省则省 DeepSeek开放平台有没有优惠的咸鱼充值黑话或者有人能打折代充的，我想冲1000 应该够我用（一天四块钱，三百六十五天就是一千多块钱，应该够我用大几个月的了）",
+      "title_en": null,
+      "url": "https://x.com/Astronaut_1216/status/2056393248835256407",
+      "source": "X：Astronaut (@Astronaut_1216)",
+      "publishedAt": "2026-05-18T15:15:31.000Z",
+      "summary": "主打能省则省\nDeepSeek开放平台有没有优惠的咸鱼充值黑话或者有人能打折代充的，我想冲1000\n应该够我用（一天四块钱，三百六十五天就是一千多块钱，应该够我用大几个月的了）",
+      "category": "industry",
+      "tags": {
+        "providers": [
+          "deepseek"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "DeepSeek"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "deepseek": "/models/deepseek/"
+      },
+      "modelRoutes": {}
+    },
     {
       "id": "cmpamyen310aislnzmfv7lkzw",
       "title": "Grok Imagine图像生成模型发布",
