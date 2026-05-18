@@ -1,7 +1,33 @@
 {
-  "generatedAt": "2026-05-18T03:20:42.750Z",
+  "generatedAt": "2026-05-18T03:40:42.318Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
+    {
+      "id": "cmpamyen310aislnzmfv7lkzw",
+      "title": "Grok Imagine图像生成模型发布",
+      "title_en": "Grok Imagine",
+      "url": "https://x.com/elonmusk/status/2056209019065229420",
+      "source": "X：Elon Musk (@elonmusk, xAI)",
+      "publishedAt": "2026-05-18T03:03:27.000Z",
+      "summary": "Grok Imagine\n现已向所有 X Premium+ 订阅者开放\n这是我们的图像生成模型，由 xAI 开发",
+      "category": "ai-products",
+      "tags": {
+        "providers": [
+          "xai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "xAI"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "xai": "/models/x-ai/"
+      },
+      "modelRoutes": {}
+    },
     {
       "id": "cmpamits0107islnz58j0t88q",
       "title": "#潜入你的世界#活动第二轮开启，参与赢取奖励",
