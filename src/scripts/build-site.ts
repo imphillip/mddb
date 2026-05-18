@@ -1,6 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { buildDataQualityReport } from '../lib/data-quality.js'
+import { readNewRegistry, renderNewModelDetail, renderNewModelsHome } from '../lib/new-registry-renderer.js'
 import { buildOpenRouterRawGraphFromFiles } from '../lib/openrouter-raw-graph.js'
 import { readModelNews, renderModelNewsHome } from '../lib/model-news-renderer.js'
 import { renderOpenRouterProviderDetail, renderOpenRouterRawDetail, renderOpenRouterRawHome } from '../lib/openrouter-raw-renderer.js'
@@ -21,6 +22,15 @@ rmSync(outputDir, { recursive: true, force: true })
 const feed = readModelNews(join(process.cwd(), 'data', 'model-news-tagged.json'))
 writePage('index.html', renderModelNewsHome(graph, feed))
 writePage('models/index.html', renderOpenRouterRawHome(graph))
+const newRegistry = readNewRegistry()
+if (newRegistry) {
+  writePage('assets/new-models.css', readFileSync(join(process.cwd(), 'src', 'lib', 'new-models.css'), 'utf8'))
+  writePage('new-models/index.html', renderNewModelsHome(newRegistry))
+  for (const offer of newRegistry.offers) {
+    const route = offer.route.replace(/^\//u, '').replace(/\/$/u, '')
+    writePage(`${route}/index.html`, renderNewModelDetail(newRegistry, offer))
+  }
+}
 writePage('graph/openrouter.json', JSON.stringify(graph, null, 2))
 const dataQuality = buildDataQualityReport(graph)
 writePage('graph/data-quality.json', JSON.stringify(dataQuality, null, 2))
