@@ -1,7 +1,111 @@
 {
-  "generatedAt": "2026-05-18T01:40:28.321Z",
+  "generatedAt": "2026-05-18T02:00:34.103Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
+    {
+      "id": "cmpajx9cr0zl8slnz3febemkv",
+      "title": "无限乐观驱动创新，确定性追求成陷阱",
+      "title_en": "Interesting.",
+      "url": "https://x.com/pmarca/status/2056183890868339061",
+      "source": "X：Marc Andreessen (@pmarca, a16z)",
+      "publishedAt": "2026-05-18T01:23:36.000Z",
+      "summary": "有趣。\n【引用 @mnovendstern】：Thiel 显然喜欢说\"无限乐观\"是所有象限中最差的。但这确实是 Vitalik 在说\"也许我们把 Virtual Machine 放在链上\"时的精神，或者 OpenAI 在说\"也许我们把 transformers 开到最大\"时的精神。\n要求确定性是让你退出时间线的中等智慧陷阱。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "openai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "OpenAI"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "openai": "/models/openai/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmpajx9cs0zl9slnzbepm5d55",
+      "title": "AI助力情感传承：ChatGPT翻译家书，连接家族记忆",
+      "title_en": "Many such cases.",
+      "url": "https://x.com/pmarca/status/2056183706973319257",
+      "source": "X：Marc Andreessen (@pmarca, a16z)",
+      "publishedAt": "2026-05-18T01:22:52.000Z",
+      "summary": "当前AI常受质疑，但一位用户分享了其父亲在祖父去世后，利用ChatGPT将一批德文旧文档翻译成英文的感人经历。这些来自瑞士的家族文档，美国家人原本无法读懂。ChatGPT不仅准确翻译全部内容，还保留了原文语气，帮助父亲在悲痛中更深入地了解了祖父的生平。相比以往Google Translate生硬、近乎费解的翻译，此次高质量的翻译让父亲能够即时与祖母分享家族故事，体现了AI作为有益工具在情感支持与家族历史传承中的独特价值。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "google"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Google"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "google": "/models/google/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmpajb29y0ze6slnz4qehfohy",
+      "title": "阿里云推出HappyHorse视频生成模型",
+      "title_en": "Cinematic AI is here. 🐎💨 HappyHorse is now on Model Studio. From raw prompt to 1080p multi-shot r…",
+      "url": "https://x.com/alibaba_cloud/status/2056182152681644176",
+      "source": "X：阿里云 / Alibaba Cloud (@alibaba_cloud)",
+      "publishedAt": "2026-05-18T01:16:41.000Z",
+      "summary": "电影级AI现已到来。🐎💨\n\nHappyHorse现已登陆Model Studio。从原始提示词到1080p多镜头现实感画面--在统一工作流中体验视频生成的未来。没有阻碍。只有纯粹性能。\n\n🔥 限时优惠：8折。观看演示并立即开始创作。\n\n立即访问：https：//int.alibabacloud.com/m/1000412936/",
+      "category": "ai-products",
+      "tags": {
+        "providers": [
+          "alibaba"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Alibaba"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "alibaba": "/models/alibaba/"
+      },
+      "modelRoutes": {}
+    },
+    {
+      "id": "cmpajxaji0zljslnzw6y65byp",
+      "title": "xAI算法开源深度解析，专家创建完整源码wiki",
+      "title_en": "兄弟们，今天必需卧槽一下了！ 昨晚发完这条推文后，终于等到了… xAI算法开源后，终于有人把源码真正啃完了。 岚叔@LufzzLiz （某大厂架构师，多模态与模型私有化领域专家）直接上手，把xa…",
+      "url": "https://x.com/berryxia/status/2056179666147537265",
+      "source": "X：Berry Xia (@berryxia)",
+      "publishedAt": "2026-05-18T01:06:49.000Z",
+      "summary": "xAI算法开源后，专家岚叔@LufzzLiz深入研究了xai-org/x-algorithm仓库源码，使用Opus-4.7创建了带有明确源码出处的完整wiki。这与引用推文所指出的现状形成对比：市面上95%的分析是AI批量生产的同质化废话，缺乏对源码的真正理解。岚叔的工作提供了有价值的算法拆解，GitHub仓库和在线阅读地址已公开。",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "xai"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "xAI"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "xai": "/models/x-ai/"
+      },
+      "modelRoutes": {}
+    },
     {
       "id": "cmpaio35a0z94slnz2j9v2h5w",
       "title": "AI未来三年发展展望",
