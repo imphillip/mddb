@@ -1,7 +1,33 @@
 {
-  "generatedAt": "2026-05-17T23:41:15.817Z",
+  "generatedAt": "2026-05-18T00:00:18.083Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
+    {
+      "id": "cmpafmw7m0yl5slnzmr9kely1",
+      "title": "用户盼Google速推新模型，会员到期在即",
+      "title_en": "我要的是Gemini App UI 升级吗？ 我是想让Google 大善人早一点推出新模型啊！ 我看我的Pro会员也马上到期了……",
+      "url": "https://x.com/berryxia/status/2056159786195153312",
+      "source": "X：Berry Xia (@berryxia)",
+      "publishedAt": "2026-05-17T23:47:49.000Z",
+      "summary": "我要的是Gemini App UI 升级吗？\n我是想让Google 大善人早一点推出新模型啊！\n我看我的Pro会员也马上到期了……",
+      "category": "tip",
+      "tags": {
+        "providers": [
+          "google"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Google"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "google": "/models/google/"
+      },
+      "modelRoutes": {}
+    },
     {
       "id": "cmpadbaj40y1nslnzxh0c32ig",
       "title": "Cloudflare部署体验优于Vercel",
