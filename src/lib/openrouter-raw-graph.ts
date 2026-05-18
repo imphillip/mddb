@@ -167,9 +167,14 @@ export type OpenRouterRawEdge = {
 type JsonRecord = Record<string, unknown>
 
 export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; endpointsPath: string; sitemapPath: string; pagesPath: string; modelsDevPath?: string; baseLlmPath?: string }): OpenRouterRawGraph {
-  const modelsPayload = readJson(paths.modelsPath) as { data?: JsonRecord[] }
-  const endpointsPayload = readJson(paths.endpointsPath) as { data?: JsonRecord[] }
-  const sitemapPayload = readJson(paths.sitemapPath) as { modelPages?: JsonRecord[]; pageOnly?: JsonRecord[]; apiOnly?: string[]; source?: JsonRecord }
+  const modelsPayload = readJson(paths.modelsPath) as { data?: JsonRecord[]; openrouter_sitemap_index?: { page_only?: JsonRecord[]; api_only?: string[]; source?: JsonRecord }; source?: JsonRecord }
+  const endpointsPayload = existsSync(paths.endpointsPath) ? readJson(paths.endpointsPath) as { data?: JsonRecord[] } : { data: [] }
+  const sitemapPayload = existsSync(paths.sitemapPath) ? readJson(paths.sitemapPath) as { modelPages?: JsonRecord[]; pageOnly?: JsonRecord[]; apiOnly?: string[]; source?: JsonRecord } : {
+    modelPages: (Array.isArray(modelsPayload.data) ? modelsPayload.data : []).map((model) => (model.openrouter_sitemap as JsonRecord)).filter((row) => row && row.status === 'api_and_sitemap').map((row) => ({ id: row.model_id, namespace: row.namespace, modelId: row.model_id, url: row.url })),
+    pageOnly: modelsPayload.openrouter_sitemap_index?.page_only ?? [],
+    apiOnly: modelsPayload.openrouter_sitemap_index?.api_only ?? [],
+    source: modelsPayload.openrouter_sitemap_index?.source,
+  }
   const pagesPayload = existsSync(paths.pagesPath) ? readJson(paths.pagesPath) as { data?: JsonRecord[] } : { data: [] }
   const modelsDevPayload = paths.modelsDevPath && existsSync(paths.modelsDevPath) ? readJson(paths.modelsDevPath) as Record<string, JsonRecord> : {}
   const baseLlmPayload = paths.baseLlmPath && existsSync(paths.baseLlmPath) ? readJson(paths.baseLlmPath) as { source?: string; models?: JsonRecord[] } : { models: [] }
@@ -182,7 +187,9 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
   const pageRows = Array.isArray(pagesPayload.data) ? pagesPayload.data : []
 
   const modelById = new Map(apiModels.map((model) => [String(model.id), model]))
-  const endpointByModelId = new Map(endpointRows.map((row) => [String(row.modelId), row]))
+  const endpointByModelId = endpointRows.length
+    ? new Map(endpointRows.map((row) => [String(row.modelId), row]))
+    : new Map(apiModels.map((model) => [String(model.id), endpointWrapperFromMergedModel(model)]).filter((entry): entry is [string, JsonRecord] => Boolean(entry[1])))
   const sitemapById = new Map(sitemapRows.map((row) => [String(row.id), row]))
   const pageById = new Map(pageRows.map((row) => [String(row.id), row]))
   const pageOnlyTypeById = new Map(pageOnlyRows.map((row) => [String(row.id), String(row.inferredType ?? 'unknown_page_only')]))
@@ -724,6 +731,27 @@ function snapshotTargetFor(node: OpenRouterRawNode, sourceById: Map<string, Open
   if (node.sourceId === 'google/gemini-2.5-pro-preview-05-06') return sourceById.get('google/gemini-2.5-pro-preview') ?? null
   const snapshotBase = stripSnapshot(node.sourceId)
   return snapshotBase && snapshotBase !== node.sourceId ? sourceById.get(snapshotBase) ?? null : null
+}
+
+function endpointWrapperFromMergedModel(model: JsonRecord): JsonRecord | null {
+  const details = model.openrouter_endpoint_details
+  if (!isRecord(details) || !Array.isArray(details.endpoints)) return null
+  return {
+    modelId: model.id,
+    canonicalSlug: model.canonical_slug ?? null,
+    detailsPath: details.details_path,
+    detailsUrl: details.details_url,
+    endpointCount: details.endpoint_count,
+    error: details.error,
+    response: {
+      data: {
+        id: model.id,
+        name: model.name,
+        architecture: model.architecture,
+        endpoints: details.endpoints,
+      },
+    },
+  }
 }
 
 function endpointList(wrapper: unknown): JsonRecord[] {

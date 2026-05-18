@@ -8,7 +8,7 @@ import { renderOpenRouterProviderDetail, renderOpenRouterRawDetail, renderOpenRo
 
 const outputDir = join(process.cwd(), 'public')
 const graph = buildOpenRouterRawGraphFromFiles({
-  modelsPath: join(process.cwd(), 'data', 'openrouter-models.json'),
+  modelsPath: join(process.cwd(), 'data', 'openrouter-raw.json'),
   endpointsPath: join(process.cwd(), 'data', 'openrouter-endpoints.json'),
   sitemapPath: join(process.cwd(), 'data', 'openrouter-sitemap-models.json'),
   pagesPath: join(process.cwd(), 'data', 'openrouter-model-pages.json'),

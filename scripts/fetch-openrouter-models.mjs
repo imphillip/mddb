@@ -93,6 +93,7 @@ const MODEL_PAGE_KEYS = [
 
 const paths = {
   models: process.argv[2] ?? join(process.cwd(), 'data', 'openrouter-models.json'),
+  raw: process.env.OPENROUTER_RAW_TARGET ?? join(process.cwd(), 'data', 'openrouter-raw.json'),
   endpoints: process.env.OPENROUTER_ENDPOINTS_TARGET ?? join(process.cwd(), 'data', 'openrouter-endpoints.json'),
   sitemap: process.env.OPENROUTER_SITEMAP_TARGET ?? join(process.cwd(), 'data', 'openrouter-sitemap-models.json'),
   pages: process.env.OPENROUTER_PAGES_TARGET ?? join(process.cwd(), 'data', 'openrouter-model-pages.json'),
@@ -115,6 +116,7 @@ const sitemap = await fetchSitemapModelIndex(SITEMAP_URL, new Set(modelPayload.d
 writeJson(paths.sitemap, sitemap)
 console.log(`Wrote ${sitemap.modelPages.length} sitemap model pages (${sitemap.pageOnly.length} page-only) to ${paths.sitemap}`)
 
+let endpointPayload = null
 if (FETCH_ENDPOINTS) {
   const endpointRows = await mapWithConcurrency(modelPayload.data, safeConcurrency(ENDPOINT_CONCURRENCY), async (model, index) => {
     const detailsPath = model?.links?.details || `/api/v1/models/${model.id}/endpoints`
@@ -143,7 +145,7 @@ if (FETCH_ENDPOINTS) {
     }
   })
 
-  const endpointPayload = {
+  endpointPayload = {
     fetchedAt,
     source: {
       baseUrl: OPENROUTER_BASE_URL,
@@ -153,21 +155,28 @@ if (FETCH_ENDPOINTS) {
     },
     data: endpointRows,
   }
-  const mergedPayload = mergeModelEndpointPayload(modelPayload, endpointPayload)
+  const mergedPayload = mergeOpenRouterRawPayload(modelPayload, endpointPayload, sitemap)
   writeJson(paths.models, mergedPayload)
+  writeJson(paths.raw, mergedPayload)
   writeJson(paths.endpoints, endpointPayload)
-  console.log(`Merged endpoint details into ${paths.models}`)
+  console.log(`Merged endpoint and sitemap details into ${paths.models}`)
+  console.log(`Wrote unified OpenRouter raw data to ${paths.raw}`)
   console.log(`Wrote endpoint details for ${endpointRows.length} OpenRouter models (${endpointPayload.source.failedRows} failed) to ${paths.endpoints}`)
 } else {
   console.log('Skipped endpoint detail fetch because OPENROUTER_FETCH_ENDPOINTS=0')
 }
 
-function mergeModelEndpointPayload(modelPayload, endpointPayload) {
-  const endpointByModelId = new Map(endpointPayload.data.map((row) => [row.modelId, row]))
-  const endpointByCanonicalSlug = new Map(endpointPayload.data.filter((row) => row.canonicalSlug).map((row) => [row.canonicalSlug, row]))
+function mergeOpenRouterRawPayload(modelPayload, endpointPayload, sitemapPayload) {
+  const endpointByModelId = new Map((endpointPayload?.data ?? []).map((row) => [row.modelId, row]))
+  const endpointByCanonicalSlug = new Map((endpointPayload?.data ?? []).filter((row) => row.canonicalSlug).map((row) => [row.canonicalSlug, row]))
+  const sitemapById = new Map((sitemapPayload.modelPages ?? []).map((row) => [row.id, row]))
+  const pageOnlyById = new Map((sitemapPayload.pageOnly ?? []).map((row) => [row.id, row]))
+  const apiOnlyIds = new Set(sitemapPayload.apiOnly ?? [])
+  const apiModelIds = new Set(modelPayload.data.map((model) => model.id))
   const data = modelPayload.data.map((model) => {
     const endpointRow = endpointByModelId.get(model.id) || endpointByCanonicalSlug.get(model.canonical_slug)
     const endpointData = endpointRow?.response?.data
+    const sitemapRow = sitemapById.get(model.id)
     return {
       ...model,
       openrouter_endpoint_details: endpointRow ? {
@@ -178,17 +187,38 @@ function mergeModelEndpointPayload(modelPayload, endpointPayload) {
         error: endpointRow.error ?? undefined,
         endpoints: Array.isArray(endpointData?.endpoints) ? endpointData.endpoints : [],
       } : null,
+      openrouter_sitemap: sitemapRow ? {
+        url: sitemapRow.url,
+        namespace: sitemapRow.namespace,
+        model_id: sitemapRow.modelId,
+        status: apiOnlyIds.has(model.id) ? 'api_and_sitemap_but_api_only_flagged' : 'api_and_sitemap',
+      } : {
+        url: null,
+        status: 'api_only',
+      },
     }
   })
+  const pageOnly = (sitemapPayload.pageOnly ?? []).filter((row) => !apiModelIds.has(row.id))
   return {
     ...modelPayload,
     fetchedAt,
     source: {
       ...(modelPayload.source ?? {}),
+      baseUrl: OPENROUTER_BASE_URL,
       modelsUrl: MODELS_URL,
-      endpointDetailsMerged: true,
-      endpointRows: endpointPayload.source.endpointRows,
-      failedEndpointRows: endpointPayload.source.failedRows,
+      sitemapUrl: SITEMAP_URL,
+      endpointDetailsMerged: Boolean(endpointPayload),
+      sitemapMerged: true,
+      endpointRows: endpointPayload?.source?.endpointRows ?? 0,
+      failedEndpointRows: endpointPayload?.source?.failedRows ?? 0,
+      sitemapModelPages: sitemapPayload.source?.modelPages ?? (sitemapPayload.modelPages ?? []).length,
+      sitemapPageOnlyRows: sitemapPayload.source?.pageOnly ?? pageOnly.length,
+      sitemapApiOnlyRows: sitemapPayload.source?.apiOnly ?? (sitemapPayload.apiOnly ?? []).length,
+    },
+    openrouter_sitemap_index: {
+      source: sitemapPayload.source,
+      page_only: pageOnly,
+      api_only: sitemapPayload.apiOnly ?? [],
     },
     data,
   }
