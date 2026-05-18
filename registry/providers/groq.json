@@ -1,0 +1,457 @@
+{
+  "schema_version": 1,
+  "id": "groq",
+  "provider": "Groq",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "gpt-oss-120b",
+      "model": "OpenAI: gpt-oss-120b (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "groq",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000006",
+            "input_cache_read": "0.000000075",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "openai/gpt-oss-120b:free",
+        "endpoint_tag": "groq",
+        "context_length": 131072,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "seed",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "openai/gpt-oss-120b:free#Groq | openai/gpt-oss-120b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-20b",
+      "model": "OpenAI: gpt-oss-20b (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "groq",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.075,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000075",
+            "completion": "0.0000003",
+            "input_cache_read": "0.0000000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "openai/gpt-oss-20b:free",
+        "endpoint_tag": "groq",
+        "context_length": 131072,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "seed",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "openai/gpt-oss-20b:free#Groq | openai/gpt-oss-20b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-safeguard-20b",
+      "model": "OpenAI: gpt-oss-safeguard-20b",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "groq",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.075,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000075",
+            "completion": "0.0000003",
+            "input_cache_read": "0.000000037",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "openai/gpt-oss-safeguard-20b",
+        "endpoint_tag": "groq",
+        "context_length": 131072,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "seed",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "openai/gpt-oss-safeguard-20b#Groq | openai/gpt-oss-safeguard-20b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2-0905",
+      "model": "MoonshotAI: Kimi K2 0905",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "groq",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000001",
+            "completion": "0.000003",
+            "input_cache_read": "0.0000005",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "moonshotai/kimi-k2-0905",
+        "endpoint_tag": "groq",
+        "context_length": 262144,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "seed",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "moonshotai/kimi-k2-0905#Groq | moonshotai/kimi-k2-0905",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.1-8b-instruct",
+      "model": "Meta: Llama 3.1 8B Instruct",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "groq",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.05,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.08,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000005",
+            "completion": "0.00000008",
+            "input_cache_read": "0.000000025",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-3.1-8b-instruct",
+        "endpoint_tag": "groq",
+        "context_length": 131072,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "seed",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-3.1-8b-instruct#Groq | meta-llama/llama-3.1-8b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.3-70b-instruct",
+      "model": "Meta: Llama 3.3 70B Instruct (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "groq",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.59,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.79,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000059",
+            "completion": "0.00000079",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-3.3-70b-instruct:free",
+        "endpoint_tag": "groq",
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "seed",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-3.3-70b-instruct:free#Groq | meta-llama/llama-3.3-70b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-4-scout",
+      "model": "Meta: Llama 4 Scout",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "groq",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.11,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.34,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000011",
+            "completion": "0.00000034",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-4-scout",
+        "endpoint_tag": "groq",
+        "context_length": 131072,
+        "max_output_tokens": 8192,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "seed",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-4-scout#Groq | meta-llama/llama-4-scout-17b-16e-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-32b",
+      "model": "Qwen: Qwen3 32B",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "groq",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.29,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.59,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000029",
+            "completion": "0.00000059",
+            "input_cache_read": "0.000000145",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-32b",
+        "endpoint_tag": "groq",
+        "context_length": 131072,
+        "max_output_tokens": 40960,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "seed",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-32b#Groq | qwen/qwen3-32b-04-28",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

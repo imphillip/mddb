@@ -1,0 +1,368 @@
+{
+  "schema_version": 1,
+  "id": "morph",
+  "provider": "Morph",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "deepseek-v4-flash",
+      "model": "DeepSeek: DeepSeek V4 Flash (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "morph",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000004",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v4-flash:free",
+        "endpoint_tag": "morph",
+        "context_length": 393216,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "stop",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v4-flash:free#Morph | deepseek/deepseek-v4-flash-20260423",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.7",
+      "model": "MiniMax: MiniMax M2.7",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "morph",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.279,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000279",
+            "completion": "0.0000012",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "minimax/minimax-m2.7",
+        "endpoint_tag": "morph",
+        "context_length": 196608,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "stop",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice",
+          "logprobs",
+          "top_logprobs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "minimax/minimax-m2.7#Morph | minimax/minimax-m2.7-20260318",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "morph-v3-fast",
+      "model": "Morph: Morph V3 Fast",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "morph",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.8,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000008",
+            "completion": "0.0000012",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "morph/morph-v3-fast",
+        "endpoint_tag": "morph",
+        "context_length": 81920,
+        "max_output_tokens": 38000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "morph/morph-v3-fast#Morph | morph/morph-v3-fast",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "morph-v3-large",
+      "model": "Morph: Morph V3 Large",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "morph",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.9,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.9,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000009",
+            "completion": "0.0000019",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "morph/morph-v3-large",
+        "endpoint_tag": "morph",
+        "context_length": 262144,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "morph/morph-v3-large#Morph | morph/morph-v3-large",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-397b-a17b",
+      "model": "Qwen: Qwen3.5 397B A17B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "morph",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.48,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000048",
+            "completion": "0.0000035",
+            "input_cache_read": "0.00000039",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-397b-a17b",
+        "endpoint_tag": "morph",
+        "context_length": 262144,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "stop",
+          "logprobs",
+          "top_logprobs",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "response_format",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "logit_bias"
+        ],
+        "status": -5
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-397b-a17b#Morph | qwen/qwen3.5-397b-a17b-20260216",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.6-27b",
+      "model": "Qwen: Qwen3.6 27B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "morph",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.498,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000498",
+            "completion": "0.0000024",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.6-27b",
+        "endpoint_tag": "morph",
+        "context_length": 131072,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "stop",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice",
+          "logprobs",
+          "top_logprobs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.6-27b#Morph | qwen/qwen3.6-27b-20260422",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

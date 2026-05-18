@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "id": "inflection",
+  "provider": "Inflection",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "inflection-3-pi",
+      "model": "Inflection: Inflection 3 Pi",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "inflection",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000025",
+            "completion": "0.00001",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "inflection/inflection-3-pi",
+        "endpoint_tag": "inflection",
+        "context_length": 8000,
+        "max_output_tokens": 1024,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "inflection/inflection-3-pi#Inflection | inflection/inflection-3-pi",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "inflection-3-productivity",
+      "model": "Inflection: Inflection 3 Productivity",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "inflection",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000025",
+            "completion": "0.00001",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "inflection/inflection-3-productivity",
+        "endpoint_tag": "inflection",
+        "context_length": 8000,
+        "max_output_tokens": 1024,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "inflection/inflection-3-productivity#Inflection | inflection/inflection-3-productivity",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

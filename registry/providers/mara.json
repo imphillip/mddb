@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "id": "mara",
+  "provider": "Mara",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "minimax-m2.5",
+      "model": "MiniMax: MiniMax M2.5 (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "mara",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000012",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "minimax/minimax-m2.5:free",
+        "endpoint_tag": "mara",
+        "context_length": 196608,
+        "max_output_tokens": 196608,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "stop",
+          "top_k",
+          "top_p"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "minimax/minimax-m2.5:free#Mara | minimax/minimax-m2.5-20260211",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

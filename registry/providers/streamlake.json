@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "id": "streamlake",
+  "provider": "StreamLake",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "glm-5",
+      "model": "Z.ai: GLM 5",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "streamlake",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.65,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.08,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000065",
+            "completion": "0.00000208",
+            "input_cache_read": "0.00000013",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-5",
+        "endpoint_tag": "streamlake",
+        "context_length": 200000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "frequency_penalty",
+          "tool_choice",
+          "tools",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-5#StreamLake | z-ai/glm-5-20260211",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5.1",
+      "model": "Z.ai: GLM 5.1",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "streamlake",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.26,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.96,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000126",
+            "completion": "0.00000396",
+            "input_cache_read": "0.000000234",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-5.1",
+        "endpoint_tag": "streamlake",
+        "context_length": 200000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "frequency_penalty",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-5.1#StreamLake | z-ai/glm-5.1-20260406",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "kat-coder-pro-v2",
+      "model": "Kwaipilot: KAT-Coder-Pro V2",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "streamlake",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000012",
+            "input_cache_read": "0.00000006",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "kwaipilot/kat-coder-pro-v2",
+        "endpoint_tag": "streamlake",
+        "context_length": 256000,
+        "max_output_tokens": 80000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "frequency_penalty",
+          "tool_choice",
+          "tools",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "kwaipilot/kat-coder-pro-v2#StreamLake | kwaipilot/kat-coder-pro-v2-20260327",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

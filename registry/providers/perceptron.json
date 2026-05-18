@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "id": "perceptron",
+  "provider": "Perceptron",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "perceptron-mk1",
+      "model": "Perceptron: Perceptron Mk1",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "perceptron",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000015",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "perceptron/perceptron-mk1",
+        "endpoint_tag": "perceptron",
+        "context_length": 32768,
+        "max_output_tokens": 8192,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "frequency_penalty",
+          "presence_penalty",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "perceptron/perceptron-mk1#Perceptron | perceptron/perceptron-mk1-20260512",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

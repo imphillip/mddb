@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "id": "moonshotai",
+  "provider": "Moonshotai",
+  "currency": "USD",
+  "offers": [],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

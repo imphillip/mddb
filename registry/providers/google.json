@@ -1,0 +1,3917 @@
+{
+  "schema_version": 1,
+  "id": "google",
+  "provider": "Google",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "claude-3-haiku",
+      "model": "Anthropic: Claude 3 Haiku",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.25,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000025",
+            "completion": "0.00000125",
+            "input_cache_read": "0.00000003",
+            "input_cache_write": "0.0000003",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-3-haiku",
+        "endpoint_tag": "google-vertex",
+        "context_length": 200000,
+        "max_output_tokens": 4096,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-3-haiku#Google | anthropic/claude-3-haiku",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-3.5-haiku",
+      "model": "Anthropic: Claude 3.5 Haiku",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.8,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000008",
+            "completion": "0.000004",
+            "web_search": "0.01",
+            "input_cache_read": "0.00000008",
+            "input_cache_write": "0.000001",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-3.5-haiku",
+        "endpoint_tag": "google-vertex",
+        "context_length": 200000,
+        "max_output_tokens": 8192,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-3.5-haiku#Google | anthropic/claude-3-5-haiku",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-haiku-4.5",
+      "model": "Anthropic: Claude Haiku 4.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/europe",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000001",
+            "completion": "0.000005",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000001",
+            "input_cache_write": "0.00000125",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-haiku-4.5",
+        "endpoint_tag": "google-vertex/europe",
+        "context_length": 200000,
+        "max_output_tokens": 64000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tools",
+          "tool_choice",
+          "top_k"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-haiku-4.5#Google | anthropic/claude-4.5-haiku-20251001",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-haiku-4.5",
+      "model": "Anthropic: Claude Haiku 4.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000001",
+            "completion": "0.000005",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000001",
+            "input_cache_write": "0.00000125",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-haiku-4.5",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 200000,
+        "max_output_tokens": 64000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tools",
+          "tool_choice",
+          "top_k"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-haiku-4.5#Google | anthropic/claude-4.5-haiku-20251001",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4",
+      "model": "Anthropic: Claude Opus 4",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 75,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000015",
+            "completion": "0.000075",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000015",
+            "input_cache_write": "0.00001875",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-opus-4",
+        "endpoint_tag": "google-vertex",
+        "context_length": 200000,
+        "max_output_tokens": 32000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-opus-4#Google | anthropic/claude-4-opus-20250522",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.1",
+      "model": "Anthropic: Claude Opus 4.1",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 75,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000015",
+            "completion": "0.000075",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000015",
+            "input_cache_write": "0.00001875",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-opus-4.1",
+        "endpoint_tag": "google-vertex",
+        "context_length": 200000,
+        "max_output_tokens": 32000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-opus-4.1#Google | anthropic/claude-4.1-opus-20250805",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.1",
+      "model": "Anthropic: Claude Opus 4.1",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 75,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000015",
+            "completion": "0.000075",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000015",
+            "input_cache_write": "0.00001875",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-opus-4.1",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 200000,
+        "max_output_tokens": 32000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-opus-4.1#Google | anthropic/claude-4.1-opus-20250805",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "model": "Anthropic: Claude Opus 4.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 25,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000005",
+            "completion": "0.000025",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000005",
+            "input_cache_write": "0.00000625",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-opus-4.5",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 200000,
+        "max_output_tokens": 64000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tool_choice",
+          "tools",
+          "verbosity"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-opus-4.5#Google | anthropic/claude-4.5-opus-20251124",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "model": "Anthropic: Claude Opus 4.6",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/europe",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 25,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000005",
+            "completion": "0.000025",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000005",
+            "input_cache_write": "0.00000625",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-opus-4.6",
+        "endpoint_tag": "google-vertex/europe",
+        "context_length": 1000000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tool_choice",
+          "tools",
+          "response_format",
+          "verbosity"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-opus-4.6#Google | anthropic/claude-4.6-opus-20260205",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "model": "Anthropic: Claude Opus 4.6",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 25,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000005",
+            "completion": "0.000025",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000005",
+            "input_cache_write": "0.00000625",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-opus-4.6",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 1000000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tool_choice",
+          "tools",
+          "response_format",
+          "verbosity"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-opus-4.6#Google | anthropic/claude-4.6-opus-20260205",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.7",
+      "model": "Anthropic: Claude Opus 4.7",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/europe",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 25,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000005",
+            "completion": "0.000025",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000005",
+            "input_cache_write": "0.00000625",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-opus-4.7",
+        "endpoint_tag": "google-vertex/europe",
+        "context_length": 1000000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "max_tokens",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tool_choice",
+          "tools",
+          "response_format",
+          "verbosity"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-opus-4.7#Google | anthropic/claude-4.7-opus-20260416",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.7",
+      "model": "Anthropic: Claude Opus 4.7",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 25,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000005",
+            "completion": "0.000025",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000005",
+            "input_cache_write": "0.00000625",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-opus-4.7",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 1000000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "max_tokens",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tool_choice",
+          "tools",
+          "response_format",
+          "verbosity"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-opus-4.7#Google | anthropic/claude-4.7-opus-20260416",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4",
+      "model": "Anthropic: Claude Sonnet 4",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000003",
+            "completion": "0.000015",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000003",
+            "input_cache_write": "0.00000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-sonnet-4",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 1000000,
+        "max_output_tokens": 64000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-sonnet-4#Google | anthropic/claude-4-sonnet-20250522",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4",
+      "model": "Anthropic: Claude Sonnet 4",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/europe",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000003",
+            "completion": "0.000015",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000003",
+            "input_cache_write": "0.00000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-sonnet-4",
+        "endpoint_tag": "google-vertex/europe",
+        "context_length": 1000000,
+        "max_output_tokens": 64000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-sonnet-4#Google | anthropic/claude-4-sonnet-20250522",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4",
+      "model": "Anthropic: Claude Sonnet 4",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000003",
+            "completion": "0.000015",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000003",
+            "input_cache_write": "0.00000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-sonnet-4",
+        "endpoint_tag": "google-vertex",
+        "context_length": 1000000,
+        "max_output_tokens": 64000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-sonnet-4#Google | anthropic/claude-4-sonnet-20250522",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4.5",
+      "model": "Anthropic: Claude Sonnet 4.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/us-east5",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000003",
+            "completion": "0.000015",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000003",
+            "input_cache_write": "0.00000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-sonnet-4.5",
+        "endpoint_tag": "google-vertex/us-east5",
+        "context_length": 1000000,
+        "max_output_tokens": 64000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tools",
+          "tool_choice",
+          "top_k"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-sonnet-4.5#Google | anthropic/claude-4.5-sonnet-20250929",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4.5",
+      "model": "Anthropic: Claude Sonnet 4.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000003",
+            "completion": "0.000015",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000003",
+            "input_cache_write": "0.00000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-sonnet-4.5",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 1000000,
+        "max_output_tokens": 64000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tools",
+          "tool_choice",
+          "top_k"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-sonnet-4.5#Google | anthropic/claude-4.5-sonnet-20250929",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4.6",
+      "model": "Anthropic: Claude Sonnet 4.6",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/europe",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000003",
+            "completion": "0.000015",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000003",
+            "input_cache_write": "0.00000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-sonnet-4.6",
+        "endpoint_tag": "google-vertex/europe",
+        "context_length": 1000000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tool_choice",
+          "tools",
+          "response_format",
+          "verbosity"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-sonnet-4.6#Google | anthropic/claude-4.6-sonnet-20260217",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4.6",
+      "model": "Anthropic: Claude Sonnet 4.6",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/us-east5",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000003",
+            "completion": "0.000015",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000003",
+            "input_cache_write": "0.00000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-sonnet-4.6",
+        "endpoint_tag": "google-vertex/us-east5",
+        "context_length": 1000000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tool_choice",
+          "tools",
+          "response_format",
+          "verbosity"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-sonnet-4.6#Google | anthropic/claude-4.6-sonnet-20260217",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4.6",
+      "model": "Anthropic: Claude Sonnet 4.6",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000003",
+            "completion": "0.000015",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000003",
+            "input_cache_write": "0.00000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-sonnet-4.6",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 1000000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tools",
+          "tool_choice",
+          "response_format",
+          "verbosity"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-sonnet-4.6#Google | anthropic/claude-4.6-sonnet-20260217",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-chat-v3.1",
+      "model": "DeepSeek: DeepSeek V3.1",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "google-vertex/us-west2",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.7,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000006",
+            "completion": "0.0000017",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-chat-v3.1",
+        "endpoint_tag": "google-vertex/us-west2",
+        "context_length": 163840,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "top_k",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-chat-v3.1#Google | deepseek/deepseek-chat-v3.1",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "model": "DeepSeek: DeepSeek V3.2",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "google-vertex",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.56,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.68,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000056",
+            "completion": "0.00000168",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v3.2",
+        "endpoint_tag": "google-vertex",
+        "context_length": 163840,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "response_format",
+          "top_k",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "stop",
+          "tools",
+          "tool_choice",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v3.2#Google | deepseek/deepseek-v3.2-20251201",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.0-flash-001",
+      "model": "Google: Gemini 2.0 Flash",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 1e-7,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000004",
+            "image": "0.0000001",
+            "audio": "0.0000007",
+            "input_audio_cache": "0.000000175",
+            "web_search": "0.014",
+            "internal_reasoning": "0.0000004",
+            "input_cache_read": "0.000000025",
+            "input_cache_write": "0.00000008333333333333334",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-2.0-flash-001",
+        "endpoint_tag": "google-vertex",
+        "context_length": 1000000,
+        "max_output_tokens": 8192,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "stop",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-2.0-flash-001#Google | google/gemini-2.0-flash-001",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.0-flash-lite-001",
+      "model": "Google: Gemini 2.0 Flash Lite",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.075,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 7.5e-8,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000075",
+            "completion": "0.0000003",
+            "image": "0.000000075",
+            "audio": "0.000000075",
+            "web_search": "0.014",
+            "internal_reasoning": "0.0000003",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-2.0-flash-lite-001",
+        "endpoint_tag": "google-vertex",
+        "context_length": 1048576,
+        "max_output_tokens": 8192,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "stop",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-2.0-flash-lite-001#Google | google/gemini-2.0-flash-lite-001",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-flash",
+      "model": "Google: Gemini 2.5 Flash",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/eu",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.5,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 2.5,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 3e-7,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000025",
+            "image": "0.0000003",
+            "audio": "0.000001",
+            "input_audio_cache": "0.0000001",
+            "web_search": "0.014",
+            "internal_reasoning": "0.0000025",
+            "input_cache_read": "0.00000003",
+            "input_cache_write": "0.00000008333333333333334",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-2.5-flash",
+        "endpoint_tag": "google-vertex/eu",
+        "context_length": 1048576,
+        "max_output_tokens": 65535,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-2.5-flash#Google | google/gemini-2.5-flash",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-flash",
+      "model": "Google: Gemini 2.5 Flash",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.5,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 2.5,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 3e-7,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000025",
+            "image": "0.0000003",
+            "audio": "0.000001",
+            "input_audio_cache": "0.0000001",
+            "web_search": "0.014",
+            "internal_reasoning": "0.0000025",
+            "input_cache_read": "0.00000003",
+            "input_cache_write": "0.00000008333333333333334",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-2.5-flash",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 1048576,
+        "max_output_tokens": 65535,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-2.5-flash#Google | google/gemini-2.5-flash",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-flash",
+      "model": "Google: Gemini 2.5 Flash",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.5,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 2.5,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 3e-7,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000025",
+            "image": "0.0000003",
+            "audio": "0.000001",
+            "input_audio_cache": "0.0000001",
+            "web_search": "0.014",
+            "internal_reasoning": "0.0000025",
+            "input_cache_read": "0.00000003",
+            "input_cache_write": "0.00000008333333333333334",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-2.5-flash",
+        "endpoint_tag": "google-vertex",
+        "context_length": 1048576,
+        "max_output_tokens": 65535,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-2.5-flash#Google | google/gemini-2.5-flash",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-flash-image",
+      "model": "Google: Nano Banana (Gemini 2.5 Flash Image)",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.5,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 2.5,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 3e-7,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000025",
+            "image": "0.0000003",
+            "image_output": "0.00003",
+            "audio": "0.000001",
+            "input_audio_cache": "0.0000001",
+            "web_search": "0.014",
+            "internal_reasoning": "0.0000025",
+            "input_cache_read": "0.00000003",
+            "input_cache_write": "0.00000008333333333333334",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-2.5-flash-image",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 32768,
+        "max_output_tokens": 8192,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "response_format",
+          "stop",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-2.5-flash-image#Google | google/gemini-2.5-flash-image",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-flash-lite",
+      "model": "Google: Gemini 2.5 Flash Lite",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/eu",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 1e-7,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000004",
+            "image": "0.0000001",
+            "audio": "0.0000003",
+            "input_audio_cache": "0.00000003",
+            "web_search": "0.014",
+            "internal_reasoning": "0.0000004",
+            "input_cache_read": "0.00000001",
+            "input_cache_write": "0.00000008333333333333334",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-2.5-flash-lite",
+        "endpoint_tag": "google-vertex/eu",
+        "context_length": 1048576,
+        "max_output_tokens": 65535,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-2.5-flash-lite#Google | google/gemini-2.5-flash-lite",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-flash-lite",
+      "model": "Google: Gemini 2.5 Flash Lite",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 1e-7,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000004",
+            "image": "0.0000001",
+            "audio": "0.0000003",
+            "input_audio_cache": "0.00000003",
+            "web_search": "0.014",
+            "internal_reasoning": "0.0000004",
+            "input_cache_read": "0.00000001",
+            "input_cache_write": "0.00000008333333333333334",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-2.5-flash-lite",
+        "endpoint_tag": "google-vertex",
+        "context_length": 1048576,
+        "max_output_tokens": 65535,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-2.5-flash-lite#Google | google/gemini-2.5-flash-lite",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-flash-lite-preview-09-2025",
+      "model": "Google: Gemini 2.5 Flash Lite Preview 09-2025",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 1e-7,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000004",
+            "image": "0.0000001",
+            "audio": "0.0000003",
+            "input_audio_cache": "0.00000003",
+            "web_search": "0.014",
+            "internal_reasoning": "0.0000004",
+            "input_cache_read": "0.00000001",
+            "input_cache_write": "0.00000008333333333333334",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-2.5-flash-lite-preview-09-2025",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 1048576,
+        "max_output_tokens": 65535,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-2.5-flash-lite-preview-09-2025#Google | google/gemini-2.5-flash-lite-preview-09-2025",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-pro",
+      "model": "Google: Gemini 2.5 Pro",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 0.00000125,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000125",
+            "completion": "0.00001",
+            "image": "0.00000125",
+            "audio": "0.00000125",
+            "input_audio_cache": "0.000000125",
+            "web_search": "0.014",
+            "internal_reasoning": "0.00001",
+            "input_cache_read": "0.000000125",
+            "input_cache_write": "0.000000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-2.5-pro",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 1048576,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-2.5-pro#Google | google/gemini-2.5-pro",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-pro",
+      "model": "Google: Gemini 2.5 Pro",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/eu",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 0.00000125,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000125",
+            "completion": "0.00001",
+            "image": "0.00000125",
+            "audio": "0.00000125",
+            "input_audio_cache": "0.000000125",
+            "web_search": "0.014",
+            "internal_reasoning": "0.00001",
+            "input_cache_read": "0.000000125",
+            "input_cache_write": "0.000000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-2.5-pro",
+        "endpoint_tag": "google-vertex/eu",
+        "context_length": 1048576,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice",
+          "stop"
+        ],
+        "status": -2
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-2.5-pro#Google | google/gemini-2.5-pro",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-pro",
+      "model": "Google: Gemini 2.5 Pro",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/us",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 0.00000125,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000125",
+            "completion": "0.00001",
+            "image": "0.00000125",
+            "audio": "0.00000125",
+            "input_audio_cache": "0.000000125",
+            "web_search": "0.014",
+            "internal_reasoning": "0.00001",
+            "input_cache_read": "0.000000125",
+            "input_cache_write": "0.000000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-2.5-pro",
+        "endpoint_tag": "google-vertex/us",
+        "context_length": 1048576,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-2.5-pro#Google | google/gemini-2.5-pro",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-pro-preview",
+      "model": "Google: Gemini 2.5 Pro Preview 06-05",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 0.00000125,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000125",
+            "completion": "0.00001",
+            "image": "0.00000125",
+            "audio": "0.00000125",
+            "input_audio_cache": "0.000000125",
+            "web_search": "0.014",
+            "internal_reasoning": "0.00001",
+            "input_cache_read": "0.000000125",
+            "input_cache_write": "0.000000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-2.5-pro-preview",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 1048576,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-2.5-pro-preview#Google | google/gemini-2.5-pro",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-pro-preview",
+      "model": "Google: Gemini 2.5 Pro Preview 06-05",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/eu",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 0.00000125,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000125",
+            "completion": "0.00001",
+            "image": "0.00000125",
+            "audio": "0.00000125",
+            "input_audio_cache": "0.000000125",
+            "web_search": "0.014",
+            "internal_reasoning": "0.00001",
+            "input_cache_read": "0.000000125",
+            "input_cache_write": "0.000000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-2.5-pro-preview",
+        "endpoint_tag": "google-vertex/eu",
+        "context_length": 1048576,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice",
+          "stop"
+        ],
+        "status": -2
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-2.5-pro-preview#Google | google/gemini-2.5-pro",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-pro-preview",
+      "model": "Google: Gemini 2.5 Pro Preview 06-05",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/us",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 0.00000125,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000125",
+            "completion": "0.00001",
+            "image": "0.00000125",
+            "audio": "0.00000125",
+            "input_audio_cache": "0.000000125",
+            "web_search": "0.014",
+            "internal_reasoning": "0.00001",
+            "input_cache_read": "0.000000125",
+            "input_cache_write": "0.000000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-2.5-pro-preview",
+        "endpoint_tag": "google-vertex/us",
+        "context_length": 1048576,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-2.5-pro-preview#Google | google/gemini-2.5-pro",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-pro-preview-05-06",
+      "model": "Google: Gemini 2.5 Pro Preview 05-06",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 0.00000125,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000125",
+            "completion": "0.00001",
+            "image": "0.00000125",
+            "audio": "0.00000125",
+            "input_audio_cache": "0.000000125",
+            "web_search": "0.014",
+            "internal_reasoning": "0.00001",
+            "input_cache_read": "0.000000125",
+            "input_cache_write": "0.000000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-2.5-pro-preview-05-06",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 1048576,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-2.5-pro-preview-05-06#Google | google/gemini-2.5-pro",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-pro-preview-05-06",
+      "model": "Google: Gemini 2.5 Pro Preview 05-06",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/eu",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 0.00000125,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000125",
+            "completion": "0.00001",
+            "image": "0.00000125",
+            "audio": "0.00000125",
+            "input_audio_cache": "0.000000125",
+            "web_search": "0.014",
+            "internal_reasoning": "0.00001",
+            "input_cache_read": "0.000000125",
+            "input_cache_write": "0.000000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-2.5-pro-preview-05-06",
+        "endpoint_tag": "google-vertex/eu",
+        "context_length": 1048576,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice",
+          "stop"
+        ],
+        "status": -2
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-2.5-pro-preview-05-06#Google | google/gemini-2.5-pro",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-pro-preview-05-06",
+      "model": "Google: Gemini 2.5 Pro Preview 05-06",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/us",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 0.00000125,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000125",
+            "completion": "0.00001",
+            "image": "0.00000125",
+            "audio": "0.00000125",
+            "input_audio_cache": "0.000000125",
+            "web_search": "0.014",
+            "internal_reasoning": "0.00001",
+            "input_cache_read": "0.000000125",
+            "input_cache_write": "0.000000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-2.5-pro-preview-05-06",
+        "endpoint_tag": "google-vertex/us",
+        "context_length": 1048576,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-2.5-pro-preview-05-06#Google | google/gemini-2.5-pro",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3-flash-preview",
+      "model": "Google: Gemini 3 Flash Preview",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 5e-7,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000005",
+            "completion": "0.000003",
+            "image": "0.0000005",
+            "audio": "0.000001",
+            "input_audio_cache": "0.0000001",
+            "web_search": "0.014",
+            "internal_reasoning": "0.000003",
+            "input_cache_read": "0.00000005",
+            "input_cache_write": "0.00000008333333333333334",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-3-flash-preview",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 1048576,
+        "max_output_tokens": 65535,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "response_format",
+          "tool_choice",
+          "tools",
+          "stop",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-3-flash-preview#Google | google/gemini-3-flash-preview-20251217",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3-pro-image-preview",
+      "model": "Google: Nano Banana Pro (Gemini 3 Pro Image Preview)",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 12,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 12,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 0.000002,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000002",
+            "completion": "0.000012",
+            "image": "0.000002",
+            "image_output": "0.00012",
+            "audio": "0.000002",
+            "input_audio_cache": "0.0000002",
+            "web_search": "0.014",
+            "internal_reasoning": "0.000012",
+            "input_cache_read": "0.0000002",
+            "input_cache_write": "0.000000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-3-pro-image-preview",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 65536,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "response_format",
+          "stop",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-3-pro-image-preview#Google | google/gemini-3-pro-image-preview-20251120",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.1-flash-image-preview",
+      "model": "Google: Nano Banana 2 (Gemini 3.1 Flash Image Preview)",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000005",
+            "completion": "0.000003",
+            "image_output": "0.00006",
+            "web_search": "0.014",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-3.1-flash-image-preview",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-3.1-flash-image-preview#Google | google/gemini-3.1-flash-image-preview-20260226",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.1-flash-lite",
+      "model": "Google: Gemini 3.1 Flash Lite",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 2.5e-7,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000025",
+            "completion": "0.0000015",
+            "image": "0.00000025",
+            "audio": "0.0000005",
+            "input_audio_cache": "0.00000005",
+            "web_search": "0.014",
+            "internal_reasoning": "0.0000015",
+            "input_cache_read": "0.000000025",
+            "input_cache_write": "0.00000008333333333333334",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-3.1-flash-lite",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 1048576,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "response_format",
+          "stop",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-3.1-flash-lite#Google | google/gemini-3.1-flash-lite-20260507",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.1-flash-lite-preview",
+      "model": "Google: Gemini 3.1 Flash Lite Preview",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 2.5e-7,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000025",
+            "completion": "0.0000015",
+            "image": "0.00000025",
+            "audio": "0.0000005",
+            "input_audio_cache": "0.00000005",
+            "web_search": "0.014",
+            "internal_reasoning": "0.0000015",
+            "input_cache_read": "0.000000025",
+            "input_cache_write": "0.00000008333333333333334",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-3.1-flash-lite-preview",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 1048576,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "response_format",
+          "stop",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-3.1-flash-lite-preview#Google | google/gemini-3.1-flash-lite-preview-20260303",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.1-pro-preview",
+      "model": "Google: Gemini 3.1 Pro Preview",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 12,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 12,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 0.000002,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000002",
+            "completion": "0.000012",
+            "image": "0.000002",
+            "audio": "0.000002",
+            "input_audio_cache": "0.0000002",
+            "web_search": "0.014",
+            "internal_reasoning": "0.000012",
+            "input_cache_read": "0.0000002",
+            "input_cache_write": "0.000000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-3.1-pro-preview",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 1048576,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "stop",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-3.1-pro-preview#Google | google/gemini-3.1-pro-preview-20260219",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemma-4-26b-a4b-it",
+      "model": "Google: Gemma 4 26B A4B  (free)",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000006",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemma-4-26b-a4b-it:free",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "response_format",
+          "top_k",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "stop",
+          "tools",
+          "tool_choice",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemma-4-26b-a4b-it:free#Google | google/gemma-4-26b-a4b-it-20260403",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.7",
+      "model": "Z.ai: GLM 4.7",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "google-vertex",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000006",
+            "completion": "0.0000022",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-4.7",
+        "endpoint_tag": "google-vertex",
+        "context_length": 200000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "response_format",
+          "top_k",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "stop",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-4.7#Google | z-ai/glm-4.7-20251222",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-120b",
+      "model": "OpenAI: gpt-oss-120b (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "google-vertex/global",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.09,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.36,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000009",
+            "completion": "0.00000036",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "openai/gpt-oss-120b:free",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 131072,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "repetition_penalty",
+          "top_k"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "openai/gpt-oss-120b:free#Google | openai/gpt-oss-120b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-20b",
+      "model": "OpenAI: gpt-oss-20b (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "google-vertex/us-central1",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.07,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.25,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000007",
+            "completion": "0.00000025",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "openai/gpt-oss-20b:free",
+        "endpoint_tag": "google-vertex/us-central1",
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "repetition_penalty",
+          "top_k"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "openai/gpt-oss-20b:free#Google | openai/gpt-oss-20b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2-thinking",
+      "model": "MoonshotAI: Kimi K2 Thinking",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "google-vertex",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000006",
+            "completion": "0.0000025",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "moonshotai/kimi-k2-thinking",
+        "endpoint_tag": "google-vertex",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "response_format",
+          "top_k",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "stop",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "moonshotai/kimi-k2-thinking#Google | moonshotai/kimi-k2-thinking-20251106",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.3-70b-instruct",
+      "model": "Meta: Llama 3.3 70B Instruct (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "google-vertex",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.72,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.72,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000072",
+            "completion": "0.00000072",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-3.3-70b-instruct:free",
+        "endpoint_tag": "google-vertex",
+        "context_length": 128000,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "response_format"
+        ],
+        "status": -2
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-3.3-70b-instruct:free#Google | meta-llama/llama-3.3-70b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.3-70b-instruct",
+      "model": "Meta: Llama 3.3 70B Instruct (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "google-vertex/us-central1",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.72,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.72,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000072",
+            "completion": "0.00000072",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-3.3-70b-instruct:free",
+        "endpoint_tag": "google-vertex/us-central1",
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supported_parameters": [
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "top_k",
+          "frequency_penalty",
+          "presence_penalty",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-3.3-70b-instruct:free#Google | meta-llama/llama-3.3-70b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-4-scout",
+      "model": "Meta: Llama 4 Scout",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/us-east5",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.7,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000025",
+            "completion": "0.0000007",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-4-scout",
+        "endpoint_tag": "google-vertex/us-east5",
+        "context_length": 1310720,
+        "max_output_tokens": 8192,
+        "supported_parameters": [
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "top_k",
+          "frequency_penalty",
+          "presence_penalty",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-4-scout#Google | meta-llama/llama-4-scout-17b-16e-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2",
+      "model": "MiniMax: MiniMax M2",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "google-vertex",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000012",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "minimax/minimax-m2",
+        "endpoint_tag": "google-vertex",
+        "context_length": 196608,
+        "max_output_tokens": 196608,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "response_format",
+          "top_k",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "stop",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "minimax/minimax-m2#Google | minimax/minimax-m2",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-235b-a22b-2507",
+      "model": "Qwen: Qwen3 235B A22B Instruct 2507",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "google-vertex/us-south1",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.22,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.88,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000022",
+            "completion": "0.00000088",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-235b-a22b-2507",
+        "endpoint_tag": "google-vertex/us-south1",
+        "context_length": 262144,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "top_k",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-235b-a22b-2507#Google | qwen/qwen3-235b-a22b-07-25",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-coder",
+      "model": "Qwen: Qwen3 Coder 480B A35B (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "google-vertex/us-south1",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.22,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000022",
+            "completion": "0.0000018",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-coder:free",
+        "endpoint_tag": "google-vertex/us-south1",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "top_k",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-coder:free#Google | qwen/qwen3-coder-480b-a35b-07-25",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-next-80b-a3b-instruct",
+      "model": "Qwen: Qwen3 Next 80B A3B Instruct (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "google-vertex/global",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000012",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-next-80b-a3b-instruct:free",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "top_k",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-next-80b-a3b-instruct:free#Google | qwen/qwen3-next-80b-a3b-instruct-2509",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-next-80b-a3b-thinking",
+      "model": "Qwen: Qwen3 Next 80B A3B Thinking",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "google-vertex/global",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000012",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-next-80b-a3b-thinking",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "top_k",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-next-80b-a3b-thinking#Google | qwen/qwen3-next-80b-a3b-thinking-2509",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

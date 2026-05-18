@@ -1,0 +1,1019 @@
+{
+  "schema_version": 1,
+  "id": "anthropic",
+  "provider": "Anthropic",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "claude-haiku-4.5",
+      "model": "Anthropic: Claude Haiku 4.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "anthropic",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000001",
+            "completion": "0.000005",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000001",
+            "input_cache_write": "0.00000125",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-haiku-4.5",
+        "endpoint_tag": "anthropic",
+        "context_length": 200000,
+        "max_output_tokens": 64000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tools",
+          "tool_choice",
+          "top_k",
+          "structured_outputs",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-haiku-4.5#Anthropic | anthropic/claude-4.5-haiku-20251001",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4",
+      "model": "Anthropic: Claude Opus 4",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "anthropic",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 75,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000015",
+            "completion": "0.000075",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000015",
+            "input_cache_write": "0.00001875",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-opus-4",
+        "endpoint_tag": "anthropic",
+        "context_length": 200000,
+        "max_output_tokens": 32000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-opus-4#Anthropic | anthropic/claude-4-opus-20250522",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.1",
+      "model": "Anthropic: Claude Opus 4.1",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "anthropic",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 75,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000015",
+            "completion": "0.000075",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000015",
+            "input_cache_write": "0.00001875",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-opus-4.1",
+        "endpoint_tag": "anthropic",
+        "context_length": 200000,
+        "max_output_tokens": 32000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-opus-4.1#Anthropic | anthropic/claude-4.1-opus-20250805",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "model": "Anthropic: Claude Opus 4.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "anthropic",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 25,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000005",
+            "completion": "0.000025",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000005",
+            "input_cache_write": "0.00000625",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-opus-4.5",
+        "endpoint_tag": "anthropic",
+        "context_length": 200000,
+        "max_output_tokens": 64000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tool_choice",
+          "tools",
+          "structured_outputs",
+          "response_format",
+          "verbosity"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-opus-4.5#Anthropic | anthropic/claude-4.5-opus-20251124",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "model": "Anthropic: Claude Opus 4.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "anthropic/2",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 25,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000005",
+            "completion": "0.000025",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000005",
+            "input_cache_write": "0.00000625",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-opus-4.5",
+        "endpoint_tag": "anthropic/2",
+        "context_length": 200000,
+        "max_output_tokens": 64000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tool_choice",
+          "tools",
+          "structured_outputs",
+          "response_format",
+          "verbosity"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-opus-4.5#Anthropic | anthropic/claude-4.5-opus-20251124",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "model": "Anthropic: Claude Opus 4.6",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "anthropic/2",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 25,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000005",
+            "completion": "0.000025",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000005",
+            "input_cache_write": "0.00000625",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-opus-4.6",
+        "endpoint_tag": "anthropic/2",
+        "context_length": 1000000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tool_choice",
+          "tools",
+          "structured_outputs",
+          "response_format",
+          "verbosity"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-opus-4.6#Anthropic | anthropic/claude-4.6-opus-20260205",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "model": "Anthropic: Claude Opus 4.6",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "anthropic",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 25,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000005",
+            "completion": "0.000025",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000005",
+            "input_cache_write": "0.00000625",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-opus-4.6",
+        "endpoint_tag": "anthropic",
+        "context_length": 1000000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tool_choice",
+          "tools",
+          "structured_outputs",
+          "response_format",
+          "verbosity"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-opus-4.6#Anthropic | anthropic/claude-4.6-opus-20260205",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.6-fast",
+      "model": "Anthropic: Claude Opus 4.6 (Fast)",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "anthropic",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 30,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 150,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00003",
+            "completion": "0.00015",
+            "web_search": "0.01",
+            "input_cache_read": "0.000003",
+            "input_cache_write": "0.0000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-opus-4.6-fast",
+        "endpoint_tag": "anthropic",
+        "context_length": 1000000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tool_choice",
+          "tools",
+          "structured_outputs",
+          "response_format",
+          "verbosity"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-opus-4.6-fast#Anthropic | anthropic/claude-4.6-opus-fast-20260407",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.7",
+      "model": "Anthropic: Claude Opus 4.7",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "anthropic/2",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 25,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000005",
+            "completion": "0.000025",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000005",
+            "input_cache_write": "0.00000625",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-opus-4.7",
+        "endpoint_tag": "anthropic/2",
+        "context_length": 1000000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "max_tokens",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tool_choice",
+          "tools",
+          "structured_outputs",
+          "response_format",
+          "verbosity"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-opus-4.7#Anthropic | anthropic/claude-4.7-opus-20260416",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.7",
+      "model": "Anthropic: Claude Opus 4.7",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "anthropic",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 25,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000005",
+            "completion": "0.000025",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000005",
+            "input_cache_write": "0.00000625",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-opus-4.7",
+        "endpoint_tag": "anthropic",
+        "context_length": 1000000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "max_tokens",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tool_choice",
+          "tools",
+          "structured_outputs",
+          "response_format",
+          "verbosity"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-opus-4.7#Anthropic | anthropic/claude-4.7-opus-20260416",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.7-fast",
+      "model": "Anthropic: Claude Opus 4.7 (Fast)",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "anthropic",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 30,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 150,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00003",
+            "completion": "0.00015",
+            "web_search": "0.01",
+            "input_cache_read": "0.000003",
+            "input_cache_write": "0.0000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-opus-4.7-fast",
+        "endpoint_tag": "anthropic",
+        "context_length": 1000000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "max_tokens",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tool_choice",
+          "tools",
+          "structured_outputs",
+          "response_format",
+          "verbosity"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-opus-4.7-fast#Anthropic | anthropic/claude-4.7-opus-fast-20260512",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4",
+      "model": "Anthropic: Claude Sonnet 4",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "anthropic",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000003",
+            "completion": "0.000015",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000003",
+            "input_cache_write": "0.00000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-sonnet-4",
+        "endpoint_tag": "anthropic",
+        "context_length": 1000000,
+        "max_output_tokens": 64000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-sonnet-4#Anthropic | anthropic/claude-4-sonnet-20250522",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4.5",
+      "model": "Anthropic: Claude Sonnet 4.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "anthropic/2",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000003",
+            "completion": "0.000015",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000003",
+            "input_cache_write": "0.00000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-sonnet-4.5",
+        "endpoint_tag": "anthropic/2",
+        "context_length": 1000000,
+        "max_output_tokens": 64000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tool_choice",
+          "tools",
+          "structured_outputs",
+          "top_k",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-sonnet-4.5#Anthropic | anthropic/claude-4.5-sonnet-20250929",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4.5",
+      "model": "Anthropic: Claude Sonnet 4.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "anthropic",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000003",
+            "completion": "0.000015",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000003",
+            "input_cache_write": "0.00000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-sonnet-4.5",
+        "endpoint_tag": "anthropic",
+        "context_length": 1000000,
+        "max_output_tokens": 64000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tools",
+          "tool_choice",
+          "top_k",
+          "structured_outputs",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-sonnet-4.5#Anthropic | anthropic/claude-4.5-sonnet-20250929",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4.6",
+      "model": "Anthropic: Claude Sonnet 4.6",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "anthropic/2",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000003",
+            "completion": "0.000015",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000003",
+            "input_cache_write": "0.00000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-sonnet-4.6",
+        "endpoint_tag": "anthropic/2",
+        "context_length": 1000000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "response_format",
+          "verbosity"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-sonnet-4.6#Anthropic | anthropic/claude-4.6-sonnet-20260217",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4.6",
+      "model": "Anthropic: Claude Sonnet 4.6",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "anthropic",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000003",
+            "completion": "0.000015",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000003",
+            "input_cache_write": "0.00000375",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "anthropic/claude-sonnet-4.6",
+        "endpoint_tag": "anthropic",
+        "context_length": 1000000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "max_tokens",
+          "top_p",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "response_format",
+          "verbosity"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "anthropic/claude-sonnet-4.6#Anthropic | anthropic/claude-4.6-sonnet-20260217",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

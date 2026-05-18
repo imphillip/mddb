@@ -1,0 +1,313 @@
+{
+  "schema_version": 1,
+  "id": "perplexity",
+  "provider": "Perplexity",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "sonar",
+      "model": "Perplexity: Sonar",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "perplexity",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.005,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000001",
+            "completion": "0.000001",
+            "web_search": "0.005",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "perplexity/sonar",
+        "endpoint_tag": "perplexity",
+        "context_length": 127072,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "frequency_penalty",
+          "presence_penalty",
+          "web_search_options"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "perplexity/sonar#Perplexity | perplexity/sonar",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "sonar-deep-research",
+      "model": "Perplexity: Sonar Deep Research",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "perplexity",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 8,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.005,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000002",
+            "completion": "0.000008",
+            "web_search": "0.005",
+            "internal_reasoning": "0.000003",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "perplexity/sonar-deep-research",
+        "endpoint_tag": "perplexity",
+        "context_length": 128000,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "frequency_penalty",
+          "presence_penalty",
+          "web_search_options"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "perplexity/sonar-deep-research#Perplexity | perplexity/sonar-deep-research",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "sonar-pro",
+      "model": "Perplexity: Sonar Pro",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "perplexity",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.005,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000003",
+            "completion": "0.000015",
+            "web_search": "0.005",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "perplexity/sonar-pro",
+        "endpoint_tag": "perplexity",
+        "context_length": 200000,
+        "max_output_tokens": 8000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "frequency_penalty",
+          "presence_penalty",
+          "web_search_options"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "perplexity/sonar-pro#Perplexity | perplexity/sonar-pro",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "sonar-pro-search",
+      "model": "Perplexity: Sonar Pro Search",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "perplexity",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.018,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000003",
+            "completion": "0.000015",
+            "web_search": "0.018",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "perplexity/sonar-pro-search",
+        "endpoint_tag": "perplexity",
+        "context_length": 200000,
+        "max_output_tokens": 8000,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "frequency_penalty",
+          "presence_penalty",
+          "web_search_options",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "perplexity/sonar-pro-search#Perplexity | perplexity/sonar-pro-search",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "sonar-reasoning-pro",
+      "model": "Perplexity: Sonar Reasoning Pro",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "perplexity",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 8,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.005,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000002",
+            "completion": "0.000008",
+            "web_search": "0.005",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "perplexity/sonar-reasoning-pro",
+        "endpoint_tag": "perplexity",
+        "context_length": 128000,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "frequency_penalty",
+          "presence_penalty",
+          "web_search_options"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "perplexity/sonar-reasoning-pro#Perplexity | perplexity/sonar-reasoning-pro",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

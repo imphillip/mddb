@@ -1,0 +1,4016 @@
+{
+  "schema_version": 1,
+  "id": "deepinfra",
+  "provider": "DeepInfra",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "deepseek-chat",
+      "model": "DeepSeek: DeepSeek V3",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp4",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.32,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.89,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000032",
+            "completion": "0.00000089",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-chat",
+        "endpoint_tag": "deepinfra/fp4",
+        "context_length": 163840,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-chat#DeepInfra | deepseek/deepseek-chat-v3",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-chat-v3-0324",
+      "model": "DeepSeek: DeepSeek V3 0324",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp4",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.77,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000002",
+            "completion": "0.00000077",
+            "input_cache_read": "0.000000135",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-chat-v3-0324",
+        "endpoint_tag": "deepinfra/fp4",
+        "context_length": 163840,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "tools",
+          "tool_choice",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-chat-v3-0324#DeepInfra | deepseek/deepseek-chat-v3-0324",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-chat-v3.1",
+      "model": "DeepSeek: DeepSeek V3.1",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp4",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.21,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.79,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000021",
+            "completion": "0.00000079",
+            "input_cache_read": "0.00000013",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-chat-v3.1",
+        "endpoint_tag": "deepinfra/fp4",
+        "context_length": 163840,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-chat-v3.1#DeepInfra | deepseek/deepseek-chat-v3.1",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-r1-0528",
+      "model": "DeepSeek: R1 0528",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp4",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.15,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000005",
+            "completion": "0.00000215",
+            "input_cache_read": "0.00000035",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-r1-0528",
+        "endpoint_tag": "deepinfra/fp4",
+        "context_length": 163840,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-r1-0528#DeepInfra | deepseek/deepseek-r1-0528",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-r1-distill-llama-70b",
+      "model": "DeepSeek: R1 Distill Llama 70B",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.7,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000007",
+            "completion": "0.0000008",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-r1-distill-llama-70b",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 131072,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-r1-distill-llama-70b#DeepInfra | deepseek/deepseek-r1-distill-llama-70b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.1-terminus",
+      "model": "DeepSeek: DeepSeek V3.1 Terminus",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp4",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.27,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.95,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000027",
+            "completion": "0.00000095",
+            "input_cache_read": "0.00000013",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v3.1-terminus",
+        "endpoint_tag": "deepinfra/fp4",
+        "context_length": 163840,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v3.1-terminus#DeepInfra | deepseek/deepseek-v3.1-terminus",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "model": "DeepSeek: DeepSeek V3.2",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp4",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.26,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.38,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000026",
+            "completion": "0.00000038",
+            "input_cache_read": "0.00000013",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v3.2",
+        "endpoint_tag": "deepinfra/fp4",
+        "context_length": 163840,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tool_choice",
+          "tools",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v3.2#DeepInfra | deepseek/deepseek-v3.2-20251201",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-flash",
+      "model": "DeepSeek: DeepSeek V4 Flash (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp4",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.14,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.28,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000014",
+            "completion": "0.00000028",
+            "input_cache_read": "0.000000028",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v4-flash:free",
+        "endpoint_tag": "deepinfra/fp4",
+        "context_length": 1048576,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v4-flash:free#DeepInfra | deepseek/deepseek-v4-flash-20260423",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-pro",
+      "model": "DeepSeek: DeepSeek V4 Pro",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp4",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.74,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.48,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000174",
+            "completion": "0.00000348",
+            "input_cache_read": "0.000000145",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v4-pro",
+        "endpoint_tag": "deepinfra/fp4",
+        "context_length": 65536,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "tools",
+          "tool_choice",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v4-pro#DeepInfra | deepseek/deepseek-v4-pro-20260423",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemma-3-12b-it",
+      "model": "Google: Gemma 3 12B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/bf16",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.04,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.13,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000004",
+            "completion": "0.00000013",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemma-3-12b-it",
+        "endpoint_tag": "deepinfra/bf16",
+        "context_length": 131072,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemma-3-12b-it#DeepInfra | google/gemma-3-12b-it",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemma-3-27b-it",
+      "model": "Google: Gemma 3 27B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.08,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000008",
+            "completion": "0.00000016",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemma-3-27b-it",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 131072,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemma-3-27b-it#DeepInfra | google/gemma-3-27b-it",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemma-3-4b-it",
+      "model": "Google: Gemma 3 4B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/bf16",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.04,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.08,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000004",
+            "completion": "0.00000008",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemma-3-4b-it",
+        "endpoint_tag": "deepinfra/bf16",
+        "context_length": 131072,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemma-3-4b-it#DeepInfra | google/gemma-3-4b-it",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemma-4-26b-a4b-it",
+      "model": "Google: Gemma 4 26B A4B  (free)",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.07,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.34,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000007",
+            "completion": "0.00000034",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemma-4-26b-a4b-it:free",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tool_choice",
+          "tools",
+          "structured_outputs",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemma-4-26b-a4b-it:free#DeepInfra | google/gemma-4-26b-a4b-it-20260403",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemma-4-31b-it",
+      "model": "Google: Gemma 4 31B (free)",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/turbo",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.12,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.37,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000012",
+            "completion": "0.00000037",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemma-4-31b-it:free",
+        "endpoint_tag": "deepinfra/turbo",
+        "context_length": 262144,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemma-4-31b-it:free#DeepInfra | google/gemma-4-31b-it-20260402",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemma-4-31b-it",
+      "model": "Google: Gemma 4 31B (free)",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.13,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.38,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000013",
+            "completion": "0.00000038",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemma-4-31b-it:free",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tool_choice",
+          "tools",
+          "structured_outputs",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemma-4-31b-it:free#DeepInfra | google/gemma-4-31b-it-20260402",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.6",
+      "model": "Z.ai: GLM 4.6",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp4",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.43,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.74,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000043",
+            "completion": "0.00000174",
+            "input_cache_read": "0.00000008",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-4.6",
+        "endpoint_tag": "deepinfra/fp4",
+        "context_length": 202752,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-4.6#DeepInfra | z-ai/glm-4.6",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.7",
+      "model": "Z.ai: GLM 4.7",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp4",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.75,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000004",
+            "completion": "0.00000175",
+            "input_cache_read": "0.00000008",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-4.7",
+        "endpoint_tag": "deepinfra/fp4",
+        "context_length": 202752,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-4.7#DeepInfra | z-ai/glm-4.7-20251222",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.7-flash",
+      "model": "Z.ai: GLM 4.7 Flash",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/bf16",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.06,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000006",
+            "completion": "0.0000004",
+            "input_cache_read": "0.00000001",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-4.7-flash",
+        "endpoint_tag": "deepinfra/bf16",
+        "context_length": 202752,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tool_choice",
+          "tools",
+          "structured_outputs",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-4.7-flash#DeepInfra | z-ai/glm-4.7-flash-20260119",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5",
+      "model": "Z.ai: GLM 5",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp4",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.08,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000006",
+            "completion": "0.00000208",
+            "input_cache_read": "0.00000012",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-5",
+        "endpoint_tag": "deepinfra/fp4",
+        "context_length": 202752,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-5#DeepInfra | z-ai/glm-5-20260211",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5.1",
+      "model": "Z.ai: GLM 5.1",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp4",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.05,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000105",
+            "completion": "0.0000035",
+            "input_cache_read": "0.000000205",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-5.1",
+        "endpoint_tag": "deepinfra/fp4",
+        "context_length": 202752,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-5.1#DeepInfra | z-ai/glm-5.1-20260406",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-120b",
+      "model": "OpenAI: gpt-oss-120b (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/bf16",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.039,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.19,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000039",
+            "completion": "0.00000019",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "openai/gpt-oss-120b:free",
+        "endpoint_tag": "deepinfra/bf16",
+        "context_length": 131072,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "openai/gpt-oss-120b:free#DeepInfra | openai/gpt-oss-120b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-120b",
+      "model": "OpenAI: gpt-oss-120b (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/turbo",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000006",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "openai/gpt-oss-120b:free",
+        "endpoint_tag": "deepinfra/turbo",
+        "context_length": 131072,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "tools",
+          "tool_choice",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "openai/gpt-oss-120b:free#DeepInfra | openai/gpt-oss-120b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-20b",
+      "model": "OpenAI: gpt-oss-20b (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/bf16",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.03,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.14,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000003",
+            "completion": "0.00000014",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "openai/gpt-oss-20b:free",
+        "endpoint_tag": "deepinfra/bf16",
+        "context_length": 131072,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "openai/gpt-oss-20b:free#DeepInfra | openai/gpt-oss-20b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "hermes-3-llama-3.1-405b",
+      "model": "Nous: Hermes 3 405B Instruct (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000001",
+            "completion": "0.000001",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "nousresearch/hermes-3-llama-3.1-405b:free",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 131072,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "nousresearch/hermes-3-llama-3.1-405b:free#DeepInfra | nousresearch/hermes-3-llama-3.1-405b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "hermes-3-llama-3.1-70b",
+      "model": "Nous: Hermes 3 70B Instruct",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000003",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "nousresearch/hermes-3-llama-3.1-70b",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 131072,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "nousresearch/hermes-3-llama-3.1-70b#DeepInfra | nousresearch/hermes-3-llama-3.1-70b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "model": "MoonshotAI: Kimi K2.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/fp4",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.45,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.25,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000045",
+            "completion": "0.00000225",
+            "input_cache_read": "0.00000007",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "moonshotai/kimi-k2.5",
+        "endpoint_tag": "deepinfra/fp4",
+        "context_length": 262144,
+        "max_output_tokens": 64000,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "moonshotai/kimi-k2.5#DeepInfra | moonshotai/kimi-k2.5-0127",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.6",
+      "model": "MoonshotAI: Kimi K2.6",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/fp4",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.75,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000075",
+            "completion": "0.0000035",
+            "input_cache_read": "0.00000015",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "moonshotai/kimi-k2.6",
+        "endpoint_tag": "deepinfra/fp4",
+        "context_length": 262144,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tool_choice",
+          "tools",
+          "structured_outputs",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "moonshotai/kimi-k2.6#DeepInfra | moonshotai/kimi-k2.6-20260420",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "l3-lunaris-8b",
+      "model": "Sao10K: Llama 3 8B Lunaris",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/turbo",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.04,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.05,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000004",
+            "completion": "0.00000005",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "sao10k/l3-lunaris-8b",
+        "endpoint_tag": "deepinfra/turbo",
+        "context_length": 8192,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "sao10k/l3-lunaris-8b#DeepInfra | sao10k/l3-lunaris-8b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "l3.1-euryale-70b",
+      "model": "Sao10K: Llama 3.1 Euryale 70B v2.2",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.85,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.85,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000085",
+            "completion": "0.00000085",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "sao10k/l3.1-euryale-70b",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 131072,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "sao10k/l3.1-euryale-70b#DeepInfra | sao10k/l3.1-euryale-70b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.1-70b-instruct",
+      "model": "Meta: Llama 3.1 70B Instruct",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/turbo",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000004",
+            "completion": "0.0000004",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-3.1-70b-instruct",
+        "endpoint_tag": "deepinfra/turbo",
+        "context_length": 131072,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "tools",
+          "tool_choice",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-3.1-70b-instruct#DeepInfra | meta-llama/llama-3.1-70b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.1-70b-instruct",
+      "model": "Meta: Llama 3.1 70B Instruct",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/base",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000004",
+            "completion": "0.0000004",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-3.1-70b-instruct",
+        "endpoint_tag": "deepinfra/base",
+        "context_length": 131072,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "tools",
+          "tool_choice",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-3.1-70b-instruct#DeepInfra | meta-llama/llama-3.1-70b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.1-8b-instruct",
+      "model": "Meta: Llama 3.1 8B Instruct",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/bf16",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.02,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.05,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000002",
+            "completion": "0.00000005",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-3.1-8b-instruct",
+        "endpoint_tag": "deepinfra/bf16",
+        "context_length": 131072,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "tools",
+          "tool_choice",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-3.1-8b-instruct#DeepInfra | meta-llama/llama-3.1-8b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.2-11b-vision-instruct",
+      "model": "Meta: Llama 3.2 11B Vision Instruct",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.245,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.245,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000245",
+            "completion": "0.000000245",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-3.2-11b-vision-instruct",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 131072,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-3.2-11b-vision-instruct#DeepInfra | meta-llama/llama-3.2-11b-vision-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.3-70b-instruct",
+      "model": "Meta: Llama 3.3 70B Instruct (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/turbo",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.32,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.00000032",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-3.3-70b-instruct:free",
+        "endpoint_tag": "deepinfra/turbo",
+        "context_length": 131072,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-3.3-70b-instruct:free#DeepInfra | meta-llama/llama-3.3-70b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.3-nemotron-super-49b-v1.5",
+      "model": "NVIDIA: Llama 3.3 Nemotron Super 49B V1.5",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000004",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 131072,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "nvidia/llama-3.3-nemotron-super-49b-v1.5#DeepInfra | nvidia/llama-3.3-nemotron-super-49b-v1.5",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-4-maverick",
+      "model": "Meta: Llama 4 Maverick",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/base",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000006",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-4-maverick",
+        "endpoint_tag": "deepinfra/base",
+        "context_length": 1048576,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-4-maverick#DeepInfra | meta-llama/llama-4-maverick-17b-128e-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-4-scout",
+      "model": "Meta: Llama 4 Scout",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.08,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000008",
+            "completion": "0.0000003",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-4-scout",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 327680,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-4-scout#DeepInfra | meta-llama/llama-4-scout-17b-16e-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-guard-4-12b",
+      "model": "Meta: Llama Guard 4 12B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/bf16",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.18,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.18,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000018",
+            "completion": "0.00000018",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-guard-4-12b",
+        "endpoint_tag": "deepinfra/bf16",
+        "context_length": 163840,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-guard-4-12b#DeepInfra | meta-llama/llama-guard-4-12b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mimo-v2.5-pro",
+      "model": "Xiaomi: MiMo-V2.5-Pro",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000001",
+            "completion": "0.000003",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "xiaomi/mimo-v2.5-pro",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 1048576,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": -2
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "xiaomi/mimo-v2.5-pro#DeepInfra | xiaomi/mimo-v2.5-pro-20260422",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.5",
+      "model": "MiniMax: MiniMax M2.5 (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.15,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.00000115",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "minimax/minimax-m2.5:free",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 196608,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "minimax/minimax-m2.5:free#DeepInfra | minimax/minimax-m2.5-20260211",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-nemo",
+      "model": "Mistral: Mistral Nemo",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.02,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.04,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000002",
+            "completion": "0.00000004",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/mistral-nemo",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 131072,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/mistral-nemo#DeepInfra | mistralai/mistral-nemo",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-small-24b-instruct-2501",
+      "model": "Mistral: Mistral Small 3",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.05,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.08,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000005",
+            "completion": "0.00000008",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/mistral-small-24b-instruct-2501",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 32768,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/mistral-small-24b-instruct-2501#DeepInfra | mistralai/mistral-small-24b-instruct-2501",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-small-3.2-24b-instruct",
+      "model": "Mistral: Mistral Small 3.2 24B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.075,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000075",
+            "completion": "0.0000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/mistral-small-3.2-24b-instruct",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": -2
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/mistral-small-3.2-24b-instruct#DeepInfra | mistralai/mistral-small-3.2-24b-instruct-2506",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mythomax-l2-13b",
+      "model": "MythoMax 13B",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp16",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000004",
+            "completion": "0.0000004",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "gryphe/mythomax-l2-13b",
+        "endpoint_tag": "deepinfra/fp16",
+        "context_length": 4096,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "gryphe/mythomax-l2-13b#DeepInfra | gryphe/mythomax-l2-13b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "nemotron-3-nano-30b-a3b",
+      "model": "NVIDIA: Nemotron 3 Nano 30B A3B (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp4",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.05,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000005",
+            "completion": "0.0000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "nvidia/nemotron-3-nano-30b-a3b:free",
+        "endpoint_tag": "deepinfra/fp4",
+        "context_length": 262144,
+        "max_output_tokens": 228000,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tool_choice",
+          "tools",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "nvidia/nemotron-3-nano-30b-a3b:free#DeepInfra | nvidia/nemotron-3-nano-30b-a3b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "nemotron-3-super-120b-a12b",
+      "model": "NVIDIA: Nemotron 3 Super (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/bf16",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000005",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "nvidia/nemotron-3-super-120b-a12b:free",
+        "endpoint_tag": "deepinfra/bf16",
+        "context_length": 262144,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "nvidia/nemotron-3-super-120b-a12b:free#DeepInfra | nvidia/nemotron-3-super-120b-a12b-20230311",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "nemotron-nano-9b-v2",
+      "model": "NVIDIA: Nemotron Nano 9B V2 (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/bf16",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.04,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000004",
+            "completion": "0.00000016",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "nvidia/nemotron-nano-9b-v2:free",
+        "endpoint_tag": "deepinfra/bf16",
+        "context_length": 131072,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "nvidia/nemotron-nano-9b-v2:free#DeepInfra | nvidia/nemotron-nano-9b-v2",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "phi-4",
+      "model": "Microsoft: Phi 4",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/bf16",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.07,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.14,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000007",
+            "completion": "0.00000014",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "microsoft/phi-4",
+        "endpoint_tag": "deepinfra/bf16",
+        "context_length": 16384,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "microsoft/phi-4#DeepInfra | microsoft/phi-4",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen-2.5-72b-instruct",
+      "model": "Qwen2.5 72B Instruct",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.36,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000036",
+            "completion": "0.0000004",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen-2.5-72b-instruct",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 32768,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen-2.5-72b-instruct#DeepInfra | qwen/qwen-2.5-72b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-14b",
+      "model": "Qwen: Qwen3 14B",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.12,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.24,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000012",
+            "completion": "0.00000024",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-14b",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 40960,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "tools",
+          "tool_choice",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-14b#DeepInfra | qwen/qwen3-14b-04-28",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-235b-a22b-2507",
+      "model": "Qwen: Qwen3 235B A22B Instruct 2507",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.071,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000071",
+            "completion": "0.0000001",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-235b-a22b-2507",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-235b-a22b-2507#DeepInfra | qwen/qwen3-235b-a22b-07-25",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-235b-a22b-thinking-2507",
+      "model": "Qwen: Qwen3 235B A22B Thinking 2507",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.23,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000023",
+            "completion": "0.0000023",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-235b-a22b-thinking-2507",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-235b-a22b-thinking-2507#DeepInfra | qwen/qwen3-235b-a22b-thinking-2507",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-30b-a3b",
+      "model": "Qwen: Qwen3 30B A3B",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.09,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.45,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000009",
+            "completion": "0.00000045",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-30b-a3b",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 40960,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "tools",
+          "tool_choice",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-30b-a3b#DeepInfra | qwen/qwen3-30b-a3b-04-28",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-32b",
+      "model": "Qwen: Qwen3 32B",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.08,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.28,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000008",
+            "completion": "0.00000028",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-32b",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 40960,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-32b#DeepInfra | qwen/qwen3-32b-04-28",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-coder",
+      "model": "Qwen: Qwen3 Coder 480B A35B (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/turbo",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.000001",
+            "input_cache_read": "0.0000001",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-coder:free",
+        "endpoint_tag": "deepinfra/turbo",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-coder:free#DeepInfra | qwen/qwen3-coder-480b-a35b-07-25",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-next-80b-a3b-instruct",
+      "model": "Qwen: Qwen3 Next 80B A3B Instruct (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.09,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000009",
+            "completion": "0.0000011",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-next-80b-a3b-instruct:free",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-next-80b-a3b-instruct:free#DeepInfra | qwen/qwen3-next-80b-a3b-instruct-2509",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-vl-235b-a22b-instruct",
+      "model": "Qwen: Qwen3 VL 235B A22B Instruct",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.88,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000002",
+            "completion": "0.00000088",
+            "input_cache_read": "0.00000011",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-vl-235b-a22b-instruct",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": -2
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-vl-235b-a22b-instruct#DeepInfra | qwen/qwen3-vl-235b-a22b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-vl-30b-a3b-instruct",
+      "model": "Qwen: Qwen3 VL 30B A3B Instruct",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000006",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-vl-30b-a3b-instruct",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-vl-30b-a3b-instruct#DeepInfra | qwen/qwen3-vl-30b-a3b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-122b-a10b",
+      "model": "Qwen: Qwen3.5-122B-A10B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.29,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000029",
+            "completion": "0.0000024",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-122b-a10b",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 81920,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-122b-a10b#DeepInfra | qwen/qwen3.5-122b-a10b-20260224",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-27b",
+      "model": "Qwen: Qwen3.5-27B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.26,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000026",
+            "completion": "0.0000026",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-27b",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 81920,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "tools",
+          "tool_choice",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-27b#DeepInfra | qwen/qwen3.5-27b-20260224",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-35b-a3b",
+      "model": "Qwen: Qwen3.5-35B-A3B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.14,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000014",
+            "completion": "0.000001",
+            "input_cache_read": "0.00000005",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-35b-a3b",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 81920,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-35b-a3b#DeepInfra | qwen/qwen3.5-35b-a3b-20260224",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-397b-a17b",
+      "model": "Qwen: Qwen3.5 397B A17B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.49,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000049",
+            "completion": "0.0000036",
+            "input_cache_read": "0.0000003",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-397b-a17b",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 81920,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "tools",
+          "tool_choice",
+          "structured_outputs"
+        ],
+        "status": -5
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-397b-a17b#DeepInfra | qwen/qwen3.5-397b-a17b-20260216",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-9b",
+      "model": "Qwen: Qwen3.5-9B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/bf16",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.04,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000004",
+            "completion": "0.00000015",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-9b",
+        "endpoint_tag": "deepinfra/bf16",
+        "context_length": 262144,
+        "max_output_tokens": 81920,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-9b#DeepInfra | qwen/qwen3.5-9b-20260310",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.6-27b",
+      "model": "Qwen: Qwen3.6 27B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.32,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000032",
+            "completion": "0.0000032",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.6-27b",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 81920,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.6-27b#DeepInfra | qwen/qwen3.6-27b-20260422",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "step-3.5-flash",
+      "model": "StepFun: Step 3.5 Flash",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "deepinfra/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000003",
+            "input_cache_read": "0.00000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "stepfun/step-3.5-flash",
+        "endpoint_tag": "deepinfra/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "stepfun/step-3.5-flash#DeepInfra | stepfun/step-3.5-flash",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

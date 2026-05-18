@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "id": "gmicloud",
+  "provider": "GMICloud",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "deepseek-chat-v3-0324",
+      "model": "DeepSeek: DeepSeek V3 0324",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "gmicloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.29,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.14,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000029",
+            "completion": "0.00000114",
+            "input_cache_read": "0.00000011",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-chat-v3-0324",
+        "endpoint_tag": "gmicloud/fp8",
+        "context_length": 163840,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "structured_outputs",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-chat-v3-0324#GMICloud | deepseek/deepseek-chat-v3-0324",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-flash",
+      "model": "DeepSeek: DeepSeek V4 Flash (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "gmicloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.112,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.224,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000112",
+            "completion": "0.000000224",
+            "input_cache_read": "0.000000022",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v4-flash:free",
+        "endpoint_tag": "gmicloud/fp8",
+        "context_length": 1048575,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v4-flash:free#GMICloud | deepseek/deepseek-v4-flash-20260423",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-pro",
+      "model": "DeepSeek: DeepSeek V4 Pro",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "gmicloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.392,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.784,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000001392",
+            "completion": "0.000002784",
+            "input_cache_read": "0.000000116",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v4-pro",
+        "endpoint_tag": "gmicloud/fp8",
+        "context_length": 1048576,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v4-pro#GMICloud | deepseek/deepseek-v4-pro-20260423",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5",
+      "model": "Z.ai: GLM 5",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "gmicloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.92,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000006",
+            "completion": "0.00000192",
+            "input_cache_read": "0.00000012",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-5",
+        "endpoint_tag": "gmicloud/fp8",
+        "context_length": 202752,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-5#GMICloud | z-ai/glm-5-20260211",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5.1",
+      "model": "Z.ai: GLM 5.1",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "gmicloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.98,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.08,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000098",
+            "completion": "0.00000308",
+            "input_cache_read": "0.000000182",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-5.1",
+        "endpoint_tag": "gmicloud/fp8",
+        "context_length": 202752,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-5.1#GMICloud | z-ai/glm-5.1-20260406",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-397b-a17b",
+      "model": "Qwen: Qwen3.5 397B A17B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "gmicloud/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000006",
+            "completion": "0.0000036",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-397b-a17b",
+        "endpoint_tag": "gmicloud/fp8",
+        "context_length": 262144,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-397b-a17b#GMICloud | qwen/qwen3.5-397b-a17b-20260216",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

@@ -1,0 +1,502 @@
+{
+  "schema_version": 1,
+  "id": "chutes",
+  "provider": "Chutes",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "gemma-4-31b-it",
+      "model": "Google: Gemma 4 31B (free)",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "chutes/fp4",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.13,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.38,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000013",
+            "completion": "0.00000038",
+            "input_cache_read": "0.000000065",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemma-4-31b-it:free",
+        "endpoint_tag": "chutes/fp4",
+        "context_length": 131072,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "top_k",
+          "repetition_penalty",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemma-4-31b-it:free#Chutes | google/gemma-4-31b-it-20260402",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5",
+      "model": "Z.ai: GLM 5",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "chutes/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.95,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.55,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000095",
+            "completion": "0.00000255",
+            "input_cache_read": "0.000000475",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-5",
+        "endpoint_tag": "chutes/fp8",
+        "context_length": 202752,
+        "max_output_tokens": 65535,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "top_k",
+          "repetition_penalty",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-5#Chutes | z-ai/glm-5-20260211",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5.1",
+      "model": "Z.ai: GLM 5.1",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "chutes/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.05,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000105",
+            "completion": "0.0000035",
+            "input_cache_read": "0.000000525",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-5.1",
+        "endpoint_tag": "chutes/fp8",
+        "context_length": 202752,
+        "max_output_tokens": 65535,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "top_k",
+          "repetition_penalty",
+          "structured_outputs",
+          "tools",
+          "tool_choice",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-5.1#Chutes | z-ai/glm-5.1-20260406",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "model": "MoonshotAI: Kimi K2.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "chutes/int4",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.44,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000044",
+            "completion": "0.000002",
+            "input_cache_read": "0.00000022",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "moonshotai/kimi-k2.5",
+        "endpoint_tag": "chutes/int4",
+        "context_length": 262144,
+        "max_output_tokens": 65535,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "top_k",
+          "repetition_penalty",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "moonshotai/kimi-k2.5#Chutes | moonshotai/kimi-k2.5-0127",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.6",
+      "model": "MoonshotAI: Kimi K2.6",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "chutes/int4",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.74,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000074",
+            "completion": "0.0000035",
+            "input_cache_read": "0.00000037",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "moonshotai/kimi-k2.6",
+        "endpoint_tag": "chutes/int4",
+        "context_length": 262144,
+        "max_output_tokens": 65535,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "top_k",
+          "repetition_penalty",
+          "tools",
+          "tool_choice",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "moonshotai/kimi-k2.6#Chutes | moonshotai/kimi-k2.6-20260420",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.5",
+      "model": "MiniMax: MiniMax M2.5 (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "chutes/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000012",
+            "input_cache_read": "0.000000075",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "minimax/minimax-m2.5:free",
+        "endpoint_tag": "chutes/fp8",
+        "context_length": 196608,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "top_k",
+          "repetition_penalty",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "minimax/minimax-m2.5:free#Chutes | minimax/minimax-m2.5-20260211",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-397b-a17b",
+      "model": "Qwen: Qwen3.5 397B A17B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "chutes/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.39,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.34,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000039",
+            "completion": "0.00000234",
+            "input_cache_read": "0.000000195",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-397b-a17b",
+        "endpoint_tag": "chutes/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "top_k",
+          "repetition_penalty",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-397b-a17b#Chutes | qwen/qwen3.5-397b-a17b-20260216",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.6-27b",
+      "model": "Qwen: Qwen3.6 27B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "chutes/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000005",
+            "completion": "0.000002",
+            "input_cache_read": "0.00000025",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.6-27b",
+        "endpoint_tag": "chutes/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "top_k",
+          "repetition_penalty",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.6-27b#Chutes | qwen/qwen3.6-27b-20260422",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

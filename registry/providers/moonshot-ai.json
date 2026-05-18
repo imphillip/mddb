@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "id": "moonshot-ai",
+  "provider": "Moonshot AI",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "kimi-k2.5",
+      "model": "MoonshotAI: Kimi K2.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "moonshotai/int4",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000006",
+            "completion": "0.000003",
+            "input_cache_read": "0.0000001",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "moonshotai/kimi-k2.5",
+        "endpoint_tag": "moonshotai/int4",
+        "context_length": 262144,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "structured_outputs",
+          "response_format",
+          "tool_choice",
+          "tools"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "moonshotai/kimi-k2.5#Moonshot AI | moonshotai/kimi-k2.5-0127",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.6",
+      "model": "MoonshotAI: Kimi K2.6",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "moonshotai/int4",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.95,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000095",
+            "completion": "0.000004",
+            "input_cache_read": "0.00000016",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "moonshotai/kimi-k2.6",
+        "endpoint_tag": "moonshotai/int4",
+        "context_length": 262144,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "structured_outputs",
+          "response_format",
+          "tool_choice",
+          "tools"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "moonshotai/kimi-k2.6#Moonshot AI | moonshotai/kimi-k2.6-20260420",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

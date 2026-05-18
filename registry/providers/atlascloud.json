@@ -1,0 +1,2658 @@
+{
+  "schema_version": 1,
+  "id": "atlascloud",
+  "provider": "AtlasCloud",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "deepseek-chat-v3-0324",
+      "model": "DeepSeek: DeepSeek V3 0324",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.216,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.88,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000216",
+            "completion": "0.00000088",
+            "input_cache_read": "0.00000018",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-chat-v3-0324",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 131072,
+        "max_output_tokens": 16384,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-chat-v3-0324#AtlasCloud | deepseek/deepseek-chat-v3-0324",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-chat-v3.1",
+      "model": "DeepSeek: DeepSeek V3.1",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.95,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.00000095",
+            "input_cache_read": "0.00000013",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-chat-v3.1",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 131072,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-chat-v3.1#AtlasCloud | deepseek/deepseek-chat-v3.1",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-r1-0528",
+      "model": "DeepSeek: R1 0528",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.55,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.15,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000055",
+            "completion": "0.00000215",
+            "input_cache_read": "0.00000035",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-r1-0528",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 131072,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-r1-0528#AtlasCloud | deepseek/deepseek-r1-0528",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.1-terminus",
+      "model": "DeepSeek: DeepSeek V3.1 Terminus",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.95,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.00000095",
+            "input_cache_read": "0.00000013",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v3.1-terminus",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 131072,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v3.1-terminus#AtlasCloud | deepseek/deepseek-v3.1-terminus",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "model": "DeepSeek: DeepSeek V3.2",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.26,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.38,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000026",
+            "completion": "0.00000038",
+            "input_cache_read": "0.00000013",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v3.2",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 163840,
+        "max_output_tokens": 163840,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "seed",
+          "logit_bias",
+          "stop",
+          "min_p",
+          "top_k",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v3.2#AtlasCloud | deepseek/deepseek-v3.2-20251201",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.2-exp",
+      "model": "DeepSeek: DeepSeek V3.2 Exp",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.27,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.41,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000027",
+            "completion": "0.00000041",
+            "input_cache_read": "0.00000027",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v3.2-exp",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 163840,
+        "max_output_tokens": 163840,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v3.2-exp#AtlasCloud | deepseek/deepseek-v3.2-exp",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.2-speciale",
+      "model": "DeepSeek: DeepSeek V3.2 Speciale",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.287,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.431,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000287",
+            "completion": "0.000000431",
+            "input_cache_read": "0.000000058",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v3.2-speciale",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 163840,
+        "max_output_tokens": 163840,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v3.2-speciale#AtlasCloud | deepseek/deepseek-v3.2-speciale-20251201",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-flash",
+      "model": "DeepSeek: DeepSeek V4 Flash (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.14,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.28,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000014",
+            "completion": "0.00000028",
+            "input_cache_read": "0.000000028",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v4-flash:free",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 1048576,
+        "max_output_tokens": 393216,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v4-flash:free#AtlasCloud | deepseek/deepseek-v4-flash-20260423",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-pro",
+      "model": "DeepSeek: DeepSeek V4 Pro",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.68,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.38,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000168",
+            "completion": "0.00000338",
+            "input_cache_read": "0.00000013",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v4-pro",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 1048576,
+        "max_output_tokens": 393216,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "tools",
+          "structured_outputs",
+          "response_format",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v4-pro#AtlasCloud | deepseek/deepseek-v4-pro-20260423",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.6",
+      "model": "Z.ai: GLM 4.6",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000006",
+            "completion": "0.0000022",
+            "input_cache_read": "0.00000011",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-4.6",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 202752,
+        "max_output_tokens": 202752,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-4.6#AtlasCloud | z-ai/glm-4.6",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.7",
+      "model": "Z.ai: GLM 4.7",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.52,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.85,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000052",
+            "completion": "0.00000185",
+            "input_cache_read": "0.00000012",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-4.7",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 202752,
+        "max_output_tokens": 202752,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-4.7#AtlasCloud | z-ai/glm-4.7-20251222",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5",
+      "model": "Z.ai: GLM 5",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.95,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.15,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000095",
+            "completion": "0.00000315",
+            "input_cache_read": "0.00000019",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-5",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 202752,
+        "max_output_tokens": 202752,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "tools",
+          "tool_choice",
+          "response_format",
+          "seed",
+          "logit_bias",
+          "stop",
+          "min_p",
+          "top_k",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-5#AtlasCloud | z-ai/glm-5-20260211",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5-turbo",
+      "model": "Z.ai: GLM 5 Turbo",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000012",
+            "completion": "0.000004",
+            "input_cache_read": "0.00000024",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-5-turbo",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-5-turbo#AtlasCloud | z-ai/glm-5-turbo-20260315",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5.1",
+      "model": "Z.ai: GLM 5.1",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.39,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000139",
+            "completion": "0.0000044",
+            "input_cache_read": "0.00000026",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-5.1",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 202752,
+        "max_output_tokens": 202752,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-5.1#AtlasCloud | z-ai/glm-5.1-20260406",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "kat-coder-pro-v2",
+      "model": "Kwaipilot: KAT-Coder-Pro V2",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000012",
+            "input_cache_read": "0.00000006",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "kwaipilot/kat-coder-pro-v2",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 144000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "kwaipilot/kat-coder-pro-v2#AtlasCloud | kwaipilot/kat-coder-pro-v2-20260327",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2-0905",
+      "model": "MoonshotAI: Kimi K2 0905",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000006",
+            "completion": "0.0000025",
+            "input_cache_read": "0.0000006",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "moonshotai/kimi-k2-0905",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 8192,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "moonshotai/kimi-k2-0905#AtlasCloud | moonshotai/kimi-k2-0905",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2-thinking",
+      "model": "MoonshotAI: Kimi K2 Thinking",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/int4",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000006",
+            "completion": "0.0000025",
+            "input_cache_read": "0.0000006",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "moonshotai/kimi-k2-thinking",
+        "endpoint_tag": "atlas-cloud/int4",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "moonshotai/kimi-k2-thinking#AtlasCloud | moonshotai/kimi-k2-thinking-20251106",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "model": "MoonshotAI: Kimi K2.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "atlas-cloud/int4",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.49,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000049",
+            "completion": "0.0000025",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "moonshotai/kimi-k2.5",
+        "endpoint_tag": "atlas-cloud/int4",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "moonshotai/kimi-k2.5#AtlasCloud | moonshotai/kimi-k2.5-0127",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.6",
+      "model": "MoonshotAI: Kimi K2.6",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "atlas-cloud/int4",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.95,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000095",
+            "completion": "0.000004",
+            "input_cache_read": "0.00000016",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "moonshotai/kimi-k2.6",
+        "endpoint_tag": "atlas-cloud/int4",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "logit_bias",
+          "tool_choice",
+          "tools",
+          "response_format",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "moonshotai/kimi-k2.6#AtlasCloud | moonshotai/kimi-k2.6-20260420",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2",
+      "model": "MiniMax: MiniMax M2",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.255,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000255",
+            "completion": "0.000001",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "minimax/minimax-m2",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 196608,
+        "max_output_tokens": 196608,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "minimax/minimax-m2#AtlasCloud | minimax/minimax-m2",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.1",
+      "model": "MiniMax: MiniMax M2.1",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.29,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.95,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000029",
+            "completion": "0.00000095",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "minimax/minimax-m2.1",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 196608,
+        "max_output_tokens": 196608,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "minimax/minimax-m2.1#AtlasCloud | minimax/minimax-m2.1",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.5",
+      "model": "MiniMax: MiniMax M2.5 (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.295,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000295",
+            "completion": "0.0000012",
+            "input_cache_read": "0.00000006",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "minimax/minimax-m2.5:free",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 196608,
+        "max_output_tokens": 196608,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "response_format",
+          "seed",
+          "stop",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "minimax/minimax-m2.5:free#AtlasCloud | minimax/minimax-m2.5-20260211",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen-2.5-7b-instruct",
+      "model": "Qwen: Qwen2.5 7B Instruct",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.04,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000004",
+            "completion": "0.0000001",
+            "input_cache_read": "0.00000004",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen-2.5-7b-instruct",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 32768,
+        "max_output_tokens": 8192,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen-2.5-7b-instruct#AtlasCloud | qwen/qwen-2.5-7b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-235b-a22b-2507",
+      "model": "Qwen: Qwen3 235B A22B Instruct 2507",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.88,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000002",
+            "completion": "0.00000088",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-235b-a22b-2507",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 131072,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-235b-a22b-2507#AtlasCloud | qwen/qwen3-235b-a22b-07-25",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-235b-a22b-thinking-2507",
+      "model": "Qwen: Qwen3 235B A22B Thinking 2507",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.28,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000028",
+            "completion": "0.0000023",
+            "input_cache_read": "0.00000028",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-235b-a22b-thinking-2507",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-235b-a22b-thinking-2507#AtlasCloud | qwen/qwen3-235b-a22b-thinking-2507",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-30b-a3b-instruct-2507",
+      "model": "Qwen: Qwen3 30B A3B Instruct 2507",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000003",
+            "input_cache_read": "0.00000008",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-30b-a3b-instruct-2507",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 131072,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-30b-a3b-instruct-2507#AtlasCloud | qwen/qwen3-30b-a3b-instruct-2507",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-30b-a3b-thinking-2507",
+      "model": "Qwen: Qwen3 30B A3B Thinking 2507",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.08,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000008",
+            "completion": "0.0000004",
+            "input_cache_read": "0.00000008",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-30b-a3b-thinking-2507",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 131072,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-30b-a3b-thinking-2507#AtlasCloud | qwen/qwen3-30b-a3b-thinking-2507",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-32b",
+      "model": "Qwen: Qwen3 32B",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000012",
+            "input_cache_read": "0.0000001",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-32b",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 40960,
+        "max_output_tokens": 8192,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-32b#AtlasCloud | qwen/qwen3-32b-04-28",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-8b",
+      "model": "Qwen: Qwen3 8B",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.05,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000005",
+            "completion": "0.0000004",
+            "input_cache_read": "0.00000005",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-8b",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 40960,
+        "max_output_tokens": 8192,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-8b#AtlasCloud | qwen/qwen3-8b-04-28",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-coder",
+      "model": "Qwen: Qwen3 Coder 480B A35B (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.78,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000078",
+            "completion": "0.0000038",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-coder:free",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-coder:free#AtlasCloud | qwen/qwen3-coder-480b-a35b-07-25",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-coder-next",
+      "model": "Qwen: Qwen3 Coder Next",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.18,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.35,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000018",
+            "completion": "0.00000135",
+            "input_cache_read": "0.00000018",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-coder-next",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-coder-next#AtlasCloud | qwen/qwen3-coder-next-2025-02-03",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-next-80b-a3b-instruct",
+      "model": "Qwen: Qwen3 Next 80B A3B Instruct (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000015",
+            "input_cache_read": "0.00000015",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-next-80b-a3b-instruct:free",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-next-80b-a3b-instruct:free#AtlasCloud | qwen/qwen3-next-80b-a3b-instruct-2509",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-next-80b-a3b-thinking",
+      "model": "Qwen: Qwen3 Next 80B A3B Thinking",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000015",
+            "input_cache_read": "0.00000015",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-next-80b-a3b-thinking",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "structured_outputs",
+          "tools",
+          "tool_choice",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-next-80b-a3b-thinking#AtlasCloud | qwen/qwen3-next-80b-a3b-thinking-2509",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-vl-235b-a22b-instruct",
+      "model": "Qwen: Qwen3 VL 235B A22B Instruct",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000015",
+            "input_cache_read": "0.0000003",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-vl-235b-a22b-instruct",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-vl-235b-a22b-instruct#AtlasCloud | qwen/qwen3-vl-235b-a22b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-vl-30b-a3b-instruct",
+      "model": "Qwen: Qwen3 VL 30B A3B Instruct",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000006",
+            "input_cache_read": "0.00000015",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-vl-30b-a3b-instruct",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 128000,
+        "max_output_tokens": 32000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "stop",
+          "logit_bias",
+          "structured_outputs",
+          "tool_choice",
+          "tools",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-vl-30b-a3b-instruct#AtlasCloud | qwen/qwen3-vl-30b-a3b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-vl-8b-instruct",
+      "model": "Qwen: Qwen3 VL 8B Instruct",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.08,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000008",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000008",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-vl-8b-instruct",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 128000,
+        "max_output_tokens": 32000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "logit_bias",
+          "tools",
+          "tool_choice",
+          "response_format",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-vl-8b-instruct#AtlasCloud | qwen/qwen3-vl-8b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-122b-a10b",
+      "model": "Qwen: Qwen3.5-122B-A10B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000024",
+            "input_cache_read": "0.0000003",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-122b-a10b",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-122b-a10b#AtlasCloud | qwen/qwen3.5-122b-a10b-20260224",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-27b",
+      "model": "Qwen: Qwen3.5-27B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.27,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.16,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000027",
+            "completion": "0.00000216",
+            "input_cache_read": "0.00000027",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-27b",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-27b#AtlasCloud | qwen/qwen3.5-27b-20260224",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-35b-a3b",
+      "model": "Qwen: Qwen3.5-35B-A3B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.225,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000225",
+            "completion": "0.0000018",
+            "input_cache_read": "0.000000225",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-35b-a3b",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-35b-a3b#AtlasCloud | qwen/qwen3.5-35b-a3b-20260224",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-397b-a17b",
+      "model": "Qwen: Qwen3.5 397B A17B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.55,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000055",
+            "completion": "0.0000035",
+            "input_cache_read": "0.00000055",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-397b-a17b",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-397b-a17b#AtlasCloud | qwen/qwen3.5-397b-a17b-20260216",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.6-35b-a3b",
+      "model": "Qwen: Qwen3.6 35B A3B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1612,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.96525,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001612",
+            "completion": "0.00000096525",
+            "input_cache_read": "0.0000001612",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.6-35b-a3b",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "logit_bias",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.6-35b-a3b#AtlasCloud | qwen/qwen3.6-35b-a3b-20260415",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "tongyi-deepresearch-30b-a3b",
+      "model": "Tongyi DeepResearch 30B A3B",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "atlas-cloud/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.09,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.45,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000009",
+            "completion": "0.00000045",
+            "input_cache_read": "0.00000009",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "alibaba/tongyi-deepresearch-30b-a3b",
+        "endpoint_tag": "atlas-cloud/fp8",
+        "context_length": 131072,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "min_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed",
+          "logit_bias",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "alibaba/tongyi-deepresearch-30b-a3b#AtlasCloud | alibaba/tongyi-deepresearch-30b-a3b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

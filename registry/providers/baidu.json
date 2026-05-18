@@ -1,0 +1,408 @@
+{
+  "schema_version": 1,
+  "id": "baidu",
+  "provider": "Baidu",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "deepseek-v3.2",
+      "model": "DeepSeek: DeepSeek V3.2",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "baidu/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.252,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.378,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000252",
+            "completion": "0.000000378",
+            "input_cache_read": "0.0000000252",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v3.2",
+        "endpoint_tag": "baidu/fp8",
+        "context_length": 131072,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "top_p",
+          "max_tokens",
+          "structured_outputs",
+          "tool_choice",
+          "tools",
+          "stop",
+          "seed"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v3.2#Baidu | deepseek/deepseek-v3.2-20251201",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-flash",
+      "model": "DeepSeek: DeepSeek V4 Flash (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "baidu/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.126,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.252,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000126",
+            "completion": "0.000000252",
+            "input_cache_read": "0.0000000252",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v4-flash:free",
+        "endpoint_tag": "baidu/fp8",
+        "context_length": 1048576,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "top_p",
+          "max_tokens",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v4-flash:free#Baidu | deepseek/deepseek-v4-flash-20260423",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-pro",
+      "model": "DeepSeek: DeepSeek V4 Pro",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "baidu/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.521,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.042,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000001521",
+            "completion": "0.000003042",
+            "input_cache_read": "0.000000126",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v4-pro",
+        "endpoint_tag": "baidu/fp8",
+        "context_length": 716800,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "top_p",
+          "max_tokens",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v4-pro#Baidu | deepseek/deepseek-v4-pro-20260423",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5",
+      "model": "Z.ai: GLM 5",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "baidu/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.7,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.24,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000007",
+            "completion": "0.00000224",
+            "input_cache_read": "0.00000014",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-5",
+        "endpoint_tag": "baidu/fp8",
+        "context_length": 202752,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "top_p",
+          "max_tokens",
+          "tool_choice",
+          "tools",
+          "response_format",
+          "structured_outputs",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-5#Baidu | z-ai/glm-5-20260211",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5.1",
+      "model": "Z.ai: GLM 5.1",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "baidu/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.98,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.08,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000098",
+            "completion": "0.00000308",
+            "input_cache_read": "0.000000182",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-5.1",
+        "endpoint_tag": "baidu/fp8",
+        "context_length": 202752,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "top_p",
+          "max_tokens",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-5.1#Baidu | z-ai/glm-5.1-20260406",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.5",
+      "model": "MiniMax: MiniMax M2.5 (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "baidu/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.27,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.08,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000027",
+            "completion": "0.00000108",
+            "input_cache_read": "0.000000027",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "minimax/minimax-m2.5:free",
+        "endpoint_tag": "baidu/fp8",
+        "context_length": 196608,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "top_p",
+          "max_tokens",
+          "tool_choice",
+          "tools",
+          "structured_outputs",
+          "response_format",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "minimax/minimax-m2.5:free#Baidu | minimax/minimax-m2.5-20260211",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qianfan-ocr-fast",
+      "model": "Baidu: Qianfan-OCR-Fast",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "baidu/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.68,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.81,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000068",
+            "completion": "0.00000281",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "baidu/qianfan-ocr-fast",
+        "endpoint_tag": "baidu/fp8",
+        "context_length": 65536,
+        "max_output_tokens": 28672,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "top_p",
+          "max_tokens",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "stop",
+          "seed"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "baidu/qianfan-ocr-fast#Baidu | baidu/qianfan-ocr-fast-20260420",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

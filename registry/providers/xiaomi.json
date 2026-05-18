@@ -1,0 +1,301 @@
+{
+  "schema_version": 1,
+  "id": "xiaomi",
+  "provider": "Xiaomi",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "mimo-v2-flash",
+      "model": "Xiaomi: MiMo-V2-Flash",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "xiaomi/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000003",
+            "input_cache_read": "0.00000001",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "xiaomi/mimo-v2-flash",
+        "endpoint_tag": "xiaomi/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "response_format",
+          "tool_choice",
+          "tools"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "xiaomi/mimo-v2-flash#Xiaomi | xiaomi/mimo-v2-flash-20251210",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mimo-v2-omni",
+      "model": "Xiaomi: MiMo-V2-Omni",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "xiaomi/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000004",
+            "completion": "0.000002",
+            "input_cache_read": "0.00000008",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "xiaomi/mimo-v2-omni",
+        "endpoint_tag": "xiaomi/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "xiaomi/mimo-v2-omni#Xiaomi | xiaomi/mimo-v2-omni-20260318",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mimo-v2-pro",
+      "model": "Xiaomi: MiMo-V2-Pro",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "xiaomi/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000001",
+            "completion": "0.000003",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "xiaomi/mimo-v2-pro",
+        "endpoint_tag": "xiaomi/fp8",
+        "context_length": 1048576,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "xiaomi/mimo-v2-pro#Xiaomi | xiaomi/mimo-v2-pro-20260318",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mimo-v2.5",
+      "model": "Xiaomi: MiMo-V2.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "xiaomi/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000004",
+            "completion": "0.000002",
+            "input_cache_read": "0.00000008",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "xiaomi/mimo-v2.5",
+        "endpoint_tag": "xiaomi/fp8",
+        "context_length": 1048576,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "frequency_penalty",
+          "presence_penalty"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "xiaomi/mimo-v2.5#Xiaomi | xiaomi/mimo-v2.5-20260422",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mimo-v2.5-pro",
+      "model": "Xiaomi: MiMo-V2.5-Pro",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "xiaomi/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000001",
+            "completion": "0.000003",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "xiaomi/mimo-v2.5-pro",
+        "endpoint_tag": "xiaomi/fp8",
+        "context_length": 1048576,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "xiaomi/mimo-v2.5-pro#Xiaomi | xiaomi/mimo-v2.5-pro-20260422",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

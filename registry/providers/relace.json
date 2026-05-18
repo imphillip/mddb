@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "id": "relace",
+  "provider": "Relace",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "relace-apply-3",
+      "model": "Relace: Relace Apply 3",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "relace/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.85,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.25,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000085",
+            "completion": "0.00000125",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "relace/relace-apply-3",
+        "endpoint_tag": "relace/fp8",
+        "context_length": 256000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "max_tokens",
+          "stop",
+          "seed"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "relace/relace-apply-3#Relace | relace/relace-apply-3",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "relace-search",
+      "model": "Relace: Relace Search",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "relace/bf16",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000001",
+            "completion": "0.000003",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "relace/relace-search",
+        "endpoint_tag": "relace/bf16",
+        "context_length": 256000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "max_tokens",
+          "stop",
+          "temperature",
+          "top_p",
+          "seed",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "relace/relace-search#Relace | relace/relace-search-20251208",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

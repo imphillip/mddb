@@ -1,0 +1,1233 @@
+{
+  "schema_version": 1,
+  "id": "mistral",
+  "provider": "Mistral",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "codestral-2508",
+      "model": "Mistral: Codestral 2508",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "mistral",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.9,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000009",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/codestral-2508",
+        "endpoint_tag": "mistral",
+        "context_length": 256000,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/codestral-2508#Mistral | mistralai/codestral-2508",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "devstral-2512",
+      "model": "Mistral: Devstral 2 2512",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "mistral",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000004",
+            "completion": "0.000002",
+            "input_cache_read": "0.00000004",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/devstral-2512",
+        "endpoint_tag": "mistral",
+        "context_length": 262144,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/devstral-2512#Mistral | mistralai/devstral-2512",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "devstral-medium",
+      "model": "Mistral: Devstral Medium",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "mistral",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000004",
+            "completion": "0.000002",
+            "input_cache_read": "0.00000004",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/devstral-medium",
+        "endpoint_tag": "mistral",
+        "context_length": 131072,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/devstral-medium#Mistral | mistralai/devstral-medium-2507",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "devstral-small",
+      "model": "Mistral: Devstral Small 1.1",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "mistral",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000003",
+            "input_cache_read": "0.00000001",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/devstral-small",
+        "endpoint_tag": "mistral",
+        "context_length": 131072,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/devstral-small#Mistral | mistralai/devstral-small-2507",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "ministral-14b-2512",
+      "model": "Mistral: Ministral 3 14B 2512",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "mistral",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000002",
+            "completion": "0.0000002",
+            "input_cache_read": "0.00000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/ministral-14b-2512",
+        "endpoint_tag": "mistral",
+        "context_length": 262144,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/ministral-14b-2512#Mistral | mistralai/ministral-14b-2512",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "ministral-3b-2512",
+      "model": "Mistral: Ministral 3 3B 2512",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "mistral",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000001",
+            "input_cache_read": "0.00000001",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/ministral-3b-2512",
+        "endpoint_tag": "mistral",
+        "context_length": 131072,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tool_choice",
+          "tools"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/ministral-3b-2512#Mistral | mistralai/ministral-3b-2512",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "ministral-8b-2512",
+      "model": "Mistral: Ministral 3 8B 2512",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "mistral",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.00000015",
+            "input_cache_read": "0.000000015",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/ministral-8b-2512",
+        "endpoint_tag": "mistral",
+        "context_length": 262144,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/ministral-8b-2512#Mistral | mistralai/ministral-8b-2512",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-large",
+      "model": "Mistral Large",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "mistral",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000002",
+            "completion": "0.000006",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/mistral-large",
+        "endpoint_tag": "mistral",
+        "context_length": 128000,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/mistral-large#Mistral | mistralai/mistral-large",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-large-2407",
+      "model": "Mistral Large 2407",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "mistral",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000002",
+            "completion": "0.000006",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/mistral-large-2407",
+        "endpoint_tag": "mistral",
+        "context_length": 131072,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/mistral-large-2407#Mistral | mistralai/mistral-large-2407",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-large-2411",
+      "model": "Mistral Large 2411",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "mistral",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000002",
+            "completion": "0.000006",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/mistral-large-2411",
+        "endpoint_tag": "mistral",
+        "context_length": 131072,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/mistral-large-2411#Mistral | mistralai/mistral-large-2411",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-large-2512",
+      "model": "Mistral: Mistral Large 3 2512",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "mistral",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000005",
+            "completion": "0.0000015",
+            "input_cache_read": "0.00000005",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/mistral-large-2512",
+        "endpoint_tag": "mistral",
+        "context_length": 262144,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/mistral-large-2512#Mistral | mistralai/mistral-large-2512",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-medium-3",
+      "model": "Mistral: Mistral Medium 3",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "mistral",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000004",
+            "completion": "0.000002",
+            "input_cache_read": "0.00000004",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/mistral-medium-3",
+        "endpoint_tag": "mistral",
+        "context_length": 131072,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/mistral-medium-3#Mistral | mistralai/mistral-medium-3",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-medium-3-5",
+      "model": "Mistral: Mistral Medium 3.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "mistral",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 7.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000015",
+            "completion": "0.0000075",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/mistral-medium-3-5",
+        "endpoint_tag": "mistral",
+        "context_length": 262144,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/mistral-medium-3-5#Mistral | mistralai/mistral-medium-3.5-20260430",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-medium-3.1",
+      "model": "Mistral: Mistral Medium 3.1",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "mistral",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000004",
+            "completion": "0.000002",
+            "input_cache_read": "0.00000004",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/mistral-medium-3.1",
+        "endpoint_tag": "mistral",
+        "context_length": 131072,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/mistral-medium-3.1#Mistral | mistralai/mistral-medium-3.1",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-nemo",
+      "model": "Mistral: Mistral Nemo",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "mistral",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.00000015",
+            "input_cache_read": "0.000000015",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/mistral-nemo",
+        "endpoint_tag": "mistral",
+        "context_length": 131072,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/mistral-nemo#Mistral | mistralai/mistral-nemo",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-saba",
+      "model": "Mistral: Saba",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "mistral",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000002",
+            "completion": "0.0000006",
+            "input_cache_read": "0.00000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/mistral-saba",
+        "endpoint_tag": "mistral",
+        "context_length": 32768,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/mistral-saba#Mistral | mistralai/mistral-saba-2502",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-small-2603",
+      "model": "Mistral: Mistral Small 4",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "mistral",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000006",
+            "input_cache_read": "0.000000015",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/mistral-small-2603",
+        "endpoint_tag": "mistral",
+        "context_length": 262144,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/mistral-small-2603#Mistral | mistralai/mistral-small-2603",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-small-3.2-24b-instruct",
+      "model": "Mistral: Mistral Small 3.2 24B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "mistral",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000003",
+            "input_cache_read": "0.00000001",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/mistral-small-3.2-24b-instruct",
+        "endpoint_tag": "mistral",
+        "context_length": 131072,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/mistral-small-3.2-24b-instruct#Mistral | mistralai/mistral-small-3.2-24b-instruct-2506",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mixtral-8x22b-instruct",
+      "model": "Mistral: Mixtral 8x22B Instruct",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "mistral",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000002",
+            "completion": "0.000006",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/mixtral-8x22b-instruct",
+        "endpoint_tag": "mistral",
+        "context_length": 65536,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/mixtral-8x22b-instruct#Mistral | mistralai/mixtral-8x22b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "pixtral-large-2411",
+      "model": "Mistral: Pixtral Large 2411",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "mistral",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000002",
+            "completion": "0.000006",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/pixtral-large-2411",
+        "endpoint_tag": "mistral",
+        "context_length": 131072,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/pixtral-large-2411#Mistral | mistralai/pixtral-large-2411",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "voxtral-small-24b-2507",
+      "model": "Mistral: Voxtral Small 24B 2507",
+      "endpoint_path": "/audio/speech",
+      "api_model_id": "mistral",
+      "mode": "audio",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000003",
+            "audio": "0.0001",
+            "input_cache_read": "0.00000001",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/voxtral-small-24b-2507",
+        "endpoint_tag": "mistral",
+        "context_length": 32000,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/voxtral-small-24b-2507#Mistral | mistralai/voxtral-small-24b-2507",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

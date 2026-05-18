@@ -1,0 +1,891 @@
+{
+  "schema_version": 1,
+  "id": "cloudflare",
+  "provider": "Cloudflare",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "gemma-3-12b-it",
+      "model": "Google: Gemma 3 12B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "cloudflare",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.345,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.556,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000345",
+            "completion": "0.000000556",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemma-3-12b-it",
+        "endpoint_tag": "cloudflare",
+        "context_length": 80000,
+        "max_output_tokens": 80000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "seed",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "min_p",
+          "stop",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemma-3-12b-it#Cloudflare | google/gemma-3-12b-it",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemma-4-26b-a4b-it",
+      "model": "Google: Gemma 4 26B A4B  (free)",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "cloudflare",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000003",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemma-4-26b-a4b-it:free",
+        "endpoint_tag": "cloudflare",
+        "context_length": 256000,
+        "max_output_tokens": 256000,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "seed",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "min_p",
+          "stop",
+          "logit_bias",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemma-4-26b-a4b-it:free#Cloudflare | google/gemma-4-26b-a4b-it-20260403",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.7-flash",
+      "model": "Z.ai: GLM 4.7 Flash",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "cloudflare",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.0605,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000000605",
+            "completion": "0.0000004",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-4.7-flash",
+        "endpoint_tag": "cloudflare",
+        "context_length": 131072,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "seed",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "response_format",
+          "min_p",
+          "stop",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-4.7-flash#Cloudflare | z-ai/glm-4.7-flash-20260119",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "granite-4.0-h-micro",
+      "model": "IBM: Granite 4.0 Micro",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "cloudflare",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.017,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.112,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000017",
+            "completion": "0.000000112",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "ibm-granite/granite-4.0-h-micro",
+        "endpoint_tag": "cloudflare",
+        "context_length": 131000,
+        "max_output_tokens": 131000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "seed",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "min_p",
+          "stop",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "ibm-granite/granite-4.0-h-micro#Cloudflare | ibm-granite/granite-4.0-h-micro",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "model": "MoonshotAI: Kimi K2.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "cloudflare",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000006",
+            "completion": "0.000003",
+            "input_cache_read": "0.0000001",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "moonshotai/kimi-k2.5",
+        "endpoint_tag": "cloudflare",
+        "context_length": 256000,
+        "max_output_tokens": 256000,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "seed",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "structured_outputs",
+          "response_format",
+          "tool_choice",
+          "tools",
+          "min_p",
+          "stop",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "moonshotai/kimi-k2.5#Cloudflare | moonshotai/kimi-k2.5-0127",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.6",
+      "model": "MoonshotAI: Kimi K2.6",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "cloudflare",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.95,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000095",
+            "completion": "0.000004",
+            "input_cache_read": "0.00000016",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "moonshotai/kimi-k2.6",
+        "endpoint_tag": "cloudflare",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "seed",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "response_format",
+          "min_p",
+          "stop",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "moonshotai/kimi-k2.6#Cloudflare | moonshotai/kimi-k2.6-20260420",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3-8b-instruct",
+      "model": "Meta: Llama 3 8B Instruct",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "cloudflare",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.282,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.827,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000282",
+            "completion": "0.000000827",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-3-8b-instruct",
+        "endpoint_tag": "cloudflare",
+        "context_length": 7968,
+        "max_output_tokens": 7968,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "seed",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "min_p",
+          "stop",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-3-8b-instruct#Cloudflare | meta-llama/llama-3-8b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.1-8b-instruct",
+      "model": "Meta: Llama 3.1 8B Instruct",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "cloudflare/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.152,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.287,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000152",
+            "completion": "0.000000287",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-3.1-8b-instruct",
+        "endpoint_tag": "cloudflare/fp8",
+        "context_length": 32000,
+        "max_output_tokens": 32000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "seed",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "min_p",
+          "stop",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-3.1-8b-instruct#Cloudflare | meta-llama/llama-3.1-8b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.2-1b-instruct",
+      "model": "Meta: Llama 3.2 1B Instruct",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "cloudflare",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.027,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.201,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000027",
+            "completion": "0.000000201",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-3.2-1b-instruct",
+        "endpoint_tag": "cloudflare",
+        "context_length": 60000,
+        "max_output_tokens": 60000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "seed",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "min_p",
+          "stop",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-3.2-1b-instruct#Cloudflare | meta-llama/llama-3.2-1b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.2-3b-instruct",
+      "model": "Meta: Llama 3.2 3B Instruct (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "cloudflare",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.0509,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.335,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000000509",
+            "completion": "0.000000335",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-3.2-3b-instruct:free",
+        "endpoint_tag": "cloudflare",
+        "context_length": 80000,
+        "max_output_tokens": 80000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "seed",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "min_p",
+          "stop",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-3.2-3b-instruct:free#Cloudflare | meta-llama/llama-3.2-3b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.3-70b-instruct",
+      "model": "Meta: Llama 3.3 70B Instruct (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "cloudflare/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.293,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.253,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000293",
+            "completion": "0.000002253",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-3.3-70b-instruct:free",
+        "endpoint_tag": "cloudflare/fp8",
+        "context_length": 24000,
+        "max_output_tokens": 24000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "seed",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "min_p",
+          "stop",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-3.3-70b-instruct:free#Cloudflare | meta-llama/llama-3.3-70b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-guard-3-8b",
+      "model": "Llama Guard 3 8B",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "cloudflare",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.484,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.03,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000484",
+            "completion": "0.00000003",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-guard-3-8b",
+        "endpoint_tag": "cloudflare",
+        "context_length": 131072,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "seed",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "min_p",
+          "stop",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-guard-3-8b#Cloudflare | meta-llama/llama-guard-3-8b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-7b-instruct-v0.1",
+      "model": "Mistral: Mistral 7B Instruct v0.1",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "cloudflare",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.11,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.19,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000011",
+            "completion": "0.00000019",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/mistral-7b-instruct-v0.1",
+        "endpoint_tag": "cloudflare",
+        "context_length": 2824,
+        "max_output_tokens": 2824,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "seed",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "min_p",
+          "stop",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/mistral-7b-instruct-v0.1#Cloudflare | mistralai/mistral-7b-instruct-v0.1",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-small-3.1-24b-instruct",
+      "model": "Mistral: Mistral Small 3.1 24B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "cloudflare",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.351,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.555,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000351",
+            "completion": "0.000000555",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "mistralai/mistral-small-3.1-24b-instruct",
+        "endpoint_tag": "cloudflare",
+        "context_length": 128000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "seed",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "min_p",
+          "stop",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "mistralai/mistral-small-3.1-24b-instruct#Cloudflare | mistralai/mistral-small-3.1-24b-instruct-2503",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen-2.5-coder-32b-instruct",
+      "model": "Qwen2.5 Coder 32B Instruct",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "cloudflare",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.66,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000066",
+            "completion": "0.000001",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen-2.5-coder-32b-instruct",
+        "endpoint_tag": "cloudflare",
+        "context_length": 32768,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "seed",
+          "repetition_penalty",
+          "frequency_penalty",
+          "presence_penalty",
+          "min_p",
+          "stop",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen-2.5-coder-32b-instruct#Cloudflare | qwen/qwen-2.5-coder-32b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "id": "inception",
+  "provider": "Inception",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "mercury-2",
+      "model": "Inception: Mercury 2",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "inception",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.75,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000025",
+            "completion": "0.00000075",
+            "input_cache_read": "0.000000025",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "inception/mercury-2",
+        "endpoint_tag": "inception",
+        "context_length": 128000,
+        "max_output_tokens": 50000,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "stop",
+          "temperature",
+          "tools",
+          "tool_choice",
+          "response_format",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "inception/mercury-2#Inception | inception/mercury-2-20260304",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "id": "upstage",
+  "provider": "Upstage",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "solar-pro-3",
+      "model": "Upstage: Solar Pro 3",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "upstage",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000006",
+            "input_cache_read": "0.000000015",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "upstage/solar-pro-3",
+        "endpoint_tag": "upstage",
+        "context_length": 128000,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "max_tokens",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "upstage/solar-pro-3#Upstage | upstage/solar-pro-3",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

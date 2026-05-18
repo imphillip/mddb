@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "id": "stepfun",
+  "provider": "Stepfun",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "step-3.5-flash",
+      "model": "StepFun: Step 3.5 Flash",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "stepfun/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000003",
+            "input_cache_read": "0.00000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "stepfun/step-3.5-flash",
+        "endpoint_tag": "stepfun/fp8",
+        "context_length": 256000,
+        "max_output_tokens": 256000,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "max_tokens",
+          "tools",
+          "top_p",
+          "stop",
+          "frequency_penalty"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "stepfun/step-3.5-flash#StepFun | stepfun/step-3.5-flash",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

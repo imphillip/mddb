@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "id": "cerebras",
+  "provider": "Cerebras",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "glm-4.7",
+      "model": "Z.ai: GLM 4.7",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "cerebras/fp16",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.75,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000225",
+            "completion": "0.00000275",
+            "input_cache_read": "0.00000225",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-4.7",
+        "endpoint_tag": "cerebras/fp16",
+        "context_length": 131072,
+        "max_output_tokens": 40960,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "seed",
+          "logprobs",
+          "top_logprobs",
+          "tools",
+          "tool_choice",
+          "response_format",
+          "structured_outputs",
+          "frequency_penalty",
+          "presence_penalty",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-4.7#Cerebras | z-ai/glm-4.7-20251222",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-120b",
+      "model": "OpenAI: gpt-oss-120b (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "cerebras/fp16",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.35,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.75,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000035",
+            "completion": "0.00000075",
+            "input_cache_read": "0.00000035",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "openai/gpt-oss-120b:free",
+        "endpoint_tag": "cerebras/fp16",
+        "context_length": 131072,
+        "max_output_tokens": 40960,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "seed",
+          "logprobs",
+          "top_logprobs",
+          "tools",
+          "tool_choice",
+          "response_format",
+          "structured_outputs",
+          "frequency_penalty",
+          "presence_penalty",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "openai/gpt-oss-120b:free#Cerebras | openai/gpt-oss-120b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.1-8b-instruct",
+      "model": "Meta: Llama 3.1 8B Instruct",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "cerebras/fp16",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000001",
+            "input_cache_read": "0.0000001",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "meta-llama/llama-3.1-8b-instruct",
+        "endpoint_tag": "cerebras/fp16",
+        "context_length": 32768,
+        "max_output_tokens": 8192,
+        "supported_parameters": [
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "seed",
+          "logprobs",
+          "top_logprobs",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "frequency_penalty",
+          "presence_penalty",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "meta-llama/llama-3.1-8b-instruct#Cerebras | meta-llama/llama-3.1-8b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-235b-a22b-2507",
+      "model": "Qwen: Qwen3 235B A22B Instruct 2507",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "cerebras/fp16",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000006",
+            "completion": "0.0000012",
+            "input_cache_read": "0.0000006",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-235b-a22b-2507",
+        "endpoint_tag": "cerebras/fp16",
+        "context_length": 131072,
+        "max_output_tokens": 40960,
+        "supported_parameters": [
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "seed",
+          "logprobs",
+          "top_logprobs",
+          "tools",
+          "tool_choice",
+          "frequency_penalty",
+          "presence_penalty",
+          "logit_bias"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-235b-a22b-2507#Cerebras | qwen/qwen3-235b-a22b-07-25",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

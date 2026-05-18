@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "clarifai",
+  "provider": "Clarifai",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "trinity-mini",
+      "model": "Arcee AI: Trinity Mini",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "clarifai/bf16",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.045,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000045",
+            "completion": "0.00000015",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "arcee-ai/trinity-mini",
+        "endpoint_tag": "clarifai/bf16",
+        "context_length": 131072,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "max_tokens",
+          "top_p",
+          "tool_choice",
+          "tools",
+          "response_format",
+          "structured_outputs",
+          "stop",
+          "max_completion_tokens"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "arcee-ai/trinity-mini#Clarifai | arcee-ai/trinity-mini-20251201",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

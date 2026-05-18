@@ -1,0 +1,2269 @@
+{
+  "schema_version": 1,
+  "id": "alibaba",
+  "provider": "Alibaba",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "deepseek-v3.2",
+      "model": "DeepSeek: DeepSeek V3.2",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3705,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.1115,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000003705",
+            "completion": "0.0000011115",
+            "input_cache_read": "0.0000000741",
+            "input_cache_write": "0.000000463125",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v3.2",
+        "endpoint_tag": "alibaba",
+        "context_length": 131072,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tool_choice",
+          "tools",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v3.2#Alibaba | deepseek/deepseek-v3.2-20251201",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-flash",
+      "model": "DeepSeek: DeepSeek V4 Flash (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.14,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.28,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000014",
+            "completion": "0.00000028",
+            "input_cache_read": "0.000000028",
+            "discount": 0.3
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v4-flash:free",
+        "endpoint_tag": "alibaba",
+        "context_length": 1000000,
+        "max_output_tokens": 393216,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tool_choice",
+          "tools",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v4-flash:free#Alibaba | deepseek/deepseek-v4-flash-20260423",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-pro",
+      "model": "DeepSeek: DeepSeek V4 Pro",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.68,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.36,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000168",
+            "completion": "0.00000336",
+            "input_cache_read": "0.00000014",
+            "discount": 0.3
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v4-pro",
+        "endpoint_tag": "alibaba",
+        "context_length": 1000000,
+        "max_output_tokens": 393216,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tool_choice",
+          "tools",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v4-pro#Alibaba | deepseek/deepseek-v4-pro-20260423",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen-plus",
+      "model": "Qwen: Qwen-Plus",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.26,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.78,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000026",
+            "completion": "0.00000078",
+            "input_cache_read": "0.000000052",
+            "input_cache_write": "0.000000325",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen-plus",
+        "endpoint_tag": "alibaba",
+        "context_length": 1000000,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen-plus#Alibaba | qwen/qwen-plus-2025-01-25",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen-plus-2025-07-28",
+      "model": "Qwen: Qwen Plus 0728 (thinking)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.26,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.78,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000026",
+            "completion": "0.00000078",
+            "input_cache_write": "0.000000325",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen-plus-2025-07-28:thinking",
+        "endpoint_tag": "alibaba",
+        "context_length": 1000000,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen-plus-2025-07-28:thinking#Alibaba | qwen/qwen-plus-2025-07-28",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-14b",
+      "model": "Qwen: Qwen3 14B",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.2275,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.91,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000002275",
+            "completion": "0.00000091",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-14b",
+        "endpoint_tag": "alibaba",
+        "context_length": 131072,
+        "max_output_tokens": 8192,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-14b#Alibaba | qwen/qwen3-14b-04-28",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-235b-a22b",
+      "model": "Qwen: Qwen3 235B A22B",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.455,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.82,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000455",
+            "completion": "0.00000182",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-235b-a22b",
+        "endpoint_tag": "alibaba",
+        "context_length": 131072,
+        "max_output_tokens": 8192,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-235b-a22b#Alibaba | qwen/qwen3-235b-a22b-04-28",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-235b-a22b-2507",
+      "model": "Qwen: Qwen3 235B A22B Instruct 2507",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1495,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.598,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001495",
+            "completion": "0.000000598",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-235b-a22b-2507",
+        "endpoint_tag": "alibaba",
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-235b-a22b-2507#Alibaba | qwen/qwen3-235b-a22b-07-25",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-235b-a22b-thinking-2507",
+      "model": "Qwen: Qwen3 235B A22B Thinking 2507",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1495,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.495,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001495",
+            "completion": "0.000001495",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-235b-a22b-thinking-2507",
+        "endpoint_tag": "alibaba",
+        "context_length": 131072,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-235b-a22b-thinking-2507#Alibaba | qwen/qwen3-235b-a22b-thinking-2507",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-30b-a3b",
+      "model": "Qwen: Qwen3 30B A3B",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.13,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.52,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000013",
+            "completion": "0.00000052",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-30b-a3b",
+        "endpoint_tag": "alibaba",
+        "context_length": 131072,
+        "max_output_tokens": 8192,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tool_choice",
+          "tools"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-30b-a3b#Alibaba | qwen/qwen3-30b-a3b-04-28",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-30b-a3b-instruct-2507",
+      "model": "Qwen: Qwen3 30B A3B Instruct 2507",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.13,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.52,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000013",
+            "completion": "0.00000052",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-30b-a3b-instruct-2507",
+        "endpoint_tag": "alibaba",
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-30b-a3b-instruct-2507#Alibaba | qwen/qwen3-30b-a3b-instruct-2507",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-30b-a3b-thinking-2507",
+      "model": "Qwen: Qwen3 30B A3B Thinking 2507",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.13,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.56,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000013",
+            "completion": "0.00000156",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-30b-a3b-thinking-2507",
+        "endpoint_tag": "alibaba",
+        "context_length": 81920,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-30b-a3b-thinking-2507#Alibaba | qwen/qwen3-30b-a3b-thinking-2507",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-32b",
+      "model": "Qwen: Qwen3 32B",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.104,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.416,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000104",
+            "completion": "0.000000416",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-32b",
+        "endpoint_tag": "alibaba",
+        "context_length": 131072,
+        "max_output_tokens": 8192,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-32b#Alibaba | qwen/qwen3-32b-04-28",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-8b",
+      "model": "Qwen: Qwen3 8B",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.117,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.455,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000117",
+            "completion": "0.000000455",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-8b",
+        "endpoint_tag": "alibaba",
+        "context_length": 131072,
+        "max_output_tokens": 8192,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-8b#Alibaba | qwen/qwen3-8b-04-28",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-coder",
+      "model": "Qwen: Qwen3 Coder 480B A35B (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba/opensource",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.975,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4.875,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000975",
+            "completion": "0.000004875",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-coder:free",
+        "endpoint_tag": "alibaba/opensource",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-coder:free#Alibaba | qwen/qwen3-coder-480b-a35b-07-25",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-coder-30b-a3b-instruct",
+      "model": "Qwen: Qwen3 Coder 30B A3B Instruct",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.2925,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.4625,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000002925",
+            "completion": "0.0000014625",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-coder-30b-a3b-instruct",
+        "endpoint_tag": "alibaba",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-coder-30b-a3b-instruct#Alibaba | qwen/qwen3-coder-30b-a3b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-coder-flash",
+      "model": "Qwen: Qwen3 Coder Flash",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.195,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.975,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000195",
+            "completion": "0.000000975",
+            "input_cache_read": "0.000000039",
+            "input_cache_write": "0.00000024375",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-coder-flash",
+        "endpoint_tag": "alibaba",
+        "context_length": 1000000,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-coder-flash#Alibaba | qwen/qwen3-coder-flash",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-coder-plus",
+      "model": "Qwen: Qwen3 Coder Plus",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.65,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.25,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000065",
+            "completion": "0.00000325",
+            "input_cache_read": "0.00000013",
+            "input_cache_write": "0.0000008125",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-coder-plus",
+        "endpoint_tag": "alibaba",
+        "context_length": 1000000,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-coder-plus#Alibaba | qwen/qwen3-coder-plus",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-max",
+      "model": "Qwen: Qwen3 Max",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.78,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.9,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000078",
+            "completion": "0.0000039",
+            "input_cache_read": "0.000000156",
+            "input_cache_write": "0.000000975",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-max",
+        "endpoint_tag": "alibaba",
+        "context_length": 262144,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-max#Alibaba | qwen/qwen3-max",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-max-thinking",
+      "model": "Qwen: Qwen3 Max Thinking",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.78,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.9,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000078",
+            "completion": "0.0000039",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-max-thinking",
+        "endpoint_tag": "alibaba",
+        "context_length": 262144,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-max-thinking#Alibaba | qwen/qwen3-max-thinking-20260123",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-next-80b-a3b-instruct",
+      "model": "Qwen: Qwen3 Next 80B A3B Instruct (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.0975,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.78,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000000975",
+            "completion": "0.00000078",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-next-80b-a3b-instruct:free",
+        "endpoint_tag": "alibaba",
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-next-80b-a3b-instruct:free#Alibaba | qwen/qwen3-next-80b-a3b-instruct-2509",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-next-80b-a3b-thinking",
+      "model": "Qwen: Qwen3 Next 80B A3B Thinking",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.0975,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.78,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000000975",
+            "completion": "0.00000078",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-next-80b-a3b-thinking",
+        "endpoint_tag": "alibaba",
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-next-80b-a3b-thinking#Alibaba | qwen/qwen3-next-80b-a3b-thinking-2509",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-vl-235b-a22b-instruct",
+      "model": "Qwen: Qwen3 VL 235B A22B Instruct",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "alibaba",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.26,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.04,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000026",
+            "completion": "0.00000104",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-vl-235b-a22b-instruct",
+        "endpoint_tag": "alibaba",
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-vl-235b-a22b-instruct#Alibaba | qwen/qwen3-vl-235b-a22b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-vl-235b-a22b-thinking",
+      "model": "Qwen: Qwen3 VL 235B A22B Thinking",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "alibaba",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.26,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000026",
+            "completion": "0.0000026",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-vl-235b-a22b-thinking",
+        "endpoint_tag": "alibaba",
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-vl-235b-a22b-thinking#Alibaba | qwen/qwen3-vl-235b-a22b-thinking",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-vl-30b-a3b-instruct",
+      "model": "Qwen: Qwen3 VL 30B A3B Instruct",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "alibaba",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.13,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.52,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000013",
+            "completion": "0.00000052",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-vl-30b-a3b-instruct",
+        "endpoint_tag": "alibaba",
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-vl-30b-a3b-instruct#Alibaba | qwen/qwen3-vl-30b-a3b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-vl-30b-a3b-thinking",
+      "model": "Qwen: Qwen3 VL 30B A3B Thinking",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "alibaba",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.13,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.56,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000013",
+            "completion": "0.00000156",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-vl-30b-a3b-thinking",
+        "endpoint_tag": "alibaba",
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-vl-30b-a3b-thinking#Alibaba | qwen/qwen3-vl-30b-a3b-thinking",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-vl-32b-instruct",
+      "model": "Qwen: Qwen3 VL 32B Instruct",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "alibaba",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.104,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.416,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000104",
+            "completion": "0.000000416",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-vl-32b-instruct",
+        "endpoint_tag": "alibaba",
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-vl-32b-instruct#Alibaba | qwen/qwen3-vl-32b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-vl-8b-instruct",
+      "model": "Qwen: Qwen3 VL 8B Instruct",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "alibaba",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.117,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.455,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000117",
+            "completion": "0.000000455",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-vl-8b-instruct",
+        "endpoint_tag": "alibaba",
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-vl-8b-instruct#Alibaba | qwen/qwen3-vl-8b-instruct",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-vl-8b-thinking",
+      "model": "Qwen: Qwen3 VL 8B Thinking",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "alibaba",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.117,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.365,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000117",
+            "completion": "0.000001365",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-vl-8b-thinking",
+        "endpoint_tag": "alibaba",
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-vl-8b-thinking#Alibaba | qwen/qwen3-vl-8b-thinking",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-122b-a10b",
+      "model": "Qwen: Qwen3.5-122B-A10B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "alibaba",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.26,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.08,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000026",
+            "completion": "0.00000208",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-122b-a10b",
+        "endpoint_tag": "alibaba",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "logprobs",
+          "top_logprobs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-122b-a10b#Alibaba | qwen/qwen3.5-122b-a10b-20260224",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-27b",
+      "model": "Qwen: Qwen3.5-27B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "alibaba",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.195,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.56,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000195",
+            "completion": "0.00000156",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-27b",
+        "endpoint_tag": "alibaba",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "top_logprobs",
+          "logprobs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-27b#Alibaba | qwen/qwen3.5-27b-20260224",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-35b-a3b",
+      "model": "Qwen: Qwen3.5-35B-A3B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "alibaba",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1625,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001625",
+            "completion": "0.0000013",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-35b-a3b",
+        "endpoint_tag": "alibaba",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "top_logprobs",
+          "logprobs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-35b-a3b#Alibaba | qwen/qwen3.5-35b-a3b-20260224",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-397b-a17b",
+      "model": "Qwen: Qwen3.5 397B A17B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "alibaba",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.39,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.34,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000039",
+            "completion": "0.00000234",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-397b-a17b",
+        "endpoint_tag": "alibaba",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tool_choice",
+          "tools"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-397b-a17b#Alibaba | qwen/qwen3.5-397b-a17b-20260216",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-flash-02-23",
+      "model": "Qwen: Qwen3.5-Flash",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "alibaba",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.065,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.26,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000065",
+            "completion": "0.00000026",
+            "input_cache_write": "0.00000008125",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-flash-02-23",
+        "endpoint_tag": "alibaba",
+        "context_length": 1000000,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-flash-02-23#Alibaba | qwen/qwen3.5-flash-20260224",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-plus-02-15",
+      "model": "Qwen: Qwen3.5 Plus 2026-02-15",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "alibaba",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.26,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.56,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000026",
+            "completion": "0.00000156",
+            "input_cache_write": "0.000000325",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-plus-02-15",
+        "endpoint_tag": "alibaba",
+        "context_length": 1000000,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tool_choice",
+          "tools",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-plus-02-15#Alibaba | qwen/qwen3.5-plus-20260216",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-plus-20260420",
+      "model": "Qwen: Qwen3.5 Plus 2026-04-20",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "alibaba",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000018",
+            "discount": 0.25
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-plus-20260420",
+        "endpoint_tag": "alibaba",
+        "context_length": 1000000,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-plus-20260420#Alibaba | qwen/qwen3.5-plus-20260420",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.6-27b",
+      "model": "Qwen: Qwen3.6 27B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "alibaba",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.45,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.7,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000045",
+            "completion": "0.0000027",
+            "discount": 0.25
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.6-27b",
+        "endpoint_tag": "alibaba",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "top_logprobs",
+          "logprobs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.6-27b#Alibaba | qwen/qwen3.6-27b-20260422",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.6-flash",
+      "model": "Qwen: Qwen3.6 Flash",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "alibaba",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1875,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.125,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000001875",
+            "completion": "0.000001125",
+            "input_cache_write": "0.000000234375",
+            "discount": 0.25
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.6-flash",
+        "endpoint_tag": "alibaba",
+        "context_length": 1000000,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.6-flash#Alibaba | qwen/qwen3.6-flash",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.6-max-preview",
+      "model": "Qwen: Qwen3.6 Max Preview",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "alibaba",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.04,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 6.24,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.00000104",
+            "completion": "0.00000624",
+            "input_cache_write": "0.0000013",
+            "discount": 0.2
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.6-max-preview",
+        "endpoint_tag": "alibaba",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "top_logprobs",
+          "logprobs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.6-max-preview#Alibaba | qwen/qwen3.6-max-preview-20260420",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.6-plus",
+      "model": "Qwen: Qwen3.6 Plus",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "alibaba",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.325,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.95,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000000325",
+            "completion": "0.00000195",
+            "input_cache_write": "0.00000040625",
+            "discount": 0.35
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.6-plus",
+        "endpoint_tag": "alibaba",
+        "context_length": 1000000,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "presence_penalty",
+          "response_format",
+          "tool_choice",
+          "tools",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.6-plus#Alibaba | qwen/qwen3.6-plus-04-02",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}

@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "id": "aionlabs",
+  "provider": "AionLabs",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "aion-1.0",
+      "model": "AionLabs: Aion-1.0",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "aion-labs",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.000004",
+            "completion": "0.000008",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "aion-labs/aion-1.0",
+        "endpoint_tag": "aion-labs",
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "aion-labs/aion-1.0#AionLabs | aion-labs/aion-1.0",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "aion-1.0-mini",
+      "model": "AionLabs: Aion-1.0-Mini",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "aion-labs/bf16",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.7,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000007",
+            "completion": "0.0000014",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "aion-labs/aion-1.0-mini",
+        "endpoint_tag": "aion-labs/bf16",
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "aion-labs/aion-1.0-mini#AionLabs | aion-labs/aion-1.0-mini",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "aion-2.0",
+      "model": "AionLabs: Aion-2.0",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "aion-labs",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.8,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000008",
+            "completion": "0.0000016",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "aion-labs/aion-2.0",
+        "endpoint_tag": "aion-labs",
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "aion-labs/aion-2.0#AionLabs | aion-labs/aion-2.0-20260223",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    },
+    {
+      "model_id": "aion-rp-llama-3.1-8b",
+      "model": "AionLabs: Aion-RP 1.0 (8B)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "aion-labs",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.8,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-18T23:02:28.889Z",
+          "raw_pricing": {
+            "prompt": "0.0000008",
+            "completion": "0.0000016",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "aion-labs/aion-rp-llama-3.1-8b",
+        "endpoint_tag": "aion-labs",
+        "context_length": 32768,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "aion-labs/aion-rp-llama-3.1-8b#AionLabs | aion-labs/aion-rp-llama-3.1-8b",
+          "observed_at": "2026-05-18T23:02:28.889Z"
+        }
+      ]
+    }
+  ],
+  "other_parameters": {},
+  "last_updated": "2026-05-18T23:02:28.889Z",
+  "sources": []
+}
