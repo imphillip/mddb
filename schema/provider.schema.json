@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mddb.dev/schemas/provider.schema.json",
+  "title": "mddb provider file",
+  "description": "One provider per file. Provider owns endpoints, offers, and prices.",
+  "type": "object",
+  "required": ["schema_version", "id", "provider", "offers"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "id": {
+      "$ref": "#/$defs/slug",
+      "description": "Lowercase provider id for URL slugs and references."
+    },
+    "provider": {
+      "type": "string",
+      "description": "Enterprise, organization, lab, gateway, or platform display name."
+    },
+    "icon": { "type": "string", "description": "URL of icon/logo." },
+    "domain": {
+      "type": "string",
+      "description": "Domain or base origin where endpoints are hosted."
+    },
+    "base_url": {
+      "type": "string",
+      "description": "Optional API base URL; endpoint = base_url + offer.endpoint_path."
+    },
+    "currency": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$",
+      "default": "USD",
+      "description": "Default currency for prices in this provider file."
+    },
+    "offers": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/offer" },
+      "default": []
+    },
+    "other_parameters": {
+      "type": "object",
+      "description": "Unmapped provider-level source fields preserved as key/value facts.",
+      "additionalProperties": true,
+      "default": {}
+    },
+    "last_updated": { "type": "string", "format": "date-time" },
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/sourceRef" },
+      "default": []
+    }
+  },
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "offer": {
+      "type": "object",
+      "required": ["model_id", "model", "endpoint_path"],
+      "additionalProperties": false,
+      "properties": {
+        "model_id": {
+          "type": "string",
+          "description": "May reference models.json or be a provider-local/candidate model id."
+        },
+        "model": {
+          "type": "string",
+          "description": "May reference models.json display name or provider-local display name."
+        },
+        "variant_of": {
+          "$ref": "#/$defs/slug",
+          "description": "models.json model id when this offer declares itself as a variant."
+        },
+        "endpoint_path": {
+          "type": "string",
+          "description": "Call path appended to provider.base_url when base_url exists."
+        },
+        "api_model_id": {
+          "type": "string",
+          "description": "Exact model identifier used in API request bodies, if different from model_id."
+        },
+        "mode": {
+          "type": "string",
+          "enum": ["chat", "completion", "responses", "embedding", "rerank", "image", "audio", "video", "moderation", "other"]
+        },
+        "prices": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/priceSet" },
+          "description": "Supports 0..n price groups. Empty/missing means endpoint is registered but price unknown.",
+          "default": []
+        },
+        "other_parameters": {
+          "type": "object",
+          "description": "Unmapped offer/source fields preserved as key/value facts.",
+          "additionalProperties": true,
+          "default": {}
+        },
+        "sources": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sourceRef" },
+          "default": []
+        }
+      }
+    },
+    "priceSet": {
+      "type": "object",
+      "required": ["prices"],
+      "additionalProperties": false,
+      "properties": {
+        "conditions": {
+          "type": "object",
+          "description": "0..n tier/usage conditions, e.g. context_tokens > 200000, service_tier=priority, resolution=1024x1024.",
+          "additionalProperties": {
+            "oneOf": [
+              { "type": "string" },
+              { "type": "number" },
+              { "type": "boolean" },
+              { "type": "array", "items": { "type": ["string", "number", "boolean"] } }
+            ]
+          },
+          "default": {}
+        },
+        "prices": {
+          "type": "object",
+          "description": "Flexible key/value price map for token, request, image, audio, video, duration, tool-call, or custom billing.",
+          "additionalProperties": { "$ref": "#/$defs/priceComponent" },
+          "minProperties": 1
+        },
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$",
+          "description": "Overrides provider.currency for this price set."
+        },
+        "source": { "type": "string" },
+        "observed_at": { "type": "string", "format": "date-time" },
+        "raw_pricing": {
+          "type": "object",
+          "description": "Original pricing fields when not losslessly mapped.",
+          "additionalProperties": true
+        }
+      }
+    },
+    "priceComponent": {
+      "oneOf": [
+        { "type": "number" },
+        {
+          "type": "object",
+          "required": ["amount", "unit"],
+          "additionalProperties": false,
+          "properties": {
+            "amount": { "type": "number" },
+            "unit": {
+              "type": "string",
+              "description": "Examples: per_1m_tokens, per_request, per_image, per_second, per_minute, per_hour, per_tool_call."
+            },
+            "description": { "type": "string" }
+          }
+        }
+      ]
+    },
+    "sourceRef": {
+      "type": "object",
+      "required": ["source", "source_id"],
+      "additionalProperties": false,
+      "properties": {
+        "source": { "type": "string" },
+        "source_id": { "type": "string" },
+        "url": { "type": "string" },
+        "observed_at": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}
