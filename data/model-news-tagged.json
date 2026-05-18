@@ -1,7 +1,33 @@
 {
-  "generatedAt": "2026-05-18T03:00:42.759Z",
+  "generatedAt": "2026-05-18T03:20:42.750Z",
   "source": "https://aihot.virxact.com/api/public/items?mode=all&take=100",
   "items": [
+    {
+      "id": "cmpamits0107islnz58j0t88q",
+      "title": "#潜入你的世界#活动第二轮开启，参与赢取奖励",
+      "title_en": "Wave 2 of #DiveIntoYourWorld is now open！ It's easier than you think！ 1. → Open MuleRun and start cr…",
+      "url": "https://x.com/alibaba_cloud/status/2056204723003503058",
+      "source": "X：阿里云 / Alibaba Cloud (@alibaba_cloud)",
+      "publishedAt": "2026-05-18T02:46:23.000Z",
+      "summary": "#潜入你的世界#活动第二轮现已开放。参与者需通过指定链接进入MuleRun AI平台，发起对话并指令其生成任何与潜水主题相关的创意作品（如海报、短视频或知识图表）。完成后，将作品发布至社交媒体，并带上活动话题#DiveIntoYourWorld，同时标记@WorldAquatics、@alibaba_cloud和@mulerun_ai官方账号。最后，提交完成注册表单即成功参赛。活动鼓励创意表达，更多详情可通过提供的链接查询。",
+      "category": "ai-products",
+      "tags": {
+        "providers": [
+          "alibaba"
+        ],
+        "models": []
+      },
+      "tagLabels": {
+        "providers": [
+          "Alibaba"
+        ],
+        "models": []
+      },
+      "providerRoutes": {
+        "alibaba": "/models/alibaba/"
+      },
+      "modelRoutes": {}
+    },
     {
       "id": "cmpajx9cr0zl8slnz3febemkv",
       "title": "无限乐观驱动创新，确定性追求成陷阱",
