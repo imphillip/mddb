@@ -5,7 +5,7 @@ import { buildDataQualityReport, evaluateRefreshGate } from './data-quality.js'
 function graphFixture(): OpenRouterRawGraph {
   return {
     generatedAt: '2026-01-01T00:00:00.000Z',
-    schema: { urlShape: '/models/<provider>/<model-id>', rawPolicy: 'preserve-upstream-key-values', providerPolicy: 'actual-deployment-provider-not-data-source', dataSource: 'openrouter' },
+    schema: { urlShape: '/<provider>/<model-id>', rawPolicy: 'preserve-upstream-key-values', providerPolicy: 'actual-deployment-provider-not-data-source', dataSource: 'openrouter' },
     graphModel: { version: 'v2-observation-graph', identityBoundary: 'openrouter-source-id', pricingPolicy: 'provider-specific-observations-preserve-billing-mode', provenancePolicy: 'facts-are-nodes-or-observations-with-source-links' },
     source: { modelsPath: 'models.json', endpointsPath: 'endpoints.json', sitemapPath: 'sitemap.json', pagesPath: 'pages.json' },
     stats: { apiModels: 2, sitemapModelPages: 3, pageOnlyModels: 1, endpointWrappers: 1, endpointRows: 1, pricingObservations: 3, providerObservations: 2, sourceNodes: 3, endpointNodes: 1, pageRows: 0, nodes: 4, edges: 0 },
@@ -77,7 +77,7 @@ function sourceNode(sourceId: string, status: 'api' | 'page_only', raw: Record<s
     provider,
     providerName: provider,
     modelId,
-    route: `/models/${provider}/${modelId}`,
+    route: `/${provider}/${modelId}`,
     urlProvider: provider,
     urlModelId: modelId,
     sourceId,

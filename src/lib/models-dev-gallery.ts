@@ -339,7 +339,7 @@ function toModelDetail(group: CanonicalModelGroup, providers: Map<string, Models
 
   return {
     tag: group.tag,
-    route: `/models/${group.tag}`,
+    route: `/${group.tag}`,
     name: group.displayName,
     brand: group.brand,
     description: `${group.displayName} 在 models.dev 本地索引中收录了 ${providerNames.length} 个 provider 部署。`,

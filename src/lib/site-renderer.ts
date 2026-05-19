@@ -8,7 +8,7 @@ const css = String.raw`
 .detailSingle{display:block;max-width:980px;padding-top:38px;padding-bottom:80px}.backToPlaza{display:inline-flex;margin-bottom:22px}.priceVariantGrid{display:grid;gap:14px}.priceVariantCard{border:1px solid var(--line);border-radius:14px;background:#fff;padding:16px}.priceVariantCard+.priceVariantCard{margin-top:0}.detailHeroCompact{padding:52px 0 30px}.summaryStrip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:24px;max-width:900px}.summaryStrip div{border:1px solid var(--line);border-radius:14px;background:#fff;padding:14px 16px;box-shadow:var(--shadow)}.summaryStrip span{display:block;color:#777;font-size:12px;margin-bottom:4px}.summaryStrip b{font-size:18px;letter-spacing:-.3px}.priorityPanel{border-color:#dbe7ff;background:linear-gradient(180deg,#fbfdff,#fff)}.subtlePanel{background:#fcfcfc}.stickyCard{position:sticky;top:82px}.availabilityGrid{display:flex;flex-wrap:wrap;gap:8px}.providerChip{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:#fafafa;padding:7px 11px;font-size:13px;color:#333;line-height:1}.providerCloud{line-height:1.8}.sourceList{display:grid;gap:8px;margin-top:14px}.sourceItem{display:flex;justify-content:space-between;gap:14px;border:1px solid var(--line);border-radius:10px;padding:12px;background:#fafafa}.sourceItem span{color:#666;font-size:13px}.reviewList{margin:0;padding-left:18px;color:#555;line-height:1.7}.specVariant{border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0;background:#fff}.specVariant+.specVariant{border-top:1px solid var(--line)}.moreBlock{margin-top:12px;border:1px dashed var(--line);border-radius:12px;padding:12px;background:#fcfcfc}.moreBlock summary{cursor:pointer;color:#555;font-weight:500}.modelTable th{background:#fafafa}.modelTable td,.modelTable th{line-height:1.45}.modelTable td:nth-child(3){text-align:right}.copyTagBtn svg{width:13px;height:13px;display:block}.copyTagBtn.copied{width:auto;padding:2px 7px}@media(max-width:900px){.summaryStrip{grid-template-columns:repeat(2,1fr)}.stickyCard{position:static}.sourceItem{display:block}.sourceItem span{display:block;margin-top:4px}}
 `
 
-type ActivePage = 'home' | 'models'
+type ActivePage = 'models'
 
 const expandedBrandFilterNames = new Set(['ByteDance', 'MoonshotAI', 'Xiaomi'])
 const collapsedBrandFilterNames = new Set(['Arcee AI', 'NVIDIA'])
@@ -19,7 +19,7 @@ function page(title: string, body: string, activePage: ActivePage, headExtra = '
 
 function nav(activePage: ActivePage): string {
   const modelsClass = activePage === 'models' ? ' class="active"' : ''
-  return `<header class="topbar"><nav class="nav"><a class="brandmark" href="/models/">${databaseLogo()}<span>mddb.dev</span><span class="brandZh">大模型数据库</span></a><div class="topSearch">⌕ 搜索</div><div class="navlinks"><span class="disabled" aria-disabled="true">模型动态</span><a${modelsClass} href="/models/">模型广场</a></div><a class="githubLink" href="https://github.com/imphillip/mddb" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库">${githubLogo()}</a></nav></header>`
+  return `<header class="topbar"><nav class="nav"><a class="brandmark" href="/">${databaseLogo()}<span>mddb.dev</span><span class="brandZh">大模型数据库</span></a><div class="topSearch">⌕ 搜索</div><div class="navlinks"><a${modelsClass} href="/">模型广场</a></div><a class="githubLink" href="https://github.com/imphillip/mddb" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库">${githubLogo()}</a></nav></header>`
 }
 
 function databaseLogo(): string {
@@ -35,7 +35,7 @@ function footer(): string {
 }
 
 export function renderHomePage(): string {
-  return page('模型广场 · mddb.dev', `<main class="homeEmpty"><div><div class="eyebrow">正在跳转</div><h1>模型广场</h1><p>正在跳转到模型广场。</p><p><a class="btn" href="/models/">进入模型广场</a></p></div></main>`, 'models', '<meta http-equiv="refresh" content="0;url=/models/"><link rel="canonical" href="/models/">')
+  return renderModelsPage()
 }
 
 export function renderModelsPage(gallery: ModelGallery = buildModelGallery()): string {
@@ -78,7 +78,7 @@ export function renderModelDetailPage(tag: string, details?: ModelDetail[]): str
   }
 
   const visibleSpecVariants = displayableVariants(model).filter((variant) => isSnapshotVariant(variant) && !hasPriceDifference(model, variant))
-  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/models/">← 返回模型广场</a><div class="eyebrow">${escapeHtml(model.brand.name)} / ${renderModelTagCopy(model.tag)}</div><h1>${escapeHtml(model.name)}</h1><div class="summaryStrip"><div><span>输入价格</span><b>${escapeHtml(model.inputPrice)}</b></div><div><span>输出价格</span><b>${escapeHtml(model.outputPrice)}</b></div><div><span>上下文</span><b>${escapeHtml(model.contextWindow)}</b></div><div><span>Alias</span><b>${aliasValues(model).length}</b></div></div></div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#specs">模型规格</a><a href="#providers">Provider</a><a href="#snapshots">Snapshot 规格差异</a><a href="#pricing">价格</a></nav><section id="specs" class="panel"><h2>模型规格</h2>${renderModelSpecs(model)}</section><section id="providers" class="panel subtlePanel"><h2>Provider</h2>${renderProviders(model)}</section><section id="snapshots" class="panel subtlePanel"><h2>Snapshot 规格差异</h2>${renderSnapshotSpecs(model, visibleSpecVariants)}</section><section id="pricing" class="panel priorityPanel"><h2>价格</h2>${renderPricingGroups(model)}</section></article></div></main>`
+  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/">← 返回模型广场</a><div class="eyebrow">${escapeHtml(model.brand.name)} / ${renderModelTagCopy(model.tag)}</div><h1>${escapeHtml(model.name)}</h1><div class="summaryStrip"><div><span>输入价格</span><b>${escapeHtml(model.inputPrice)}</b></div><div><span>输出价格</span><b>${escapeHtml(model.outputPrice)}</b></div><div><span>上下文</span><b>${escapeHtml(model.contextWindow)}</b></div><div><span>Alias</span><b>${aliasValues(model).length}</b></div></div></div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#specs">模型规格</a><a href="#providers">Provider</a><a href="#snapshots">Snapshot 规格差异</a><a href="#pricing">价格</a></nav><section id="specs" class="panel"><h2>模型规格</h2>${renderModelSpecs(model)}</section><section id="providers" class="panel subtlePanel"><h2>Provider</h2>${renderProviders(model)}</section><section id="snapshots" class="panel subtlePanel"><h2>Snapshot 规格差异</h2>${renderSnapshotSpecs(model, visibleSpecVariants)}</section><section id="pricing" class="panel priorityPanel"><h2>价格</h2>${renderPricingGroups(model)}</section></article></div></main>`
   return page(`${model.name} · mddb.dev`, body, 'models')
 }
 

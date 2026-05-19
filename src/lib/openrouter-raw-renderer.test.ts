@@ -11,7 +11,7 @@ function sourceNode(sourceId: string, author: string): OpenRouterRawNode {
     provider: author,
     providerName: author,
     modelId,
-    route: `/models/${author}/${modelId}`,
+    route: `/${author}/${modelId}`,
     urlProvider: author,
     urlModelId: modelId,
     sourceId,
@@ -51,7 +51,7 @@ function graph(): OpenRouterRawGraph {
   const nodes = [sourceNode('openai/gpt-5.5', 'openai'), sourceNode('qwen/qwen3-max', 'qwen')]
   return {
     generatedAt: '2026-01-01T00:00:00.000Z',
-    schema: { urlShape: '/models/<provider>/<model-id>', rawPolicy: 'preserve-upstream-key-values', providerPolicy: 'actual-deployment-provider-not-data-source', dataSource: 'openrouter' },
+    schema: { urlShape: '/<provider>/<model-id>', rawPolicy: 'preserve-upstream-key-values', providerPolicy: 'actual-deployment-provider-not-data-source', dataSource: 'openrouter' },
     graphModel: { version: 'v2-observation-graph', identityBoundary: 'openrouter-source-id', pricingPolicy: 'provider-specific-observations-preserve-billing-mode', provenancePolicy: 'facts-are-nodes-or-observations-with-source-links' },
     source: { modelsPath: 'models.json', endpointsPath: 'endpoints.json', sitemapPath: 'sitemap.json', pagesPath: 'pages.json' },
     stats: { apiModels: 2, sitemapModelPages: 2, pageOnlyModels: 0, endpointWrappers: 0, endpointRows: 0, pricingObservations: 0, providerObservations: 0, sourceNodes: 2, endpointNodes: 0, pageRows: 0, nodes: 2, edges: 0 },
@@ -85,7 +85,7 @@ describe('shared navigation contract', () => {
     const testGraph = graph()
     const pages = [
       renderOpenRouterRawHome(testGraph),
-      renderOpenRouterProviderDetail(testGraph, 'openai', { generatedAt: '2026-05-17T00:00:00.000Z', source: 'fixture', items: [] }),
+      renderOpenRouterProviderDetail(testGraph, 'openai'),
       renderOpenRouterRawDetail(testGraph, testGraph.nodes[0]!),
     ]
 
@@ -93,7 +93,7 @@ describe('shared navigation contract', () => {
       expect(html).toContain('<header class="topbar"><nav class="nav"><a class="brandmark" href="/">')
       expect(html).toContain('<label class="topSearch">⌕ <input id="q" type="search" placeholder="搜索模型 / provider / author / source" autocomplete="off"></label>')
       expect(html).toContain('<a class="githubLink" href="https://github.com/imphillip/mddb"')
-      expect(html).toContain('<div class="navlinks"><a href="/">模型动态</a><a class="active" href="/models/">模型广场</a></div>')
+      expect(html).toContain('<div class="navlinks"><a class="active" href="/">模型广场</a></div>')
       expect(html).toContain('class="currencyToggle"')
       expect(html).toContain('data-currency-toggle')
       expect(html.indexOf('class="brandmark"')).toBeLessThan(html.indexOf('class="topSearch"'))
@@ -109,7 +109,7 @@ describe('mobile responsive layout', () => {
     const testGraph = graph()
     const pages = [
       renderOpenRouterRawHome(testGraph),
-      renderOpenRouterProviderDetail(testGraph, 'openai', { generatedAt: '2026-05-17T00:00:00.000Z', source: 'fixture', items: [] }),
+      renderOpenRouterProviderDetail(testGraph, 'openai'),
       renderOpenRouterRawDetail(testGraph, testGraph.nodes[0]!),
     ]
 
@@ -137,7 +137,7 @@ describe('renderOpenRouterRawHome currency toggle', () => {
     testGraph.nodes[0]!.raw.endpointWrapper = { response: { data: { endpoints: [{ tag: 'openai', provider_name: 'OpenAI', pricing: { prompt: '0.00000125', completion: '0.00001', input_cache_read: '0.000000125' } }] } } }
 
     const plazaHtml = renderOpenRouterRawHome(testGraph)
-    const providerHtml = renderOpenRouterProviderDetail(testGraph, 'openai', { generatedAt: '2026-05-17T00:00:00.000Z', source: 'fixture', items: [] })
+    const providerHtml = renderOpenRouterProviderDetail(testGraph, 'openai')
     const detailHtml = renderOpenRouterRawDetail(testGraph, testGraph.nodes[0]!)
 
     for (const html of [plazaHtml, providerHtml, detailHtml]) {
@@ -152,8 +152,8 @@ describe('renderOpenRouterRawHome currency toggle', () => {
 
     expect(plazaHtml).toContain('class="githubLink"')
     expect(plazaHtml).toContain('<a class="brandmark" href="/">')
-    expect(plazaHtml).toContain('<a href="/">模型动态</a>')
-    expect(plazaHtml.indexOf('class="githubLink"')).toBeLessThan(plazaHtml.indexOf('模型动态'))
+    expect(plazaHtml).not.toContain('模型动态')
+    expect(plazaHtml).toContain('<div class="navlinks"><a class="active" href="/">模型广场</a></div>')
     expect(plazaHtml.indexOf('data-currency-toggle')).toBeGreaterThan(plazaHtml.indexOf('模型广场'))
     expect(plazaHtml).toContain('.githubLink{width:34px')
     expect(plazaHtml).toContain('.githubLink svg{width:18px')
@@ -201,7 +201,7 @@ describe('renderOpenRouterRawHome URL query state', () => {
     expect(html).toContain('data-model-provider="together"')
     expect(html).toContain('data-search-only="true"')
     expect(html).toContain("params.get('provider')")
-    expect(html).toContain("/models/?provider=")
+    expect(html).toContain("/?provider=")
     expect(html).toContain('history.replaceState')
   })
 })
@@ -219,43 +219,25 @@ describe('renderOpenRouterRawHome logo enrichment', () => {
 })
 
 describe('provider pages', () => {
-  it('renders provider models with the model plaza table style and puts recent provider news in the left rail', () => {
-    const feed = {
-      generatedAt: '2026-05-17T00:00:00.000Z',
-      source: 'fixture',
-      items: Array.from({ length: 12 }, (_, index) => ({
-        id: `news-openai-${index}`,
-        title: `OpenAI 动态 ${index + 1}`,
-        url: `https://example.com/openai-news-${index}`,
-        source: 'AIHOT',
-        publishedAt: `2026-05-${String(17 - index).padStart(2, '0')}T09:00:00.000Z`,
-        summary: 'OpenAI 相关行业动态。',
-        tags: { providers: ['openai'], models: ['gpt-5.5'] },
-        tagLabels: { providers: ['OpenAI'], models: ['gpt-5.5'] },
-      })),
-    }
-
-    const html = renderOpenRouterProviderDetail(graph(), 'openai', feed)
+  it('renders provider models with the model plaza table style without model news rail', () => {
+    const html = renderOpenRouterProviderDetail(graph(), 'openai')
 
     expect(html).toContain('OpenAI')
     expect(html).toContain('<aside class="filterPanel providerNewsRail">')
-    expect(html).toContain('<a class="btn backToPlaza" href="/models/">← 返回模型广场</a>')
-    expect(html).toContain('<h3>模型动态</h3>')
-    expect(html).toContain('OpenAI 动态 1')
-    expect(html).toContain('OpenAI 动态 10')
-    expect(html).not.toContain('OpenAI 动态 11')
+    expect(html).toContain('<a class="btn backToPlaza" href="/">← 返回模型广场</a>')
     expect(html).toContain('<section class="mainPanel"><div class="plazaHead"><div><h1>OpenAI</h1>')
     expect(html).toContain('<div class="listToolbar"><div class="quickFilters" aria-label="模态筛选"><button class="quickFilter active" type="button" data-output-filter="all">全部 <span class="quickFilterCount" id="visibleCount">1</span></button>')
     expect(html).toContain('<button class="quickFilter" type="button" data-output-filter="text">Text <span class="quickFilterCount">1</span></button>')
     expect(html).toContain('<div class="tableWrap"><table class="modelTable">')
     expect(html).toContain('<thead><tr><th>模型</th><th>上下文</th><th>输入<br><small data-price-unit>/M tokens</small></th><th>输出<br><small data-price-unit>/M tokens</small></th><th>读取<br><small data-price-unit>/M tokens</small></th><th>发布时间</th></tr></thead>')
-    expect(html).toContain('<a class="modelLink" href="/models/openai/gpt-5.5/">gpt-5.5</a>')
+    expect(html).toContain('<a class="modelLink" href="/openai/gpt-5.5/">gpt-5.5</a>')
     expect(html).toContain('data-model-row')
     expect(html).toContain(`${modelFilterScriptMarker()}`)
-    expect(html).toContain('href="/models/"')
+    expect(html).toContain('href="/"')
     expect(html).not.toContain('class="providerDetailGrid"')
+    expect(html).not.toContain('模型动态')
     expect(html).not.toContain('<h2>OpenAI 相关动态</h2>')
-    expect(html).not.toContain('/models/providers/')
+    expect(html).not.toContain('/providers/')
     expect(html).not.toContain('Provider 列表')
     expect(html).not.toContain('qwen3-max')
   })

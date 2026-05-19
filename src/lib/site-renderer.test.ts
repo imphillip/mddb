@@ -6,7 +6,7 @@ import { buildModelGalleryWithModelsDevEnrichment } from './model-gallery-enrich
 import { renderHomePage, renderModelDetailPage, renderModelsPage } from './site-renderer.js'
 
 describe('site renderer', () => {
-  it('renders the root page as an immediate redirect to the model plaza', () => {
+  it('renders the root page as the model plaza', () => {
     const html = renderHomePage()
 
     expect(html).toContain('mddb.dev')
@@ -15,12 +15,10 @@ describe('site renderer', () => {
     expect(html).toContain('href="https://github.com/imphillip/mddb"')
     expect(html).toContain('aria-label="GitHub 仓库"')
     expect(html).toContain('target="_blank" rel="noopener noreferrer"')
-    expect(html).toContain('<meta http-equiv="refresh" content="0;url=/models/">')
-    expect(html).toContain('<link rel="canonical" href="/models/">')
-    expect(html).toContain('正在跳转到模型广场')
-    expect(html).toContain('href="/models/">进入模型广场</a>')
-    expect(html).toContain('<span class="disabled" aria-disabled="true">模型动态</span>')
-    expect(html).toContain('<a class="active" href="/models/">模型广场</a>')
+    expect(html).not.toContain('<meta http-equiv="refresh"')
+    expect(html).not.toContain('<link rel="canonical" href="/">')
+    expect(html).toContain('<a class="active" href="/">模型广场</a>')
+    expect(html).not.toContain('模型动态')
     expect(html).not.toContain('首页暂时留空')
     expect(html).not.toContain('href="/">模型动态</a>')
     expect(html).not.toContain('Models</a>')
@@ -40,8 +38,8 @@ describe('site renderer', () => {
     expect(html).toContain('.modelTable{')
     expect(html).toContain('大模型数据库')
     expect(html).toContain('aria-label="数据库"')
-    expect(html).toContain('<span class="disabled" aria-disabled="true">模型动态</span>')
-    expect(html).toContain('<a class="active" href="/models/">模型广场</a>')
+    expect(html).not.toContain('模型动态')
+    expect(html).toContain('<a class="active" href="/">模型广场</a>')
     expect(html).not.toContain('href="/">模型动态</a>')
     expect(html).toContain('<div class="filterTitle">筛选</div>')
     expect(html).toContain('<span>厂牌</span>')
@@ -69,7 +67,7 @@ describe('site renderer', () => {
     expect(html).toContain('<th>上下文</th>')
     expect(html).toContain('<th>发布日期</th>')
     expect(html).toContain('Claude Sonnet 4')
-    expect(html).toContain('href="/models/claude-sonnet-4/"')
+    expect(html).toContain('href="/claude-sonnet-4/"')
     expect(html.indexOf('Claude Sonnet 4')).toBeLessThan(html.indexOf('DeepSeek R1'))
     expect(html.indexOf('DeepSeek R1')).toBeLessThan(html.indexOf('Llama 3.1 405B Instruct'))
     expect(html).toContain('<td>2025年5月22日</td>')

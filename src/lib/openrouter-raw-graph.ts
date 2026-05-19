@@ -3,7 +3,7 @@ import { existsSync, readFileSync } from 'node:fs'
 export type OpenRouterRawGraph = {
   generatedAt: string
   schema: {
-    urlShape: '/models/<provider>/<model-id>'
+    urlShape: '/<provider>/<model-id>'
     rawPolicy: 'preserve-upstream-key-values'
     providerPolicy: 'actual-deployment-provider-not-data-source'
     dataSource: 'openrouter'
@@ -306,7 +306,7 @@ export function buildOpenRouterRawGraphFromFiles(paths: { modelsPath: string; en
   const observations = buildObservations(sourceNodes, enrichment)
   const graph: OpenRouterRawGraph = {
     generatedAt: new Date().toISOString(),
-    schema: { urlShape: '/models/<provider>/<model-id>', rawPolicy: 'preserve-upstream-key-values', providerPolicy: 'actual-deployment-provider-not-data-source', dataSource: 'openrouter' },
+    schema: { urlShape: '/<provider>/<model-id>', rawPolicy: 'preserve-upstream-key-values', providerPolicy: 'actual-deployment-provider-not-data-source', dataSource: 'openrouter' },
     graphModel: { version: 'v2-observation-graph', identityBoundary: 'openrouter-source-id', pricingPolicy: 'provider-specific-observations-preserve-billing-mode', provenancePolicy: 'facts-are-nodes-or-observations-with-source-links' },
     source: {
       modelsPath: paths.modelsPath,
@@ -596,7 +596,7 @@ function makeSourceNode(sourceId: string, model: JsonRecord | undefined, endpoin
   const provider = normalizeSlug(cleanLeadingMarker(namespace ?? 'unknown'))
   const providerName = titleize(provider)
   const modelId = modelIdWithinNamespace
-  const route = `/models/${encodeURIComponent(provider)}/${encodeURIComponent(modelId)}`
+  const route = `/${encodeURIComponent(provider)}/${encodeURIComponent(modelId)}`
   const endpointListValue = endpointList(endpointWrapper)
   return {
     id: nodeIdForSource(sourceId),
@@ -646,7 +646,7 @@ function endpointNodeFor(sourceNode: OpenRouterRawNode, endpoint: JsonRecord, so
   const modelId = endpointModelId(sourceNode, endpoint)
   const sourceId = `${provider}/${modelId}`
   const context = endpoint.context_length
-  const baseRoute = `/models/${encodeURIComponent(provider)}/${encodeURIComponent(modelId)}`
+  const baseRoute = `/${encodeURIComponent(provider)}/${encodeURIComponent(modelId)}`
   const route = sourceRoutes.has(baseRoute) ? `${baseRoute}/endpoint` : baseRoute
   return {
     id: nodeIdForEndpoint(sourceId),

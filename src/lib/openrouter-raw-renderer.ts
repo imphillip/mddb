@@ -1,4 +1,3 @@
-import type { ModelNewsFeed } from './model-news.js'
 import type { BaseLlmSupplementalPrice, OpenRouterRawEdge, OpenRouterRawGraph, OpenRouterRawNode } from './openrouter-raw-graph.js'
 
 const css = String.raw`
@@ -8,7 +7,7 @@ const css = String.raw`
 .detailSingle{display:block;max-width:980px;padding-top:38px;padding-bottom:80px}.backToPlaza{display:inline-flex;align-items:center;justify-content:center;margin-bottom:22px}.priceVariantGrid{display:grid;gap:14px}.priceVariantCard{border:1px solid var(--line);border-radius:14px;background:#fff;padding:16px}.priceList{display:grid;gap:10px;margin:0}.priceItem{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line2);padding:8px 0}.priceItem:last-child{border-bottom:0}.priceItem dt{color:#777}.priceItem dd{margin:0;text-align:right}.priceVariantCard+.priceVariantCard{margin-top:0}.detailHeroCompact{padding:52px 0 30px}.summaryStrip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:24px;max-width:900px}.summaryStrip div{border:1px solid var(--line);border-radius:14px;background:#fff;padding:14px 16px;box-shadow:var(--shadow)}.summaryStrip span{display:block;color:#777;font-size:12px;margin-bottom:4px}.summaryStrip b{font-size:18px;letter-spacing:-.3px}.priorityPanel{border-color:#dbe7ff;background:linear-gradient(180deg,#fbfdff,#fff)}.subtlePanel{background:#fcfcfc}.stickyCard{position:sticky;top:82px}.availabilityGrid{display:flex;flex-wrap:wrap;gap:8px}.providerChip{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:#fafafa;padding:7px 11px;font-size:13px;color:#333;line-height:1}.providerCloud{line-height:1.8}.sourceList{display:grid;gap:8px;margin-top:14px}.sourceItem{display:flex;justify-content:space-between;gap:14px;border:1px solid var(--line);border-radius:10px;padding:12px;background:#fafafa}.sourceItem span{color:#666;font-size:13px}.relationChips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.relationChip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;background:#fff;padding:7px 10px;font-size:13px;color:#333}.relationChip small{color:#777}.modelIdHero{margin-top:12px;font-size:15px;color:#555}.heroRelations{margin-top:14px}.relationPanel{margin-bottom:16px}.relationPanel .relationChips{margin-bottom:0}.specRows{display:grid;gap:10px;margin-top:16px}.specRow{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px}.reviewList{margin:0;padding-left:18px;color:#555;line-height:1.7}.specVariant{border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0;background:#fff}.specVariant+.specVariant{border-top:1px solid var(--line)}.moreBlock{margin-top:12px;border:1px dashed var(--line);border-radius:12px;padding:12px;background:#fcfcfc}.moreBlock summary{cursor:pointer;color:#555;font-weight:500}.modelTable th{background:#fafafa}.modelTable td,.modelTable th{line-height:1.45}.modelTable td:nth-child(3){text-align:right}.copyTagBtn svg{width:13px;height:13px;display:block}.copyTagBtn.copied{width:auto;padding:2px 7px}@media(max-width:900px){.summaryStrip{grid-template-columns:repeat(2,1fr)}.stickyCard{position:static}.sourceItem{display:block}.sourceItem span{display:block;margin-top:4px}}
 .raw{white-space:pre-wrap;overflow:auto;max-height:680px;background:#0b1020;color:#d8e4ff;border-radius:12px;padding:14px;font-size:12px;line-height:1.45}.badge{display:inline-flex;border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:2px 8px;font-size:12px;margin:2px;color:#555}.badge.api{color:var(--green)}.badge.page_only{color:#b91c1c}.statGrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:18px 0 24px}.statCard{border:1px solid var(--line);border-radius:14px;background:#fff;padding:14px 16px;box-shadow:var(--shadow)}.statCard span{display:block;color:#777;font-size:12px;margin-bottom:4px}.statCard b{font-size:20px;letter-spacing:-.3px}.rawIntro{max-width:880px;color:#666;line-height:1.7}.filterHint{color:#999;font-size:12px;margin-top:8px}.edge{border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0;background:#fff}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.section{margin-bottom:18px}.kv{display:grid;grid-template-columns:180px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--line2)}.kv span{color:#777}.kv b{font-weight:500;word-break:break-word}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.tabs a{border:1px solid var(--line);border-radius:999px;padding:8px 12px;background:#fff;color:#333}.modelTable td:nth-child(3){text-align:left}.rawSource{word-break:break-all}.mono,code,pre{font-family:Geist Mono,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.statusLine{display:flex;flex-wrap:wrap;gap:4px}.providerSummary{color:#777;font-size:12px;margin-top:4px}.providerRailNewsList{display:grid;gap:10px;margin-top:12px}.providerRailNewsCard{border-top:1px solid var(--line2);padding-top:10px}.providerRailNewsCard time{display:block;color:#999;font-size:11px;margin-bottom:4px}.providerRailNewsCard a{display:block;color:#333;font-size:13px;line-height:1.45}.providerRailNewsCard a:hover{text-decoration:underline;text-underline-offset:3px}.searchBox{width:100%;height:38px;border:1px solid var(--line);border-radius:8px;padding:0 12px;font:14px inherit;margin-bottom:14px}.listToolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 18px}.listCount{color:#555;font-size:14px}.listCount b{color:#111}.quickFilters{display:flex;gap:8px;flex-wrap:wrap}.quickFilter{border:1px solid var(--line);border-radius:999px;background:#fff;color:#444;padding:7px 11px;font:500 13px inherit;cursor:pointer;display:inline-flex;align-items:center;gap:6px}.quickFilterCount{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;border-radius:999px;background:#f2f2f2;color:#666;font-size:11px;padding:0 6px}.quickFilter:hover,.quickFilter.active{border-color:#111;color:#111;background:#fafafa}.quickFilter.active .quickFilterCount{background:#111;color:#fff}.filterOption input{accent-color:#111}@media(max-width:900px){.statGrid,.two{grid-template-columns:1fr}.kv{grid-template-columns:1fr}.modelTable{min-width:900px}}@media(max-width:720px){.nav{height:auto;min-height:56px;padding:10px 14px;gap:10px;flex-wrap:wrap}.brandmark{gap:8px;min-width:0}.brandmark span:not(.logo):not(.brandZh){font-size:15px}.brandZh{display:none}.githubLink{order:2}.navlinks{order:3;margin-left:0;gap:12px;font-size:13px}.navlinks a,.navlinks span{padding:8px 0 6px}.currencyControl{order:4;margin-left:auto}.currencyToggle button{padding:5px 8px;font-size:11px}.topSearch{order:5;width:100%;display:flex;height:34px}.modelsShell{display:block;min-height:auto}.filterPanel{position:static;border-right:0;border-bottom:1px solid var(--line);padding:16px 14px;background:#fff}.filterGroup{padding:10px 0}.filterOption{padding:7px 0}.mainPanel{padding:20px 14px 56px;overflow:visible}.plazaHead{align-items:flex-start;flex-direction:column;margin-bottom:16px}.plazaHead h1{font-size:30px;letter-spacing:-.8px}.listToolbar{overflow-x:auto;margin:0 -14px 16px;padding:0 14px}.quickFilters{flex-wrap:nowrap}.quickFilter{white-space:nowrap}.tableWrap{margin:0 -14px;padding:0 14px;overflow-x:auto;-webkit-overflow-scrolling:touch}.modelTable{min-width:760px}.modelTable td{padding:12px 10px}.modelName{min-width:230px}.detailHero{padding:34px 0 22px}.detailHero h1{font-size:34px;letter-spacing:-1.2px}.wrap{padding:0 14px}.detailSingle{padding-top:22px;padding-bottom:56px}.panel{padding:16px;border-radius:12px}.panel h2{font-size:24px}.toc{overflow-x:auto;flex-wrap:nowrap;white-space:nowrap}.summaryStrip{grid-template-columns:1fr}.specRow{grid-template-columns:1fr}.priceItem{display:block}.priceItem dd{text-align:left;margin-top:4px}.providerNewsRail .filterGroup{border-bottom:0}.providerRailNewsList{gap:8px}}`
 
-type ActivePage = 'home' | 'models'
+type ActivePage = 'models'
 
 export function renderOpenRouterRawHome(graph: OpenRouterRawGraph): string {
   const authorOptions = authorFilterOptions(graph)
@@ -60,21 +59,19 @@ function outputModalityCount(graph: OpenRouterRawGraph, searchOnlyNodeIds: Set<s
 }
 
 
-export function renderOpenRouterProviderIndex(graph: OpenRouterRawGraph, feed: ModelNewsFeed): string {
-  const providers = providerSummaries(graph, feed)
-  const rows = providers.map((provider) => `<a class="providerDirectoryLink providerDirectoryCard" href="/models/providers/${escapeHtml(provider.id)}/"><div><span>${escapeHtml(provider.label)}</span><p>${provider.modelCount} 个模型 · ${provider.newsCount} 条相关动态</p></div><strong>→</strong></a>`).join('')
-  const body = `<main class="modelsShell providerShell"><aside class="filterPanel"><div class="filterGroup"><h3>Provider</h3><p class="filterHint">按模型广场的 provider 维度聚合模型，并联动模型动态里的行业新闻。</p></div></aside><section class="mainPanel"><div class="plazaHead"><div><h1>Provider 列表</h1><p class="rawIntro">${providers.length} 个 Provider · ${providers.reduce((sum, provider) => sum + provider.modelCount, 0)} 个模型。查看每个 provider 下的模型清单和相关行业动态。</p></div></div><div class="providerDirectoryGrid">${rows}</div></section></main>`
+export function renderOpenRouterProviderIndex(graph: OpenRouterRawGraph): string {
+  const providers = providerSummaries(graph)
+  const rows = providers.map((provider) => `<a class="providerDirectoryLink providerDirectoryCard" href="/${escapeHtml(provider.id)}/"><div><span>${escapeHtml(provider.label)}</span><p>${provider.modelCount} 个模型</p></div><strong>→</strong></a>`).join('')
+  const body = `<main class="modelsShell providerShell"><aside class="filterPanel"><div class="filterGroup"><h3>Provider</h3><p class="filterHint">按模型广场的 provider 维度聚合模型。</p></div></aside><section class="mainPanel"><div class="plazaHead"><div><h1>Provider 列表</h1><p class="rawIntro">${providers.length} 个 Provider · ${providers.reduce((sum, provider) => sum + provider.modelCount, 0)} 个模型。查看每个 provider 下的模型清单。</p></div></div><div class="providerDirectoryGrid">${rows}</div></section></main>`
   return page('Provider 列表 · mddb.dev', body, 'models')
 }
 
-export function renderOpenRouterProviderDetail(graph: OpenRouterRawGraph, providerId: string, feed: ModelNewsFeed): string {
+export function renderOpenRouterProviderDetail(graph: OpenRouterRawGraph, providerId: string): string {
   const models = visibleProviderModels(graph, providerId)
   const label = providerDisplayName(graph, providerId)
-  const newsItems = providerNewsItems(feed, providerId)
   const modelRows = models.map((node) => renderModelRow(node, false, graph)).join('') || '<tr><td class="muted" colspan="6">暂无模型</td></tr>'
-  const newsRows = newsItems.slice(0, 10).map(renderProviderRailNewsCard).join('') || '<p class="filterHint">暂无相关动态。</p>'
   const quickFilters = renderOutputQuickFiltersForNodes(models)
-  const body = `<main class="modelsShell providerShell"><aside class="filterPanel providerNewsRail"><a class="btn backToPlaza" href="/models/">← 返回模型广场</a><div class="filterGroup"><h3>模型动态</h3><p class="filterHint">${escapeHtml(label)} 相关 · 最新 ${Math.min(newsItems.length, 10)} 条</p><div class="providerRailNewsList">${newsRows}</div></div></aside><section class="mainPanel"><div class="plazaHead"><div><h1>${escapeHtml(label)}</h1><p class="rawIntro">${models.length} 个模型</p></div></div><div class="listToolbar"><div class="quickFilters" aria-label="模态筛选">${quickFilters}</div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small data-price-unit>/M tokens</small></th><th>输出<br><small data-price-unit>/M tokens</small></th><th>读取<br><small data-price-unit>/M tokens</small></th><th>发布时间</th></tr></thead><tbody id="rows">${modelRows}</tbody></table></div><script>${modelFilterScript()}${currencyToggleScript()}</script></section></main>`
+  const body = `<main class="modelsShell providerShell"><aside class="filterPanel providerNewsRail"><a class="btn backToPlaza" href="/">← 返回模型广场</a></aside><section class="mainPanel"><div class="plazaHead"><div><h1>${escapeHtml(label)}</h1><p class="rawIntro">${models.length} 个模型</p></div></div><div class="listToolbar"><div class="quickFilters" aria-label="模态筛选">${quickFilters}</div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small data-price-unit>/M tokens</small></th><th>输出<br><small data-price-unit>/M tokens</small></th><th>读取<br><small data-price-unit>/M tokens</small></th><th>发布时间</th></tr></thead><tbody id="rows">${modelRows}</tbody></table></div><script>${modelFilterScript()}${currencyToggleScript()}</script></section></main>`
   return page(`${label} · Provider · mddb.dev`, body, 'models', currencyToggle(graph))
 }
 
@@ -92,14 +89,14 @@ function modelReleaseTimestamp(node: OpenRouterRawNode): number {
 export function renderOpenRouterRawDetail(graph: OpenRouterRawGraph, node: OpenRouterRawNode): string {
   const outEdges = graph.edges.filter((edge) => edge.from === node.id)
   const inEdges = graph.edges.filter((edge) => edge.to === node.id && edge.from !== node.id)
-  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/models/">← 返回模型广场</a><div class="eyebrow">Author · ${escapeHtml(node.derived.author ?? '—')}</div><h1>${escapeHtml(node.displayName)}</h1><div class="modelIdHero">Model ID ${renderModelTagCopy(node.modelId)}</div><div hidden>${modelDescription(node)}</div>${renderHeroRelations(graph, node, outEdges, inEdges)}</div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#spec">规格</a><a href="#pricing">价格</a><a href="#source">数据来源与源数据</a></nav>${renderSpecSection(node)}${renderPricingSection(graph, node)}${renderSourceSection(node, outEdges, inEdges)}</article></div><script>${currencyToggleScript()}</script></main>`
+  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/">← 返回模型广场</a><div class="eyebrow">Author · ${escapeHtml(node.derived.author ?? '—')}</div><h1>${escapeHtml(node.displayName)}</h1><div class="modelIdHero">Model ID ${renderModelTagCopy(node.modelId)}</div><div hidden>${modelDescription(node)}</div>${renderHeroRelations(graph, node, outEdges, inEdges)}</div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#spec">规格</a><a href="#pricing">价格</a><a href="#source">数据来源与源数据</a></nav>${renderSpecSection(node)}${renderPricingSection(graph, node)}${renderSourceSection(node, outEdges, inEdges)}</article></div><script>${currencyToggleScript()}</script></main>`
   return page(`${node.displayName} · mddb.dev`, body, 'models', currencyToggle(graph))
 }
 
-function providerSummaries(graph: OpenRouterRawGraph, feed: ModelNewsFeed): Array<{ id: string; label: string; modelCount: number; newsCount: number }> {
+function providerSummaries(graph: OpenRouterRawGraph): Array<{ id: string; label: string; modelCount: number; newsCount: number }> {
   const ids = new Set(graph.nodes.map((node) => node.provider))
   return Array.from(ids)
-    .map((id) => ({ id, label: providerDisplayName(graph, id), modelCount: visibleProviderModels(graph, id).length, newsCount: providerNewsItems(feed, id).length }))
+    .map((id) => ({ id, label: providerDisplayName(graph, id), modelCount: visibleProviderModels(graph, id).length, newsCount: 0 }))
     .filter((provider) => provider.modelCount > 0)
     .sort((a, b) => b.modelCount - a.modelCount || a.label.localeCompare(b.label))
 }
@@ -114,18 +111,6 @@ function providerDisplayName(graph: OpenRouterRawGraph, providerId: string): str
   return displayProviderLabel(node?.providerName ?? providerId)
 }
 
-function providerNewsItems(feed: ModelNewsFeed, providerId: string) {
-  return feed.items.filter((item) => item.tags.providers.includes(providerId)).sort((a, b) => Date.parse(b.publishedAt ?? '') - Date.parse(a.publishedAt ?? ''))
-}
-
-function renderProviderRailNewsCard(item: ModelNewsFeed['items'][number]): string {
-  return `<article class="providerRailNewsCard"><time datetime="${escapeHtml(item.publishedAt ?? '')}">${escapeHtml(shortZhDate(item.publishedAt))}</time><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a></article>`
-}
-
-function renderProviderNewsCard(item: ModelNewsFeed['items'][number]): string {
-  return `<article class="providerNewsCard"><time datetime="${escapeHtml(item.publishedAt ?? '')}">${escapeHtml(shortZhDate(item.publishedAt))}</time><h3><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a></h3>${item.summary ? `<p>${escapeHtml(item.summary)}</p>` : ''}<a class="modelLink" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">查看原文 ↗</a></article>`
-}
-
 function displayProviderLabel(value: string): string {
   if (!value) return value
   const canonical = value.toLowerCase()
@@ -135,13 +120,6 @@ function displayProviderLabel(value: string): string {
   if (canonical === 'deepseek') return 'DeepSeek'
   if (value === value.toLowerCase()) return value.split(/[-_]/u).map((part) => part ? `${part.slice(0, 1).toUpperCase()}${part.slice(1)}` : part).join(' ')
   return value
-}
-
-function shortZhDate(value: string | null | undefined): string {
-  if (!value) return '时间未知'
-  const date = new Date(value)
-  if (Number.isNaN(date.getTime())) return '时间未知'
-  return new Intl.DateTimeFormat('zh-CN', { month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Shanghai' }).format(date)
 }
 
 function renderHeroRelations(graph: OpenRouterRawGraph, node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[], inEdges: OpenRouterRawEdge[]): string {
@@ -395,7 +373,7 @@ function page(title: string, body: string, activePage: ActivePage, navExtra = ''
 function nav(activePage: ActivePage, navExtra = ''): string {
   const modelsClass = activePage === 'models' ? ' class="active"' : ''
   const search = activePage === 'models' ? '<label class="topSearch">⌕ <input id="q" type="search" placeholder="搜索模型 / provider / author / source" autocomplete="off"></label>' : '<div class="topSearch">⌕ 搜索</div>'
-  return `<header class="topbar"><nav class="nav"><a class="brandmark" href="/">${databaseLogo()}<span>mddb.dev</span><span class="brandZh">大模型数据库</span></a>${search}<a class="githubLink" href="https://github.com/imphillip/mddb" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库">${githubLogo()}</a><div class="navlinks"><a href="/">模型动态</a><a${modelsClass} href="/models/">模型广场</a></div>${navExtra}</nav></header>`
+  return `<header class="topbar"><nav class="nav"><a class="brandmark" href="/">${databaseLogo()}<span>mddb.dev</span><span class="brandZh">大模型数据库</span></a>${search}<a class="githubLink" href="https://github.com/imphillip/mddb" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库">${githubLogo()}</a><div class="navlinks"><a${modelsClass} href="/">模型广场</a></div>${navExtra}</nav></header>`
 }
 
 function currencyToggle(graph: OpenRouterRawGraph): string {
@@ -579,7 +557,7 @@ filterInputs.forEach(input=>input.addEventListener('change',applyModelFilters));
 outputButtons.forEach(button=>button.addEventListener('click',()=>{outputFilter=button.dataset.outputFilter||'all';outputButtons.forEach(item=>item.classList.toggle('active',item===button));applyModelFilters();}));
 if(q) q.addEventListener('input',applyModelFilters);
 window.applyModelFilters=applyModelFilters;
-window.modelPlazaProviderUrl=function(provider){return '/models/?provider='+encodeURIComponent(provider)};
+window.modelPlazaProviderUrl=function(provider){return '/?provider='+encodeURIComponent(provider)};
 applyModelFilters();
 })();`
 }

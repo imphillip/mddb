@@ -113,7 +113,7 @@ describe('buildModelGalleryFromOpenRouterCatalog', () => {
     const openRouterRouter = gallery.details.find((model) => model.tag === 'openrouter-free')
     expect(openRouterRouter).toMatchObject({
       name: 'Free Models Router',
-      route: '/models/openrouter-free',
+      route: '/openrouter-free',
       apiIdentifier: 'free',
     })
   })

@@ -8,7 +8,7 @@ function makeOpenRouterGallery(): OpenRouterGallery {
     models: [
       {
         tag: 'gemini-2-5-pro',
-        route: '/models/gemini-2-5-pro',
+        route: '/gemini-2-5-pro',
         name: 'Gemini 2.5 Pro',
         brand: { slug: 'google', name: 'Google', description: 'Google models' },
         description: 'OpenRouter canonical Gemini row',
@@ -25,7 +25,7 @@ function makeOpenRouterGallery(): OpenRouterGallery {
     details: [
       {
         tag: 'gemini-2-5-pro',
-        route: '/models/gemini-2-5-pro',
+        route: '/gemini-2-5-pro',
         name: 'Gemini 2.5 Pro',
         brand: { slug: 'google', name: 'Google', description: 'Google models' },
         description: 'OpenRouter canonical Gemini row',

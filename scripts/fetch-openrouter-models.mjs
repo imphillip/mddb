@@ -239,7 +239,7 @@ if (FETCH_PAGES) {
         id: page.id,
         provider: 'openrouter',
         modelId: page.id,
-        route: `/models/openrouter/${encodeURIComponent(page.id)}`,
+        route: `/openrouter/${encodeURIComponent(page.id)}`,
         sourceUrl: page.url,
         htmlLength: html.length,
         extracted: extractNextFlightData(html),
@@ -249,7 +249,7 @@ if (FETCH_PAGES) {
         id: page.id,
         provider: 'openrouter',
         modelId: page.id,
-        route: `/models/openrouter/${encodeURIComponent(page.id)}`,
+        route: `/openrouter/${encodeURIComponent(page.id)}`,
         sourceUrl: page.url,
         error: error instanceof Error ? error.message : String(error),
       }

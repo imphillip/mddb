@@ -81,7 +81,7 @@ function toModelDetail(tag: string, records: OpenRouterModelRecord[]): ModelDeta
   const priceWarnings = detectUnexplainedPriceConflicts(officialPriceSets)
   return {
     tag,
-    route: `/models/${tag}`,
+    route: `/${tag}`,
     name: best.displayName,
     brand: { ...best.brand, description: brandDescription(best.brand.slug) },
     description: translateOpenRouterDescription(best.metadata.description, best.displayName, providerNames.length),

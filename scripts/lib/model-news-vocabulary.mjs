@@ -11,7 +11,7 @@ export function buildModelNewsVocabulary(graph) {
     if (node.nodeKind !== 'source_model') continue
     sourceProviderIds.add(normalizeProviderVariant(node.provider))
     const org = normalizeOrganization(node.providerName || node.provider)
-    if (!sourceProviderRoutesByOrg.has(org.id)) sourceProviderRoutesByOrg.set(org.id, `/models/${node.urlProvider ?? node.provider}/`)
+    if (!sourceProviderRoutesByOrg.has(org.id)) sourceProviderRoutesByOrg.set(org.id, `/${node.urlProvider ?? node.provider}/`)
     if (!sourceProviderLabelsByOrg.has(org.id)) sourceProviderLabelsByOrg.set(org.id, org.name)
   }
   const providerByName = new Map()
@@ -27,14 +27,14 @@ export function buildModelNewsVocabulary(graph) {
       providerById.set(provider.id, {
       id: provider.id,
       name: provider.name,
-      route: `/models/${provider.id}/`,
+      route: `/${provider.id}/`,
       aliases: unique([provider.name, provider.id, provider.id.replace(/-/g, ' '), provider.name.replace(/-/g, ' ')]),
     })
   }
   for (const node of graph.nodes) {
     const org = normalizeOrganization(node.providerName || node.provider)
     const providerRouteId = normalizeProviderVariant(node.provider)
-    const route = sourceProviderRoutesByOrg.get(org.id) ?? (sourceProviderIds.has(providerRouteId) ? `/models/${providerRouteId}/` : `/models/?provider=${encodeURIComponent(providerRouteId)}`)
+    const route = sourceProviderRoutesByOrg.get(org.id) ?? (sourceProviderIds.has(providerRouteId) ? `/${providerRouteId}/` : `/?provider=${encodeURIComponent(providerRouteId)}`)
     if (!providerById.has(org.id)) {
       providerById.set(org.id, {
         id: org.id,
@@ -66,7 +66,7 @@ export function buildModelNewsVocabulary(graph) {
     const key = `${anchor.provider}/${anchor.modelId}`
     const existing = modelByKey.get(key) ?? {
       modelId: anchor.modelId,
-      route: `/models/${anchor.urlProvider}/${anchor.urlModelId}/`,
+      route: `/${anchor.urlProvider}/${anchor.urlModelId}/`,
       provider: anchor.provider,
       sourceId: anchor.sourceId,
       displayName: anchor.displayName,

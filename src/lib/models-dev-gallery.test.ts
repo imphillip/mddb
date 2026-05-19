@@ -158,7 +158,7 @@ describe('buildModelGalleryFromModelsDevIndex', () => {
     const gpt4o = gallery.models.find((model) => model.tag === 'gpt-4o')
     expect(gpt4o).toMatchObject({
       tag: 'gpt-4o',
-      route: '/models/gpt-4o',
+      route: '/gpt-4o',
       name: 'GPT-4o',
       brand: { slug: 'openai', name: 'OpenAI' },
       modalities: ['文本', '视觉', '工具'],
@@ -286,7 +286,7 @@ describe('models.dev-backed rendering', () => {
     expect(detailHtml).toContain('Azure AI Foundry')
     expect(detailHtml).toContain('OpenRouter')
     expect(detailHtml).not.toContain('<h2>可用来源</h2>')
-    expect(detailHtml).not.toContain('GET /models/gpt-4o')
+    expect(detailHtml).not.toContain('GET /gpt-4o')
 
     const noDateHtml = renderModelDetailPage('mystery-model', gallery.details)
     expect(noDateHtml).toContain('<span>发布日期</span><b>—</b>')

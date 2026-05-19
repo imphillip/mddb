@@ -3,7 +3,7 @@ set -euo pipefail
 
 WORKSPACE_DIR=${WORKSPACE_DIR:-"$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"}
 PUBLIC_DIR=${PUBLIC_DIR:-"${WORKSPACE_DIR}/public"}
-RUNTIME_DIR=${RUNTIME_DIR:-/srv/mddb.dev/www}
+RUNTIME_DIR=${RUNTIME_DIR:-/srv/models.mddb.dev/www}
 DRY_RUN=${DRY_RUN:-0}
 
 if ! command -v rsync >/dev/null 2>&1; then
@@ -23,8 +23,8 @@ npm test
 npm run typecheck
 npm run build
 
-if [[ ! -f "${PUBLIC_DIR}/index.html" || ! -f "${PUBLIC_DIR}/models/index.html" ]]; then
-  echo "deploy-static-site: build output is missing required pages in ${PUBLIC_DIR}" >&2
+if [[ ! -f "${PUBLIC_DIR}/index.html" ]]; then
+  echo "deploy-static-site: build output is missing required index.html in ${PUBLIC_DIR}" >&2
   exit 1
 fi
 

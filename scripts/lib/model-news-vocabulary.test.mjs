@@ -20,7 +20,7 @@ describe('buildModelNewsVocabulary', () => {
     expect(vocab.models[0]).toMatchObject({
       modelId: 'claude-4.7',
       sourceId: 'anthropic/claude-4.7',
-      route: '/models/anthropic/claude-4.7/',
+      route: '/anthropic/claude-4.7/',
     })
     expect(vocab.models[0].aliases).toContain('claude-4.7-fast')
     expect(vocab.models[0].aliasSourceIds).toContain('anthropic/claude-4.7-fast')
@@ -65,9 +65,9 @@ describe('buildModelNewsVocabulary', () => {
     const vocab = buildModelNewsVocabulary(graph)
 
     expect(vocab.providers).toEqual(expect.arrayContaining([
-      expect.objectContaining({ id: 'xai', name: 'xAI', route: '/models/x-ai/' }),
-      expect.objectContaining({ id: 'together', name: 'Together', route: '/models/?provider=together' }),
-      expect.objectContaining({ id: 'anthropic', name: 'Anthropic', route: '/models/anthropic/' }),
+      expect.objectContaining({ id: 'xai', name: 'xAI', route: '/x-ai/' }),
+      expect.objectContaining({ id: 'together', name: 'Together', route: '/?provider=together' }),
+      expect.objectContaining({ id: 'anthropic', name: 'Anthropic', route: '/anthropic/' }),
     ]))
   })
 })

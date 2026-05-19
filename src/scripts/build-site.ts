@@ -3,7 +3,6 @@ import { dirname, join } from 'node:path'
 import { buildDataQualityReport } from '../lib/data-quality.js'
 import { readNewRegistry, renderNewModelDetail, renderNewModelsHome } from '../lib/new-registry-renderer.js'
 import { buildOpenRouterRawGraphFromFiles } from '../lib/openrouter-raw-graph.js'
-import { readModelNews, renderModelNewsHome } from '../lib/model-news-renderer.js'
 import { renderOpenRouterProviderDetail, renderOpenRouterRawDetail, renderOpenRouterRawHome } from '../lib/openrouter-raw-renderer.js'
 
 const outputDir = join(process.cwd(), 'public')
@@ -19,9 +18,7 @@ attachCurrency(graph, join(process.cwd(), '.internal', 'source-data', 'exchange-
 
 rmSync(outputDir, { recursive: true, force: true })
 
-const feed = readModelNews(join(process.cwd(), 'data', 'model-news-tagged.json'))
-writePage('index.html', renderModelNewsHome(graph, feed))
-writePage('models/index.html', renderOpenRouterRawHome(graph))
+writePage('index.html', renderOpenRouterRawHome(graph))
 const newRegistry = readNewRegistry()
 if (newRegistry) {
   writePage('assets/new-models.css', readFileSync(join(process.cwd(), 'src', 'lib', 'new-models.css'), 'utf8'))
@@ -41,12 +38,12 @@ writePage('graph/missing-provider-observation.json', JSON.stringify(dataQuality.
 writePage('graph/page-only-candidates.json', JSON.stringify(dataQuality.pageOnly.candidates, null, 2))
 
 for (const node of graph.nodes) {
-  writePage(`models/${node.urlProvider}/${node.urlModelId}/index.html`, renderOpenRouterRawDetail(graph, node))
+  writePage(`${node.urlProvider}/${node.urlModelId}/index.html`, renderOpenRouterRawDetail(graph, node))
 }
 
 for (const providerId of Array.from(new Set(graph.nodes.map((node) => node.provider)))) {
   if (graph.nodes.some((node) => node.provider === providerId && node.nodeKind === 'source_model')) {
-    writePage(`models/${providerId}/index.html`, renderOpenRouterProviderDetail(graph, providerId, feed))
+    writePage(`${providerId}/index.html`, renderOpenRouterProviderDetail(graph, providerId))
   }
 }
 

@@ -121,7 +121,7 @@ const provider = {
 const modelDetails: ModelDetail[] = [
   {
     tag: 'claude-sonnet-4',
-    route: '/models/claude-sonnet-4',
+    route: '/claude-sonnet-4',
     name: 'Claude Sonnet 4',
     brand: brands[0]!,
     description: '平衡编码、推理与日常智能体任务的高性能 Claude 模型。',
@@ -182,7 +182,7 @@ const modelDetails: ModelDetail[] = [
   },
   {
     tag: 'gpt-4o',
-    route: '/models/gpt-4o',
+    route: '/gpt-4o',
     name: 'GPT-4o',
     brand: brands[1]!,
     description: 'OpenAI 多模态旗舰模型，覆盖文本、图像和实时交互场景。',
@@ -233,7 +233,7 @@ const modelDetails: ModelDetail[] = [
   },
   {
     tag: 'gemini-2-5-pro',
-    route: '/models/gemini-2-5-pro',
+    route: '/gemini-2-5-pro',
     name: 'Gemini 2.5 Pro',
     brand: brands[2]!,
     description: 'Google 长上下文推理模型，适合大型文档、视频和代码库理解。',
@@ -281,7 +281,7 @@ const modelDetails: ModelDetail[] = [
   },
   {
     tag: 'deepseek-r1',
-    route: '/models/deepseek-r1',
+    route: '/deepseek-r1',
     name: 'DeepSeek R1',
     brand: brands[3]!,
     description: '开放推理模型，适合数学、代码和显式思维链类任务。',
@@ -329,7 +329,7 @@ const modelDetails: ModelDetail[] = [
   },
   {
     tag: 'llama-3-1-405b-instruct',
-    route: '/models/llama-3-1-405b-instruct',
+    route: '/llama-3-1-405b-instruct',
     name: 'Llama 3.1 405B Instruct',
     brand: brands[4]!,
     description: 'Meta 大规模开放指令模型，适合私有化和多 provider 竞价。',

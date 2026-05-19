@@ -2,18 +2,17 @@
 
 mddb.dev 是一个面向 AI 中转服务 / new-api 生态的开放模型数据库（LLM model registry）。它把 OpenRouter 等上游来源中的模型路由、部署 provider、规格、价格和来源证据整理成可由人阅读、也可由机器消费的 **有向模型图谱**。
 
-公开站点：<https://mddb.dev/models/>
+公开站点：<https://models.mddb.dev/>
 
 ## 当前公开站点
 
 当前站点已经从纯数据仓库推进到可浏览的静态模型数据库：
 
-- `/`：模型动态，展示来自 AIHOT 的模型/AI 行业相关新闻，并按 provider / model tag 连接回实体页；
-- `/models/`：模型广场，按 provider-scoped identity 展示可用模型，支持厂牌筛选、搜索、模态筛选、模型 tag 复制和 USD/CNY 价格切换；
-- `/models/<provider>/`：Provider 页面，右侧复用模型广场列表样式展示该 provider 的模型，左侧展示相关模型动态；
-- `/models/<provider>/<model-id>/`：模型详情页，展示规格、价格、来源、关系和原始证据。
+- `/`：模型广场，按 provider-scoped identity 展示可用模型，支持厂牌筛选、搜索、模态筛选、模型 tag 复制和 USD/CNY 价格切换；
+- `/<provider>/`：Provider 页面，复用模型广场列表样式展示该 provider 的模型；
+- `/<provider>/<model-id>/`：模型详情页，展示规格、价格、来源、关系和原始证据。
 
-公开站点：<https://mddb.dev/>
+公开站点：<https://models.mddb.dev/>
 
 ## 核心定位
 
@@ -22,7 +21,7 @@ mddb.dev 是一个面向 AI gateway / OpenRouter / new-api 生态的开放模型
 核心原则：
 
 - **OpenRouter-first identity**：OpenRouter 是当前 canonical import 的基础来源；
-- **provider-scoped model path**：公开详情页采用 `/models/<provider>/<model-id>/`；
+- **provider-scoped model path**：公开详情页采用 `/<provider>/<model-id>/`；
 - **author 与 provider 分离**：author 是研发方，provider 是实际部署/提供服务的一方；
 - **secondary source 只做 enrichment**：models.dev、BaseLLM/NewAPI、AIHOT 等补充 logo、价格、动态和可用性，不直接覆盖 OpenRouter-first identity；
 - **provenance-first**：价格、规格、provider availability、alias、source record 都保留来源和观察证据；
@@ -43,32 +42,23 @@ mddb.dev 是一个面向 AI gateway / OpenRouter / new-api 生态的开放模型
 
 ### Provider 页面
 
-Provider 页面用于回答“这个 provider 下有哪些模型，以及最近相关动态是什么”：
+Provider 页面用于回答“这个 provider 下有哪些模型”：
 
-- URL：`/models/<provider>/`；
+- URL：`/<provider>/`；
 - 右侧模型列表复用模型广场默认列表样式；
-- 左侧保留返回模型广场入口，并显示该 provider 相关的最新模型动态；
-- 旧 `/models/providers/<provider>/` 路径不再作为有效入口。
+- 左侧保留返回模型广场入口；
+- 旧 `/models/providers/<provider>/` 和 `/models/<provider>/` 路径不再作为有效入口。
 
 ### 模型详情页
 
 模型详情页用于查看单个 provider-scoped model node：
 
-- URL：`/models/<provider>/<model-id>/`；
+- URL：`/<provider>/<model-id>/`；
 - 标题区显示 case-preserved model id 和关系 chips；
 - 展示 input/output modalities、context length、max output、tokenizer、released、supported parameters 等规格；
 - 展示 OpenRouter endpoint price，以及 BaseLLM/NewAPI 补充价格（仅当 OpenRouter 缺价时）；
 - 价格同样受全站 USD/CNY 切换影响；
 - 展示 source/raw evidence，便于审计。
-
-### 模型动态
-
-模型动态来自 AIHOT：
-
-- 默认使用 `mode=all` 拉取，然后按 provider/model vocabulary 做 deterministic tagging；
-- 只导出与模型/provider 相关的动态；
-- provider/model tag 可点击跳回 `/models/<provider>/` 或 `/models/<provider>/<model-id>/`；
-- 当前运行环境会每 20 分钟静默拉取一次 AIHOT 并写入本地 SQLite；异常时才告警。
 
 ## 数据模型
 
@@ -146,7 +136,7 @@ price_per_1m_usd = ratio * 2
 - 公开导出：`data/model-news-tagged.json`
 - 刷新命令：`npm run data:news`
 
-AIHOT 用于模型动态，不作为 canonical model identity 来源。
+AIHOT 不作为 canonical model identity 来源；当前公开站点不生成模型动态页面。
 
 ## 数据质量与 refresh gate
 
@@ -313,6 +303,8 @@ PR 应满足：
 
 `npm run build` 会把生成的 HTML 写入 `public/`。需要部署时，deploy script 会把生成结果发布到 `RUNTIME_DIR` 配置的 runtime root。
 
+默认公开 deliverable 目标是 `https://models.mddb.dev/`，runtime root 是 `/srv/models.mddb.dev/www`。现有 `https://mddb.dev/` 暂时不作为开源 deliverable 的默认部署目标；如需部署到其它环境，可显式覆盖 `RUNTIME_DIR`。
+
 ```bash
 npm run deploy
 ```
@@ -321,6 +313,12 @@ Dry run：
 
 ```bash
 npm run deploy:dry-run
+```
+
+保留旧站点时可手动指定：
+
+```bash
+RUNTIME_DIR=/srv/mddb.dev/www npm run deploy
 ```
 
 ## License

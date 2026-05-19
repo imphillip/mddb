@@ -44,7 +44,7 @@ describe('deployment separation', () => {
 
     expect(script).toContain('WORKSPACE_DIR')
     expect(script).toContain('PUBLIC_DIR')
-    expect(script).toContain('RUNTIME_DIR=${RUNTIME_DIR:-/srv/mddb.dev/www}')
+    expect(script).toContain('RUNTIME_DIR=${RUNTIME_DIR:-/srv/models.mddb.dev/www}')
     expect(script).toContain('rsync')
     expect(script).toContain('npm run build')
   })

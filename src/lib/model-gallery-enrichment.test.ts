@@ -12,7 +12,7 @@ const openRouterGallery: OpenRouterGallery = {
   details: [
     {
       tag: 'gpt-4o',
-      route: '/models/gpt-4o',
+      route: '/gpt-4o',
       name: 'GPT-4o',
       brand: { slug: 'openai', name: 'OpenAI', description: 'OpenAI models.' },
       description: 'OpenRouter primary GPT-4o row.',
@@ -44,7 +44,7 @@ const openRouterGallery: OpenRouterGallery = {
     },
     {
       tag: 'palmyra-x5',
-      route: '/models/palmyra-x5',
+      route: '/palmyra-x5',
       name: 'Palmyra X5',
       brand: { slug: 'writer', name: 'Writer', description: 'Writer models.' },
       description: 'OpenRouter primary Palmyra row.',
@@ -90,7 +90,7 @@ const modelsDevGallery: ModelsDevGallery = {
   details: [
     {
       tag: 'gpt-4o',
-      route: '/models/gpt-4o',
+      route: '/gpt-4o',
       name: 'GPT-4o',
       brand: { slug: 'openai', name: 'OpenAI', description: 'OpenAI models.', logoUrl: 'https://models.dev/logos/openai.svg' },
       description: 'models.dev GPT-4o row.',
@@ -125,7 +125,7 @@ const modelsDevGallery: ModelsDevGallery = {
     },
     {
       tag: 'lfm-40b',
-      route: '/models/lfm-40b',
+      route: '/lfm-40b',
       name: 'LFM 40B',
       brand: { slug: 'liquid-ai', name: 'Liquid AI', description: 'Liquid AI models.', logoUrl: 'https://models.dev/logos/liquid.svg' },
       description: 'Independent Liquid AI model.',
@@ -146,7 +146,7 @@ const modelsDevGallery: ModelsDevGallery = {
     },
     {
       tag: 'gpt-4o-mini-copy',
-      route: '/models/gpt-4o-mini-copy',
+      route: '/gpt-4o-mini-copy',
       name: 'GPT-4o Mini Copy',
       brand: { slug: 'other', name: 'Other', description: 'Provider wrapper.' },
       description: 'Provider wrapper alias.',
