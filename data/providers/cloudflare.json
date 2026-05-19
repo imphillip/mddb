@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "gemma-3-12b-it",
-      "model": "Google: Gemma 3 12B",
+      "model": "Gemma 3 12B",
       "endpoint_path": "/images/generations",
       "api_model_id": "cloudflare",
       "mode": "image",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000000345",
             "completion": "0.000000556",
@@ -57,13 +57,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemma-3-12b-it#Cloudflare | google/gemma-3-12b-it",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "gemma-4-26b-a4b-it",
-      "model": "Google: Gemma 4 26B A4B  (free)",
+      "model": "Gemma 4 26B A4B  (free)",
       "endpoint_path": "/images/generations",
       "api_model_id": "cloudflare",
       "mode": "image",
@@ -82,7 +82,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000003",
@@ -119,13 +119,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemma-4-26b-a4b-it:free#Cloudflare | google/gemma-4-26b-a4b-it-20260403",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-4.7-flash",
-      "model": "Z.ai: GLM 4.7 Flash",
+      "model": "GLM 4.7 Flash",
       "endpoint_path": "/chat/completions",
       "api_model_id": "cloudflare",
       "mode": "chat",
@@ -144,7 +144,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000000605",
             "completion": "0.0000004",
@@ -182,7 +182,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.7-flash#Cloudflare | z-ai/glm-4.7-flash-20260119",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
@@ -207,7 +207,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000000017",
             "completion": "0.000000112",
@@ -239,13 +239,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "ibm-granite/granite-4.0-h-micro#Cloudflare | ibm-granite/granite-4.0-h-micro",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "kimi-k2.5",
-      "model": "MoonshotAI: Kimi K2.5",
+      "model": "Kimi K2.5",
       "endpoint_path": "/images/generations",
       "api_model_id": "cloudflare",
       "mode": "image",
@@ -264,7 +264,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.000003",
@@ -303,13 +303,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2.5#Cloudflare | moonshotai/kimi-k2.5-0127",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "kimi-k2.6",
-      "model": "MoonshotAI: Kimi K2.6",
+      "model": "Kimi K2.6",
       "endpoint_path": "/images/generations",
       "api_model_id": "cloudflare",
       "mode": "image",
@@ -328,7 +328,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000095",
             "completion": "0.000004",
@@ -367,13 +367,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2.6#Cloudflare | moonshotai/kimi-k2.6-20260420",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "llama-3-8b-instruct",
-      "model": "Meta: Llama 3 8B Instruct",
+      "model": "Llama 3 8B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "cloudflare",
       "mode": "chat",
@@ -392,7 +392,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000000282",
             "completion": "0.000000827",
@@ -424,13 +424,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3-8b-instruct#Cloudflare | meta-llama/llama-3-8b-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "llama-3.1-8b-instruct",
-      "model": "Meta: Llama 3.1 8B Instruct",
+      "model": "Llama 3.1 8B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "cloudflare/fp8",
       "mode": "chat",
@@ -449,7 +449,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000000152",
             "completion": "0.000000287",
@@ -481,13 +481,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.1-8b-instruct#Cloudflare | meta-llama/llama-3.1-8b-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "llama-3.2-1b-instruct",
-      "model": "Meta: Llama 3.2 1B Instruct",
+      "model": "Llama 3.2 1B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "cloudflare",
       "mode": "chat",
@@ -506,7 +506,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000000027",
             "completion": "0.000000201",
@@ -538,13 +538,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.2-1b-instruct#Cloudflare | meta-llama/llama-3.2-1b-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "llama-3.2-3b-instruct",
-      "model": "Meta: Llama 3.2 3B Instruct (free)",
+      "model": "Llama 3.2 3B Instruct (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "cloudflare",
       "mode": "chat",
@@ -563,7 +563,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000000509",
             "completion": "0.000000335",
@@ -595,13 +595,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.2-3b-instruct:free#Cloudflare | meta-llama/llama-3.2-3b-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "llama-3.3-70b-instruct",
-      "model": "Meta: Llama 3.3 70B Instruct (free)",
+      "model": "Llama 3.3 70B Instruct (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "cloudflare/fp8",
       "mode": "chat",
@@ -620,7 +620,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000000293",
             "completion": "0.000002253",
@@ -652,7 +652,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.3-70b-instruct:free#Cloudflare | meta-llama/llama-3.3-70b-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
@@ -677,7 +677,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000000484",
             "completion": "0.00000003",
@@ -709,13 +709,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-guard-3-8b#Cloudflare | meta-llama/llama-guard-3-8b",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "mistral-7b-instruct-v0.1",
-      "model": "Mistral: Mistral 7B Instruct v0.1",
+      "model": "Mistral 7B Instruct v0.1",
       "endpoint_path": "/chat/completions",
       "api_model_id": "cloudflare",
       "mode": "chat",
@@ -734,7 +734,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000011",
             "completion": "0.00000019",
@@ -766,13 +766,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "mistralai/mistral-7b-instruct-v0.1#Cloudflare | mistralai/mistral-7b-instruct-v0.1",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "mistral-small-3.1-24b-instruct",
-      "model": "Mistral: Mistral Small 3.1 24B",
+      "model": "Mistral Small 3.1 24B",
       "endpoint_path": "/images/generations",
       "api_model_id": "cloudflare",
       "mode": "image",
@@ -791,7 +791,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000000351",
             "completion": "0.000000555",
@@ -823,7 +823,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "mistralai/mistral-small-3.1-24b-instruct#Cloudflare | mistralai/mistral-small-3.1-24b-instruct-2503",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
@@ -848,7 +848,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000066",
             "completion": "0.000001",
@@ -880,12 +880,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen-2.5-coder-32b-instruct#Cloudflare | qwen/qwen-2.5-coder-32b-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

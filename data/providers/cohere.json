@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "command-a",
-      "model": "Cohere: Command A",
+      "model": "Command A",
       "endpoint_path": "/chat/completions",
       "api_model_id": "cohere",
       "mode": "chat",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000025",
             "completion": "0.00001",
@@ -56,13 +56,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "cohere/command-a#Cohere | cohere/command-a-03-2025",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "command-r-08-2024",
-      "model": "Cohere: Command R (08-2024)",
+      "model": "Command R (08-2024)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "cohere",
       "mode": "chat",
@@ -81,7 +81,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.0000006",
@@ -114,13 +114,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "cohere/command-r-08-2024#Cohere | cohere/command-r-08-2024",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "command-r-plus-08-2024",
-      "model": "Cohere: Command R+ (08-2024)",
+      "model": "Command R+ (08-2024)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "cohere",
       "mode": "chat",
@@ -139,7 +139,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000025",
             "completion": "0.00001",
@@ -172,13 +172,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "cohere/command-r-plus-08-2024#Cohere | cohere/command-r-plus-08-2024",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "command-r7b-12-2024",
-      "model": "Cohere: Command R7B (12-2024)",
+      "model": "Command R7B (12-2024)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "cohere",
       "mode": "chat",
@@ -197,7 +197,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000000375",
             "completion": "0.00000015",
@@ -228,12 +228,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "cohere/command-r7b-12-2024#Cohere | cohere/command-r7b-12-2024",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

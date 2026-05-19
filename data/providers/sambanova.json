@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "deepseek-chat-v3.1",
-      "model": "DeepSeek: DeepSeek V3.1",
+      "model": "DeepSeek V3.1",
       "endpoint_path": "/chat/completions",
       "api_model_id": "sambanova/fp8",
       "mode": "chat",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000065",
             "completion": "0.0000015",
@@ -55,13 +55,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-chat-v3.1#SambaNova | deepseek/deepseek-chat-v3.1",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "gemma-3-12b-it",
-      "model": "Google: Gemma 3 12B",
+      "model": "Gemma 3 12B",
       "endpoint_path": "/images/generations",
       "api_model_id": "sambanova",
       "mode": "image",
@@ -80,7 +80,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000035",
             "completion": "0.00000059",
@@ -106,13 +106,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemma-3-12b-it#SambaNova | google/gemma-3-12b-it",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "gpt-oss-120b",
-      "model": "OpenAI: gpt-oss-120b (free)",
+      "model": "gpt-oss-120b (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "sambanova",
       "mode": "chat",
@@ -131,7 +131,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000014",
             "completion": "0.00000095",
@@ -161,13 +161,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-120b:free#SambaNova | openai/gpt-oss-120b",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "gpt-oss-120b",
-      "model": "OpenAI: gpt-oss-120b (free)",
+      "model": "gpt-oss-120b (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "sambanova/dedicated",
       "mode": "chat",
@@ -186,7 +186,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000014",
             "completion": "0.00000095",
@@ -216,13 +216,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-120b:free#SambaNova | openai/gpt-oss-120b",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "llama-3.3-70b-instruct",
-      "model": "Meta: Llama 3.3 70B Instruct (free)",
+      "model": "Llama 3.3 70B Instruct (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "sambanova-turbo",
       "mode": "chat",
@@ -241,7 +241,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000045",
             "completion": "0.0000009",
@@ -267,13 +267,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.3-70b-instruct:free#SambaNova | meta-llama/llama-3.3-70b-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "llama-3.3-70b-instruct",
-      "model": "Meta: Llama 3.3 70B Instruct (free)",
+      "model": "Llama 3.3 70B Instruct (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "sambanova/bf16",
       "mode": "chat",
@@ -292,7 +292,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000012",
@@ -318,13 +318,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.3-70b-instruct:free#SambaNova | meta-llama/llama-3.3-70b-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "llama-4-maverick",
-      "model": "Meta: Llama 4 Maverick",
+      "model": "Llama 4 Maverick",
       "endpoint_path": "/images/generations",
       "api_model_id": "sambanova",
       "mode": "image",
@@ -343,7 +343,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000063",
             "completion": "0.0000018",
@@ -369,13 +369,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-4-maverick#SambaNova | meta-llama/llama-4-maverick-17b-128e-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "minimax-m2.7",
-      "model": "MiniMax: MiniMax M2.7",
+      "model": "MiniMax M2.7",
       "endpoint_path": "/chat/completions",
       "api_model_id": "sambanova",
       "mode": "chat",
@@ -394,7 +394,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000024",
@@ -424,12 +424,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "minimax/minimax-m2.7#SambaNova | minimax/minimax-m2.7-20260318",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

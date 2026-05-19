@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "cydonia-24b-v4.1",
-      "model": "TheDrummer: Cydonia 24B V4.1",
+      "model": "Cydonia 24B V4.1",
       "endpoint_path": "/chat/completions",
       "api_model_id": "parasail/bf16",
       "mode": "chat",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000005",
@@ -57,13 +57,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "thedrummer/cydonia-24b-v4.1#Parasail | thedrummer/cydonia-24b-v4.1",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "deepseek-v3.2",
-      "model": "DeepSeek: DeepSeek V3.2",
+      "model": "DeepSeek V3.2",
       "endpoint_path": "/chat/completions",
       "api_model_id": "parasail/fp8",
       "mode": "chat",
@@ -82,7 +82,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000028",
             "completion": "0.00000045",
@@ -118,13 +118,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v3.2#Parasail | deepseek/deepseek-v3.2-20251201",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "deepseek-v4-flash",
-      "model": "DeepSeek: DeepSeek V4 Flash (free)",
+      "model": "DeepSeek V4 Flash (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "parasail/fp8",
       "mode": "chat",
@@ -143,7 +143,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000014",
             "completion": "0.00000028",
@@ -181,13 +181,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v4-flash:free#Parasail | deepseek/deepseek-v4-flash-20260423",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "deepseek-v4-pro",
-      "model": "DeepSeek: DeepSeek V4 Pro",
+      "model": "DeepSeek V4 Pro",
       "endpoint_path": "/chat/completions",
       "api_model_id": "parasail/fp8",
       "mode": "chat",
@@ -206,7 +206,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000174",
             "completion": "0.00000348",
@@ -244,13 +244,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v4-pro#Parasail | deepseek/deepseek-v4-pro-20260423",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "gemma-3-27b-it",
-      "model": "Google: Gemma 3 27B",
+      "model": "Gemma 3 27B",
       "endpoint_path": "/images/generations",
       "api_model_id": "parasail/fp8",
       "mode": "image",
@@ -269,7 +269,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000008",
             "completion": "0.00000045",
@@ -303,13 +303,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemma-3-27b-it#Parasail | google/gemma-3-27b-it",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "gemma-4-26b-a4b-it",
-      "model": "Google: Gemma 4 26B A4B  (free)",
+      "model": "Gemma 4 26B A4B  (free)",
       "endpoint_path": "/images/generations",
       "api_model_id": "parasail/bf16",
       "mode": "image",
@@ -328,7 +328,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000013",
             "completion": "0.0000004",
@@ -364,13 +364,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemma-4-26b-a4b-it:free#Parasail | google/gemma-4-26b-a4b-it-20260403",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "gemma-4-31b-it",
-      "model": "Google: Gemma 4 31B (free)",
+      "model": "Gemma 4 31B (free)",
       "endpoint_path": "/images/generations",
       "api_model_id": "parasail/bf16",
       "mode": "image",
@@ -389,7 +389,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000014",
             "completion": "0.0000004",
@@ -427,13 +427,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemma-4-31b-it:free#Parasail | google/gemma-4-31b-it-20260402",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-4.7",
-      "model": "Z.ai: GLM 4.7",
+      "model": "GLM 4.7",
       "endpoint_path": "/chat/completions",
       "api_model_id": "parasail/fp8",
       "mode": "chat",
@@ -452,7 +452,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000045",
             "completion": "0.0000021",
@@ -490,13 +490,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.7#Parasail | z-ai/glm-4.7-20251222",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-5",
-      "model": "Z.ai: GLM 5",
+      "model": "GLM 5",
       "endpoint_path": "/chat/completions",
       "api_model_id": "parasail/fp8",
       "mode": "chat",
@@ -515,7 +515,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000001",
             "completion": "0.0000032",
@@ -553,13 +553,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5#Parasail | z-ai/glm-5-20260211",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-5.1",
-      "model": "Z.ai: GLM 5.1",
+      "model": "GLM 5.1",
       "endpoint_path": "/chat/completions",
       "api_model_id": "parasail/fp8",
       "mode": "chat",
@@ -578,7 +578,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000014",
             "completion": "0.0000044",
@@ -616,13 +616,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5.1#Parasail | z-ai/glm-5.1-20260406",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "gpt-oss-120b",
-      "model": "OpenAI: gpt-oss-120b (free)",
+      "model": "gpt-oss-120b (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "parasail/fp4",
       "mode": "chat",
@@ -641,7 +641,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.00000075",
@@ -677,13 +677,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-120b:free#Parasail | openai/gpt-oss-120b",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "gpt-oss-20b",
-      "model": "OpenAI: gpt-oss-20b (free)",
+      "model": "gpt-oss-20b (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "parasail/fp4",
       "mode": "chat",
@@ -702,7 +702,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000004",
             "completion": "0.0000002",
@@ -738,13 +738,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-20b:free#Parasail | openai/gpt-oss-20b",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "kimi-k2.5",
-      "model": "MoonshotAI: Kimi K2.5",
+      "model": "Kimi K2.5",
       "endpoint_path": "/images/generations",
       "api_model_id": "parasail/int4",
       "mode": "image",
@@ -763,7 +763,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000028",
@@ -801,13 +801,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2.5#Parasail | moonshotai/kimi-k2.5-0127",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "kimi-k2.6",
-      "model": "MoonshotAI: Kimi K2.6",
+      "model": "Kimi K2.6",
       "endpoint_path": "/images/generations",
       "api_model_id": "parasail/int4",
       "mode": "image",
@@ -826,7 +826,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000075",
             "completion": "0.0000035",
@@ -864,13 +864,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2.6#Parasail | moonshotai/kimi-k2.6-20260420",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "llama-3.3-70b-instruct",
-      "model": "Meta: Llama 3.3 70B Instruct (free)",
+      "model": "Llama 3.3 70B Instruct (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "parasail/int8",
       "mode": "chat",
@@ -889,7 +889,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000022",
             "completion": "0.0000005",
@@ -923,13 +923,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.3-70b-instruct:free#Parasail | meta-llama/llama-3.3-70b-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "llama-4-maverick",
-      "model": "Meta: Llama 4 Maverick",
+      "model": "Llama 4 Maverick",
       "endpoint_path": "/images/generations",
       "api_model_id": "parasail/fp8",
       "mode": "image",
@@ -948,7 +948,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000035",
             "completion": "0.000001",
@@ -982,13 +982,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-4-maverick#Parasail | meta-llama/llama-4-maverick-17b-128e-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "minimax-m2.5",
-      "model": "MiniMax: MiniMax M2.5 (free)",
+      "model": "MiniMax M2.5 (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "parasail/fp8",
       "mode": "chat",
@@ -1007,7 +1007,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000012",
@@ -1045,13 +1045,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "minimax/minimax-m2.5:free#Parasail | minimax/minimax-m2.5-20260211",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "mistral-small-3.2-24b-instruct",
-      "model": "Mistral: Mistral Small 3.2 24B",
+      "model": "Mistral Small 3.2 24B",
       "endpoint_path": "/images/generations",
       "api_model_id": "parasail/bf16",
       "mode": "image",
@@ -1070,7 +1070,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000009",
             "completion": "0.0000006",
@@ -1104,13 +1104,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "mistralai/mistral-small-3.2-24b-instruct#Parasail | mistralai/mistral-small-3.2-24b-instruct-2506",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "olmo-3-32b-think",
-      "model": "AllenAI: Olmo 3 32B Think",
+      "model": "Olmo 3 32B Think",
       "endpoint_path": "/chat/completions",
       "api_model_id": "parasail/bf16",
       "mode": "chat",
@@ -1129,7 +1129,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.0000005",
@@ -1164,13 +1164,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "allenai/olmo-3-32b-think#Parasail | allenai/olmo-3-32b-think-20251121",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen2.5-vl-72b-instruct",
-      "model": "Qwen: Qwen2.5 VL 72B Instruct",
+      "model": "Qwen2.5 VL 72B Instruct",
       "endpoint_path": "/images/generations",
       "api_model_id": "parasail/fp8",
       "mode": "image",
@@ -1189,7 +1189,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000008",
             "completion": "0.000001",
@@ -1223,13 +1223,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen2.5-vl-72b-instruct#Parasail | qwen/qwen2.5-vl-72b-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen3-235b-a22b-2507",
-      "model": "Qwen: Qwen3 235B A22B Instruct 2507",
+      "model": "Qwen3 235B A22B Instruct 2507",
       "endpoint_path": "/chat/completions",
       "api_model_id": "parasail/fp8",
       "mode": "chat",
@@ -1248,7 +1248,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000006",
@@ -1284,13 +1284,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-235b-a22b-2507#Parasail | qwen/qwen3-235b-a22b-07-25",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen3-coder-next",
-      "model": "Qwen: Qwen3 Coder Next",
+      "model": "Qwen3 Coder Next",
       "endpoint_path": "/chat/completions",
       "api_model_id": "parasail/bf16",
       "mode": "chat",
@@ -1309,7 +1309,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000012",
             "completion": "0.0000008",
@@ -1345,13 +1345,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-coder-next#Parasail | qwen/qwen3-coder-next-2025-02-03",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen3-next-80b-a3b-instruct",
-      "model": "Qwen: Qwen3 Next 80B A3B Instruct (free)",
+      "model": "Qwen3 Next 80B A3B Instruct (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "parasail/fp8",
       "mode": "chat",
@@ -1370,7 +1370,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000011",
@@ -1406,13 +1406,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-next-80b-a3b-instruct:free#Parasail | qwen/qwen3-next-80b-a3b-instruct-2509",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen3-vl-235b-a22b-instruct",
-      "model": "Qwen: Qwen3 VL 235B A22B Instruct",
+      "model": "Qwen3 VL 235B A22B Instruct",
       "endpoint_path": "/images/generations",
       "api_model_id": "parasail/fp8",
       "mode": "image",
@@ -1431,7 +1431,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000021",
             "completion": "0.0000019",
@@ -1467,13 +1467,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-vl-235b-a22b-instruct#Parasail | qwen/qwen3-vl-235b-a22b-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen3-vl-8b-instruct",
-      "model": "Qwen: Qwen3 VL 8B Instruct",
+      "model": "Qwen3 VL 8B Instruct",
       "endpoint_path": "/images/generations",
       "api_model_id": "parasail/bf16",
       "mode": "image",
@@ -1492,7 +1492,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.00000075",
@@ -1528,13 +1528,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-vl-8b-instruct#Parasail | qwen/qwen3-vl-8b-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen3.5-35b-a3b",
-      "model": "Qwen: Qwen3.5-35B-A3B",
+      "model": "Qwen3.5-35B-A3B",
       "endpoint_path": "/images/generations",
       "api_model_id": "parasail/fp8",
       "mode": "image",
@@ -1553,7 +1553,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.000001",
@@ -1591,13 +1591,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-35b-a3b#Parasail | qwen/qwen3.5-35b-a3b-20260224",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen3.5-397b-a17b",
-      "model": "Qwen: Qwen3.5 397B A17B",
+      "model": "Qwen3.5 397B A17B",
       "endpoint_path": "/images/generations",
       "api_model_id": "parasail/fp8",
       "mode": "image",
@@ -1616,7 +1616,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000005",
             "completion": "0.0000036",
@@ -1654,13 +1654,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-397b-a17b#Parasail | qwen/qwen3.5-397b-a17b-20260216",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen3.6-35b-a3b",
-      "model": "Qwen: Qwen3.6 35B A3B",
+      "model": "Qwen3.6 35B A3B",
       "endpoint_path": "/images/generations",
       "api_model_id": "parasail/fp8",
       "mode": "image",
@@ -1679,7 +1679,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.000001",
@@ -1717,13 +1717,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.6-35b-a3b#Parasail | qwen/qwen3.6-35b-a3b-20260415",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "skyfall-36b-v2",
-      "model": "TheDrummer: Skyfall 36B V2",
+      "model": "Skyfall 36B V2",
       "endpoint_path": "/chat/completions",
       "api_model_id": "parasail/fp8",
       "mode": "chat",
@@ -1742,7 +1742,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000055",
             "completion": "0.0000008",
@@ -1774,13 +1774,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "thedrummer/skyfall-36b-v2#Parasail | thedrummer/skyfall-36b-v2",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "trinity-large-thinking",
-      "model": "Arcee AI: Trinity Large Thinking (free)",
+      "model": "Trinity Large Thinking (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "parasail/fp8",
       "mode": "chat",
@@ -1799,7 +1799,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000022",
             "completion": "0.00000085",
@@ -1837,13 +1837,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "arcee-ai/trinity-large-thinking:free#Parasail | arcee-ai/trinity-large-thinking",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "ui-tars-1.5-7b",
-      "model": "ByteDance: UI-TARS 7B ",
+      "model": "UI-TARS 7B",
       "endpoint_path": "/images/generations",
       "api_model_id": "parasail/bf16",
       "mode": "image",
@@ -1862,7 +1862,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000002",
@@ -1894,12 +1894,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "bytedance/ui-tars-1.5-7b#Parasail | bytedance/ui-tars-1.5-7b",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

@@ -38,11 +38,14 @@ function title(value) {
 const PROVIDER_CANONICALS = [
   { id: 'aion-labs', name: 'Aion Labs', aliases: ['aion-labs', 'aionlabs', 'AionLabs', 'Aion Labs'] },
   { id: 'amazon', name: 'Amazon', aliases: ['amazon', 'Amazon', 'amazon-bedrock', 'Amazon Bedrock'] },
+  { id: 'baidu', name: 'Baidu', aliases: ['baidu', 'Baidu', 'baidu-qianfan', 'Baidu Qianfan'] },
   { id: 'bytedance', name: 'ByteDance', aliases: ['bytedance', 'Bytedance', 'ByteDance', 'bytedance-seed', 'ByteDance Seed', 'Bytedance Seed', 'seed', 'Seed'] },
   { id: 'google', name: 'Google', aliases: ['google', 'Google', 'google-ai-studio', 'Google AI Studio'] },
   { id: 'mancer', name: 'Mancer', aliases: ['mancer', 'Mancer', 'mancer-2', 'Mancer 2'] },
+  { id: 'meta-llama', name: 'Meta', aliases: ['meta-llama', 'Meta Llama', 'Meta'] },
   { id: 'mistral', name: 'Mistral', aliases: ['mistral', 'Mistral', 'mistralai', 'Mistralai', 'MistralAI', 'mistral-ai', 'Mistral AI'] },
   { id: 'moonshot-ai', name: 'Moonshot AI', aliases: ['moonshot-ai', 'Moonshot AI', 'moonshotai', 'MoonshotAI', 'Moonshotai'] },
+  { id: 'nousresearch', name: 'NousResearch', aliases: ['nousresearch', 'NousResearch', 'nous-research', 'Nous Research', 'Nous'] },
   { id: 'xai', name: 'xAI', aliases: ['xai', 'xAI', 'XAI', 'x-ai', 'X Ai', 'X.AI'] },
   { id: 'z-ai', name: 'Z.AI', aliases: ['z-ai', 'Z Ai', 'Z-AI', 'z.ai', 'Z.AI', 'ZAI'] },
 ]
@@ -76,6 +79,32 @@ function canonicalProviderId(value) {
 
 function canonicalProviderName(id, name = id) {
   return normalizeProviderIdentity(id, name).name
+}
+
+function modelDisplayName(row, authorId, modelId) {
+  const raw = String(row?.name ?? '').trim()
+  const fallback = title(modelId)
+  if (!raw) return fallback
+  const authorName = canonicalProviderName(authorId, title(authorId))
+  const prefixAliases = providerDisplayPrefixes(authorId, authorName)
+  const prefixKeys = new Set([...prefixAliases].map((alias) => providerAliasKey(alias)))
+  const colonMatch = raw.match(/^([^:]{1,80}):\s*(.+)$/u)
+  if (colonMatch) {
+    const prefix = colonMatch[1].trim()
+    const rest = colonMatch[2].trim()
+    if (rest && prefixKeys.has(providerAliasKey(prefix))) return rest
+  }
+  for (const label of prefixAliases) {
+    const escaped = label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    const match = raw.match(new RegExp(`^${escaped}\\s+(.+)$`, 'iu'))
+    if (match?.[1]) return match[1].trim()
+  }
+  return raw
+}
+
+function providerDisplayPrefixes(authorId, authorName) {
+  const canonical = PROVIDER_CANONICALS.find((candidate) => candidate.id === authorId)
+  return new Set([authorName, authorId, ...(canonical?.aliases ?? [])].filter(Boolean))
 }
 
 function stripProviderNamespace(sourceId, authorId) {
@@ -220,13 +249,14 @@ for (const row of rows) {
   if (!row?.id) continue
   const author = inferAuthor(row)
   const modelId = stripProviderNamespace(row.id, author)
+  const displayName = modelDisplayName(row, author, modelId)
   const modalities = modalitiesFromArchitecture(row)
   ensureProvider(author, canonicalProviderName(author, title(author)))
 
   if (!modelMap.has(modelId)) {
     modelMap.set(modelId, {
       id: modelId,
-      model: row.name ?? title(modelId),
+      model: displayName,
       alias: uniqueBy([row.id, row.canonical_slug].filter(Boolean).filter((x) => x !== modelId), String),
       author,
       input_modalities: modalities.input,
@@ -254,7 +284,7 @@ for (const row of rows) {
   const providerNames = uniqueBy(endpoints.map((e) => e.provider_name ?? e.provider?.name).filter(Boolean).map((name) => normalizeProviderIdentity(name).name), (x) => slugify(x))
   openrouter.offers.push({
     model_id: modelId,
-    model: row.name ?? title(modelId),
+    model: displayName,
     endpoint_path: endpointPathForMode(mode),
     api_model_id: row.id,
     mode,
@@ -278,7 +308,7 @@ for (const row of rows) {
     const endpointMode = mode
     provider.offers.push({
       model_id: modelId,
-      model: row.name ?? title(modelId),
+      model: displayName,
       endpoint_path: endpointPathForMode(endpointMode),
       api_model_id: endpoint.tag ?? row.id,
       mode: endpointMode,

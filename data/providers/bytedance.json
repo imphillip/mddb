@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "seed-1.6",
-      "model": "ByteDance Seed: Seed 1.6",
+      "model": "Seed 1.6",
       "endpoint_path": "/images/generations",
       "api_model_id": "seed/fp8",
       "mode": "image",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.000002",
@@ -57,13 +57,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "bytedance-seed/seed-1.6#Seed | bytedance-seed/seed-1.6-20250625",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "seed-1.6-flash",
-      "model": "ByteDance Seed: Seed 1.6 Flash",
+      "model": "Seed 1.6 Flash",
       "endpoint_path": "/images/generations",
       "api_model_id": "seed/fp8",
       "mode": "image",
@@ -82,7 +82,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000000075",
             "completion": "0.0000003",
@@ -114,13 +114,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "bytedance-seed/seed-1.6-flash#Seed | bytedance-seed/seed-1.6-flash-20250625",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "seed-2.0-lite",
-      "model": "ByteDance Seed: Seed-2.0-Lite",
+      "model": "Seed-2.0-Lite",
       "endpoint_path": "/images/generations",
       "api_model_id": "seed/fp8",
       "mode": "image",
@@ -139,7 +139,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.000002",
@@ -171,13 +171,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "bytedance-seed/seed-2.0-lite#Seed | bytedance-seed/seed-2.0-lite-20260309",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "seed-2.0-mini",
-      "model": "ByteDance Seed: Seed-2.0-Mini",
+      "model": "Seed-2.0-Mini",
       "endpoint_path": "/images/generations",
       "api_model_id": "seed/fp8",
       "mode": "image",
@@ -196,7 +196,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000004",
@@ -228,12 +228,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "bytedance-seed/seed-2.0-mini#Seed | bytedance-seed/seed-2.0-mini-20260224",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

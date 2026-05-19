@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "sonar",
-      "model": "Perplexity: Sonar",
+      "model": "Sonar",
       "endpoint_path": "/images/generations",
       "api_model_id": "perplexity",
       "mode": "image",
@@ -29,7 +29,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000001",
             "completion": "0.000001",
@@ -58,13 +58,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "perplexity/sonar#Perplexity | perplexity/sonar",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "sonar-deep-research",
-      "model": "Perplexity: Sonar Deep Research",
+      "model": "Sonar Deep Research",
       "endpoint_path": "/chat/completions",
       "api_model_id": "perplexity",
       "mode": "chat",
@@ -91,7 +91,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000002",
             "completion": "0.000008",
@@ -123,13 +123,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "perplexity/sonar-deep-research#Perplexity | perplexity/sonar-deep-research",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "sonar-pro",
-      "model": "Perplexity: Sonar Pro",
+      "model": "Sonar Pro",
       "endpoint_path": "/images/generations",
       "api_model_id": "perplexity",
       "mode": "image",
@@ -152,7 +152,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -181,13 +181,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "perplexity/sonar-pro#Perplexity | perplexity/sonar-pro",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "sonar-pro-search",
-      "model": "Perplexity: Sonar Pro Search",
+      "model": "Sonar Pro Search",
       "endpoint_path": "/images/generations",
       "api_model_id": "perplexity",
       "mode": "image",
@@ -210,7 +210,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -242,13 +242,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "perplexity/sonar-pro-search#Perplexity | perplexity/sonar-pro-search",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "sonar-reasoning-pro",
-      "model": "Perplexity: Sonar Reasoning Pro",
+      "model": "Sonar Reasoning Pro",
       "endpoint_path": "/images/generations",
       "api_model_id": "perplexity",
       "mode": "image",
@@ -271,7 +271,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000002",
             "completion": "0.000008",
@@ -302,12 +302,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "perplexity/sonar-reasoning-pro#Perplexity | perplexity/sonar-reasoning-pro",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

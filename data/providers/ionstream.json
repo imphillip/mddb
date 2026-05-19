@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "qwen3-coder-next",
-      "model": "Qwen: Qwen3 Coder Next",
+      "model": "Qwen3 Coder Next",
       "endpoint_path": "/chat/completions",
       "api_model_id": "ionstream/fp8",
       "mode": "chat",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000011",
             "completion": "0.0000008",
@@ -57,12 +57,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-coder-next#Ionstream | qwen/qwen3-coder-next-2025-02-03",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

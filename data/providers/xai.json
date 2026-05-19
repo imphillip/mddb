@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "grok-4.20",
-      "model": "xAI: Grok 4.20",
+      "model": "Grok 4.20",
       "endpoint_path": "/images/generations",
       "api_model_id": "xai",
       "mode": "image",
@@ -29,7 +29,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.0000025",
@@ -64,13 +64,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "x-ai/grok-4.20#xAI | x-ai/grok-4.20-20260309",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "grok-4.20-multi-agent",
-      "model": "xAI: Grok 4.20 Multi-Agent",
+      "model": "Grok 4.20 Multi-Agent",
       "endpoint_path": "/images/generations",
       "api_model_id": "xai",
       "mode": "image",
@@ -93,7 +93,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000002",
             "completion": "0.000006",
@@ -126,13 +126,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "x-ai/grok-4.20-multi-agent#xAI | x-ai/grok-4.20-multi-agent-20260309",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "grok-4.3",
-      "model": "xAI: Grok 4.3",
+      "model": "Grok 4.3",
       "endpoint_path": "/images/generations",
       "api_model_id": "xai",
       "mode": "image",
@@ -155,7 +155,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.0000025",
@@ -193,12 +193,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "x-ai/grok-4.3#xAI | x-ai/grok-4.3-20260430",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

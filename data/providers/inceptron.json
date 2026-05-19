@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "glm-5.1",
-      "model": "Z.ai: GLM 5.1",
+      "model": "GLM 5.1",
       "endpoint_path": "/chat/completions",
       "api_model_id": "inceptron/fp8",
       "mode": "chat",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000014",
             "completion": "0.0000044",
@@ -59,13 +59,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5.1#Inceptron | z-ai/glm-5.1-20260406",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "kimi-k2.6",
-      "model": "MoonshotAI: Kimi K2.6",
+      "model": "Kimi K2.6",
       "endpoint_path": "/images/generations",
       "api_model_id": "inceptron/int4",
       "mode": "image",
@@ -84,7 +84,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000078",
             "completion": "0.0000035",
@@ -123,13 +123,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2.6#Inceptron | moonshotai/kimi-k2.6-20260420",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "llama-3.3-70b-instruct",
-      "model": "Meta: Llama 3.3 70B Instruct (free)",
+      "model": "Llama 3.3 70B Instruct (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "inceptron/fp8",
       "mode": "chat",
@@ -148,7 +148,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000012",
             "completion": "0.00000038",
@@ -177,13 +177,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.3-70b-instruct:free#Inceptron | meta-llama/llama-3.3-70b-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "minimax-m2.5",
-      "model": "MiniMax: MiniMax M2.5 (free)",
+      "model": "MiniMax M2.5 (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "inceptron/fp8",
       "mode": "chat",
@@ -202,7 +202,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000024",
             "completion": "0.0000009",
@@ -242,12 +242,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "minimax/minimax-m2.5:free#Inceptron | minimax/minimax-m2.5-20260211",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

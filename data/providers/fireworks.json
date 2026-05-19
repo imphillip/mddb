@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "deepseek-v4-pro",
-      "model": "DeepSeek: DeepSeek V4 Pro",
+      "model": "DeepSeek V4 Pro",
       "endpoint_path": "/chat/completions",
       "api_model_id": "fireworks",
       "mode": "chat",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000174",
             "completion": "0.00000348",
@@ -62,13 +62,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v4-pro#Fireworks | deepseek/deepseek-v4-pro-20260423",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-5.1",
-      "model": "Z.ai: GLM 5.1",
+      "model": "GLM 5.1",
       "endpoint_path": "/chat/completions",
       "api_model_id": "fireworks",
       "mode": "chat",
@@ -87,7 +87,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000014",
             "completion": "0.0000044",
@@ -124,13 +124,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5.1#Fireworks | z-ai/glm-5.1-20260406",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "gpt-oss-20b",
-      "model": "OpenAI: gpt-oss-20b (free)",
+      "model": "gpt-oss-20b (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "fireworks",
       "mode": "chat",
@@ -149,7 +149,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000007",
             "completion": "0.0000003",
@@ -186,13 +186,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-20b:free#Fireworks | openai/gpt-oss-20b",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "kimi-k2.5",
-      "model": "MoonshotAI: Kimi K2.5",
+      "model": "Kimi K2.5",
       "endpoint_path": "/images/generations",
       "api_model_id": "fireworks",
       "mode": "image",
@@ -211,7 +211,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.000003",
@@ -248,13 +248,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2.5#Fireworks | moonshotai/kimi-k2.5-0127",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "kimi-k2.6",
-      "model": "MoonshotAI: Kimi K2.6",
+      "model": "Kimi K2.6",
       "endpoint_path": "/images/generations",
       "api_model_id": "fireworks",
       "mode": "image",
@@ -273,7 +273,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000009499999999999999",
             "completion": "0.000004",
@@ -312,13 +312,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2.6#Fireworks | moonshotai/kimi-k2.6-20260420",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "minimax-m2.7",
-      "model": "MiniMax: MiniMax M2.7",
+      "model": "MiniMax M2.7",
       "endpoint_path": "/chat/completions",
       "api_model_id": "fireworks",
       "mode": "chat",
@@ -337,7 +337,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000012",
@@ -376,12 +376,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "minimax/minimax-m2.7#Fireworks | minimax/minimax-m2.7-20260318",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

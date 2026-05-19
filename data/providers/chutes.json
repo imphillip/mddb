@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "gemma-4-31b-it",
-      "model": "Google: Gemma 4 31B (free)",
+      "model": "Gemma 4 31B (free)",
       "endpoint_path": "/images/generations",
       "api_model_id": "chutes/fp4",
       "mode": "image",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000013",
             "completion": "0.00000038",
@@ -59,13 +59,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemma-4-31b-it:free#Chutes | google/gemma-4-31b-it-20260402",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-5",
-      "model": "Z.ai: GLM 5",
+      "model": "GLM 5",
       "endpoint_path": "/chat/completions",
       "api_model_id": "chutes/fp8",
       "mode": "chat",
@@ -84,7 +84,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000095",
             "completion": "0.00000255",
@@ -121,13 +121,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5#Chutes | z-ai/glm-5-20260211",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-5.1",
-      "model": "Z.ai: GLM 5.1",
+      "model": "GLM 5.1",
       "endpoint_path": "/chat/completions",
       "api_model_id": "chutes/fp8",
       "mode": "chat",
@@ -146,7 +146,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000105",
             "completion": "0.0000035",
@@ -183,13 +183,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5.1#Chutes | z-ai/glm-5.1-20260406",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "kimi-k2.5",
-      "model": "MoonshotAI: Kimi K2.5",
+      "model": "Kimi K2.5",
       "endpoint_path": "/images/generations",
       "api_model_id": "chutes/int4",
       "mode": "image",
@@ -208,7 +208,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000044",
             "completion": "0.000002",
@@ -245,13 +245,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2.5#Chutes | moonshotai/kimi-k2.5-0127",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "kimi-k2.6",
-      "model": "MoonshotAI: Kimi K2.6",
+      "model": "Kimi K2.6",
       "endpoint_path": "/images/generations",
       "api_model_id": "chutes/int4",
       "mode": "image",
@@ -270,7 +270,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000074",
             "completion": "0.0000035",
@@ -306,13 +306,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2.6#Chutes | moonshotai/kimi-k2.6-20260420",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "minimax-m2.5",
-      "model": "MiniMax: MiniMax M2.5 (free)",
+      "model": "MiniMax M2.5 (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "chutes/fp8",
       "mode": "chat",
@@ -331,7 +331,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.0000012",
@@ -368,13 +368,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "minimax/minimax-m2.5:free#Chutes | minimax/minimax-m2.5-20260211",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen3.5-397b-a17b",
-      "model": "Qwen: Qwen3.5 397B A17B",
+      "model": "Qwen3.5 397B A17B",
       "endpoint_path": "/images/generations",
       "api_model_id": "chutes/fp8",
       "mode": "image",
@@ -393,7 +393,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000039",
             "completion": "0.00000234",
@@ -430,13 +430,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-397b-a17b#Chutes | qwen/qwen3.5-397b-a17b-20260216",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen3.6-27b",
-      "model": "Qwen: Qwen3.6 27B",
+      "model": "Qwen3.6 27B",
       "endpoint_path": "/images/generations",
       "api_model_id": "chutes/fp8",
       "mode": "image",
@@ -455,7 +455,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000005",
             "completion": "0.000002",
@@ -491,12 +491,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.6-27b#Chutes | qwen/qwen3.6-27b-20260422",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

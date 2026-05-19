@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "trinity-large-preview",
-      "model": "Arcee AI: Trinity Large Preview",
+      "model": "Trinity Large Preview",
       "endpoint_path": "/chat/completions",
       "api_model_id": "arcee-ai/prime",
       "mode": "chat",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.00000045",
@@ -53,13 +53,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "arcee-ai/trinity-large-preview#Arcee AI | arcee-ai/trinity-large-preview",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "trinity-large-thinking",
-      "model": "Arcee AI: Trinity Large Thinking (free)",
+      "model": "Trinity Large Thinking (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "arcee-ai",
       "mode": "chat",
@@ -78,7 +78,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.0000008",
@@ -108,12 +108,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "arcee-ai/trinity-large-thinking:free#Arcee AI | arcee-ai/trinity-large-thinking",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

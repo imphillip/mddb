@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "gemma-4-26b-a4b-it",
-      "model": "Google: Gemma 4 26B A4B  (free)",
+      "model": "Gemma 4 26B A4B  (free)",
       "endpoint_path": "/images/generations",
       "api_model_id": "dekallm/bf16",
       "mode": "image",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000006",
             "completion": "0.00000033",
@@ -56,13 +56,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemma-4-26b-a4b-it:free#DekaLLM | google/gemma-4-26b-a4b-it-20260403",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "gpt-oss-120b",
-      "model": "OpenAI: gpt-oss-120b (free)",
+      "model": "gpt-oss-120b (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "dekallm/bf16",
       "mode": "chat",
@@ -81,7 +81,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000000039",
             "completion": "0.00000018",
@@ -116,13 +116,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-120b:free#DekaLLM | openai/gpt-oss-120b",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "mistral-nemo",
-      "model": "Mistral: Mistral Nemo",
+      "model": "Mistral Nemo",
       "endpoint_path": "/chat/completions",
       "api_model_id": "dekallm/fp8",
       "mode": "chat",
@@ -141,7 +141,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000002",
             "completion": "0.00000003",
@@ -170,13 +170,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "mistralai/mistral-nemo#DekaLLM | mistralai/mistral-nemo",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "nemotron-3-super-120b-a12b",
-      "model": "NVIDIA: Nemotron 3 Super (free)",
+      "model": "Nemotron 3 Super (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "dekallm/fp8",
       "mode": "chat",
@@ -195,7 +195,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000009",
             "completion": "0.00000045",
@@ -230,13 +230,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "nvidia/nemotron-3-super-120b-a12b:free#DekaLLM | nvidia/nemotron-3-super-120b-a12b-20230311",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen3.5-35b-a3b",
-      "model": "Qwen: Qwen3.5-35B-A3B",
+      "model": "Qwen3.5-35B-A3B",
       "endpoint_path": "/images/generations",
       "api_model_id": "dekallm/fp8",
       "mode": "image",
@@ -255,7 +255,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.000001",
@@ -288,12 +288,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-35b-a3b#DekaLLM | qwen/qwen3.5-35b-a3b-20260224",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

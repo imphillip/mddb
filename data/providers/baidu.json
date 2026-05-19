@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "deepseek-v3.2",
-      "model": "DeepSeek: DeepSeek V3.2",
+      "model": "DeepSeek V3.2",
       "endpoint_path": "/chat/completions",
       "api_model_id": "baidu/fp8",
       "mode": "chat",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000000252",
             "completion": "0.000000378",
@@ -57,13 +57,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v3.2#Baidu | deepseek/deepseek-v3.2-20251201",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "deepseek-v4-flash",
-      "model": "DeepSeek: DeepSeek V4 Flash (free)",
+      "model": "DeepSeek V4 Flash (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "baidu/fp8",
       "mode": "chat",
@@ -82,7 +82,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000000126",
             "completion": "0.000000252",
@@ -110,13 +110,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v4-flash:free#Baidu | deepseek/deepseek-v4-flash-20260423",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "deepseek-v4-pro",
-      "model": "DeepSeek: DeepSeek V4 Pro",
+      "model": "DeepSeek V4 Pro",
       "endpoint_path": "/chat/completions",
       "api_model_id": "baidu/fp8",
       "mode": "chat",
@@ -135,7 +135,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000001521",
             "completion": "0.000003042",
@@ -163,13 +163,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v4-pro#Baidu | deepseek/deepseek-v4-pro-20260423",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-5",
-      "model": "Z.ai: GLM 5",
+      "model": "GLM 5",
       "endpoint_path": "/chat/completions",
       "api_model_id": "baidu/fp8",
       "mode": "chat",
@@ -188,7 +188,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000007",
             "completion": "0.00000224",
@@ -224,13 +224,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5#Baidu | z-ai/glm-5-20260211",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-5.1",
-      "model": "Z.ai: GLM 5.1",
+      "model": "GLM 5.1",
       "endpoint_path": "/chat/completions",
       "api_model_id": "baidu/fp8",
       "mode": "chat",
@@ -249,7 +249,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000098",
             "completion": "0.00000308",
@@ -280,13 +280,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5.1#Baidu | z-ai/glm-5.1-20260406",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "minimax-m2.5",
-      "model": "MiniMax: MiniMax M2.5 (free)",
+      "model": "MiniMax M2.5 (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "baidu/fp8",
       "mode": "chat",
@@ -305,7 +305,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000027",
             "completion": "0.00000108",
@@ -341,13 +341,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "minimax/minimax-m2.5:free#Baidu | minimax/minimax-m2.5-20260211",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qianfan-ocr-fast",
-      "model": "Baidu: Qianfan-OCR-Fast",
+      "model": "Qianfan-OCR-Fast",
       "endpoint_path": "/images/generations",
       "api_model_id": "baidu/fp8",
       "mode": "image",
@@ -366,7 +366,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000068",
             "completion": "0.00000281",
@@ -397,12 +397,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "baidu/qianfan-ocr-fast#Baidu | baidu/qianfan-ocr-fast-20260420",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

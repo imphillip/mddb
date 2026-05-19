@@ -91,8 +91,16 @@ function modelReleaseTimestamp(node: OpenRouterRawNode): number {
 export function renderOpenRouterRawDetail(graph: OpenRouterRawGraph, node: OpenRouterRawNode): string {
   const outEdges = graph.edges.filter((edge) => edge.from === node.id)
   const inEdges = graph.edges.filter((edge) => edge.to === node.id && edge.from !== node.id)
-  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/">← 返回模型广场</a><div class="eyebrow">Author · ${escapeHtml(node.derived.author ?? '—')}</div><h1>${escapeHtml(node.displayName)}</h1><div class="modelIdHero">Model ID ${renderModelTagCopy(node.modelId)}</div><div hidden>${modelDescription(node)}</div>${renderHeroRelations(graph, node, outEdges, inEdges)}</div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#spec">规格</a><a href="#pricing">价格</a><a href="#source">数据来源与源数据</a></nav>${renderSpecSection(node)}${renderPricingSection(graph, node)}${renderSourceSection(node, outEdges, inEdges)}</article></div><script>${currencyToggleScript()}</script></main>`
-  return page(`${node.displayName} · mddb.dev`, body, 'models', currencyToggle(graph))
+  const title = modelDetailTitle(node)
+  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/">← 返回模型广场</a><div class="eyebrow">Author · ${escapeHtml(node.derived.author ?? '—')}</div><h1>${escapeHtml(title)}</h1><div class="modelIdHero">Model ID ${renderModelTagCopy(node.modelId)}</div><div hidden>${modelDescription(node)}</div>${renderHeroRelations(graph, node, outEdges, inEdges)}</div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#spec">规格</a><a href="#pricing">价格</a><a href="#source">数据来源与源数据</a></nav>${renderSpecSection(node)}${renderPricingSection(graph, node)}${renderSourceSection(node, outEdges, inEdges)}</article></div><script>${currencyToggleScript()}</script></main>`
+  return page(`${title} · mddb.dev`, body, 'models', currencyToggle(graph))
+}
+
+function modelDetailTitle(node: OpenRouterRawNode): string {
+  const author = displayProviderLabel(node.derived.author ?? node.provider)
+  if (!author) return node.displayName
+  const prefix = `${author}: `
+  return node.displayName.startsWith(prefix) ? node.displayName : `${prefix}${node.displayName}`
 }
 
 function providerSummaries(graph: OpenRouterRawGraph): Array<{ id: string; label: string; modelCount: number; offerCount: number; currency: string }> {

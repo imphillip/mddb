@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "coder-large",
-      "model": "Arcee AI: Coder Large",
+      "model": "Coder Large",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together",
       "mode": "chat",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000005",
             "completion": "0.0000008",
@@ -56,7 +56,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "arcee-ai/coder-large#Together | arcee-ai/coder-large",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
@@ -81,7 +81,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00000125",
@@ -116,13 +116,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepcogito/cogito-v2.1-671b#Together | deepcogito/cogito-v2.1-671b-20251118",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "deepseek-v4-pro",
-      "model": "DeepSeek: DeepSeek V4 Pro",
+      "model": "DeepSeek V4 Pro",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together",
       "mode": "chat",
@@ -141,7 +141,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000021",
             "completion": "0.0000044",
@@ -179,13 +179,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v4-pro#Together | deepseek/deepseek-v4-pro-20260423",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "gemma-3n-e4b-it",
-      "model": "Google: Gemma 3n 4B",
+      "model": "Gemma 3n 4B",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together",
       "mode": "chat",
@@ -204,7 +204,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000006",
             "completion": "0.00000012",
@@ -235,13 +235,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemma-3n-e4b-it#Together | google/gemma-3n-e4b-it",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "gemma-4-31b-it",
-      "model": "Google: Gemma 4 31B (free)",
+      "model": "Gemma 4 31B (free)",
       "endpoint_path": "/images/generations",
       "api_model_id": "together",
       "mode": "image",
@@ -260,7 +260,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000002",
             "completion": "0.0000005",
@@ -297,13 +297,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemma-4-31b-it:free#Together | google/gemma-4-31b-it-20260402",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-5",
-      "model": "Z.ai: GLM 5",
+      "model": "GLM 5",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together",
       "mode": "chat",
@@ -322,7 +322,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000001",
             "completion": "0.0000032",
@@ -359,13 +359,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5#Together | z-ai/glm-5-20260211",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-5.1",
-      "model": "Z.ai: GLM 5.1",
+      "model": "GLM 5.1",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together",
       "mode": "chat",
@@ -384,7 +384,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000014",
             "completion": "0.0000044",
@@ -419,13 +419,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5.1#Together | z-ai/glm-5.1-20260406",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "gpt-oss-120b",
-      "model": "OpenAI: gpt-oss-120b (free)",
+      "model": "gpt-oss-120b (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together",
       "mode": "chat",
@@ -444,7 +444,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.0000006",
@@ -480,13 +480,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-120b:free#Together | openai/gpt-oss-120b",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "gpt-oss-20b",
-      "model": "OpenAI: gpt-oss-20b (free)",
+      "model": "gpt-oss-20b (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together",
       "mode": "chat",
@@ -505,7 +505,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000005",
             "completion": "0.0000002",
@@ -538,13 +538,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-20b:free#Together | openai/gpt-oss-20b",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "kimi-k2.5",
-      "model": "MoonshotAI: Kimi K2.5",
+      "model": "Kimi K2.5",
       "endpoint_path": "/images/generations",
       "api_model_id": "together",
       "mode": "image",
@@ -563,7 +563,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000005",
             "completion": "0.0000028",
@@ -600,13 +600,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2.5#Together | moonshotai/kimi-k2.5-0127",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "kimi-k2.6",
-      "model": "MoonshotAI: Kimi K2.6",
+      "model": "Kimi K2.6",
       "endpoint_path": "/images/generations",
       "api_model_id": "together",
       "mode": "image",
@@ -625,7 +625,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000012",
             "completion": "0.0000045",
@@ -663,7 +663,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2.6#Together | moonshotai/kimi-k2.6-20260420",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
@@ -688,7 +688,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000003",
             "completion": "0.00000012",
@@ -719,13 +719,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "liquid/lfm-2-24b-a2b#Together | liquid/lfm-2-24b-a2b-20260224",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "llama-3-8b-instruct",
-      "model": "Meta: Llama 3 8B Instruct",
+      "model": "Llama 3 8B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together/int4",
       "mode": "chat",
@@ -744,7 +744,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000001",
@@ -775,13 +775,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3-8b-instruct#Together | meta-llama/llama-3-8b-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "llama-3.3-70b-instruct",
-      "model": "Meta: Llama 3.3 70B Instruct (free)",
+      "model": "Llama 3.3 70B Instruct (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together/fp8",
       "mode": "chat",
@@ -800,7 +800,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000088",
             "completion": "0.00000088",
@@ -835,13 +835,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.3-70b-instruct:free#Together | meta-llama/llama-3.3-70b-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "llama-guard-4-12b",
-      "model": "Meta: Llama Guard 4 12B",
+      "model": "Llama Guard 4 12B",
       "endpoint_path": "/images/generations",
       "api_model_id": "together",
       "mode": "image",
@@ -860,7 +860,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000002",
             "completion": "0.0000002",
@@ -891,13 +891,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-guard-4-12b#Together | meta-llama/llama-guard-4-12b",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "maestro-reasoning",
-      "model": "Arcee AI: Maestro Reasoning",
+      "model": "Maestro Reasoning",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together",
       "mode": "chat",
@@ -916,7 +916,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000009",
             "completion": "0.0000033",
@@ -947,13 +947,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "arcee-ai/maestro-reasoning#Together | arcee-ai/maestro-reasoning",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "minimax-m2.7",
-      "model": "MiniMax: MiniMax M2.7",
+      "model": "MiniMax M2.7",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together/fp4",
       "mode": "chat",
@@ -972,7 +972,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000012",
@@ -1010,13 +1010,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "minimax/minimax-m2.7#Together | minimax/minimax-m2.7-20260318",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen-2.5-7b-instruct",
-      "model": "Qwen: Qwen2.5 7B Instruct",
+      "model": "Qwen2.5 7B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together/fp8",
       "mode": "chat",
@@ -1035,7 +1035,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000003",
@@ -1066,13 +1066,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen-2.5-7b-instruct#Together | qwen/qwen-2.5-7b-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen3-235b-a22b-2507",
-      "model": "Qwen: Qwen3 235B A22B Instruct 2507",
+      "model": "Qwen3 235B A22B Instruct 2507",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together",
       "mode": "chat",
@@ -1091,7 +1091,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000002",
             "completion": "0.0000006",
@@ -1124,13 +1124,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-235b-a22b-2507#Together | qwen/qwen3-235b-a22b-07-25",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen3-coder",
-      "model": "Qwen: Qwen3 Coder 480B A35B (free)",
+      "model": "Qwen3 Coder 480B A35B (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together/fp8",
       "mode": "chat",
@@ -1149,7 +1149,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000002",
             "completion": "0.000002",
@@ -1182,13 +1182,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-coder:free#Together | qwen/qwen3-coder-480b-a35b-07-25",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen3.5-397b-a17b",
-      "model": "Qwen: Qwen3.5 397B A17B",
+      "model": "Qwen3.5 397B A17B",
       "endpoint_path": "/images/generations",
       "api_model_id": "together",
       "mode": "image",
@@ -1207,7 +1207,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000036",
@@ -1244,13 +1244,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-397b-a17b#Together | qwen/qwen3.5-397b-a17b-20260216",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen3.5-9b",
-      "model": "Qwen: Qwen3.5-9B",
+      "model": "Qwen3.5-9B",
       "endpoint_path": "/images/generations",
       "api_model_id": "together",
       "mode": "image",
@@ -1269,7 +1269,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.00000015",
@@ -1306,13 +1306,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-9b#Together | qwen/qwen3.5-9b-20260310",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "rnj-1-instruct",
-      "model": "EssentialAI: Rnj 1 Instruct",
+      "model": "Rnj 1 Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together",
       "mode": "chat",
@@ -1331,7 +1331,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.00000015",
@@ -1366,13 +1366,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "essentialai/rnj-1-instruct#Together | essentialai/rnj-1-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "spotlight",
-      "model": "Arcee AI: Spotlight",
+      "model": "Spotlight",
       "endpoint_path": "/images/generations",
       "api_model_id": "together",
       "mode": "image",
@@ -1391,7 +1391,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000018",
             "completion": "0.00000018",
@@ -1422,13 +1422,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "arcee-ai/spotlight#Together | arcee-ai/spotlight",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "virtuoso-large",
-      "model": "Arcee AI: Virtuoso Large",
+      "model": "Virtuoso Large",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together",
       "mode": "chat",
@@ -1447,7 +1447,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000075",
             "completion": "0.0000012",
@@ -1480,12 +1480,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "arcee-ai/virtuoso-large#Together | arcee-ai/virtuoso-large",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

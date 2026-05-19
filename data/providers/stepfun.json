@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "step-3.5-flash",
-      "model": "StepFun: Step 3.5 Flash",
+      "model": "Step 3.5 Flash",
       "endpoint_path": "/chat/completions",
       "api_model_id": "stepfun/fp8",
       "mode": "chat",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000003",
@@ -55,12 +55,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "stepfun/step-3.5-flash#StepFun | stepfun/step-3.5-flash",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

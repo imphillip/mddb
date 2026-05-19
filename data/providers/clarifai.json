@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "trinity-mini",
-      "model": "Arcee AI: Trinity Mini",
+      "model": "Trinity Mini",
       "endpoint_path": "/chat/completions",
       "api_model_id": "clarifai/bf16",
       "mode": "chat",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000000045",
             "completion": "0.00000015",
@@ -57,12 +57,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "arcee-ai/trinity-mini#Clarifai | arcee-ai/trinity-mini-20251201",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

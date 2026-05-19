@@ -20,6 +20,9 @@ describe('registry graph adapter', () => {
     const node = graph.nodes.find((candidate) => candidate.route === '/openai/gpt-5.5')
     expect(node).toBeTruthy()
     const detail = renderOpenRouterRawDetail(graph, node!)
+    const titledNode = graph.nodes.find((candidate) => candidate.route === '/anthropic/claude-opus-4.6')
+    expect(titledNode).toBeTruthy()
+    const titledDetail = renderOpenRouterRawDetail(graph, titledNode!)
 
     expect(home).toContain('模型广场')
     expect(home).toContain('data-model-row')
@@ -33,5 +36,8 @@ describe('registry graph adapter', () => {
     expect(detail).toContain('Model ID')
     expect(detail).toContain('价格')
     expect(detail).toContain('数据来源与源数据')
+    expect(titledNode!.displayName).toBe('Claude Opus 4.6')
+    expect(titledDetail).toContain('<h1>Anthropic: Claude Opus 4.6</h1>')
+    expect(titledDetail).toContain('<title>Anthropic: Claude Opus 4.6 · mddb.dev</title>')
   })
 })

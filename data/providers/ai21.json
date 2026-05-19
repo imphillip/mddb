@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "jamba-large-1.7",
-      "model": "AI21: Jamba Large 1.7",
+      "model": "Jamba Large 1.7",
       "endpoint_path": "/chat/completions",
       "api_model_id": "ai21/fp8",
       "mode": "chat",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000002",
             "completion": "0.000008",
@@ -53,12 +53,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "ai21/jamba-large-1.7#AI21 | ai21/jamba-large-1.7",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

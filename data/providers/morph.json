@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "deepseek-v4-flash",
-      "model": "DeepSeek: DeepSeek V4 Flash (free)",
+      "model": "DeepSeek V4 Flash (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "morph",
       "mode": "chat",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000004",
@@ -63,13 +63,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v4-flash:free#Morph | deepseek/deepseek-v4-flash-20260423",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "minimax-m2.7",
-      "model": "MiniMax: MiniMax M2.7",
+      "model": "MiniMax M2.7",
       "endpoint_path": "/chat/completions",
       "api_model_id": "morph",
       "mode": "chat",
@@ -88,7 +88,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000000279",
             "completion": "0.0000012",
@@ -128,13 +128,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "minimax/minimax-m2.7#Morph | minimax/minimax-m2.7-20260318",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "morph-v3-fast",
-      "model": "Morph: Morph V3 Fast",
+      "model": "Morph V3 Fast",
       "endpoint_path": "/chat/completions",
       "api_model_id": "morph",
       "mode": "chat",
@@ -153,7 +153,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000008",
             "completion": "0.0000012",
@@ -177,13 +177,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "morph/morph-v3-fast#Morph | morph/morph-v3-fast",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "morph-v3-large",
-      "model": "Morph: Morph V3 Large",
+      "model": "Morph V3 Large",
       "endpoint_path": "/chat/completions",
       "api_model_id": "morph",
       "mode": "chat",
@@ -202,7 +202,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000009",
             "completion": "0.0000019",
@@ -226,13 +226,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "morph/morph-v3-large#Morph | morph/morph-v3-large",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen3.5-397b-a17b",
-      "model": "Qwen: Qwen3.5 397B A17B",
+      "model": "Qwen3.5 397B A17B",
       "endpoint_path": "/images/generations",
       "api_model_id": "morph",
       "mode": "image",
@@ -251,7 +251,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000048",
             "completion": "0.0000035",
@@ -292,13 +292,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-397b-a17b#Morph | qwen/qwen3.5-397b-a17b-20260216",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen3.6-27b",
-      "model": "Qwen: Qwen3.6 27B",
+      "model": "Qwen3.6 27B",
       "endpoint_path": "/images/generations",
       "api_model_id": "morph",
       "mode": "image",
@@ -317,7 +317,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000000498",
             "completion": "0.0000024",
@@ -357,12 +357,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.6-27b#Morph | qwen/qwen3.6-27b-20260422",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

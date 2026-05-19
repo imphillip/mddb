@@ -6,7 +6,7 @@ import { describe, expect, it } from 'vitest'
 
 const ROOT = new URL('..', import.meta.url).pathname.replace(/\/$/, '')
 
-function row(id, endpointProviderNames = []) {
+function row(id, endpointProviderNames = [], overrides = {}) {
   return {
     id,
     canonical_slug: id,
@@ -28,6 +28,7 @@ function row(id, endpointProviderNames = []) {
       })),
     },
     links: { endpoints: `https://openrouter.ai/api/v1/models/${id}/endpoints` },
+    ...overrides,
   }
 }
 
@@ -95,5 +96,29 @@ describe('OpenRouter registry population provider normalization', () => {
     for (const duplicate of ['aionlabs', 'amazon-bedrock', 'bytedance-seed', 'google-ai-studio', 'mancer-2', 'mistralai', 'moonshotai', 'x-ai', 'z.ai']) {
       expect(catalog.providerExists(duplicate), duplicate).toBe(false)
     }
+  })
+
+  it('stores model names without OpenRouter author prefixes so pages can compose titles from author plus model', () => {
+    const catalog = populate([
+      row('anthropic/claude-opus-4.7-fast', [], { name: 'Anthropic: Claude Opus 4.7 (Fast)' }),
+      row('~anthropic/claude-haiku-latest', [], { name: 'Anthropic Claude Haiku Latest' }),
+      row('moonshotai/kimi-k2', [], { name: 'MoonshotAI: Kimi K2' }),
+      row('~moonshotai/kimi-latest', [], { name: 'MoonshotAI Kimi Latest' }),
+      row('openrouter/owl-alpha', [], { name: 'Owl Alpha' }),
+      row('meta-llama/llama-4-scout', [], { name: 'Meta: Llama 4 Scout' }),
+      row('nousresearch/hermes-4-70b', [], { name: 'Nous: Hermes 4 70B' }),
+      row('baidu/cobuddy:free', [], { name: 'Baidu Qianfan: CoBuddy (free)' }),
+    ])
+
+    expect(catalog.models.map((model) => [model.id, model.author, model.model])).toEqual(expect.arrayContaining([
+      ['claude-opus-4.7-fast', 'anthropic', 'Claude Opus 4.7 (Fast)'],
+      ['claude-haiku-latest', 'anthropic', 'Claude Haiku Latest'],
+      ['kimi-k2', 'moonshot-ai', 'Kimi K2'],
+      ['kimi-latest', 'moonshot-ai', 'Kimi Latest'],
+      ['owl-alpha', 'openrouter', 'Owl Alpha'],
+      ['llama-4-scout', 'meta-llama', 'Llama 4 Scout'],
+      ['hermes-4-70b', 'nousresearch', 'Hermes 4 70B'],
+      ['cobuddy', 'baidu', 'CoBuddy (free)'],
+    ]))
   })
 })

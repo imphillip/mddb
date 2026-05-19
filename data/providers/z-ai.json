@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "glm-4-32b",
-      "model": "Z.ai: GLM 4 32B ",
+      "model": "GLM 4 32B",
       "endpoint_path": "/chat/completions",
       "api_model_id": "z-ai",
       "mode": "chat",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000001",
@@ -51,13 +51,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4-32b#Z.AI | z-ai/glm-4-32b-0414",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-4.5",
-      "model": "Z.ai: GLM 4.5",
+      "model": "GLM 4.5",
       "endpoint_path": "/chat/completions",
       "api_model_id": "z-ai/fp8",
       "mode": "chat",
@@ -76,7 +76,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000022",
@@ -106,13 +106,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.5#Z.AI | z-ai/glm-4.5",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-4.5-air",
-      "model": "Z.ai: GLM 4.5 Air (free)",
+      "model": "GLM 4.5 Air (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "z-ai/fp8",
       "mode": "chat",
@@ -131,7 +131,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000002",
             "completion": "0.0000011",
@@ -160,13 +160,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.5-air:free#Z.AI | z-ai/glm-4.5-air",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-4.5v",
-      "model": "Z.ai: GLM 4.5V",
+      "model": "GLM 4.5V",
       "endpoint_path": "/images/generations",
       "api_model_id": "z-ai/fp8",
       "mode": "image",
@@ -185,7 +185,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000018",
@@ -214,13 +214,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.5v#Z.AI | z-ai/glm-4.5v",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-4.6",
-      "model": "Z.ai: GLM 4.6",
+      "model": "GLM 4.6",
       "endpoint_path": "/chat/completions",
       "api_model_id": "z-ai",
       "mode": "chat",
@@ -239,7 +239,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000022",
@@ -268,13 +268,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.6#Z.AI | z-ai/glm-4.6",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-4.6v",
-      "model": "Z.ai: GLM 4.6V",
+      "model": "GLM 4.6V",
       "endpoint_path": "/images/generations",
       "api_model_id": "z-ai/fp8",
       "mode": "image",
@@ -293,7 +293,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000009",
@@ -322,13 +322,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.6v#Z.AI | z-ai/glm-4.6-20251208",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-4.7",
-      "model": "Z.ai: GLM 4.7",
+      "model": "GLM 4.7",
       "endpoint_path": "/chat/completions",
       "api_model_id": "z-ai",
       "mode": "chat",
@@ -347,7 +347,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000022",
@@ -377,13 +377,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.7#Z.AI | z-ai/glm-4.7-20251222",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-4.7-flash",
-      "model": "Z.ai: GLM 4.7 Flash",
+      "model": "GLM 4.7 Flash",
       "endpoint_path": "/chat/completions",
       "api_model_id": "z-ai",
       "mode": "chat",
@@ -402,7 +402,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000007",
             "completion": "0.0000004",
@@ -432,13 +432,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.7-flash#Z.AI | z-ai/glm-4.7-flash-20260119",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-5",
-      "model": "Z.ai: GLM 5",
+      "model": "GLM 5",
       "endpoint_path": "/chat/completions",
       "api_model_id": "z-ai",
       "mode": "chat",
@@ -457,7 +457,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000001",
             "completion": "0.0000032",
@@ -487,13 +487,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5#Z.AI | z-ai/glm-5-20260211",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-5-turbo",
-      "model": "Z.ai: GLM 5 Turbo",
+      "model": "GLM 5 Turbo",
       "endpoint_path": "/chat/completions",
       "api_model_id": "z-ai",
       "mode": "chat",
@@ -512,7 +512,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000012",
             "completion": "0.000004",
@@ -542,13 +542,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5-turbo#Z.AI | z-ai/glm-5-turbo-20260315",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-5.1",
-      "model": "Z.ai: GLM 5.1",
+      "model": "GLM 5.1",
       "endpoint_path": "/chat/completions",
       "api_model_id": "z-ai",
       "mode": "chat",
@@ -567,7 +567,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000014",
             "completion": "0.0000044",
@@ -597,13 +597,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5.1#Z.AI | z-ai/glm-5.1-20260406",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "glm-5v-turbo",
-      "model": "Z.ai: GLM 5V Turbo",
+      "model": "GLM 5V Turbo",
       "endpoint_path": "/images/generations",
       "api_model_id": "z-ai/fp8",
       "mode": "image",
@@ -622,7 +622,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.0000012",
             "completion": "0.000004",
@@ -652,12 +652,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5v-turbo#Z.AI | z-ai/glm-5v-turbo-20260401",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }

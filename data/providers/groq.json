@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "gpt-oss-120b",
-      "model": "OpenAI: gpt-oss-120b (free)",
+      "model": "gpt-oss-120b (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "groq",
       "mode": "chat",
@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.0000006",
@@ -58,13 +58,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-120b:free#Groq | openai/gpt-oss-120b",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "gpt-oss-20b",
-      "model": "OpenAI: gpt-oss-20b (free)",
+      "model": "gpt-oss-20b (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "groq",
       "mode": "chat",
@@ -83,7 +83,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000000075",
             "completion": "0.0000003",
@@ -116,13 +116,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-20b:free#Groq | openai/gpt-oss-20b",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "gpt-oss-safeguard-20b",
-      "model": "OpenAI: gpt-oss-safeguard-20b",
+      "model": "gpt-oss-safeguard-20b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "groq",
       "mode": "chat",
@@ -141,7 +141,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000000075",
             "completion": "0.0000003",
@@ -173,13 +173,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-safeguard-20b#Groq | openai/gpt-oss-safeguard-20b",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "kimi-k2-0905",
-      "model": "MoonshotAI: Kimi K2 0905",
+      "model": "Kimi K2 0905",
       "endpoint_path": "/chat/completions",
       "api_model_id": "groq",
       "mode": "chat",
@@ -198,7 +198,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.000001",
             "completion": "0.000003",
@@ -228,13 +228,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2-0905#Groq | moonshotai/kimi-k2-0905",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "llama-3.1-8b-instruct",
-      "model": "Meta: Llama 3.1 8B Instruct",
+      "model": "Llama 3.1 8B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "groq",
       "mode": "chat",
@@ -253,7 +253,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000005",
             "completion": "0.00000008",
@@ -283,13 +283,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.1-8b-instruct#Groq | meta-llama/llama-3.1-8b-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "llama-3.3-70b-instruct",
-      "model": "Meta: Llama 3.3 70B Instruct (free)",
+      "model": "Llama 3.3 70B Instruct (free)",
       "endpoint_path": "/chat/completions",
       "api_model_id": "groq",
       "mode": "chat",
@@ -308,7 +308,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000059",
             "completion": "0.00000079",
@@ -337,13 +337,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.3-70b-instruct:free#Groq | meta-llama/llama-3.3-70b-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "llama-4-scout",
-      "model": "Meta: Llama 4 Scout",
+      "model": "Llama 4 Scout",
       "endpoint_path": "/images/generations",
       "api_model_id": "groq",
       "mode": "image",
@@ -362,7 +362,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000011",
             "completion": "0.00000034",
@@ -391,13 +391,13 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-4-scout#Groq | meta-llama/llama-4-scout-17b-16e-instruct",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     },
     {
       "model_id": "qwen3-32b",
-      "model": "Qwen: Qwen3 32B",
+      "model": "Qwen3 32B",
       "endpoint_path": "/chat/completions",
       "api_model_id": "groq",
       "mode": "chat",
@@ -416,7 +416,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T14:20:07.465Z",
+          "observed_at": "2026-05-19T18:45:39.680Z",
           "raw_pricing": {
             "prompt": "0.00000029",
             "completion": "0.00000059",
@@ -446,12 +446,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-32b#Groq | qwen/qwen3-32b-04-28",
-          "observed_at": "2026-05-19T14:20:07.465Z"
+          "observed_at": "2026-05-19T18:45:39.680Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T14:20:07.465Z",
+  "last_updated": "2026-05-19T18:45:39.680Z",
   "sources": []
 }
