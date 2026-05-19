@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000065",
             "completion": "0.00000208",
@@ -56,7 +56,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5#StreamLake | z-ai/glm-5-20260211",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -81,7 +81,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000126",
             "completion": "0.00000396",
@@ -112,7 +112,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5.1#StreamLake | z-ai/glm-5.1-20260406",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -137,7 +137,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000012",
@@ -166,12 +166,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "kwaipilot/kat-coder-pro-v2#StreamLake | kwaipilot/kat-coder-pro-v2-20260327",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T18:45:39.680Z",
+  "last_updated": "2026-05-19T22:11:55.841Z",
   "sources": []
 }

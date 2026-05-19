@@ -15,6 +15,7 @@ type RegistryModel = {
   tool_calling?: boolean
   context_length?: number | null
   max_output_tokens?: number | null
+  release_timestamp?: number | string | null
   other_parameters?: JsonRecord
   last_updated?: string
   sources?: JsonRecord[]
@@ -207,7 +208,7 @@ function registryModelToRawModel(model: RegistryModel): JsonRecord {
     id: primarySourceId(model),
     name: model.model,
     context_length: model.context_length,
-    created: timestampSeconds(model.last_updated),
+    created: timestampSeconds(model.release_timestamp ?? releaseDateFromSources(model) ?? model.last_updated),
     architecture: {
       input_modalities: model.input_modalities ?? [],
       output_modalities: model.output_modalities ?? [],
@@ -288,7 +289,28 @@ function billingModeForPriceKey(key: string): PricingObservation['billingMode'] 
 
 function primarySourceId(model: RegistryModel): string { return String(model.sources?.find((source) => source.source === 'openrouter')?.source_id ?? model.alias?.[0] ?? model.id) }
 function primarySourceUrl(model: RegistryModel, sourceId: string): string { return String(model.sources?.find((source) => typeof source.url === 'string')?.url ?? `https://openrouter.ai/${sourceId}`) }
-function timestampSeconds(value: string | undefined): number | undefined { const time = value ? Date.parse(value) : NaN; return Number.isFinite(time) ? Math.floor(time / 1000) : undefined }
+function releaseDateFromSources(model: RegistryModel): unknown {
+  for (const source of model.sources ?? []) {
+    const direct = source.release_timestamp ?? source.release_date ?? source.released_at ?? source.published_at ?? source.created
+    if (direct !== undefined) return direct
+    if (isRecord(source.raw)) {
+      const raw = source.raw
+      const nested = raw.created ?? raw.release_date ?? raw.released_at ?? raw.published_at
+      if (nested !== undefined) return nested
+    }
+  }
+  return undefined
+}
+function timestampSeconds(value: unknown): number | undefined {
+  if (typeof value === 'number' && Number.isFinite(value)) return Math.floor(value)
+  if (typeof value === 'string' && value.trim()) {
+    const numeric = Number(value)
+    if (Number.isFinite(numeric)) return Math.floor(numeric > 1_000_000_000_000 ? numeric / 1000 : numeric)
+    const time = Date.parse(value)
+    if (Number.isFinite(time)) return Math.floor(time / 1000)
+  }
+  return undefined
+}
 function nodeIdForSource(sourceId: string): string { return `registry-source:${sourceId}` }
 function nodeIdForEndpoint(sourceId: string): string { return `registry-endpoint:${sourceId}` }
 function dedupeById<T extends { id: string }>(rows: T[]): T[] { return Array.from(new Map(rows.map((row) => [row.id, row])).values()) }

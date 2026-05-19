@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000004",
             "completion": "0.000008",
@@ -51,7 +51,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "aion-labs/aion-1.0#AionLabs | aion-labs/aion-1.0",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -76,7 +76,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000007",
             "completion": "0.0000014",
@@ -102,7 +102,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "aion-labs/aion-1.0-mini#AionLabs | aion-labs/aion-1.0-mini",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -127,7 +127,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000008",
             "completion": "0.0000016",
@@ -154,7 +154,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "aion-labs/aion-2.0#AionLabs | aion-labs/aion-2.0-20260223",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -179,7 +179,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000008",
             "completion": "0.0000016",
@@ -203,12 +203,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "aion-labs/aion-rp-llama-3.1-8b#AionLabs | aion-labs/aion-rp-llama-3.1-8b",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T18:45:39.680Z",
+  "last_updated": "2026-05-19T22:11:55.841Z",
   "sources": []
 }

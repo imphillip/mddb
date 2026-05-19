@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000003",
@@ -55,7 +55,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemma-3-27b-it#Nebius | google/gemma-3-27b-it",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -80,7 +80,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.0000006",
@@ -114,7 +114,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-120b:free#Nebius | openai/gpt-oss-120b",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -139,7 +139,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000001",
             "completion": "0.000003",
@@ -170,7 +170,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "nousresearch/hermes-4-405b#Nebius | nousresearch/hermes-4-405b",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -195,7 +195,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000013",
             "completion": "0.0000004",
@@ -226,7 +226,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "nousresearch/hermes-4-70b#Nebius | nousresearch/hermes-4-70b",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -251,7 +251,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000002",
             "completion": "0.0000011",
@@ -285,7 +285,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "prime-intellect/intellect-3#Nebius | prime-intellect/intellect-3-20251126",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -310,7 +310,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000002",
             "completion": "0.00000006",
@@ -342,7 +342,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.1-8b-instruct#Nebius | meta-llama/llama-3.1-8b-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -367,7 +367,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000013",
             "completion": "0.0000004",
@@ -397,7 +397,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.3-70b-instruct:free#Nebius | meta-llama/llama-3.3-70b-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -422,7 +422,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000009",
@@ -453,7 +453,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "nvidia/nemotron-3-super-120b-a12b:free#Nebius | nvidia/nemotron-3-super-120b-a12b-20230311",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -478,7 +478,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.00000075",
@@ -500,7 +500,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen2.5-vl-72b-instruct#Nebius | qwen/qwen2.5-vl-72b-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -525,7 +525,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000003",
@@ -557,7 +557,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-30b-a3b-instruct-2507#Nebius | qwen/qwen3-30b-a3b-instruct-2507",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -582,7 +582,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000003",
@@ -616,7 +616,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-32b#Nebius | qwen/qwen3-32b-04-28",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -641,7 +641,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.0000012",
@@ -675,7 +675,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-next-80b-a3b-thinking#Nebius | qwen/qwen3-next-80b-a3b-thinking-2509",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -700,7 +700,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000036",
@@ -734,12 +734,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-397b-a17b#Nebius | qwen/qwen3.5-397b-a17b-20260216",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T18:45:39.680Z",
+  "last_updated": "2026-05-19T22:11:55.841Z",
   "sources": []
 }

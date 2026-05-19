@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000345",
             "completion": "0.000000556",
@@ -57,7 +57,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemma-3-12b-it#Cloudflare | google/gemma-3-12b-it",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -82,7 +82,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000003",
@@ -119,7 +119,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemma-4-26b-a4b-it:free#Cloudflare | google/gemma-4-26b-a4b-it-20260403",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -144,7 +144,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000000605",
             "completion": "0.0000004",
@@ -182,7 +182,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.7-flash#Cloudflare | z-ai/glm-4.7-flash-20260119",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -207,7 +207,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000017",
             "completion": "0.000000112",
@@ -239,7 +239,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "ibm-granite/granite-4.0-h-micro#Cloudflare | ibm-granite/granite-4.0-h-micro",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -264,7 +264,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.000003",
@@ -303,7 +303,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2.5#Cloudflare | moonshotai/kimi-k2.5-0127",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -328,7 +328,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000095",
             "completion": "0.000004",
@@ -367,7 +367,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2.6#Cloudflare | moonshotai/kimi-k2.6-20260420",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -392,7 +392,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000282",
             "completion": "0.000000827",
@@ -424,7 +424,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3-8b-instruct#Cloudflare | meta-llama/llama-3-8b-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -449,7 +449,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000152",
             "completion": "0.000000287",
@@ -481,7 +481,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.1-8b-instruct#Cloudflare | meta-llama/llama-3.1-8b-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -506,7 +506,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000027",
             "completion": "0.000000201",
@@ -538,7 +538,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.2-1b-instruct#Cloudflare | meta-llama/llama-3.2-1b-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -563,7 +563,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000000509",
             "completion": "0.000000335",
@@ -595,7 +595,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.2-3b-instruct:free#Cloudflare | meta-llama/llama-3.2-3b-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -620,7 +620,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000293",
             "completion": "0.000002253",
@@ -652,7 +652,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.3-70b-instruct:free#Cloudflare | meta-llama/llama-3.3-70b-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -677,7 +677,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000484",
             "completion": "0.00000003",
@@ -709,7 +709,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-guard-3-8b#Cloudflare | meta-llama/llama-guard-3-8b",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -734,7 +734,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000011",
             "completion": "0.00000019",
@@ -766,7 +766,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "mistralai/mistral-7b-instruct-v0.1#Cloudflare | mistralai/mistral-7b-instruct-v0.1",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -791,7 +791,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000351",
             "completion": "0.000000555",
@@ -823,7 +823,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "mistralai/mistral-small-3.1-24b-instruct#Cloudflare | mistralai/mistral-small-3.1-24b-instruct-2503",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -848,7 +848,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000066",
             "completion": "0.000001",
@@ -880,12 +880,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen-2.5-coder-32b-instruct#Cloudflare | qwen/qwen-2.5-coder-32b-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T18:45:39.680Z",
+  "last_updated": "2026-05-19T22:11:55.841Z",
   "sources": []
 }

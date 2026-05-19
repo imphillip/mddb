@@ -102,6 +102,33 @@ function modelDisplayName(row, authorId, modelId) {
   return raw
 }
 
+
+function releaseTimestampSeconds(row) {
+  const candidates = [
+    row?.created,
+    row?.release_date,
+    row?.released_at,
+    row?.published_at,
+    row?.openrouter_page?.extracted?.model?.releaseDate,
+  ]
+  for (const candidate of candidates) {
+    const value = timestampSeconds(candidate)
+    if (value !== undefined) return value
+  }
+  return undefined
+}
+
+function timestampSeconds(value) {
+  if (typeof value === 'number' && Number.isFinite(value)) return Math.floor(value)
+  if (typeof value === 'string' && value.trim()) {
+    const numeric = Number(value)
+    if (Number.isFinite(numeric)) return Math.floor(numeric > 1_000_000_000_000 ? numeric / 1000 : numeric)
+    const parsed = Date.parse(value)
+    if (Number.isFinite(parsed)) return Math.floor(parsed / 1000)
+  }
+  return undefined
+}
+
 function providerDisplayPrefixes(authorId, authorName) {
   const canonical = PROVIDER_CANONICALS.find((candidate) => candidate.id === authorId)
   return new Set([authorName, authorId, ...(canonical?.aliases ?? [])].filter(Boolean))
@@ -265,6 +292,7 @@ for (const row of rows) {
       tool_calling: Array.isArray(row.supported_parameters) && row.supported_parameters.includes('tools'),
       context_length: typeof row.context_length === 'number' ? row.context_length : undefined,
       max_output_tokens: typeof row.top_provider?.max_completion_tokens === 'number' ? row.top_provider.max_completion_tokens : undefined,
+      release_timestamp: releaseTimestampSeconds(row),
       other_parameters: {
         tokenizer: row.architecture?.tokenizer,
         instruct_type: row.architecture?.instruct_type,

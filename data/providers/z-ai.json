@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000001",
@@ -51,7 +51,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4-32b#Z.AI | z-ai/glm-4-32b-0414",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -76,7 +76,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000022",
@@ -106,7 +106,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.5#Z.AI | z-ai/glm-4.5",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -131,7 +131,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000002",
             "completion": "0.0000011",
@@ -160,7 +160,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.5-air:free#Z.AI | z-ai/glm-4.5-air",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -185,7 +185,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000018",
@@ -214,7 +214,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.5v#Z.AI | z-ai/glm-4.5v",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -239,7 +239,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000022",
@@ -268,7 +268,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.6#Z.AI | z-ai/glm-4.6",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -293,7 +293,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000009",
@@ -322,7 +322,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.6v#Z.AI | z-ai/glm-4.6-20251208",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -347,7 +347,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000022",
@@ -377,7 +377,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.7#Z.AI | z-ai/glm-4.7-20251222",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -402,7 +402,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000007",
             "completion": "0.0000004",
@@ -432,7 +432,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.7-flash#Z.AI | z-ai/glm-4.7-flash-20260119",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -457,7 +457,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000001",
             "completion": "0.0000032",
@@ -487,7 +487,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5#Z.AI | z-ai/glm-5-20260211",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -512,7 +512,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000012",
             "completion": "0.000004",
@@ -542,7 +542,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5-turbo#Z.AI | z-ai/glm-5-turbo-20260315",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -567,7 +567,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000014",
             "completion": "0.0000044",
@@ -597,7 +597,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5.1#Z.AI | z-ai/glm-5.1-20260406",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -622,7 +622,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000012",
             "completion": "0.000004",
@@ -652,12 +652,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5v-turbo#Z.AI | z-ai/glm-5v-turbo-20260401",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T18:45:39.680Z",
+  "last_updated": "2026-05-19T22:11:55.841Z",
   "sources": []
 }

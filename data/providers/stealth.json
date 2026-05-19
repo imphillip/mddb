@@ -37,12 +37,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openrouter/owl-alpha#Stealth | openrouter/owl-alpha",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T18:45:39.680Z",
+  "last_updated": "2026-05-19T22:11:55.841Z",
   "sources": []
 }

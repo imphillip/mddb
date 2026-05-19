@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000003705",
             "completion": "0.0000011115",
@@ -59,7 +59,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v3.2#Alibaba | deepseek/deepseek-v3.2-20251201",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -84,7 +84,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000014",
             "completion": "0.00000028",
@@ -117,7 +117,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v4-flash:free#Alibaba | deepseek/deepseek-v4-flash-20260423",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -142,7 +142,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000168",
             "completion": "0.00000336",
@@ -175,7 +175,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v4-pro#Alibaba | deepseek/deepseek-v4-pro-20260423",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -200,7 +200,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000026",
             "completion": "0.00000078",
@@ -231,7 +231,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen-plus#Alibaba | qwen/qwen-plus-2025-01-25",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -256,7 +256,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000026",
             "completion": "0.00000078",
@@ -287,7 +287,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen-plus-2025-07-28:thinking#Alibaba | qwen/qwen-plus-2025-07-28",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -312,7 +312,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000002275",
             "completion": "0.00000091",
@@ -343,7 +343,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-14b#Alibaba | qwen/qwen3-14b-04-28",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -368,7 +368,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000455",
             "completion": "0.00000182",
@@ -399,7 +399,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-235b-a22b#Alibaba | qwen/qwen3-235b-a22b-04-28",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -424,7 +424,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000001495",
             "completion": "0.000000598",
@@ -453,7 +453,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-235b-a22b-2507#Alibaba | qwen/qwen3-235b-a22b-07-25",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -478,7 +478,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000001495",
             "completion": "0.000001495",
@@ -509,7 +509,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-235b-a22b-thinking-2507#Alibaba | qwen/qwen3-235b-a22b-thinking-2507",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -534,7 +534,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000013",
             "completion": "0.00000052",
@@ -565,7 +565,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-30b-a3b#Alibaba | qwen/qwen3-30b-a3b-04-28",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -590,7 +590,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000013",
             "completion": "0.00000052",
@@ -617,7 +617,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-30b-a3b-instruct-2507#Alibaba | qwen/qwen3-30b-a3b-instruct-2507",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -642,7 +642,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000013",
             "completion": "0.00000156",
@@ -673,7 +673,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-30b-a3b-thinking-2507#Alibaba | qwen/qwen3-30b-a3b-thinking-2507",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -698,7 +698,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000104",
             "completion": "0.000000416",
@@ -729,7 +729,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-32b#Alibaba | qwen/qwen3-32b-04-28",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -754,7 +754,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000117",
             "completion": "0.000000455",
@@ -785,7 +785,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-8b#Alibaba | qwen/qwen3-8b-04-28",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -810,7 +810,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000975",
             "completion": "0.000004875",
@@ -840,7 +840,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-coder:free#Alibaba | qwen/qwen3-coder-480b-a35b-07-25",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -865,7 +865,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000002925",
             "completion": "0.0000014625",
@@ -894,7 +894,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-coder-30b-a3b-instruct#Alibaba | qwen/qwen3-coder-30b-a3b-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -919,7 +919,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000195",
             "completion": "0.000000975",
@@ -950,7 +950,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-coder-flash#Alibaba | qwen/qwen3-coder-flash",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -975,7 +975,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000065",
             "completion": "0.00000325",
@@ -1007,7 +1007,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-coder-plus#Alibaba | qwen/qwen3-coder-plus",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1032,7 +1032,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000078",
             "completion": "0.0000039",
@@ -1063,7 +1063,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-max#Alibaba | qwen/qwen3-max",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1088,7 +1088,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000078",
             "completion": "0.0000039",
@@ -1120,7 +1120,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-max-thinking#Alibaba | qwen/qwen3-max-thinking-20260123",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1145,7 +1145,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000000975",
             "completion": "0.00000078",
@@ -1174,7 +1174,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-next-80b-a3b-instruct:free#Alibaba | qwen/qwen3-next-80b-a3b-instruct-2509",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1199,7 +1199,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000000975",
             "completion": "0.00000078",
@@ -1230,7 +1230,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-next-80b-a3b-thinking#Alibaba | qwen/qwen3-next-80b-a3b-thinking-2509",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1255,7 +1255,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000026",
             "completion": "0.00000104",
@@ -1285,7 +1285,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-vl-235b-a22b-instruct#Alibaba | qwen/qwen3-vl-235b-a22b-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1310,7 +1310,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000026",
             "completion": "0.0000026",
@@ -1341,7 +1341,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-vl-235b-a22b-thinking#Alibaba | qwen/qwen3-vl-235b-a22b-thinking",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1366,7 +1366,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000013",
             "completion": "0.00000052",
@@ -1395,7 +1395,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-vl-30b-a3b-instruct#Alibaba | qwen/qwen3-vl-30b-a3b-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1420,7 +1420,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000013",
             "completion": "0.00000156",
@@ -1451,7 +1451,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-vl-30b-a3b-thinking#Alibaba | qwen/qwen3-vl-30b-a3b-thinking",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1476,7 +1476,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000104",
             "completion": "0.000000416",
@@ -1505,7 +1505,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-vl-32b-instruct#Alibaba | qwen/qwen3-vl-32b-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1530,7 +1530,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000117",
             "completion": "0.000000455",
@@ -1560,7 +1560,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-vl-8b-instruct#Alibaba | qwen/qwen3-vl-8b-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1585,7 +1585,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000117",
             "completion": "0.000001365",
@@ -1617,7 +1617,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-vl-8b-thinking#Alibaba | qwen/qwen3-vl-8b-thinking",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1642,7 +1642,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000026",
             "completion": "0.00000208",
@@ -1676,7 +1676,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-122b-a10b#Alibaba | qwen/qwen3.5-122b-a10b-20260224",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1701,7 +1701,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000195",
             "completion": "0.00000156",
@@ -1735,7 +1735,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-27b#Alibaba | qwen/qwen3.5-27b-20260224",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1760,7 +1760,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000001625",
             "completion": "0.0000013",
@@ -1794,7 +1794,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-35b-a3b#Alibaba | qwen/qwen3.5-35b-a3b-20260224",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1819,7 +1819,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000039",
             "completion": "0.00000234",
@@ -1850,7 +1850,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-397b-a17b#Alibaba | qwen/qwen3.5-397b-a17b-20260216",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1875,7 +1875,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000065",
             "completion": "0.00000026",
@@ -1908,7 +1908,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-flash-02-23#Alibaba | qwen/qwen3.5-flash-20260224",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1933,7 +1933,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000026",
             "completion": "0.00000156",
@@ -1966,7 +1966,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-plus-02-15#Alibaba | qwen/qwen3.5-plus-20260216",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1991,7 +1991,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000018",
@@ -2023,7 +2023,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-plus-20260420#Alibaba | qwen/qwen3.5-plus-20260420",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -2048,7 +2048,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000045",
             "completion": "0.0000027",
@@ -2082,7 +2082,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.6-27b#Alibaba | qwen/qwen3.6-27b-20260422",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -2107,7 +2107,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000001875",
             "completion": "0.000001125",
@@ -2140,7 +2140,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.6-flash#Alibaba | qwen/qwen3.6-flash",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -2165,7 +2165,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000104",
             "completion": "0.00000624",
@@ -2200,7 +2200,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.6-max-preview#Alibaba | qwen/qwen3.6-max-preview-20260420",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -2225,7 +2225,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000325",
             "completion": "0.00000195",
@@ -2258,12 +2258,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.6-plus#Alibaba | qwen/qwen3.6-plus-04-02",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T18:45:39.680Z",
+  "last_updated": "2026-05-19T22:11:55.841Z",
   "sources": []
 }

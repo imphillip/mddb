@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.000002",
@@ -57,7 +57,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "bytedance-seed/seed-1.6#Seed | bytedance-seed/seed-1.6-20250625",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -82,7 +82,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000075",
             "completion": "0.0000003",
@@ -114,7 +114,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "bytedance-seed/seed-1.6-flash#Seed | bytedance-seed/seed-1.6-flash-20250625",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -139,7 +139,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.000002",
@@ -171,7 +171,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "bytedance-seed/seed-2.0-lite#Seed | bytedance-seed/seed-2.0-lite-20260309",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -196,7 +196,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000004",
@@ -228,12 +228,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "bytedance-seed/seed-2.0-mini#Seed | bytedance-seed/seed-2.0-mini-20260224",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T18:45:39.680Z",
+  "last_updated": "2026-05-19T22:11:55.841Z",
   "sources": []
 }

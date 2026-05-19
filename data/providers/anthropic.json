@@ -29,7 +29,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000001",
             "completion": "0.000005",
@@ -64,7 +64,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-haiku-4.5#Anthropic | anthropic/claude-4.5-haiku-20251001",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -93,7 +93,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000015",
             "completion": "0.000075",
@@ -125,7 +125,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4#Anthropic | anthropic/claude-4-opus-20250522",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -154,7 +154,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000015",
             "completion": "0.000075",
@@ -187,7 +187,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.1#Anthropic | anthropic/claude-4.1-opus-20250805",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -216,7 +216,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.000025",
@@ -250,7 +250,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.5#Anthropic | anthropic/claude-4.5-opus-20251124",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -279,7 +279,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.000025",
@@ -313,7 +313,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.5#Anthropic | anthropic/claude-4.5-opus-20251124",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -342,7 +342,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.000025",
@@ -377,7 +377,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.6#Anthropic | anthropic/claude-4.6-opus-20260205",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -406,7 +406,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.000025",
@@ -441,7 +441,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.6#Anthropic | anthropic/claude-4.6-opus-20260205",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -470,7 +470,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00003",
             "completion": "0.00015",
@@ -505,7 +505,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.6-fast#Anthropic | anthropic/claude-4.6-opus-fast-20260407",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -534,7 +534,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.000025",
@@ -567,7 +567,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.7#Anthropic | anthropic/claude-4.7-opus-20260416",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -596,7 +596,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.000025",
@@ -629,7 +629,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.7#Anthropic | anthropic/claude-4.7-opus-20260416",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -658,7 +658,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00003",
             "completion": "0.00015",
@@ -691,7 +691,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.7-fast#Anthropic | anthropic/claude-4.7-opus-fast-20260512",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -720,7 +720,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -752,7 +752,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4#Anthropic | anthropic/claude-4-sonnet-20250522",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -781,7 +781,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -816,7 +816,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4.5#Anthropic | anthropic/claude-4.5-sonnet-20250929",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -845,7 +845,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -880,7 +880,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4.5#Anthropic | anthropic/claude-4.5-sonnet-20250929",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -909,7 +909,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -944,7 +944,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4.6#Anthropic | anthropic/claude-4.6-sonnet-20260217",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -973,7 +973,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -1008,12 +1008,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4.6#Anthropic | anthropic/claude-4.6-sonnet-20260217",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T18:45:39.680Z",
+  "last_updated": "2026-05-19T22:11:55.841Z",
   "sources": []
 }

@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000005",
@@ -61,7 +61,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthracite-org/magnum-v4-72b#Mancer 2 | anthracite-org/magnum-v4-72b",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -86,7 +86,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000005",
             "completion": "0.00000075",
@@ -122,7 +122,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "gryphe/mythomax-l2-13b#Mancer 2 | gryphe/mythomax-l2-13b",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -147,7 +147,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000005",
             "completion": "0.00000075",
@@ -183,7 +183,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "undi95/remm-slerp-l2-13b#Mancer 2 | undi95/remm-slerp-l2-13b",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -208,7 +208,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000075",
             "completion": "0.000001",
@@ -244,12 +244,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "mancer/weaver#Mancer 2 | mancer/weaver",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T18:45:39.680Z",
+  "last_updated": "2026-05-19T22:11:55.841Z",
   "sources": []
 }

@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.00000125",
@@ -55,7 +55,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-3-haiku#Google | anthropic/claude-3-haiku",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -84,7 +84,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000008",
             "completion": "0.000004",
@@ -115,7 +115,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-3.5-haiku#Google | anthropic/claude-3-5-haiku",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -144,7 +144,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000001",
             "completion": "0.000005",
@@ -177,7 +177,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-haiku-4.5#Google | anthropic/claude-4.5-haiku-20251001",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -206,7 +206,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000001",
             "completion": "0.000005",
@@ -239,7 +239,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-haiku-4.5#Google | anthropic/claude-4.5-haiku-20251001",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -268,7 +268,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000015",
             "completion": "0.000075",
@@ -300,7 +300,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4#Google | anthropic/claude-4-opus-20250522",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -329,7 +329,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000015",
             "completion": "0.000075",
@@ -361,7 +361,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.1#Google | anthropic/claude-4.1-opus-20250805",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -390,7 +390,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000015",
             "completion": "0.000075",
@@ -422,7 +422,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.1#Google | anthropic/claude-4.1-opus-20250805",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -451,7 +451,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.000025",
@@ -483,7 +483,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.5#Google | anthropic/claude-4.5-opus-20251124",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -512,7 +512,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.000025",
@@ -546,7 +546,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.6#Google | anthropic/claude-4.6-opus-20260205",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -575,7 +575,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.000025",
@@ -609,7 +609,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.6#Google | anthropic/claude-4.6-opus-20260205",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -638,7 +638,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.000025",
@@ -670,7 +670,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.7#Google | anthropic/claude-4.7-opus-20260416",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -699,7 +699,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.000025",
@@ -731,7 +731,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.7#Google | anthropic/claude-4.7-opus-20260416",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -760,7 +760,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -792,7 +792,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4#Google | anthropic/claude-4-sonnet-20250522",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -821,7 +821,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -853,7 +853,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4#Google | anthropic/claude-4-sonnet-20250522",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -882,7 +882,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -914,7 +914,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4#Google | anthropic/claude-4-sonnet-20250522",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -943,7 +943,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -976,7 +976,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4.5#Google | anthropic/claude-4.5-sonnet-20250929",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1005,7 +1005,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -1038,7 +1038,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4.5#Google | anthropic/claude-4.5-sonnet-20250929",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1067,7 +1067,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -1101,7 +1101,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4.6#Google | anthropic/claude-4.6-sonnet-20260217",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1130,7 +1130,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -1164,7 +1164,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4.6#Google | anthropic/claude-4.6-sonnet-20260217",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1193,7 +1193,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -1227,7 +1227,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4.6#Google | anthropic/claude-4.6-sonnet-20260217",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1252,7 +1252,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000017",
@@ -1288,7 +1288,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-chat-v3.1#Google | deepseek/deepseek-chat-v3.1",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1313,7 +1313,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000056",
             "completion": "0.00000168",
@@ -1349,7 +1349,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v3.2#Google | deepseek/deepseek-v3.2-20251201",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1386,7 +1386,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000004",
@@ -1423,7 +1423,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.0-flash-001#Google AI Studio | google/gemini-2.0-flash-001",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1460,7 +1460,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000004",
@@ -1497,7 +1497,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.0-flash-001#Google | google/gemini-2.0-flash-001",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1534,7 +1534,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000075",
             "completion": "0.0000003",
@@ -1568,7 +1568,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.0-flash-lite-001#Google | google/gemini-2.0-flash-lite-001",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1605,7 +1605,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000075",
             "completion": "0.0000003",
@@ -1639,7 +1639,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.0-flash-lite-001#Google AI Studio | google/gemini-2.0-flash-lite-001",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1676,7 +1676,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000025",
@@ -1715,7 +1715,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-flash#Google | google/gemini-2.5-flash",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1752,7 +1752,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000025",
@@ -1791,7 +1791,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-flash#Google | google/gemini-2.5-flash",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1828,7 +1828,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000025",
@@ -1867,7 +1867,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-flash#Google AI Studio | google/gemini-2.5-flash",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1904,7 +1904,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000025",
@@ -1943,7 +1943,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-flash#Google | google/gemini-2.5-flash",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1980,7 +1980,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000025",
@@ -2016,7 +2016,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-flash-image#Google AI Studio | google/gemini-2.5-flash-image",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -2053,7 +2053,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000025",
@@ -2089,7 +2089,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-flash-image#Google | google/gemini-2.5-flash-image",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -2126,7 +2126,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000004",
@@ -2165,7 +2165,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-flash-lite#Google | google/gemini-2.5-flash-lite",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -2202,7 +2202,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000004",
@@ -2241,7 +2241,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-flash-lite#Google | google/gemini-2.5-flash-lite",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -2278,7 +2278,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000004",
@@ -2317,7 +2317,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-flash-lite#Google AI Studio | google/gemini-2.5-flash-lite",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -2354,7 +2354,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000004",
@@ -2393,7 +2393,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-flash-lite-preview-09-2025#Google | google/gemini-2.5-flash-lite-preview-09-2025",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -2430,7 +2430,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -2469,7 +2469,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-pro#Google | google/gemini-2.5-pro",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -2506,7 +2506,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -2545,7 +2545,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-pro#Google | google/gemini-2.5-pro",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -2582,7 +2582,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -2621,7 +2621,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-pro#Google AI Studio | google/gemini-2.5-pro",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -2658,7 +2658,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -2697,7 +2697,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-pro#Google | google/gemini-2.5-pro",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -2734,7 +2734,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -2773,7 +2773,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-pro-preview#Google | google/gemini-2.5-pro",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -2810,7 +2810,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -2849,7 +2849,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-pro-preview#Google | google/gemini-2.5-pro",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -2886,7 +2886,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -2925,7 +2925,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-pro-preview#Google AI Studio | google/gemini-2.5-pro",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -2962,7 +2962,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -3001,7 +3001,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-pro-preview#Google | google/gemini-2.5-pro",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -3038,7 +3038,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -3077,7 +3077,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-pro-preview-05-06#Google | google/gemini-2.5-pro",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -3114,7 +3114,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -3153,7 +3153,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-pro-preview-05-06#Google | google/gemini-2.5-pro",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -3190,7 +3190,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -3229,7 +3229,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-pro-preview-05-06#Google AI Studio | google/gemini-2.5-pro",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -3266,7 +3266,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -3305,7 +3305,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-2.5-pro-preview-05-06#Google | google/gemini-2.5-pro",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -3342,7 +3342,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000005",
             "completion": "0.000003",
@@ -3381,7 +3381,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-3-flash-preview#Google AI Studio | google/gemini-3-flash-preview-20251217",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -3418,7 +3418,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000005",
             "completion": "0.000003",
@@ -3457,7 +3457,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-3-flash-preview#Google | google/gemini-3-flash-preview-20251217",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -3494,7 +3494,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000002",
             "completion": "0.000012",
@@ -3532,7 +3532,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-3-pro-image-preview#Google AI Studio | google/gemini-3-pro-image-preview-20251120",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -3569,7 +3569,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000002",
             "completion": "0.000012",
@@ -3607,7 +3607,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-3-pro-image-preview#Google | google/gemini-3-pro-image-preview-20251120",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -3636,7 +3636,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000005",
             "completion": "0.000003",
@@ -3668,7 +3668,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-3.1-flash-image-preview#Google AI Studio | google/gemini-3.1-flash-image-preview-20260226",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -3697,7 +3697,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000005",
             "completion": "0.000003",
@@ -3727,7 +3727,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-3.1-flash-image-preview#Google | google/gemini-3.1-flash-image-preview-20260226",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -3764,7 +3764,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.0000015",
@@ -3803,7 +3803,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-3.1-flash-lite#Google | google/gemini-3.1-flash-lite-20260507",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -3840,7 +3840,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.0000015",
@@ -3879,7 +3879,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-3.1-flash-lite#Google AI Studio | google/gemini-3.1-flash-lite-20260507",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -3916,7 +3916,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.0000015",
@@ -3955,7 +3955,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-3.1-flash-lite-preview#Google AI Studio | google/gemini-3.1-flash-lite-preview-20260303",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -3992,7 +3992,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.0000015",
@@ -4031,7 +4031,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-3.1-flash-lite-preview#Google | google/gemini-3.1-flash-lite-preview-20260303",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -4068,7 +4068,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000002",
             "completion": "0.000012",
@@ -4107,7 +4107,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-3.1-pro-preview#Google AI Studio | google/gemini-3.1-pro-preview-20260219",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -4144,7 +4144,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000002",
             "completion": "0.000012",
@@ -4183,7 +4183,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-3.1-pro-preview#Google | google/gemini-3.1-pro-preview-20260219",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -4220,7 +4220,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000002",
             "completion": "0.000012",
@@ -4259,7 +4259,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemini-3.1-pro-preview-customtools#Google AI Studio | google/gemini-3.1-pro-preview-customtools-20260219",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -4284,7 +4284,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.0000006",
@@ -4320,7 +4320,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemma-4-26b-a4b-it:free#Google | google/gemma-4-26b-a4b-it-20260403",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -4345,7 +4345,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000022",
@@ -4381,7 +4381,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.7#Google | z-ai/glm-4.7-20251222",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -4406,7 +4406,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000009",
             "completion": "0.00000036",
@@ -4437,7 +4437,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-120b:free#Google | openai/gpt-oss-120b",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -4462,7 +4462,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000007",
             "completion": "0.00000025",
@@ -4493,7 +4493,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-20b:free#Google | openai/gpt-oss-20b",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -4518,7 +4518,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000025",
@@ -4554,7 +4554,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2-thinking#Google | moonshotai/kimi-k2-thinking-20251106",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -4579,7 +4579,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000072",
             "completion": "0.00000072",
@@ -4605,7 +4605,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.3-70b-instruct:free#Google | meta-llama/llama-3.3-70b-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -4630,7 +4630,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000072",
             "completion": "0.00000072",
@@ -4663,7 +4663,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.3-70b-instruct:free#Google | meta-llama/llama-3.3-70b-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -4688,7 +4688,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.0000007",
@@ -4721,7 +4721,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-4-scout#Google | meta-llama/llama-4-scout-17b-16e-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -4750,7 +4750,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/lyria-3-clip-preview#Google AI Studio | google/lyria-3-clip-preview-20260330",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -4779,7 +4779,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/lyria-3-pro-preview#Google AI Studio | google/lyria-3-pro-preview-20260330",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -4804,7 +4804,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000012",
@@ -4840,7 +4840,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "minimax/minimax-m2#Google | minimax/minimax-m2",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -4865,7 +4865,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000022",
             "completion": "0.00000088",
@@ -4899,7 +4899,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-235b-a22b-2507#Google | qwen/qwen3-235b-a22b-07-25",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -4924,7 +4924,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000022",
             "completion": "0.0000018",
@@ -4958,7 +4958,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-coder:free#Google | qwen/qwen3-coder-480b-a35b-07-25",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -4983,7 +4983,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.0000012",
@@ -5017,7 +5017,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-next-80b-a3b-instruct:free#Google | qwen/qwen3-next-80b-a3b-instruct-2509",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -5042,7 +5042,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.0000012",
@@ -5078,12 +5078,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-next-80b-a3b-thinking#Google | qwen/qwen3-next-80b-a3b-thinking-2509",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T18:45:39.680Z",
+  "last_updated": "2026-05-19T22:11:55.841Z",
   "sources": []
 }

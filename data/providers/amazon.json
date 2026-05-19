@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.00000125",
@@ -55,7 +55,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-3-haiku#Amazon Bedrock | anthropic/claude-3-haiku",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -84,7 +84,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000008",
             "completion": "0.000004",
@@ -115,7 +115,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-3.5-haiku#Amazon Bedrock | anthropic/claude-3-5-haiku",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -144,7 +144,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000008",
             "completion": "0.000004",
@@ -175,7 +175,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-3.5-haiku#Amazon Bedrock | anthropic/claude-3-5-haiku",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -204,7 +204,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000001",
             "completion": "0.000005",
@@ -239,7 +239,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-haiku-4.5#Amazon Bedrock | anthropic/claude-4.5-haiku-20251001",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -268,7 +268,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000001",
             "completion": "0.000005",
@@ -303,7 +303,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-haiku-4.5#Amazon Bedrock | anthropic/claude-4.5-haiku-20251001",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -332,7 +332,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000015",
             "completion": "0.000075",
@@ -365,7 +365,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4#Amazon Bedrock | anthropic/claude-4-opus-20250522",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -394,7 +394,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000015",
             "completion": "0.000075",
@@ -427,7 +427,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.1#Amazon Bedrock | anthropic/claude-4.1-opus-20250805",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -456,7 +456,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.000025",
@@ -490,7 +490,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.5#Amazon Bedrock | anthropic/claude-4.5-opus-20251124",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -519,7 +519,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.000025",
@@ -553,7 +553,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.5#Amazon Bedrock | anthropic/claude-4.5-opus-20251124",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -582,7 +582,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.000025",
@@ -618,7 +618,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.6#Amazon Bedrock | anthropic/claude-4.6-opus-20260205",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -647,7 +647,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.000025",
@@ -680,7 +680,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.7#Amazon Bedrock | anthropic/claude-4.7-opus-20260416",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -709,7 +709,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.000025",
@@ -742,7 +742,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-opus-4.7#Amazon Bedrock | anthropic/claude-4.7-opus-20260416",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -771,7 +771,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -804,7 +804,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4#Amazon Bedrock | anthropic/claude-4-sonnet-20250522",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -833,7 +833,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -866,7 +866,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4#Amazon Bedrock | anthropic/claude-4-sonnet-20250522",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -895,7 +895,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -930,7 +930,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4.5#Amazon Bedrock | anthropic/claude-4.5-sonnet-20250929",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -959,7 +959,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -994,7 +994,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4.5#Amazon Bedrock | anthropic/claude-4.5-sonnet-20250929",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1023,7 +1023,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -1059,7 +1059,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4.6#Amazon Bedrock | anthropic/claude-4.6-sonnet-20260217",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1088,7 +1088,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000015",
@@ -1124,7 +1124,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "anthropic/claude-sonnet-4.6#Amazon Bedrock | anthropic/claude-4.6-sonnet-20260217",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1149,7 +1149,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000001",
             "completion": "0.0000032",
@@ -1179,7 +1179,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5#Amazon Bedrock | z-ai/glm-5-20260211",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1204,7 +1204,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.0000006",
@@ -1232,7 +1232,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-120b:free#Amazon Bedrock | openai/gpt-oss-120b",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1257,7 +1257,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.0000006",
@@ -1285,7 +1285,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-120b:free#Amazon Bedrock | openai/gpt-oss-120b",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1310,7 +1310,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000007",
             "completion": "0.00000015",
@@ -1340,7 +1340,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-20b:free#Amazon Bedrock | openai/gpt-oss-20b",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1365,7 +1365,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000007",
             "completion": "0.00000015",
@@ -1395,7 +1395,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-20b:free#Amazon Bedrock | openai/gpt-oss-20b",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1420,7 +1420,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000072",
             "completion": "0.00000072",
@@ -1446,7 +1446,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.1-70b-instruct#Amazon Bedrock | meta-llama/llama-3.1-70b-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1471,7 +1471,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000025",
@@ -1501,7 +1501,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "amazon/nova-2-lite-v1#Amazon Bedrock | amazon/nova-2-lite-v1",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1526,7 +1526,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000025",
@@ -1556,7 +1556,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "amazon/nova-2-lite-v1#Amazon Bedrock | amazon/nova-2-lite-v1",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1581,7 +1581,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000006",
             "completion": "0.00000024",
@@ -1608,7 +1608,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "amazon/nova-lite-v1#Amazon Bedrock | amazon/nova-lite-v1",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1633,7 +1633,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000006",
             "completion": "0.00000024",
@@ -1660,7 +1660,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "amazon/nova-lite-v1#Amazon Bedrock | amazon/nova-lite-v1",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1685,7 +1685,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000035",
             "completion": "0.00000014",
@@ -1712,7 +1712,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "amazon/nova-micro-v1#Amazon Bedrock | amazon/nova-micro-v1",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1737,7 +1737,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.000000035",
             "completion": "0.00000014",
@@ -1764,7 +1764,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "amazon/nova-micro-v1#Amazon Bedrock | amazon/nova-micro-v1",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1789,7 +1789,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000025",
             "completion": "0.0000125",
@@ -1817,7 +1817,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "amazon/nova-premier-v1#Amazon Bedrock | amazon/nova-premier-v1",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1842,7 +1842,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000008",
             "completion": "0.0000032",
@@ -1869,7 +1869,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "amazon/nova-pro-v1#Amazon Bedrock | amazon/nova-pro-v1",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1894,7 +1894,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000008",
             "completion": "0.0000032",
@@ -1921,7 +1921,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "amazon/nova-pro-v1#Amazon Bedrock | amazon/nova-pro-v1",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1946,7 +1946,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.000006",
@@ -1972,7 +1972,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "writer/palmyra-x5#Amazon Bedrock | writer/palmyra-x5-20250428",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     },
@@ -1997,7 +1997,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T18:45:39.680Z",
+          "observed_at": "2026-05-19T22:11:55.841Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.0000006",
@@ -2025,12 +2025,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-coder-30b-a3b-instruct#Amazon Bedrock | qwen/qwen3-coder-30b-a3b-instruct",
-          "observed_at": "2026-05-19T18:45:39.680Z"
+          "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T18:45:39.680Z",
+  "last_updated": "2026-05-19T22:11:55.841Z",
   "sources": []
 }
