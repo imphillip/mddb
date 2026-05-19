@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.00000075",
@@ -56,12 +56,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "inception/mercury-2#Inception | inception/mercury-2-20260304",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-18T23:02:28.889Z",
+  "last_updated": "2026-05-19T14:20:07.465Z",
   "sources": []
 }

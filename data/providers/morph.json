@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000004",
@@ -63,7 +63,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v4-flash:free#Morph | deepseek/deepseek-v4-flash-20260423",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -88,7 +88,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000000279",
             "completion": "0.0000012",
@@ -128,7 +128,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "minimax/minimax-m2.7#Morph | minimax/minimax-m2.7-20260318",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -153,7 +153,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000008",
             "completion": "0.0000012",
@@ -177,7 +177,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "morph/morph-v3-fast#Morph | morph/morph-v3-fast",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -202,7 +202,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000009",
             "completion": "0.0000019",
@@ -226,7 +226,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "morph/morph-v3-large#Morph | morph/morph-v3-large",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -251,7 +251,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000048",
             "completion": "0.0000035",
@@ -292,7 +292,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-397b-a17b#Morph | qwen/qwen3.5-397b-a17b-20260216",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -317,7 +317,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000000498",
             "completion": "0.0000024",
@@ -357,12 +357,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.6-27b#Morph | qwen/qwen3.6-27b-20260422",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-18T23:02:28.889Z",
+  "last_updated": "2026-05-19T14:20:07.465Z",
   "sources": []
 }

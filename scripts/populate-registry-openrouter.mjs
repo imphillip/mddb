@@ -35,8 +35,55 @@ function title(value) {
     .join(' ')
 }
 
+const PROVIDER_CANONICALS = [
+  { id: 'aion-labs', name: 'Aion Labs', aliases: ['aion-labs', 'aionlabs', 'AionLabs', 'Aion Labs'] },
+  { id: 'amazon', name: 'Amazon', aliases: ['amazon', 'Amazon', 'amazon-bedrock', 'Amazon Bedrock'] },
+  { id: 'bytedance', name: 'ByteDance', aliases: ['bytedance', 'Bytedance', 'ByteDance', 'bytedance-seed', 'ByteDance Seed', 'Bytedance Seed', 'seed', 'Seed'] },
+  { id: 'google', name: 'Google', aliases: ['google', 'Google', 'google-ai-studio', 'Google AI Studio'] },
+  { id: 'mancer', name: 'Mancer', aliases: ['mancer', 'Mancer', 'mancer-2', 'Mancer 2'] },
+  { id: 'mistral', name: 'Mistral', aliases: ['mistral', 'Mistral', 'mistralai', 'Mistralai', 'MistralAI', 'mistral-ai', 'Mistral AI'] },
+  { id: 'moonshot-ai', name: 'Moonshot AI', aliases: ['moonshot-ai', 'Moonshot AI', 'moonshotai', 'MoonshotAI', 'Moonshotai'] },
+  { id: 'xai', name: 'xAI', aliases: ['xai', 'xAI', 'XAI', 'x-ai', 'X Ai', 'X.AI'] },
+  { id: 'z-ai', name: 'Z.AI', aliases: ['z-ai', 'Z Ai', 'Z-AI', 'z.ai', 'Z.AI', 'ZAI'] },
+]
+
+const PROVIDER_ALIAS_TO_CANONICAL = new Map()
+for (const canonical of PROVIDER_CANONICALS) {
+  for (const alias of canonical.aliases) PROVIDER_ALIAS_TO_CANONICAL.set(providerAliasKey(alias), canonical)
+}
+
+function providerAliasKey(value) {
+  return String(value ?? '')
+    .trim()
+    .replace(/^~/u, '')
+    .toLowerCase()
+    .replace(/[._]/g, '-')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
+}
+
+function normalizeProviderIdentity(id, name = id) {
+  const canonical = PROVIDER_ALIAS_TO_CANONICAL.get(providerAliasKey(id)) ?? PROVIDER_ALIAS_TO_CANONICAL.get(providerAliasKey(name))
+  if (canonical) return { id: canonical.id, name: canonical.name }
+  const providerId = slugify(id)
+  return { id: providerId, name: name || title(providerId) }
+}
+
+function canonicalProviderId(value) {
+  return normalizeProviderIdentity(value).id
+}
+
+function canonicalProviderName(id, name = id) {
+  return normalizeProviderIdentity(id, name).name
+}
+
 function stripProviderNamespace(sourceId, authorId) {
   let id = String(sourceId ?? '')
+  if (id.includes('/')) {
+    const [namespace, ...rest] = id.split('/')
+    if (canonicalProviderId(namespace) === authorId || namespace.toLowerCase() === 'openrouter') id = rest.join('/')
+  }
   for (const prefix of [`${authorId}/`, 'openrouter/']) {
     if (id.toLowerCase().startsWith(prefix.toLowerCase())) id = id.slice(prefix.length)
   }
@@ -45,12 +92,12 @@ function stripProviderNamespace(sourceId, authorId) {
 
 function inferAuthor(row) {
   const id = String(row.id ?? '')
-  if (id.includes('/')) return slugify(id.split('/')[0])
+  if (id.includes('/')) return canonicalProviderId(id.split('/')[0])
   const endpointProviders = row.openrouter_endpoint_details?.endpoints
     ?.map((e) => e.provider_name ?? e.provider?.name)
     ?.filter(Boolean) ?? []
   const firstProvider = endpointProviders.find((p) => !/openrouter/i.test(String(p)))
-  return slugify(firstProvider ?? row.owned_by ?? row.author ?? 'unknown')
+  return canonicalProviderId(firstProvider ?? row.owned_by ?? row.author ?? 'unknown')
 }
 
 function modalitiesFromArchitecture(row) {
@@ -140,11 +187,13 @@ const modelMap = new Map()
 const providerMap = new Map()
 
 function ensureProvider(id, name, extra = {}) {
-  const providerId = slugify(id)
+  const identity = normalizeProviderIdentity(id, name)
+  const providerId = identity.id
+  const providerName = identity.name
   const current = providerMap.get(providerId) ?? {
     schema_version: 1,
     id: providerId,
-    provider: name || title(providerId),
+    provider: providerName || title(providerId),
     icon: extra.icon,
     domain: extra.domain,
     base_url: extra.base_url,
@@ -154,7 +203,7 @@ function ensureProvider(id, name, extra = {}) {
     last_updated: OBSERVED_AT,
     sources: [],
   }
-  current.provider = current.provider || name || title(providerId)
+  current.provider = current.provider || providerName || title(providerId)
   current.icon ??= extra.icon
   current.domain ??= extra.domain
   current.base_url ??= extra.base_url
@@ -172,7 +221,7 @@ for (const row of rows) {
   const author = inferAuthor(row)
   const modelId = stripProviderNamespace(row.id, author)
   const modalities = modalitiesFromArchitecture(row)
-  ensureProvider(author, title(author))
+  ensureProvider(author, canonicalProviderName(author, title(author)))
 
   if (!modelMap.has(modelId)) {
     modelMap.set(modelId, {
@@ -202,7 +251,7 @@ for (const row of rows) {
   })
   const mode = modeFor(row)
   const endpoints = Array.isArray(row.openrouter_endpoint_details?.endpoints) ? row.openrouter_endpoint_details.endpoints : []
-  const providerNames = uniqueBy(endpoints.map((e) => e.provider_name ?? e.provider?.name).filter(Boolean), (x) => slugify(x))
+  const providerNames = uniqueBy(endpoints.map((e) => e.provider_name ?? e.provider?.name).filter(Boolean).map((name) => normalizeProviderIdentity(name).name), (x) => slugify(x))
   openrouter.offers.push({
     model_id: modelId,
     model: row.name ?? title(modelId),
@@ -224,7 +273,7 @@ for (const row of rows) {
   for (const endpoint of endpoints) {
     const endpointProviderName = endpoint.provider_name ?? endpoint.provider?.name
     if (!endpointProviderName) continue
-    const endpointProviderId = slugify(endpointProviderName)
+    const endpointProviderId = canonicalProviderId(endpointProviderName)
     const provider = ensureProvider(endpointProviderId, endpointProviderName)
     const endpointMode = mode
     provider.offers.push({

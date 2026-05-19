@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000004",
             "completion": "0.0000013",
@@ -57,7 +57,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-chat#Novita | deepseek/deepseek-chat-v3",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -82,7 +82,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000027",
             "completion": "0.00000112",
@@ -115,7 +115,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-chat-v3-0324#Novita | deepseek/deepseek-chat-v3-0324",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -140,7 +140,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000027",
             "completion": "0.000001",
@@ -177,7 +177,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-chat-v3.1#Novita | deepseek/deepseek-chat-v3.1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -202,7 +202,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000007",
             "completion": "0.0000025",
@@ -238,7 +238,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-r1#Novita | deepseek/deepseek-r1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -263,7 +263,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000007",
             "completion": "0.0000025",
@@ -300,7 +300,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-r1-0528#Novita | deepseek/deepseek-r1-0528",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -325,7 +325,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000008",
             "completion": "0.0000008",
@@ -357,7 +357,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-r1-distill-llama-70b#Novita | deepseek/deepseek-r1-distill-llama-70b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -382,7 +382,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000027",
             "completion": "0.000001",
@@ -419,7 +419,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v3.1-terminus#Novita | deepseek/deepseek-v3.1-terminus",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -444,7 +444,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000000269",
             "completion": "0.0000004",
@@ -479,7 +479,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v3.2#Novita | deepseek/deepseek-v3.2-20251201",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -504,7 +504,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000027",
             "completion": "0.00000041",
@@ -540,7 +540,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v3.2-exp#Novita | deepseek/deepseek-v3.2-exp",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -565,7 +565,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000014",
             "completion": "0.00000028",
@@ -601,7 +601,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v4-flash:free#Novita | deepseek/deepseek-v4-flash-20260423",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -626,7 +626,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000167",
             "completion": "0.00000338",
@@ -661,7 +661,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "deepseek/deepseek-v4-pro#Novita | deepseek/deepseek-v4-pro-20260423",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -686,7 +686,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000007",
             "completion": "0.00000028",
@@ -718,7 +718,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "baidu/ernie-4.5-21b-a3b#Novita | baidu/ernie-4.5-21b-a3b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -743,7 +743,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000007",
             "completion": "0.00000028",
@@ -775,7 +775,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "baidu/ernie-4.5-21b-a3b-thinking#Novita | baidu/ernie-4.5-21b-a3b-thinking",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -800,7 +800,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000028",
             "completion": "0.0000011",
@@ -831,7 +831,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "baidu/ernie-4.5-300b-a47b#Novita | baidu/ernie-4.5-300b-a47b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -856,7 +856,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000014",
             "completion": "0.00000056",
@@ -890,7 +890,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "baidu/ernie-4.5-vl-28b-a3b#Novita | baidu/ernie-4.5-vl-28b-a3b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -915,7 +915,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000042",
             "completion": "0.00000125",
@@ -947,7 +947,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "baidu/ernie-4.5-vl-424b-a47b#Novita | baidu/ernie-4.5-vl-424b-a47b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -972,7 +972,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000000119",
             "completion": "0.0000002",
@@ -1002,7 +1002,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemma-3-27b-it#Novita | google/gemma-3-27b-it",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1027,7 +1027,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000013",
             "completion": "0.0000004",
@@ -1062,7 +1062,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemma-4-26b-a4b-it:free#Novita | google/gemma-4-26b-a4b-it-20260403",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1087,7 +1087,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000014",
             "completion": "0.0000004",
@@ -1122,7 +1122,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "google/gemma-4-31b-it:free#Novita | google/gemma-4-31b-it-20260402",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1147,7 +1147,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000022",
@@ -1182,7 +1182,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.5#Novita | z-ai/glm-4.5",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1207,7 +1207,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000013",
             "completion": "0.00000085",
@@ -1242,7 +1242,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.5-air:free#Novita | z-ai/glm-4.5-air",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1267,7 +1267,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000018",
@@ -1303,7 +1303,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.5v#Novita | z-ai/glm-4.5v",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1328,7 +1328,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000055",
             "completion": "0.0000022",
@@ -1364,7 +1364,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.6#Novita | z-ai/glm-4.6",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1389,7 +1389,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000009",
@@ -1424,7 +1424,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.6v#Novita | z-ai/glm-4.6-20251208",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1449,7 +1449,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000054",
             "completion": "0.00000198",
@@ -1485,7 +1485,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.7#Novita | z-ai/glm-4.7-20251222",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1510,7 +1510,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000007",
             "completion": "0.0000004",
@@ -1545,7 +1545,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-4.7-flash#Novita | z-ai/glm-4.7-flash-20260119",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1570,7 +1570,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000001",
             "completion": "0.0000032",
@@ -1605,7 +1605,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5#Novita | z-ai/glm-5-20260211",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1630,7 +1630,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000138",
             "completion": "0.0000044",
@@ -1665,7 +1665,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "z-ai/glm-5.1#Novita | z-ai/glm-5.1-20260406",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1690,7 +1690,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000005",
             "completion": "0.00000025",
@@ -1725,7 +1725,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-120b:free#Novita | openai/gpt-oss-120b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1750,7 +1750,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000004",
             "completion": "0.00000015",
@@ -1784,7 +1784,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-oss-20b:free#Novita | openai/gpt-oss-20b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1809,7 +1809,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000014",
             "completion": "0.00000014",
@@ -1841,7 +1841,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "nousresearch/hermes-2-pro-llama-3-8b#Novita | nousresearch/hermes-2-pro-llama-3-8b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1866,7 +1866,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000057",
             "completion": "0.0000023",
@@ -1898,7 +1898,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2#Novita | moonshotai/kimi-k2",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1923,7 +1923,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000025",
@@ -1957,7 +1957,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2-0905#Novita | moonshotai/kimi-k2-0905",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1982,7 +1982,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000025",
@@ -2019,7 +2019,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2-thinking#Novita | moonshotai/kimi-k2-thinking-20251106",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2044,7 +2044,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000057",
             "completion": "0.00000285",
@@ -2080,7 +2080,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2.5#Novita | moonshotai/kimi-k2.5-0127",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2105,7 +2105,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000008",
             "completion": "0.0000034",
@@ -2141,7 +2141,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "moonshotai/kimi-k2.6#Novita | moonshotai/kimi-k2.6-20260420",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2166,7 +2166,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000148",
             "completion": "0.00000148",
@@ -2198,7 +2198,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "sao10k/l3-euryale-70b#Novita | sao10k/l3-euryale-70b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2223,7 +2223,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000005",
             "completion": "0.00000005",
@@ -2255,7 +2255,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "sao10k/l3-lunaris-8b#Novita | sao10k/l3-lunaris-8b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2280,7 +2280,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000148",
             "completion": "0.00000148",
@@ -2313,7 +2313,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "sao10k/l3.1-euryale-70b#Novita | sao10k/l3.1-euryale-70b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2338,7 +2338,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000025",
@@ -2373,7 +2373,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "inclusionai/ling-2.6-1t#Novita | inclusionai/ling-2.6-1t-20260423",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2398,7 +2398,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000001",
             "completion": "0.00000003",
@@ -2433,7 +2433,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "inclusionai/ling-2.6-flash#Novita | inclusionai/ling-2.6-flash-20260421",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2458,7 +2458,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000051",
             "completion": "0.00000074",
@@ -2489,7 +2489,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3-70b-instruct#Novita | meta-llama/llama-3-70b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2514,7 +2514,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000004",
             "completion": "0.00000004",
@@ -2545,7 +2545,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3-8b-instruct#Novita | meta-llama/llama-3-8b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2570,7 +2570,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000002",
             "completion": "0.00000005",
@@ -2601,7 +2601,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.1-8b-instruct#Novita | meta-llama/llama-3.1-8b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2626,7 +2626,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000000135",
             "completion": "0.0000004",
@@ -2659,7 +2659,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-3.3-70b-instruct:free#Novita | meta-llama/llama-3.3-70b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2684,7 +2684,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000027",
             "completion": "0.00000085",
@@ -2716,7 +2716,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-4-maverick#Novita | meta-llama/llama-4-maverick-17b-128e-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2741,7 +2741,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000018",
             "completion": "0.00000059",
@@ -2771,7 +2771,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "meta-llama/llama-4-scout#Novita | meta-llama/llama-4-scout-17b-16e-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2796,7 +2796,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000003",
@@ -2832,7 +2832,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "xiaomi/mimo-v2-flash#Novita | xiaomi/mimo-v2-flash-20251210",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2857,7 +2857,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000055",
             "completion": "0.0000022",
@@ -2891,7 +2891,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "minimax/minimax-m1#Novita | minimax/minimax-m1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2916,7 +2916,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000012",
@@ -2951,7 +2951,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "minimax/minimax-m2#Novita | minimax/minimax-m2",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2976,7 +2976,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000012",
@@ -3012,7 +3012,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "minimax/minimax-m2.1#Novita | minimax/minimax-m2.1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3037,7 +3037,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000012",
@@ -3073,7 +3073,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "minimax/minimax-m2.5:free#Novita | minimax/minimax-m2.5-20260211",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3098,7 +3098,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000004",
             "completion": "0.00000017",
@@ -3130,7 +3130,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "mistralai/mistral-nemo#Novita | mistralai/mistral-nemo",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3155,7 +3155,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000038",
             "completion": "0.0000004",
@@ -3188,7 +3188,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen-2.5-72b-instruct#Novita | qwen/qwen-2.5-72b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3213,7 +3213,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000008",
             "completion": "0.0000008",
@@ -3243,7 +3243,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen2.5-vl-72b-instruct#Novita | qwen/qwen2.5-vl-72b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3268,7 +3268,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000009",
             "completion": "0.00000058",
@@ -3302,7 +3302,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-235b-a22b-2507#Novita | qwen/qwen3-235b-a22b-07-25",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3327,7 +3327,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.000003",
@@ -3361,7 +3361,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-235b-a22b-thinking-2507#Novita | qwen/qwen3-235b-a22b-thinking-2507",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3386,7 +3386,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000009",
             "completion": "0.00000045",
@@ -3420,7 +3420,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-30b-a3b#Novita | qwen/qwen3-30b-a3b-04-28",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3445,7 +3445,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.00000045",
@@ -3477,7 +3477,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-32b#Novita | qwen/qwen3-32b-04-28",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3502,7 +3502,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000038",
             "completion": "0.00000155",
@@ -3536,7 +3536,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-coder:free#Novita | qwen/qwen3-coder-480b-a35b-07-25",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3561,7 +3561,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000007",
             "completion": "0.00000027",
@@ -3595,7 +3595,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-coder-30b-a3b-instruct#Novita | qwen/qwen3-coder-30b-a3b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3620,7 +3620,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000002",
             "completion": "0.0000015",
@@ -3653,7 +3653,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-coder-next#Novita | qwen/qwen3-coder-next-2025-02-03",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3678,7 +3678,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.0000015",
@@ -3711,7 +3711,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-next-80b-a3b-instruct:free#Novita | qwen/qwen3-next-80b-a3b-instruct-2509",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3736,7 +3736,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.0000015",
@@ -3770,7 +3770,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-next-80b-a3b-thinking#Novita | qwen/qwen3-next-80b-a3b-thinking-2509",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3795,7 +3795,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000015",
@@ -3829,7 +3829,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-vl-235b-a22b-instruct#Novita | qwen/qwen3-vl-235b-a22b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3854,7 +3854,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000098",
             "completion": "0.00000395",
@@ -3888,7 +3888,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-vl-235b-a22b-thinking#Novita | qwen/qwen3-vl-235b-a22b-thinking",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3913,7 +3913,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000002",
             "completion": "0.0000007",
@@ -3947,7 +3947,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-vl-30b-a3b-instruct#Novita | qwen/qwen3-vl-30b-a3b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3972,7 +3972,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000002",
             "completion": "0.000001",
@@ -4008,7 +4008,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-vl-30b-a3b-thinking#Novita | qwen/qwen3-vl-30b-a3b-thinking",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4033,7 +4033,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000008",
             "completion": "0.0000005",
@@ -4067,7 +4067,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3-vl-8b-instruct#Novita | qwen/qwen3-vl-8b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4092,7 +4092,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000004",
             "completion": "0.0000032",
@@ -4127,7 +4127,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-122b-a10b#Novita | qwen/qwen3.5-122b-a10b-20260224",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4152,7 +4152,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000003",
             "completion": "0.0000024",
@@ -4187,7 +4187,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-27b#Novita | qwen/qwen3.5-27b-20260224",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4212,7 +4212,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000036",
@@ -4247,7 +4247,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "qwen/qwen3.5-397b-a17b#Novita | qwen/qwen3.5-397b-a17b-20260216",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4272,7 +4272,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000000075",
             "completion": "0.000000625",
@@ -4308,7 +4308,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "inclusionai/ring-2.6-1t#Novita | inclusionai/ring-2.6-1t-20260508",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4333,7 +4333,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000062",
             "completion": "0.00000062",
@@ -4364,12 +4364,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "microsoft/wizardlm-2-8x22b#Novita | microsoft/wizardlm-2-8x22b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-18T23:02:28.889Z",
+  "last_updated": "2026-05-19T14:20:07.465Z",
   "sources": []
 }

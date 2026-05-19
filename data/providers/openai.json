@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000005",
             "completion": "0.0000015",
@@ -60,7 +60,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-3.5-turbo#OpenAI | openai/gpt-3.5-turbo",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -85,7 +85,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000003",
             "completion": "0.000004",
@@ -120,7 +120,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-3.5-turbo-16k#OpenAI | openai/gpt-3.5-turbo-16k",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -145,7 +145,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000015",
             "completion": "0.000002",
@@ -178,7 +178,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-3.5-turbo-instruct#OpenAI | openai/gpt-3.5-turbo-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -203,7 +203,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00003",
             "completion": "0.00006",
@@ -238,7 +238,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-4#OpenAI | openai/gpt-4",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -263,7 +263,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00003",
             "completion": "0.00006",
@@ -298,7 +298,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-4-0314#OpenAI | openai/gpt-4-0314",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -323,7 +323,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00001",
             "completion": "0.00003",
@@ -358,7 +358,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-4-1106-preview#OpenAI | openai/gpt-4-1106-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -383,7 +383,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00001",
             "completion": "0.00003",
@@ -418,7 +418,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-4-turbo#OpenAI | openai/gpt-4-turbo",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -443,7 +443,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00001",
             "completion": "0.00003",
@@ -478,7 +478,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-4-turbo-preview#OpenAI | openai/gpt-4-turbo-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -507,7 +507,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000002",
             "completion": "0.000008",
@@ -538,7 +538,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-4.1#OpenAI | openai/gpt-4.1-2025-04-14",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -567,7 +567,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000004",
             "completion": "0.0000016",
@@ -598,7 +598,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-4.1-mini#OpenAI | openai/gpt-4.1-mini-2025-04-14",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -627,7 +627,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000004",
@@ -658,7 +658,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-4.1-nano#OpenAI | openai/gpt-4.1-nano-2025-04-14",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -683,7 +683,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000025",
             "completion": "0.00001",
@@ -720,7 +720,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-4o#OpenAI | openai/gpt-4o",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -745,7 +745,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.000015",
@@ -781,7 +781,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-4o-2024-05-13#OpenAI | openai/gpt-4o-2024-05-13",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -806,7 +806,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000025",
             "completion": "0.00001",
@@ -843,7 +843,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-4o-2024-08-06#OpenAI | openai/gpt-4o-2024-08-06",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -868,7 +868,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000025",
             "completion": "0.00001",
@@ -905,7 +905,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-4o-2024-11-20#OpenAI | openai/gpt-4o-2024-11-20",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -930,7 +930,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000025",
             "completion": "0.00001",
@@ -967,7 +967,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-4o-audio-preview#OpenAI | openai/gpt-4o-audio-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -992,7 +992,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.0000006",
@@ -1029,7 +1029,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-4o-mini#OpenAI | openai/gpt-4o-mini",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1054,7 +1054,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.0000006",
@@ -1091,7 +1091,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-4o-mini-2024-07-18#OpenAI | openai/gpt-4o-mini-2024-07-18",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1120,7 +1120,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000015",
             "completion": "0.0000006",
@@ -1146,7 +1146,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-4o-mini-search-preview#OpenAI | openai/gpt-4o-mini-search-preview-2025-03-11",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1175,7 +1175,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000025",
             "completion": "0.00001",
@@ -1201,7 +1201,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-4o-search-preview#OpenAI | openai/gpt-4o-search-preview-2025-03-11",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1230,7 +1230,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -1261,7 +1261,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5#OpenAI | openai/gpt-5-2025-08-07",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1290,7 +1290,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -1317,7 +1317,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5-chat#OpenAI | openai/gpt-5-chat-2025-08-07",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1342,7 +1342,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -1372,7 +1372,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5-codex#OpenAI | openai/gpt-5-codex",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1401,7 +1401,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00001",
             "completion": "0.00001",
@@ -1439,7 +1439,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5-image#OpenAI | openai/gpt-5-image",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1468,7 +1468,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000025",
             "completion": "0.000002",
@@ -1506,7 +1506,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5-image-mini#OpenAI | openai/gpt-5-image-mini",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1535,7 +1535,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.000002",
@@ -1566,7 +1566,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5-mini#OpenAI | openai/gpt-5-mini-2025-08-07",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1595,7 +1595,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000005",
             "completion": "0.0000004",
@@ -1626,7 +1626,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5-nano#OpenAI | openai/gpt-5-nano-2025-08-07",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1655,7 +1655,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000015",
             "completion": "0.00012",
@@ -1685,7 +1685,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5-pro#OpenAI | openai/gpt-5-pro-2025-10-06",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1714,7 +1714,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -1745,7 +1745,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5.1#OpenAI | openai/gpt-5.1-20251113",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1774,7 +1774,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -1803,7 +1803,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5.1-chat#OpenAI | openai/gpt-5.1-chat-20251113",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1828,7 +1828,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -1858,7 +1858,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5.1-codex#OpenAI | openai/gpt-5.1-codex-20251113",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1887,7 +1887,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
@@ -1918,7 +1918,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5.1-codex-max#OpenAI | openai/gpt-5.1-codex-max-20251204",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1943,7 +1943,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.000002",
@@ -1973,7 +1973,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5.1-codex-mini#OpenAI | openai/gpt-5.1-codex-mini-20251113",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2002,7 +2002,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000175",
             "completion": "0.000014",
@@ -2033,7 +2033,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5.2#OpenAI | openai/gpt-5.2-20251211",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2062,7 +2062,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000175",
             "completion": "0.000014",
@@ -2091,7 +2091,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5.2-chat#OpenAI | openai/gpt-5.2-chat-20251211",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2120,7 +2120,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000175",
             "completion": "0.000014",
@@ -2151,7 +2151,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5.2-codex#OpenAI | openai/gpt-5.2-codex-20260114",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2180,7 +2180,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000021",
             "completion": "0.000168",
@@ -2210,7 +2210,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5.2-pro#OpenAI | openai/gpt-5.2-pro-20251211",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2239,7 +2239,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000175",
             "completion": "0.000014",
@@ -2268,7 +2268,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5.3-chat#OpenAI | openai/gpt-5.3-chat-20260303",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2297,7 +2297,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000175",
             "completion": "0.000014",
@@ -2328,7 +2328,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5.3-codex#OpenAI | openai/gpt-5.3-codex-20260224",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2357,7 +2357,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000025",
             "completion": "0.000015",
@@ -2388,7 +2388,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5.4#OpenAI | openai/gpt-5.4-20260305",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2417,7 +2417,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000008",
             "completion": "0.000015",
@@ -2453,7 +2453,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5.4-image-2#OpenAI | openai/gpt-5.4-image-2-20260421",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2482,7 +2482,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00000075",
             "completion": "0.0000045",
@@ -2513,7 +2513,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5.4-mini#OpenAI | openai/gpt-5.4-mini-20260317",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2542,7 +2542,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000002",
             "completion": "0.00000125",
@@ -2573,7 +2573,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5.4-nano#OpenAI | openai/gpt-5.4-nano-20260317",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2602,7 +2602,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00003",
             "completion": "0.00018",
@@ -2632,7 +2632,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5.4-pro#OpenAI | openai/gpt-5.4-pro-20260305",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2661,7 +2661,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.00003",
@@ -2692,7 +2692,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5.5#OpenAI | openai/gpt-5.5-20260423",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2721,7 +2721,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00003",
             "completion": "0.00018",
@@ -2751,7 +2751,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-5.5-pro#OpenAI | openai/gpt-5.5-pro-20260423",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2776,7 +2776,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000025",
             "completion": "0.00001",
@@ -2813,7 +2813,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-audio#OpenAI | openai/gpt-audio",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2838,7 +2838,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000006",
             "completion": "0.0000024",
@@ -2875,7 +2875,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-audio-mini#OpenAI | openai/gpt-audio-mini",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2904,7 +2904,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000005",
             "completion": "0.00003",
@@ -2939,7 +2939,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-chat-latest#OpenAI | openai/gpt-chat-latest-20260505",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2964,7 +2964,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000015",
             "completion": "0.00006",
@@ -2994,7 +2994,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/o1#OpenAI | openai/o1-2024-12-17",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3019,7 +3019,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00015",
             "completion": "0.0006",
@@ -3046,7 +3046,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/o1-pro#OpenAI | openai/o1-pro",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3075,7 +3075,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000002",
             "completion": "0.000008",
@@ -3106,7 +3106,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/o3#OpenAI | openai/o3-2025-04-16",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3135,7 +3135,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00001",
             "completion": "0.00004",
@@ -3174,7 +3174,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/o3-deep-research#OpenAI | openai/o3-deep-research-2025-06-26",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3199,7 +3199,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000011",
             "completion": "0.0000044",
@@ -3229,7 +3229,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/o3-mini#OpenAI | openai/o3-mini-2025-01-31",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3254,7 +3254,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000011",
             "completion": "0.0000044",
@@ -3284,7 +3284,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/o3-mini-high#OpenAI | openai/o3-mini-high-2025-01-31",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3313,7 +3313,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.00002",
             "completion": "0.00008",
@@ -3343,7 +3343,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/o3-pro#OpenAI | openai/o3-pro-2025-06-10",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3372,7 +3372,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000011",
             "completion": "0.0000044",
@@ -3403,7 +3403,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/o4-mini#OpenAI | openai/o4-mini-2025-04-16",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3432,7 +3432,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000002",
             "completion": "0.000008",
@@ -3471,7 +3471,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/o4-mini-deep-research#OpenAI | openai/o4-mini-deep-research-2025-06-26",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3500,7 +3500,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000011",
             "completion": "0.0000044",
@@ -3531,12 +3531,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/o4-mini-high#OpenAI | openai/o4-mini-high-2025-04-16",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-18T23:02:28.889Z",
+  "last_updated": "2026-05-19T14:20:07.465Z",
   "sources": []
 }

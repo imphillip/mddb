@@ -25,7 +25,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000001",
             "completion": "0.0000003",
@@ -58,7 +58,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "xiaomi/mimo-v2-flash#Xiaomi | xiaomi/mimo-v2-flash-20251210",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -83,7 +83,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000004",
             "completion": "0.000002",
@@ -116,7 +116,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "xiaomi/mimo-v2-omni#Xiaomi | xiaomi/mimo-v2-omni-20260318",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -141,7 +141,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000001",
             "completion": "0.000003",
@@ -174,7 +174,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "xiaomi/mimo-v2-pro#Xiaomi | xiaomi/mimo-v2-pro-20260318",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -199,7 +199,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.0000004",
             "completion": "0.000002",
@@ -232,7 +232,7 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "xiaomi/mimo-v2.5#Xiaomi | xiaomi/mimo-v2.5-20260422",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -257,7 +257,7 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-18T23:02:28.889Z",
+          "observed_at": "2026-05-19T14:20:07.465Z",
           "raw_pricing": {
             "prompt": "0.000001",
             "completion": "0.000003",
@@ -290,12 +290,12 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "xiaomi/mimo-v2.5-pro#Xiaomi | xiaomi/mimo-v2.5-pro-20260422",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-18T23:02:28.889Z",
+  "last_updated": "2026-05-19T14:20:07.465Z",
   "sources": []
 }

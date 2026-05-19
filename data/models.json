@@ -29,13 +29,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "aion-labs/aion-1.0",
           "url": "https://openrouter.ai/aion-labs/aion-1.0",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -67,13 +67,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "aion-labs/aion-1.0-mini",
           "url": "https://openrouter.ai/aion-labs/aion-1.0-mini",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -106,13 +106,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "aion-labs/aion-2.0",
           "url": "https://openrouter.ai/aion-labs/aion-2.0",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -142,148 +142,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "aion-labs/aion-rp-llama-3.1-8b",
           "url": "https://openrouter.ai/aion-labs/aion-rp-llama-3.1-8b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
-        }
-      ]
-    },
-    {
-      "id": "anthropic-claude-haiku-latest",
-      "model": "Anthropic Claude Haiku Latest",
-      "alias": [
-        "~anthropic/claude-haiku-latest"
-      ],
-      "author": "anthropic",
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text",
-        "image"
-      ],
-      "reasoning": true,
-      "tool_calling": true,
-      "context_length": 200000,
-      "max_output_tokens": 64000,
-      "other_parameters": {
-        "tokenizer": "Router",
-        "instruct_type": null,
-        "supported_parameters": [
-          "include_reasoning",
-          "max_tokens",
-          "reasoning",
-          "response_format",
-          "stop",
-          "structured_outputs",
-          "temperature",
-          "tool_choice",
-          "tools",
-          "top_k",
-          "top_p"
-        ]
-      },
-      "last_updated": "2026-05-18T23:02:28.889Z",
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "~anthropic/claude-haiku-latest",
-          "url": "https://openrouter.ai/~anthropic/claude-haiku-latest",
-          "observed_at": "2026-05-18T23:02:28.889Z"
-        }
-      ]
-    },
-    {
-      "id": "anthropic-claude-opus-latest",
-      "model": "Anthropic: Claude Opus Latest",
-      "alias": [
-        "~anthropic/claude-opus-latest"
-      ],
-      "author": "anthropic",
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text",
-        "image"
-      ],
-      "reasoning": true,
-      "tool_calling": true,
-      "context_length": 1000000,
-      "max_output_tokens": 128000,
-      "other_parameters": {
-        "tokenizer": "Router",
-        "instruct_type": null,
-        "supported_parameters": [
-          "include_reasoning",
-          "max_tokens",
-          "reasoning",
-          "response_format",
-          "stop",
-          "structured_outputs",
-          "tool_choice",
-          "tools",
-          "verbosity"
-        ]
-      },
-      "last_updated": "2026-05-18T23:02:28.889Z",
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "~anthropic/claude-opus-latest",
-          "url": "https://openrouter.ai/~anthropic/claude-opus-latest",
-          "observed_at": "2026-05-18T23:02:28.889Z"
-        }
-      ]
-    },
-    {
-      "id": "anthropic-claude-sonnet-latest",
-      "model": "Anthropic Claude Sonnet Latest",
-      "alias": [
-        "~anthropic/claude-sonnet-latest"
-      ],
-      "author": "anthropic",
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text",
-        "image"
-      ],
-      "reasoning": true,
-      "tool_calling": true,
-      "context_length": 1000000,
-      "max_output_tokens": 128000,
-      "other_parameters": {
-        "tokenizer": "Router",
-        "instruct_type": null,
-        "supported_parameters": [
-          "include_reasoning",
-          "max_completion_tokens",
-          "max_tokens",
-          "reasoning",
-          "response_format",
-          "stop",
-          "structured_outputs",
-          "temperature",
-          "tool_choice",
-          "tools",
-          "top_k",
-          "top_p",
-          "verbosity"
-        ]
-      },
-      "last_updated": "2026-05-18T23:02:28.889Z",
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "~anthropic/claude-sonnet-latest",
-          "url": "https://openrouter.ai/~anthropic/claude-sonnet-latest",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -333,13 +198,13 @@
           "web_search_options"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openrouter/auto",
           "url": "https://openrouter.ai/openrouter/auto",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -364,13 +229,13 @@
         "instruct_type": null,
         "supported_parameters": []
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openrouter/bodybuilder",
           "url": "https://openrouter.ai/openrouter/bodybuilder",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -405,13 +270,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "anthropic/claude-3-haiku",
           "url": "https://openrouter.ai/anthropic/claude-3-haiku",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -447,13 +312,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "anthropic/claude-3.5-haiku",
           "url": "https://openrouter.ai/anthropic/claude-3.5-haiku",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -493,13 +358,58 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "anthropic/claude-haiku-4.5",
           "url": "https://openrouter.ai/anthropic/claude-haiku-4.5",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
+        }
+      ]
+    },
+    {
+      "id": "claude-haiku-latest",
+      "model": "Anthropic Claude Haiku Latest",
+      "alias": [
+        "~anthropic/claude-haiku-latest"
+      ],
+      "author": "anthropic",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text",
+        "image"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 200000,
+      "max_output_tokens": 64000,
+      "other_parameters": {
+        "tokenizer": "Router",
+        "instruct_type": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "max_tokens",
+          "reasoning",
+          "response_format",
+          "stop",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_k",
+          "top_p"
+        ]
+      },
+      "last_updated": "2026-05-19T14:20:07.465Z",
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "~anthropic/claude-haiku-latest",
+          "url": "https://openrouter.ai/~anthropic/claude-haiku-latest",
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -537,13 +447,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "anthropic/claude-opus-4",
           "url": "https://openrouter.ai/anthropic/claude-opus-4",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -583,13 +493,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "anthropic/claude-opus-4.1",
           "url": "https://openrouter.ai/anthropic/claude-opus-4.1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -629,13 +539,13 @@
           "verbosity"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "anthropic/claude-opus-4.5",
           "url": "https://openrouter.ai/anthropic/claude-opus-4.5",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -677,13 +587,13 @@
           "verbosity"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "anthropic/claude-opus-4.6",
           "url": "https://openrouter.ai/anthropic/claude-opus-4.6",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -723,13 +633,13 @@
           "verbosity"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "anthropic/claude-opus-4.6-fast",
           "url": "https://openrouter.ai/anthropic/claude-opus-4.6-fast",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -767,13 +677,13 @@
           "verbosity"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "anthropic/claude-opus-4.7",
           "url": "https://openrouter.ai/anthropic/claude-opus-4.7",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -811,13 +721,56 @@
           "verbosity"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "anthropic/claude-opus-4.7-fast",
           "url": "https://openrouter.ai/anthropic/claude-opus-4.7-fast",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
+        }
+      ]
+    },
+    {
+      "id": "claude-opus-latest",
+      "model": "Anthropic: Claude Opus Latest",
+      "alias": [
+        "~anthropic/claude-opus-latest"
+      ],
+      "author": "anthropic",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text",
+        "image"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 1000000,
+      "max_output_tokens": 128000,
+      "other_parameters": {
+        "tokenizer": "Router",
+        "instruct_type": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "max_tokens",
+          "reasoning",
+          "response_format",
+          "stop",
+          "structured_outputs",
+          "tool_choice",
+          "tools",
+          "verbosity"
+        ]
+      },
+      "last_updated": "2026-05-19T14:20:07.465Z",
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "~anthropic/claude-opus-latest",
+          "url": "https://openrouter.ai/~anthropic/claude-opus-latest",
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -855,13 +808,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "anthropic/claude-sonnet-4",
           "url": "https://openrouter.ai/anthropic/claude-sonnet-4",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -901,13 +854,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "anthropic/claude-sonnet-4.5",
           "url": "https://openrouter.ai/anthropic/claude-sonnet-4.5",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -949,13 +902,60 @@
           "verbosity"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "anthropic/claude-sonnet-4.6",
           "url": "https://openrouter.ai/anthropic/claude-sonnet-4.6",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
+        }
+      ]
+    },
+    {
+      "id": "claude-sonnet-latest",
+      "model": "Anthropic Claude Sonnet Latest",
+      "alias": [
+        "~anthropic/claude-sonnet-latest"
+      ],
+      "author": "anthropic",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text",
+        "image"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 1000000,
+      "max_output_tokens": 128000,
+      "other_parameters": {
+        "tokenizer": "Router",
+        "instruct_type": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "max_completion_tokens",
+          "max_tokens",
+          "reasoning",
+          "response_format",
+          "stop",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_k",
+          "top_p",
+          "verbosity"
+        ]
+      },
+      "last_updated": "2026-05-19T14:20:07.465Z",
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "~anthropic/claude-sonnet-latest",
+          "url": "https://openrouter.ai/~anthropic/claude-sonnet-latest",
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -988,13 +988,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "baidu/cobuddy:free",
           "url": "https://openrouter.ai/baidu/cobuddy:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1031,13 +1031,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "alfredpros/codellama-7b-instruct-solidity",
           "url": "https://openrouter.ai/alfredpros/codellama-7b-instruct-solidity",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1073,13 +1073,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "arcee-ai/coder-large",
           "url": "https://openrouter.ai/arcee-ai/coder-large",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1089,7 +1089,7 @@
       "alias": [
         "mistralai/codestral-2508"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -1116,13 +1116,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/codestral-2508",
           "url": "https://openrouter.ai/mistralai/codestral-2508",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1163,13 +1163,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "deepcogito/cogito-v2.1-671b",
           "url": "https://openrouter.ai/deepcogito/cogito-v2.1-671b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1207,13 +1207,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "cohere/command-a",
           "url": "https://openrouter.ai/cohere/command-a",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1252,13 +1252,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "cohere/command-r-08-2024",
           "url": "https://openrouter.ai/cohere/command-r-08-2024",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1297,13 +1297,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "cohere/command-r-plus-08-2024",
           "url": "https://openrouter.ai/cohere/command-r-plus-08-2024",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1340,13 +1340,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "cohere/command-r7b-12-2024",
           "url": "https://openrouter.ai/cohere/command-r7b-12-2024",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1383,13 +1383,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "thedrummer/cydonia-24b-v4.1",
           "url": "https://openrouter.ai/thedrummer/cydonia-24b-v4.1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1432,13 +1432,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "deepseek/deepseek-chat",
           "url": "https://openrouter.ai/deepseek/deepseek-chat",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1480,13 +1480,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "deepseek/deepseek-chat-v3-0324",
           "url": "https://openrouter.ai/deepseek/deepseek-chat-v3-0324",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1530,13 +1530,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "deepseek/deepseek-chat-v3.1",
           "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1579,13 +1579,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "deepseek/deepseek-r1",
           "url": "https://openrouter.ai/deepseek/deepseek-r1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1629,13 +1629,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "deepseek/deepseek-r1-0528",
           "url": "https://openrouter.ai/deepseek/deepseek-r1-0528",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1676,13 +1676,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "deepseek/deepseek-r1-distill-llama-70b",
           "url": "https://openrouter.ai/deepseek/deepseek-r1-distill-llama-70b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1723,13 +1723,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "deepseek/deepseek-r1-distill-qwen-32b",
           "url": "https://openrouter.ai/deepseek/deepseek-r1-distill-qwen-32b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1765,13 +1765,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "nex-agi/deepseek-v3.1-nex-n1",
           "url": "https://openrouter.ai/nex-agi/deepseek-v3.1-nex-n1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1815,13 +1815,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "deepseek/deepseek-v3.1-terminus",
           "url": "https://openrouter.ai/deepseek/deepseek-v3.1-terminus",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1866,13 +1866,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "deepseek/deepseek-v3.2",
           "url": "https://openrouter.ai/deepseek/deepseek-v3.2",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1916,13 +1916,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "deepseek/deepseek-v3.2-exp",
           "url": "https://openrouter.ai/deepseek/deepseek-v3.2-exp",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -1965,13 +1965,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "deepseek/deepseek-v3.2-speciale",
           "url": "https://openrouter.ai/deepseek/deepseek-v3.2-speciale",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2003,13 +2003,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "deepseek/deepseek-v4-flash:free",
           "url": "https://openrouter.ai/deepseek/deepseek-v4-flash:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2056,13 +2056,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "deepseek/deepseek-v4-pro",
           "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2072,7 +2072,7 @@
       "alias": [
         "mistralai/devstral-2512"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -2099,13 +2099,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/devstral-2512",
           "url": "https://openrouter.ai/mistralai/devstral-2512",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2116,7 +2116,7 @@
         "mistralai/devstral-medium",
         "mistralai/devstral-medium-2507"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -2143,13 +2143,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/devstral-medium",
           "url": "https://openrouter.ai/mistralai/devstral-medium",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2160,7 +2160,7 @@
         "mistralai/devstral-small",
         "mistralai/devstral-small-2507"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -2187,13 +2187,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/devstral-small",
           "url": "https://openrouter.ai/mistralai/devstral-small",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2229,13 +2229,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
           "url": "https://openrouter.ai/cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2273,13 +2273,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "baidu/ernie-4.5-21b-a3b",
           "url": "https://openrouter.ai/baidu/ernie-4.5-21b-a3b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2317,13 +2317,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "baidu/ernie-4.5-21b-a3b-thinking",
           "url": "https://openrouter.ai/baidu/ernie-4.5-21b-a3b-thinking",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2360,13 +2360,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "baidu/ernie-4.5-300b-a47b",
           "url": "https://openrouter.ai/baidu/ernie-4.5-300b-a47b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2407,13 +2407,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "baidu/ernie-4.5-vl-28b-a3b",
           "url": "https://openrouter.ai/baidu/ernie-4.5-vl-28b-a3b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2452,13 +2452,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "baidu/ernie-4.5-vl-424b-a47b",
           "url": "https://openrouter.ai/baidu/ernie-4.5-vl-424b-a47b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2501,13 +2501,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openrouter/free",
           "url": "https://openrouter.ai/openrouter/free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2546,13 +2546,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemini-2.0-flash-001",
           "url": "https://openrouter.ai/google/gemini-2.0-flash-001",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2591,13 +2591,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemini-2.0-flash-lite-001",
           "url": "https://openrouter.ai/google/gemini-2.0-flash-lite-001",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2638,13 +2638,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemini-2.5-flash",
           "url": "https://openrouter.ai/google/gemini-2.5-flash",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2679,13 +2679,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemini-2.5-flash-image",
           "url": "https://openrouter.ai/google/gemini-2.5-flash-image",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2726,13 +2726,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemini-2.5-flash-lite",
           "url": "https://openrouter.ai/google/gemini-2.5-flash-lite",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2773,13 +2773,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemini-2.5-flash-lite-preview-09-2025",
           "url": "https://openrouter.ai/google/gemini-2.5-flash-lite-preview-09-2025",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2820,13 +2820,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemini-2.5-pro",
           "url": "https://openrouter.ai/google/gemini-2.5-pro",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2867,13 +2867,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemini-2.5-pro-preview",
           "url": "https://openrouter.ai/google/gemini-2.5-pro-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2915,13 +2915,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemini-2.5-pro-preview-05-06",
           "url": "https://openrouter.ai/google/gemini-2.5-pro-preview-05-06",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -2963,13 +2963,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemini-3-flash-preview",
           "url": "https://openrouter.ai/google/gemini-3-flash-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3007,13 +3007,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemini-3-pro-image-preview",
           "url": "https://openrouter.ai/google/gemini-3-pro-image-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3051,13 +3051,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemini-3.1-flash-image-preview",
           "url": "https://openrouter.ai/google/gemini-3.1-flash-image-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3099,13 +3099,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemini-3.1-flash-lite",
           "url": "https://openrouter.ai/google/gemini-3.1-flash-lite",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3147,13 +3147,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemini-3.1-flash-lite-preview",
           "url": "https://openrouter.ai/google/gemini-3.1-flash-lite-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3195,13 +3195,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemini-3.1-pro-preview",
           "url": "https://openrouter.ai/google/gemini-3.1-pro-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3243,13 +3243,107 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemini-3.1-pro-preview-customtools",
           "url": "https://openrouter.ai/google/gemini-3.1-pro-preview-customtools",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
+        }
+      ]
+    },
+    {
+      "id": "gemini-flash-latest",
+      "model": "Google Gemini Flash Latest",
+      "alias": [
+        "~google/gemini-flash-latest"
+      ],
+      "author": "google",
+      "input_modalities": [
+        "text",
+        "audio",
+        "video"
+      ],
+      "output_modalities": [
+        "text",
+        "image"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 1048576,
+      "max_output_tokens": 65536,
+      "other_parameters": {
+        "tokenizer": "Router",
+        "instruct_type": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "max_tokens",
+          "reasoning",
+          "response_format",
+          "seed",
+          "stop",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_p"
+        ]
+      },
+      "last_updated": "2026-05-19T14:20:07.465Z",
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "~google/gemini-flash-latest",
+          "url": "https://openrouter.ai/~google/gemini-flash-latest",
+          "observed_at": "2026-05-19T14:20:07.465Z"
+        }
+      ]
+    },
+    {
+      "id": "gemini-pro-latest",
+      "model": "Google Gemini Pro Latest",
+      "alias": [
+        "~google/gemini-pro-latest"
+      ],
+      "author": "google",
+      "input_modalities": [
+        "text",
+        "audio",
+        "video"
+      ],
+      "output_modalities": [
+        "text",
+        "image"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 1048576,
+      "max_output_tokens": 65536,
+      "other_parameters": {
+        "tokenizer": "Router",
+        "instruct_type": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "max_tokens",
+          "reasoning",
+          "response_format",
+          "seed",
+          "stop",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_p"
+        ]
+      },
+      "last_updated": "2026-05-19T14:20:07.465Z",
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "~google/gemini-pro-latest",
+          "url": "https://openrouter.ai/~google/gemini-pro-latest",
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3286,13 +3380,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemma-2-27b-it",
           "url": "https://openrouter.ai/google/gemma-2-27b-it",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3335,13 +3429,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemma-3-12b-it",
           "url": "https://openrouter.ai/google/gemma-3-12b-it",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3384,13 +3478,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemma-3-27b-it",
           "url": "https://openrouter.ai/google/gemma-3-27b-it",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3431,13 +3525,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemma-3-4b-it",
           "url": "https://openrouter.ai/google/gemma-3-4b-it",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3473,13 +3567,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemma-3n-e4b-it",
           "url": "https://openrouter.ai/google/gemma-3n-e4b-it",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3518,13 +3612,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemma-4-26b-a4b-it:free",
           "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3563,13 +3657,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/gemma-4-31b-it:free",
           "url": "https://openrouter.ai/google/gemma-4-31b-it:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3601,13 +3695,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "z-ai/glm-4-32b",
           "url": "https://openrouter.ai/z-ai/glm-4-32b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3648,13 +3742,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "z-ai/glm-4.5",
           "url": "https://openrouter.ai/z-ai/glm-4.5",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3689,13 +3783,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "z-ai/glm-4.5-air:free",
           "url": "https://openrouter.ai/z-ai/glm-4.5-air:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3737,13 +3831,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "z-ai/glm-4.5v",
           "url": "https://openrouter.ai/z-ai/glm-4.5v",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3787,13 +3881,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "z-ai/glm-4.6",
           "url": "https://openrouter.ai/z-ai/glm-4.6",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3836,13 +3930,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "z-ai/glm-4.6v",
           "url": "https://openrouter.ai/z-ai/glm-4.6v",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3889,13 +3983,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "z-ai/glm-4.7",
           "url": "https://openrouter.ai/z-ai/glm-4.7",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3940,13 +4034,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "z-ai/glm-4.7-flash",
           "url": "https://openrouter.ai/z-ai/glm-4.7-flash",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -3990,13 +4084,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "z-ai/glm-5",
           "url": "https://openrouter.ai/z-ai/glm-5",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4040,13 +4134,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "z-ai/glm-5-turbo",
           "url": "https://openrouter.ai/z-ai/glm-5-turbo",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4094,13 +4188,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "z-ai/glm-5.1",
           "url": "https://openrouter.ai/z-ai/glm-5.1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4138,107 +4232,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "z-ai/glm-5v-turbo",
           "url": "https://openrouter.ai/z-ai/glm-5v-turbo",
-          "observed_at": "2026-05-18T23:02:28.889Z"
-        }
-      ]
-    },
-    {
-      "id": "google-gemini-flash-latest",
-      "model": "Google Gemini Flash Latest",
-      "alias": [
-        "~google/gemini-flash-latest"
-      ],
-      "author": "google",
-      "input_modalities": [
-        "text",
-        "audio",
-        "video"
-      ],
-      "output_modalities": [
-        "text",
-        "image"
-      ],
-      "reasoning": true,
-      "tool_calling": true,
-      "context_length": 1048576,
-      "max_output_tokens": 65536,
-      "other_parameters": {
-        "tokenizer": "Router",
-        "instruct_type": null,
-        "supported_parameters": [
-          "include_reasoning",
-          "max_tokens",
-          "reasoning",
-          "response_format",
-          "seed",
-          "stop",
-          "structured_outputs",
-          "temperature",
-          "tool_choice",
-          "tools",
-          "top_p"
-        ]
-      },
-      "last_updated": "2026-05-18T23:02:28.889Z",
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "~google/gemini-flash-latest",
-          "url": "https://openrouter.ai/~google/gemini-flash-latest",
-          "observed_at": "2026-05-18T23:02:28.889Z"
-        }
-      ]
-    },
-    {
-      "id": "google-gemini-pro-latest",
-      "model": "Google Gemini Pro Latest",
-      "alias": [
-        "~google/gemini-pro-latest"
-      ],
-      "author": "google",
-      "input_modalities": [
-        "text",
-        "audio",
-        "video"
-      ],
-      "output_modalities": [
-        "text",
-        "image"
-      ],
-      "reasoning": true,
-      "tool_calling": true,
-      "context_length": 1048576,
-      "max_output_tokens": 65536,
-      "other_parameters": {
-        "tokenizer": "Router",
-        "instruct_type": null,
-        "supported_parameters": [
-          "include_reasoning",
-          "max_tokens",
-          "reasoning",
-          "response_format",
-          "seed",
-          "stop",
-          "structured_outputs",
-          "temperature",
-          "tool_choice",
-          "tools",
-          "top_p"
-        ]
-      },
-      "last_updated": "2026-05-18T23:02:28.889Z",
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "~google/gemini-pro-latest",
-          "url": "https://openrouter.ai/~google/gemini-pro-latest",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4279,13 +4279,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-3.5-turbo",
           "url": "https://openrouter.ai/openai/gpt-3.5-turbo",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4326,13 +4326,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-3.5-turbo-0613",
           "url": "https://openrouter.ai/openai/gpt-3.5-turbo-0613",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4374,13 +4374,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-3.5-turbo-16k",
           "url": "https://openrouter.ai/openai/gpt-3.5-turbo-16k",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4419,13 +4419,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-3.5-turbo-instruct",
           "url": "https://openrouter.ai/openai/gpt-3.5-turbo-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4467,13 +4467,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-4",
           "url": "https://openrouter.ai/openai/gpt-4",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4514,13 +4514,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-4-0314",
           "url": "https://openrouter.ai/openai/gpt-4-0314",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4561,13 +4561,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-4-1106-preview",
           "url": "https://openrouter.ai/openai/gpt-4-1106-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4609,13 +4609,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-4-turbo",
           "url": "https://openrouter.ai/openai/gpt-4-turbo",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4656,13 +4656,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-4-turbo-preview",
           "url": "https://openrouter.ai/openai/gpt-4-turbo-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4699,13 +4699,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-4.1",
           "url": "https://openrouter.ai/openai/gpt-4.1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4743,13 +4743,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-4.1-mini",
           "url": "https://openrouter.ai/openai/gpt-4.1-mini",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4787,13 +4787,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-4.1-nano",
           "url": "https://openrouter.ai/openai/gpt-4.1-nano",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4837,13 +4837,13 @@
           "web_search_options"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-4o",
           "url": "https://openrouter.ai/openai/gpt-4o",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4887,13 +4887,13 @@
           "web_search_options"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-4o-2024-05-13",
           "url": "https://openrouter.ai/openai/gpt-4o-2024-05-13",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4937,13 +4937,13 @@
           "web_search_options"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-4o-2024-08-06",
           "url": "https://openrouter.ai/openai/gpt-4o-2024-08-06",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -4986,13 +4986,13 @@
           "web_search_options"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-4o-2024-11-20",
           "url": "https://openrouter.ai/openai/gpt-4o-2024-11-20",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5034,13 +5034,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-4o-audio-preview",
           "url": "https://openrouter.ai/openai/gpt-4o-audio-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5084,13 +5084,13 @@
           "web_search_options"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-4o-mini",
           "url": "https://openrouter.ai/openai/gpt-4o-mini",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5133,13 +5133,13 @@
           "web_search_options"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-4o-mini-2024-07-18",
           "url": "https://openrouter.ai/openai/gpt-4o-mini-2024-07-18",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5171,13 +5171,13 @@
           "web_search_options"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-4o-mini-search-preview",
           "url": "https://openrouter.ai/openai/gpt-4o-mini-search-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5209,13 +5209,13 @@
           "web_search_options"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-4o-search-preview",
           "url": "https://openrouter.ai/openai/gpt-4o-search-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5253,13 +5253,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5",
           "url": "https://openrouter.ai/openai/gpt-5",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5292,13 +5292,13 @@
           "structured_outputs"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5-chat",
           "url": "https://openrouter.ai/openai/gpt-5-chat",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5334,13 +5334,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5-codex",
           "url": "https://openrouter.ai/openai/gpt-5-codex",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5382,13 +5382,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5-image",
           "url": "https://openrouter.ai/openai/gpt-5-image",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5430,13 +5430,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5-image-mini",
           "url": "https://openrouter.ai/openai/gpt-5-image-mini",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5474,13 +5474,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5-mini",
           "url": "https://openrouter.ai/openai/gpt-5-mini",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5517,13 +5517,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5-nano",
           "url": "https://openrouter.ai/openai/gpt-5-nano",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5560,13 +5560,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5-pro",
           "url": "https://openrouter.ai/openai/gpt-5-pro",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5604,13 +5604,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5.1",
           "url": "https://openrouter.ai/openai/gpt-5.1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5646,13 +5646,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5.1-chat",
           "url": "https://openrouter.ai/openai/gpt-5.1-chat",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5690,13 +5690,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5.1-codex",
           "url": "https://openrouter.ai/openai/gpt-5.1-codex",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5734,13 +5734,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5.1-codex-max",
           "url": "https://openrouter.ai/openai/gpt-5.1-codex-max",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5778,13 +5778,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5.1-codex-mini",
           "url": "https://openrouter.ai/openai/gpt-5.1-codex-mini",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5822,13 +5822,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5.2",
           "url": "https://openrouter.ai/openai/gpt-5.2",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5864,13 +5864,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5.2-chat",
           "url": "https://openrouter.ai/openai/gpt-5.2-chat",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5908,13 +5908,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5.2-codex",
           "url": "https://openrouter.ai/openai/gpt-5.2-codex",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5951,13 +5951,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5.2-pro",
           "url": "https://openrouter.ai/openai/gpt-5.2-pro",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -5993,13 +5993,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5.3-chat",
           "url": "https://openrouter.ai/openai/gpt-5.3-chat",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6037,13 +6037,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5.3-codex",
           "url": "https://openrouter.ai/openai/gpt-5.3-codex",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6081,13 +6081,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5.4",
           "url": "https://openrouter.ai/openai/gpt-5.4",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6128,13 +6128,13 @@
           "top_logprobs"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5.4-image-2",
           "url": "https://openrouter.ai/openai/gpt-5.4-image-2",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6172,13 +6172,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5.4-mini",
           "url": "https://openrouter.ai/openai/gpt-5.4-mini",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6216,13 +6216,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5.4-nano",
           "url": "https://openrouter.ai/openai/gpt-5.4-nano",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6260,13 +6260,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5.4-pro",
           "url": "https://openrouter.ai/openai/gpt-5.4-pro",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6304,13 +6304,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5.5",
           "url": "https://openrouter.ai/openai/gpt-5.5",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6347,13 +6347,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-5.5-pro",
           "url": "https://openrouter.ai/openai/gpt-5.5-pro",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6395,13 +6395,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-audio",
           "url": "https://openrouter.ai/openai/gpt-audio",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6443,13 +6443,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-audio-mini",
           "url": "https://openrouter.ai/openai/gpt-audio-mini",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6490,13 +6490,99 @@
           "top_logprobs"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-chat-latest",
           "url": "https://openrouter.ai/openai/gpt-chat-latest",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
+        }
+      ]
+    },
+    {
+      "id": "gpt-latest",
+      "model": "OpenAI GPT Latest",
+      "alias": [
+        "~openai/gpt-latest"
+      ],
+      "author": "openai",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text",
+        "image"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 1050000,
+      "max_output_tokens": 128000,
+      "other_parameters": {
+        "tokenizer": "Router",
+        "instruct_type": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "max_completion_tokens",
+          "max_tokens",
+          "reasoning",
+          "response_format",
+          "seed",
+          "structured_outputs",
+          "tool_choice",
+          "tools"
+        ]
+      },
+      "last_updated": "2026-05-19T14:20:07.465Z",
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "~openai/gpt-latest",
+          "url": "https://openrouter.ai/~openai/gpt-latest",
+          "observed_at": "2026-05-19T14:20:07.465Z"
+        }
+      ]
+    },
+    {
+      "id": "gpt-mini-latest",
+      "model": "OpenAI GPT Mini Latest",
+      "alias": [
+        "~openai/gpt-mini-latest"
+      ],
+      "author": "openai",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text",
+        "image"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 400000,
+      "max_output_tokens": 128000,
+      "other_parameters": {
+        "tokenizer": "Router",
+        "instruct_type": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "max_completion_tokens",
+          "max_tokens",
+          "reasoning",
+          "response_format",
+          "seed",
+          "structured_outputs",
+          "tool_choice",
+          "tools"
+        ]
+      },
+      "last_updated": "2026-05-19T14:20:07.465Z",
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "~openai/gpt-mini-latest",
+          "url": "https://openrouter.ai/~openai/gpt-mini-latest",
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6532,13 +6618,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-oss-120b:free",
           "url": "https://openrouter.ai/openai/gpt-oss-120b:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6574,13 +6660,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-oss-20b:free",
           "url": "https://openrouter.ai/openai/gpt-oss-20b:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6617,13 +6703,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/gpt-oss-safeguard-20b",
           "url": "https://openrouter.ai/openai/gpt-oss-safeguard-20b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6661,13 +6747,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "ibm-granite/granite-4.0-h-micro",
           "url": "https://openrouter.ai/ibm-granite/granite-4.0-h-micro",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6708,13 +6794,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "ibm-granite/granite-4.1-8b",
           "url": "https://openrouter.ai/ibm-granite/granite-4.1-8b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6725,7 +6811,7 @@
         "x-ai/grok-4.20",
         "x-ai/grok-4.20-20260309"
       ],
-      "author": "x-ai",
+      "author": "xai",
       "input_modalities": [
         "text"
       ],
@@ -6754,13 +6840,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "x-ai/grok-4.20",
           "url": "https://openrouter.ai/x-ai/grok-4.20",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6771,7 +6857,7 @@
         "x-ai/grok-4.20-multi-agent",
         "x-ai/grok-4.20-multi-agent-20260309"
       ],
-      "author": "x-ai",
+      "author": "xai",
       "input_modalities": [
         "text"
       ],
@@ -6798,13 +6884,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "x-ai/grok-4.20-multi-agent",
           "url": "https://openrouter.ai/x-ai/grok-4.20-multi-agent",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6815,7 +6901,7 @@
         "x-ai/grok-4.3",
         "x-ai/grok-4.3-20260430"
       ],
-      "author": "x-ai",
+      "author": "xai",
       "input_modalities": [
         "text"
       ],
@@ -6847,13 +6933,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "x-ai/grok-4.3",
           "url": "https://openrouter.ai/x-ai/grok-4.3",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6891,13 +6977,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "nousresearch/hermes-2-pro-llama-3-8b",
           "url": "https://openrouter.ai/nousresearch/hermes-2-pro-llama-3-8b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6931,13 +7017,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "nousresearch/hermes-3-llama-3.1-405b:free",
           "url": "https://openrouter.ai/nousresearch/hermes-3-llama-3.1-405b:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -6977,13 +7063,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "nousresearch/hermes-3-llama-3.1-70b",
           "url": "https://openrouter.ai/nousresearch/hermes-3-llama-3.1-70b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7019,13 +7105,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "nousresearch/hermes-4-405b",
           "url": "https://openrouter.ai/nousresearch/hermes-4-405b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7061,13 +7147,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "nousresearch/hermes-4-70b",
           "url": "https://openrouter.ai/nousresearch/hermes-4-70b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7103,13 +7189,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "tencent/hunyuan-a13b-instruct",
           "url": "https://openrouter.ai/tencent/hunyuan-a13b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7148,13 +7234,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "tencent/hy3-preview",
           "url": "https://openrouter.ai/tencent/hy3-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7185,13 +7271,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "inflection/inflection-3-pi",
           "url": "https://openrouter.ai/inflection/inflection-3-pi",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7222,13 +7308,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "inflection/inflection-3-productivity",
           "url": "https://openrouter.ai/inflection/inflection-3-productivity",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7269,13 +7355,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "prime-intellect/intellect-3",
           "url": "https://openrouter.ai/prime-intellect/intellect-3",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7309,13 +7395,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "ai21/jamba-large-1.7",
           "url": "https://openrouter.ai/ai21/jamba-large-1.7",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7358,13 +7444,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "kwaipilot/kat-coder-pro-v2",
           "url": "https://openrouter.ai/kwaipilot/kat-coder-pro-v2",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7374,7 +7460,7 @@
       "alias": [
         "moonshotai/kimi-k2"
       ],
-      "author": "moonshotai",
+      "author": "moonshot-ai",
       "input_modalities": [
         "text"
       ],
@@ -7402,13 +7488,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "moonshotai/kimi-k2",
           "url": "https://openrouter.ai/moonshotai/kimi-k2",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7418,7 +7504,7 @@
       "alias": [
         "moonshotai/kimi-k2-0905"
       ],
-      "author": "moonshotai",
+      "author": "moonshot-ai",
       "input_modalities": [
         "text"
       ],
@@ -7450,13 +7536,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "moonshotai/kimi-k2-0905",
           "url": "https://openrouter.ai/moonshotai/kimi-k2-0905",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7467,7 +7553,7 @@
         "moonshotai/kimi-k2-thinking",
         "moonshotai/kimi-k2-thinking-20251106"
       ],
-      "author": "moonshotai",
+      "author": "moonshot-ai",
       "input_modalities": [
         "text"
       ],
@@ -7501,13 +7587,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "moonshotai/kimi-k2-thinking",
           "url": "https://openrouter.ai/moonshotai/kimi-k2-thinking",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7518,7 +7604,7 @@
         "moonshotai/kimi-k2.5",
         "moonshotai/kimi-k2.5-0127"
       ],
-      "author": "moonshotai",
+      "author": "moonshot-ai",
       "input_modalities": [
         "text"
       ],
@@ -7555,13 +7641,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "moonshotai/kimi-k2.5",
           "url": "https://openrouter.ai/moonshotai/kimi-k2.5",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7572,7 +7658,7 @@
         "moonshotai/kimi-k2.6",
         "moonshotai/kimi-k2.6-20260420"
       ],
-      "author": "moonshotai",
+      "author": "moonshot-ai",
       "input_modalities": [
         "text"
       ],
@@ -7611,13 +7697,68 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "moonshotai/kimi-k2.6",
           "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
+        }
+      ]
+    },
+    {
+      "id": "kimi-latest",
+      "model": "MoonshotAI Kimi Latest",
+      "alias": [
+        "~moonshotai/kimi-latest"
+      ],
+      "author": "moonshot-ai",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text",
+        "image"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 262144,
+      "max_output_tokens": 262142,
+      "other_parameters": {
+        "tokenizer": "Router",
+        "instruct_type": null,
+        "supported_parameters": [
+          "frequency_penalty",
+          "include_reasoning",
+          "logit_bias",
+          "logprobs",
+          "max_tokens",
+          "min_p",
+          "parallel_tool_calls",
+          "presence_penalty",
+          "reasoning",
+          "reasoning_effort",
+          "repetition_penalty",
+          "response_format",
+          "seed",
+          "stop",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_k",
+          "top_logprobs",
+          "top_p"
+        ]
+      },
+      "last_updated": "2026-05-19T14:20:07.465Z",
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "~moonshotai/kimi-latest",
+          "url": "https://openrouter.ai/~moonshotai/kimi-latest",
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7655,13 +7796,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "sao10k/l3-euryale-70b",
           "url": "https://openrouter.ai/sao10k/l3-euryale-70b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7701,13 +7842,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "sao10k/l3-lunaris-8b",
           "url": "https://openrouter.ai/sao10k/l3-lunaris-8b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7744,13 +7885,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "sao10k/l3.1-70b-hanami-x1",
           "url": "https://openrouter.ai/sao10k/l3.1-70b-hanami-x1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7792,13 +7933,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "sao10k/l3.1-euryale-70b",
           "url": "https://openrouter.ai/sao10k/l3.1-euryale-70b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7838,13 +7979,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "sao10k/l3.3-euryale-70b",
           "url": "https://openrouter.ai/sao10k/l3.3-euryale-70b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7878,13 +8019,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "poolside/laguna-m.1:free",
           "url": "https://openrouter.ai/poolside/laguna-m.1:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7918,13 +8059,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "poolside/laguna-xs.2:free",
           "url": "https://openrouter.ai/poolside/laguna-xs.2:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -7961,13 +8102,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "liquid/lfm-2-24b-a2b",
           "url": "https://openrouter.ai/liquid/lfm-2-24b-a2b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8004,13 +8145,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "liquid/lfm-2.5-1.2b-instruct:free",
           "url": "https://openrouter.ai/liquid/lfm-2.5-1.2b-instruct:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8049,13 +8190,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "liquid/lfm-2.5-1.2b-thinking:free",
           "url": "https://openrouter.ai/liquid/lfm-2.5-1.2b-thinking:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8096,13 +8237,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "inclusionai/ling-2.6-1t",
           "url": "https://openrouter.ai/inclusionai/ling-2.6-1t",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8143,13 +8284,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "inclusionai/ling-2.6-flash",
           "url": "https://openrouter.ai/inclusionai/ling-2.6-flash",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8186,13 +8327,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "meta-llama/llama-3-70b-instruct",
           "url": "https://openrouter.ai/meta-llama/llama-3-70b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8231,13 +8372,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "meta-llama/llama-3-8b-instruct",
           "url": "https://openrouter.ai/meta-llama/llama-3-8b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8279,13 +8420,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "meta-llama/llama-3.1-70b-instruct",
           "url": "https://openrouter.ai/meta-llama/llama-3.1-70b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8329,13 +8470,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "meta-llama/llama-3.1-8b-instruct",
           "url": "https://openrouter.ai/meta-llama/llama-3.1-8b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8375,13 +8516,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "meta-llama/llama-3.2-11b-vision-instruct",
           "url": "https://openrouter.ai/meta-llama/llama-3.2-11b-vision-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8419,13 +8560,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "meta-llama/llama-3.2-1b-instruct",
           "url": "https://openrouter.ai/meta-llama/llama-3.2-1b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8459,13 +8600,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "meta-llama/llama-3.2-3b-instruct:free",
           "url": "https://openrouter.ai/meta-llama/llama-3.2-3b-instruct:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8501,13 +8642,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "meta-llama/llama-3.3-70b-instruct:free",
           "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8550,13 +8691,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
           "url": "https://openrouter.ai/nvidia/llama-3.3-nemotron-super-49b-v1.5",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8598,13 +8739,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "meta-llama/llama-4-maverick",
           "url": "https://openrouter.ai/meta-llama/llama-4-maverick",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8648,13 +8789,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "meta-llama/llama-4-scout",
           "url": "https://openrouter.ai/meta-llama/llama-4-scout",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8692,13 +8833,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "meta-llama/llama-guard-3-8b",
           "url": "https://openrouter.ai/meta-llama/llama-guard-3-8b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8738,13 +8879,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "meta-llama/llama-guard-4-12b",
           "url": "https://openrouter.ai/meta-llama/llama-guard-4-12b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8779,13 +8920,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/lyria-3-clip-preview",
           "url": "https://openrouter.ai/google/lyria-3-clip-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8820,13 +8961,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "google/lyria-3-pro-preview",
           "url": "https://openrouter.ai/google/lyria-3-pro-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8863,13 +9004,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "arcee-ai/maestro-reasoning",
           "url": "https://openrouter.ai/arcee-ai/maestro-reasoning",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8911,13 +9052,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "anthracite-org/magnum-v4-72b",
           "url": "https://openrouter.ai/anthracite-org/magnum-v4-72b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -8954,13 +9095,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "inception/mercury-2",
           "url": "https://openrouter.ai/inception/mercury-2",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9002,13 +9143,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "xiaomi/mimo-v2-flash",
           "url": "https://openrouter.ai/xiaomi/mimo-v2-flash",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9050,13 +9191,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "xiaomi/mimo-v2-omni",
           "url": "https://openrouter.ai/xiaomi/mimo-v2-omni",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9095,13 +9236,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "xiaomi/mimo-v2-pro",
           "url": "https://openrouter.ai/xiaomi/mimo-v2-pro",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9143,13 +9284,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "xiaomi/mimo-v2.5",
           "url": "https://openrouter.ai/xiaomi/mimo-v2.5",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9194,13 +9335,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "xiaomi/mimo-v2.5-pro",
           "url": "https://openrouter.ai/xiaomi/mimo-v2.5-pro",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9231,13 +9372,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "minimax/minimax-01",
           "url": "https://openrouter.ai/minimax/minimax-01",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9277,13 +9418,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "minimax/minimax-m1",
           "url": "https://openrouter.ai/minimax/minimax-m1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9327,13 +9468,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "minimax/minimax-m2",
           "url": "https://openrouter.ai/minimax/minimax-m2",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9364,13 +9505,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "minimax/minimax-m2-her",
           "url": "https://openrouter.ai/minimax/minimax-m2-her",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9414,13 +9555,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "minimax/minimax-m2.1",
           "url": "https://openrouter.ai/minimax/minimax-m2.1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9456,13 +9597,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "minimax/minimax-m2.5:free",
           "url": "https://openrouter.ai/minimax/minimax-m2.5:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9509,13 +9650,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "minimax/minimax-m2.7",
           "url": "https://openrouter.ai/minimax/minimax-m2.7",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9525,7 +9666,7 @@
       "alias": [
         "mistralai/ministral-14b-2512"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -9556,13 +9697,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/ministral-14b-2512",
           "url": "https://openrouter.ai/mistralai/ministral-14b-2512",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9572,7 +9713,7 @@
       "alias": [
         "mistralai/ministral-3b-2512"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -9603,13 +9744,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/ministral-3b-2512",
           "url": "https://openrouter.ai/mistralai/ministral-3b-2512",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9619,7 +9760,7 @@
       "alias": [
         "mistralai/ministral-8b-2512"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -9650,13 +9791,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/ministral-8b-2512",
           "url": "https://openrouter.ai/mistralai/ministral-8b-2512",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9666,7 +9807,7 @@
       "alias": [
         "mistralai/mistral-7b-instruct-v0.1"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -9694,13 +9835,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/mistral-7b-instruct-v0.1",
           "url": "https://openrouter.ai/mistralai/mistral-7b-instruct-v0.1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9710,7 +9851,7 @@
       "alias": [
         "mistralai/mistral-large"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -9737,13 +9878,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/mistral-large",
           "url": "https://openrouter.ai/mistralai/mistral-large",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9753,7 +9894,7 @@
       "alias": [
         "mistralai/mistral-large-2407"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -9780,13 +9921,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/mistral-large-2407",
           "url": "https://openrouter.ai/mistralai/mistral-large-2407",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9796,7 +9937,7 @@
       "alias": [
         "mistralai/mistral-large-2411"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -9823,13 +9964,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/mistral-large-2411",
           "url": "https://openrouter.ai/mistralai/mistral-large-2411",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9839,7 +9980,7 @@
       "alias": [
         "mistralai/mistral-large-2512"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -9867,13 +10008,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/mistral-large-2512",
           "url": "https://openrouter.ai/mistralai/mistral-large-2512",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9883,7 +10024,7 @@
       "alias": [
         "mistralai/mistral-medium-3"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -9911,13 +10052,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/mistral-medium-3",
           "url": "https://openrouter.ai/mistralai/mistral-medium-3",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9928,7 +10069,7 @@
         "mistralai/mistral-medium-3-5",
         "mistralai/mistral-medium-3.5-20260430"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -9958,13 +10099,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/mistral-medium-3-5",
           "url": "https://openrouter.ai/mistralai/mistral-medium-3-5",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -9974,7 +10115,7 @@
       "alias": [
         "mistralai/mistral-medium-3.1"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -10002,13 +10143,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/mistral-medium-3.1",
           "url": "https://openrouter.ai/mistralai/mistral-medium-3.1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10018,7 +10159,7 @@
       "alias": [
         "mistralai/mistral-nemo"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -10049,13 +10190,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/mistral-nemo",
           "url": "https://openrouter.ai/mistralai/mistral-nemo",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10066,7 +10207,7 @@
         "mistralai/mistral-saba",
         "mistralai/mistral-saba-2502"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -10093,13 +10234,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/mistral-saba",
           "url": "https://openrouter.ai/mistralai/mistral-saba",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10109,7 +10250,7 @@
       "alias": [
         "mistralai/mistral-small-24b-instruct-2501"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -10139,13 +10280,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/mistral-small-24b-instruct-2501",
           "url": "https://openrouter.ai/mistralai/mistral-small-24b-instruct-2501",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10155,7 +10296,7 @@
       "alias": [
         "mistralai/mistral-small-2603"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -10186,13 +10327,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/mistral-small-2603",
           "url": "https://openrouter.ai/mistralai/mistral-small-2603",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10203,7 +10344,7 @@
         "mistralai/mistral-small-3.1-24b-instruct",
         "mistralai/mistral-small-3.1-24b-instruct-2503"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -10232,13 +10373,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/mistral-small-3.1-24b-instruct",
           "url": "https://openrouter.ai/mistralai/mistral-small-3.1-24b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10249,7 +10390,7 @@
         "mistralai/mistral-small-3.2-24b-instruct",
         "mistralai/mistral-small-3.2-24b-instruct-2506"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -10282,13 +10423,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/mistral-small-3.2-24b-instruct",
           "url": "https://openrouter.ai/mistralai/mistral-small-3.2-24b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10298,7 +10439,7 @@
       "alias": [
         "mistralai/mixtral-8x22b-instruct"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -10325,68 +10466,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/mixtral-8x22b-instruct",
           "url": "https://openrouter.ai/mistralai/mixtral-8x22b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
-        }
-      ]
-    },
-    {
-      "id": "moonshotai-kimi-latest",
-      "model": "MoonshotAI Kimi Latest",
-      "alias": [
-        "~moonshotai/kimi-latest"
-      ],
-      "author": "moonshotai",
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text",
-        "image"
-      ],
-      "reasoning": true,
-      "tool_calling": true,
-      "context_length": 262144,
-      "max_output_tokens": 262142,
-      "other_parameters": {
-        "tokenizer": "Router",
-        "instruct_type": null,
-        "supported_parameters": [
-          "frequency_penalty",
-          "include_reasoning",
-          "logit_bias",
-          "logprobs",
-          "max_tokens",
-          "min_p",
-          "parallel_tool_calls",
-          "presence_penalty",
-          "reasoning",
-          "reasoning_effort",
-          "repetition_penalty",
-          "response_format",
-          "seed",
-          "stop",
-          "structured_outputs",
-          "temperature",
-          "tool_choice",
-          "tools",
-          "top_k",
-          "top_logprobs",
-          "top_p"
-        ]
-      },
-      "last_updated": "2026-05-18T23:02:28.889Z",
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "~moonshotai/kimi-latest",
-          "url": "https://openrouter.ai/~moonshotai/kimi-latest",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10416,13 +10502,13 @@
           "temperature"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "morph/morph-v3-fast",
           "url": "https://openrouter.ai/morph/morph-v3-fast",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10452,13 +10538,13 @@
           "temperature"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "morph/morph-v3-large",
           "url": "https://openrouter.ai/morph/morph-v3-large",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10501,13 +10587,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "gryphe/mythomax-l2-13b",
           "url": "https://openrouter.ai/gryphe/mythomax-l2-13b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10542,13 +10628,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "nvidia/nemotron-3-nano-30b-a3b:free",
           "url": "https://openrouter.ai/nvidia/nemotron-3-nano-30b-a3b:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10587,13 +10673,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
           "url": "https://openrouter.ai/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10631,13 +10717,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "nvidia/nemotron-3-super-120b-a12b:free",
           "url": "https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10675,13 +10761,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "nvidia/nemotron-nano-12b-v2-vl:free",
           "url": "https://openrouter.ai/nvidia/nemotron-nano-12b-v2-vl:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10718,13 +10804,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "nvidia/nemotron-nano-9b-v2:free",
           "url": "https://openrouter.ai/nvidia/nemotron-nano-9b-v2:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10762,13 +10848,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "amazon/nova-2-lite-v1",
           "url": "https://openrouter.ai/amazon/nova-2-lite-v1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10802,13 +10888,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "amazon/nova-lite-v1",
           "url": "https://openrouter.ai/amazon/nova-lite-v1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10841,13 +10927,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "amazon/nova-micro-v1",
           "url": "https://openrouter.ai/amazon/nova-micro-v1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10881,13 +10967,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "amazon/nova-premier-v1",
           "url": "https://openrouter.ai/amazon/nova-premier-v1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10921,13 +11007,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "amazon/nova-pro-v1",
           "url": "https://openrouter.ai/amazon/nova-pro-v1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -10964,13 +11050,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/o1",
           "url": "https://openrouter.ai/openai/o1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11004,13 +11090,13 @@
           "structured_outputs"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/o1-pro",
           "url": "https://openrouter.ai/openai/o1-pro",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11047,13 +11133,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/o3",
           "url": "https://openrouter.ai/openai/o3",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11098,13 +11184,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/o3-deep-research",
           "url": "https://openrouter.ai/openai/o3-deep-research",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11140,13 +11226,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/o3-mini",
           "url": "https://openrouter.ai/openai/o3-mini",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11182,13 +11268,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/o3-mini-high",
           "url": "https://openrouter.ai/openai/o3-mini-high",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11225,13 +11311,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/o3-pro",
           "url": "https://openrouter.ai/openai/o3-pro",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11268,13 +11354,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/o4-mini",
           "url": "https://openrouter.ai/openai/o4-mini",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11319,13 +11405,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/o4-mini-deep-research",
           "url": "https://openrouter.ai/openai/o4-mini-deep-research",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11362,13 +11448,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openai/o4-mini-high",
           "url": "https://openrouter.ai/openai/o4-mini-high",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11410,99 +11496,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "allenai/olmo-3-32b-think",
           "url": "https://openrouter.ai/allenai/olmo-3-32b-think",
-          "observed_at": "2026-05-18T23:02:28.889Z"
-        }
-      ]
-    },
-    {
-      "id": "openai-gpt-latest",
-      "model": "OpenAI GPT Latest",
-      "alias": [
-        "~openai/gpt-latest"
-      ],
-      "author": "openai",
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text",
-        "image"
-      ],
-      "reasoning": true,
-      "tool_calling": true,
-      "context_length": 1050000,
-      "max_output_tokens": 128000,
-      "other_parameters": {
-        "tokenizer": "Router",
-        "instruct_type": null,
-        "supported_parameters": [
-          "include_reasoning",
-          "max_completion_tokens",
-          "max_tokens",
-          "reasoning",
-          "response_format",
-          "seed",
-          "structured_outputs",
-          "tool_choice",
-          "tools"
-        ]
-      },
-      "last_updated": "2026-05-18T23:02:28.889Z",
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "~openai/gpt-latest",
-          "url": "https://openrouter.ai/~openai/gpt-latest",
-          "observed_at": "2026-05-18T23:02:28.889Z"
-        }
-      ]
-    },
-    {
-      "id": "openai-gpt-mini-latest",
-      "model": "OpenAI GPT Mini Latest",
-      "alias": [
-        "~openai/gpt-mini-latest"
-      ],
-      "author": "openai",
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text",
-        "image"
-      ],
-      "reasoning": true,
-      "tool_calling": true,
-      "context_length": 400000,
-      "max_output_tokens": 128000,
-      "other_parameters": {
-        "tokenizer": "Router",
-        "instruct_type": null,
-        "supported_parameters": [
-          "include_reasoning",
-          "max_completion_tokens",
-          "max_tokens",
-          "reasoning",
-          "response_format",
-          "seed",
-          "structured_outputs",
-          "tool_choice",
-          "tools"
-        ]
-      },
-      "last_updated": "2026-05-18T23:02:28.889Z",
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "~openai/gpt-mini-latest",
-          "url": "https://openrouter.ai/~openai/gpt-mini-latest",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11542,13 +11542,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openrouter/owl-alpha",
           "url": "https://openrouter.ai/openrouter/owl-alpha",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11581,13 +11581,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "writer/palmyra-x5",
           "url": "https://openrouter.ai/writer/palmyra-x5",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11612,13 +11612,13 @@
         "instruct_type": null,
         "supported_parameters": []
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "openrouter/pareto-code",
           "url": "https://openrouter.ai/openrouter/pareto-code",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11657,13 +11657,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "perceptron/perceptron-mk1",
           "url": "https://openrouter.ai/perceptron/perceptron-mk1",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11705,13 +11705,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "microsoft/phi-4",
           "url": "https://openrouter.ai/microsoft/phi-4",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11749,13 +11749,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "microsoft/phi-4-mini-instruct",
           "url": "https://openrouter.ai/microsoft/phi-4-mini-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11765,7 +11765,7 @@
       "alias": [
         "mistralai/pixtral-large-2411"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text"
       ],
@@ -11793,13 +11793,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/pixtral-large-2411",
           "url": "https://openrouter.ai/mistralai/pixtral-large-2411",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11838,13 +11838,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "baidu/qianfan-ocr-fast",
           "url": "https://openrouter.ai/baidu/qianfan-ocr-fast",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11886,13 +11886,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen-2.5-72b-instruct",
           "url": "https://openrouter.ai/qwen/qwen-2.5-72b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11933,13 +11933,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen-2.5-7b-instruct",
           "url": "https://openrouter.ai/qwen/qwen-2.5-7b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -11977,13 +11977,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen-2.5-coder-32b-instruct",
           "url": "https://openrouter.ai/qwen/qwen-2.5-coder-32b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12019,13 +12019,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen-plus",
           "url": "https://openrouter.ai/qwen/qwen-plus",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12064,13 +12064,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen-plus-2025-07-28:thinking",
           "url": "https://openrouter.ai/qwen/qwen-plus-2025-07-28:thinking",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12109,13 +12109,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen2.5-vl-72b-instruct",
           "url": "https://openrouter.ai/qwen/qwen2.5-vl-72b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12162,13 +12162,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-14b",
           "url": "https://openrouter.ai/qwen/qwen3-14b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12206,13 +12206,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-235b-a22b",
           "url": "https://openrouter.ai/qwen/qwen3-235b-a22b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12257,13 +12257,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-235b-a22b-2507",
           "url": "https://openrouter.ai/qwen/qwen3-235b-a22b-2507",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12306,13 +12306,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-235b-a22b-thinking-2507",
           "url": "https://openrouter.ai/qwen/qwen3-235b-a22b-thinking-2507",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12359,13 +12359,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-30b-a3b",
           "url": "https://openrouter.ai/qwen/qwen3-30b-a3b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12407,13 +12407,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-30b-a3b-instruct-2507",
           "url": "https://openrouter.ai/qwen/qwen3-30b-a3b-instruct-2507",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12457,13 +12457,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-30b-a3b-thinking-2507",
           "url": "https://openrouter.ai/qwen/qwen3-30b-a3b-thinking-2507",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12508,13 +12508,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-32b",
           "url": "https://openrouter.ai/qwen/qwen3-32b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12559,13 +12559,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-8b",
           "url": "https://openrouter.ai/qwen/qwen3-8b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12602,13 +12602,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-coder:free",
           "url": "https://openrouter.ai/qwen/qwen3-coder:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12648,13 +12648,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-coder-30b-a3b-instruct",
           "url": "https://openrouter.ai/qwen/qwen3-coder-30b-a3b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12689,13 +12689,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-coder-flash",
           "url": "https://openrouter.ai/qwen/qwen3-coder-flash",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12738,13 +12738,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-coder-next",
           "url": "https://openrouter.ai/qwen/qwen3-coder-next",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12780,13 +12780,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-coder-plus",
           "url": "https://openrouter.ai/qwen/qwen3-coder-plus",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12821,13 +12821,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-max",
           "url": "https://openrouter.ai/qwen/qwen3-max",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12866,13 +12866,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-max-thinking",
           "url": "https://openrouter.ai/qwen/qwen3-max-thinking",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12910,13 +12910,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-next-80b-a3b-instruct:free",
           "url": "https://openrouter.ai/qwen/qwen3-next-80b-a3b-instruct:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -12961,13 +12961,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-next-80b-a3b-thinking",
           "url": "https://openrouter.ai/qwen/qwen3-next-80b-a3b-thinking",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13010,13 +13010,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-vl-235b-a22b-instruct",
           "url": "https://openrouter.ai/qwen/qwen3-vl-235b-a22b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13058,13 +13058,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-vl-235b-a22b-thinking",
           "url": "https://openrouter.ai/qwen/qwen3-vl-235b-a22b-thinking",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13107,13 +13107,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-vl-30b-a3b-instruct",
           "url": "https://openrouter.ai/qwen/qwen3-vl-30b-a3b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13156,13 +13156,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-vl-30b-a3b-thinking",
           "url": "https://openrouter.ai/qwen/qwen3-vl-30b-a3b-thinking",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13198,13 +13198,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-vl-32b-instruct",
           "url": "https://openrouter.ai/qwen/qwen3-vl-32b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13247,13 +13247,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-vl-8b-instruct",
           "url": "https://openrouter.ai/qwen/qwen3-vl-8b-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13292,13 +13292,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3-vl-8b-thinking",
           "url": "https://openrouter.ai/qwen/qwen3-vl-8b-thinking",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13347,13 +13347,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3.5-122b-a10b",
           "url": "https://openrouter.ai/qwen/qwen3.5-122b-a10b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13402,13 +13402,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3.5-27b",
           "url": "https://openrouter.ai/qwen/qwen3.5-27b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13457,13 +13457,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3.5-35b-a3b",
           "url": "https://openrouter.ai/qwen/qwen3.5-35b-a3b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13512,13 +13512,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3.5-397b-a17b",
           "url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13567,13 +13567,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3.5-9b",
           "url": "https://openrouter.ai/qwen/qwen3.5-9b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13614,13 +13614,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3.5-flash-02-23",
           "url": "https://openrouter.ai/qwen/qwen3.5-flash-02-23",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13661,13 +13661,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3.5-plus-02-15",
           "url": "https://openrouter.ai/qwen/qwen3.5-plus-02-15",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13707,13 +13707,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3.5-plus-20260420",
           "url": "https://openrouter.ai/qwen/qwen3.5-plus-20260420",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13762,13 +13762,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3.6-27b",
           "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13815,13 +13815,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3.6-35b-a3b",
           "url": "https://openrouter.ai/qwen/qwen3.6-35b-a3b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13861,13 +13861,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3.6-flash",
           "url": "https://openrouter.ai/qwen/qwen3.6-flash",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13908,13 +13908,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3.6-max-preview",
           "url": "https://openrouter.ai/qwen/qwen3.6-max-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -13955,13 +13955,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "qwen/qwen3.6-plus",
           "url": "https://openrouter.ai/qwen/qwen3.6-plus",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14002,13 +14002,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "rekaai/reka-edge",
           "url": "https://openrouter.ai/rekaai/reka-edge",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14045,13 +14045,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "rekaai/reka-flash-3",
           "url": "https://openrouter.ai/rekaai/reka-flash-3",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14081,13 +14081,13 @@
           "stop"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "relace/relace-apply-3",
           "url": "https://openrouter.ai/relace/relace-apply-3",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14122,13 +14122,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "relace/relace-search",
           "url": "https://openrouter.ai/relace/relace-search",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14171,13 +14171,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "undi95/remm-slerp-l2-13b",
           "url": "https://openrouter.ai/undi95/remm-slerp-l2-13b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14219,13 +14219,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "inclusionai/ring-2.6-1t",
           "url": "https://openrouter.ai/inclusionai/ring-2.6-1t",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14265,13 +14265,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "essentialai/rnj-1-instruct",
           "url": "https://openrouter.ai/essentialai/rnj-1-instruct",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14315,13 +14315,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "thedrummer/rocinante-12b",
           "url": "https://openrouter.ai/thedrummer/rocinante-12b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14355,13 +14355,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "switchpoint/router",
           "url": "https://openrouter.ai/switchpoint/router",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14372,7 +14372,7 @@
         "bytedance-seed/seed-1.6",
         "bytedance-seed/seed-1.6-20250625"
       ],
-      "author": "bytedance-seed",
+      "author": "bytedance",
       "input_modalities": [
         "text",
         "video"
@@ -14402,13 +14402,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "bytedance-seed/seed-1.6",
           "url": "https://openrouter.ai/bytedance-seed/seed-1.6",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14419,7 +14419,7 @@
         "bytedance-seed/seed-1.6-flash",
         "bytedance-seed/seed-1.6-flash-20250625"
       ],
-      "author": "bytedance-seed",
+      "author": "bytedance",
       "input_modalities": [
         "text",
         "video"
@@ -14449,13 +14449,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "bytedance-seed/seed-1.6-flash",
           "url": "https://openrouter.ai/bytedance-seed/seed-1.6-flash",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14466,7 +14466,7 @@
         "bytedance-seed/seed-2.0-lite",
         "bytedance-seed/seed-2.0-lite-20260309"
       ],
-      "author": "bytedance-seed",
+      "author": "bytedance",
       "input_modalities": [
         "text",
         "video"
@@ -14496,13 +14496,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "bytedance-seed/seed-2.0-lite",
           "url": "https://openrouter.ai/bytedance-seed/seed-2.0-lite",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14513,7 +14513,7 @@
         "bytedance-seed/seed-2.0-mini",
         "bytedance-seed/seed-2.0-mini-20260224"
       ],
-      "author": "bytedance-seed",
+      "author": "bytedance",
       "input_modalities": [
         "text",
         "video"
@@ -14543,13 +14543,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "bytedance-seed/seed-2.0-mini",
           "url": "https://openrouter.ai/bytedance-seed/seed-2.0-mini",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14586,13 +14586,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "thedrummer/skyfall-36b-v2",
           "url": "https://openrouter.ai/thedrummer/skyfall-36b-v2",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14626,13 +14626,13 @@
           "tools"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "upstage/solar-pro-3",
           "url": "https://openrouter.ai/upstage/solar-pro-3",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14666,13 +14666,13 @@
           "web_search_options"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "perplexity/sonar",
           "url": "https://openrouter.ai/perplexity/sonar",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14707,13 +14707,13 @@
           "web_search_options"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "perplexity/sonar-deep-research",
           "url": "https://openrouter.ai/perplexity/sonar-deep-research",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14748,13 +14748,13 @@
           "web_search_options"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "perplexity/sonar-pro",
           "url": "https://openrouter.ai/perplexity/sonar-pro",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14792,13 +14792,13 @@
           "web_search_options"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "perplexity/sonar-pro-search",
           "url": "https://openrouter.ai/perplexity/sonar-pro-search",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14834,13 +14834,13 @@
           "web_search_options"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "perplexity/sonar-reasoning-pro",
           "url": "https://openrouter.ai/perplexity/sonar-reasoning-pro",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14878,13 +14878,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "arcee-ai/spotlight",
           "url": "https://openrouter.ai/arcee-ai/spotlight",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14927,13 +14927,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "stepfun/step-3.5-flash",
           "url": "https://openrouter.ai/stepfun/step-3.5-flash",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -14977,13 +14977,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "alibaba/tongyi-deepresearch-30b-a3b",
           "url": "https://openrouter.ai/alibaba/tongyi-deepresearch-30b-a3b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -15016,13 +15016,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "arcee-ai/trinity-large-preview",
           "url": "https://openrouter.ai/arcee-ai/trinity-large-preview",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -15058,13 +15058,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "arcee-ai/trinity-large-thinking:free",
           "url": "https://openrouter.ai/arcee-ai/trinity-large-thinking:free",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -15103,13 +15103,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "arcee-ai/trinity-mini",
           "url": "https://openrouter.ai/arcee-ai/trinity-mini",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -15147,13 +15147,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "bytedance/ui-tars-1.5-7b",
           "url": "https://openrouter.ai/bytedance/ui-tars-1.5-7b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -15194,13 +15194,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "thedrummer/unslopnemo-12b",
           "url": "https://openrouter.ai/thedrummer/unslopnemo-12b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -15239,13 +15239,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "arcee-ai/virtuoso-large",
           "url": "https://openrouter.ai/arcee-ai/virtuoso-large",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -15255,7 +15255,7 @@
       "alias": [
         "mistralai/voxtral-small-24b-2507"
       ],
-      "author": "mistralai",
+      "author": "mistral",
       "input_modalities": [
         "text",
         "audio"
@@ -15283,13 +15283,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mistralai/voxtral-small-24b-2507",
           "url": "https://openrouter.ai/mistralai/voxtral-small-24b-2507",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -15331,13 +15331,13 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "mancer/weaver",
           "url": "https://openrouter.ai/mancer/weaver",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     },
@@ -15374,16 +15374,16 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-18T23:02:28.889Z",
+      "last_updated": "2026-05-19T14:20:07.465Z",
       "sources": [
         {
           "source": "openrouter",
           "source_id": "microsoft/wizardlm-2-8x22b",
           "url": "https://openrouter.ai/microsoft/wizardlm-2-8x22b",
-          "observed_at": "2026-05-18T23:02:28.889Z"
+          "observed_at": "2026-05-19T14:20:07.465Z"
         }
       ]
     }
   ],
-  "last_updated": "2026-05-18T23:02:28.889Z"
+  "last_updated": "2026-05-19T14:20:07.465Z"
 }
