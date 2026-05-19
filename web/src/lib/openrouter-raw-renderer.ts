@@ -92,15 +92,21 @@ export function renderOpenRouterRawDetail(graph: OpenRouterRawGraph, node: OpenR
   const outEdges = graph.edges.filter((edge) => edge.from === node.id)
   const inEdges = graph.edges.filter((edge) => edge.to === node.id && edge.from !== node.id)
   const title = modelDetailTitle(node)
-  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/">← 返回模型广场</a><div class="eyebrow">Author · ${escapeHtml(node.derived.author ?? '—')}</div><h1>${escapeHtml(title)}</h1><div class="modelIdHero">Model ID ${renderModelTagCopy(node.modelId)}</div><div hidden>${modelDescription(node)}</div>${renderHeroRelations(graph, node, outEdges, inEdges)}</div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#spec">规格</a><a href="#pricing">价格</a><a href="#source">数据来源与源数据</a></nav>${renderSpecSection(node)}${renderPricingSection(graph, node)}${renderSourceSection(node, outEdges, inEdges)}</article></div><script>${currencyToggleScript()}</script></main>`
+  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/">← 返回模型广场</a><div class="eyebrow">${detailEyebrow(node)}</div><h1>${escapeHtml(title)}</h1><div class="modelIdHero">Model ID ${renderModelTagCopy(node.modelId)}</div><div hidden>${modelDescription(node)}</div>${renderHeroRelations(graph, node, outEdges, inEdges)}</div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#spec">规格</a><a href="#pricing">价格</a><a href="#source">数据来源与源数据</a></nav>${renderSpecSection(node)}${renderPricingSection(graph, node, outEdges, inEdges)}${renderSourceSection(node, outEdges, inEdges)}</article></div><script>${currencyToggleScript()}</script></main>`
   return page(`${title} · mddb.dev`, body, 'models', currencyToggle(graph))
 }
 
 function modelDetailTitle(node: OpenRouterRawNode): string {
-  const author = displayProviderLabel(node.derived.author ?? node.provider)
-  if (!author) return node.displayName
-  const prefix = `${author}: `
+  const owner = node.nodeKind === 'endpoint_deployment' ? node.providerName : node.derived.author ?? node.provider
+  const label = displayProviderLabel(owner)
+  if (!label) return node.displayName
+  const prefix = `${label}: `
   return node.displayName.startsWith(prefix) ? node.displayName : `${prefix}${node.displayName}`
+}
+
+function detailEyebrow(node: OpenRouterRawNode): string {
+  if (node.nodeKind === 'endpoint_deployment') return `Provider · ${escapeHtml(displayProviderLabel(node.providerName))}`
+  return `Author · ${escapeHtml(node.derived.author ?? '—')}`
 }
 
 function providerSummaries(graph: OpenRouterRawGraph): Array<{ id: string; label: string; modelCount: number; offerCount: number; currency: string }> {
@@ -262,10 +268,24 @@ function rawModelArray(node: OpenRouterRawNode, key: string): string[] {
   return node.raw.model[key].map(String)
 }
 
-function renderPricingSection(graph: OpenRouterRawGraph, node: OpenRouterRawNode): string {
+function renderPricingSection(graph: OpenRouterRawGraph, node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[], inEdges: OpenRouterRawEdge[]): string {
+  const providerLinks = node.nodeKind === 'endpoint_deployment' ? '' : pricingProviderLinks(graph, inEdges)
   const endpointPricing = endpointPricingCards(node, graph.currency?.rate)
   const supplementalPricing = endpointPricing ? '' : baseLlmSupplementalPricingCards(graph, node)
-  return `<section id="pricing" class="panel"><h2>价格</h2>${endpointPricing || supplementalPricing || '<p class="muted">无结构化 provider pricing；如本节点为 alias/snapshot/deployment，请先看上方关联模型跳转到 anchor。</p>'}</section>`
+  const empty = providerLinks ? '' : '<p class="muted">无结构化 provider pricing；如本节点为 alias/snapshot/deployment，请先看上方关联模型跳转到 anchor。</p>'
+  return `<section id="pricing" class="panel"><h2>价格</h2>${providerLinks}${endpointPricing || supplementalPricing || empty}</section>`
+}
+
+function pricingProviderLinks(graph: OpenRouterRawGraph, inEdges: OpenRouterRawEdge[]): string {
+  const providerEdges = inEdges.filter((edge) => edge.type === 'deployment_of')
+  if (providerEdges.length === 0) return ''
+  const links = providerEdges
+    .map((edge) => graph.nodes.find((candidate) => candidate.id === edge.from))
+    .filter((node): node is OpenRouterRawNode => Boolean(node))
+    .sort((a, b) => displayProviderLabel(a.providerName).localeCompare(displayProviderLabel(b.providerName)))
+    .map((providerNode) => `<a class="providerChip" href="${escapeHtml(providerNode.route)}/">${escapeHtml(displayProviderLabel(providerNode.providerName))}</a>`)
+    .join('')
+  return links ? `<div class="availabilityGrid" aria-label="提供此模型的 provider">${links}</div>` : ''
 }
 
 function baseLlmSupplementalPricingCards(graph: OpenRouterRawGraph, node: OpenRouterRawNode): string {
