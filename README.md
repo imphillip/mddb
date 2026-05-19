@@ -138,11 +138,13 @@ scripts/
   fetch-basellm-newapi.mjs
   fetch-aihot-model-news.mjs
   check-refresh-gate.mjs
+docs/
+  mddb-schema-v1.md              数据 JSON Schema 说明
 public/                           生成的站点输出，git ignored
-.internal/                        本地/私有运行数据与维护笔记，git ignored
+.internal/                        本地/私有运行数据、实现方案与维护笔记，git ignored
 ```
 
-`docs/` 不作为公开仓库表面的一部分。维护者规划、研究笔记和私有运行细节应放在 `.internal/`，该目录被 git ignore。
+`docs/` 只保留面向公开贡献者的结果型文档，例如 `docs/mddb-schema-v1.md`。维护者规划、研究笔记、实现方案和私有运行细节应放在 `.internal/`，该目录被 git ignore。
 
 ## 数据质量与 refresh gate
 

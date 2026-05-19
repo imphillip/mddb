@@ -39,6 +39,18 @@ describe('deployment separation', () => {
     expect(buildScript).toContain('attachCurrency')
   })
 
+  it('keeps implementation plans private while publishing only schema docs', () => {
+    const publicDocs = readProjectFile('docs/mddb-schema-v1.md')
+    const readme = readProjectFile('README.md')
+    const gitignore = readProjectFile('.gitignore')
+
+    expect(publicDocs).toContain('data/schema/models.schema.json')
+    expect(publicDocs).toContain('data/schema/provider.schema.json')
+    expect(readme).toContain('docs/mddb-schema-v1.md')
+    expect(gitignore).toContain('.internal/')
+    expect(() => readProjectFile('docs/mddb-wiki-registry-refactor-plan.md')).toThrow()
+  })
+
   it('documents deploy commands that publish built assets to an external runtime directory', () => {
     const packageJson = JSON.parse(readProjectFile('package.json')) as { scripts?: Record<string, string> }
 
