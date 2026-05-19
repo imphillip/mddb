@@ -186,7 +186,7 @@ function makeEndpointNode(provider: RegistryProvider, offer: RegistryOffer, targ
     status: 'endpoint',
     namespace: providerSlug,
     modelIdWithinNamespace: modelId,
-    displayName: `${provider.provider ?? titleize(providerSlug)}: ${offer.model ?? modelId}`,
+    displayName: offer.model ?? target.displayName ?? modelId,
     raw: { endpoint, endpointWrapper: endpointWrapperFromOffer(target, endpoint) },
     derived: {
       author: target.derived.author,
