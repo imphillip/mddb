@@ -17,12 +17,11 @@
 
 ```text
 data/
-  registry/
-    models.json
-    providers/
-      openai.json
-      anthropic.json
-      openrouter.json
+  models.json
+  providers/
+    openai.json
+    anthropic.json
+    openrouter.json
   schema/
     models.schema.json
     provider.schema.json

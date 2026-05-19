@@ -52,8 +52,8 @@ type RegistryProvider = {
 }
 
 export function buildRegistryGraphFromFiles(root = process.cwd()): OpenRouterRawGraph {
-  const modelsPath = join(root, 'data', 'registry', 'models.json')
-  const providersDir = join(root, 'data', 'registry', 'providers')
+  const modelsPath = join(root, 'data', 'models.json')
+  const providersDir = join(root, 'data', 'providers')
   const modelsPayload = readJson(modelsPath) as { schema_version?: number; models?: RegistryModel[] }
   const models = Array.isArray(modelsPayload.models) ? modelsPayload.models : []
   const providers = existsSync(providersDir)

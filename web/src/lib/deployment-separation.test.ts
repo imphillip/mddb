@@ -13,7 +13,7 @@ describe('deployment separation', () => {
     expect(readProjectFile('.gitignore')).toContain('public/')
   })
 
-  it('builds the production site from checked-in data/registry provider/model data by default', () => {
+  it('builds the production site from checked-in data provider/model data by default', () => {
     const buildScript = readProjectFile('web/src/scripts/build-site.ts')
     const adapter = readProjectFile('web/src/lib/registry-graph.ts')
     const packageJson = JSON.parse(readProjectFile('package.json')) as { scripts?: Record<string, string> }
@@ -21,8 +21,9 @@ describe('deployment separation', () => {
     expect(buildScript).toContain('buildRegistryGraphFromFiles')
     expect(buildScript).toContain('buildDataQualityReport')
     expect(buildScript).toContain("'graph/data-quality.json'")
-    expect(adapter).toContain("'data', 'registry', 'models.json'")
-    expect(adapter).toContain("'data', 'registry', 'providers'")
+    expect(adapter).toContain("'data', 'models.json'")
+    expect(adapter).toContain("'data', 'providers'")
+    expect(adapter).not.toContain("'data', 'registry'")
     expect(buildScript).not.toContain('MDDB_OPENROUTER_SOURCE')
     expect(packageJson.scripts?.['data:openrouter']).toBe('node scripts/fetch-openrouter-models.mjs')
   })
@@ -37,6 +38,24 @@ describe('deployment separation', () => {
     expect(packageJson.scripts?.['data:fx']).toBe('node scripts/fetch-exchange-rate.mjs')
     expect(buildScript).toContain("'.internal', 'source-data', 'exchange-rate-usd-cny.raw.json'")
     expect(buildScript).toContain('attachCurrency')
+  })
+
+  it('keeps the public README compact and focused on the current registry shape', () => {
+    const readme = readProjectFile('README.md')
+
+    expect(readme).toContain('data/models.json')
+    expect(readme).toContain('data/providers/*.json')
+    expect(readme).toContain('GitHub Raw')
+    expect(readme).toContain('OpenRouter')
+    expect(readme).toContain('BaseLLM / NewAPI')
+    expect(readme).toContain('models.dev')
+    expect(readme).toContain('LiteLLM')
+    expect(readme).not.toContain('AIHOT')
+    expect(readme).not.toContain('项目的核心不是前端站点')
+    expect(readme).not.toContain('## 数据质量与 refresh gate')
+    expect(readme).not.toContain('## 开发')
+    expect(readme).not.toContain('## 公开贡献流程')
+    expect(readme).not.toContain('data/registry')
   })
 
   it('keeps implementation plans private while publishing only schema docs', () => {
