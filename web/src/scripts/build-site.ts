@@ -22,7 +22,8 @@ writePage('graph/missing-provider-observation.json', JSON.stringify(dataQuality.
 writePage('graph/page-only-candidates.json', JSON.stringify(dataQuality.pageOnly.candidates, null, 2))
 
 for (const node of graph.nodes) {
-  writePage(`${node.urlProvider}/${node.urlModelId}/index.html`, renderOpenRouterRawDetail(graph, node))
+  const routePath = node.route.replace(/^\//u, '')
+  writePage(`${routePath}/index.html`, renderOpenRouterRawDetail(graph, node))
 }
 
 for (const providerId of Array.from(new Set(graph.nodes.map((node) => node.provider)))) {

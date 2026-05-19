@@ -271,7 +271,7 @@ function rawModelArray(node: OpenRouterRawNode, key: string): string[] {
 }
 
 function renderPricingSection(graph: OpenRouterRawGraph, node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[], inEdges: OpenRouterRawEdge[]): string {
-  const canonicalLink = node.nodeKind === 'endpoint_deployment' ? canonicalModelLink(graph, outEdges) : ''
+  const canonicalLink = node.nodeKind === 'endpoint_deployment' ? canonicalModelLink(graph, node, outEdges) : ''
   const fallbackEndpoint = node.nodeKind === 'endpoint_deployment' ? undefined : sampleDeploymentPricingEndpoint(graph, node)
   const fallbackProvider = fallbackEndpoint ? endpointProviderSlug(fallbackEndpoint) : ''
   const providerLinks = node.nodeKind === 'endpoint_deployment' ? '' : pricingProviderLinks(graph, node, inEdges, fallbackProvider)
@@ -282,10 +282,10 @@ function renderPricingSection(graph: OpenRouterRawGraph, node: OpenRouterRawNode
   return `<section id="pricing" class="panel"><h2>价格</h2>${canonicalLink}${endpointPricing || fallbackPricing || supplementalPricing || empty}${providerLinks}</section>`
 }
 
-function canonicalModelLink(graph: OpenRouterRawGraph, outEdges: OpenRouterRawEdge[]): string {
+function canonicalModelLink(graph: OpenRouterRawGraph, node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[]): string {
   const edge = outEdges.find((candidate) => candidate.type === 'deployment_of')
   const target = edge ? graph.nodes.find((candidate) => candidate.id === edge.to) : undefined
-  if (!target) return ''
+  if (!target || target.route === node.route) return ''
   return `<p class="muted">当前是 provider deployment 页面。<a class="modelLink" href="${escapeHtml(target.route)}/">查看 canonical 模型页</a>。</p>`
 }
 
@@ -418,7 +418,7 @@ function rawPricingValue(value: unknown, key: string): unknown | null {
 }
 
 function renderSourceSection(node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[], inEdges: OpenRouterRawEdge[]): string {
-  return `<section id="source" class="panel subtlePanel"><details><summary><h2>数据来源与源数据</h2></summary><div class="meta metaWide">${kv('Data source', node.dataSource)}${kv('Source ID', renderModelTagCopy(node.sourceId))}${kv('Source URL', `<a href="${escapeHtml(node.sourceUrl)}">${escapeHtml(node.sourceUrl)}</a>`)}${kv('Pricing keys', node.derived.pricingKeys.join(' · ') || '—')}${kv('Outgoing edges', String(outEdges.length))}${kv('Incoming edges', String(inEdges.length))}</div><details class="moreBlock"><summary>节点 raw data</summary>${rawBlock(node.raw)}</details><details class="moreBlock"><summary>Outgoing raw edges</summary>${renderEdges(outEdges)}</details><details class="moreBlock"><summary>Incoming raw edges</summary>${renderEdges(inEdges)}</details></details></section>`
+  return `<section id="source" class="panel subtlePanel"><details><summary><h2>数据来源与源数据</h2></summary><div class="meta metaWide">${kv('Data source', node.dataSource)}${kv('Source ID', renderModelTagCopy(node.sourceId))}${kv('Source URL', `<a href="${escapeHtml(node.sourceUrl)}">${escapeHtml(node.sourceUrl)}</a>`)}${kv('Pricing keys', node.derived.pricingKeys.join(' · ') || '—')}</div><details class="moreBlock"><summary>未归一化源数据</summary>${rawBlock(node.raw)}</details></details></section>`
 }
 
 function renderModelRow(node: OpenRouterRawNode, searchOnly = false, graph?: OpenRouterRawGraph): string {
