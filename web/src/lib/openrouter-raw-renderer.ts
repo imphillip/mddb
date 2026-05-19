@@ -97,7 +97,7 @@ export function renderOpenRouterRawDetail(graph: OpenRouterRawGraph, node: OpenR
 }
 
 function modelDetailTitle(node: OpenRouterRawNode): string {
-  const owner = node.nodeKind === 'endpoint_deployment' ? node.providerName : node.derived.author ?? node.provider
+  const owner = node.derived.author ?? node.provider
   const label = displayProviderLabel(owner)
   if (!label) return node.displayName
   const prefix = `${label}: `
@@ -162,6 +162,7 @@ function displayProviderLabel(value: string): string {
 }
 
 function renderHeroRelations(graph: OpenRouterRawGraph, node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[], inEdges: OpenRouterRawEdge[]): string {
+  if (node.nodeKind === 'endpoint_deployment') return ''
   const chips = relationChips(graph, outEdges, inEdges)
   return chips ? `<div class="heroRelations">${chips}</div>` : ''
 }
@@ -269,23 +270,31 @@ function rawModelArray(node: OpenRouterRawNode, key: string): string[] {
 }
 
 function renderPricingSection(graph: OpenRouterRawGraph, node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[], inEdges: OpenRouterRawEdge[]): string {
-  const providerLinks = node.nodeKind === 'endpoint_deployment' ? '' : pricingProviderLinks(graph, inEdges)
+  const canonicalLink = node.nodeKind === 'endpoint_deployment' ? canonicalModelLink(graph, outEdges) : ''
+  const providerLinks = node.nodeKind === 'endpoint_deployment' ? '' : pricingProviderLinks(graph, node, inEdges)
   const endpointPricing = endpointPricingCards(node, graph.currency?.rate)
   const supplementalPricing = endpointPricing ? '' : baseLlmSupplementalPricingCards(graph, node)
-  const empty = providerLinks ? '' : '<p class="muted">无结构化 provider pricing；如本节点为 alias/snapshot/deployment，请先看上方关联模型跳转到 anchor。</p>'
-  return `<section id="pricing" class="panel"><h2>价格</h2>${providerLinks}${endpointPricing || supplementalPricing || empty}</section>`
+  const empty = providerLinks || canonicalLink ? '' : '<p class="muted">无结构化 provider pricing；如本节点为 alias/snapshot/deployment，请先看上方关联模型跳转到 anchor。</p>'
+  return `<section id="pricing" class="panel"><h2>价格</h2>${canonicalLink}${endpointPricing || supplementalPricing || empty}${providerLinks}</section>`
 }
 
-function pricingProviderLinks(graph: OpenRouterRawGraph, inEdges: OpenRouterRawEdge[]): string {
+function canonicalModelLink(graph: OpenRouterRawGraph, outEdges: OpenRouterRawEdge[]): string {
+  const edge = outEdges.find((candidate) => candidate.type === 'deployment_of')
+  const target = edge ? graph.nodes.find((candidate) => candidate.id === edge.to) : undefined
+  if (!target) return ''
+  return `<p class="muted">当前是 provider deployment 页面。<a class="modelLink" href="${escapeHtml(target.route)}/">查看 canonical 模型页</a>。</p>`
+}
+
+function pricingProviderLinks(graph: OpenRouterRawGraph, node: OpenRouterRawNode, inEdges: OpenRouterRawEdge[]): string {
   const providerEdges = inEdges.filter((edge) => edge.type === 'deployment_of')
   if (providerEdges.length === 0) return ''
   const links = providerEdges
     .map((edge) => graph.nodes.find((candidate) => candidate.id === edge.from))
-    .filter((node): node is OpenRouterRawNode => Boolean(node))
+    .filter((providerNode): providerNode is OpenRouterRawNode => providerNode !== undefined && providerNode.provider !== node.provider)
     .sort((a, b) => displayProviderLabel(a.providerName).localeCompare(displayProviderLabel(b.providerName)))
     .map((providerNode) => `<a class="providerChip" href="${escapeHtml(providerNode.route)}/">${escapeHtml(displayProviderLabel(providerNode.providerName))}</a>`)
     .join('')
-  return links ? `<div class="availabilityGrid" aria-label="提供此模型的 provider">${links}</div>` : ''
+  return links ? `<div class="muted">在其他 provider 查看 deployment 与报价：</div><div class="availabilityGrid" aria-label="提供此模型的 provider">${links}</div>` : ''
 }
 
 function baseLlmSupplementalPricingCards(graph: OpenRouterRawGraph, node: OpenRouterRawNode): string {
