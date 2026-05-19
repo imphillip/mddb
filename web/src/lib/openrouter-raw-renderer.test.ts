@@ -245,6 +245,8 @@ describe('provider pages', () => {
     expect(html).toContain('<a class="providerDirectoryLink providerDirectoryCard" href="/openai/">')
     expect(html).toContain('<span>OpenAI</span>')
     expect(html).toContain('<label class="topSearch">⌕ <input id="q" type="search" placeholder="搜索模型 / provider / author / source" autocomplete="off"></label>')
+    expect(html).toContain('data-currency-toggle')
+    expect(html).toContain('1 USD')
     expect(html).not.toContain('<div class="topSearch">⌕ 搜索</div>')
     expect(html).toContain('自研 1 个模型 · 提供 2 个模型')
     expect(html).toContain('<span>USD</span>')

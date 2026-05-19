@@ -64,7 +64,7 @@ export function renderOpenRouterProviderIndex(graph: OpenRouterRawGraph): string
   const providedModelCount = providers.reduce((sum, provider) => sum + provider.offerCount, 0)
   const rows = providers.map((provider) => `<a class="providerDirectoryLink providerDirectoryCard" href="/${escapeHtml(provider.id)}/"><div><span>${escapeHtml(provider.label)}</span><p>${providerSummaryCopy(provider.modelCount, provider.offerCount)}</p></div><div class="providerCardMeta"><span>${escapeHtml(provider.currency)}</span><strong>→</strong></div></a>`).join('')
   const body = `<main class="providerPlaza"><div class="plazaHead"><div><h1>供应商广场</h1><p class="rawIntro">${providers.length} 个供应商 · 提供 ${providedModelCount} 个模型。选择供应商查看它提供的模型。</p></div></div><div class="providerDirectoryGrid">${rows}</div></main>`
-  return page('供应商广场 · mddb.dev', body, 'providers')
+  return page('供应商广场 · mddb.dev', body, 'providers', currencyToggle(graph))
 }
 
 export function renderOpenRouterProviderDetail(graph: OpenRouterRawGraph, providerId: string): string {
