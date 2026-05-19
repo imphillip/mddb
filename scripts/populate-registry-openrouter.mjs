@@ -4,7 +4,7 @@ import { dirname, join } from 'node:path'
 
 const ROOT = process.cwd()
 const RAW_PATH = process.env.OPENROUTER_RAW_PATH ?? join(ROOT, '.internal/source-data/openrouter.raw.json')
-const OUT_DIR = process.env.MDDB_REGISTRY_DIR ?? join(ROOT, 'registry')
+const OUT_DIR = process.env.MDDB_REGISTRY_DIR ?? join(ROOT, 'data', 'registry')
 const PROVIDERS_DIR = join(OUT_DIR, 'providers')
 const OBSERVED_AT = new Date().toISOString()
 

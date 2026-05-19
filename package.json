@@ -25,7 +25,7 @@
     "serve": "npx http-server public -p 4173 -c-1",
     "deploy": "bash scripts/deploy-static-site.sh",
     "deploy:dry-run": "DRY_RUN=1 bash scripts/deploy-static-site.sh",
-    "hooks:install": "git config core.hooksPath .githooks"
+    "hooks:install": "git config core.hooksPath .internal/git-hooks"
   },
   "keywords": [],
   "author": "",

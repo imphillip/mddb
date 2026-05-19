@@ -16,15 +16,16 @@
 ## 文件结构
 
 ```text
-registry/
-  models.json
-  providers/
-    openai.json
-    anthropic.json
-    openrouter.json
-schema/
-  models.schema.json
-  provider.schema.json
+data/
+  registry/
+    models.json
+    providers/
+      openai.json
+      anthropic.json
+      openrouter.json
+  schema/
+    models.schema.json
+    provider.schema.json
 ```
 
 ## `models.json`
@@ -212,5 +213,6 @@ LiteLLM 这类字段：
 
 ## 已落地文件
 
-- `schema/models.schema.json`
-- `schema/provider.schema.json`
+- `data/schema/models.schema.json`
+- `data/schema/provider.schema.json`
+

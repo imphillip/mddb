@@ -5,7 +5,7 @@ import { renderOpenRouterProviderDetail, renderOpenRouterRawDetail, renderOpenRo
 describe('registry graph adapter', () => {
   const graph = buildRegistryGraphFromFiles()
 
-  it('adapts registry/models.json and registry/providers/*.json to the plaza graph contract', () => {
+  it('adapts data/registry/models.json and data/registry/providers/*.json to the plaza graph contract', () => {
     expect(graph.stats.sourceNodes).toBeGreaterThan(300)
     expect(graph.stats.endpointNodes).toBeGreaterThan(1000)
     expect(graph.stats.pricingObservations).toBeGreaterThan(1000)

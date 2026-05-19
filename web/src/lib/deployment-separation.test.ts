@@ -13,18 +13,30 @@ describe('deployment separation', () => {
     expect(readProjectFile('.gitignore')).toContain('public/')
   })
 
-  it('builds the production site from checked-in registry provider/model data by default', () => {
-    const buildScript = readProjectFile('src/scripts/build-site.ts')
-    const adapter = readProjectFile('src/lib/registry-graph.ts')
+  it('builds the production site from checked-in data/registry provider/model data by default', () => {
+    const buildScript = readProjectFile('web/src/scripts/build-site.ts')
+    const adapter = readProjectFile('web/src/lib/registry-graph.ts')
     const packageJson = JSON.parse(readProjectFile('package.json')) as { scripts?: Record<string, string> }
 
     expect(buildScript).toContain('buildRegistryGraphFromFiles')
     expect(buildScript).toContain('buildDataQualityReport')
     expect(buildScript).toContain("'graph/data-quality.json'")
-    expect(adapter).toContain("'registry', 'models.json'")
-    expect(adapter).toContain("'registry', 'providers'")
+    expect(adapter).toContain("'data', 'registry', 'models.json'")
+    expect(adapter).toContain("'data', 'registry', 'providers'")
     expect(buildScript).not.toContain('MDDB_OPENROUTER_SOURCE')
     expect(packageJson.scripts?.['data:openrouter']).toBe('node scripts/fetch-openrouter-models.mjs')
+  })
+
+  it('keeps transient news exports out of public data while preserving exchange-rate support', () => {
+    const packageJson = JSON.parse(readProjectFile('package.json')) as { scripts?: Record<string, string> }
+    const buildScript = readProjectFile('web/src/scripts/build-site.ts')
+    const gitignore = readProjectFile('.gitignore')
+
+    expect(gitignore).toContain('data/model-news-tagged.json')
+    expect(() => readProjectFile('data/model-news-tagged.json')).toThrow()
+    expect(packageJson.scripts?.['data:fx']).toBe('node scripts/fetch-exchange-rate.mjs')
+    expect(buildScript).toContain("'.internal', 'source-data', 'exchange-rate-usd-cny.raw.json'")
+    expect(buildScript).toContain('attachCurrency')
   })
 
   it('documents deploy commands that publish built assets to an external runtime directory', () => {
@@ -32,12 +44,15 @@ describe('deployment separation', () => {
 
     expect(packageJson.scripts?.deploy).toBe('bash scripts/deploy-static-site.sh')
     expect(packageJson.scripts?.['deploy:dry-run']).toBe('DRY_RUN=1 bash scripts/deploy-static-site.sh')
-    expect(packageJson.scripts?.['hooks:install']).toBe('git config core.hooksPath .githooks')
+    expect(packageJson.scripts?.['hooks:install']).toBe('git config core.hooksPath .internal/git-hooks')
   })
 
-  it('ships a post-commit hook that triggers the deploy flow without relying on agent memory', () => {
-    const hook = readProjectFile('.githooks/post-commit')
+  it('keeps deploy prompt hooks local-only instead of publishing them as public source', () => {
+    const gitignore = readProjectFile('.gitignore')
+    const hook = readProjectFile('.internal/git-hooks/post-commit')
 
+    expect(gitignore).toContain('.internal/')
+    expect(() => readProjectFile('.githooks/post-commit')).toThrow()
     expect(hook).toContain('npm run deploy')
     expect(hook).toContain('MDDB_SKIP_POST_COMMIT_DEPLOY')
     expect(hook).toContain('post-commit')
