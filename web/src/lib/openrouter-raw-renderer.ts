@@ -276,7 +276,7 @@ function renderPricingSection(graph: OpenRouterRawGraph, node: OpenRouterRawNode
   const fallbackProvider = fallbackEndpoint ? endpointProviderSlug(fallbackEndpoint) : ''
   const providerLinks = node.nodeKind === 'endpoint_deployment' ? '' : pricingProviderLinks(graph, node, inEdges, fallbackProvider)
   const endpointPricing = endpointPricingCards(node, graph.currency?.rate)
-  const fallbackPricing = endpointPricing ? '' : fallbackDeploymentPricingCards(fallbackEndpoint, graph.currency?.rate)
+  const fallbackPricing = endpointPricing ? '' : fallbackDeploymentPricingCards(fallbackEndpoint, node, graph.currency?.rate)
   const supplementalPricing = endpointPricing || fallbackPricing ? '' : baseLlmSupplementalPricingCards(graph, node)
   const empty = providerLinks || canonicalLink ? '' : '<p class="muted">无结构化 provider pricing；如本节点为 alias/snapshot/deployment，请先看上方关联模型跳转到 anchor。</p>'
   return `<section id="pricing" class="panel"><h2>价格</h2>${canonicalLink}${endpointPricing || fallbackPricing || supplementalPricing || empty}${providerLinks}</section>`
@@ -333,11 +333,15 @@ function endpointPricingCards(node: OpenRouterRawNode, cnyRate?: number): string
   return `<div class="priceVariantGrid">${endpoints.map((endpoint) => renderEndpointPricingCard(endpoint, cnyRate)).join('')}</div>`
 }
 
-function fallbackDeploymentPricingCards(endpoint: Record<string, unknown> | undefined, cnyRate?: number): string {
+function fallbackDeploymentPricingCards(endpoint: Record<string, unknown> | undefined, node: OpenRouterRawNode, cnyRate?: number): string {
   if (!endpoint) return ''
   const provider = endpointProviderSlug(endpoint)
+  const author = normalizedAuthorValue(node.derived.author)
   const label = displayProviderLabel(provider)
-  return `<div class="priceVariantGrid"><div class="muted">${escapeHtml(label)} provider 报价；canonical author 暂无自有报价。</div>${renderEndpointPricingCard(endpoint, cnyRate, provider)}</div>`
+  const note = provider === author
+    ? `${escapeHtml(displayProviderLabel(node.providerName))} provider 报价。`
+    : `${escapeHtml(label)} provider 报价；canonical author 暂无自有报价。`
+  return `<div class="priceVariantGrid"><div class="muted">${note}</div>${renderEndpointPricingCard(endpoint, cnyRate, provider)}</div>`
 }
 
 function currentProviderEndpoints(node: OpenRouterRawNode): Record<string, unknown>[] {
@@ -418,7 +422,7 @@ function rawPricingValue(value: unknown, key: string): unknown | null {
 }
 
 function renderSourceSection(node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[], inEdges: OpenRouterRawEdge[]): string {
-  return `<section id="source" class="panel subtlePanel"><details><summary><h2>数据来源与源数据</h2></summary><div class="meta metaWide">${kv('Data source', node.dataSource)}${kv('Source ID', renderModelTagCopy(node.sourceId))}${kv('Source URL', `<a href="${escapeHtml(node.sourceUrl)}">${escapeHtml(node.sourceUrl)}</a>`)}${kv('Pricing keys', node.derived.pricingKeys.join(' · ') || '—')}</div><details class="moreBlock"><summary>未归一化源数据</summary>${rawBlock(node.raw)}</details></details></section>`
+  return `<section id="source" class="panel subtlePanel"><details><summary><h2>Raw data</h2></summary>${rawBlock(node.raw)}</details></section>`
 }
 
 function renderModelRow(node: OpenRouterRawNode, searchOnly = false, graph?: OpenRouterRawGraph): string {
@@ -439,12 +443,17 @@ function modelPriceCell(node: OpenRouterRawNode, key: string, graph?: OpenRouter
 function sampleDeploymentPricingEndpoint(graph: OpenRouterRawGraph | undefined, node: OpenRouterRawNode): Record<string, unknown> | undefined {
   if (!graph) return undefined
   const edges = graph.edges.filter((edge) => edge.to === node.id && edge.type === 'deployment_of')
+  const author = normalizedAuthorValue(node.derived.author)
   const candidates = edges
     .map((edge) => graph.nodes.find((candidate) => candidate.id === edge.from))
     .filter((candidate): candidate is OpenRouterRawNode => candidate !== undefined)
     .flatMap((candidate) => currentProviderEndpoints(candidate))
     .filter((endpoint) => isRecord(endpoint.pricing))
-    .sort(compareEndpointPricingDesc)
+    .sort((a, b) => {
+      const aIsAuthor = endpointProviderSlug(a) === author ? 1 : 0
+      const bIsAuthor = endpointProviderSlug(b) === author ? 1 : 0
+      return bIsAuthor - aIsAuthor || compareEndpointPricingDesc(a, b)
+    })
   return candidates[0]
 }
 
