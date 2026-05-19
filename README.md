@@ -60,18 +60,14 @@ JSON Schema 说明见 [`docs/mddb-schema-v1.md`](docs/mddb-schema-v1.md)，schem
 
 ```text
 data/
-  models.json                    核心模型注册表
-  providers/*.json               核心供应商 / offer 注册表
+  models.json                    模型注册表
+  providers/*.json               供应商 / offer 注册表
   schema/*.schema.json           JSON Schema
 docs/
-  mddb-schema-v1.md              数据 JSON Schema 说明
+  mddb-schema-v1.md              数据格式说明
+scripts/                         数据抓取、导入与构建脚本
 web/src/                         静态站点源码
-scripts/                         数据抓取、导入、构建与部署脚本
-public/                          生成的站点输出，git ignored
-.internal/                       本地/私有运行数据、实现方案与维护笔记，git ignored
 ```
-
-`docs/` 只保留面向公开贡献者的结果型文档，例如 `docs/mddb-schema-v1.md`。维护者规划、研究笔记、实现方案和私有运行细节应放在 `.internal/`，该目录被 git ignore。
 
 ## License
 
