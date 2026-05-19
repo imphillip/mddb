@@ -16,6 +16,13 @@ describe('registry graph adapter', () => {
 
   it('renders the current plaza, provider, and detail UI from the new registry graph', () => {
     const home = renderOpenRouterRawHome(graph)
+    const writerVisibleRows = [...home.matchAll(/<tr data-model-row data-search-only="false"[^>]*data-model-author="writer"[\s\S]*?<\/tr>/gu)].map((match) => match[0])
+    expect(writerVisibleRows).toHaveLength(1)
+    expect(writerVisibleRows[0]).toContain('href="/writer/palmyra-x5/"')
+    expect(writerVisibleRows[0]).not.toContain('href="/openrouter/palmyra-x5/"')
+    expect(writerVisibleRows[0]).not.toContain('href="/amazon/palmyra-x5/"')
+    expect(writerVisibleRows[0]).toContain('data-price-source-provider=')
+    expect(writerVisibleRows[0]).toContain('priceValue')
     const provider = renderOpenRouterProviderDetail(graph, 'openai')
     const node = graph.nodes.find((candidate) => candidate.route === '/openai/gpt-5.5')
     expect(node).toBeTruthy()

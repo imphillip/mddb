@@ -415,11 +415,38 @@ function renderModelRow(node: OpenRouterRawNode, searchOnly = false, graph?: Ope
 }
 
 function modelPriceCell(node: OpenRouterRawNode, key: string, graph?: OpenRouterRawGraph): string {
-  const endpoint = currentProviderEndpoints(node)[0]
+  const endpoint = currentProviderEndpoints(node)[0] ?? sampleDeploymentPricingEndpoint(graph, node)
   if (!endpoint || !isRecord(endpoint.pricing)) return '—'
   const value = endpoint.pricing[key]
   if (value === null || value === undefined || value === '') return '—'
-  return formatUsdPerMillionTokensWithRate(value, graph?.currency?.rate)
+  const provider = endpointProviderSlug(endpoint)
+  const sourceAttribute = provider ? ` data-price-source-provider="${escapeHtml(provider)}"` : ''
+  return `<span${sourceAttribute}>${formatUsdPerMillionTokensWithRate(value, graph?.currency?.rate)}</span>`
+}
+
+function sampleDeploymentPricingEndpoint(graph: OpenRouterRawGraph | undefined, node: OpenRouterRawNode): Record<string, unknown> | undefined {
+  if (!graph) return undefined
+  const edges = graph.edges.filter((edge) => edge.to === node.id && edge.type === 'deployment_of')
+  const candidates = edges
+    .map((edge) => graph.nodes.find((candidate) => candidate.id === edge.from))
+    .filter((candidate): candidate is OpenRouterRawNode => candidate !== undefined)
+    .flatMap((candidate) => currentProviderEndpoints(candidate))
+    .filter((endpoint) => isRecord(endpoint.pricing))
+    .sort(compareEndpointPricingDesc)
+  return candidates[0]
+}
+
+function compareEndpointPricingDesc(a: Record<string, unknown>, b: Record<string, unknown>): number {
+  return endpointPricingScore(b) - endpointPricingScore(a)
+}
+
+function endpointPricingScore(endpoint: Record<string, unknown>): number {
+  const pricing = endpoint.pricing
+  if (!isRecord(pricing)) return 0
+  return ['prompt', 'completion', 'input_cache_read', 'input_cache_write'].reduce((sum, key) => {
+    const value = Number(pricing[key])
+    return sum + (Number.isFinite(value) ? value : 0)
+  }, 0)
 }
 
 function formatUsdPerMillionTokensWithRate(value: unknown, cnyRate?: number): string {
@@ -621,7 +648,7 @@ function applyModelFilters(){
     const searchOnly=row.dataset.searchOnly==='true';
     const outputOk=outputFilter==='all'||(row.dataset.outputModalities||'').split(/\s+/).includes(outputFilter);
     const queryOk=!query||(row.dataset.modelName||row.innerText||'').toLowerCase().includes(query);
-    const visibilityOk=!searchOnly||!!query||providerFilter!=='all'||author!=='all';
+    const visibilityOk=!searchOnly||!!query||providerFilter!=='all';
     const visible=authorOk&&providerOk&&outputOk&&queryOk&&visibilityOk;
     row.hidden=!visible;
     if(visible) count+=1;
