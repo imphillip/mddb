@@ -163,7 +163,8 @@ function displayProviderLabel(value: string): string {
 
 function renderHeroRelations(graph: OpenRouterRawGraph, node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[], inEdges: OpenRouterRawEdge[]): string {
   if (node.nodeKind === 'endpoint_deployment') return ''
-  const chips = relationChips(graph, outEdges, inEdges)
+  const nonDeploymentIncoming = inEdges.filter((edge) => edge.type !== 'deployment_of')
+  const chips = relationChips(graph, outEdges, nonDeploymentIncoming)
   return chips ? `<div class="heroRelations">${chips}</div>` : ''
 }
 
@@ -271,11 +272,14 @@ function rawModelArray(node: OpenRouterRawNode, key: string): string[] {
 
 function renderPricingSection(graph: OpenRouterRawGraph, node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[], inEdges: OpenRouterRawEdge[]): string {
   const canonicalLink = node.nodeKind === 'endpoint_deployment' ? canonicalModelLink(graph, outEdges) : ''
-  const providerLinks = node.nodeKind === 'endpoint_deployment' ? '' : pricingProviderLinks(graph, node, inEdges)
+  const fallbackEndpoint = node.nodeKind === 'endpoint_deployment' ? undefined : sampleDeploymentPricingEndpoint(graph, node)
+  const fallbackProvider = fallbackEndpoint ? endpointProviderSlug(fallbackEndpoint) : ''
+  const providerLinks = node.nodeKind === 'endpoint_deployment' ? '' : pricingProviderLinks(graph, node, inEdges, fallbackProvider)
   const endpointPricing = endpointPricingCards(node, graph.currency?.rate)
-  const supplementalPricing = endpointPricing ? '' : baseLlmSupplementalPricingCards(graph, node)
+  const fallbackPricing = endpointPricing ? '' : fallbackDeploymentPricingCards(fallbackEndpoint, graph.currency?.rate)
+  const supplementalPricing = endpointPricing || fallbackPricing ? '' : baseLlmSupplementalPricingCards(graph, node)
   const empty = providerLinks || canonicalLink ? '' : '<p class="muted">无结构化 provider pricing；如本节点为 alias/snapshot/deployment，请先看上方关联模型跳转到 anchor。</p>'
-  return `<section id="pricing" class="panel"><h2>价格</h2>${canonicalLink}${endpointPricing || supplementalPricing || empty}${providerLinks}</section>`
+  return `<section id="pricing" class="panel"><h2>价格</h2>${canonicalLink}${endpointPricing || fallbackPricing || supplementalPricing || empty}${providerLinks}</section>`
 }
 
 function canonicalModelLink(graph: OpenRouterRawGraph, outEdges: OpenRouterRawEdge[]): string {
@@ -285,16 +289,16 @@ function canonicalModelLink(graph: OpenRouterRawGraph, outEdges: OpenRouterRawEd
   return `<p class="muted">当前是 provider deployment 页面。<a class="modelLink" href="${escapeHtml(target.route)}/">查看 canonical 模型页</a>。</p>`
 }
 
-function pricingProviderLinks(graph: OpenRouterRawGraph, node: OpenRouterRawNode, inEdges: OpenRouterRawEdge[]): string {
+function pricingProviderLinks(graph: OpenRouterRawGraph, node: OpenRouterRawNode, inEdges: OpenRouterRawEdge[], excludeProvider = ''): string {
   const providerEdges = inEdges.filter((edge) => edge.type === 'deployment_of')
   if (providerEdges.length === 0) return ''
   const links = providerEdges
     .map((edge) => graph.nodes.find((candidate) => candidate.id === edge.from))
-    .filter((providerNode): providerNode is OpenRouterRawNode => providerNode !== undefined && providerNode.provider !== node.provider)
+    .filter((providerNode): providerNode is OpenRouterRawNode => providerNode !== undefined && providerNode.provider !== node.provider && providerNode.provider !== excludeProvider)
     .sort((a, b) => displayProviderLabel(a.providerName).localeCompare(displayProviderLabel(b.providerName)))
     .map((providerNode) => `<a class="providerChip" href="${escapeHtml(providerNode.route)}/">${escapeHtml(displayProviderLabel(providerNode.providerName))}</a>`)
     .join('')
-  return links ? `<div class="muted">在其他 provider 查看 deployment 与报价：</div><div class="availabilityGrid" aria-label="提供此模型的 provider">${links}</div>` : ''
+  return links ? `<div class="muted">其他 provider deployment 报价请点开查看：</div><div class="availabilityGrid" aria-label="提供此模型的 provider">${links}</div>` : ''
 }
 
 function baseLlmSupplementalPricingCards(graph: OpenRouterRawGraph, node: OpenRouterRawNode): string {
@@ -329,6 +333,13 @@ function endpointPricingCards(node: OpenRouterRawNode, cnyRate?: number): string
   return `<div class="priceVariantGrid">${endpoints.map((endpoint) => renderEndpointPricingCard(endpoint, cnyRate)).join('')}</div>`
 }
 
+function fallbackDeploymentPricingCards(endpoint: Record<string, unknown> | undefined, cnyRate?: number): string {
+  if (!endpoint) return ''
+  const provider = endpointProviderSlug(endpoint)
+  const label = displayProviderLabel(provider)
+  return `<div class="priceVariantGrid"><div class="muted">${escapeHtml(label)} provider 报价；canonical author 暂无自有报价。</div>${renderEndpointPricingCard(endpoint, cnyRate, provider)}</div>`
+}
+
 function currentProviderEndpoints(node: OpenRouterRawNode): Record<string, unknown>[] {
   if (node.nodeKind === 'endpoint_deployment') return isRecord(node.raw.endpoint) ? [node.raw.endpoint] : []
   return endpointList(node).filter((endpoint) => endpointProviderSlug(endpoint) === node.provider)
@@ -339,7 +350,7 @@ function endpointProviderSlug(endpoint: Record<string, unknown>): string {
   return tag.replace(/\//gu, '-').trim().toLowerCase().replace(/[^a-z0-9._-]+/gu, '-') || 'unknown'
 }
 
-function renderEndpointPricingCard(endpoint: Record<string, unknown>, cnyRate?: number): string {
+function renderEndpointPricingCard(endpoint: Record<string, unknown>, cnyRate?: number, sourceProvider = ''): string {
   const pricing = isRecord(endpoint.pricing) ? endpoint.pricing : {}
   const rows = [
     priceRow('Input / prompt', pricing.prompt, 'USD/1M tokens', cnyRate),
@@ -347,7 +358,8 @@ function renderEndpointPricingCard(endpoint: Record<string, unknown>, cnyRate?: 
     priceRow('Cache read', pricing.input_cache_read, 'USD/1M tokens', cnyRate),
     priceRow('Web search', pricing.web_search, 'USD/request', cnyRate),
   ].filter(Boolean).join('')
-  return `<div class="priceVariantCard"><dl class="priceList">${rows}</dl></div>`
+  const sourceAttribute = sourceProvider ? ` data-price-source-provider="${escapeHtml(sourceProvider)}"` : ''
+  return `<div class="priceVariantCard"${sourceAttribute}><dl class="priceList">${rows}</dl></div>`
 }
 
 function priceRow(label: string, value: unknown, unit: string, cnyRate?: number): string {
