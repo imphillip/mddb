@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { OpenRouterRawGraph, OpenRouterRawNode } from './openrouter-raw-graph.js'
-import { renderOpenRouterProviderDetail, renderOpenRouterRawDetail, renderOpenRouterRawHome } from './openrouter-raw-renderer.js'
+import { renderOpenRouterProviderDetail, renderOpenRouterProviderIndex, renderOpenRouterRawDetail, renderOpenRouterRawHome } from './openrouter-raw-renderer.js'
 
 function sourceNode(sourceId: string, author: string): OpenRouterRawNode {
   const [, modelId = sourceId] = sourceId.split('/')
@@ -49,15 +49,23 @@ function endpointNode(sourceId: string, provider: string, author: string): OpenR
 
 function graph(): OpenRouterRawGraph {
   const nodes = [sourceNode('openai/gpt-5.5', 'openai'), sourceNode('qwen/qwen3-max', 'qwen')]
+  const openaiOffer = endpointNode('openai/gpt-5.5', 'openai', 'openai')
+  openaiOffer.id = 'openrouter-endpoint:openai/gpt-5.5:openai-offer'
+  openaiOffer.displayName = 'OpenAI: gpt-5.5 offer'
+  nodes.push(openaiOffer)
   return {
     generatedAt: '2026-01-01T00:00:00.000Z',
     schema: { urlShape: '/<provider>/<model-id>', rawPolicy: 'preserve-upstream-key-values', providerPolicy: 'actual-deployment-provider-not-data-source', dataSource: 'openrouter' },
     graphModel: { version: 'v2-observation-graph', identityBoundary: 'openrouter-source-id', pricingPolicy: 'provider-specific-observations-preserve-billing-mode', provenancePolicy: 'facts-are-nodes-or-observations-with-source-links' },
     source: { modelsPath: 'models.json', endpointsPath: 'endpoints.json', sitemapPath: 'sitemap.json', pagesPath: 'pages.json' },
     stats: { apiModels: 2, sitemapModelPages: 2, pageOnlyModels: 0, endpointWrappers: 0, endpointRows: 0, pricingObservations: 0, providerObservations: 0, sourceNodes: 2, endpointNodes: 0, pageRows: 0, nodes: 2, edges: 0 },
-    providers: [],
+    providers: [
+      { id: 'openai', name: 'OpenAI', currency: 'USD', raw: { offers: [{ model_id: 'gpt-5.5' }, { model_id: 'gpt-4.1' }] } },
+      { id: 'qwen', name: 'Qwen', currency: 'CNY', raw: { offers: [{ model_id: 'qwen3-max' }] } },
+      { id: 'novita', name: 'Novita', currency: 'USD', raw: { offers: [] } },
+    ],
     nodes,
-    edges: [],
+    edges: [{ id: 'edge:openai-offer:deployment_of:gpt-5.5', from: openaiOffer.id, to: nodes[0]!.id, type: 'deployment_of', label: 'OpenAI offers gpt-5.5' }],
     indices: { bySourceId: {}, byRoute: {}, pageOnlyNodeIds: [], apiNodeIds: nodes.map((node) => node.id) },
     currency: {
       base: 'USD',
@@ -93,7 +101,7 @@ describe('shared navigation contract', () => {
       expect(html).toContain('<header class="topbar"><nav class="nav"><a class="brandmark" href="/">')
       expect(html).toContain('<label class="topSearch">⌕ <input id="q" type="search" placeholder="搜索模型 / provider / author / source" autocomplete="off"></label>')
       expect(html).toContain('<a class="githubLink" href="https://github.com/imphillip/mddb"')
-      expect(html).toContain('<div class="navlinks"><a class="active" href="/">模型广场</a></div>')
+      expect(html).toContain('<div class="navlinks"><a class="active" href="/">模型广场</a><a href="/providers/">供应商广场</a></div>')
       expect(html).toContain('class="currencyToggle"')
       expect(html).toContain('data-currency-toggle')
       expect(html.indexOf('class="brandmark"')).toBeLessThan(html.indexOf('class="topSearch"'))
@@ -153,7 +161,7 @@ describe('renderOpenRouterRawHome currency toggle', () => {
     expect(plazaHtml).toContain('class="githubLink"')
     expect(plazaHtml).toContain('<a class="brandmark" href="/">')
     expect(plazaHtml).not.toContain('模型动态')
-    expect(plazaHtml).toContain('<div class="navlinks"><a class="active" href="/">模型广场</a></div>')
+    expect(plazaHtml).toContain('<div class="navlinks"><a class="active" href="/">模型广场</a><a href="/providers/">供应商广场</a></div>')
     expect(plazaHtml.indexOf('data-currency-toggle')).toBeGreaterThan(plazaHtml.indexOf('模型广场'))
     expect(plazaHtml).toContain('.githubLink{width:34px')
     expect(plazaHtml).toContain('.githubLink svg{width:18px')
@@ -219,25 +227,57 @@ describe('renderOpenRouterRawHome logo enrichment', () => {
 })
 
 describe('provider pages', () => {
-  it('renders provider models with the model plaza table style without model news rail', () => {
+  it('renders supplier plaza cards from every registry provider file', () => {
+    const html = renderOpenRouterProviderIndex(graph())
+
+    expect(html).toContain('<h1>供应商广场</h1>')
+    expect(html).toContain('<div class="navlinks"><a href="/">模型广场</a><a class="active" href="/providers/">供应商广场</a></div>')
+    expect(html).toContain('providerPlaza')
+    expect(html).toContain('providerDirectoryGrid')
+    expect(html).toContain('grid-template-columns:repeat(auto-fill,minmax(220px,1fr))')
+    expect(html).toContain('@media(max-width:720px)')
+    expect(html).toContain('.providerDirectoryGrid{grid-template-columns:1fr')
+    expect(html).not.toContain('<aside class="filterPanel">')
+    expect(html).not.toContain('registry/providers/*.json')
+    expect(html).not.toContain('<code>openai.json</code>')
+    expect(html).not.toContain('openai.json')
+    expect(html).toContain('3 个供应商')
+    expect(html).toContain('<a class="providerDirectoryLink providerDirectoryCard" href="/openai/">')
+    expect(html).toContain('<span>OpenAI</span>')
+    expect(html).toContain('自研 1 个模型 · 提供 2 个模型')
+    expect(html).toContain('<span>USD</span>')
+    expect(html).toContain('<a class="providerDirectoryLink providerDirectoryCard" href="/qwen/">')
+    expect(html).toContain('自研 1 个模型 · 提供 1 个模型')
+    expect(html).toContain('<a class="providerDirectoryLink providerDirectoryCard" href="/novita/">')
+    expect(html).not.toContain('0 个模型 · 0 个 offer')
+    expect(html).not.toContain('0 个模型')
+    expect(html).not.toContain('offer')
+    expect(html).toContain('暂无模型')
+    expect(html).toContain('供应商广场 · mddb.dev')
+  })
+
+  it('renders provider offer models with the model plaza homepage layout and left brand filters', () => {
     const html = renderOpenRouterProviderDetail(graph(), 'openai')
 
     expect(html).toContain('OpenAI')
-    expect(html).toContain('<aside class="filterPanel providerNewsRail">')
-    expect(html).toContain('<a class="btn backToPlaza" href="/">← 返回模型广场</a>')
+    expect(html).toContain('<aside class="filterPanel" aria-label="模型筛选">')
+    expect(html).toContain('<span>厂牌</span>')
     expect(html).toContain('<section class="mainPanel"><div class="plazaHead"><div><h1>OpenAI</h1>')
-    expect(html).toContain('<div class="listToolbar"><div class="quickFilters" aria-label="模态筛选"><button class="quickFilter active" type="button" data-output-filter="all">全部 <span class="quickFilterCount" id="visibleCount">1</span></button>')
-    expect(html).toContain('<button class="quickFilter" type="button" data-output-filter="text">Text <span class="quickFilterCount">1</span></button>')
+    expect(html).toContain('<div class="listToolbar"><div class="quickFilters" aria-label="模态筛选"><button class="quickFilter active" type="button" data-output-filter="all">全部 <span class="quickFilterCount" id="visibleCount">2</span></button>')
+    expect(html).toContain('<button class="quickFilter" type="button" data-output-filter="text">Text <span class="quickFilterCount">2</span></button>')
     expect(html).toContain('<div class="tableWrap"><table class="modelTable">')
     expect(html).toContain('<thead><tr><th>模型</th><th>上下文</th><th>输入<br><small data-price-unit>/M tokens</small></th><th>输出<br><small data-price-unit>/M tokens</small></th><th>读取<br><small data-price-unit>/M tokens</small></th><th>发布时间</th></tr></thead>')
     expect(html).toContain('<a class="modelLink" href="/openai/gpt-5.5/">gpt-5.5</a>')
+    expect(html).toContain('OpenAI: gpt-5.5 offer')
     expect(html).toContain('data-model-row')
     expect(html).toContain(`${modelFilterScriptMarker()}`)
     expect(html).toContain('href="/"')
     expect(html).not.toContain('class="providerDetailGrid"')
+    expect(html).not.toContain('class="filterPanel providerNewsRail"')
+    expect(html).not.toContain('← 返回模型广场')
     expect(html).not.toContain('模型动态')
     expect(html).not.toContain('<h2>OpenAI 相关动态</h2>')
-    expect(html).not.toContain('/providers/')
+    expect(html).toContain('href="/providers/"')
     expect(html).not.toContain('Provider 列表')
     expect(html).not.toContain('qwen3-max')
   })

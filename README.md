@@ -1,91 +1,76 @@
 # mddb.dev
 
-mddb.dev 是一个面向 AI 中转服务 / new-api 生态的开放模型数据库（LLM model registry）。它把 OpenRouter 等上游来源中的模型路由、部署 provider、规格、价格和来源证据整理成可由人阅读、也可由机器消费的 **有向模型图谱**。
+mddb.dev 是一个开源的大模型元数据注册表（LLM model registry）。项目的核心不是前端站点，而是一组可审计、可维护、可由机器消费的 JSON 文件：
 
-公开站点：<https://models.mddb.dev/>
+- `registry/models.json`：模型注册表，记录自研模型 / canonical model identity、基础规格、模态、能力、alias 与来源证据；
+- `registry/providers/*.json`：供应商注册表，记录每个 provider 提供的模型 offer、API model id、endpoint、价格、参数与来源证据。
+
+公开站点只是这组 registry JSON 的 viewer：<https://models.mddb.dev/>。它负责把 JSON 内容渲染成便于浏览、搜索和复制 model tag 的静态页面；导入脚本、质量检查和后续工具也都围绕这组 JSON 文件工作。
 
 ## 当前公开站点
 
-当前站点已经从纯数据仓库推进到可浏览的静态模型数据库：
-
-- `/`：模型广场，按 provider-scoped identity 展示可用模型，支持厂牌筛选、搜索、模态筛选、模型 tag 复制和 USD/CNY 价格切换；
-- `/<provider>/`：Provider 页面，复用模型广场列表样式展示该 provider 的模型；
+- `/`：模型广场，从 `registry/models.json` 和 `registry/providers/*.json` 生成，支持厂牌筛选、搜索、模态筛选、模型 tag 复制和 USD/CNY 价格切换；
+- `/providers/`：供应商广场，一供应商一卡片，展示“自研 / 提供”模型数量；
+- `/<provider>/`：供应商详情页，按模型广场同款布局展示该 provider 提供的模型；
 - `/<provider>/<model-id>/`：模型详情页，展示规格、价格、来源、关系和原始证据。
 
-公开站点：<https://models.mddb.dev/>
+## 开源核心
 
-## 核心定位
+### `registry/models.json`
 
-mddb.dev 是一个面向 AI gateway / OpenRouter / new-api 生态的开放模型数据库（LLM model registry）。它关注的不是“把所有模型名压平成一个 canonical string”，而是把真实世界里的 provider、API model-id、endpoint、alias、snapshot、variant、价格和来源证据整理成可审计、可引用的 **provider model graph**。
+`models.json` 是最严格维护的核心文件。它描述“模型是什么”以及“模型是谁研发的”。典型字段包括：
 
-核心原则：
+- `id`：mddb 内部 canonical model id；
+- `model`：展示名；
+- `alias`：上游或生态里的等价 / 近似 model id；
+- `author`：研发方 / 自研模型归属；
+- `input_modalities` / `output_modalities`：输入输出模态；
+- `context_length` / `max_output_tokens`：关键规格；
+- `reasoning` / `tool_calling` / `other_parameters`：能力与补充参数；
+- `sources`：来源证据，必须尽量保留 source id、URL、observed time。
 
-- **OpenRouter-first identity**：OpenRouter 是当前 canonical import 的基础来源；
-- **provider-scoped model path**：公开详情页采用 `/<provider>/<model-id>/`；
-- **author 与 provider 分离**：author 是研发方，provider 是实际部署/提供服务的一方；
-- **secondary source 只做 enrichment**：models.dev、BaseLLM/NewAPI、AIHOT 等补充 logo、价格、动态和可用性，不直接覆盖 OpenRouter-first identity；
-- **provenance-first**：价格、规格、provider availability、alias、source record 都保留来源和观察证据；
-- **免费/促销 route 不当作官方商业价格**：`:free` 等 free-tier 只作为短期观察处理。
+维护原则：
 
-## 当前能力
+- **identity 优先**：不要把 typo、wrapper、临时 route、free route 直接晋升为 canonical model；
+- **author 与 provider 分离**：author 是研发方，provider 是实际提供服务的一方；
+- **证据优先**：新增或改动模型 identity、alias、规格、能力时，应保留来源 URL 或 raw upstream id；
+- **稳定输出**：排序、命名和 normalization 应保持 deterministic，方便 review diff。
 
-### 模型广场
+### `registry/providers/*.json`
 
-模型广场提供一个面向人使用的模型列表：
+每个 provider 一个 JSON 文件。它描述“谁提供了哪些模型，以及如何计费 / 调用”。典型字段包括：
 
-- 全站统一导航栏：Logo、站名、搜索、菜单、GitHub、USD/CNY 切换；
-- provider / author 筛选；
-- Text、Image、Embedding、Audio、Video、Rerank、Speech、Transcription 等模态筛选，并显示每类数量；
-- 列表价格支持 USD/CNY 联动切换；
-- 每行模型可以复制实际 model tag；
-- 移动端保留完整表格字段，并通过横向滚动保证可用。
+- `id` / `provider`：供应商 id 与展示名；
+- `currency`：默认币种；
+- `offers[]`：该供应商提供的模型；
+  - `model_id`：指向 `registry/models.json` 中的 canonical model id；
+  - `model`：展示名；
+  - `api_model_id`：该 provider/API 实际使用的 model tag；
+  - `endpoint_path` / `mode`：接口与调用形态；
+  - `prices[]`：价格事实，含条件、单位、币种、来源与 raw pricing；
+  - `sources[]` / `other_parameters`：来源证据与补充参数。
 
-### Provider 页面
+维护强度分层：
 
-Provider 页面用于回答“这个 provider 下有哪些模型”：
+- 对有自研模型能力的 provider（通常同时在 `models.json` 中作为 author 出现），维护要求更严格：identity、alias、规格、价格、来源都应尽量准确；
+- 对只做部署 / 中转 / 聚合、没有自研模型能力的 provider，管理可以更宽松：重点保证 offer 能正确指向 canonical model、价格与来源不污染 canonical identity；
+- free-tier、`:free`、促销 route 等只作为短期 source observation，不应当作官方商业价格事实。
 
-- URL：`/<provider>/`；
-- 右侧模型列表复用模型广场默认列表样式；
-- 左侧保留返回模型广场入口；
-- 旧 `/models/providers/<provider>/` 和 `/models/<provider>/` 路径不再作为有效入口。
+## 网站与工具的角色
 
-### 模型详情页
+mddb.dev 的前端静态站点是 registry viewer，不是数据源本身：
 
-模型详情页用于查看单个 provider-scoped model node：
+- build 阶段读取 `registry/models.json` 和 `registry/providers/*.json`；
+- adapter 会把 registry JSON 转成页面渲染使用的 provider graph；
+- 页面展示模型、供应商、价格、来源证据和可复制 model tag；
+- 生成的 `public/` 是构建产物，不提交 git。
 
-- URL：`/<provider>/<model-id>/`；
-- 标题区显示 case-preserved model id 和关系 chips；
-- 展示 input/output modalities、context length、max output、tokenizer、released、supported parameters 等规格；
-- 展示 OpenRouter endpoint price，以及 BaseLLM/NewAPI 补充价格（仅当 OpenRouter 缺价时）；
-- 价格同样受全站 USD/CNY 切换影响；
-- 展示 source/raw evidence，便于审计。
+脚本和工具围绕 registry JSON 工作：
 
-## 数据模型
-
-当前实现围绕 provider graph 展开：
-
-```text
-source_model --has_endpoint--> endpoint_deployment
-endpoint_deployment --deployment_of--> source_model
-source_model --alias_of--> source_model
-source_model --snapshot_of--> source_model
-source_model --variant_of--> source_model
-```
-
-两类主要节点：
-
-- `source_model`：OpenRouter API、sitemap 或模型页中观察到的模型 ID；
-- `endpoint_deployment`：OpenRouter endpoint detail 中观察到的具体 provider/backend 部署。
-
-公开 JSON 中的 `graphModel` 与 `observations` 字段用于逐步表达价格、provider availability 和来源证据：
-
-```text
-graphModel.version = v2-observation-graph
-observations.pricing[] = provider-specific pricing facts
-observations.providers[] = provider / availability facts
-```
-
-现有 `nodes` / `edges` 保持兼容；observation layer 用于把价格、provider 可用性和来源证据逐步节点化。
+- 从 OpenRouter、BaseLLM/NewAPI、models.dev、AIHOT 等外部来源抓取或补充数据；
+- 把有价值的数据导入 / 投影到 `models.json` 与 `providers/*.json`；
+- 运行数据质量 gate，检查 pricing、provider observation、release date、context window 等覆盖率；
+- 后续 API、CLI、分析工具和自部署能力也应优先消费 registry JSON，而不是绕过它另建一套 canonical 数据。
 
 ## 数据源
 
@@ -93,33 +78,23 @@ observations.providers[] = provider / availability facts
 
 - 入口：`https://openrouter.ai/api/v1/models`
 - endpoint detail：`/api/v1/models/<model-or-canonical-slug>/endpoints`
-- sitemap：`https://openrouter.ai/sitemap.xml`
-- 本地快照：`data/openrouter-models.json`、`data/openrouter-endpoints.json`、`data/openrouter-sitemap-models.json`
 - 刷新命令：`npm run data:openrouter`
+- 导入 registry：`npm run registry:populate:openrouter`
 - 可选环境变量：`OPENROUTER_API_KEY`
 
-OpenRouter 是当前重构阶段的基础来源。它提供 API route id、显示名、canonical slug、上下文窗口、architecture、supported parameters 和 token pricing；endpoint detail 用于补充真实部署 provider、价格和参数。
-
-### models.dev
-
-- 入口：`https://models.dev/api.json`
-- 本地快照：`data/models-dev-api.json`
-
-models.dev 当前作为 provider / brand logo enrichment 来源接入。logo 信息可进入 `enrichment.modelsDev.brandLogos`，但 messy model id 不会直接覆盖 OpenRouter-first identity。
+OpenRouter 是当前 canonical import 的基础来源。它提供 API route id、显示名、上下文窗口、architecture、supported parameters 和 token pricing；endpoint detail 用于补充真实部署 provider、价格和参数。
 
 ### BaseLLM / NewAPI metadata
 
 - 站点：`https://basellm.github.io/llm-metadata/`
-- 本地快照：`data/basellm-newapi.json`
 - 刷新命令：`npm run data:basellm`
 
-BaseLLM / NewAPI metadata 当前作为价格/可用性补充来源接入：
+BaseLLM / NewAPI metadata 是价格 / 可用性补充来源：
 
 - 只自动挂接 exact source-id 或 model-id-only match；
 - 过滤 `:free` route；
 - 不覆盖 OpenRouter endpoint price；
-- 当 OpenRouter 缺 endpoint price 时，详情页可以显示 `BaseLLM / NewAPI 补充价格`；
-- 保留 provider-specific billing mode，例如 token 与 request 计费可以并存。
+- 保留 provider-specific billing mode。
 
 NewAPI ratio 换算规则：
 
@@ -129,20 +104,51 @@ ratio 1 = $2 / 1M tokens
 price_per_1m_usd = ratio * 2
 ```
 
+### models.dev
+
+- 入口：`https://models.dev/api.json`
+- 刷新命令：`npm run data:models-dev`
+
+models.dev 当前主要作为 provider / brand logo enrichment 来源。它不直接覆盖 OpenRouter-first identity。
+
 ### AIHOT
 
 - 入口：`https://aihot.virxact.com/api/public/items?mode=all&take=100`
-- 本地数据库：`.internal/model-news.sqlite`（git ignored）
-- 公开导出：`data/model-news-tagged.json`
 - 刷新命令：`npm run data:news`
 
-AIHOT 不作为 canonical model identity 来源；当前公开站点不生成模型动态页面。
+AIHOT 用于模型动态 / 新闻类 enrichment，不作为 canonical model identity 来源。
+
+## 仓库结构
+
+```text
+registry/
+  models.json                    核心模型注册表
+  providers/*.json               核心供应商 / offer 注册表
+src/
+  lib/registry-graph.ts          registry JSON -> provider graph adapter
+  lib/openrouter-raw-renderer.ts 静态站点 renderer
+  lib/data-quality.ts            数据质量报告与 refresh gate
+  lib/*                          importer、normalization、enrichment 与测试
+  scripts/build-site.ts          静态站点 build 入口
+scripts/
+  fetch-openrouter-models.mjs
+  populate-registry-openrouter.mjs
+  fetch-models-dev-api.mjs
+  fetch-basellm-newapi.mjs
+  fetch-aihot-model-news.mjs
+  check-refresh-gate.mjs
+public/                           生成的站点输出，git ignored
+.internal/                        本地/私有运行数据与维护笔记，git ignored
+```
+
+`docs/` 不作为公开仓库表面的一部分。维护者规划、研究笔记和私有运行细节应放在 `.internal/`，该目录被 git ignore。
 
 ## 数据质量与 refresh gate
 
-构建时会同时输出面向审计的数据质量 artifact：
+构建时会输出面向审计的数据质量 artifact：
 
 ```text
+public/graph/openrouter.json
 public/graph/data-quality.json
 public/graph/missing-pricing.json
 public/graph/missing-release-date.json
@@ -160,45 +166,6 @@ npm run data:gate -- public/graph/data-quality.json .internal/last-data-quality.
 ```
 
 如果 source model 数量、pricing coverage 或 pricing/provider observations 大幅下降，gate 返回非零并写 `.internal/refresh-gate-report.json`。这类异常应该暂停 deploy，只发报告；确认是合理上游变化后，再更新 `.internal/last-data-quality.json` 作为下一次比较基线。
-
-## 仓库结构
-
-```text
-data/
-  openrouter-models.json          OpenRouter source snapshot
-  openrouter-endpoints.json       OpenRouter endpoint detail snapshot
-  openrouter-sitemap-models.json  OpenRouter sitemap model-page index
-  models-dev-api.json             models.dev source snapshot
-  basellm-newapi.json             BaseLLM/NewAPI source snapshot
-  model-news-tagged.json          AIHOT tagged model news export
-src/
-  lib/                            importer、normalization、enrichment、renderer 和测试
-  scripts/                        静态站点 build script
-scripts/
-  fetch-openrouter-models.mjs
-  fetch-aihot-model-news.mjs
-  tag-aihot-model-news.mjs
-  export-model-news.mjs
-  deploy-static-site.sh
-public/                           生成的站点输出，git ignored
-.internal/                        本地/私有运行数据与维护笔记，git ignored
-```
-
-`docs/` 不作为公开仓库表面的一部分。维护者规划、研究笔记和私有运行细节应放在 `.internal/`，该目录被 git ignore。
-
-## 自行部署与配置
-
-本项目会逐步提供面向自部署 new-api / AI gateway 的数据接口。当前必要配置：
-
-```bash
-# 可选：OpenRouter API key，用于刷新模型目录、endpoint detail 或未来需要鉴权的接口
-OPENROUTER_API_KEY=sk-or-...
-
-# 规划中：管理员口令，用于后续在自部署站点中修改/审核本地覆盖数据
-MDDB_ADMIN_PASSWORD=change-me
-```
-
-本地 secret 请放入 `.env` / `.env.local`，不要提交到 git。管理员覆盖数据后续会优先采用本地 JSON 或独立持久层，避免污染公开 source snapshot。
 
 ## 开发
 
@@ -232,10 +199,11 @@ npm run build
 npm run serve
 ```
 
-刷新 OpenRouter 数据：
+刷新 OpenRouter 数据并导入 registry：
 
 ```bash
 npm run data:openrouter
+npm run registry:populate:openrouter
 ```
 
 ## 公开贡献流程
@@ -244,23 +212,21 @@ mddb.dev 欢迎公开贡献，尤其欢迎提升 canonical identity、source pro
 
 ### 有价值的贡献类型
 
-- 添加或修正带 source URL 的 alias；
-- 修正 canonical tag normalization 规则；
-- 添加 source-specific importer tests；
+- 修正 `registry/models.json` 中的 canonical model identity、alias、author、规格或能力；
+- 修正 `registry/providers/*.json` 中的 offer、api model id、endpoint、价格或来源；
+- 添加或修正带 source URL 的 alias / price fact / provider observation；
 - 改进 source adapter，同时保留 raw provenance；
-- 添加 pricing conversion 测试和边界案例；
-- 审核 waiting-list candidate，并说明它应归类为 canonical model、alias、snapshot、variant、deployment，还是 rejected wrapper record；
-- 改进公开 JSON projection 和 schema 文档；
+- 添加 importer、normalization、pricing conversion 或 renderer 测试；
 - 改进由 registry 数据生成的网站展示。
 
 ### 数据变更必须提供的证据
 
-任何 model-data correction 都应包含：
+任何 model / provider data correction 都应包含：
 
-- raw upstream model string 或 route；
+- raw upstream model string、route 或 provider offer；
 - provider / source 名称；
 - source URL；
-- proposed canonical tag；
+- proposed canonical model id 或 provider id；
 - classification：canonical model、alias、snapshot、variant、deployment、price fact 或 rejected/wrapper；
 - 为什么这个分类是正确的；
 - 如果规则可复用，应添加或更新测试 / fixture。
@@ -279,9 +245,10 @@ PR 应满足：
 
 - 不把生成的 `public/`、`dist/` 提交进 git；
 - 不提交 secret、local token、private notes 或 `.internal/` 文件；
+- registry JSON 改动优先保持小而可审计；
 - normalization 时保留 raw source evidence，而不是只留下清洗后的字符串；
 - 不用 secondary source 覆盖 OpenRouter-first canonical identity；
-- 为 normalization、importer、pricing 或 rendering 行为添加 / 更新测试；
+- 为 normalization、importer、pricing、registry adapter 或 rendering 行为添加 / 更新测试；
 - 保持改动聚焦、可 review。
 
 ### Review policy

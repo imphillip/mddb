@@ -1,33 +1,17 @@
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { buildDataQualityReport } from '../lib/data-quality.js'
-import { readNewRegistry, renderNewModelDetail, renderNewModelsHome } from '../lib/new-registry-renderer.js'
-import { buildOpenRouterRawGraphFromFiles } from '../lib/openrouter-raw-graph.js'
-import { renderOpenRouterProviderDetail, renderOpenRouterRawDetail, renderOpenRouterRawHome } from '../lib/openrouter-raw-renderer.js'
+import { buildRegistryGraphFromFiles } from '../lib/registry-graph.js'
+import { renderOpenRouterProviderDetail, renderOpenRouterProviderIndex, renderOpenRouterRawDetail, renderOpenRouterRawHome } from '../lib/openrouter-raw-renderer.js'
 
 const outputDir = join(process.cwd(), 'public')
-const graph = buildOpenRouterRawGraphFromFiles({
-  modelsPath: join(process.cwd(), '.internal', 'source-data', 'openrouter.raw.json'),
-  endpointsPath: join(process.cwd(), '.internal', 'source-data', 'openrouter-endpoints.raw.json'),
-  sitemapPath: join(process.cwd(), '.internal', 'source-data', 'openrouter-sitemap-models.raw.json'),
-  pagesPath: join(process.cwd(), '.internal', 'source-data', 'openrouter-model-pages.raw.json'),
-  modelsDevPath: join(process.cwd(), '.internal', 'source-data', 'models-dev-api.raw.json'),
-  baseLlmPath: join(process.cwd(), '.internal', 'source-data', 'basellm-newapi.raw.json'),
-})
+const graph = buildRegistryGraphFromFiles()
 attachCurrency(graph, join(process.cwd(), '.internal', 'source-data', 'exchange-rate-usd-cny.raw.json'))
 
 rmSync(outputDir, { recursive: true, force: true })
 
 writePage('index.html', renderOpenRouterRawHome(graph))
-const newRegistry = readNewRegistry()
-if (newRegistry) {
-  writePage('assets/new-models.css', readFileSync(join(process.cwd(), 'src', 'lib', 'new-models.css'), 'utf8'))
-  writePage('new-models/index.html', renderNewModelsHome(newRegistry))
-  for (const offer of newRegistry.offers) {
-    const route = offer.route.replace(/^\//u, '').replace(/\/$/u, '')
-    writePage(`${route}/index.html`, renderNewModelDetail(newRegistry, offer))
-  }
-}
+writePage('providers/index.html', renderOpenRouterProviderIndex(graph))
 writePage('graph/openrouter.json', JSON.stringify(graph, null, 2))
 const dataQuality = buildDataQualityReport(graph)
 writePage('graph/data-quality.json', JSON.stringify(dataQuality, null, 2))
