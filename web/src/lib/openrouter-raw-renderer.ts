@@ -62,7 +62,7 @@ function outputModalityCount(graph: OpenRouterRawGraph, searchOnlyNodeIds: Set<s
 export function renderOpenRouterProviderIndex(graph: OpenRouterRawGraph): string {
   const providers = providerSummaries(graph)
   const providedModelCount = providers.reduce((sum, provider) => sum + provider.offerCount, 0)
-  const rows = providers.map((provider) => `<a class="providerDirectoryLink providerDirectoryCard" href="/${escapeHtml(provider.id)}/"><div><span>${escapeHtml(provider.label)}</span></div><div class="providerCardMeta"><span>${escapeHtml(provider.currency)}</span><strong>→</strong></div></a>`).join('')
+  const rows = providers.map((provider) => `<a class="providerDirectoryLink providerDirectoryCard" href="/${escapeHtml(provider.id)}/"><div><span>${escapeHtml(provider.label)}</span><p>${providerSummaryCopy(provider.modelCount, provider.offerCount)}</p></div><div class="providerCardMeta"><span>${escapeHtml(provider.currency)}</span><strong>→</strong></div></a>`).join('')
   const body = `<main class="providerPlaza"><div class="plazaHead"><div><h1>供应商广场</h1><p class="rawIntro">${providers.length} 个供应商 · 提供 ${providedModelCount} 个模型。选择供应商查看它提供的模型。</p></div></div><div class="providerDirectoryGrid">${rows}</div></main>`
   return page('供应商广场 · mddb.dev', body, 'providers')
 }
@@ -483,7 +483,7 @@ function page(title: string, body: string, activePage: ActivePage, navExtra = ''
 function nav(activePage: ActivePage, navExtra = ''): string {
   const modelsClass = activePage === 'models' ? ' class="active"' : ''
   const providersClass = activePage === 'providers' ? ' class="active"' : ''
-  const search = activePage === 'models' ? '<label class="topSearch">⌕ <input id="q" type="search" placeholder="搜索模型 / provider / author / source" autocomplete="off"></label>' : '<div class="topSearch">⌕ 搜索</div>'
+  const search = '<label class="topSearch">⌕ <input id="q" type="search" placeholder="搜索模型 / provider / author / source" autocomplete="off"></label>'
   return `<header class="topbar"><nav class="nav"><a class="brandmark" href="/">${databaseLogo()}<span>mddb.dev</span><span class="brandZh">大模型数据库</span></a>${search}<a class="githubLink" href="https://github.com/imphillip/mddb" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库">${githubLogo()}</a><div class="navlinks"><a${modelsClass} href="/">模型广场</a><a${providersClass} href="/providers/">供应商广场</a></div>${navExtra}</nav></header>`
 }
 
