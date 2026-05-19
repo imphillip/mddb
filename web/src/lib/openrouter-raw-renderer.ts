@@ -62,7 +62,7 @@ function outputModalityCount(graph: OpenRouterRawGraph, searchOnlyNodeIds: Set<s
 export function renderOpenRouterProviderIndex(graph: OpenRouterRawGraph): string {
   const providers = providerSummaries(graph)
   const providedModelCount = providers.reduce((sum, provider) => sum + provider.offerCount, 0)
-  const rows = providers.map((provider) => `<a class="providerDirectoryLink providerDirectoryCard" href="/${escapeHtml(provider.id)}/"><div><span>${escapeHtml(provider.label)}</span><p>${providerSummaryCopy(provider.modelCount, provider.offerCount)}</p></div><div class="providerCardMeta"><span>${escapeHtml(provider.currency)}</span><strong>→</strong></div></a>`).join('')
+  const rows = providers.map((provider) => `<a class="providerDirectoryLink providerDirectoryCard" href="/${escapeHtml(provider.id)}/"><div><span>${escapeHtml(provider.label)}</span></div><div class="providerCardMeta"><span>${escapeHtml(provider.currency)}</span><strong>→</strong></div></a>`).join('')
   const body = `<main class="providerPlaza"><div class="plazaHead"><div><h1>供应商广场</h1><p class="rawIntro">${providers.length} 个供应商 · 提供 ${providedModelCount} 个模型。选择供应商查看它提供的模型。</p></div></div><div class="providerDirectoryGrid">${rows}</div></main>`
   return page('供应商广场 · mddb.dev', body, 'providers')
 }
@@ -73,7 +73,7 @@ export function renderOpenRouterProviderDetail(graph: OpenRouterRawGraph, provid
   const modelRows = models.map((node) => renderModelRow(node, false, graph)).join('') || '<tr><td class="muted" colspan="6">暂无模型</td></tr>'
   const quickFilters = renderOutputQuickFiltersForNodes(models)
   const authorOptions = authorFilterOptionsForNodes(graph, models)
-  const body = `<main class="modelsShell providerShell"><aside class="filterPanel" aria-label="模型筛选">${renderAuthorFilterGroup(graph, authorOptions, models.length)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>${escapeHtml(label)}</h1><p class="rawIntro">${models.length} 个模型 / offer</p></div></div><div class="listToolbar"><div class="quickFilters" aria-label="模态筛选">${quickFilters}</div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small data-price-unit>/M tokens</small></th><th>输出<br><small data-price-unit>/M tokens</small></th><th>读取<br><small data-price-unit>/M tokens</small></th><th>发布时间</th></tr></thead><tbody id="rows">${modelRows}</tbody></table></div><script>${modelFilterScript()}${currencyToggleScript()}</script></section></main>`
+  const body = `<main class="modelsShell providerShell"><aside class="filterPanel" aria-label="模型筛选">${renderAuthorFilterGroup(graph, authorOptions, models.length)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>${escapeHtml(label)}</h1></div></div><div class="listToolbar"><div class="quickFilters" aria-label="模态筛选">${quickFilters}</div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small data-price-unit>/M tokens</small></th><th>输出<br><small data-price-unit>/M tokens</small></th><th>读取<br><small data-price-unit>/M tokens</small></th><th>发布时间</th></tr></thead><tbody id="rows">${modelRows}</tbody></table></div><script>${modelFilterScript()}${currencyToggleScript()}</script></section></main>`
   return page(`${label} · Provider · mddb.dev`, body, 'models', currencyToggle(graph))
 }
 

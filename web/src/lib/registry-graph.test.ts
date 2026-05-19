@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { buildRegistryGraphFromFiles } from './registry-graph.js'
-import { renderOpenRouterProviderDetail, renderOpenRouterRawDetail, renderOpenRouterRawHome } from './openrouter-raw-renderer.js'
+import { renderOpenRouterProviderDetail, renderOpenRouterProviderIndex, renderOpenRouterRawDetail, renderOpenRouterRawHome } from './openrouter-raw-renderer.js'
 
 describe('registry graph adapter', () => {
   const graph = buildRegistryGraphFromFiles()
@@ -24,6 +24,9 @@ describe('registry graph adapter', () => {
     expect(writerVisibleRows[0]).toContain('data-price-source-provider=')
     expect(writerVisibleRows[0]).toContain('priceValue')
     const provider = renderOpenRouterProviderDetail(graph, 'openai')
+    const providerIndex = renderOpenRouterProviderIndex(graph)
+    const novitaProvider = renderOpenRouterProviderDetail(graph, 'novita')
+    const deepInfraProvider = renderOpenRouterProviderDetail(graph, 'deepinfra')
     const node = graph.nodes.find((candidate) => candidate.route === '/openai/gpt-5.5')
     expect(node).toBeTruthy()
     const detail = renderOpenRouterRawDetail(graph, node!)
@@ -40,6 +43,18 @@ describe('registry graph adapter', () => {
     expect(provider).toContain('<span>厂牌</span>')
     expect(provider).toContain('class="modelTable"')
     expect(provider).not.toContain('返回模型广场')
+    expect(provider).not.toContain('个模型 / offer')
+    expect(providerIndex).toContain('href="/novita/"')
+    expect(providerIndex).not.toContain('<p>自研 ')
+    expect(providerIndex).not.toContain('<p>提供 ')
+    expect(novitaProvider).toContain('<h1>Novita</h1>')
+    expect(novitaProvider).toContain('class="modelsShell providerShell"')
+    expect(novitaProvider).toContain('class="modelTable"')
+    expect(novitaProvider).toContain('data-model-row')
+    expect(novitaProvider).toContain('DeepSeek')
+    expect(novitaProvider).not.toContain('个模型 / offer')
+    expect(deepInfraProvider).toContain('<h1>DeepInfra</h1>')
+    expect(deepInfraProvider).toContain('class="modelTable"')
     expect(detail).toContain('Model ID')
     expect(detail).toContain('价格')
     expect(detail).toContain('数据来源与源数据')

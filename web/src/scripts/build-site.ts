@@ -27,9 +27,7 @@ for (const node of graph.nodes) {
 }
 
 for (const providerId of Array.from(new Set(graph.nodes.map((node) => node.provider)))) {
-  if (graph.nodes.some((node) => node.provider === providerId && node.nodeKind === 'source_model')) {
-    writePage(`${providerId}/index.html`, renderOpenRouterProviderDetail(graph, providerId))
-  }
+  writePage(`${providerId}/index.html`, renderOpenRouterProviderDetail(graph, providerId))
 }
 
 function attachCurrency(graph: { currency?: unknown }, path: string): void {
