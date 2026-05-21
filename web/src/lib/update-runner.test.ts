@@ -31,6 +31,17 @@ describe('update runner', () => {
     const applied = await applyOpenRouterUpdate({ repoRoot, patchFile: preview.patchFile })
     expect(applied.ok).toBe(true)
     expect(readFileSync(join(dataDir, 'models.json'), 'utf8')).toContain('new')
+    expect(() => readFileSync(preview.patchFile, 'utf8')).toThrow()
+
+    const secondPreview = await previewOpenRouterUpdate({
+      repoRoot,
+      command: process.execPath,
+      args: ['-e', "const fs=require('fs'); fs.writeFileSync('data/models.json', '{\\\"models\\\":[{\\\"id\\\":\\\"newer\\\"}]}\\n')"],
+      timeoutMs: 10_000,
+    })
+    expect(secondPreview.ok).toBe(true)
+    expect(secondPreview.changedFiles).toContain('data/models.json')
+    expect(readFileSync(join(dataDir, 'models.json'), 'utf8')).toContain('new')
   })
 })
 

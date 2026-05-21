@@ -64,6 +64,7 @@ export async function applyOpenRouterUpdate(options: { repoRoot: string, patchFi
     throw new Error('Invalid preview patch file')
   }
   const result = await git(repoRoot, ['apply', '--whitespace=nowarn', patchFile])
+  if (result.exitCode === 0) rmSync(patchFile, { force: true })
   return { ok: result.exitCode === 0, stdout: result.stdout, stderr: result.stderr }
 }
 
