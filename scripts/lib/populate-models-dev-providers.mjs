@@ -117,10 +117,10 @@ function matchCanonicalModel(providerId, modelId, modelRecord, index) {
 function modelsDevOffer(provider, modelId, modelRecord, match) {
   const cost = modelRecord && typeof modelRecord.cost === 'object' && !Array.isArray(modelRecord.cost) ? modelRecord.cost : undefined
   const prices = cost ? {
-    ...(typeof cost.input === 'number' ? { input_per_million_tokens: cost.input } : {}),
-    ...(typeof cost.output === 'number' ? { output_per_million_tokens: cost.output } : {}),
-    ...(typeof cost.cache_read === 'number' ? { cache_read_per_million_tokens: cost.cache_read } : {}),
-    ...(typeof cost.cache_write === 'number' ? { cache_write_per_million_tokens: cost.cache_write } : {}),
+    ...(typeof cost.input === 'number' ? { input: { amount: cost.input, unit: 'per_1m_tokens' } } : {}),
+    ...(typeof cost.output === 'number' ? { output: { amount: cost.output, unit: 'per_1m_tokens' } } : {}),
+    ...(typeof cost.cache_read === 'number' ? { cache_read: { amount: cost.cache_read, unit: 'per_1m_tokens' } } : {}),
+    ...(typeof cost.cache_write === 'number' ? { cache_write: { amount: cost.cache_write, unit: 'per_1m_tokens' } } : {}),
   } : undefined
   return {
     model_id: match.model.id,
@@ -128,7 +128,12 @@ function modelsDevOffer(provider, modelId, modelRecord, match) {
     api_model_id: modelId,
     endpoint_path: modelId,
     mode: 'api',
-    ...(prices && Object.keys(prices).length > 0 ? { prices } : {}),
+    ...(prices && Object.keys(prices).length > 0 ? { prices: [{
+      conditions: {},
+      prices,
+      currency: 'USD',
+      source: 'models.dev',
+    }] } : {}),
     other_parameters: {
       source: 'models.dev',
       match: match.match,

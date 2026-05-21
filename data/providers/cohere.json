@@ -251,10 +251,23 @@
       "api_model_id": "command-r-08-2024",
       "endpoint_path": "command-r-08-2024",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.15,
-        "output_per_million_tokens": 0.6
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -273,10 +286,23 @@
       "api_model_id": "command-a-03-2025",
       "endpoint_path": "command-a-03-2025",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 2.5,
-        "output_per_million_tokens": 10
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -295,10 +321,23 @@
       "api_model_id": "command-r-plus-08-2024",
       "endpoint_path": "command-r-plus-08-2024",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 2.5,
-        "output_per_million_tokens": 10
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -317,10 +356,23 @@
       "api_model_id": "command-r7b-12-2024",
       "endpoint_path": "command-r7b-12-2024",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.0375,
-        "output_per_million_tokens": 0.15
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.0375,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"

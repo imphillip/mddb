@@ -25,12 +25,31 @@
       "api_model_id": "gemini-2.5-flash",
       "endpoint_path": "gemini-2.5-flash",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.3,
-        "output_per_million_tokens": 2.5,
-        "cache_read_per_million_tokens": 0.075,
-        "cache_write_per_million_tokens": 0.383
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.5,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.075,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.383,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -49,11 +68,27 @@
       "api_model_id": "gemini-3.1-flash-lite",
       "endpoint_path": "gemini-3.1-flash-lite",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.25,
-        "output_per_million_tokens": 1.5,
-        "cache_read_per_million_tokens": 0.025
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.025,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -72,11 +107,27 @@
       "api_model_id": "gemini-2.5-pro",
       "endpoint_path": "gemini-2.5-pro",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.25,
-        "output_per_million_tokens": 10,
-        "cache_read_per_million_tokens": 0.125
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 10,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.125,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -95,11 +146,27 @@
       "api_model_id": "gemini-2.5-flash-lite",
       "endpoint_path": "gemini-2.5-flash-lite",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.1,
-        "output_per_million_tokens": 0.4,
-        "cache_read_per_million_tokens": 0.01
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.01,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -118,11 +185,27 @@
       "api_model_id": "gemini-3.1-pro-preview-customtools",
       "endpoint_path": "gemini-3.1-pro-preview-customtools",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 2,
-        "output_per_million_tokens": 12,
-        "cache_read_per_million_tokens": 0.2
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 12,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -141,11 +224,27 @@
       "api_model_id": "gemini-3.1-flash-lite-preview",
       "endpoint_path": "gemini-3.1-flash-lite-preview",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.25,
-        "output_per_million_tokens": 1.5,
-        "cache_read_per_million_tokens": 0.025
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.025,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -164,11 +263,27 @@
       "api_model_id": "gemini-3.1-pro-preview",
       "endpoint_path": "gemini-3.1-pro-preview",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 2,
-        "output_per_million_tokens": 12,
-        "cache_read_per_million_tokens": 0.2
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 12,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -187,11 +302,27 @@
       "api_model_id": "gemini-3-flash-preview",
       "endpoint_path": "gemini-3-flash-preview",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.5,
-        "output_per_million_tokens": 3,
-        "cache_read_per_million_tokens": 0.05
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.05,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"

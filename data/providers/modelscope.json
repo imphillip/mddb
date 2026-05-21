@@ -24,10 +24,23 @@
       "api_model_id": "ZhipuAI/GLM-4.5",
       "endpoint_path": "ZhipuAI/GLM-4.5",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -46,10 +59,23 @@
       "api_model_id": "ZhipuAI/GLM-4.6",
       "endpoint_path": "ZhipuAI/GLM-4.6",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -68,10 +94,23 @@
       "api_model_id": "Qwen/Qwen3-235B-A22B-Thinking-2507",
       "endpoint_path": "Qwen/Qwen3-235B-A22B-Thinking-2507",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -90,10 +129,23 @@
       "api_model_id": "Qwen/Qwen3-30B-A3B-Instruct-2507",
       "endpoint_path": "Qwen/Qwen3-30B-A3B-Instruct-2507",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -112,10 +164,23 @@
       "api_model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
       "endpoint_path": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -134,10 +199,23 @@
       "api_model_id": "Qwen/Qwen3-30B-A3B-Thinking-2507",
       "endpoint_path": "Qwen/Qwen3-30B-A3B-Thinking-2507",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"

@@ -24,10 +24,23 @@
       "api_model_id": "moonshotai/Kimi-K2.6",
       "endpoint_path": "moonshotai/Kimi-K2.6",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.69,
-        "output_per_million_tokens": 3.22
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.69,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.22,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -46,10 +59,23 @@
       "api_model_id": "moonshotai/Kimi-K2.5",
       "endpoint_path": "moonshotai/Kimi-K2.5",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.52,
-        "output_per_million_tokens": 2.59
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.52,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.59,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -68,10 +94,23 @@
       "api_model_id": "openai/gpt-oss-20b",
       "endpoint_path": "openai/gpt-oss-20b",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.03,
-        "output_per_million_tokens": 0.16
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.03,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -90,10 +129,23 @@
       "api_model_id": "MiniMaxAI/MiniMax-M2.5",
       "endpoint_path": "MiniMaxAI/MiniMax-M2.5",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.35,
-        "output_per_million_tokens": 1.38
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.35,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.38,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -112,10 +164,23 @@
       "api_model_id": "Qwen/Qwen3.6-35B-A3B",
       "endpoint_path": "Qwen/Qwen3.6-35B-A3B",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.05,
-        "output_per_million_tokens": 0.1
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.05,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"

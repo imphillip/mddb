@@ -24,10 +24,23 @@
       "api_model_id": "deepseek-ai/deepseek-v3.2",
       "endpoint_path": "deepseek-ai/deepseek-v3.2",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -46,10 +59,23 @@
       "api_model_id": "deepseek-ai/deepseek-v3.1-terminus",
       "endpoint_path": "deepseek-ai/deepseek-v3.1-terminus",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -68,12 +94,31 @@
       "api_model_id": "moonshotai/kimi-k2-thinking",
       "endpoint_path": "moonshotai/kimi-k2-thinking",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0,
-        "cache_read_per_million_tokens": 0,
-        "cache_write_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -92,10 +137,23 @@
       "api_model_id": "moonshotai/kimi-k2.6",
       "endpoint_path": "moonshotai/kimi-k2.6",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -114,10 +172,23 @@
       "api_model_id": "z-ai/glm-5.1",
       "endpoint_path": "z-ai/glm-5.1",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -136,10 +207,23 @@
       "api_model_id": "openai/gpt-oss-20b",
       "endpoint_path": "openai/gpt-oss-20b",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -158,10 +242,23 @@
       "api_model_id": "openai/gpt-oss-120b",
       "endpoint_path": "openai/gpt-oss-120b",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -180,10 +277,23 @@
       "api_model_id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
       "endpoint_path": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -202,10 +312,23 @@
       "api_model_id": "nvidia/nemotron-3-super-120b-a12b",
       "endpoint_path": "nvidia/nemotron-3-super-120b-a12b",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.2,
-        "output_per_million_tokens": 0.8
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -224,10 +347,23 @@
       "api_model_id": "nvidia/llama-3_3-nemotron-super-49b-v1_5",
       "endpoint_path": "nvidia/llama-3_3-nemotron-super-49b-v1_5",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -246,10 +382,23 @@
       "api_model_id": "nvidia/nemotron-3-nano-30b-a3b",
       "endpoint_path": "nvidia/nemotron-3-nano-30b-a3b",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -268,10 +417,23 @@
       "api_model_id": "mistralai/mixtral-8x22b-instruct",
       "endpoint_path": "mistralai/mixtral-8x22b-instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -290,10 +452,23 @@
       "api_model_id": "qwen/qwen3.5-122b-a10b",
       "endpoint_path": "qwen/qwen3.5-122b-a10b",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -312,10 +487,23 @@
       "api_model_id": "qwen/qwen3.5-397b-a17b",
       "endpoint_path": "qwen/qwen3.5-397b-a17b",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -334,10 +522,23 @@
       "api_model_id": "qwen/qwen3-next-80b-a3b-thinking",
       "endpoint_path": "qwen/qwen3-next-80b-a3b-thinking",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -356,10 +557,23 @@
       "api_model_id": "qwen/qwen3-next-80b-a3b-instruct",
       "endpoint_path": "qwen/qwen3-next-80b-a3b-instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -378,10 +592,23 @@
       "api_model_id": "google/gemma-3-27b-it",
       "endpoint_path": "google/gemma-3-27b-it",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -400,10 +627,23 @@
       "api_model_id": "google/gemma-4-31b-it",
       "endpoint_path": "google/gemma-4-31b-it",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -422,10 +662,23 @@
       "api_model_id": "google/gemma-3n-e4b-it",
       "endpoint_path": "google/gemma-3n-e4b-it",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -444,10 +697,23 @@
       "api_model_id": "microsoft/phi-4-mini-instruct",
       "endpoint_path": "microsoft/phi-4-mini-instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -466,10 +732,23 @@
       "api_model_id": "minimaxai/minimax-m2.5",
       "endpoint_path": "minimaxai/minimax-m2.5",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -488,10 +767,23 @@
       "api_model_id": "minimaxai/minimax-m2.7",
       "endpoint_path": "minimaxai/minimax-m2.7",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -510,10 +802,23 @@
       "api_model_id": "meta/llama-3.1-70b-instruct",
       "endpoint_path": "meta/llama-3.1-70b-instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -532,10 +837,23 @@
       "api_model_id": "meta/llama-3.2-1b-instruct",
       "endpoint_path": "meta/llama-3.2-1b-instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -554,10 +872,23 @@
       "api_model_id": "meta/llama-4-maverick-17b-128e-instruct",
       "endpoint_path": "meta/llama-4-maverick-17b-128e-instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -576,10 +907,23 @@
       "api_model_id": "meta/llama-3.3-70b-instruct",
       "endpoint_path": "meta/llama-3.3-70b-instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -598,10 +942,23 @@
       "api_model_id": "meta/llama-3.2-3b-instruct",
       "endpoint_path": "meta/llama-3.2-3b-instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -620,10 +977,23 @@
       "api_model_id": "meta/llama-guard-4-12b",
       "endpoint_path": "meta/llama-guard-4-12b",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -642,10 +1012,23 @@
       "api_model_id": "meta/llama-3.1-8b-instruct",
       "endpoint_path": "meta/llama-3.1-8b-instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -664,10 +1047,23 @@
       "api_model_id": "stepfun-ai/step-3.5-flash",
       "endpoint_path": "stepfun-ai/step-3.5-flash",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -686,11 +1082,27 @@
       "api_model_id": "deepseek-ai/deepseek-v4-pro",
       "endpoint_path": "deepseek-ai/deepseek-v4-pro",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.74,
-        "output_per_million_tokens": 3.48,
-        "cache_read_per_million_tokens": 0.145
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.74,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.48,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.145,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -709,11 +1121,27 @@
       "api_model_id": "deepseek-ai/deepseek-v4-flash",
       "endpoint_path": "deepseek-ai/deepseek-v4-flash",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.14,
-        "output_per_million_tokens": 0.28,
-        "cache_read_per_million_tokens": 0.028
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.14,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.28,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.028,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"

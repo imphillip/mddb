@@ -24,11 +24,27 @@
       "api_model_id": "moonshotai/kimi-k2.6",
       "endpoint_path": "moonshotai/kimi-k2.6",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.7,
-        "output_per_million_tokens": 3.5,
-        "cache_read_per_million_tokens": 0.2
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.7,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.5,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -47,11 +63,27 @@
       "api_model_id": "zai-org/glm-5.1",
       "endpoint_path": "zai-org/glm-5.1",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.9,
-        "output_per_million_tokens": 3,
-        "cache_read_per_million_tokens": 0.27
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.9,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.27,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -70,10 +102,23 @@
       "api_model_id": "google/gemma-4-31b-it",
       "endpoint_path": "google/gemma-4-31b-it",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.11,
-        "output_per_million_tokens": 0.35
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.11,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.35,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -92,11 +137,27 @@
       "api_model_id": "minimaxai/minimax-m2.7",
       "endpoint_path": "minimaxai/minimax-m2.7",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.3,
-        "output_per_million_tokens": 1.2,
-        "cache_read_per_million_tokens": 0.055
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.055,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"

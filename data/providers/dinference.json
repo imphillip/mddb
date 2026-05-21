@@ -24,10 +24,23 @@
       "api_model_id": "gpt-oss-120b",
       "endpoint_path": "gpt-oss-120b",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.0675,
-        "output_per_million_tokens": 0.27
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.0675,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.27,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -46,10 +59,23 @@
       "api_model_id": "glm-5.1",
       "endpoint_path": "glm-5.1",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.25,
-        "output_per_million_tokens": 3.89
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.89,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -68,10 +94,23 @@
       "api_model_id": "minimax-m2.5",
       "endpoint_path": "minimax-m2.5",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.22,
-        "output_per_million_tokens": 0.88
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.22,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.88,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -90,10 +129,23 @@
       "api_model_id": "glm-4.7",
       "endpoint_path": "glm-4.7",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.45,
-        "output_per_million_tokens": 1.65
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.45,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.65,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -112,10 +164,23 @@
       "api_model_id": "glm-5",
       "endpoint_path": "glm-5",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.75,
-        "output_per_million_tokens": 2.4
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.75,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"

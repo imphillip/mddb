@@ -25,10 +25,23 @@
       "api_model_id": "@cf/ibm-granite/granite-4.0-h-micro",
       "endpoint_path": "@cf/ibm-granite/granite-4.0-h-micro",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.017,
-        "output_per_million_tokens": 0.112
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.017,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.112,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -47,10 +60,23 @@
       "api_model_id": "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
       "endpoint_path": "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.497,
-        "output_per_million_tokens": 4.881
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.497,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4.881,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -69,11 +95,27 @@
       "api_model_id": "@cf/moonshotai/kimi-k2.5",
       "endpoint_path": "@cf/moonshotai/kimi-k2.5",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.6,
-        "output_per_million_tokens": 3,
-        "cache_read_per_million_tokens": 0.1
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -92,11 +134,27 @@
       "api_model_id": "@cf/moonshotai/kimi-k2.6",
       "endpoint_path": "@cf/moonshotai/kimi-k2.6",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.95,
-        "output_per_million_tokens": 4,
-        "cache_read_per_million_tokens": 0.16
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.95,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -115,10 +173,23 @@
       "api_model_id": "@cf/mistral/mistral-7b-instruct-v0.1",
       "endpoint_path": "@cf/mistral/mistral-7b-instruct-v0.1",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.11,
-        "output_per_million_tokens": 0.19
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.11,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.19,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -137,10 +208,23 @@
       "api_model_id": "@cf/openai/gpt-oss-20b",
       "endpoint_path": "@cf/openai/gpt-oss-20b",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.2,
-        "output_per_million_tokens": 0.3
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -159,10 +243,23 @@
       "api_model_id": "@cf/openai/gpt-oss-120b",
       "endpoint_path": "@cf/openai/gpt-oss-120b",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.35,
-        "output_per_million_tokens": 0.75
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.35,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.75,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -181,10 +278,23 @@
       "api_model_id": "@cf/zai-org/glm-4.7-flash",
       "endpoint_path": "@cf/zai-org/glm-4.7-flash",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.0605,
-        "output_per_million_tokens": 0.4
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.0605,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -203,10 +313,23 @@
       "api_model_id": "@cf/mistralai/mistral-small-3.1-24b-instruct",
       "endpoint_path": "@cf/mistralai/mistral-small-3.1-24b-instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.351,
-        "output_per_million_tokens": 0.555
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.351,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.555,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -225,10 +348,23 @@
       "api_model_id": "@cf/google/gemma-4-26b-a4b-it",
       "endpoint_path": "@cf/google/gemma-4-26b-a4b-it",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.1,
-        "output_per_million_tokens": 0.3
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -247,10 +383,23 @@
       "api_model_id": "@cf/google/gemma-3-12b-it",
       "endpoint_path": "@cf/google/gemma-3-12b-it",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.345,
-        "output_per_million_tokens": 0.556
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.345,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.556,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -269,10 +418,23 @@
       "api_model_id": "@cf/meta/llama-4-scout-17b-16e-instruct",
       "endpoint_path": "@cf/meta/llama-4-scout-17b-16e-instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.27,
-        "output_per_million_tokens": 0.85
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.27,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.85,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -291,10 +453,23 @@
       "api_model_id": "@cf/meta/llama-3.2-1b-instruct",
       "endpoint_path": "@cf/meta/llama-3.2-1b-instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.027,
-        "output_per_million_tokens": 0.201
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.027,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.201,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -313,10 +488,23 @@
       "api_model_id": "@cf/meta/llama-guard-3-8b",
       "endpoint_path": "@cf/meta/llama-guard-3-8b",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.484,
-        "output_per_million_tokens": 0.03
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.484,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.03,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -335,10 +523,23 @@
       "api_model_id": "@cf/meta/llama-3-8b-instruct",
       "endpoint_path": "@cf/meta/llama-3-8b-instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.282,
-        "output_per_million_tokens": 0.827
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.282,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.827,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -357,10 +558,23 @@
       "api_model_id": "@cf/meta/llama-3.2-3b-instruct",
       "endpoint_path": "@cf/meta/llama-3.2-3b-instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.0509,
-        "output_per_million_tokens": 0.335
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.0509,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.335,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"

@@ -24,10 +24,23 @@
       "api_model_id": "openai/gpt-oss-120b",
       "endpoint_path": "openai/gpt-oss-120b",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 2.92,
-        "output_per_million_tokens": 2.92
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2.92,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.92,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -46,10 +59,23 @@
       "api_model_id": "meta-llama/Llama-3.3-70B-Instruct",
       "endpoint_path": "meta-llama/Llama-3.3-70B-Instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 2.92,
-        "output_per_million_tokens": 2.92
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2.92,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.92,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -68,10 +94,23 @@
       "api_model_id": "MiniMaxAI/MiniMax-M2.5",
       "endpoint_path": "MiniMaxAI/MiniMax-M2.5",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.3,
-        "output_per_million_tokens": 1.2
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"

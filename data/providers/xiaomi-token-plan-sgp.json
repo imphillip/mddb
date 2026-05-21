@@ -24,11 +24,27 @@
       "api_model_id": "mimo-v2.5",
       "endpoint_path": "mimo-v2.5",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0,
-        "cache_read_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -47,11 +63,27 @@
       "api_model_id": "mimo-v2-pro",
       "endpoint_path": "mimo-v2-pro",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0,
-        "cache_read_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -70,11 +102,27 @@
       "api_model_id": "mimo-v2-flash",
       "endpoint_path": "mimo-v2-flash",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0,
-        "cache_read_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -93,11 +141,27 @@
       "api_model_id": "mimo-v2.5-pro",
       "endpoint_path": "mimo-v2.5-pro",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0,
-        "cache_read_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -116,11 +180,27 @@
       "api_model_id": "mimo-v2-omni",
       "endpoint_path": "mimo-v2-omni",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0,
-        "output_per_million_tokens": 0,
-        "cache_read_per_million_tokens": 0
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"

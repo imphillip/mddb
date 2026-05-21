@@ -24,10 +24,23 @@
       "api_model_id": "meta/llama-3.2-1b-instruct",
       "endpoint_path": "meta/llama-3.2-1b-instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.01,
-        "output_per_million_tokens": 0.01
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.01,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.01,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -46,10 +59,23 @@
       "api_model_id": "meta/llama-3.2-3b-instruct",
       "endpoint_path": "meta/llama-3.2-3b-instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.02,
-        "output_per_million_tokens": 0.02
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.02,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.02,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -68,10 +94,23 @@
       "api_model_id": "meta/llama-3.1-8b-instruct",
       "endpoint_path": "meta/llama-3.1-8b-instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.025,
-        "output_per_million_tokens": 0.025
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.025,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.025,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"

@@ -353,11 +353,27 @@
       "api_model_id": "deepseek-ai/DeepSeek-V4-Flash",
       "endpoint_path": "deepseek-ai/DeepSeek-V4-Flash",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.112,
-        "output_per_million_tokens": 0.224,
-        "cache_read_per_million_tokens": 0.022
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.112,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.224,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.022,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -376,11 +392,27 @@
       "api_model_id": "deepseek-ai/DeepSeek-V4-Pro",
       "endpoint_path": "deepseek-ai/DeepSeek-V4-Pro",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.392,
-        "output_per_million_tokens": 2.784,
-        "cache_read_per_million_tokens": 0.116
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.392,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.784,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.116,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -399,11 +431,27 @@
       "api_model_id": "moonshotai/Kimi-K2.6",
       "endpoint_path": "moonshotai/Kimi-K2.6",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.855,
-        "output_per_million_tokens": 3.6,
-        "cache_read_per_million_tokens": 0.144
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.855,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.6,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.144,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -422,11 +470,27 @@
       "api_model_id": "anthropic/claude-sonnet-4.6",
       "endpoint_path": "anthropic/claude-sonnet-4.6",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 3,
-        "output_per_million_tokens": 15,
-        "cache_read_per_million_tokens": 0.3
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -445,11 +509,27 @@
       "api_model_id": "anthropic/claude-opus-4.6",
       "endpoint_path": "anthropic/claude-opus-4.6",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 5,
-        "output_per_million_tokens": 25,
-        "cache_read_per_million_tokens": 0.5
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 25,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -468,11 +548,27 @@
       "api_model_id": "anthropic/claude-opus-4.7",
       "endpoint_path": "anthropic/claude-opus-4.7",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 4.5,
-        "output_per_million_tokens": 22.5,
-        "cache_read_per_million_tokens": 0.45
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 4.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 22.5,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.45,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"

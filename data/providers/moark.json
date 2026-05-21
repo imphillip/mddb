@@ -24,10 +24,23 @@
       "api_model_id": "MiniMax-M2.1",
       "endpoint_path": "MiniMax-M2.1",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 2.1,
-        "output_per_million_tokens": 8.4
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 8.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -46,10 +59,23 @@
       "api_model_id": "GLM-4.7",
       "endpoint_path": "GLM-4.7",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 3.5,
-        "output_per_million_tokens": 14
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 14,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"

@@ -381,10 +381,23 @@
       "api_model_id": "morph-v3-large",
       "endpoint_path": "morph-v3-large",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.9,
-        "output_per_million_tokens": 1.9
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.9,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.9,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -403,10 +416,23 @@
       "api_model_id": "auto",
       "endpoint_path": "auto",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.85,
-        "output_per_million_tokens": 1.55
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.85,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.55,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -425,10 +451,23 @@
       "api_model_id": "morph-v3-fast",
       "endpoint_path": "morph-v3-fast",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.8,
-        "output_per_million_tokens": 1.2
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.8,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"

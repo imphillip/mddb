@@ -42,11 +42,27 @@
       "api_model_id": "openai/gpt-5.2",
       "endpoint_path": "openai/gpt-5.2",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.6,
-        "output_per_million_tokens": 13,
-        "cache_read_per_million_tokens": 0.16
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 13,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -65,10 +81,23 @@
       "api_model_id": "openai/gpt-3.5-turbo",
       "endpoint_path": "openai/gpt-3.5-turbo",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.45,
-        "output_per_million_tokens": 1.4
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.45,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -87,10 +116,23 @@
       "api_model_id": "openai/o3-pro",
       "endpoint_path": "openai/o3-pro",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 18,
-        "output_per_million_tokens": 72
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 18,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 72,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -109,11 +151,27 @@
       "api_model_id": "openai/gpt-5.4-nano",
       "endpoint_path": "openai/gpt-5.4-nano",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.18,
-        "output_per_million_tokens": 1.1,
-        "cache_read_per_million_tokens": 0.018
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.18,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.1,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.018,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -132,11 +190,27 @@
       "api_model_id": "openai/gpt-5.1-codex-mini",
       "endpoint_path": "openai/gpt-5.1-codex-mini",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.22,
-        "output_per_million_tokens": 1.8,
-        "cache_read_per_million_tokens": 0.022
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.22,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.8,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.022,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -155,10 +229,23 @@
       "api_model_id": "openai/gpt-5.2-pro",
       "endpoint_path": "openai/gpt-5.2-pro",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 19,
-        "output_per_million_tokens": 150
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 19,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 150,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -177,10 +264,23 @@
       "api_model_id": "openai/gpt-3.5-turbo-instruct",
       "endpoint_path": "openai/gpt-3.5-turbo-instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.4,
-        "output_per_million_tokens": 1.8
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.4,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -199,10 +299,23 @@
       "api_model_id": "openai/gpt-5-codex",
       "endpoint_path": "openai/gpt-5-codex",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.1,
-        "output_per_million_tokens": 9
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 9,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -221,11 +334,27 @@
       "api_model_id": "openai/gpt-4.1",
       "endpoint_path": "openai/gpt-4.1",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.8,
-        "output_per_million_tokens": 7.2,
-        "cache_read_per_million_tokens": 0.45
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.8,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 7.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.45,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -244,10 +373,23 @@
       "api_model_id": "openai/gpt-5-pro",
       "endpoint_path": "openai/gpt-5-pro",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 14,
-        "output_per_million_tokens": 110
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 14,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 110,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -266,11 +408,27 @@
       "api_model_id": "openai/gpt-4.1-mini",
       "endpoint_path": "openai/gpt-4.1-mini",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.36,
-        "output_per_million_tokens": 1.4,
-        "cache_read_per_million_tokens": 0.09
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.36,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.09,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -289,11 +447,27 @@
       "api_model_id": "openai/gpt-5.1",
       "endpoint_path": "openai/gpt-5.1",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.1,
-        "output_per_million_tokens": 9,
-        "cache_read_per_million_tokens": 0.11
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 9,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.11,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -312,11 +486,27 @@
       "api_model_id": "openai/gpt-5-nano",
       "endpoint_path": "openai/gpt-5-nano",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.045,
-        "output_per_million_tokens": 0.36,
-        "cache_read_per_million_tokens": 0.0045
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.045,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.36,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.0045,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -335,11 +525,27 @@
       "api_model_id": "openai/gpt-5.4",
       "endpoint_path": "openai/gpt-5.4",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 2.2,
-        "output_per_million_tokens": 14,
-        "cache_read_per_million_tokens": 0.22
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2.2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 14,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.22,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -358,11 +564,27 @@
       "api_model_id": "openai/gpt-4o-mini",
       "endpoint_path": "openai/gpt-4o-mini",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.14,
-        "output_per_million_tokens": 0.54,
-        "cache_read_per_million_tokens": 0.068
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.14,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.54,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.068,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -381,10 +603,23 @@
       "api_model_id": "openai/o1-pro",
       "endpoint_path": "openai/o1-pro",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 140,
-        "output_per_million_tokens": 540
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 140,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 540,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -403,10 +638,23 @@
       "api_model_id": "openai/gpt-4-turbo",
       "endpoint_path": "openai/gpt-4-turbo",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 9,
-        "output_per_million_tokens": 27
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 9,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 27,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -425,11 +673,27 @@
       "api_model_id": "openai/gpt-5.4-mini",
       "endpoint_path": "openai/gpt-5.4-mini",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.68,
-        "output_per_million_tokens": 4,
-        "cache_read_per_million_tokens": 0.068
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.68,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.068,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -448,10 +712,23 @@
       "api_model_id": "openai/o1",
       "endpoint_path": "openai/o1",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 14,
-        "output_per_million_tokens": 54
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 14,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 54,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -470,10 +747,23 @@
       "api_model_id": "openai/o3-mini-high",
       "endpoint_path": "openai/o3-mini-high",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.99,
-        "output_per_million_tokens": 4
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.99,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -492,11 +782,27 @@
       "api_model_id": "openai/gpt-5.1-codex-max",
       "endpoint_path": "openai/gpt-5.1-codex-max",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.1,
-        "output_per_million_tokens": 9,
-        "cache_read_per_million_tokens": 0.11
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 9,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.11,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -515,10 +821,23 @@
       "api_model_id": "openai/gpt-5.4-pro",
       "endpoint_path": "openai/gpt-5.4-pro",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 27,
-        "output_per_million_tokens": 160
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 27,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 160,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -537,11 +856,27 @@
       "api_model_id": "openai/o4-mini-deep-research",
       "endpoint_path": "openai/o4-mini-deep-research",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.8,
-        "output_per_million_tokens": 7.2,
-        "cache_read_per_million_tokens": 0.45
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.8,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 7.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.45,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -560,11 +895,27 @@
       "api_model_id": "openai/gpt-4.1-nano",
       "endpoint_path": "openai/gpt-4.1-nano",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.09,
-        "output_per_million_tokens": 0.36,
-        "cache_read_per_million_tokens": 0.022
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.09,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.36,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.022,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -583,11 +934,27 @@
       "api_model_id": "openai/o4-mini",
       "endpoint_path": "openai/o4-mini",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.99,
-        "output_per_million_tokens": 4,
-        "cache_read_per_million_tokens": 0.25
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.99,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.25,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -606,11 +973,27 @@
       "api_model_id": "openai/gpt-5.1-codex",
       "endpoint_path": "openai/gpt-5.1-codex",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.1,
-        "output_per_million_tokens": 9,
-        "cache_read_per_million_tokens": 0.11
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 9,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.11,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -629,11 +1012,27 @@
       "api_model_id": "openai/gpt-5.2-codex",
       "endpoint_path": "openai/gpt-5.2-codex",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.6,
-        "output_per_million_tokens": 13,
-        "cache_read_per_million_tokens": 0.16
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 13,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -652,11 +1051,27 @@
       "api_model_id": "openai/gpt-5-chat",
       "endpoint_path": "openai/gpt-5-chat",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.1,
-        "output_per_million_tokens": 9,
-        "cache_read_per_million_tokens": 0.11
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 9,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.11,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -675,11 +1090,27 @@
       "api_model_id": "openai/gpt-5-mini",
       "endpoint_path": "openai/gpt-5-mini",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.22,
-        "output_per_million_tokens": 1.8,
-        "cache_read_per_million_tokens": 0.022
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.22,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.8,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.022,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -698,10 +1129,23 @@
       "api_model_id": "openai/o3-mini",
       "endpoint_path": "openai/o3-mini",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.99,
-        "output_per_million_tokens": 4
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.99,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -720,11 +1164,27 @@
       "api_model_id": "openai/gpt-5.3-codex",
       "endpoint_path": "openai/gpt-5.3-codex",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.6,
-        "output_per_million_tokens": 13,
-        "cache_read_per_million_tokens": 0.16
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 13,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -743,11 +1203,27 @@
       "api_model_id": "openai/o3",
       "endpoint_path": "openai/o3",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.8,
-        "output_per_million_tokens": 7.2,
-        "cache_read_per_million_tokens": 0.45
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.8,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 7.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.45,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -766,11 +1242,27 @@
       "api_model_id": "openai/o3-deep-research",
       "endpoint_path": "openai/o3-deep-research",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 9,
-        "output_per_million_tokens": 36,
-        "cache_read_per_million_tokens": 2.2
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 9,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 36,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 2.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -789,11 +1281,27 @@
       "api_model_id": "openai/gpt-5",
       "endpoint_path": "openai/gpt-5",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.1,
-        "output_per_million_tokens": 9,
-        "cache_read_per_million_tokens": 0.11
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 9,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.11,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -812,12 +1320,31 @@
       "api_model_id": "anthropic/claude-sonnet-4.6",
       "endpoint_path": "anthropic/claude-sonnet-4.6",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 2.6,
-        "output_per_million_tokens": 13,
-        "cache_read_per_million_tokens": 0.26,
-        "cache_write_per_million_tokens": 3.2
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 13,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.26,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 3.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -836,12 +1363,31 @@
       "api_model_id": "anthropic/claude-sonnet-4.5",
       "endpoint_path": "anthropic/claude-sonnet-4.5",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 2.6,
-        "output_per_million_tokens": 13,
-        "cache_read_per_million_tokens": 0.26,
-        "cache_write_per_million_tokens": 3.2
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 13,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.26,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 3.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -860,12 +1406,31 @@
       "api_model_id": "anthropic/claude-opus-4.6",
       "endpoint_path": "anthropic/claude-opus-4.6",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 4.3,
-        "output_per_million_tokens": 21,
-        "cache_read_per_million_tokens": 0.43,
-        "cache_write_per_million_tokens": 5.3
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 4.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 21,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.43,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 5.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -884,12 +1449,31 @@
       "api_model_id": "anthropic/claude-opus-4.1",
       "endpoint_path": "anthropic/claude-opus-4.1",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 13,
-        "output_per_million_tokens": 64,
-        "cache_read_per_million_tokens": 1.3,
-        "cache_write_per_million_tokens": 16
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 13,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 64,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 1.3,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 16,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -908,12 +1492,31 @@
       "api_model_id": "anthropic/claude-opus-4",
       "endpoint_path": "anthropic/claude-opus-4",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 13,
-        "output_per_million_tokens": 64,
-        "cache_read_per_million_tokens": 1.3,
-        "cache_write_per_million_tokens": 16
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 13,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 64,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 1.3,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 16,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -932,12 +1535,31 @@
       "api_model_id": "anthropic/claude-haiku-4.5",
       "endpoint_path": "anthropic/claude-haiku-4.5",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.85,
-        "output_per_million_tokens": 4.3,
-        "cache_read_per_million_tokens": 0.085,
-        "cache_write_per_million_tokens": 1.1
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.85,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4.3,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.085,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 1.1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -956,12 +1578,31 @@
       "api_model_id": "anthropic/claude-opus-4.5",
       "endpoint_path": "anthropic/claude-opus-4.5",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 4.3,
-        "output_per_million_tokens": 21,
-        "cache_read_per_million_tokens": 0.43,
-        "cache_write_per_million_tokens": 5.3
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 4.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 21,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.43,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 5.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -980,12 +1621,31 @@
       "api_model_id": "anthropic/claude-sonnet-4",
       "endpoint_path": "anthropic/claude-sonnet-4",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 2.6,
-        "output_per_million_tokens": 13,
-        "cache_read_per_million_tokens": 0.26,
-        "cache_write_per_million_tokens": 3.2
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 13,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.26,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 3.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -1004,12 +1664,31 @@
       "api_model_id": "anthropic/claude-opus-4.7",
       "endpoint_path": "anthropic/claude-opus-4.7",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 4.3,
-        "output_per_million_tokens": 21,
-        "cache_read_per_million_tokens": 0.43,
-        "cache_write_per_million_tokens": 5.4
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 4.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 21,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.43,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 5.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -1046,11 +1725,27 @@
       "api_model_id": "novita/kimi-k2.5",
       "endpoint_path": "novita/kimi-k2.5",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.6,
-        "output_per_million_tokens": 3,
-        "cache_read_per_million_tokens": 0.1
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -1069,11 +1764,27 @@
       "api_model_id": "novita/deepseek-v3.2",
       "endpoint_path": "novita/deepseek-v3.2",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.27,
-        "output_per_million_tokens": 0.4,
-        "cache_read_per_million_tokens": 0.13
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.27,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.13,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -1164,11 +1875,27 @@
       "api_model_id": "novita/glm-5",
       "endpoint_path": "novita/glm-5",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1,
-        "output_per_million_tokens": 3.2,
-        "cache_read_per_million_tokens": 0.2
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -1187,11 +1914,27 @@
       "api_model_id": "novita/kimi-k2.6",
       "endpoint_path": "novita/kimi-k2.6",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.96,
-        "output_per_million_tokens": 4.04,
-        "cache_read_per_million_tokens": 0.16
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.96,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4.04,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -1228,10 +1971,23 @@
       "api_model_id": "google/gemini-3.1-flash-lite",
       "endpoint_path": "google/gemini-3.1-flash-lite",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.25,
-        "output_per_million_tokens": 1.5
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -1250,11 +2006,27 @@
       "api_model_id": "google/gemini-2.5-pro",
       "endpoint_path": "google/gemini-2.5-pro",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.87,
-        "output_per_million_tokens": 7,
-        "cache_read_per_million_tokens": 0.087
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.87,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 7,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.087,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -1273,10 +2045,23 @@
       "api_model_id": "google/gemini-2.5-flash-lite",
       "endpoint_path": "google/gemini-2.5-flash-lite",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.07,
-        "output_per_million_tokens": 0.28
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.07,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.28,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -1295,11 +2080,27 @@
       "api_model_id": "google/gemini-2.5-flash",
       "endpoint_path": "google/gemini-2.5-flash",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.21,
-        "output_per_million_tokens": 1.8,
-        "cache_read_per_million_tokens": 0.021
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.21,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.8,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.021,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -1318,11 +2119,27 @@
       "api_model_id": "xai/grok-4.20-multi-agent",
       "endpoint_path": "xai/grok-4.20-multi-agent",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 2,
-        "output_per_million_tokens": 6,
-        "cache_read_per_million_tokens": 0.2
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 6,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "normalized"
@@ -1341,10 +2158,23 @@
       "api_model_id": "openai/gpt-5.5-pro",
       "endpoint_path": "openai/gpt-5.5-pro",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 27.2727,
-        "output_per_million_tokens": 163.6364
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 27.2727,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 163.6364,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -1363,11 +2193,27 @@
       "api_model_id": "openai/gpt-5.5",
       "endpoint_path": "openai/gpt-5.5",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 4.5455,
-        "output_per_million_tokens": 27.2727,
-        "cache_read_per_million_tokens": 0.4545
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 4.5455,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 27.2727,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.4545,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -1386,11 +2232,27 @@
       "api_model_id": "google/gemini-3.5-flash",
       "endpoint_path": "google/gemini-3.5-flash",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.5152,
-        "output_per_million_tokens": 9.0909,
-        "cache_read_per_million_tokens": 0.1515
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.5152,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 9.0909,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.1515,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"

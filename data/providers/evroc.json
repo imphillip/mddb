@@ -24,10 +24,23 @@
       "api_model_id": "moonshotai/Kimi-K2.5",
       "endpoint_path": "moonshotai/Kimi-K2.5",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 1.47,
-        "output_per_million_tokens": 5.9
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.47,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 5.9,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -46,10 +59,23 @@
       "api_model_id": "openai/gpt-oss-120b",
       "endpoint_path": "openai/gpt-oss-120b",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.24,
-        "output_per_million_tokens": 0.94
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.24,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.94,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -68,10 +94,23 @@
       "api_model_id": "mistralai/Voxtral-Small-24B-2507",
       "endpoint_path": "mistralai/Voxtral-Small-24B-2507",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.00236,
-        "output_per_million_tokens": 0.00236
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.00236,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.00236,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
@@ -90,10 +129,23 @@
       "api_model_id": "Qwen/Qwen3-VL-30B-A3B-Instruct",
       "endpoint_path": "Qwen/Qwen3-VL-30B-A3B-Instruct",
       "mode": "api",
-      "prices": {
-        "input_per_million_tokens": 0.24,
-        "output_per_million_tokens": 0.94
-      },
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.24,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.94,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
       "other_parameters": {
         "source": "models.dev",
         "match": "exact"
