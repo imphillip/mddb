@@ -1,10 +1,10 @@
 const AUTHOR_PROVIDER_IDS = new Set(['anthropic', 'google', 'openai', 'xai', 'meta-llama', 'mistral', 'moonshot-ai', 'z-ai', 'qwen', 'deepseek', 'baidu', 'bytedance', 'alibaba', 'tencent', 'minimax', 'cohere', 'ai21', 'nousresearch', 'reka', 'liquid', 'poolside', 'morph', 'arcee-ai', 'ibm-granite', 'inception', 'inflection'])
 
 const GROUP_META = {
-  canonical: { label: '严格：models.json', reviewLevel: 'strict' },
-  'author-provider': { label: '严格：自研/作者 Provider', reviewLevel: 'strict' },
-  'endpoint-provider': { label: '常规：渠道/端点 Provider', reviewLevel: 'routine' },
-  'source-snapshot': { label: '常规：原始抓取快照', reviewLevel: 'routine' },
+  canonical: { label: '核心：models.json', reviewLevel: 'strict' },
+  'author-provider': { label: '核心：自研/作者 Provider', reviewLevel: 'strict' },
+  'endpoint-provider': { label: '一般：渠道/端点 Provider', reviewLevel: 'routine' },
+  'source-snapshot': { label: '一般：原始抓取快照', reviewLevel: 'routine' },
   other: { label: '其他', reviewLevel: 'routine' },
 } as const
 

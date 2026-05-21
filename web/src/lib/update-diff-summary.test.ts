@@ -56,10 +56,10 @@ describe('summarizeRegistryDiff', () => {
       reviewLevel: 'routine',
     })
     expect(summary.groups.map((group) => [group.id, group.label, group.reviewLevel, group.files.length])).toEqual([
-      ['canonical', '严格：models.json', 'strict', 1],
-      ['author-provider', '严格：自研/作者 Provider', 'strict', 1],
-      ['endpoint-provider', '常规：渠道/端点 Provider', 'routine', 2],
-      ['source-snapshot', '常规：原始抓取快照', 'routine', 1],
+      ['canonical', '核心：models.json', 'strict', 1],
+      ['author-provider', '核心：自研/作者 Provider', 'strict', 1],
+      ['endpoint-provider', '一般：渠道/端点 Provider', 'routine', 2],
+      ['source-snapshot', '一般：原始抓取快照', 'routine', 1],
     ])
   })
 })
