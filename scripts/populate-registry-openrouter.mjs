@@ -274,6 +274,53 @@ function stableOfferKey(offer) {
   return `${offer.model_id}|${offer.api_model_id}|${offer.endpoint_path}`
 }
 
+function isLatestRow(row) {
+  const id = String(row?.id ?? '').split('/').at(-1) ?? ''
+  return /(?:^|[-_:])latest$/iu.test(id.replace(/:free$/iu, ''))
+}
+
+function explicitSeriesKeys(modelId) {
+  const id = String(modelId ?? '').replace(/:free$/iu, '')
+  const keys = new Set()
+  keys.add(slugify(id
+    .replace(/-(?:v?\d+(?:\.\d+)*(?:-[a-z]+)?|\d{6,8})(?=-|$)/giu, '-')
+    .replace(/-(?:preview|beta|alpha|instruct|chat)(?=$)/giu, '')))
+  const parts = id.split('-')
+  const numericIndex = parts.findIndex((part) => /^v?\d+(?:\.\d+)*$/iu.test(part))
+  if (numericIndex > 0 && numericIndex < parts.length - 1) {
+    keys.add(slugify([...parts.slice(0, numericIndex), ...parts.slice(numericIndex + 1)].join('-')))
+  }
+  return [...keys].filter(Boolean)
+}
+
+function latestSeriesKey(modelId) {
+  return slugify(String(modelId ?? '')
+    .replace(/:free$/iu, '')
+    .replace(/-(?:latest)(?=$)/iu, ''))
+}
+
+function latestAliasTargets(rows) {
+  const explicit = []
+  const latest = []
+  for (const row of rows) {
+    if (!row?.id) continue
+    const author = inferAuthor(row)
+    const modelId = stripProviderNamespace(row.id, author)
+    const entry = { row, author, modelId, release: releaseTimestampSeconds(row) ?? 0 }
+    if (isLatestRow(row)) latest.push(entry)
+    else explicit.push({ ...entry, seriesKeys: explicitSeriesKeys(modelId) })
+  }
+  const targets = new Map()
+  for (const alias of latest) {
+    const series = latestSeriesKey(alias.modelId)
+    const candidates = explicit
+      .filter((candidate) => candidate.author === alias.author && candidate.seriesKeys.includes(series))
+      .sort((a, b) => (b.release - a.release) || a.modelId.localeCompare(b.modelId))
+    if (candidates[0]) targets.set(alias.row.id, candidates[0])
+  }
+  return targets
+}
+
 function preservePreviousOfferOrder(offers, previous) {
   const byKey = new Map(offers.map((offer) => [stableOfferKey(offer), offer]))
   const ordered = []
@@ -309,6 +356,7 @@ mkdirSync(PROVIDERS_DIR, { recursive: true })
 
 const modelMap = new Map()
 const providerMap = new Map()
+const latestTargets = latestAliasTargets(rows)
 
 function ensureProvider(id, name, extra = {}) {
   const identity = normalizeProviderIdentity(id, name)
@@ -343,34 +391,40 @@ ensureProvider('openrouter', 'OpenRouter', {
 for (const row of rows) {
   if (!row?.id) continue
   const author = inferAuthor(row)
-  const modelId = stripProviderNamespace(row.id, author)
-  const displayName = modelDisplayName(row, author, modelId)
-  const modalities = modalitiesFromArchitecture(row)
+  const sourceModelId = stripProviderNamespace(row.id, author)
+  const latestTarget = latestTargets.get(row.id)
+  const modelId = latestTarget?.modelId ?? sourceModelId
+  const displayName = latestTarget ? modelDisplayName(latestTarget.row, author, modelId) : modelDisplayName(row, author, modelId)
+  const modalities = latestTarget ? modalitiesFromArchitecture(latestTarget.row) : modalitiesFromArchitecture(row)
   ensureProvider(author, canonicalProviderName(author, title(author)))
 
   if (!modelMap.has(modelId)) {
+    const modelRow = latestTarget?.row ?? row
     const previousModel = previousModelsById.get(modelId)
-    const previousSource = previousModel?.sources?.find((source) => source.source === 'openrouter' && source.source_id === row.id)
+    const previousSource = previousModel?.sources?.find((source) => source.source === 'openrouter' && source.source_id === modelRow.id)
     modelMap.set(modelId, {
       id: modelId,
       model: displayName,
-      alias: uniqueBy([row.id, row.canonical_slug].filter(Boolean).filter((x) => x !== modelId), String),
+      alias: uniqueBy([modelRow.id, modelRow.canonical_slug, latestTarget ? row.id : undefined, latestTarget ? row.canonical_slug : undefined].filter(Boolean).filter((x) => x !== modelId), String),
       author,
       input_modalities: modalities.input,
       output_modalities: modalities.output,
-      reasoning: Array.isArray(row.supported_parameters) && row.supported_parameters.includes('reasoning'),
-      tool_calling: Array.isArray(row.supported_parameters) && row.supported_parameters.includes('tools'),
-      context_length: typeof row.context_length === 'number' ? row.context_length : undefined,
-      max_output_tokens: typeof row.top_provider?.max_completion_tokens === 'number' ? row.top_provider.max_completion_tokens : undefined,
-      release_timestamp: releaseTimestampSeconds(row),
+      reasoning: Array.isArray(modelRow.supported_parameters) && modelRow.supported_parameters.includes('reasoning'),
+      tool_calling: Array.isArray(modelRow.supported_parameters) && modelRow.supported_parameters.includes('tools'),
+      context_length: typeof modelRow.context_length === 'number' ? modelRow.context_length : undefined,
+      max_output_tokens: typeof modelRow.top_provider?.max_completion_tokens === 'number' ? modelRow.top_provider.max_completion_tokens : undefined,
+      release_timestamp: releaseTimestampSeconds(modelRow),
       other_parameters: {
-        tokenizer: row.architecture?.tokenizer,
-        instruct_type: row.architecture?.instruct_type,
-        supported_parameters: row.supported_parameters,
+        tokenizer: modelRow.architecture?.tokenizer,
+        instruct_type: modelRow.architecture?.instruct_type,
+        supported_parameters: modelRow.supported_parameters,
       },
       last_updated: previousModel?.last_updated ?? OBSERVED_AT,
-      sources: [{ source: 'openrouter', source_id: row.id, url: `https://openrouter.ai/${row.id}`, observed_at: previousSource?.observed_at ?? OBSERVED_AT }],
+      sources: [{ source: 'openrouter', source_id: modelRow.id, url: `https://openrouter.ai/${modelRow.id}`, observed_at: previousSource?.observed_at ?? OBSERVED_AT }],
     })
+  } else if (latestTarget) {
+    const model = modelMap.get(modelId)
+    model.alias = uniqueBy([...model.alias, row.id, row.canonical_slug].filter(Boolean).filter((x) => x !== modelId), String)
   }
 
   const openrouter = ensureProvider('openrouter', 'OpenRouter', {

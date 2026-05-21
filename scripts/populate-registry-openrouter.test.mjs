@@ -162,6 +162,37 @@ describe('OpenRouter registry population provider normalization', () => {
     expect(second.provider('google').offers[0].prices[0].observed_at).toBe(firstGoogle.offers[0].prices[0].observed_at)
   })
 
+  it('treats latest OpenRouter rows as moving aliases for the newest explicit same-series model', () => {
+    const first = populate([
+      row('google/gemini-3.5-flash', [], { created: 1779193800, name: 'Google: Gemini 3.5 Flash' }),
+      row('google/gemini-flash-latest', [], { created: 1779193900, name: 'Google: Gemini Flash Latest' }),
+    ])
+
+    expect(first.models.map((model) => model.id)).toEqual(['gemini-3.5-flash'])
+    expect(first.models[0].alias).toContain('google/gemini-flash-latest')
+
+    const second = populate([
+      row('google/gemini-3.5-flash', [], { created: 1779193800, name: 'Google: Gemini 3.5 Flash' }),
+      row('google/gemini-3.6-flash', [], { created: 1782000000, name: 'Google: Gemini 3.6 Flash' }),
+      row('google/gemini-flash-latest', [], { created: 1782000100, name: 'Google: Gemini Flash Latest' }),
+    ], {
+      seed: {
+        modelsJson: first.modelsJson,
+        providers: {
+          openrouter: first.provider('openrouter'),
+          google: first.provider('google'),
+        },
+      },
+    })
+
+    const oldModel = second.models.find((model) => model.id === 'gemini-3.5-flash')
+    const newModel = second.models.find((model) => model.id === 'gemini-3.6-flash')
+    expect(second.models.map((model) => model.id)).toEqual(['gemini-3.5-flash', 'gemini-3.6-flash'])
+    expect(oldModel?.alias ?? []).not.toContain('google/gemini-flash-latest')
+    expect(newModel?.alias ?? []).toContain('google/gemini-flash-latest')
+    expect(second.provider('openrouter').offers.map((offer) => offer.api_model_id)).toContain('google/gemini-flash-latest')
+  })
+
   it('keeps existing provider offer order and appends new offers so refresh diffs stay reviewable', () => {
     const oldRowA = row('aion-labs/aion-1.0', ['AionLabs'])
     const oldRowB = row('aion-labs/aion-1.0-mini', ['AionLabs'])
