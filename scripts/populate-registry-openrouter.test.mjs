@@ -1,4 +1,4 @@
-import { mkdtempSync, readFileSync } from 'node:fs'
+import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { execFileSync } from 'node:child_process'
@@ -32,17 +32,26 @@ function row(id, endpointProviderNames = [], overrides = {}) {
   }
 }
 
-function populate(rows) {
+function populate(rows, options = {}) {
   const dir = mkdtempSync(join(tmpdir(), 'mddb-openrouter-populate-'))
   const rawPath = join(dir, 'openrouter.raw.json')
   const outDir = join(dir, 'data')
   execFileSync(process.execPath, ['-e', `require('node:fs').writeFileSync(${JSON.stringify(rawPath)}, ${JSON.stringify(JSON.stringify({ data: rows }))})`])
+  if (options.seed) {
+    mkdirSync(outDir, { recursive: true })
+    mkdirSync(join(outDir, 'providers'), { recursive: true })
+    writeFileSync(join(outDir, 'models.json'), `${JSON.stringify(options.seed.modelsJson, null, 2)}\n`)
+    for (const [providerId, providerJson] of Object.entries(options.seed.providers ?? {})) {
+      writeFileSync(join(outDir, 'providers', `${providerId}.json`), `${JSON.stringify(providerJson, null, 2)}\n`)
+    }
+  }
   execFileSync(process.execPath, ['scripts/populate-registry-openrouter.mjs'], {
     cwd: ROOT,
     env: { ...process.env, OPENROUTER_RAW_PATH: rawPath, MDDB_REGISTRY_DIR: outDir },
     stdio: 'pipe',
   })
   return {
+    modelsJson: JSON.parse(readFileSync(join(outDir, 'models.json'), 'utf8')),
     models: JSON.parse(readFileSync(join(outDir, 'models.json'), 'utf8')).models,
     provider(id) {
       return JSON.parse(readFileSync(join(outDir, 'providers', `${id}.json`), 'utf8'))
@@ -120,5 +129,60 @@ describe('OpenRouter registry population provider normalization', () => {
       ['hermes-4-70b', 'nousresearch', 'Hermes 4 70B'],
       ['cobuddy', 'baidu', 'CoBuddy (free)'],
     ]))
+  })
+
+  it('preserves existing observation timestamps for unchanged models and offers', () => {
+    const sourceRow = row('google/gemini-3.5-flash-preview', ['Google AI Studio'], {
+      name: 'Google: Gemini 3.5 Flash Preview',
+      created: 1780000000,
+    })
+    const first = populate([sourceRow])
+    const firstModel = first.modelsJson.models[0]
+    const firstOpenRouter = first.provider('openrouter')
+    const firstGoogle = first.provider('google')
+
+    const second = populate([sourceRow], {
+      seed: {
+        modelsJson: first.modelsJson,
+        providers: {
+          openrouter: firstOpenRouter,
+          google: firstGoogle,
+        },
+      },
+    })
+
+    expect(second.modelsJson.last_updated).not.toBe(first.modelsJson.last_updated)
+    expect(second.models[0].last_updated).toBe(firstModel.last_updated)
+    expect(second.models[0].sources[0].observed_at).toBe(firstModel.sources[0].observed_at)
+    expect(second.provider('openrouter').last_updated).toBe(firstOpenRouter.last_updated)
+    expect(second.provider('openrouter').offers[0].sources[0].observed_at).toBe(firstOpenRouter.offers[0].sources[0].observed_at)
+    expect(second.provider('openrouter').offers[0].prices[0].observed_at).toBe(firstOpenRouter.offers[0].prices[0].observed_at)
+    expect(second.provider('google').last_updated).toBe(firstGoogle.last_updated)
+    expect(second.provider('google').offers[0].sources[0].observed_at).toBe(firstGoogle.offers[0].sources[0].observed_at)
+    expect(second.provider('google').offers[0].prices[0].observed_at).toBe(firstGoogle.offers[0].prices[0].observed_at)
+  })
+
+  it('keeps existing provider offer order and appends new offers so refresh diffs stay reviewable', () => {
+    const oldRowA = row('aion-labs/aion-1.0', ['AionLabs'])
+    const oldRowB = row('aion-labs/aion-1.0-mini', ['AionLabs'])
+    const first = populate([oldRowA, oldRowB])
+    const firstAion = first.provider('aion-labs')
+    firstAion.offers = [firstAion.offers[1], firstAion.offers[0]]
+
+    const second = populate([oldRowB, row('aion-labs/aion-2.0', ['AionLabs']), oldRowA], {
+      seed: {
+        modelsJson: first.modelsJson,
+        providers: {
+          'aion-labs': firstAion,
+          openrouter: first.provider('openrouter'),
+        },
+      },
+    })
+
+    expect(second.provider('aion-labs').offers.map((offer) => offer.model_id)).toEqual([
+      'aion-1.0',
+      'aion-1.0-mini',
+      'aion-2.0',
+    ])
   })
 })

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 
 const ROOT = process.cwd()
@@ -10,6 +10,11 @@ const OBSERVED_AT = new Date().toISOString()
 
 function readJson(path) {
   return JSON.parse(readFileSync(path, 'utf8'))
+}
+
+function readJsonIfExists(path, fallback) {
+  if (!existsSync(path)) return fallback
+  return readJson(path)
 }
 
 function writeJson(path, value) {
@@ -201,7 +206,19 @@ function per1m(value) {
   return Number.isFinite(n) && n > 0 ? Number((n * 1_000_000).toPrecision(10)) : null
 }
 
-function priceSetFromPricing(pricing, source = 'openrouter') {
+function restoreObservedAt(value, previous) {
+  if (Array.isArray(value)) return value.map((item, index) => restoreObservedAt(item, previous?.[index]))
+  if (!value || typeof value !== 'object') return value
+  const out = {}
+  for (const [key, entry] of Object.entries(value)) {
+    out[key] = key === 'observed_at' && previous?.[key]
+      ? previous[key]
+      : restoreObservedAt(entry, previous?.[key])
+  }
+  return out
+}
+
+function priceSetFromPricing(pricing, source = 'openrouter', previousPrice) {
   if (!pricing || typeof pricing !== 'object') return []
   const prices = {}
   const input = per1m(pricing.prompt)
@@ -217,7 +234,14 @@ function priceSetFromPricing(pricing, source = 'openrouter') {
   if (Number.isFinite(request) && request > 0) prices.request = { amount: request, unit: 'per_request' }
   if (Number.isFinite(webSearch) && webSearch > 0) prices.web_search = { amount: webSearch, unit: 'per_request' }
   if (!Object.keys(prices).length) return []
-  return [{ conditions: {}, prices, currency: 'USD', source, observed_at: OBSERVED_AT, raw_pricing: pricing }]
+  const raw_pricing = restoreObservedAt(pricing, previousPrice?.raw_pricing)
+  const observed_at = previousPrice
+    && previousPrice.source === source
+    && JSON.stringify(previousPrice.prices ?? {}) === JSON.stringify(prices)
+    && JSON.stringify(previousPrice.raw_pricing ?? {}) === JSON.stringify(raw_pricing)
+    ? previousPrice.observed_at
+    : OBSERVED_AT
+  return [{ conditions: {}, prices, currency: 'USD', source, observed_at, raw_pricing }]
 }
 
 function uniqueBy(items, keyFn) {
@@ -232,9 +256,53 @@ function uniqueBy(items, keyFn) {
   return out
 }
 
+function withoutTemporal(value) {
+  if (Array.isArray(value)) return value.map(withoutTemporal)
+  if (!value || typeof value !== 'object') return value
+  return Object.fromEntries(
+    Object.entries(value)
+      .filter(([key]) => key !== 'last_updated' && key !== 'observed_at')
+      .map(([key, entry]) => [key, withoutTemporal(entry)]),
+  )
+}
+
+function sameNonTemporal(a, b) {
+  return JSON.stringify(withoutTemporal(a)) === JSON.stringify(withoutTemporal(b))
+}
+
+function stableOfferKey(offer) {
+  return `${offer.model_id}|${offer.api_model_id}|${offer.endpoint_path}`
+}
+
+function preservePreviousOfferOrder(offers, previous) {
+  const byKey = new Map(offers.map((offer) => [stableOfferKey(offer), offer]))
+  const ordered = []
+  for (const oldOffer of previous?.offers ?? []) {
+    const key = stableOfferKey(oldOffer)
+    const current = byKey.get(key)
+    if (!current) continue
+    ordered.push(current)
+    byKey.delete(key)
+  }
+  const additions = [...byKey.values()].sort((a, b) => stableOfferKey(a).localeCompare(stableOfferKey(b)))
+  return [...ordered, ...additions]
+}
+
 if (!existsSync(RAW_PATH)) throw new Error(`OpenRouter raw not found: ${RAW_PATH}`)
 const raw = readJson(RAW_PATH)
 const rows = Array.isArray(raw.data) ? raw.data : []
+const previousModelsJson = readJsonIfExists(join(OUT_DIR, 'models.json'), { models: [] })
+const previousModelsById = new Map((previousModelsJson.models ?? []).map((model) => [model.id, model]))
+const previousProviders = new Map()
+if (existsSync(PROVIDERS_DIR)) {
+  for (const fileName of readdirSync(PROVIDERS_DIR)) {
+    if (!fileName.endsWith('.json')) continue
+    const provider = readJson(join(PROVIDERS_DIR, fileName))
+    previousProviders.set(provider.id ?? fileName.replace(/\.json$/u, ''), provider)
+  }
+}
+const previousProvider = (id) => previousProviders.get(id) ?? null
+const previousOffer = (providerId, modelId, apiModelId, endpointPath) => previousProvider(providerId)?.offers?.find((offer) => stableOfferKey(offer) === `${modelId}|${apiModelId}|${endpointPath}`)
 mkdirSync(OUT_DIR, { recursive: true })
 rmSync(PROVIDERS_DIR, { recursive: true, force: true })
 mkdirSync(PROVIDERS_DIR, { recursive: true })
@@ -281,6 +349,8 @@ for (const row of rows) {
   ensureProvider(author, canonicalProviderName(author, title(author)))
 
   if (!modelMap.has(modelId)) {
+    const previousModel = previousModelsById.get(modelId)
+    const previousSource = previousModel?.sources?.find((source) => source.source === 'openrouter' && source.source_id === row.id)
     modelMap.set(modelId, {
       id: modelId,
       model: displayName,
@@ -298,8 +368,8 @@ for (const row of rows) {
         instruct_type: row.architecture?.instruct_type,
         supported_parameters: row.supported_parameters,
       },
-      last_updated: OBSERVED_AT,
-      sources: [{ source: 'openrouter', source_id: row.id, url: `https://openrouter.ai/${row.id}`, observed_at: OBSERVED_AT }],
+      last_updated: previousModel?.last_updated ?? OBSERVED_AT,
+      sources: [{ source: 'openrouter', source_id: row.id, url: `https://openrouter.ai/${row.id}`, observed_at: previousSource?.observed_at ?? OBSERVED_AT }],
     })
   }
 
@@ -309,14 +379,16 @@ for (const row of rows) {
   })
   const mode = modeFor(row)
   const endpoints = Array.isArray(row.openrouter_endpoint_details?.endpoints) ? row.openrouter_endpoint_details.endpoints : []
+  const openrouterOfferPath = endpointPathForMode(mode)
+  const previousOpenRouterOffer = previousOffer('openrouter', modelId, row.id, openrouterOfferPath)
   const providerNames = uniqueBy(endpoints.map((e) => e.provider_name ?? e.provider?.name).filter(Boolean).map((name) => normalizeProviderIdentity(name).name), (x) => slugify(x))
   openrouter.offers.push({
     model_id: modelId,
     model: displayName,
-    endpoint_path: endpointPathForMode(mode),
+    endpoint_path: openrouterOfferPath,
     api_model_id: row.id,
     mode,
-    prices: priceSetFromPricing(row.pricing),
+    prices: priceSetFromPricing(row.pricing, 'openrouter', previousOpenRouterOffer?.prices?.[0]),
     other_parameters: {
       source_id: row.id,
       canonical_slug: row.canonical_slug,
@@ -325,7 +397,7 @@ for (const row of rows) {
       context_length: row.context_length,
       max_completion_tokens: row.top_provider?.max_completion_tokens,
     },
-    sources: [{ source: 'openrouter', source_id: row.id, url: `https://openrouter.ai/${row.id}`, observed_at: OBSERVED_AT }],
+    sources: [{ source: 'openrouter', source_id: row.id, url: `https://openrouter.ai/${row.id}`, observed_at: previousOpenRouterOffer?.sources?.find((source) => source.source === 'openrouter' && source.source_id === row.id)?.observed_at ?? OBSERVED_AT }],
   })
 
   for (const endpoint of endpoints) {
@@ -334,13 +406,16 @@ for (const row of rows) {
     const endpointProviderId = canonicalProviderId(endpointProviderName)
     const provider = ensureProvider(endpointProviderId, endpointProviderName)
     const endpointMode = mode
+    const endpointPath = endpointPathForMode(endpointMode)
+    const endpointApiModelId = endpoint.tag ?? row.id
+    const previousEndpointOffer = previousOffer(endpointProviderId, modelId, endpointApiModelId, endpointPath)
     provider.offers.push({
       model_id: modelId,
       model: displayName,
-      endpoint_path: endpointPathForMode(endpointMode),
-      api_model_id: endpoint.tag ?? row.id,
+      endpoint_path: endpointPath,
+      api_model_id: endpointApiModelId,
       mode: endpointMode,
-      prices: priceSetFromPricing(endpoint.pricing, 'openrouter-endpoint'),
+      prices: priceSetFromPricing(endpoint.pricing, 'openrouter-endpoint', previousEndpointOffer?.prices?.[0]),
       other_parameters: {
         source_model_id: row.id,
         endpoint_tag: endpoint.tag,
@@ -352,7 +427,7 @@ for (const row of rows) {
         latency: endpoint.latency,
         throughput: endpoint.throughput,
       },
-      sources: [{ source: 'openrouter:endpoints', source_id: `${row.id}#${endpoint.name ?? endpoint.tag ?? endpointProviderName}`, url: row.links?.endpoints, observed_at: OBSERVED_AT }],
+      sources: [{ source: 'openrouter:endpoints', source_id: `${row.id}#${endpoint.name ?? endpoint.tag ?? endpointProviderName}`, url: row.links?.endpoints, observed_at: previousEndpointOffer?.sources?.find((source) => source.source === 'openrouter:endpoints' && source.source_id === `${row.id}#${endpoint.name ?? endpoint.tag ?? endpointProviderName}`)?.observed_at ?? OBSERVED_AT }],
     })
   }
 }
@@ -372,9 +447,13 @@ writeJson(join(OUT_DIR, 'models.json'), {
 })
 
 for (const provider of [...providerMap.values()].sort((a, b) => a.id.localeCompare(b.id))) {
-  provider.offers = uniqueBy(provider.offers, (offer) => `${offer.model_id}|${offer.api_model_id}|${offer.endpoint_path}`).sort((a, b) => a.model_id.localeCompare(b.model_id))
+  const previous = previousProvider(provider.id)
+  provider.offers = preservePreviousOfferOrder(uniqueBy(provider.offers, stableOfferKey), previous)
   for (const key of ['icon', 'domain', 'base_url']) {
     if (provider[key] === undefined) delete provider[key]
+  }
+  if (previous && sameNonTemporal(previous, provider)) {
+    provider.last_updated = previous.last_updated
   }
   writeJson(join(PROVIDERS_DIR, `${provider.id}.json`), provider)
 }
