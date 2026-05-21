@@ -117,7 +117,7 @@
           "tool_choice",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -1053,7 +1053,7 @@
           "structured_outputs",
           "logit_bias"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -2097,7 +2097,7 @@
           "tool_choice",
           "logit_bias"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -2399,7 +2399,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -2640,7 +2640,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -3376,7 +3376,7 @@
           "logit_bias",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -3499,7 +3499,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -3810,7 +3810,7 @@
           "tool_choice",
           "structured_outputs"
         ],
-        "status": -5
+        "status": 0
       },
       "sources": [
         {
@@ -3957,7 +3957,7 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.1,
+              "amount": 0.09,
               "unit": "per_1m_tokens"
             },
             "output": {
@@ -3967,9 +3967,9 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
-            "prompt": "0.0000001",
+            "prompt": "0.00000009",
             "completion": "0.0000003",
             "input_cache_read": "0.00000002",
             "discount": 0
@@ -4011,6 +4011,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T22:11:55.841Z",
+  "last_updated": "2026-05-21T19:00:07.736Z",
   "sources": []
 }

@@ -70,7 +70,7 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.35,
+              "amount": 0.22,
               "unit": "per_1m_tokens"
             },
             "output": {
@@ -80,9 +80,9 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
-            "prompt": "0.00000035",
+            "prompt": "0.00000022",
             "completion": "0.00000059",
             "discount": 0
           }
@@ -155,7 +155,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -5
+        "status": 0
       },
       "sources": [
         {
@@ -198,7 +198,7 @@
         "source_model_id": "openai/gpt-oss-120b:free",
         "endpoint_tag": "sambanova/dedicated",
         "context_length": 131072,
-        "max_output_tokens": 131072,
+        "max_output_tokens": 16384,
         "supported_parameters": [
           "reasoning",
           "include_reasoning",
@@ -430,6 +430,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T22:11:55.841Z",
+  "last_updated": "2026-05-21T19:00:07.736Z",
   "sources": []
 }

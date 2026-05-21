@@ -1343,7 +1343,7 @@
           "tool_choice",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -1937,7 +1937,7 @@
           "tool_choice",
           "stop"
         ],
-        "status": 0
+        "status": -5
       },
       "sources": [
         {
@@ -2539,7 +2539,7 @@
           "tool_choice",
           "stop"
         ],
-        "status": -2
+        "status": -5
       },
       "sources": [
         {
@@ -2843,7 +2843,7 @@
           "tool_choice",
           "stop"
         ],
-        "status": -2
+        "status": -5
       },
       "sources": [
         {
@@ -3147,7 +3147,7 @@
           "tool_choice",
           "stop"
         ],
-        "status": -2
+        "status": -5
       },
       "sources": [
         {
@@ -4177,7 +4177,7 @@
           "stop",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -4314,7 +4314,7 @@
           "tool_choice",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -5081,9 +5081,161 @@
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
+    },
+    {
+      "model_id": "gemini-3.5-flash",
+      "model": "Gemini 3.5 Flash",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-ai-studio",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 9,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 9,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 0.0000015,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-21T19:00:07.736Z",
+          "raw_pricing": {
+            "prompt": "0.0000015",
+            "completion": "0.000009",
+            "image": "0.0000015",
+            "audio": "0.000003",
+            "input_audio_cache": "0.0000003",
+            "web_search": "0.014",
+            "internal_reasoning": "0.000009",
+            "input_cache_read": "0.00000015",
+            "input_cache_write": "0.00000008333333333333334",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-3.5-flash",
+        "endpoint_tag": "google-ai-studio",
+        "context_length": 1048576,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "response_format",
+          "stop",
+          "structured_outputs",
+          "tool_choice",
+          "tools"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-3.5-flash#Google AI Studio | google/gemini-3.5-flash-20260519",
+          "observed_at": "2026-05-21T19:00:07.736Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.5-flash",
+      "model": "Gemini 3.5 Flash",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google-vertex/global",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 9,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 9,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 0.0000015,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-21T19:00:07.736Z",
+          "raw_pricing": {
+            "prompt": "0.0000015",
+            "completion": "0.000009",
+            "image": "0.0000015",
+            "audio": "0.000003",
+            "input_audio_cache": "0.0000003",
+            "web_search": "0.014",
+            "internal_reasoning": "0.000009",
+            "input_cache_read": "0.00000015",
+            "input_cache_write": "0.00000008333333333333334",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemini-3.5-flash",
+        "endpoint_tag": "google-vertex/global",
+        "context_length": 1048576,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "response_format",
+          "stop",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemini-3.5-flash#Google | google/gemini-3.5-flash-20260519",
+          "observed_at": "2026-05-21T19:00:07.736Z"
+        }
+      ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T22:11:55.841Z",
+  "last_updated": "2026-05-21T19:00:07.736Z",
   "sources": []
 }

@@ -49,7 +49,7 @@
           "response_format",
           "repetition_penalty"
         ],
-        "status": -2
+        "status": -5
       },
       "sources": [
         {
@@ -290,63 +290,6 @@
       ]
     },
     {
-      "model_id": "llama-3.1-8b-instruct",
-      "model": "Llama 3.1 8B Instruct",
-      "endpoint_path": "/chat/completions",
-      "api_model_id": "nebius/fp8",
-      "mode": "chat",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.02,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.06,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
-          "raw_pricing": {
-            "prompt": "0.00000002",
-            "completion": "0.00000006",
-            "discount": 0
-          }
-        }
-      ],
-      "other_parameters": {
-        "source_model_id": "meta-llama/llama-3.1-8b-instruct",
-        "endpoint_tag": "nebius/fp8",
-        "context_length": 131072,
-        "max_output_tokens": null,
-        "supported_parameters": [
-          "max_tokens",
-          "temperature",
-          "top_p",
-          "frequency_penalty",
-          "presence_penalty",
-          "top_k",
-          "repetition_penalty",
-          "tools",
-          "tool_choice",
-          "response_format",
-          "structured_outputs"
-        ],
-        "status": -2
-      },
-      "sources": [
-        {
-          "source": "openrouter:endpoints",
-          "source_id": "meta-llama/llama-3.1-8b-instruct#Nebius | meta-llama/llama-3.1-8b-instruct",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    },
-    {
       "model_id": "llama-3.3-70b-instruct",
       "model": "Llama 3.3 70B Instruct (free)",
       "endpoint_path": "/chat/completions",
@@ -391,7 +334,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -737,9 +680,67 @@
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
+    },
+    {
+      "model_id": "kimi-k2.6",
+      "model": "Kimi K2.6",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "nebius/int4",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.95,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-21T19:00:07.736Z",
+          "raw_pricing": {
+            "prompt": "0.00000095",
+            "completion": "0.000004",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "moonshotai/kimi-k2.6",
+        "endpoint_tag": "nebius/int4",
+        "context_length": 262144,
+        "max_output_tokens": null,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "frequency_penalty",
+          "presence_penalty",
+          "top_k",
+          "repetition_penalty",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "moonshotai/kimi-k2.6#Nebius | moonshotai/kimi-k2.6-20260420",
+          "observed_at": "2026-05-21T19:00:07.736Z"
+        }
+      ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T22:11:55.841Z",
+  "last_updated": "2026-05-21T19:00:07.736Z",
   "sources": []
 }

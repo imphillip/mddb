@@ -50,7 +50,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -61,8 +61,8 @@
       ]
     },
     {
-      "model_id": "kimi-k2.6",
-      "model": "Kimi K2.6",
+      "model_id": "gemma-4-31b-it",
+      "model": "Gemma 4 31B (free)",
       "endpoint_path": "/images/generations",
       "api_model_id": "ambient",
       "mode": "image",
@@ -71,37 +71,173 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.95,
+              "amount": 0.13,
               "unit": "per_1m_tokens"
             },
             "output": {
-              "amount": 4,
+              "amount": 0.4,
               "unit": "per_1m_tokens"
             }
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
-            "prompt": "0.00000095",
-            "completion": "0.000004",
-            "input_cache_read": "0.0000002",
+            "prompt": "0.00000013",
+            "completion": "0.0000004",
+            "input_cache_read": "0.000000065",
             "discount": 0
           }
         }
       ],
       "other_parameters": {
-        "source_model_id": "moonshotai/kimi-k2.6",
+        "source_model_id": "google/gemma-4-31b-it:free",
         "endpoint_tag": "ambient",
         "context_length": 262144,
-        "max_output_tokens": 262144,
+        "max_output_tokens": 16384,
         "supported_parameters": [
           "reasoning",
           "include_reasoning",
           "temperature",
           "max_tokens",
-          "top_p",
           "frequency_penalty",
+          "logit_bias",
+          "min_p",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "stop",
+          "top_k",
+          "top_p",
+          "tools",
+          "tool_choice",
+          "response_format",
+          "structured_outputs",
+          "logprobs",
+          "top_logprobs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemma-4-31b-it:free#Ambient | google/gemma-4-31b-it-20260402",
+          "observed_at": "2026-05-21T19:00:07.736Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-120b",
+      "model": "gpt-oss-120b (free)",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "ambient",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-21T19:00:07.736Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000006",
+            "input_cache_read": "0.000000075",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "openai/gpt-oss-120b:free",
+        "endpoint_tag": "ambient",
+        "context_length": 131072,
+        "max_output_tokens": 131072,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "max_tokens",
+          "frequency_penalty",
+          "logit_bias",
+          "min_p",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "stop",
+          "top_k",
+          "top_p",
+          "tools",
+          "tool_choice",
+          "response_format",
+          "structured_outputs",
+          "logprobs",
+          "top_logprobs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "openai/gpt-oss-120b:free#Ambient | openai/gpt-oss-120b",
+          "observed_at": "2026-05-21T19:00:07.736Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-coder-30b-a3b-instruct",
+      "model": "Qwen3 Coder 30B A3B Instruct",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "ambient",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.07,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.27,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-21T19:00:07.736Z",
+          "raw_pricing": {
+            "prompt": "0.00000007",
+            "completion": "0.00000027",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-coder-30b-a3b-instruct",
+        "endpoint_tag": "ambient",
+        "context_length": 160000,
+        "max_output_tokens": 32768,
+        "supported_parameters": [
+          "temperature",
+          "max_tokens",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "stop",
+          "top_k",
+          "top_p",
+          "tools",
+          "tool_choice",
           "response_format",
           "structured_outputs"
         ],
@@ -110,13 +246,337 @@
       "sources": [
         {
           "source": "openrouter:endpoints",
-          "source_id": "moonshotai/kimi-k2.6#Ambient | moonshotai/kimi-k2.6-20260420",
-          "observed_at": "2026-05-19T22:11:55.841Z"
+          "source_id": "qwen/qwen3-coder-30b-a3b-instruct#Ambient | qwen/qwen3-coder-30b-a3b-instruct",
+          "observed_at": "2026-05-21T19:00:07.736Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-122b-a10b",
+      "model": "Qwen3.5-122B-A10B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "ambient",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-21T19:00:07.736Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000024",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-122b-a10b",
+        "endpoint_tag": "ambient",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "max_tokens",
+          "frequency_penalty",
+          "logit_bias",
+          "min_p",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "stop",
+          "top_k",
+          "top_p",
+          "response_format",
+          "structured_outputs",
+          "logprobs",
+          "top_logprobs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-122b-a10b#Ambient | qwen/qwen3.5-122b-a10b-20260224",
+          "observed_at": "2026-05-21T19:00:07.736Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-35b-a3b",
+      "model": "Qwen3.5-35B-A3B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "ambient",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.14,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-21T19:00:07.736Z",
+          "raw_pricing": {
+            "prompt": "0.00000014",
+            "completion": "0.000001",
+            "input_cache_read": "0.00000005",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-35b-a3b",
+        "endpoint_tag": "ambient",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "max_tokens",
+          "frequency_penalty",
+          "logit_bias",
+          "min_p",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "stop",
+          "top_k",
+          "top_p",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice",
+          "logprobs",
+          "top_logprobs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-35b-a3b#Ambient | qwen/qwen3.5-35b-a3b-20260224",
+          "observed_at": "2026-05-21T19:00:07.736Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.6-27b",
+      "model": "Qwen3.6 27B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "ambient",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.32,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-21T19:00:07.736Z",
+          "raw_pricing": {
+            "prompt": "0.00000032",
+            "completion": "0.0000032",
+            "input_cache_read": "0.00000016",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.6-27b",
+        "endpoint_tag": "ambient",
+        "context_length": 262144,
+        "max_output_tokens": 81920,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "max_tokens",
+          "frequency_penalty",
+          "logit_bias",
+          "min_p",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "stop",
+          "top_k",
+          "top_p",
+          "tools",
+          "tool_choice",
+          "response_format",
+          "structured_outputs",
+          "logprobs",
+          "top_logprobs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.6-27b#Ambient | qwen/qwen3.6-27b-20260422",
+          "observed_at": "2026-05-21T19:00:07.736Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.6-35b-a3b",
+      "model": "Qwen3.6 35B A3B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "ambient",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-21T19:00:07.736Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.000001",
+            "input_cache_read": "0.00000005",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.6-35b-a3b",
+        "endpoint_tag": "ambient",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "max_tokens",
+          "frequency_penalty",
+          "logit_bias",
+          "min_p",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "stop",
+          "top_k",
+          "top_p",
+          "tools",
+          "tool_choice",
+          "response_format",
+          "structured_outputs",
+          "logprobs",
+          "top_logprobs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.6-35b-a3b#Ambient | qwen/qwen3.6-35b-a3b-20260415",
+          "observed_at": "2026-05-21T19:00:07.736Z"
+        }
+      ]
+    },
+    {
+      "model_id": "step-3.5-flash",
+      "model": "Step 3.5 Flash",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "ambient/fp8",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-21T19:00:07.736Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000003",
+            "input_cache_read": "0.00000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "stepfun/step-3.5-flash",
+        "endpoint_tag": "ambient/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "max_tokens",
+          "frequency_penalty",
+          "logit_bias",
+          "min_p",
+          "presence_penalty",
+          "repetition_penalty",
+          "seed",
+          "stop",
+          "top_k",
+          "top_p",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "stepfun/step-3.5-flash#Ambient | stepfun/step-3.5-flash",
+          "observed_at": "2026-05-21T19:00:07.736Z"
         }
       ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T22:11:55.841Z",
+  "last_updated": "2026-05-21T19:00:07.736Z",
   "sources": []
 }

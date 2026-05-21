@@ -2299,8 +2299,8 @@
           "DeepSeek",
           "GMICloud",
           "Baidu",
-          "SiliconFlow",
           "Novita",
+          "SiliconFlow",
           "Alibaba",
           "AtlasCloud",
           "Venice",
@@ -2802,7 +2802,7 @@
           "Google"
         ],
         "endpoint_count": 2,
-        "context_length": 1048576,
+        "context_length": 1000000,
         "max_completion_tokens": 8192
       },
       "sources": [
@@ -3785,19 +3785,19 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.5,
+              "amount": 1.5,
               "unit": "per_1m_tokens"
             },
             "output": {
-              "amount": 3,
+              "amount": 9,
               "unit": "per_1m_tokens"
             },
             "internal_reasoning": {
-              "amount": 3,
+              "amount": 9,
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 5e-7,
+              "amount": 0.0000015,
               "unit": "per_image"
             },
             "web_search": {
@@ -3807,15 +3807,15 @@
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
-            "prompt": "0.0000005",
-            "completion": "0.000003",
-            "image": "0.0000005",
-            "audio": "0.000001",
+            "prompt": "0.0000015",
+            "completion": "0.000009",
+            "image": "0.0000015",
+            "audio": "0.000003",
             "web_search": "0.014",
-            "internal_reasoning": "0.000003",
-            "input_cache_read": "0.00000005",
+            "internal_reasoning": "0.000009",
+            "input_cache_read": "0.00000015",
             "input_cache_write": "0.00000008333333333333334"
           }
         }
@@ -3980,8 +3980,8 @@
         "canonical_slug": "google/gemma-3-12b-it",
         "endpoint_providers": [
           "DeepInfra",
-          "Cloudflare",
-          "SambaNova"
+          "SambaNova",
+          "Cloudflare"
         ],
         "endpoint_count": 3,
         "context_length": 131072,
@@ -4245,13 +4245,14 @@
         "endpoint_providers": [
           "DeepInfra",
           "Chutes",
+          "Ambient",
           "SiliconFlow",
           "Novita",
           "Parasail",
           "Venice",
           "Together"
         ],
-        "endpoint_count": 8,
+        "endpoint_count": 9,
         "context_length": 262144,
         "max_completion_tokens": 32768
       },
@@ -4298,13 +4299,14 @@
         "endpoint_providers": [
           "DeepInfra",
           "Chutes",
+          "Ambient",
           "SiliconFlow",
           "Novita",
           "Parasail",
           "Venice",
           "Together"
         ],
-        "endpoint_count": 8,
+        "endpoint_count": 9,
         "context_length": 262144,
         "max_completion_tokens": 16384
       },
@@ -4733,8 +4735,8 @@
         "endpoint_providers": [
           "DeepInfra",
           "Cloudflare",
-          "Novita",
           "Z.AI",
+          "Novita",
           "Phala",
           "Venice"
         ],
@@ -4897,15 +4899,15 @@
         "endpoint_providers": [
           "GMICloud",
           "Baidu",
-          "Chutes",
           "DeepInfra",
+          "Chutes",
           "Phala",
           "StreamLake",
           "Io Net",
           "Novita",
           "AtlasCloud",
-          "Together",
           "Parasail",
+          "Together",
           "Fireworks",
           "Z.AI",
           "Inceptron",
@@ -5276,14 +5278,19 @@
             "output": {
               "amount": 30,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.00001",
-            "completion": "0.00003"
+            "completion": "0.00003",
+            "web_search": "0.01"
           }
         }
       ],
@@ -5417,14 +5424,19 @@
             "output": {
               "amount": 8,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.000002",
             "completion": "0.000008",
+            "web_search": "0.01",
             "input_cache_read": "0.0000005"
           }
         }
@@ -6016,14 +6028,19 @@
             "output": {
               "amount": 10,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
+            "web_search": "0.01",
             "input_cache_read": "0.000000125"
           }
         }
@@ -6118,14 +6135,19 @@
             "output": {
               "amount": 10,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
+            "web_search": "0.01",
             "input_cache_read": "0.000000125"
           }
         }
@@ -6326,14 +6348,19 @@
             "output": {
               "amount": 0.4,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.00000005",
             "completion": "0.0000004",
+            "web_search": "0.01",
             "input_cache_read": "0.00000001"
           }
         }
@@ -6427,14 +6454,19 @@
             "output": {
               "amount": 10,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
+            "web_search": "0.01",
             "input_cache_read": "0.00000013"
           }
         }
@@ -6530,14 +6562,19 @@
             "output": {
               "amount": 10,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
+            "web_search": "0.01",
             "input_cache_read": "0.000000125"
           }
         }
@@ -6633,14 +6670,19 @@
             "output": {
               "amount": 2,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.000002",
+            "web_search": "0.01",
             "input_cache_read": "0.00000003"
           }
         }
@@ -6682,14 +6724,19 @@
             "output": {
               "amount": 14,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.00000175",
             "completion": "0.000014",
+            "web_search": "0.01",
             "input_cache_read": "0.000000175"
           }
         }
@@ -6731,14 +6778,19 @@
             "output": {
               "amount": 14,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.00000175",
             "completion": "0.000014",
+            "web_search": "0.01",
             "input_cache_read": "0.000000175"
           }
         }
@@ -6780,14 +6832,19 @@
             "output": {
               "amount": 14,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.00000175",
             "completion": "0.000014",
+            "web_search": "0.01",
             "input_cache_read": "0.000000175"
           }
         }
@@ -7612,19 +7669,21 @@
           "DeepInfra",
           "Novita",
           "SiliconFlow",
-          "BaseTen",
           "Google",
           "Phala",
+          "BaseTen",
           "Parasail",
           "SambaNova",
           "Amazon",
           "Together",
+          "Ambient",
           "Groq",
           "WandB",
           "Nebius",
+          "Mara",
           "Cerebras"
         ],
-        "endpoint_count": 19,
+        "endpoint_count": 20,
         "context_length": 131072,
         "max_completion_tokens": 131072
       },
@@ -7673,19 +7732,21 @@
           "DeepInfra",
           "Novita",
           "SiliconFlow",
-          "BaseTen",
           "Google",
           "Phala",
+          "BaseTen",
           "Parasail",
           "SambaNova",
           "Amazon",
           "Together",
+          "Ambient",
           "Groq",
           "WandB",
           "Nebius",
+          "Mara",
           "Cerebras"
         ],
-        "endpoint_count": 19,
+        "endpoint_count": 20,
         "context_length": 131072,
         "max_completion_tokens": null
       },
@@ -8869,7 +8930,6 @@
           "DeepInfra",
           "SiliconFlow",
           "AtlasCloud",
-          "Together",
           "Venice",
           "Novita",
           "Parasail",
@@ -8878,7 +8938,7 @@
           "Fireworks",
           "Cloudflare"
         ],
-        "endpoint_count": 13,
+        "endpoint_count": 12,
         "context_length": 262144,
         "max_completion_tokens": 262144
       },
@@ -8926,6 +8986,7 @@
         "endpoint_providers": [
           "Io Net",
           "Chutes",
+          "Cloudflare",
           "Parasail",
           "DeepInfra",
           "Inceptron",
@@ -8937,12 +8998,12 @@
           "WandB",
           "AtlasCloud",
           "AkashML",
-          "Ambient",
-          "Cloudflare",
+          "StreamLake",
+          "Nebius",
           "Phala",
           "Together"
         ],
-        "endpoint_count": 17,
+        "endpoint_count": 18,
         "context_length": 262144,
         "max_completion_tokens": 262142
       },
@@ -9392,21 +9453,21 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.3,
+              "amount": 0.075,
               "unit": "per_1m_tokens"
             },
             "output": {
-              "amount": 2.5,
+              "amount": 0.625,
               "unit": "per_1m_tokens"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
-            "prompt": "0.0000003",
-            "completion": "0.0000025",
-            "input_cache_read": "0.00000006"
+            "prompt": "0.000000075",
+            "completion": "0.000000625",
+            "input_cache_read": "0.000000015"
           }
         }
       ],
@@ -9656,14 +9717,13 @@
         "endpoint_providers": [
           "Novita",
           "DeepInfra",
-          "Nebius",
           "Groq",
           "Friendli",
           "Cerebras",
           "Cloudflare",
           "WandB"
         ],
-        "endpoint_count": 8,
+        "endpoint_count": 7,
         "context_length": 131072,
         "max_completion_tokens": 16384
       },
@@ -10876,10 +10936,10 @@
           "AkashML",
           "DeepInfra",
           "Chutes",
-          "Io Net",
           "Phala",
           "Inceptron",
           "Baidu",
+          "Io Net",
           "AtlasCloud",
           "Mara",
           "Friendli",
@@ -10888,9 +10948,10 @@
           "SiliconFlow",
           "Parasail",
           "WandB",
+          "StreamLake",
           "Venice"
         ],
-        "endpoint_count": 17,
+        "endpoint_count": 18,
         "context_length": 204800,
         "max_completion_tokens": 8192
       },
@@ -10938,10 +10999,10 @@
           "AkashML",
           "DeepInfra",
           "Chutes",
-          "Io Net",
           "Phala",
           "Inceptron",
           "Baidu",
+          "Io Net",
           "AtlasCloud",
           "Mara",
           "Friendli",
@@ -10950,9 +11011,10 @@
           "SiliconFlow",
           "Parasail",
           "WandB",
+          "StreamLake",
           "Venice"
         ],
-        "endpoint_count": 17,
+        "endpoint_count": 18,
         "context_length": 204800,
         "max_completion_tokens": 196608
       },
@@ -12551,14 +12613,19 @@
             "output": {
               "amount": 60,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.000015",
             "completion": "0.00006",
+            "web_search": "0.01",
             "input_cache_read": "0.0000075"
           }
         }
@@ -12599,14 +12666,19 @@
             "output": {
               "amount": 600,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.00015",
-            "completion": "0.0006"
+            "completion": "0.0006",
+            "web_search": "0.01"
           }
         }
       ],
@@ -12752,14 +12824,19 @@
             "output": {
               "amount": 4.4,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.0000011",
             "completion": "0.0000044",
+            "web_search": "0.01",
             "input_cache_read": "0.00000055"
           }
         }
@@ -12800,14 +12877,19 @@
             "output": {
               "amount": 4.4,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.0000011",
             "completion": "0.0000044",
+            "web_search": "0.01",
             "input_cache_read": "0.00000055"
           }
         }
@@ -14337,11 +14419,12 @@
         "canonical_slug": "qwen/qwen3-coder-30b-a3b-instruct",
         "endpoint_providers": [
           "Novita",
+          "Ambient",
           "SiliconFlow",
           "Amazon",
           "Alibaba"
         ],
-        "endpoint_count": 4,
+        "endpoint_count": 5,
         "context_length": 160000,
         "max_completion_tokens": 32768
       },
@@ -15114,11 +15197,12 @@
         "endpoint_providers": [
           "Alibaba",
           "DeepInfra",
+          "Ambient",
           "AtlasCloud",
           "Novita",
           "Venice"
         ],
-        "endpoint_count": 5,
+        "endpoint_count": 6,
         "context_length": 262144,
         "max_completion_tokens": 65536
       },
@@ -15193,7 +15277,7 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.14,
+              "amount": 0.139,
               "unit": "per_1m_tokens"
             },
             "output": {
@@ -15203,11 +15287,10 @@
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
-            "prompt": "0.00000014",
-            "completion": "0.000001",
-            "input_cache_read": "0.00000005"
+            "prompt": "0.000000139",
+            "completion": "0.000001"
           }
         }
       ],
@@ -15215,18 +15298,19 @@
         "source_id": "qwen/qwen3.5-35b-a3b",
         "canonical_slug": "qwen/qwen3.5-35b-a3b-20260224",
         "endpoint_providers": [
+          "DekaLLM",
+          "Ambient",
           "DeepInfra",
           "Parasail",
-          "DekaLLM",
           "AkashML",
           "Alibaba",
           "AtlasCloud",
           "NextBit",
           "Venice"
         ],
-        "endpoint_count": 8,
+        "endpoint_count": 9,
         "context_length": 262144,
-        "max_completion_tokens": 81920
+        "max_completion_tokens": null
       },
       "sources": [
         {
@@ -15258,11 +15342,10 @@
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.00000039",
-            "completion": "0.00000234",
-            "input_cache_read": "0.000000195"
+            "completion": "0.00000234"
           }
         }
       ],
@@ -15270,8 +15353,8 @@
         "source_id": "qwen/qwen3.5-397b-a17b",
         "canonical_slug": "qwen/qwen3.5-397b-a17b-20260216",
         "endpoint_providers": [
-          "Chutes",
           "Alibaba",
+          "Chutes",
           "Morph",
           "DeepInfra",
           "Parasail",
@@ -15499,7 +15582,7 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.32,
+              "amount": 0.317,
               "unit": "per_1m_tokens"
             },
             "output": {
@@ -15509,9 +15592,9 @@
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
-            "prompt": "0.00000032",
+            "prompt": "0.000000317",
             "completion": "0.0000032"
           }
         }
@@ -15520,16 +15603,18 @@
         "source_id": "qwen/qwen3.6-27b",
         "canonical_slug": "qwen/qwen3.6-27b-20260422",
         "endpoint_providers": [
+          "Io Net",
           "DeepInfra",
+          "Ambient",
           "Venice",
           "Alibaba",
           "Morph",
           "Chutes",
           "WandB"
         ],
-        "endpoint_count": 6,
+        "endpoint_count": 8,
         "context_length": 262144,
-        "max_completion_tokens": 81920
+        "max_completion_tokens": 262140
       },
       "sources": [
         {
@@ -15573,12 +15658,13 @@
         "source_id": "qwen/qwen3.6-35b-a3b",
         "canonical_slug": "qwen/qwen3.6-35b-a3b-20260415",
         "endpoint_providers": [
+          "Ambient",
           "Parasail",
           "AtlasCloud",
           "AkashML",
           "WandB"
         ],
-        "endpoint_count": 4,
+        "endpoint_count": 5,
         "context_length": 262144,
         "max_completion_tokens": 262144
       },
@@ -16768,7 +16854,7 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.1,
+              "amount": 0.09,
               "unit": "per_1m_tokens"
             },
             "output": {
@@ -16778,10 +16864,11 @@
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
-            "prompt": "0.0000001",
-            "completion": "0.0000003"
+            "prompt": "0.00000009",
+            "completion": "0.0000003",
+            "input_cache_read": "0.00000002"
           }
         }
       ],
@@ -16789,13 +16876,14 @@
         "source_id": "stepfun/step-3.5-flash",
         "canonical_slug": "stepfun/step-3.5-flash",
         "endpoint_providers": [
-          "SiliconFlow",
           "DeepInfra",
-          "StepFun"
+          "SiliconFlow",
+          "StepFun",
+          "Ambient"
         ],
-        "endpoint_count": 3,
+        "endpoint_count": 4,
         "context_length": 262144,
-        "max_completion_tokens": 65536
+        "max_completion_tokens": 16384
       },
       "sources": [
         {
@@ -16850,53 +16938,6 @@
           "source": "openrouter",
           "source_id": "alibaba/tongyi-deepresearch-30b-a3b",
           "url": "https://openrouter.ai/alibaba/tongyi-deepresearch-30b-a3b",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    },
-    {
-      "model_id": "trinity-large-preview",
-      "model": "Trinity Large Preview",
-      "endpoint_path": "/chat/completions",
-      "api_model_id": "arcee-ai/trinity-large-preview",
-      "mode": "chat",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.15,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.45,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
-          "raw_pricing": {
-            "prompt": "0.00000015",
-            "completion": "0.00000045"
-          }
-        }
-      ],
-      "other_parameters": {
-        "source_id": "arcee-ai/trinity-large-preview",
-        "canonical_slug": "arcee-ai/trinity-large-preview",
-        "endpoint_providers": [
-          "Arcee AI"
-        ],
-        "endpoint_count": 1,
-        "context_length": 131000,
-        "max_completion_tokens": null
-      },
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "arcee-ai/trinity-large-preview",
-          "url": "https://openrouter.ai/arcee-ai/trinity-large-preview",
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
@@ -17310,9 +17351,175 @@
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
+    },
+    {
+      "model_id": "gemini-3.5-flash",
+      "model": "Gemini 3.5 Flash",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "google/gemini-3.5-flash",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 9,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 9,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 0.0000015,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter",
+          "observed_at": "2026-05-21T19:00:07.736Z",
+          "raw_pricing": {
+            "prompt": "0.0000015",
+            "completion": "0.000009",
+            "image": "0.0000015",
+            "audio": "0.000003",
+            "web_search": "0.014",
+            "internal_reasoning": "0.000009",
+            "input_cache_read": "0.00000015",
+            "input_cache_write": "0.00000008333333333333334"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_id": "google/gemini-3.5-flash",
+        "canonical_slug": "google/gemini-3.5-flash-20260519",
+        "endpoint_providers": [
+          "Google"
+        ],
+        "endpoint_count": 2,
+        "context_length": 1048576,
+        "max_completion_tokens": 65536
+      },
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "google/gemini-3.5-flash",
+          "url": "https://openrouter.ai/google/gemini-3.5-flash",
+          "observed_at": "2026-05-21T19:00:07.736Z"
+        }
+      ]
+    },
+    {
+      "model_id": "grok-build-0.1",
+      "model": "Grok Build 0.1",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "x-ai/grok-build-0.1",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.005,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter",
+          "observed_at": "2026-05-21T19:00:07.736Z",
+          "raw_pricing": {
+            "prompt": "0.000001",
+            "completion": "0.000002",
+            "web_search": "0.005",
+            "input_cache_read": "0.0000002"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_id": "x-ai/grok-build-0.1",
+        "canonical_slug": "x-ai/grok-build-0.1-20260520",
+        "endpoint_providers": [
+          "xAI"
+        ],
+        "endpoint_count": 1,
+        "context_length": 256000,
+        "max_completion_tokens": null
+      },
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "x-ai/grok-build-0.1",
+          "url": "https://openrouter.ai/x-ai/grok-build-0.1",
+          "observed_at": "2026-05-21T19:00:07.736Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.7-max",
+      "model": "Qwen3.7 Max",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "qwen/qwen3.7-max",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 7.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter",
+          "observed_at": "2026-05-21T19:00:07.736Z",
+          "raw_pricing": {
+            "prompt": "0.0000025",
+            "completion": "0.0000075",
+            "input_cache_write": "0.000003125"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_id": "qwen/qwen3.7-max",
+        "canonical_slug": "qwen/qwen3.7-max-20260520",
+        "endpoint_providers": [
+          "Alibaba"
+        ],
+        "endpoint_count": 1,
+        "context_length": 1000000,
+        "max_completion_tokens": 65536
+      },
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "qwen/qwen3.7-max",
+          "url": "https://openrouter.ai/qwen/qwen3.7-max",
+          "observed_at": "2026-05-21T19:00:07.736Z"
+        }
+      ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T22:11:55.841Z",
+  "last_updated": "2026-05-21T19:00:07.736Z",
   "sources": []
 }

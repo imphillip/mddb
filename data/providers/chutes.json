@@ -115,7 +115,7 @@
           "tool_choice",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -136,21 +136,21 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 1.05,
+              "amount": 1.2,
               "unit": "per_1m_tokens"
             },
             "output": {
-              "amount": 3.5,
+              "amount": 4,
               "unit": "per_1m_tokens"
             }
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
-            "prompt": "0.00000105",
-            "completion": "0.0000035",
-            "input_cache_read": "0.000000525",
+            "prompt": "0.0000012",
+            "completion": "0.000004",
+            "input_cache_read": "0.0000006",
             "discount": 0
           }
         }
@@ -383,21 +383,21 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.39,
+              "amount": 0.45,
               "unit": "per_1m_tokens"
             },
             "output": {
-              "amount": 2.34,
+              "amount": 3,
               "unit": "per_1m_tokens"
             }
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
-            "prompt": "0.00000039",
-            "completion": "0.00000234",
-            "input_cache_read": "0.000000195",
+            "prompt": "0.00000045",
+            "completion": "0.000003",
+            "input_cache_read": "0.000000225",
             "discount": 0
           }
         }
@@ -497,6 +497,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T22:11:55.841Z",
+  "last_updated": "2026-05-21T19:00:07.736Z",
   "sources": []
 }

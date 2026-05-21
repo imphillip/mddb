@@ -51,7 +51,8 @@
           "parallel_tool_calls",
           "presence_penalty",
           "reasoning_effort",
-          "seed"
+          "seed",
+          "tools"
         ],
         "status": 0
       },
@@ -248,6 +249,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T22:11:55.841Z",
+  "last_updated": "2026-05-21T19:00:07.736Z",
   "sources": []
 }

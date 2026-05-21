@@ -2585,7 +2585,7 @@
       ],
       "reasoning": false,
       "tool_calling": true,
-      "context_length": 1048576,
+      "context_length": 1000000,
       "max_output_tokens": 8192,
       "release_timestamp": 1738769413,
       "other_parameters": {
@@ -3326,6 +3326,55 @@
       ]
     },
     {
+      "id": "gemini-3.5-flash",
+      "model": "Gemini 3.5 Flash",
+      "alias": [
+        "google/gemini-3.5-flash",
+        "google/gemini-3.5-flash-20260519"
+      ],
+      "author": "google",
+      "input_modalities": [
+        "text",
+        "audio",
+        "video"
+      ],
+      "output_modalities": [
+        "text",
+        "image"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 1048576,
+      "max_output_tokens": 65536,
+      "release_timestamp": 1779193800,
+      "other_parameters": {
+        "tokenizer": "Gemini",
+        "instruct_type": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "max_tokens",
+          "reasoning",
+          "response_format",
+          "seed",
+          "stop",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_p"
+        ]
+      },
+      "last_updated": "2026-05-21T19:00:07.736Z",
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "google/gemini-3.5-flash",
+          "url": "https://openrouter.ai/google/gemini-3.5-flash",
+          "observed_at": "2026-05-21T19:00:07.736Z"
+        }
+      ]
+    },
+    {
       "id": "gemini-flash-latest",
       "model": "Gemini Flash Latest",
       "alias": [
@@ -4008,6 +4057,7 @@
           "presence_penalty",
           "reasoning",
           "repetition_penalty",
+          "response_format",
           "seed",
           "stop",
           "temperature",
@@ -7093,6 +7143,56 @@
           "source_id": "x-ai/grok-4.3",
           "url": "https://openrouter.ai/x-ai/grok-4.3",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        }
+      ]
+    },
+    {
+      "id": "grok-build-0.1",
+      "model": "Grok Build 0.1",
+      "alias": [
+        "x-ai/grok-build-0.1",
+        "x-ai/grok-build-0.1-20260520"
+      ],
+      "author": "xai",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text",
+        "image"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 256000,
+      "release_timestamp": 1779298123,
+      "other_parameters": {
+        "tokenizer": "Grok",
+        "instruct_type": null,
+        "supported_parameters": [
+          "frequency_penalty",
+          "include_reasoning",
+          "logprobs",
+          "max_tokens",
+          "presence_penalty",
+          "reasoning",
+          "response_format",
+          "seed",
+          "stop",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_logprobs",
+          "top_p"
+        ]
+      },
+      "last_updated": "2026-05-21T19:00:07.736Z",
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "x-ai/grok-build-0.1",
+          "url": "https://openrouter.ai/x-ai/grok-build-0.1",
+          "observed_at": "2026-05-21T19:00:07.736Z"
         }
       ]
     },
@@ -13727,7 +13827,6 @@
       "reasoning": true,
       "tool_calling": true,
       "context_length": 262144,
-      "max_output_tokens": 81920,
       "release_timestamp": 1772053822,
       "other_parameters": {
         "tokenizer": "Qwen3",
@@ -14038,7 +14137,7 @@
       "reasoning": true,
       "tool_calling": true,
       "context_length": 262144,
-      "max_output_tokens": 81920,
+      "max_output_tokens": 262140,
       "release_timestamp": 1777255064,
       "other_parameters": {
         "tokenizer": "Qwen3",
@@ -14103,6 +14202,7 @@
           "frequency_penalty",
           "include_reasoning",
           "logit_bias",
+          "logprobs",
           "max_tokens",
           "min_p",
           "presence_penalty",
@@ -14116,6 +14216,7 @@
           "tool_choice",
           "tools",
           "top_k",
+          "top_logprobs",
           "top_p"
         ]
       },
@@ -14269,6 +14370,54 @@
           "source_id": "qwen/qwen3.6-plus",
           "url": "https://openrouter.ai/qwen/qwen3.6-plus",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        }
+      ]
+    },
+    {
+      "id": "qwen3.7-max",
+      "model": "Qwen3.7 Max",
+      "alias": [
+        "qwen/qwen3.7-max",
+        "qwen/qwen3.7-max-20260520"
+      ],
+      "author": "qwen",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 1000000,
+      "max_output_tokens": 65536,
+      "release_timestamp": 1779376861,
+      "other_parameters": {
+        "tokenizer": "Qwen",
+        "instruct_type": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "logprobs",
+          "max_tokens",
+          "presence_penalty",
+          "reasoning",
+          "response_format",
+          "seed",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_logprobs",
+          "top_p"
+        ]
+      },
+      "last_updated": "2026-05-21T19:00:07.736Z",
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "qwen/qwen3.7-max",
+          "url": "https://openrouter.ai/qwen/qwen3.7-max",
+          "observed_at": "2026-05-21T19:00:07.736Z"
         }
       ]
     },
@@ -15232,7 +15381,7 @@
       "reasoning": true,
       "tool_calling": true,
       "context_length": 262144,
-      "max_output_tokens": 65536,
+      "max_output_tokens": 16384,
       "release_timestamp": 1769728337,
       "other_parameters": {
         "tokenizer": "Other",
@@ -15313,46 +15462,6 @@
           "source": "openrouter",
           "source_id": "alibaba/tongyi-deepresearch-30b-a3b",
           "url": "https://openrouter.ai/alibaba/tongyi-deepresearch-30b-a3b",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    },
-    {
-      "id": "trinity-large-preview",
-      "model": "Trinity Large Preview",
-      "alias": [
-        "arcee-ai/trinity-large-preview"
-      ],
-      "author": "arcee-ai",
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "reasoning": false,
-      "tool_calling": true,
-      "context_length": 131000,
-      "release_timestamp": 1769552670,
-      "other_parameters": {
-        "tokenizer": "Other",
-        "instruct_type": null,
-        "supported_parameters": [
-          "max_tokens",
-          "response_format",
-          "structured_outputs",
-          "temperature",
-          "tools",
-          "top_k",
-          "top_p"
-        ]
-      },
-      "last_updated": "2026-05-19T22:11:55.841Z",
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "arcee-ai/trinity-large-preview",
-          "url": "https://openrouter.ai/arcee-ai/trinity-large-preview",
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
@@ -15724,5 +15833,5 @@
       ]
     }
   ],
-  "last_updated": "2026-05-19T22:11:55.841Z"
+  "last_updated": "2026-05-21T19:00:07.736Z"
 }

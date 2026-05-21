@@ -319,14 +319,19 @@
             "output": {
               "amount": 30,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.00001",
             "completion": "0.00003",
+            "web_search": "0.01",
             "discount": 0
           }
         }
@@ -1338,14 +1343,19 @@
             "output": {
               "amount": 10,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
+            "web_search": "0.01",
             "input_cache_read": "0.000000125",
             "discount": 0
           }
@@ -1620,7 +1630,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -1739,7 +1749,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -1824,14 +1834,19 @@
             "output": {
               "amount": 10,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.00000125",
             "completion": "0.00001",
+            "web_search": "0.01",
             "input_cache_read": "0.000000125",
             "discount": 0
           }
@@ -1939,14 +1954,19 @@
             "output": {
               "amount": 2,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.00000025",
             "completion": "0.000002",
+            "web_search": "0.01",
             "input_cache_read": "0.000000025",
             "discount": 0
           }
@@ -2507,7 +2527,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -5
       },
       "sources": [
         {
@@ -2960,14 +2980,19 @@
             "output": {
               "amount": 60,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.000015",
             "completion": "0.00006",
+            "web_search": "0.01",
             "input_cache_read": "0.0000075",
             "discount": 0
           }
@@ -3015,14 +3040,19 @@
             "output": {
               "amount": 600,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.00015",
             "completion": "0.0006",
+            "web_search": "0.01",
             "discount": 0
           }
         }
@@ -3195,14 +3225,19 @@
             "output": {
               "amount": 4.4,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.0000011",
             "completion": "0.0000044",
+            "web_search": "0.01",
             "input_cache_read": "0.00000055",
             "discount": 0
           }
@@ -3250,14 +3285,19 @@
             "output": {
               "amount": 4.4,
               "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
             }
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
             "prompt": "0.0000011",
             "completion": "0.0000044",
+            "web_search": "0.01",
             "input_cache_read": "0.00000055",
             "discount": 0
           }
@@ -3537,6 +3577,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T22:11:55.841Z",
+  "last_updated": "2026-05-21T19:00:07.736Z",
   "sources": []
 }

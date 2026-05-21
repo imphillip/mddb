@@ -616,7 +616,7 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 1.67,
+              "amount": 1.64,
               "unit": "per_1m_tokens"
             },
             "output": {
@@ -626,11 +626,11 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
-            "prompt": "0.00000167",
+            "prompt": "0.00000164",
             "completion": "0.00000338",
-            "input_cache_read": "0.00000013",
+            "input_cache_read": "0.000000135",
             "discount": 0
           }
         }
@@ -653,7 +653,8 @@
           "top_k",
           "repetition_penalty",
           "tools",
-          "tool_choice"
+          "tool_choice",
+          "response_format"
         ],
         "status": 0
       },
@@ -996,7 +997,7 @@
           "top_k",
           "repetition_penalty"
         ],
-        "status": 0
+        "status": -5
       },
       "sources": [
         {
@@ -1416,7 +1417,8 @@
           "top_k",
           "repetition_penalty",
           "tools",
-          "tool_choice"
+          "tool_choice",
+          "response_format"
         ],
         "status": 0
       },
@@ -1537,7 +1539,8 @@
           "top_k",
           "repetition_penalty",
           "tools",
-          "tool_choice"
+          "tool_choice",
+          "response_format"
         ],
         "status": -5
       },
@@ -1717,7 +1720,8 @@
           "repetition_penalty",
           "tools",
           "tool_choice",
-          "response_format"
+          "response_format",
+          "structured_outputs"
         ],
         "status": 0
       },
@@ -2072,7 +2076,8 @@
           "repetition_penalty",
           "tools",
           "tool_choice",
-          "response_format"
+          "response_format",
+          "structured_outputs"
         ],
         "status": 0
       },
@@ -2133,7 +2138,8 @@
           "repetition_penalty",
           "tools",
           "tool_choice",
-          "response_format"
+          "response_format",
+          "structured_outputs"
         ],
         "status": 0
       },
@@ -2328,22 +2334,22 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.3,
+              "amount": 0.075,
               "unit": "per_1m_tokens"
             },
             "output": {
-              "amount": 2.5,
+              "amount": 0.625,
               "unit": "per_1m_tokens"
             }
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
-            "prompt": "0.0000003",
-            "completion": "0.0000025",
-            "input_cache_read": "0.00000006",
-            "discount": 0
+            "prompt": "0.000000075",
+            "completion": "0.000000625",
+            "input_cache_read": "0.000000015",
+            "discount": 0.75
           }
         }
       ],
@@ -2710,7 +2716,7 @@
           "structured_outputs",
           "response_format"
         ],
-        "status": -5
+        "status": 0
       },
       "sources": [
         {
@@ -2943,7 +2949,8 @@
           "top_k",
           "repetition_penalty",
           "tools",
-          "tool_choice"
+          "tool_choice",
+          "response_format"
         ],
         "status": 0
       },
@@ -3589,7 +3596,7 @@
           "response_format",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -3823,7 +3830,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": -5
       },
       "sources": [
         {
@@ -3941,7 +3948,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -4370,6 +4377,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T22:11:55.841Z",
+  "last_updated": "2026-05-21T19:00:07.736Z",
   "sources": []
 }

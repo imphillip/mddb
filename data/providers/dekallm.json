@@ -48,7 +48,9 @@
           "seed",
           "stop",
           "temperature",
-          "top_p"
+          "top_p",
+          "logprobs",
+          "top_logprobs"
         ],
         "status": 0
       },
@@ -245,7 +247,7 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.15,
+              "amount": 0.139,
               "unit": "per_1m_tokens"
             },
             "output": {
@@ -255,9 +257,9 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T19:00:07.736Z",
           "raw_pricing": {
-            "prompt": "0.00000015",
+            "prompt": "0.000000139",
             "completion": "0.000001",
             "discount": 0
           }
@@ -294,6 +296,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T22:11:55.841Z",
+  "last_updated": "2026-05-21T19:00:07.736Z",
   "sources": []
 }
