@@ -3,6 +3,7 @@ import { dirname, join } from 'node:path'
 import { buildDataQualityReport } from '../lib/data-quality.js'
 import { buildRegistryGraphFromFiles } from '../lib/registry-graph.js'
 import { renderOpenRouterProviderDetail, renderOpenRouterProviderIndex, renderOpenRouterRawDetail, renderOpenRouterRawHome } from '../lib/openrouter-raw-renderer.js'
+import { renderUpdateAdminPage } from '../lib/update-admin-renderer.js'
 
 const outputDir = join(process.cwd(), 'public')
 const graph = buildRegistryGraphFromFiles()
@@ -12,6 +13,7 @@ rmSync(outputDir, { recursive: true, force: true })
 
 writePage('index.html', renderOpenRouterRawHome(graph))
 writePage('providers/index.html', renderOpenRouterProviderIndex(graph))
+writePage('update/index.html', renderUpdateAdminPage())
 writePage('graph/openrouter.json', JSON.stringify(graph, null, 2))
 const dataQuality = buildDataQualityReport(graph)
 writePage('graph/data-quality.json', JSON.stringify(dataQuality, null, 2))
