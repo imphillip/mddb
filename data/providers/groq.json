@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "gpt-oss-120b",
-      "model": "gpt-oss-120b (free)",
+      "model": "gpt-oss-120b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "groq",
       "mode": "chat",
@@ -64,7 +64,7 @@
     },
     {
       "model_id": "gpt-oss-20b",
-      "model": "gpt-oss-20b (free)",
+      "model": "gpt-oss-20b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "groq",
       "mode": "chat",
@@ -289,7 +289,7 @@
     },
     {
       "model_id": "llama-3.3-70b-instruct",
-      "model": "Llama 3.3 70B Instruct (free)",
+      "model": "Llama 3.3 70B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "groq",
       "mode": "chat",
@@ -452,6 +452,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T22:11:55.841Z",
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "sources": []
 }

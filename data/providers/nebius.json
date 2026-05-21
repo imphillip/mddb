@@ -61,7 +61,7 @@
     },
     {
       "model_id": "gpt-oss-120b",
-      "model": "gpt-oss-120b (free)",
+      "model": "gpt-oss-120b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "nebius/fp4",
       "mode": "chat",
@@ -291,7 +291,7 @@
     },
     {
       "model_id": "llama-3.3-70b-instruct",
-      "model": "Llama 3.3 70B Instruct (free)",
+      "model": "Llama 3.3 70B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "nebius/fp8",
       "mode": "chat",
@@ -334,7 +334,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -346,7 +346,7 @@
     },
     {
       "model_id": "nemotron-3-super-120b-a12b",
-      "model": "Nemotron 3 Super (free)",
+      "model": "Nemotron 3 Super",
       "endpoint_path": "/chat/completions",
       "api_model_id": "nebius/fp4",
       "mode": "chat",
@@ -729,7 +729,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -741,6 +741,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T20:53:40.809Z",
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "sources": []
 }

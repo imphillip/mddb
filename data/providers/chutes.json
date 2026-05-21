@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "gemma-4-31b-it",
-      "model": "Gemma 4 31B (free)",
+      "model": "Gemma 4 31B",
       "endpoint_path": "/images/generations",
       "api_model_id": "chutes/fp4",
       "mode": "image",
@@ -115,7 +115,7 @@
           "tool_choice",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -312,7 +312,7 @@
     },
     {
       "model_id": "minimax-m2.5",
-      "model": "MiniMax M2.5 (free)",
+      "model": "MiniMax M2.5",
       "endpoint_path": "/chat/completions",
       "api_model_id": "chutes/fp8",
       "mode": "chat",
@@ -497,6 +497,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T20:53:40.809Z",
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "sources": []
 }

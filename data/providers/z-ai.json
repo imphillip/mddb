@@ -112,7 +112,7 @@
     },
     {
       "model_id": "glm-4.5-air",
-      "model": "GLM 4.5 Air (free)",
+      "model": "GLM 4.5 Air",
       "endpoint_path": "/chat/completions",
       "api_model_id": "z-ai/fp8",
       "mode": "chat",
@@ -658,6 +658,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T20:53:40.809Z",
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "sources": []
 }

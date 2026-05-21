@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "gemma-4-26b-a4b-it",
-      "model": "Gemma 4 26B A4B  (free)",
+      "model": "Gemma 4 26B A4B",
       "endpoint_path": "/images/generations",
       "api_model_id": "dekallm/bf16",
       "mode": "image",
@@ -64,7 +64,7 @@
     },
     {
       "model_id": "gpt-oss-120b",
-      "model": "gpt-oss-120b (free)",
+      "model": "gpt-oss-120b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "dekallm/bf16",
       "mode": "chat",
@@ -112,7 +112,7 @@
           "logprobs",
           "top_logprobs"
         ],
-        "status": -5
+        "status": 0
       },
       "sources": [
         {
@@ -166,7 +166,7 @@
           "temperature",
           "top_p"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -178,7 +178,7 @@
     },
     {
       "model_id": "nemotron-3-super-120b-a12b",
-      "model": "Nemotron 3 Super (free)",
+      "model": "Nemotron 3 Super",
       "endpoint_path": "/chat/completions",
       "api_model_id": "dekallm/fp8",
       "mode": "chat",
@@ -296,6 +296,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T20:53:40.809Z",
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "sources": []
 }

@@ -2539,7 +2539,7 @@
           "tool_choice",
           "stop"
         ],
-        "status": -5
+        "status": -2
       },
       "sources": [
         {
@@ -2843,7 +2843,7 @@
           "tool_choice",
           "stop"
         ],
-        "status": -5
+        "status": -2
       },
       "sources": [
         {
@@ -3147,7 +3147,7 @@
           "tool_choice",
           "stop"
         ],
-        "status": -5
+        "status": -2
       },
       "sources": [
         {
@@ -4265,7 +4265,7 @@
     },
     {
       "model_id": "gemma-4-26b-a4b-it",
-      "model": "Gemma 4 26B A4B  (free)",
+      "model": "Gemma 4 26B A4B",
       "endpoint_path": "/images/generations",
       "api_model_id": "google-vertex/global",
       "mode": "image",
@@ -4387,7 +4387,7 @@
     },
     {
       "model_id": "gpt-oss-120b",
-      "model": "gpt-oss-120b (free)",
+      "model": "gpt-oss-120b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "google-vertex/global",
       "mode": "chat",
@@ -4443,7 +4443,7 @@
     },
     {
       "model_id": "gpt-oss-20b",
-      "model": "gpt-oss-20b (free)",
+      "model": "gpt-oss-20b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "google-vertex/us-central1",
       "mode": "chat",
@@ -4560,7 +4560,7 @@
     },
     {
       "model_id": "llama-3.3-70b-instruct",
-      "model": "Llama 3.3 70B Instruct (free)",
+      "model": "Llama 3.3 70B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "google-vertex",
       "mode": "chat",
@@ -4611,7 +4611,7 @@
     },
     {
       "model_id": "llama-3.3-70b-instruct",
-      "model": "Llama 3.3 70B Instruct (free)",
+      "model": "Llama 3.3 70B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "google-vertex/us-central1",
       "mode": "chat",
@@ -4905,7 +4905,7 @@
     },
     {
       "model_id": "qwen3-coder",
-      "model": "Qwen3 Coder 480B A35B (free)",
+      "model": "Qwen3 Coder 480B A35B",
       "endpoint_path": "/chat/completions",
       "api_model_id": "google-vertex/us-south1",
       "mode": "chat",
@@ -4964,7 +4964,7 @@
     },
     {
       "model_id": "qwen3-next-80b-a3b-instruct",
-      "model": "Qwen3 Next 80B A3B Instruct (free)",
+      "model": "Qwen3 Next 80B A3B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "google-vertex/global",
       "mode": "chat",
@@ -5236,6 +5236,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T20:53:40.809Z",
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "sources": []
 }

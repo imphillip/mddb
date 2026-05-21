@@ -241,7 +241,7 @@
     },
     {
       "model_id": "gemma-4-31b-it",
-      "model": "Gemma 4 31B (free)",
+      "model": "Gemma 4 31B",
       "endpoint_path": "/images/generations",
       "api_model_id": "together",
       "mode": "image",
@@ -425,7 +425,7 @@
     },
     {
       "model_id": "gpt-oss-120b",
-      "model": "gpt-oss-120b (free)",
+      "model": "gpt-oss-120b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together",
       "mode": "chat",
@@ -486,7 +486,7 @@
     },
     {
       "model_id": "gpt-oss-20b",
-      "model": "gpt-oss-20b (free)",
+      "model": "gpt-oss-20b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together",
       "mode": "chat",
@@ -719,7 +719,7 @@
     },
     {
       "model_id": "llama-3.3-70b-instruct",
-      "model": "Llama 3.3 70B Instruct (free)",
+      "model": "Llama 3.3 70B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together/fp8",
       "mode": "chat",
@@ -1056,7 +1056,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -5
+        "status": -2
       },
       "sources": [
         {
@@ -1068,7 +1068,7 @@
     },
     {
       "model_id": "qwen3-coder",
-      "model": "Qwen3 Coder 480B A35B (free)",
+      "model": "Qwen3 Coder 480B A35B",
       "endpoint_path": "/chat/completions",
       "api_model_id": "together/fp8",
       "mode": "chat",
@@ -1424,6 +1424,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T20:53:40.809Z",
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "sources": []
 }

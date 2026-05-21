@@ -6,7 +6,7 @@
   "offers": [
     {
       "model_id": "trinity-large-thinking",
-      "model": "Trinity Large Thinking (free)",
+      "model": "Trinity Large Thinking",
       "endpoint_path": "/chat/completions",
       "api_model_id": "arcee-ai",
       "mode": "chat",
@@ -61,6 +61,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T19:00:07.736Z",
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "sources": []
 }

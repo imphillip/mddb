@@ -97,14 +97,17 @@ function modelDisplayName(row, authorId, modelId) {
   if (colonMatch) {
     const prefix = colonMatch[1].trim()
     const rest = colonMatch[2].trim()
-    if (rest && prefixKeys.has(providerAliasKey(prefix))) return rest
+    if (rest) {
+      const cleaned = stripFreeNameSuffix(rest)
+      if (prefixKeys.has(providerAliasKey(prefix))) return cleaned
+    }
   }
   for (const label of prefixAliases) {
     const escaped = label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
     const match = raw.match(new RegExp(`^${escaped}\\s+(.+)$`, 'iu'))
-    if (match?.[1]) return match[1].trim()
+    if (match?.[1]) return stripFreeNameSuffix(match[1].trim())
   }
-  return raw
+  return stripFreeNameSuffix(raw)
 }
 
 
@@ -137,6 +140,15 @@ function timestampSeconds(value) {
 function providerDisplayPrefixes(authorId, authorName) {
   const canonical = PROVIDER_CANONICALS.find((candidate) => candidate.id === authorId)
   return new Set([authorName, authorId, ...(canonical?.aliases ?? [])].filter(Boolean))
+}
+
+function stripFreeNameSuffix(value) {
+  return String(value ?? '')
+    .replace(/\s*[-:：]?\s*[（(]\s*free\s*[）)]\s*$/iu, '')
+    .replace(/\s*[-:：]\s*free\s*$/iu, '')
+    .replace(/\s+free\s*$/iu, '')
+    .replace(/\s{2,}/gu, ' ')
+    .trim()
 }
 
 function stripProviderNamespace(sourceId, authorId) {

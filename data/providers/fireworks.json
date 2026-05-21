@@ -130,7 +130,7 @@
     },
     {
       "model_id": "gpt-oss-20b",
-      "model": "gpt-oss-20b (free)",
+      "model": "gpt-oss-20b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "fireworks",
       "mode": "chat",
@@ -306,7 +306,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -370,7 +370,7 @@
           "tool_choice",
           "tools"
         ],
-        "status": -2
+        "status": -5
       },
       "sources": [
         {
@@ -382,6 +382,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T20:53:40.809Z",
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "sources": []
 }

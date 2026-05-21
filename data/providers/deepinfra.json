@@ -117,7 +117,7 @@
           "tool_choice",
           "structured_outputs"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -443,7 +443,7 @@
     },
     {
       "model_id": "deepseek-v4-flash",
-      "model": "DeepSeek V4 Flash (free)",
+      "model": "DeepSeek V4 Flash",
       "endpoint_path": "/chat/completions",
       "api_model_id": "deepinfra/fp4",
       "mode": "chat",
@@ -752,7 +752,7 @@
     },
     {
       "model_id": "gemma-4-26b-a4b-it",
-      "model": "Gemma 4 26B A4B  (free)",
+      "model": "Gemma 4 26B A4B",
       "endpoint_path": "/images/generations",
       "api_model_id": "deepinfra/fp8",
       "mode": "image",
@@ -815,7 +815,7 @@
     },
     {
       "model_id": "gemma-4-31b-it",
-      "model": "Gemma 4 31B (free)",
+      "model": "Gemma 4 31B",
       "endpoint_path": "/images/generations",
       "api_model_id": "deepinfra/turbo",
       "mode": "image",
@@ -875,7 +875,7 @@
     },
     {
       "model_id": "gemma-4-31b-it",
-      "model": "Gemma 4 31B (free)",
+      "model": "Gemma 4 31B",
       "endpoint_path": "/images/generations",
       "api_model_id": "deepinfra/fp8",
       "mode": "image",
@@ -1257,7 +1257,7 @@
     },
     {
       "model_id": "gpt-oss-120b",
-      "model": "gpt-oss-120b (free)",
+      "model": "gpt-oss-120b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "deepinfra/bf16",
       "mode": "chat",
@@ -1320,7 +1320,7 @@
     },
     {
       "model_id": "gpt-oss-120b",
-      "model": "gpt-oss-120b (free)",
+      "model": "gpt-oss-120b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "deepinfra/turbo",
       "mode": "chat",
@@ -1383,7 +1383,7 @@
     },
     {
       "model_id": "gpt-oss-20b",
-      "model": "gpt-oss-20b (free)",
+      "model": "gpt-oss-20b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "deepinfra/bf16",
       "mode": "chat",
@@ -1446,7 +1446,7 @@
     },
     {
       "model_id": "hermes-3-llama-3.1-405b",
-      "model": "Hermes 3 405B Instruct (free)",
+      "model": "Hermes 3 405B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "deepinfra/fp8",
       "mode": "chat",
@@ -2049,7 +2049,7 @@
     },
     {
       "model_id": "llama-3.3-70b-instruct",
-      "model": "Llama 3.3 70B Instruct (free)",
+      "model": "Llama 3.3 70B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "deepinfra/turbo",
       "mode": "chat",
@@ -2411,7 +2411,7 @@
     },
     {
       "model_id": "minimax-m2.5",
-      "model": "MiniMax M2.5 (free)",
+      "model": "MiniMax M2.5",
       "endpoint_path": "/chat/completions",
       "api_model_id": "deepinfra/fp8",
       "mode": "chat",
@@ -2710,7 +2710,7 @@
     },
     {
       "model_id": "nemotron-3-nano-30b-a3b",
-      "model": "Nemotron 3 Nano 30B A3B (free)",
+      "model": "Nemotron 3 Nano 30B A3B",
       "endpoint_path": "/chat/completions",
       "api_model_id": "deepinfra/fp4",
       "mode": "chat",
@@ -2772,7 +2772,7 @@
     },
     {
       "model_id": "nemotron-3-super-120b-a12b",
-      "model": "Nemotron 3 Super (free)",
+      "model": "Nemotron 3 Super",
       "endpoint_path": "/chat/completions",
       "api_model_id": "deepinfra/bf16",
       "mode": "chat",
@@ -2834,7 +2834,7 @@
     },
     {
       "model_id": "nemotron-nano-9b-v2",
-      "model": "Nemotron Nano 9B V2 (free)",
+      "model": "Nemotron Nano 9B V2",
       "endpoint_path": "/chat/completions",
       "api_model_id": "deepinfra/bf16",
       "mode": "chat",
@@ -3326,7 +3326,7 @@
     },
     {
       "model_id": "qwen3-coder",
-      "model": "Qwen3 Coder 480B A35B (free)",
+      "model": "Qwen3 Coder 480B A35B",
       "endpoint_path": "/chat/completions",
       "api_model_id": "deepinfra/turbo",
       "mode": "chat",
@@ -3388,7 +3388,7 @@
     },
     {
       "model_id": "qwen3-next-80b-a3b-instruct",
-      "model": "Qwen3 Next 80B A3B Instruct (free)",
+      "model": "Qwen3 Next 80B A3B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "deepinfra/fp8",
       "mode": "chat",
@@ -3936,7 +3936,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -4011,6 +4011,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T20:53:40.809Z",
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "sources": []
 }

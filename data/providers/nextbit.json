@@ -122,7 +122,7 @@
     },
     {
       "model_id": "gemma-4-26b-a4b-it",
-      "model": "Gemma 4 26B A4B  (free)",
+      "model": "Gemma 4 26B A4B",
       "endpoint_path": "/images/generations",
       "api_model_id": "nextbit/bf16",
       "mode": "image",
@@ -185,7 +185,7 @@
     },
     {
       "model_id": "gpt-oss-20b",
-      "model": "gpt-oss-20b (free)",
+      "model": "gpt-oss-20b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "nextbit/fp8",
       "mode": "chat",
@@ -353,7 +353,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -961,6 +961,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T20:53:40.809Z",
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "sources": []
 }

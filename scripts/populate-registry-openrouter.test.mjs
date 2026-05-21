@@ -117,6 +117,8 @@ describe('OpenRouter registry population provider normalization', () => {
       row('meta-llama/llama-4-scout', [], { name: 'Meta: Llama 4 Scout' }),
       row('nousresearch/hermes-4-70b', [], { name: 'Nous: Hermes 4 70B' }),
       row('baidu/cobuddy:free', [], { name: 'Baidu Qianfan: CoBuddy (free)' }),
+      row('google/gemma-4-26b-a4b-it:free', [], { name: 'Google: Gemma 4 26B A4B - Free' }),
+      row('openai/gpt-oss-120b:free', [], { name: 'gpt-oss-120b Free' }),
     ])
 
     expect(catalog.models.map((model) => [model.id, model.author, model.model])).toEqual(expect.arrayContaining([
@@ -127,7 +129,9 @@ describe('OpenRouter registry population provider normalization', () => {
       ['owl-alpha', 'openrouter', 'Owl Alpha'],
       ['llama-4-scout', 'meta-llama', 'Llama 4 Scout'],
       ['hermes-4-70b', 'nousresearch', 'Hermes 4 70B'],
-      ['cobuddy', 'baidu', 'CoBuddy (free)'],
+      ['cobuddy', 'baidu', 'CoBuddy'],
+      ['gemma-4-26b-a4b-it', 'google', 'Gemma 4 26B A4B'],
+      ['gpt-oss-120b', 'openai', 'gpt-oss-120b'],
     ]))
   })
 

@@ -964,7 +964,7 @@
     },
     {
       "model_id": "cobuddy",
-      "model": "CoBuddy (free)",
+      "model": "CoBuddy",
       "endpoint_path": "/chat/completions",
       "api_model_id": "baidu/cobuddy:free",
       "mode": "chat",
@@ -2014,7 +2014,7 @@
     },
     {
       "model_id": "deepseek-v4-flash",
-      "model": "DeepSeek V4 Flash (free)",
+      "model": "DeepSeek V4 Flash",
       "endpoint_path": "/chat/completions",
       "api_model_id": "deepseek/deepseek-v4-flash:free",
       "mode": "chat",
@@ -2313,7 +2313,7 @@
     },
     {
       "model_id": "dolphin-mistral-24b-venice-edition",
-      "model": "Venice: Uncensored (free)",
+      "model": "Venice: Uncensored",
       "endpoint_path": "/chat/completions",
       "api_model_id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
       "mode": "chat",
@@ -3862,7 +3862,7 @@
     },
     {
       "model_id": "gemma-4-26b-a4b-it",
-      "model": "Gemma 4 26B A4B  (free)",
+      "model": "Gemma 4 26B A4B",
       "endpoint_path": "/images/generations",
       "api_model_id": "google/gemma-4-26b-a4b-it:free",
       "mode": "image",
@@ -3953,7 +3953,7 @@
     },
     {
       "model_id": "gemma-4-31b-it",
-      "model": "Gemma 4 31B (free)",
+      "model": "Gemma 4 31B",
       "endpoint_path": "/images/generations",
       "api_model_id": "google/gemma-4-31b-it:free",
       "mode": "image",
@@ -4136,7 +4136,7 @@
     },
     {
       "model_id": "glm-4.5-air",
-      "model": "GLM 4.5 Air (free)",
+      "model": "GLM 4.5 Air",
       "endpoint_path": "/chat/completions",
       "api_model_id": "z-ai/glm-4.5-air:free",
       "mode": "chat",
@@ -7220,7 +7220,7 @@
     },
     {
       "model_id": "gpt-oss-120b",
-      "model": "gpt-oss-120b (free)",
+      "model": "gpt-oss-120b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "openai/gpt-oss-120b:free",
       "mode": "chat",
@@ -7325,7 +7325,7 @@
     },
     {
       "model_id": "gpt-oss-20b",
-      "model": "gpt-oss-20b (free)",
+      "model": "gpt-oss-20b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "openai/gpt-oss-20b:free",
       "mode": "chat",
@@ -7767,7 +7767,7 @@
     },
     {
       "model_id": "hermes-3-llama-3.1-405b",
-      "model": "Hermes 3 405B Instruct (free)",
+      "model": "Hermes 3 405B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "nousresearch/hermes-3-llama-3.1-405b:free",
       "mode": "chat",
@@ -8865,7 +8865,7 @@
     },
     {
       "model_id": "laguna-m.1",
-      "model": "Laguna M.1 (free)",
+      "model": "Laguna M.1",
       "endpoint_path": "/chat/completions",
       "api_model_id": "poolside/laguna-m.1:free",
       "mode": "chat",
@@ -8889,7 +8889,7 @@
     },
     {
       "model_id": "laguna-xs.2",
-      "model": "Laguna XS.2 (free)",
+      "model": "Laguna XS.2",
       "endpoint_path": "/chat/completions",
       "api_model_id": "poolside/laguna-xs.2:free",
       "mode": "chat",
@@ -8960,7 +8960,7 @@
     },
     {
       "model_id": "lfm-2.5-1.2b-instruct",
-      "model": "LiquidAI: LFM2.5-1.2B-Instruct (free)",
+      "model": "LiquidAI: LFM2.5-1.2B-Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "liquid/lfm-2.5-1.2b-instruct:free",
       "mode": "chat",
@@ -8984,7 +8984,7 @@
     },
     {
       "model_id": "lfm-2.5-1.2b-thinking",
-      "model": "LiquidAI: LFM2.5-1.2B-Thinking (free)",
+      "model": "LiquidAI: LFM2.5-1.2B-Thinking",
       "endpoint_path": "/chat/completions",
       "api_model_id": "liquid/lfm-2.5-1.2b-thinking:free",
       "mode": "chat",
@@ -9396,7 +9396,7 @@
     },
     {
       "model_id": "llama-3.2-3b-instruct",
-      "model": "Llama 3.2 3B Instruct (free)",
+      "model": "Llama 3.2 3B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "meta-llama/llama-3.2-3b-instruct:free",
       "mode": "chat",
@@ -9469,7 +9469,7 @@
     },
     {
       "model_id": "llama-3.3-70b-instruct",
-      "model": "Llama 3.3 70B Instruct (free)",
+      "model": "Llama 3.3 70B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "meta-llama/llama-3.3-70b-instruct:free",
       "mode": "chat",
@@ -10488,7 +10488,7 @@
     },
     {
       "model_id": "minimax-m2.5",
-      "model": "MiniMax M2.5 (free)",
+      "model": "MiniMax M2.5",
       "endpoint_path": "/chat/completions",
       "api_model_id": "minimax/minimax-m2.5:free",
       "mode": "chat",
@@ -11655,7 +11655,7 @@
     },
     {
       "model_id": "nemotron-3-nano-30b-a3b",
-      "model": "Nemotron 3 Nano 30B A3B (free)",
+      "model": "Nemotron 3 Nano 30B A3B",
       "endpoint_path": "/chat/completions",
       "api_model_id": "nvidia/nemotron-3-nano-30b-a3b:free",
       "mode": "chat",
@@ -11728,7 +11728,7 @@
     },
     {
       "model_id": "nemotron-3-nano-omni-30b-a3b-reasoning",
-      "model": "Nemotron 3 Nano Omni (free)",
+      "model": "Nemotron 3 Nano Omni",
       "endpoint_path": "/images/generations",
       "api_model_id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
       "mode": "image",
@@ -11752,7 +11752,7 @@
     },
     {
       "model_id": "nemotron-3-super-120b-a12b",
-      "model": "Nemotron 3 Super (free)",
+      "model": "Nemotron 3 Super",
       "endpoint_path": "/chat/completions",
       "api_model_id": "nvidia/nemotron-3-super-120b-a12b:free",
       "mode": "chat",
@@ -11829,7 +11829,7 @@
     },
     {
       "model_id": "nemotron-nano-12b-v2-vl",
-      "model": "Nemotron Nano 12B 2 VL (free)",
+      "model": "Nemotron Nano 12B 2 VL",
       "endpoint_path": "/images/generations",
       "api_model_id": "nvidia/nemotron-nano-12b-v2-vl:free",
       "mode": "image",
@@ -11853,7 +11853,7 @@
     },
     {
       "model_id": "nemotron-nano-9b-v2",
-      "model": "Nemotron Nano 9B V2 (free)",
+      "model": "Nemotron Nano 9B V2",
       "endpoint_path": "/chat/completions",
       "api_model_id": "nvidia/nemotron-nano-9b-v2:free",
       "mode": "chat",
@@ -13865,7 +13865,7 @@
     },
     {
       "model_id": "qwen3-coder",
-      "model": "Qwen3 Coder 480B A35B (free)",
+      "model": "Qwen3 Coder 480B A35B",
       "endpoint_path": "/chat/completions",
       "api_model_id": "qwen/qwen3-coder:free",
       "mode": "chat",
@@ -14248,7 +14248,7 @@
     },
     {
       "model_id": "qwen3-next-80b-a3b-instruct",
-      "model": "Qwen3 Next 80B A3B Instruct (free)",
+      "model": "Qwen3 Next 80B A3B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "qwen/qwen3-next-80b-a3b-instruct:free",
       "mode": "chat",
@@ -16508,7 +16508,7 @@
     },
     {
       "model_id": "trinity-large-thinking",
-      "model": "Trinity Large Thinking (free)",
+      "model": "Trinity Large Thinking",
       "endpoint_path": "/chat/completions",
       "api_model_id": "arcee-ai/trinity-large-thinking:free",
       "mode": "chat",
@@ -17521,6 +17521,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T20:53:40.809Z",
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "sources": []
 }

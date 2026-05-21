@@ -176,7 +176,7 @@
           "structured_outputs",
           "response_format"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -312,7 +312,7 @@
     },
     {
       "model_id": "gpt-oss-120b",
-      "model": "gpt-oss-120b (free)",
+      "model": "gpt-oss-120b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "phala",
       "mode": "chat",
@@ -422,7 +422,7 @@
           "tool_choice",
           "tools"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -497,7 +497,7 @@
     },
     {
       "model_id": "minimax-m2.5",
-      "model": "MiniMax M2.5 (free)",
+      "model": "MiniMax M2.5",
       "endpoint_path": "/chat/completions",
       "api_model_id": "phala",
       "mode": "chat",
@@ -793,6 +793,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T20:53:40.809Z",
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "sources": []
 }

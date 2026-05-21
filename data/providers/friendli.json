@@ -256,7 +256,7 @@
     },
     {
       "model_id": "llama-3.3-70b-instruct",
-      "model": "Llama 3.3 70B Instruct (free)",
+      "model": "Llama 3.3 70B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "friendli",
       "mode": "chat",
@@ -317,7 +317,7 @@
     },
     {
       "model_id": "minimax-m2.5",
-      "model": "MiniMax M2.5 (free)",
+      "model": "MiniMax M2.5",
       "endpoint_path": "/chat/completions",
       "api_model_id": "friendli",
       "mode": "chat",
@@ -439,6 +439,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-19T22:11:55.841Z",
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "sources": []
 }

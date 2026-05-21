@@ -62,7 +62,7 @@
     },
     {
       "model_id": "gemma-4-31b-it",
-      "model": "Gemma 4 31B (free)",
+      "model": "Gemma 4 31B",
       "endpoint_path": "/images/generations",
       "api_model_id": "ambient",
       "mode": "image",
@@ -128,7 +128,7 @@
     },
     {
       "model_id": "gpt-oss-120b",
-      "model": "gpt-oss-120b (free)",
+      "model": "gpt-oss-120b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "ambient",
       "mode": "chat",
@@ -577,6 +577,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T20:53:40.809Z",
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "sources": []
 }

@@ -402,7 +402,7 @@
     },
     {
       "model_id": "deepseek-v4-flash",
-      "model": "DeepSeek V4 Flash (free)",
+      "model": "DeepSeek V4 Flash",
       "endpoint_path": "/chat/completions",
       "api_model_id": "siliconflow/fp8",
       "mode": "chat",
@@ -516,7 +516,7 @@
     },
     {
       "model_id": "gemma-4-26b-a4b-it",
-      "model": "Gemma 4 26B A4B  (free)",
+      "model": "Gemma 4 26B A4B",
       "endpoint_path": "/images/generations",
       "api_model_id": "siliconflow/fp8",
       "mode": "image",
@@ -571,7 +571,7 @@
     },
     {
       "model_id": "gemma-4-31b-it",
-      "model": "Gemma 4 31B (free)",
+      "model": "Gemma 4 31B",
       "endpoint_path": "/images/generations",
       "api_model_id": "siliconflow/fp8",
       "mode": "image",
@@ -616,7 +616,7 @@
           "tool_choice",
           "tools"
         ],
-        "status": -5
+        "status": -2
       },
       "sources": [
         {
@@ -628,7 +628,7 @@
     },
     {
       "model_id": "glm-4.5-air",
-      "model": "GLM 4.5 Air (free)",
+      "model": "GLM 4.5 Air",
       "endpoint_path": "/chat/completions",
       "api_model_id": "siliconflow/fp8",
       "mode": "chat",
@@ -671,7 +671,7 @@
           "tool_choice",
           "max_tokens"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -851,7 +851,7 @@
     },
     {
       "model_id": "gpt-oss-120b",
-      "model": "gpt-oss-120b (free)",
+      "model": "gpt-oss-120b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "siliconflow/fp8",
       "mode": "chat",
@@ -894,7 +894,7 @@
           "frequency_penalty",
           "max_tokens"
         ],
-        "status": -5
+        "status": 0
       },
       "sources": [
         {
@@ -906,7 +906,7 @@
     },
     {
       "model_id": "gpt-oss-20b",
-      "model": "gpt-oss-20b (free)",
+      "model": "gpt-oss-20b",
       "endpoint_path": "/chat/completions",
       "api_model_id": "siliconflow/fp8",
       "mode": "chat",
@@ -949,7 +949,7 @@
           "frequency_penalty",
           "max_tokens"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -1190,7 +1190,7 @@
     },
     {
       "model_id": "minimax-m2.5",
-      "model": "MiniMax M2.5 (free)",
+      "model": "MiniMax M2.5",
       "endpoint_path": "/chat/completions",
       "api_model_id": "siliconflow/fp8",
       "mode": "chat",
@@ -1348,7 +1348,7 @@
           "tool_choice",
           "max_tokens"
         ],
-        "status": -2
+        "status": -5
       },
       "sources": [
         {
@@ -1582,6 +1582,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T20:53:40.809Z",
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "sources": []
 }

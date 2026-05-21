@@ -448,7 +448,7 @@
     },
     {
       "model_id": "deepseek-v4-flash",
-      "model": "DeepSeek V4 Flash (free)",
+      "model": "DeepSeek V4 Flash",
       "endpoint_path": "/chat/completions",
       "api_model_id": "atlas-cloud/fp8",
       "mode": "chat",
@@ -1336,7 +1336,7 @@
     },
     {
       "model_id": "minimax-m2.5",
-      "model": "MiniMax M2.5 (free)",
+      "model": "MiniMax M2.5",
       "endpoint_path": "/chat/completions",
       "api_model_id": "atlas-cloud/fp8",
       "mode": "chat",
@@ -1841,7 +1841,7 @@
     },
     {
       "model_id": "qwen3-coder",
-      "model": "Qwen3 Coder 480B A35B (free)",
+      "model": "Qwen3 Coder 480B A35B",
       "endpoint_path": "/chat/completions",
       "api_model_id": "atlas-cloud/fp8",
       "mode": "chat",
@@ -1965,7 +1965,7 @@
     },
     {
       "model_id": "qwen3-next-80b-a3b-instruct",
-      "model": "Qwen3 Next 80B A3B Instruct (free)",
+      "model": "Qwen3 Next 80B A3B Instruct",
       "endpoint_path": "/chat/completions",
       "api_model_id": "atlas-cloud/fp8",
       "mode": "chat",
@@ -2203,7 +2203,7 @@
           "tools",
           "response_format"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -2653,6 +2653,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T19:00:07.736Z",
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "sources": []
 }
