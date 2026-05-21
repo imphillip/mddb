@@ -151,7 +151,7 @@ describe('OpenRouter registry population provider normalization', () => {
       },
     })
 
-    expect(second.modelsJson.last_updated).not.toBe(first.modelsJson.last_updated)
+    expect(second.modelsJson.last_updated).toBe(first.modelsJson.last_updated)
     expect(second.models[0].last_updated).toBe(firstModel.last_updated)
     expect(second.models[0].sources[0].observed_at).toBe(firstModel.sources[0].observed_at)
     expect(second.provider('openrouter').last_updated).toBe(firstOpenRouter.last_updated)

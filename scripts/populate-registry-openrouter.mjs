@@ -443,7 +443,9 @@ for (const model of models) {
 writeJson(join(OUT_DIR, 'models.json'), {
   schema_version: 1,
   models,
-  last_updated: OBSERVED_AT,
+  last_updated: previousModelsJson?.last_updated && sameNonTemporal(previousModelsJson, { schema_version: 1, models, last_updated: OBSERVED_AT })
+    ? previousModelsJson.last_updated
+    : OBSERVED_AT,
 })
 
 for (const provider of [...providerMap.values()].sort((a, b) => a.id.localeCompare(b.id))) {
