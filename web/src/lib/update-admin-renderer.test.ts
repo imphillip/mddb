@@ -9,6 +9,8 @@ describe('renderUpdateAdminPage', () => {
     expect(html).toContain('内部数据同步')
     expect(html).toContain('type="password"')
     expect(html).toContain('管理员密码')
+    expect(html).not.toContain('管理员工具：先输入密码')
+    expect(html).not.toContain('页面不嵌入任何密钥')
     expect(html).toContain('OpenRouter')
     expect(html).toContain('models.dev')
     expect(html).toContain('BaseLLM')
