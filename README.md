@@ -56,6 +56,21 @@ JSON Schema 说明见 [`docs/mddb-schema-v1.md`](docs/mddb-schema-v1.md)，schem
 - models.dev
 - LiteLLM `model_prices_and_context_window.json`
 
+## 本地环境变量
+
+私密配置不要提交到仓库。仓库只保留 `.env.example` 模板；本地或部署环境使用 `.env.local`：
+
+```bash
+cp .env.example .env.local
+```
+
+常用变量：
+
+- `OPENROUTER_API_KEY`：OpenRouter 数据抓取 / 更新脚本使用；没有时相关脚本可能无法拉取最新数据。
+- `UPDATE_ADMIN_PASSWORD`：内部 `/update/` 数据同步管理台密码；部署环境请使用长随机值。
+
+`.env.local` 已在 `.gitignore` 中忽略，填入真实 key 或密码后不要提交。
+
 ## 仓库结构
 
 ```text
