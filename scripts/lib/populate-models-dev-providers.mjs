@@ -1,7 +1,31 @@
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 
 const SOURCE_URL = 'https://models.dev/api.json'
+
+const MODELS_DEV_PROVIDER_ALIASES = new Map(Object.entries({
+  'alibaba-cn': 'alibaba',
+  'alibaba-coding-plan': 'alibaba',
+  'alibaba-coding-plan-cn': 'alibaba',
+  'fireworks-ai': 'fireworks',
+  'minimax-cn': 'minimax',
+  'minimax-coding-plan': 'minimax',
+  'minimax-cn-coding-plan': 'minimax',
+  moonshotai: 'moonshot-ai',
+  'moonshotai-cn': 'moonshot-ai',
+  'siliconflow-cn': 'siliconflow',
+  'stepfun-ai': 'stepfun',
+  'tencent-coding-plan': 'tencent',
+  'tencent-tokenhub': 'tencent',
+  togetherai: 'together',
+  'xiaomi-token-plan-ams': 'xiaomi',
+  'xiaomi-token-plan-cn': 'xiaomi',
+  'xiaomi-token-plan-sgp': 'xiaomi',
+  zai: 'z-ai',
+  'zai-coding-plan': 'z-ai',
+  zhipuai: 'z-ai',
+  'zhipuai-coding-plan': 'z-ai',
+}))
 
 function readJson(path) {
   return JSON.parse(readFileSync(path, 'utf8'))
@@ -140,7 +164,7 @@ function modelsDevOffer(provider, modelId, modelRecord, match) {
     },
     sources: [{
       source: 'models.dev',
-      source_id: `${provider.id}/${modelId}`,
+      source_id: `${provider.modelsDevId ?? provider.id}/${modelId}`,
       url: SOURCE_URL,
     }],
   }
@@ -172,7 +196,7 @@ function hasModels(value) {
 function sourceObservation(provider, observedAt) {
   return {
     source: 'models.dev',
-    source_id: provider.id,
+    source_id: provider.modelsDevId ?? provider.id,
     url: SOURCE_URL,
     observed_at: observedAt,
   }
@@ -230,6 +254,11 @@ function createProvider(provider, observedAt, canonicalIndex) {
   }, provider, observedAt, canonicalIndex)
 }
 
+function isModelsDevOnlyProvider(provider) {
+  const sources = Array.isArray(provider?.sources) ? provider.sources : []
+  return sources.length > 0 && sources.every((source) => source.source === 'models.dev')
+}
+
 export function populateModelsDevProviders({ dataDir = join(process.cwd(), 'data', 'providers'), modelsPath = join(process.cwd(), 'data', 'models.json'), source, observedAt = new Date().toISOString() } = {}) {
   if (!source || typeof source !== 'object' || Array.isArray(source)) throw new Error('models.dev provider source must be an object')
   const existingProviders = readExistingProviders(dataDir)
@@ -239,16 +268,33 @@ export function populateModelsDevProviders({ dataDir = join(process.cwd(), 'data
   let skipped = 0
 
   for (const raw of Object.values(source)) {
-    const provider = providerRecordFromModelsDev(raw)
+    const provider = { ...providerRecordFromModelsDev(raw) }
     if (!provider || !hasModels(provider)) {
       skipped += 1
       continue
     }
     const id = slugify(provider.id)
-    provider.id = id
-    const existing = existingProviders.get(id)?.provider
+    const canonicalId = MODELS_DEV_PROVIDER_ALIASES.get(id) ?? id
+    provider.modelsDevId = id
+    provider.id = canonicalId
+    if (canonicalId !== id) {
+      const aliasEntry = existingProviders.get(id)
+      if (isModelsDevOnlyProvider(aliasEntry?.provider)) {
+        rmSync(join(dataDir, aliasEntry.file), { force: true })
+      }
+    }
+    const existing = existingProviders.get(canonicalId)?.provider
     const output = existing ? enrichProvider(existing, provider, observedAt, canonicalIndex) : createProvider(provider, observedAt, canonicalIndex)
-    const file = existingProviders.get(id)?.file ?? `${id}.json`
+    if (!existing && (!Array.isArray(output.offers) || output.offers.length === 0)) {
+      skipped += 1
+      continue
+    }
+    const file = existingProviders.get(canonicalId)?.file ?? `${canonicalId}.json`
+    if (existing && isModelsDevOnlyProvider(existing) && (!Array.isArray(output.offers) || output.offers.length === 0)) {
+      rmSync(join(dataDir, file), { force: true })
+      skipped += 1
+      continue
+    }
     writeJson(join(dataDir, file), output)
     if (existing) enriched += 1
     else created += 1

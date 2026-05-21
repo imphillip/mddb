@@ -1391,7 +1391,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-07,
+              "amount": 1e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -1465,7 +1465,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-07,
+              "amount": 1e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -1539,7 +1539,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 7.5e-08,
+              "amount": 7.5e-8,
               "unit": "per_image"
             },
             "web_search": {
@@ -1610,7 +1610,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 7.5e-08,
+              "amount": 7.5e-8,
               "unit": "per_image"
             },
             "web_search": {
@@ -1681,7 +1681,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-07,
+              "amount": 3e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -1757,7 +1757,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-07,
+              "amount": 3e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -1833,7 +1833,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-07,
+              "amount": 3e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -1909,7 +1909,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-07,
+              "amount": 3e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -1985,7 +1985,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-07,
+              "amount": 3e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -2058,7 +2058,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-07,
+              "amount": 3e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -2131,7 +2131,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-07,
+              "amount": 1e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -2207,7 +2207,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-07,
+              "amount": 1e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -2283,7 +2283,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-07,
+              "amount": 1e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -2359,7 +2359,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-07,
+              "amount": 1e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -2435,7 +2435,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.25e-06,
+              "amount": 0.00000125,
               "unit": "per_image"
             },
             "web_search": {
@@ -2511,7 +2511,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.25e-06,
+              "amount": 0.00000125,
               "unit": "per_image"
             },
             "web_search": {
@@ -2587,7 +2587,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.25e-06,
+              "amount": 0.00000125,
               "unit": "per_image"
             },
             "web_search": {
@@ -2663,7 +2663,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.25e-06,
+              "amount": 0.00000125,
               "unit": "per_image"
             },
             "web_search": {
@@ -2739,7 +2739,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.25e-06,
+              "amount": 0.00000125,
               "unit": "per_image"
             },
             "web_search": {
@@ -2815,7 +2815,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.25e-06,
+              "amount": 0.00000125,
               "unit": "per_image"
             },
             "web_search": {
@@ -2891,7 +2891,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.25e-06,
+              "amount": 0.00000125,
               "unit": "per_image"
             },
             "web_search": {
@@ -2967,7 +2967,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.25e-06,
+              "amount": 0.00000125,
               "unit": "per_image"
             },
             "web_search": {
@@ -3043,7 +3043,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.25e-06,
+              "amount": 0.00000125,
               "unit": "per_image"
             },
             "web_search": {
@@ -3119,7 +3119,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.25e-06,
+              "amount": 0.00000125,
               "unit": "per_image"
             },
             "web_search": {
@@ -3195,7 +3195,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.25e-06,
+              "amount": 0.00000125,
               "unit": "per_image"
             },
             "web_search": {
@@ -3271,7 +3271,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.25e-06,
+              "amount": 0.00000125,
               "unit": "per_image"
             },
             "web_search": {
@@ -3347,7 +3347,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 5e-07,
+              "amount": 5e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -3423,7 +3423,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 5e-07,
+              "amount": 5e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -3499,7 +3499,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2e-06,
+              "amount": 0.000002,
               "unit": "per_image"
             },
             "web_search": {
@@ -3574,7 +3574,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2e-06,
+              "amount": 0.000002,
               "unit": "per_image"
             },
             "web_search": {
@@ -3769,7 +3769,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2.5e-07,
+              "amount": 2.5e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -3845,7 +3845,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2.5e-07,
+              "amount": 2.5e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -3921,7 +3921,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2.5e-07,
+              "amount": 2.5e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -3997,7 +3997,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2.5e-07,
+              "amount": 2.5e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -4073,7 +4073,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2e-06,
+              "amount": 0.000002,
               "unit": "per_image"
             },
             "web_search": {
@@ -4149,7 +4149,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2e-06,
+              "amount": 0.000002,
               "unit": "per_image"
             },
             "web_search": {
@@ -4225,7 +4225,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2e-06,
+              "amount": 0.000002,
               "unit": "per_image"
             },
             "web_search": {
@@ -5120,7 +5120,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.5e-06,
+              "amount": 0.0000015,
               "unit": "per_image"
             },
             "web_search": {
@@ -5196,7 +5196,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.5e-06,
+              "amount": 0.0000015,
               "unit": "per_image"
             },
             "web_search": {

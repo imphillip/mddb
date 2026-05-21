@@ -8,8 +8,8 @@
   "domain": "platform.stepfun.com",
   "other_parameters": {
     "models_dev": {
-      "model_count": 4,
-      "doc": "https://platform.stepfun.com/docs/zh/overview/concept",
+      "model_count": 2,
+      "doc": "https://platform.stepfun.ai/docs/en/step-plan/integrations/open-code",
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "STEPFUN_API_KEY"
@@ -119,6 +119,12 @@
       "source_id": "stepfun",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:27:33.665Z"
+    },
+    {
+      "source": "models.dev",
+      "source_id": "stepfun-ai",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:53:17.232Z"
     }
   ]
 }

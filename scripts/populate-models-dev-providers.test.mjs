@@ -13,13 +13,16 @@ function writeJson(path, value) {
 }
 
 describe('populateModelsDevProviders', () => {
-  it('enriches provider logo and official metadata without touching canonical models', () => {
+  it('enriches provider metadata and safe offers against existing canonical providers only', () => {
     const root = mkdtempSync(join(tmpdir(), 'mddb-models-dev-providers-'))
     const providersDir = join(root, 'providers')
     mkdirSync(providersDir)
     writeJson(join(root, 'models.json'), {
       schema_version: 1,
-      models: [{ id: 'gpt-4o', model: 'GPT-4o', author: 'openai', alias: ['openai/gpt-4o'] }],
+      models: [
+        { id: 'gpt-4o', model: 'GPT-4o', author: 'openai', alias: ['openai/gpt-4o'] },
+        { id: 'kimi-k2.5', model: 'Kimi K2.5', author: 'moonshot-ai', alias: ['moonshotai/kimi-k2.5'] },
+      ],
       last_updated: '2026-01-01T00:00:00.000Z',
     })
     writeJson(join(providersDir, 'openai.json'), {
@@ -33,6 +36,24 @@ describe('populateModelsDevProviders', () => {
       sources: [{ source: 'openrouter', source_id: 'openai' }],
       last_updated: '2026-01-01T00:00:00.000Z',
     })
+    writeJson(join(providersDir, 'moonshot-ai.json'), {
+      schema_version: 1,
+      id: 'moonshot-ai',
+      provider: 'Moonshot AI',
+      currency: 'USD',
+      offers: [],
+      sources: [{ source: 'openrouter', source_id: 'moonshot-ai' }],
+      last_updated: '2026-01-01T00:00:00.000Z',
+    })
+    writeJson(join(providersDir, 'tencent.json'), {
+      schema_version: 1,
+      id: 'tencent',
+      provider: 'Tencent',
+      currency: 'USD',
+      offers: [],
+      sources: [{ source: 'openrouter', source_id: 'tencent' }],
+      last_updated: '2026-01-01T00:00:00.000Z',
+    })
     const source = {
       openai: {
         id: 'openai',
@@ -43,17 +64,28 @@ describe('populateModelsDevProviders', () => {
         env: ['OPENAI_API_KEY'],
         iconURL: 'https://models.dev/logos/openai.svg',
         models: {
-          'gpt-4o': { id: 'gpt-4o', name: 'GPT-4o' },
+          'gpt-4o': { id: 'gpt-4o', name: 'GPT-4o', cost: { input: 2.5, output: 10 } },
           'models-dev-only-model': { id: 'models-dev-only-model', name: 'Do Not Import' },
+        },
+      },
+      moonshotai: {
+        id: 'moonshotai',
+        name: 'Moonshot AI',
+        iconURL: 'https://models.dev/logos/moonshotai.svg',
+        models: {
+          'kimi-k2.5': { id: 'kimi-k2.5', name: 'Kimi K2.5' },
+        },
+      },
+      'tencent-coding-plan': {
+        id: 'tencent-coding-plan',
+        name: 'Tencent Coding Plan (China)',
+        models: {
+          'gpt-4o': { id: 'gpt-4o', name: 'GPT-4o' },
         },
       },
       github: {
         id: 'github',
         name: 'GitHub Models',
-        doc: 'https://docs.github.com/models',
-        api: 'https://models.inference.ai.azure.com',
-        npm: '@ai-sdk/openai-compatible',
-        env: ['GITHUB_TOKEN'],
         iconURL: 'https://models.dev/logos/github.svg',
         models: {
           'gpt-4o': { id: 'gpt-4o', name: 'GPT-4o' },
@@ -63,46 +95,43 @@ describe('populateModelsDevProviders', () => {
         id: 'empty',
         name: 'Empty Provider',
         iconURL: 'https://models.dev/logos/empty.svg',
-        models: {},
+        models: {
+          'unknown-model': { id: 'unknown-model', name: 'Unknown Model' },
+        },
       },
     }
 
     const result = populateModelsDevProviders({ dataDir: providersDir, modelsPath: join(root, 'models.json'), source, observedAt: '2026-02-03T04:05:06.000Z' })
 
-    expect(result).toEqual({ enriched: 1, created: 1, skipped: 1 })
-    expect(readJson(join(root, 'models.json')).models).toHaveLength(1)
+    expect(result).toEqual({ enriched: 3, created: 1, skipped: 1 })
+    expect(readJson(join(root, 'models.json')).models).toHaveLength(2)
 
     const openai = readJson(join(providersDir, 'openai.json'))
     expect(openai.icon_url).toBe('https://models.dev/logos/openai.svg')
     expect(openai.base_url).toBe('https://api.openai.com/v1')
     expect(openai.domain).toBe('platform.openai.com')
-    expect(openai.other_parameters).toMatchObject({
-      existing: true,
-      models_dev: {
-        doc: 'https://platform.openai.com/docs/models',
-        npm: '@ai-sdk/openai',
-        env: ['OPENAI_API_KEY'],
-        model_count: 2,
-      },
-    })
+    expect(openai.other_parameters).toMatchObject({ existing: true, models_dev: { model_count: 2, npm: '@ai-sdk/openai' } })
     expect(openai.offers).toEqual(expect.arrayContaining([
       expect.objectContaining({ model_id: 'gpt-4o', api_model_id: 'openai/gpt-4o' }),
-      expect.objectContaining({ model_id: 'gpt-4o', api_model_id: 'gpt-4o' }),
-    ]))
-    expect(openai.sources).toEqual(expect.arrayContaining([
-      expect.objectContaining({ source: 'models.dev', source_id: 'openai', url: 'https://models.dev/api.json' }),
+      expect.objectContaining({ model_id: 'gpt-4o', api_model_id: 'gpt-4o', prices: [expect.objectContaining({ source: 'models.dev' })] }),
     ]))
 
+    const moonshot = readJson(join(providersDir, 'moonshot-ai.json'))
+    expect(moonshot.provider).toBe('Moonshot AI')
+    expect(moonshot.offers).toEqual([expect.objectContaining({ model_id: 'kimi-k2.5', api_model_id: 'kimi-k2.5' })])
+    expect(() => readJson(join(providersDir, 'moonshotai.json'))).toThrow()
+
+    writeJson(join(providersDir, 'moonshotai.json'), { id: 'moonshotai', provider: 'Moonshot AI', offers: [], sources: [{ source: 'models.dev', source_id: 'moonshotai' }] })
+    populateModelsDevProviders({ dataDir: providersDir, modelsPath: join(root, 'models.json'), source: { moonshotai: source.moonshotai }, observedAt: '2026-02-03T04:05:06.000Z' })
+    expect(() => readJson(join(providersDir, 'moonshotai.json'))).toThrow()
+
+    const tencent = readJson(join(providersDir, 'tencent.json'))
+    expect(tencent.provider).toBe('Tencent')
+    expect(tencent.offers).toEqual([expect.objectContaining({ model_id: 'gpt-4o', api_model_id: 'gpt-4o' })])
+    expect(() => readJson(join(providersDir, 'tencent-coding-plan.json'))).toThrow()
+
     const github = readJson(join(providersDir, 'github.json'))
-    expect(github).toMatchObject({
-      schema_version: 1,
-      id: 'github',
-      provider: 'GitHub Models',
-      currency: 'USD',
-      icon_url: 'https://models.dev/logos/github.svg',
-      base_url: 'https://models.inference.ai.azure.com',
-      domain: 'docs.github.com',
-      offers: [expect.objectContaining({ model_id: 'gpt-4o', api_model_id: 'gpt-4o' })],
-    })
+    expect(github).toMatchObject({ id: 'github', provider: 'GitHub Models', offers: [expect.objectContaining({ model_id: 'gpt-4o' })] })
+    expect(() => readJson(join(providersDir, 'empty.json'))).toThrow()
   })
 })

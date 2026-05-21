@@ -3,6 +3,20 @@
   "id": "z-ai",
   "provider": "Z.AI",
   "currency": "USD",
+  "icon_url": "https://models.dev/logos/z-ai.svg",
+  "base_url": "https://open.bigmodel.cn/api/paas/v4",
+  "domain": "docs.z.ai",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 12,
+      "doc": "https://docs.z.ai/guides/overview/pricing",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "ZHIPU_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "offers": [
     {
       "model_id": "glm-4-32b",
@@ -655,9 +669,428 @@
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
+    },
+    {
+      "model_id": "glm-5.1",
+      "model": "GLM 5.1",
+      "api_model_id": "glm-5.1",
+      "endpoint_path": "glm-5.1",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 24,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 1.3,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zhipuai/glm-5.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5v-turbo",
+      "model": "GLM 5V Turbo",
+      "api_model_id": "glm-5v-turbo",
+      "endpoint_path": "glm-5v-turbo",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 22,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zhipuai/glm-5v-turbo",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5",
+      "model": "GLM 5",
+      "api_model_id": "glm-5",
+      "endpoint_path": "glm-5",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zhipuai/glm-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.6v",
+      "model": "GLM 4.6V",
+      "api_model_id": "glm-4.6v",
+      "endpoint_path": "glm-4.6v",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.9,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zhipuai/glm-4.6v",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.7",
+      "model": "GLM 4.7",
+      "api_model_id": "glm-4.7",
+      "endpoint_path": "glm-4.7",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.11,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zhipuai/glm-4.7",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.5",
+      "model": "GLM 4.5",
+      "api_model_id": "glm-4.5",
+      "endpoint_path": "glm-4.5",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.11,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zhipuai/glm-4.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.6",
+      "model": "GLM 4.6",
+      "api_model_id": "glm-4.6",
+      "endpoint_path": "glm-4.6",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.11,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zhipuai/glm-4.6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.7-flash",
+      "model": "GLM 4.7 Flash",
+      "api_model_id": "glm-4.7-flash",
+      "endpoint_path": "glm-4.7-flash",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zhipuai/glm-4.7-flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.5v",
+      "model": "GLM 4.5V",
+      "api_model_id": "glm-4.5v",
+      "endpoint_path": "glm-4.5v",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zhipuai/glm-4.5v",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.5-air",
+      "model": "GLM 4.5 Air",
+      "api_model_id": "glm-4.5-air",
+      "endpoint_path": "glm-4.5-air",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.1,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.03,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zhipuai/glm-4.5-air",
+          "url": "https://models.dev/api.json"
+        }
+      ]
     }
   ],
-  "other_parameters": {},
-  "last_updated": "2026-05-21T21:36:01.873Z",
-  "sources": []
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "zhipuai",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:53:17.232Z"
+    }
+  ]
 }

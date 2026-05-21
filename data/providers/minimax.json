@@ -9,7 +9,7 @@
   "other_parameters": {
     "models_dev": {
       "model_count": 6,
-      "doc": "https://platform.minimax.io/docs/guides/quickstart",
+      "doc": "https://platform.minimax.io/docs/token-plan/intro",
       "npm": "@ai-sdk/anthropic",
       "env": [
         "MINIMAX_API_KEY"
@@ -714,6 +714,12 @@
       "source_id": "minimax",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:27:33.665Z"
+    },
+    {
+      "source": "models.dev",
+      "source_id": "minimax-coding-plan",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:53:17.232Z"
     }
   ]
 }

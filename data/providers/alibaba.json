@@ -8,7 +8,7 @@
   "domain": "alibabacloud.com",
   "other_parameters": {
     "models_dev": {
-      "model_count": 48,
+      "model_count": 80,
       "doc": "https://www.alibabacloud.com/help/en/model-studio/models",
       "npm": "@ai-sdk/openai-compatible",
       "env": [
@@ -3051,6 +3051,660 @@
           "url": "https://models.dev/api.json"
         }
       ]
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "model": "Kimi K2.5",
+      "api_model_id": "kimi-k2.5",
+      "endpoint_path": "kimi-k2.5",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.574,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.411,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "alibaba-cn/kimi-k2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5.1",
+      "model": "GLM 5.1",
+      "api_model_id": "glm-5.1",
+      "endpoint_path": "glm-5.1",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.87,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.48,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.17,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "alibaba-cn/glm-5.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-r1",
+      "model": "R1",
+      "api_model_id": "deepseek-r1",
+      "endpoint_path": "deepseek-r1",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.574,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.294,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "alibaba-cn/deepseek-r1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-r1-0528",
+      "model": "R1 0528",
+      "api_model_id": "deepseek-r1-0528",
+      "endpoint_path": "deepseek-r1-0528",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.574,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.294,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "alibaba-cn/deepseek-r1-0528",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2-thinking",
+      "model": "Kimi K2 Thinking",
+      "api_model_id": "kimi-k2-thinking",
+      "endpoint_path": "kimi-k2-thinking",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.574,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.294,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "alibaba-cn/kimi-k2-thinking",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.5",
+      "model": "MiniMax M2.5",
+      "api_model_id": "MiniMax-M2.5",
+      "endpoint_path": "MiniMax-M2.5",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "alibaba-cn/MiniMax-M2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-r1-distill-llama-70b",
+      "model": "R1 Distill Llama 70B",
+      "api_model_id": "deepseek-r1-distill-llama-70b",
+      "endpoint_path": "deepseek-r1-distill-llama-70b",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.287,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.861,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "alibaba-cn/deepseek-r1-distill-llama-70b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-r1-distill-qwen-32b",
+      "model": "R1 Distill Qwen 32B",
+      "api_model_id": "deepseek-r1-distill-qwen-32b",
+      "endpoint_path": "deepseek-r1-distill-qwen-32b",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.287,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.861,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "alibaba-cn/deepseek-r1-distill-qwen-32b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5",
+      "model": "GLM 5",
+      "api_model_id": "glm-5",
+      "endpoint_path": "glm-5",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.86,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.15,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "alibaba-cn/glm-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.6",
+      "model": "Kimi K2.6",
+      "api_model_id": "kimi-k2.6",
+      "endpoint_path": "kimi-k2.6",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.929,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.858,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "alibaba-cn/kimi-k2.6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.2-exp",
+      "model": "DeepSeek V3.2 Exp",
+      "api_model_id": "deepseek-v3-2-exp",
+      "endpoint_path": "deepseek-v3-2-exp",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.287,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.431,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "alibaba-cn/deepseek-v3-2-exp",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "model": "Kimi K2.5",
+      "api_model_id": "kimi/kimi-k2.5",
+      "endpoint_path": "kimi/kimi-k2.5",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "alibaba-cn/kimi/kimi-k2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-r1-0528",
+      "model": "R1 0528",
+      "api_model_id": "siliconflow/deepseek-r1-0528",
+      "endpoint_path": "siliconflow/deepseek-r1-0528",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.18,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "alibaba-cn/siliconflow/deepseek-r1-0528",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "model": "DeepSeek V3.2",
+      "api_model_id": "siliconflow/deepseek-v3.2",
+      "endpoint_path": "siliconflow/deepseek-v3.2",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.27,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.42,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "alibaba-cn/siliconflow/deepseek-v3.2",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.1-terminus",
+      "model": "DeepSeek V3.1 Terminus",
+      "api_model_id": "siliconflow/deepseek-v3.1-terminus",
+      "endpoint_path": "siliconflow/deepseek-v3.1-terminus",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.27,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "alibaba-cn/siliconflow/deepseek-v3.1-terminus",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.7",
+      "model": "MiniMax M2.7",
+      "api_model_id": "MiniMax/MiniMax-M2.7",
+      "endpoint_path": "MiniMax/MiniMax-M2.7",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.06,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.375,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "alibaba-cn/MiniMax/MiniMax-M2.7",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-pro",
+      "model": "DeepSeek V4 Pro",
+      "api_model_id": "deepseek-v4-pro",
+      "endpoint_path": "deepseek-v4-pro",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.74,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.48,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.145,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "alibaba-cn/deepseek-v4-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-flash",
+      "model": "DeepSeek V4 Flash",
+      "api_model_id": "deepseek-v4-flash",
+      "endpoint_path": "deepseek-v4-flash",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.14,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.28,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.028,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "alibaba-cn/deepseek-v4-flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
     }
   ],
   "sources": [
@@ -3059,6 +3713,12 @@
       "source_id": "alibaba",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:27:33.665Z"
+    },
+    {
+      "source": "models.dev",
+      "source_id": "alibaba-cn",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:53:17.232Z"
     }
   ]
 }
