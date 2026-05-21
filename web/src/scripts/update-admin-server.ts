@@ -4,6 +4,7 @@ import { createHash, timingSafeEqual } from 'node:crypto'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { renderUpdateAdminPage } from '../lib/update-admin-renderer.js'
+import { summarizeRegistryDiff } from '../lib/update-diff-summary.js'
 import { applyOpenRouterUpdate, previewOpenRouterUpdate } from '../lib/update-runner.js'
 
 const repoRoot = process.cwd()
@@ -33,7 +34,7 @@ const server = createServer(async (req, res) => {
       const body = await readJson(req)
       if (!verifyPassword(body.password)) return sendJson(res, 401, { ok: false, error: 'unauthorized' })
       const result = await previewOpenRouterUpdate({ repoRoot })
-      sendJson(res, 200, result)
+      sendJson(res, 200, result.ok ? { ...result, summary: summarizeRegistryDiff(result.diff, result.changedFiles) } : result)
       return
     }
     if (req.method === 'POST' && url.pathname === '/api/update/openrouter/apply') {
