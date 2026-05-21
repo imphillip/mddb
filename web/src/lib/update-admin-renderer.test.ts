@@ -1,3 +1,7 @@
+import { writeFileSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
+import { execFileSync } from 'node:child_process'
 import { describe, expect, it } from 'vitest'
 import { renderUpdateAdminPage } from './update-admin-renderer.js'
 
@@ -30,5 +34,14 @@ describe('renderUpdateAdminPage', () => {
     expect(html).not.toContain('OPENROUTER_API_KEY')
     expect(html).not.toContain('UPDATE_ADMIN_PASSWORD')
     expect(html).not.toContain('.env.local')
+  })
+
+  it('embeds syntactically valid client JavaScript', () => {
+    const html = renderUpdateAdminPage()
+    const script = html.match(/<script>([\s\S]*)<\/script>/u)?.[1]
+    expect(script).toBeTruthy()
+    const scriptPath = join(tmpdir(), `mddb-update-admin-${process.pid}.js`)
+    writeFileSync(scriptPath, script ?? '')
+    expect(() => execFileSync(process.execPath, ['--check', scriptPath], { stdio: 'pipe' })).not.toThrow()
   })
 })
