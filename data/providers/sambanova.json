@@ -176,20 +176,20 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.14,
+              "amount": 0.12,
               "unit": "per_1m_tokens"
             },
             "output": {
-              "amount": 0.95,
+              "amount": 0.9,
               "unit": "per_1m_tokens"
             }
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T20:53:40.809Z",
           "raw_pricing": {
-            "prompt": "0.00000014",
-            "completion": "0.00000095",
+            "prompt": "0.00000012",
+            "completion": "0.0000009",
             "discount": 0
           }
         }
@@ -198,7 +198,7 @@
         "source_model_id": "openai/gpt-oss-120b:free",
         "endpoint_tag": "sambanova/dedicated",
         "context_length": 131072,
-        "max_output_tokens": 16384,
+        "max_output_tokens": 131072,
         "supported_parameters": [
           "reasoning",
           "include_reasoning",
@@ -427,9 +427,62 @@
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "model": "DeepSeek V3.2",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "sambanova",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-21T20:53:40.809Z",
+          "raw_pricing": {
+            "prompt": "0.000003",
+            "completion": "0.0000045",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v3.2",
+        "endpoint_tag": "sambanova",
+        "context_length": 32768,
+        "max_output_tokens": 7168,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "top_k",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v3.2#SambaNova | deepseek/deepseek-v3.2-20251201",
+          "observed_at": "2026-05-21T20:53:40.809Z"
+        }
+      ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T19:00:07.736Z",
+  "last_updated": "2026-05-21T20:53:40.809Z",
   "sources": []
 }

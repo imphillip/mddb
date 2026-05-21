@@ -2245,11 +2245,11 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 1.75,
+              "amount": 5,
               "unit": "per_1m_tokens"
             },
             "output": {
-              "amount": 14,
+              "amount": 30,
               "unit": "per_1m_tokens"
             },
             "web_search": {
@@ -2259,26 +2259,32 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-21T20:53:40.809Z",
           "raw_pricing": {
-            "prompt": "0.00000175",
-            "completion": "0.000014",
+            "prompt": "0.000005",
+            "completion": "0.00003",
             "web_search": "0.01",
-            "input_cache_read": "0.000000175",
+            "input_cache_read": "0.0000005",
             "discount": 0
           }
         }
       ],
       "other_parameters": {
-        "source_model_id": "openai/gpt-5.3-chat",
+        "source_model_id": "openai/gpt-chat-latest",
         "endpoint_tag": "openai",
-        "context_length": 128000,
-        "max_output_tokens": 16384,
+        "context_length": 400000,
+        "max_output_tokens": 128000,
         "supported_parameters": [
           "seed",
           "max_tokens",
           "response_format",
           "structured_outputs",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "logit_bias",
+          "logprobs",
+          "top_logprobs",
           "tools",
           "tool_choice"
         ],
@@ -2287,8 +2293,8 @@
       "sources": [
         {
           "source": "openrouter:endpoints",
-          "source_id": "openai/gpt-5.3-chat#OpenAI | openai/gpt-5.3-chat-20260303",
-          "observed_at": "2026-05-19T22:11:55.841Z"
+          "source_id": "openai/gpt-chat-latest#OpenAI | openai/gpt-chat-latest-20260505",
+          "observed_at": "2026-05-21T20:53:40.809Z"
         }
       ]
     },
@@ -2402,7 +2408,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -2895,70 +2901,6 @@
         {
           "source": "openrouter:endpoints",
           "source_id": "openai/gpt-audio-mini#OpenAI | openai/gpt-audio-mini",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    },
-    {
-      "model_id": "gpt-chat-latest",
-      "model": "GPT Chat Latest",
-      "endpoint_path": "/images/generations",
-      "api_model_id": "openai",
-      "mode": "image",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 5,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 30,
-              "unit": "per_1m_tokens"
-            },
-            "web_search": {
-              "amount": 0.01,
-              "unit": "per_request"
-            }
-          },
-          "currency": "USD",
-          "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
-          "raw_pricing": {
-            "prompt": "0.000005",
-            "completion": "0.00003",
-            "web_search": "0.01",
-            "input_cache_read": "0.0000005",
-            "discount": 0
-          }
-        }
-      ],
-      "other_parameters": {
-        "source_model_id": "openai/gpt-chat-latest",
-        "endpoint_tag": "openai",
-        "context_length": 400000,
-        "max_output_tokens": 128000,
-        "supported_parameters": [
-          "seed",
-          "max_tokens",
-          "response_format",
-          "structured_outputs",
-          "stop",
-          "frequency_penalty",
-          "presence_penalty",
-          "logit_bias",
-          "logprobs",
-          "top_logprobs",
-          "tools",
-          "tool_choice"
-        ],
-        "status": 0
-      },
-      "sources": [
-        {
-          "source": "openrouter:endpoints",
-          "source_id": "openai/gpt-chat-latest#OpenAI | openai/gpt-chat-latest-20260505",
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
@@ -3577,6 +3519,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T19:00:07.736Z",
+  "last_updated": "2026-05-21T20:53:40.809Z",
   "sources": []
 }

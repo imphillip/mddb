@@ -405,58 +405,6 @@
       ]
     },
     {
-      "model_id": "claude-haiku-latest",
-      "model": "Claude Haiku Latest",
-      "endpoint_path": "/images/generations",
-      "api_model_id": "~anthropic/claude-haiku-latest",
-      "mode": "image",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 1,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 5,
-              "unit": "per_1m_tokens"
-            },
-            "web_search": {
-              "amount": 0.01,
-              "unit": "per_request"
-            }
-          },
-          "currency": "USD",
-          "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
-          "raw_pricing": {
-            "prompt": "0.000001",
-            "completion": "0.000005",
-            "web_search": "0.01",
-            "input_cache_read": "0.0000001",
-            "input_cache_write": "0.00000125"
-          }
-        }
-      ],
-      "other_parameters": {
-        "source_id": "~anthropic/claude-haiku-latest",
-        "canonical_slug": "~anthropic/claude-haiku-latest",
-        "endpoint_providers": [],
-        "endpoint_count": 0,
-        "context_length": 200000,
-        "max_completion_tokens": 64000
-      },
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "~anthropic/claude-haiku-latest",
-          "url": "https://openrouter.ai/~anthropic/claude-haiku-latest",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    },
-    {
       "model_id": "claude-opus-4",
       "model": "Claude Opus 4",
       "endpoint_path": "/images/generations",
@@ -846,58 +794,6 @@
       ]
     },
     {
-      "model_id": "claude-opus-latest",
-      "model": "Claude Opus Latest",
-      "endpoint_path": "/images/generations",
-      "api_model_id": "~anthropic/claude-opus-latest",
-      "mode": "image",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 5,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 25,
-              "unit": "per_1m_tokens"
-            },
-            "web_search": {
-              "amount": 0.01,
-              "unit": "per_request"
-            }
-          },
-          "currency": "USD",
-          "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
-          "raw_pricing": {
-            "prompt": "0.000005",
-            "completion": "0.000025",
-            "web_search": "0.01",
-            "input_cache_read": "0.0000005",
-            "input_cache_write": "0.00000625"
-          }
-        }
-      ],
-      "other_parameters": {
-        "source_id": "~anthropic/claude-opus-latest",
-        "canonical_slug": "~anthropic/claude-opus-latest",
-        "endpoint_providers": [],
-        "endpoint_count": 0,
-        "context_length": 1000000,
-        "max_completion_tokens": 128000
-      },
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "~anthropic/claude-opus-latest",
-          "url": "https://openrouter.ai/~anthropic/claude-opus-latest",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    },
-    {
       "model_id": "claude-sonnet-4",
       "model": "Claude Sonnet 4",
       "endpoint_path": "/images/generations",
@@ -1062,58 +958,6 @@
           "source": "openrouter",
           "source_id": "anthropic/claude-sonnet-4.6",
           "url": "https://openrouter.ai/anthropic/claude-sonnet-4.6",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    },
-    {
-      "model_id": "claude-sonnet-latest",
-      "model": "Claude Sonnet Latest",
-      "endpoint_path": "/images/generations",
-      "api_model_id": "~anthropic/claude-sonnet-latest",
-      "mode": "image",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 3,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 15,
-              "unit": "per_1m_tokens"
-            },
-            "web_search": {
-              "amount": 0.01,
-              "unit": "per_request"
-            }
-          },
-          "currency": "USD",
-          "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
-          "raw_pricing": {
-            "prompt": "0.000003",
-            "completion": "0.000015",
-            "web_search": "0.01",
-            "input_cache_read": "0.0000003",
-            "input_cache_write": "0.00000375"
-          }
-        }
-      ],
-      "other_parameters": {
-        "source_id": "~anthropic/claude-sonnet-latest",
-        "canonical_slug": "~anthropic/claude-sonnet-latest",
-        "endpoint_providers": [],
-        "endpoint_count": 0,
-        "context_length": 1000000,
-        "max_completion_tokens": 128000
-      },
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "~anthropic/claude-sonnet-latest",
-          "url": "https://openrouter.ai/~anthropic/claude-sonnet-latest",
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
@@ -2055,9 +1899,10 @@
           "Parasail",
           "Alibaba",
           "Friendli",
-          "Google"
+          "Google",
+          "SambaNova"
         ],
-        "endpoint_count": 9,
+        "endpoint_count": 10,
         "context_length": 131072,
         "max_completion_tokens": 65536
       },
@@ -3775,132 +3620,6 @@
       ]
     },
     {
-      "model_id": "gemini-flash-latest",
-      "model": "Gemini Flash Latest",
-      "endpoint_path": "/images/generations",
-      "api_model_id": "~google/gemini-flash-latest",
-      "mode": "image",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 1.5,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 9,
-              "unit": "per_1m_tokens"
-            },
-            "internal_reasoning": {
-              "amount": 9,
-              "unit": "per_1m_tokens"
-            },
-            "image": {
-              "amount": 0.0000015,
-              "unit": "per_image"
-            },
-            "web_search": {
-              "amount": 0.014,
-              "unit": "per_request"
-            }
-          },
-          "currency": "USD",
-          "source": "openrouter",
-          "observed_at": "2026-05-21T19:00:07.736Z",
-          "raw_pricing": {
-            "prompt": "0.0000015",
-            "completion": "0.000009",
-            "image": "0.0000015",
-            "audio": "0.000003",
-            "web_search": "0.014",
-            "internal_reasoning": "0.000009",
-            "input_cache_read": "0.00000015",
-            "input_cache_write": "0.00000008333333333333334"
-          }
-        }
-      ],
-      "other_parameters": {
-        "source_id": "~google/gemini-flash-latest",
-        "canonical_slug": "~google/gemini-flash-latest",
-        "endpoint_providers": [],
-        "endpoint_count": 0,
-        "context_length": 1048576,
-        "max_completion_tokens": 65536
-      },
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "~google/gemini-flash-latest",
-          "url": "https://openrouter.ai/~google/gemini-flash-latest",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    },
-    {
-      "model_id": "gemini-pro-latest",
-      "model": "Gemini Pro Latest",
-      "endpoint_path": "/images/generations",
-      "api_model_id": "~google/gemini-pro-latest",
-      "mode": "image",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 2,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 12,
-              "unit": "per_1m_tokens"
-            },
-            "internal_reasoning": {
-              "amount": 12,
-              "unit": "per_1m_tokens"
-            },
-            "image": {
-              "amount": 0.000002,
-              "unit": "per_image"
-            },
-            "web_search": {
-              "amount": 0.014,
-              "unit": "per_request"
-            }
-          },
-          "currency": "USD",
-          "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
-          "raw_pricing": {
-            "prompt": "0.000002",
-            "completion": "0.000012",
-            "image": "0.000002",
-            "audio": "0.000002",
-            "web_search": "0.014",
-            "internal_reasoning": "0.000012",
-            "input_cache_read": "0.0000002",
-            "input_cache_write": "0.000000375"
-          }
-        }
-      ],
-      "other_parameters": {
-        "source_id": "~google/gemini-pro-latest",
-        "canonical_slug": "~google/gemini-pro-latest",
-        "endpoint_providers": [],
-        "endpoint_count": 0,
-        "context_length": 1048576,
-        "max_completion_tokens": 65536
-      },
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "~google/gemini-pro-latest",
-          "url": "https://openrouter.ai/~google/gemini-pro-latest",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    },
-    {
       "model_id": "gemma-2-27b-it",
       "model": "Gemma 2 27B",
       "endpoint_path": "/chat/completions",
@@ -4900,10 +4619,10 @@
           "GMICloud",
           "Baidu",
           "DeepInfra",
+          "Io Net",
           "Chutes",
           "Phala",
           "StreamLake",
-          "Io Net",
           "Novita",
           "AtlasCloud",
           "Parasail",
@@ -7495,161 +7214,6 @@
           "source": "openrouter",
           "source_id": "openai/gpt-audio-mini",
           "url": "https://openrouter.ai/openai/gpt-audio-mini",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    },
-    {
-      "model_id": "gpt-chat-latest",
-      "model": "GPT Chat Latest",
-      "endpoint_path": "/images/generations",
-      "api_model_id": "openai/gpt-chat-latest",
-      "mode": "image",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 5,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 30,
-              "unit": "per_1m_tokens"
-            },
-            "web_search": {
-              "amount": 0.01,
-              "unit": "per_request"
-            }
-          },
-          "currency": "USD",
-          "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
-          "raw_pricing": {
-            "prompt": "0.000005",
-            "completion": "0.00003",
-            "web_search": "0.01",
-            "input_cache_read": "0.0000005"
-          }
-        }
-      ],
-      "other_parameters": {
-        "source_id": "openai/gpt-chat-latest",
-        "canonical_slug": "openai/gpt-chat-latest-20260505",
-        "endpoint_providers": [
-          "OpenAI"
-        ],
-        "endpoint_count": 1,
-        "context_length": 400000,
-        "max_completion_tokens": 128000
-      },
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "openai/gpt-chat-latest",
-          "url": "https://openrouter.ai/openai/gpt-chat-latest",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    },
-    {
-      "model_id": "gpt-latest",
-      "model": "GPT Latest",
-      "endpoint_path": "/images/generations",
-      "api_model_id": "~openai/gpt-latest",
-      "mode": "image",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 5,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 30,
-              "unit": "per_1m_tokens"
-            },
-            "web_search": {
-              "amount": 0.01,
-              "unit": "per_request"
-            }
-          },
-          "currency": "USD",
-          "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
-          "raw_pricing": {
-            "prompt": "0.000005",
-            "completion": "0.00003",
-            "web_search": "0.01",
-            "input_cache_read": "0.0000005"
-          }
-        }
-      ],
-      "other_parameters": {
-        "source_id": "~openai/gpt-latest",
-        "canonical_slug": "~openai/gpt-latest",
-        "endpoint_providers": [],
-        "endpoint_count": 0,
-        "context_length": 1050000,
-        "max_completion_tokens": 128000
-      },
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "~openai/gpt-latest",
-          "url": "https://openrouter.ai/~openai/gpt-latest",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    },
-    {
-      "model_id": "gpt-mini-latest",
-      "model": "GPT Mini Latest",
-      "endpoint_path": "/images/generations",
-      "api_model_id": "~openai/gpt-mini-latest",
-      "mode": "image",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.75,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 4.5,
-              "unit": "per_1m_tokens"
-            },
-            "web_search": {
-              "amount": 0.01,
-              "unit": "per_request"
-            }
-          },
-          "currency": "USD",
-          "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
-          "raw_pricing": {
-            "prompt": "0.00000075",
-            "completion": "0.0000045",
-            "web_search": "0.01",
-            "input_cache_read": "0.000000075"
-          }
-        }
-      ],
-      "other_parameters": {
-        "source_id": "~openai/gpt-mini-latest",
-        "canonical_slug": "~openai/gpt-mini-latest",
-        "endpoint_providers": [],
-        "endpoint_count": 0,
-        "context_length": 400000,
-        "max_completion_tokens": 128000
-      },
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "~openai/gpt-mini-latest",
-          "url": "https://openrouter.ai/~openai/gpt-mini-latest",
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
@@ -17517,9 +17081,446 @@
           "observed_at": "2026-05-21T19:00:07.736Z"
         }
       ]
+    },
+    {
+      "model_id": "claude-haiku-4.5",
+      "model": "Claude Haiku 4.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "~anthropic/claude-haiku-latest",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter",
+          "observed_at": "2026-05-21T20:53:40.809Z",
+          "raw_pricing": {
+            "prompt": "0.000001",
+            "completion": "0.000005",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000001",
+            "input_cache_write": "0.00000125"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_id": "~anthropic/claude-haiku-latest",
+        "canonical_slug": "~anthropic/claude-haiku-latest",
+        "endpoint_providers": [],
+        "endpoint_count": 0,
+        "context_length": 200000,
+        "max_completion_tokens": 64000
+      },
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "~anthropic/claude-haiku-latest",
+          "url": "https://openrouter.ai/~anthropic/claude-haiku-latest",
+          "observed_at": "2026-05-21T20:53:40.809Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.7-fast",
+      "model": "Claude Opus 4.7 (Fast)",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "~anthropic/claude-opus-latest",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 25,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter",
+          "observed_at": "2026-05-21T20:53:40.809Z",
+          "raw_pricing": {
+            "prompt": "0.000005",
+            "completion": "0.000025",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000005",
+            "input_cache_write": "0.00000625"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_id": "~anthropic/claude-opus-latest",
+        "canonical_slug": "~anthropic/claude-opus-latest",
+        "endpoint_providers": [],
+        "endpoint_count": 0,
+        "context_length": 1000000,
+        "max_completion_tokens": 128000
+      },
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "~anthropic/claude-opus-latest",
+          "url": "https://openrouter.ai/~anthropic/claude-opus-latest",
+          "observed_at": "2026-05-21T20:53:40.809Z"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4.6",
+      "model": "Claude Sonnet 4.6",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "~anthropic/claude-sonnet-latest",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter",
+          "observed_at": "2026-05-21T20:53:40.809Z",
+          "raw_pricing": {
+            "prompt": "0.000003",
+            "completion": "0.000015",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000003",
+            "input_cache_write": "0.00000375"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_id": "~anthropic/claude-sonnet-latest",
+        "canonical_slug": "~anthropic/claude-sonnet-latest",
+        "endpoint_providers": [],
+        "endpoint_count": 0,
+        "context_length": 1000000,
+        "max_completion_tokens": 128000
+      },
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "~anthropic/claude-sonnet-latest",
+          "url": "https://openrouter.ai/~anthropic/claude-sonnet-latest",
+          "observed_at": "2026-05-21T20:53:40.809Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-pro",
+      "model": "Gemini 2.5 Pro",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "~google/gemini-pro-latest",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 12,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 12,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 0.000002,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter",
+          "observed_at": "2026-05-21T20:53:40.809Z",
+          "raw_pricing": {
+            "prompt": "0.000002",
+            "completion": "0.000012",
+            "image": "0.000002",
+            "audio": "0.000002",
+            "web_search": "0.014",
+            "internal_reasoning": "0.000012",
+            "input_cache_read": "0.0000002",
+            "input_cache_write": "0.000000375"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_id": "~google/gemini-pro-latest",
+        "canonical_slug": "~google/gemini-pro-latest",
+        "endpoint_providers": [],
+        "endpoint_count": 0,
+        "context_length": 1048576,
+        "max_completion_tokens": 65536
+      },
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "~google/gemini-pro-latest",
+          "url": "https://openrouter.ai/~google/gemini-pro-latest",
+          "observed_at": "2026-05-21T20:53:40.809Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.5-flash",
+      "model": "Gemini 3.5 Flash",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "~google/gemini-flash-latest",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 9,
+              "unit": "per_1m_tokens"
+            },
+            "internal_reasoning": {
+              "amount": 9,
+              "unit": "per_1m_tokens"
+            },
+            "image": {
+              "amount": 0.0000015,
+              "unit": "per_image"
+            },
+            "web_search": {
+              "amount": 0.014,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter",
+          "observed_at": "2026-05-21T20:53:40.809Z",
+          "raw_pricing": {
+            "prompt": "0.0000015",
+            "completion": "0.000009",
+            "image": "0.0000015",
+            "audio": "0.000003",
+            "web_search": "0.014",
+            "internal_reasoning": "0.000009",
+            "input_cache_read": "0.00000015",
+            "input_cache_write": "0.00000008333333333333334"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_id": "~google/gemini-flash-latest",
+        "canonical_slug": "~google/gemini-flash-latest",
+        "endpoint_providers": [],
+        "endpoint_count": 0,
+        "context_length": 1048576,
+        "max_completion_tokens": 65536
+      },
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "~google/gemini-flash-latest",
+          "url": "https://openrouter.ai/~google/gemini-flash-latest",
+          "observed_at": "2026-05-21T20:53:40.809Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.3-chat",
+      "model": "GPT-5.3 Chat",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "openai/gpt-chat-latest",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 30,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter",
+          "observed_at": "2026-05-21T20:53:40.809Z",
+          "raw_pricing": {
+            "prompt": "0.000005",
+            "completion": "0.00003",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000005"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_id": "openai/gpt-chat-latest",
+        "canonical_slug": "openai/gpt-chat-latest-20260505",
+        "endpoint_providers": [
+          "OpenAI"
+        ],
+        "endpoint_count": 1,
+        "context_length": 400000,
+        "max_completion_tokens": 128000
+      },
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "openai/gpt-chat-latest",
+          "url": "https://openrouter.ai/openai/gpt-chat-latest",
+          "observed_at": "2026-05-21T20:53:40.809Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.4-mini",
+      "model": "GPT-5.4 Mini",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "~openai/gpt-mini-latest",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.75,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4.5,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter",
+          "observed_at": "2026-05-21T20:53:40.809Z",
+          "raw_pricing": {
+            "prompt": "0.00000075",
+            "completion": "0.0000045",
+            "web_search": "0.01",
+            "input_cache_read": "0.000000075"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_id": "~openai/gpt-mini-latest",
+        "canonical_slug": "~openai/gpt-mini-latest",
+        "endpoint_providers": [],
+        "endpoint_count": 0,
+        "context_length": 400000,
+        "max_completion_tokens": 128000
+      },
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "~openai/gpt-mini-latest",
+          "url": "https://openrouter.ai/~openai/gpt-mini-latest",
+          "observed_at": "2026-05-21T20:53:40.809Z"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.5-pro",
+      "model": "GPT-5.5 Pro",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "~openai/gpt-latest",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 30,
+              "unit": "per_1m_tokens"
+            },
+            "web_search": {
+              "amount": 0.01,
+              "unit": "per_request"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter",
+          "observed_at": "2026-05-21T20:53:40.809Z",
+          "raw_pricing": {
+            "prompt": "0.000005",
+            "completion": "0.00003",
+            "web_search": "0.01",
+            "input_cache_read": "0.0000005"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_id": "~openai/gpt-latest",
+        "canonical_slug": "~openai/gpt-latest",
+        "endpoint_providers": [],
+        "endpoint_count": 0,
+        "context_length": 1050000,
+        "max_completion_tokens": 128000
+      },
+      "sources": [
+        {
+          "source": "openrouter",
+          "source_id": "~openai/gpt-latest",
+          "url": "https://openrouter.ai/~openai/gpt-latest",
+          "observed_at": "2026-05-21T20:53:40.809Z"
+        }
+      ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T19:00:07.736Z",
+  "last_updated": "2026-05-21T20:53:40.809Z",
   "sources": []
 }

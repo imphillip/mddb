@@ -112,7 +112,7 @@
           "response_format",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -547,7 +547,7 @@
           "response_format",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -610,7 +610,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -5
+        "status": -2
       },
       "sources": [
         {
@@ -858,7 +858,7 @@
           "response_format",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -1900,6 +1900,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T19:00:07.736Z",
+  "last_updated": "2026-05-21T20:53:40.809Z",
   "sources": []
 }
