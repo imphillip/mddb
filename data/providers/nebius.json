@@ -3,6 +3,20 @@
   "id": "nebius",
   "provider": "Nebius",
   "currency": "USD",
+  "icon_url": "https://models.dev/logos/nebius.svg",
+  "base_url": "https://api.tokenfactory.nebius.com/v1",
+  "domain": "docs.tokenfactory.nebius.com",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 31,
+      "doc": "https://docs.tokenfactory.nebius.com/",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "NEBIUS_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "offers": [
     {
       "model_id": "gemma-3-27b-it",
@@ -738,9 +752,419 @@
           "observed_at": "2026-05-21T19:00:07.736Z"
         }
       ]
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "model": "DeepSeek V3.2",
+      "api_model_id": "deepseek-ai/DeepSeek-V3.2",
+      "endpoint_path": "deepseek-ai/DeepSeek-V3.2",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 0.45,
+        "cache_read_per_million_tokens": 0.03,
+        "cache_write_per_million_tokens": 0.375
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nebius/deepseek-ai/DeepSeek-V3.2",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "model": "Kimi K2.5",
+      "api_model_id": "moonshotai/Kimi-K2.5",
+      "endpoint_path": "moonshotai/Kimi-K2.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.5,
+        "output_per_million_tokens": 2.5,
+        "cache_read_per_million_tokens": 0.05,
+        "cache_write_per_million_tokens": 0.625
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nebius/moonshotai/Kimi-K2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-120b",
+      "model": "gpt-oss-120b",
+      "api_model_id": "openai/gpt-oss-120b",
+      "endpoint_path": "openai/gpt-oss-120b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.15,
+        "output_per_million_tokens": 0.6,
+        "cache_read_per_million_tokens": 0.015,
+        "cache_write_per_million_tokens": 0.18
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nebius/openai/gpt-oss-120b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5",
+      "model": "GLM 5",
+      "api_model_id": "zai-org/GLM-5",
+      "endpoint_path": "zai-org/GLM-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1,
+        "output_per_million_tokens": 3.2,
+        "cache_read_per_million_tokens": 0.1,
+        "cache_write_per_million_tokens": 1
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nebius/zai-org/GLM-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "hermes-4-405b",
+      "model": "Hermes 4 405B",
+      "api_model_id": "NousResearch/Hermes-4-405B",
+      "endpoint_path": "NousResearch/Hermes-4-405B",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1,
+        "output_per_million_tokens": 3,
+        "cache_read_per_million_tokens": 0.1,
+        "cache_write_per_million_tokens": 1.25
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nebius/NousResearch/Hermes-4-405B",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "hermes-4-70b",
+      "model": "Hermes 4 70B",
+      "api_model_id": "NousResearch/Hermes-4-70B",
+      "endpoint_path": "NousResearch/Hermes-4-70B",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.13,
+        "output_per_million_tokens": 0.4,
+        "cache_read_per_million_tokens": 0.013,
+        "cache_write_per_million_tokens": 0.16
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nebius/NousResearch/Hermes-4-70B",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "nemotron-3-super-120b-a12b",
+      "model": "Nemotron 3 Super",
+      "api_model_id": "nvidia/nemotron-3-super-120b-a12b",
+      "endpoint_path": "nvidia/nemotron-3-super-120b-a12b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 0.9
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nebius/nvidia/nemotron-3-super-120b-a12b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemma-3-27b-it",
+      "model": "Gemma 3 27B",
+      "api_model_id": "google/gemma-3-27b-it",
+      "endpoint_path": "google/gemma-3-27b-it",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.1,
+        "output_per_million_tokens": 0.3,
+        "cache_read_per_million_tokens": 0.01,
+        "cache_write_per_million_tokens": 0.125
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nebius/google/gemma-3-27b-it",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.3-70b-instruct",
+      "model": "Llama 3.3 70B Instruct",
+      "api_model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "endpoint_path": "meta-llama/Llama-3.3-70B-Instruct",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.13,
+        "output_per_million_tokens": 0.4,
+        "cache_read_per_million_tokens": 0.013,
+        "cache_write_per_million_tokens": 0.16
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nebius/meta-llama/Llama-3.3-70B-Instruct",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.5",
+      "model": "MiniMax M2.5",
+      "api_model_id": "MiniMaxAI/MiniMax-M2.5",
+      "endpoint_path": "MiniMaxAI/MiniMax-M2.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 1.2,
+        "cache_read_per_million_tokens": 0.03,
+        "cache_write_per_million_tokens": 0.375
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nebius/MiniMaxAI/MiniMax-M2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "intellect-3",
+      "model": "INTELLECT-3",
+      "api_model_id": "PrimeIntellect/INTELLECT-3",
+      "endpoint_path": "PrimeIntellect/INTELLECT-3",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.2,
+        "output_per_million_tokens": 1.1,
+        "cache_read_per_million_tokens": 0.02,
+        "cache_write_per_million_tokens": 0.25
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nebius/PrimeIntellect/INTELLECT-3",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-next-80b-a3b-thinking",
+      "model": "Qwen3 Next 80B A3B Thinking",
+      "api_model_id": "Qwen/Qwen3-Next-80B-A3B-Thinking",
+      "endpoint_path": "Qwen/Qwen3-Next-80B-A3B-Thinking",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.15,
+        "output_per_million_tokens": 1.2,
+        "cache_read_per_million_tokens": 0.015,
+        "cache_write_per_million_tokens": 0.18
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nebius/Qwen/Qwen3-Next-80B-A3B-Thinking",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-32b",
+      "model": "Qwen3 32B",
+      "api_model_id": "Qwen/Qwen3-32B",
+      "endpoint_path": "Qwen/Qwen3-32B",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.1,
+        "output_per_million_tokens": 0.3,
+        "cache_read_per_million_tokens": 0.01,
+        "cache_write_per_million_tokens": 0.125
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nebius/Qwen/Qwen3-32B",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-30b-a3b-instruct-2507",
+      "model": "Qwen3 30B A3B Instruct 2507",
+      "api_model_id": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "endpoint_path": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.1,
+        "output_per_million_tokens": 0.3,
+        "cache_read_per_million_tokens": 0.01,
+        "cache_write_per_million_tokens": 0.125
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nebius/Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen2.5-vl-72b-instruct",
+      "model": "Qwen2.5 VL 72B Instruct",
+      "api_model_id": "Qwen/Qwen2.5-VL-72B-Instruct",
+      "endpoint_path": "Qwen/Qwen2.5-VL-72B-Instruct",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.25,
+        "output_per_million_tokens": 0.75,
+        "cache_read_per_million_tokens": 0.025,
+        "cache_write_per_million_tokens": 0.31
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nebius/Qwen/Qwen2.5-VL-72B-Instruct",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-397b-a17b",
+      "model": "Qwen3.5 397B A17B",
+      "api_model_id": "Qwen/Qwen3.5-397B-A17B",
+      "endpoint_path": "Qwen/Qwen3.5-397B-A17B",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.6,
+        "output_per_million_tokens": 3.6,
+        "cache_read_per_million_tokens": 0.06,
+        "cache_write_per_million_tokens": 0.75
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nebius/Qwen/Qwen3.5-397B-A17B",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-pro",
+      "model": "DeepSeek V4 Pro",
+      "api_model_id": "deepseek-ai/DeepSeek-V4-Pro",
+      "endpoint_path": "deepseek-ai/DeepSeek-V4-Pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.75,
+        "output_per_million_tokens": 3.5,
+        "cache_read_per_million_tokens": 0.15
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nebius/deepseek-ai/DeepSeek-V4-Pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
     }
   ],
-  "other_parameters": {},
-  "last_updated": "2026-05-21T21:36:01.873Z",
-  "sources": []
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "nebius",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
 }

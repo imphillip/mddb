@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "id": "databricks",
+  "provider": "Databricks",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/databricks.svg",
+  "base_url": "https://${DATABRICKS_HOST}/ai-gateway/mlflow/v1",
+  "domain": "docs.databricks.com",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 25,
+      "doc": "https://docs.databricks.com/aws/en/machine-learning/foundation-models/",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "DATABRICKS_HOST",
+        "DATABRICKS_TOKEN"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "databricks",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

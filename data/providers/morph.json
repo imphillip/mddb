@@ -3,6 +3,20 @@
   "id": "morph",
   "provider": "Morph",
   "currency": "USD",
+  "icon_url": "https://models.dev/logos/morph.svg",
+  "base_url": "https://api.morphllm.com/v1",
+  "domain": "docs.morphllm.com",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 3,
+      "doc": "https://docs.morphllm.com/api-reference/introduction",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "MORPH_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "offers": [
     {
       "model_id": "deepseek-v4-flash",
@@ -360,9 +374,80 @@
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
+    },
+    {
+      "model_id": "morph-v3-large",
+      "model": "Morph V3 Large",
+      "api_model_id": "morph-v3-large",
+      "endpoint_path": "morph-v3-large",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.9,
+        "output_per_million_tokens": 1.9
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "morph/morph-v3-large",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "auto",
+      "model": "Auto Router",
+      "api_model_id": "auto",
+      "endpoint_path": "auto",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.85,
+        "output_per_million_tokens": 1.55
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "morph/auto",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "morph-v3-fast",
+      "model": "Morph V3 Fast",
+      "api_model_id": "morph-v3-fast",
+      "endpoint_path": "morph-v3-fast",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.8,
+        "output_per_million_tokens": 1.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "morph/morph-v3-fast",
+          "url": "https://models.dev/api.json"
+        }
+      ]
     }
   ],
-  "other_parameters": {},
-  "last_updated": "2026-05-21T21:36:01.873Z",
-  "sources": []
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "morph",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
 }

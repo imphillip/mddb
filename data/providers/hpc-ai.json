@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "id": "hpc-ai",
+  "provider": "HPC-AI",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/hpc-ai.svg",
+  "base_url": "https://api.hpc-ai.com/inference/v1",
+  "domain": "hpc-ai.com",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 3,
+      "doc": "https://www.hpc-ai.com/doc/docs/quickstart/",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "HPC_AI_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "kimi-k2.5",
+      "model": "Kimi K2.5",
+      "api_model_id": "moonshotai/kimi-k2.5",
+      "endpoint_path": "moonshotai/kimi-k2.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.21,
+        "output_per_million_tokens": 1,
+        "cache_read_per_million_tokens": 0.03
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "hpc-ai/moonshotai/kimi-k2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5.1",
+      "model": "GLM 5.1",
+      "api_model_id": "zai-org/glm-5.1",
+      "endpoint_path": "zai-org/glm-5.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.66,
+        "output_per_million_tokens": 2,
+        "cache_read_per_million_tokens": 0.12
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "hpc-ai/zai-org/glm-5.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.5",
+      "model": "MiniMax M2.5",
+      "api_model_id": "minimax/minimax-m2.5",
+      "endpoint_path": "minimax/minimax-m2.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.14,
+        "output_per_million_tokens": 0.56,
+        "cache_read_per_million_tokens": 0.014
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "hpc-ai/minimax/minimax-m2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "hpc-ai",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

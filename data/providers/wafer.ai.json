@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "id": "wafer.ai",
+  "provider": "Wafer",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/wafer.ai.svg",
+  "base_url": "https://pass.wafer.ai/v1",
+  "domain": "docs.wafer.ai",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 2,
+      "doc": "https://docs.wafer.ai/wafer-pass",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "WAFER_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "qwen3.5-397b-a17b",
+      "model": "Qwen3.5 397B A17B",
+      "api_model_id": "Qwen3.5-397B-A17B",
+      "endpoint_path": "Qwen3.5-397B-A17B",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0,
+        "cache_read_per_million_tokens": 0,
+        "cache_write_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "wafer.ai/Qwen3.5-397B-A17B",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5.1",
+      "model": "GLM 5.1",
+      "api_model_id": "GLM-5.1",
+      "endpoint_path": "GLM-5.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0,
+        "cache_read_per_million_tokens": 0,
+        "cache_write_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "wafer.ai/GLM-5.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "wafer.ai",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

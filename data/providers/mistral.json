@@ -3,6 +3,19 @@
   "id": "mistral",
   "provider": "Mistral",
   "currency": "USD",
+  "icon_url": "https://models.dev/logos/mistral.svg",
+  "domain": "docs.mistral.ai",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 28,
+      "doc": "https://docs.mistral.ai/getting-started/models/",
+      "npm": "@ai-sdk/mistral",
+      "env": [
+        "MISTRAL_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-19T22:11:55.841Z",
   "offers": [
     {
       "model_id": "codestral-2508",
@@ -1225,9 +1238,168 @@
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
+    },
+    {
+      "model_id": "mistral-large-2512",
+      "model": "Mistral Large 3 2512",
+      "api_model_id": "mistral-large-2512",
+      "endpoint_path": "mistral-large-2512",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.5,
+        "output_per_million_tokens": 1.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "mistral/mistral-large-2512",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-large-2411",
+      "model": "Large 2411",
+      "api_model_id": "mistral-large-2411",
+      "endpoint_path": "mistral-large-2411",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2,
+        "output_per_million_tokens": 6
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "mistral/mistral-large-2411",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-small-2603",
+      "model": "Mistral Small 4",
+      "api_model_id": "mistral-small-2603",
+      "endpoint_path": "mistral-small-2603",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.15,
+        "output_per_million_tokens": 0.6
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "mistral/mistral-small-2603",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-nemo",
+      "model": "Mistral Nemo",
+      "api_model_id": "mistral-nemo",
+      "endpoint_path": "mistral-nemo",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.15,
+        "output_per_million_tokens": 0.15
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "mistral/mistral-nemo",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "devstral-medium",
+      "model": "Devstral Medium",
+      "api_model_id": "devstral-medium-2507",
+      "endpoint_path": "devstral-medium-2507",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.4,
+        "output_per_million_tokens": 2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "mistral/devstral-medium-2507",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "devstral-2512",
+      "model": "Devstral 2 2512",
+      "api_model_id": "devstral-2512",
+      "endpoint_path": "devstral-2512",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.4,
+        "output_per_million_tokens": 2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "mistral/devstral-2512",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "devstral-small",
+      "model": "Devstral Small 1.1",
+      "api_model_id": "devstral-small-2507",
+      "endpoint_path": "devstral-small-2507",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.1,
+        "output_per_million_tokens": 0.3
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "mistral/devstral-small-2507",
+          "url": "https://models.dev/api.json"
+        }
+      ]
     }
   ],
-  "other_parameters": {},
-  "last_updated": "2026-05-19T22:11:55.841Z",
-  "sources": []
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "mistral",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
 }

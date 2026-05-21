@@ -3,6 +3,19 @@
   "id": "venice",
   "provider": "Venice",
   "currency": "USD",
+  "icon_url": "https://models.dev/logos/venice.svg",
+  "domain": "docs.venice.ai",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 65,
+      "doc": "https://docs.venice.ai",
+      "npm": "venice-ai-sdk-provider",
+      "env": [
+        "VENICE_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "offers": [
     {
       "model_id": "deepseek-v4-flash",
@@ -1417,9 +1430,636 @@
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
+    },
+    {
+      "model_id": "hermes-3-llama-3.1-405b",
+      "model": "Hermes 3 405B Instruct",
+      "api_model_id": "hermes-3-llama-3.1-405b",
+      "endpoint_path": "hermes-3-llama-3.1-405b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.1,
+        "output_per_million_tokens": 3
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/hermes-3-llama-3.1-405b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "grok-4.3",
+      "model": "Grok 4.3",
+      "api_model_id": "grok-4-3",
+      "endpoint_path": "grok-4-3",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.42,
+        "output_per_million_tokens": 2.83,
+        "cache_read_per_million_tokens": 0.23
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/grok-4-3",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-pro",
+      "model": "DeepSeek V4 Pro",
+      "api_model_id": "deepseek-v4-pro",
+      "endpoint_path": "deepseek-v4-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.73,
+        "output_per_million_tokens": 3.796,
+        "cache_read_per_million_tokens": 0.33
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/deepseek-v4-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "model": "DeepSeek V3.2",
+      "api_model_id": "deepseek-v3.2",
+      "endpoint_path": "deepseek-v3.2",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.33,
+        "output_per_million_tokens": 0.48,
+        "cache_read_per_million_tokens": 0.16
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/deepseek-v3.2",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-small-2603",
+      "model": "Mistral Small 4",
+      "api_model_id": "mistral-small-2603",
+      "endpoint_path": "mistral-small-2603",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.1875,
+        "output_per_million_tokens": 0.75
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/mistral-small-2603",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4.5",
+      "model": "Claude Sonnet 4.5",
+      "api_model_id": "claude-sonnet-4-5",
+      "endpoint_path": "claude-sonnet-4-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 3.75,
+        "output_per_million_tokens": 18.75,
+        "cache_read_per_million_tokens": 0.375,
+        "cache_write_per_million_tokens": 4.69
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/claude-sonnet-4-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-small-3.2-24b-instruct",
+      "model": "Mistral Small 3.2 24B",
+      "api_model_id": "mistral-small-3-2-24b-instruct",
+      "endpoint_path": "mistral-small-3-2-24b-instruct",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.09375,
+        "output_per_million_tokens": 0.25
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/mistral-small-3-2-24b-instruct",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4.6",
+      "model": "Claude Sonnet 4.6",
+      "api_model_id": "claude-sonnet-4-6",
+      "endpoint_path": "claude-sonnet-4-6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 3.6,
+        "output_per_million_tokens": 18,
+        "cache_read_per_million_tokens": 0.36,
+        "cache_write_per_million_tokens": 4.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/claude-sonnet-4-6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.6",
+      "model": "Kimi K2.6",
+      "api_model_id": "kimi-k2-6",
+      "endpoint_path": "kimi-k2-6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.85,
+        "output_per_million_tokens": 4.655,
+        "cache_read_per_million_tokens": 0.22
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/kimi-k2-6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.6-fast",
+      "model": "Claude Opus 4.6 (Fast)",
+      "api_model_id": "claude-opus-4-6-fast",
+      "endpoint_path": "claude-opus-4-6-fast",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 36,
+        "output_per_million_tokens": 180,
+        "cache_read_per_million_tokens": 3.6,
+        "cache_write_per_million_tokens": 45
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/claude-opus-4-6-fast",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-35b-a3b",
+      "model": "Qwen3.5-35B-A3B",
+      "api_model_id": "qwen3-5-35b-a3b",
+      "endpoint_path": "qwen3-5-35b-a3b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3125,
+        "output_per_million_tokens": 1.25,
+        "cache_read_per_million_tokens": 0.15625
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/qwen3-5-35b-a3b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-397b-a17b",
+      "model": "Qwen3.5 397B A17B",
+      "api_model_id": "qwen3-5-397b-a17b",
+      "endpoint_path": "qwen3-5-397b-a17b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.75,
+        "output_per_million_tokens": 4.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/qwen3-5-397b-a17b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "grok-4.20-multi-agent",
+      "model": "Grok 4.20 Multi-Agent",
+      "api_model_id": "grok-4-20-multi-agent",
+      "endpoint_path": "grok-4-20-multi-agent",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.42,
+        "output_per_million_tokens": 2.83,
+        "cache_read_per_million_tokens": 0.23
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/grok-4-20-multi-agent",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "grok-4.20",
+      "model": "Grok 4.20",
+      "api_model_id": "grok-4-20",
+      "endpoint_path": "grok-4-20",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.42,
+        "output_per_million_tokens": 2.83,
+        "cache_read_per_million_tokens": 0.23
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/grok-4-20",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.7",
+      "model": "Claude Opus 4.7",
+      "api_model_id": "claude-opus-4-7",
+      "endpoint_path": "claude-opus-4-7",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 6,
+        "output_per_million_tokens": 30,
+        "cache_read_per_million_tokens": 0.6,
+        "cache_write_per_million_tokens": 7.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/claude-opus-4-7",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-flash",
+      "model": "DeepSeek V4 Flash",
+      "api_model_id": "deepseek-v4-flash",
+      "endpoint_path": "deepseek-v4-flash",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.17,
+        "output_per_million_tokens": 0.35,
+        "cache_read_per_million_tokens": 0.028
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/deepseek-v4-flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3-flash-preview",
+      "model": "Gemini 3 Flash Preview",
+      "api_model_id": "gemini-3-flash-preview",
+      "endpoint_path": "gemini-3-flash-preview",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.7,
+        "output_per_million_tokens": 3.75,
+        "cache_read_per_million_tokens": 0.07
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/gemini-3-flash-preview",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.6-27b",
+      "model": "Qwen3.6 27B",
+      "api_model_id": "qwen3-6-27b",
+      "endpoint_path": "qwen3-6-27b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.325,
+        "output_per_million_tokens": 3.25
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/qwen3-6-27b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-9b",
+      "model": "Qwen3.5-9B",
+      "api_model_id": "qwen3-5-9b",
+      "endpoint_path": "qwen3-5-9b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.1,
+        "output_per_million_tokens": 0.15
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/qwen3-5-9b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.7-fast",
+      "model": "Claude Opus 4.7 (Fast)",
+      "api_model_id": "claude-opus-4-7-fast",
+      "endpoint_path": "claude-opus-4-7-fast",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 36,
+        "output_per_million_tokens": 180,
+        "cache_read_per_million_tokens": 3.6,
+        "cache_write_per_million_tokens": 45
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/claude-opus-4-7-fast",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-235b-a22b-thinking-2507",
+      "model": "Qwen3 235B A22B Thinking 2507",
+      "api_model_id": "qwen3-235b-a22b-thinking-2507",
+      "endpoint_path": "qwen3-235b-a22b-thinking-2507",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.45,
+        "output_per_million_tokens": 3.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/qwen3-235b-a22b-thinking-2507",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "model": "Claude Opus 4.6",
+      "api_model_id": "claude-opus-4-6",
+      "endpoint_path": "claude-opus-4-6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 6,
+        "output_per_million_tokens": 30,
+        "cache_read_per_million_tokens": 0.6,
+        "cache_write_per_million_tokens": 7.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/claude-opus-4-6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.1-pro-preview",
+      "model": "Gemini 3.1 Pro Preview",
+      "api_model_id": "gemini-3-1-pro-preview",
+      "endpoint_path": "gemini-3-1-pro-preview",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2.5,
+        "output_per_million_tokens": 15,
+        "cache_read_per_million_tokens": 0.5,
+        "cache_write_per_million_tokens": 0.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/gemini-3-1-pro-preview",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "model": "Kimi K2.5",
+      "api_model_id": "kimi-k2-5",
+      "endpoint_path": "kimi-k2-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.56,
+        "output_per_million_tokens": 3.5,
+        "cache_read_per_million_tokens": 0.22
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/kimi-k2-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "grok-build-0.1",
+      "model": "Grok Build 0.1",
+      "api_model_id": "grok-build-0-1",
+      "endpoint_path": "grok-build-0-1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.95,
+        "output_per_million_tokens": 1.95,
+        "cache_read_per_million_tokens": 0.19
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/grok-build-0-1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "model": "Claude Opus 4.5",
+      "api_model_id": "claude-opus-4-5",
+      "endpoint_path": "claude-opus-4-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 6,
+        "output_per_million_tokens": 30,
+        "cache_read_per_million_tokens": 0.6,
+        "cache_write_per_million_tokens": 7.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/claude-opus-4-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "mercury-2",
+      "model": "Mercury 2",
+      "api_model_id": "mercury-2",
+      "endpoint_path": "mercury-2",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3125,
+        "output_per_million_tokens": 0.9375,
+        "cache_read_per_million_tokens": 0.03125
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "venice/mercury-2",
+          "url": "https://models.dev/api.json"
+        }
+      ]
     }
   ],
-  "other_parameters": {},
-  "last_updated": "2026-05-21T21:36:01.873Z",
-  "sources": []
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "venice",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
 }

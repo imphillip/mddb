@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "id": "vultr",
+  "provider": "Vultr",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/vultr.svg",
+  "base_url": "https://api.vultrinference.com/v1",
+  "domain": "api.vultrinference.com",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 5,
+      "doc": "https://api.vultrinference.com/",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "VULTR_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "kimi-k2.5",
+      "model": "Kimi K2.5",
+      "api_model_id": "Kimi-K2.5",
+      "endpoint_path": "Kimi-K2.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.55,
+        "output_per_million_tokens": 2.75
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "vultr/Kimi-K2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "model": "DeepSeek V3.2",
+      "api_model_id": "DeepSeek-V3.2",
+      "endpoint_path": "DeepSeek-V3.2",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.55,
+        "output_per_million_tokens": 1.65
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "vultr/DeepSeek-V3.2",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.5",
+      "model": "MiniMax M2.5",
+      "api_model_id": "MiniMax-M2.5",
+      "endpoint_path": "MiniMax-M2.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 1.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "vultr/MiniMax-M2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-120b",
+      "model": "gpt-oss-120b",
+      "api_model_id": "gpt-oss-120b",
+      "endpoint_path": "gpt-oss-120b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.15,
+        "output_per_million_tokens": 0.6
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "vultr/gpt-oss-120b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "vultr",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

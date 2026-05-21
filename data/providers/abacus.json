@@ -1,0 +1,868 @@
+{
+  "schema_version": 1,
+  "id": "abacus",
+  "provider": "Abacus",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/abacus.svg",
+  "base_url": "https://routellm.abacus.ai/v1",
+  "domain": "abacus.ai",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 65,
+      "doc": "https://abacus.ai/help/api",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "ABACUS_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "kimi-k2.5",
+      "model": "Kimi K2.5",
+      "api_model_id": "kimi-k2.5",
+      "endpoint_path": "kimi-k2.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.6,
+        "output_per_million_tokens": 3
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/kimi-k2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.2",
+      "model": "GPT-5.2",
+      "api_model_id": "gpt-5.2",
+      "endpoint_path": "gpt-5.2",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.75,
+        "output_per_million_tokens": 14
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gpt-5.2",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "o3-pro",
+      "model": "o3 Pro",
+      "api_model_id": "o3-pro",
+      "endpoint_path": "o3-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 20,
+        "output_per_million_tokens": 40
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/o3-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-pro",
+      "model": "Gemini 2.5 Pro",
+      "api_model_id": "gemini-2.5-pro",
+      "endpoint_path": "gemini-2.5-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.25,
+        "output_per_million_tokens": 10
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gemini-2.5-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5-codex",
+      "model": "GPT-5 Codex",
+      "api_model_id": "gpt-5-codex",
+      "endpoint_path": "gpt-5-codex",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.25,
+        "output_per_million_tokens": 10
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gpt-5-codex",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-max",
+      "model": "Qwen3 Max",
+      "api_model_id": "qwen3-max",
+      "endpoint_path": "qwen3-max",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.2,
+        "output_per_million_tokens": 6
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/qwen3-max",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-4.1",
+      "model": "GPT-4.1",
+      "api_model_id": "gpt-4.1",
+      "endpoint_path": "gpt-4.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2,
+        "output_per_million_tokens": 8
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gpt-4.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4.6",
+      "model": "Claude Sonnet 4.6",
+      "api_model_id": "claude-sonnet-4-6",
+      "endpoint_path": "claude-sonnet-4-6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 3,
+        "output_per_million_tokens": 15
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/claude-sonnet-4-6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-4.1-mini",
+      "model": "GPT-4.1 Mini",
+      "api_model_id": "gpt-4.1-mini",
+      "endpoint_path": "gpt-4.1-mini",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.4,
+        "output_per_million_tokens": 1.6
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gpt-4.1-mini",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.1",
+      "model": "GPT-5.1",
+      "api_model_id": "gpt-5.1",
+      "endpoint_path": "gpt-5.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.25,
+        "output_per_million_tokens": 10
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gpt-5.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5-nano",
+      "model": "GPT-5 Nano",
+      "api_model_id": "gpt-5-nano",
+      "endpoint_path": "gpt-5-nano",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.05,
+        "output_per_million_tokens": 0.4
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gpt-5-nano",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.4",
+      "model": "GPT-5.4",
+      "api_model_id": "gpt-5.4",
+      "endpoint_path": "gpt-5.4",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2.5,
+        "output_per_million_tokens": 15
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gpt-5.4",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-4o-mini",
+      "model": "GPT-4o-mini",
+      "api_model_id": "gpt-4o-mini",
+      "endpoint_path": "gpt-4o-mini",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.15,
+        "output_per_million_tokens": 0.6
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gpt-4o-mini",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.1-flash-lite-preview",
+      "model": "Gemini 3.1 Flash Lite Preview",
+      "api_model_id": "gemini-3.1-flash-lite-preview",
+      "endpoint_path": "gemini-3.1-flash-lite-preview",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.25,
+        "output_per_million_tokens": 1.5,
+        "cache_read_per_million_tokens": 0.025,
+        "cache_write_per_million_tokens": 1
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gemini-3.1-flash-lite-preview",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.1-pro-preview",
+      "model": "Gemini 3.1 Pro Preview",
+      "api_model_id": "gemini-3.1-pro-preview",
+      "endpoint_path": "gemini-3.1-pro-preview",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2,
+        "output_per_million_tokens": 12
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gemini-3.1-pro-preview",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.1-codex-max",
+      "model": "GPT-5.1-Codex-Max",
+      "api_model_id": "gpt-5.1-codex-max",
+      "endpoint_path": "gpt-5.1-codex-max",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.25,
+        "output_per_million_tokens": 10
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gpt-5.1-codex-max",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3-flash-preview",
+      "model": "Gemini 3 Flash Preview",
+      "api_model_id": "gemini-3-flash-preview",
+      "endpoint_path": "gemini-3-flash-preview",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.5,
+        "output_per_million_tokens": 3
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gemini-3-flash-preview",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-4.1-nano",
+      "model": "GPT-4.1 Nano",
+      "api_model_id": "gpt-4.1-nano",
+      "endpoint_path": "gpt-4.1-nano",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.1,
+        "output_per_million_tokens": 0.4
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gpt-4.1-nano",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "o4-mini",
+      "model": "o4 Mini",
+      "api_model_id": "o4-mini",
+      "endpoint_path": "o4-mini",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.1,
+        "output_per_million_tokens": 4.4
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/o4-mini",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.1-codex",
+      "model": "GPT-5.1-Codex",
+      "api_model_id": "gpt-5.1-codex",
+      "endpoint_path": "gpt-5.1-codex",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.25,
+        "output_per_million_tokens": 10
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gpt-5.1-codex",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-4o-2024-11-20",
+      "model": "GPT-4o (2024-11-20)",
+      "api_model_id": "gpt-4o-2024-11-20",
+      "endpoint_path": "gpt-4o-2024-11-20",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2.5,
+        "output_per_million_tokens": 10
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gpt-4o-2024-11-20",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.2-codex",
+      "model": "GPT-5.2-Codex",
+      "api_model_id": "gpt-5.2-codex",
+      "endpoint_path": "gpt-5.2-codex",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.75,
+        "output_per_million_tokens": 14
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gpt-5.2-codex",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-flash",
+      "model": "Gemini 2.5 Flash",
+      "api_model_id": "gemini-2.5-flash",
+      "endpoint_path": "gemini-2.5-flash",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 2.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gemini-2.5-flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5-mini",
+      "model": "GPT-5 Mini",
+      "api_model_id": "gpt-5-mini",
+      "endpoint_path": "gpt-5-mini",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.25,
+        "output_per_million_tokens": 2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gpt-5-mini",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "o3-mini",
+      "model": "o3 Mini",
+      "api_model_id": "o3-mini",
+      "endpoint_path": "o3-mini",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.1,
+        "output_per_million_tokens": 4.4
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/o3-mini",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.3-codex",
+      "model": "GPT-5.3-Codex",
+      "api_model_id": "gpt-5.3-codex",
+      "endpoint_path": "gpt-5.3-codex",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.75,
+        "output_per_million_tokens": 14
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gpt-5.3-codex",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "model": "Claude Opus 4.6",
+      "api_model_id": "claude-opus-4-6",
+      "endpoint_path": "claude-opus-4-6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 5,
+        "output_per_million_tokens": 25
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/claude-opus-4-6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "o3",
+      "model": "o3",
+      "api_model_id": "o3",
+      "endpoint_path": "o3",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2,
+        "output_per_million_tokens": 8
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/o3",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5",
+      "model": "GPT-5",
+      "api_model_id": "gpt-5",
+      "endpoint_path": "gpt-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.25,
+        "output_per_million_tokens": 10
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/gpt-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-r1",
+      "model": "R1",
+      "api_model_id": "deepseek-ai/DeepSeek-R1",
+      "endpoint_path": "deepseek-ai/DeepSeek-R1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 3,
+        "output_per_million_tokens": 7
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/deepseek-ai/DeepSeek-R1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.1-terminus",
+      "model": "DeepSeek V3.1 Terminus",
+      "api_model_id": "deepseek-ai/DeepSeek-V3.1-Terminus",
+      "endpoint_path": "deepseek-ai/DeepSeek-V3.1-Terminus",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.27,
+        "output_per_million_tokens": 1
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/deepseek-ai/DeepSeek-V3.1-Terminus",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "model": "DeepSeek V3.2",
+      "api_model_id": "deepseek-ai/DeepSeek-V3.2",
+      "endpoint_path": "deepseek-ai/DeepSeek-V3.2",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.27,
+        "output_per_million_tokens": 0.4
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/deepseek-ai/DeepSeek-V3.2",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-120b",
+      "model": "gpt-oss-120b",
+      "api_model_id": "openai/gpt-oss-120b",
+      "endpoint_path": "openai/gpt-oss-120b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.08,
+        "output_per_million_tokens": 0.44
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/openai/gpt-oss-120b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.6",
+      "model": "GLM 4.6",
+      "api_model_id": "zai-org/glm-4.6",
+      "endpoint_path": "zai-org/glm-4.6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.6,
+        "output_per_million_tokens": 2.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/zai-org/glm-4.6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.5",
+      "model": "GLM 4.5",
+      "api_model_id": "zai-org/glm-4.5",
+      "endpoint_path": "zai-org/glm-4.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.6,
+        "output_per_million_tokens": 2.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/zai-org/glm-4.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.7",
+      "model": "GLM 4.7",
+      "api_model_id": "zai-org/glm-4.7",
+      "endpoint_path": "zai-org/glm-4.7",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.6,
+        "output_per_million_tokens": 2.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/zai-org/glm-4.7",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5",
+      "model": "GLM 5",
+      "api_model_id": "zai-org/glm-5",
+      "endpoint_path": "zai-org/glm-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1,
+        "output_per_million_tokens": 3.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/zai-org/glm-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-32b",
+      "model": "Qwen3 32B",
+      "api_model_id": "Qwen/Qwen3-32B",
+      "endpoint_path": "Qwen/Qwen3-32B",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.09,
+        "output_per_million_tokens": 0.29
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "abacus/Qwen/Qwen3-32B",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "abacus",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "id": "stackit",
+  "provider": "STACKIT",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/stackit.svg",
+  "base_url": "https://api.openai-compat.model-serving.eu01.onstackit.cloud/v1",
+  "domain": "docs.stackit.cloud",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 8,
+      "doc": "https://docs.stackit.cloud/products/data-and-ai/ai-model-serving/basics/available-shared-models",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "STACKIT_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "gpt-oss-120b",
+      "model": "gpt-oss-120b",
+      "api_model_id": "openai/gpt-oss-120b",
+      "endpoint_path": "openai/gpt-oss-120b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.49,
+        "output_per_million_tokens": 0.71
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "stackit/openai/gpt-oss-120b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemma-3-27b-it",
+      "model": "Gemma 3 27B",
+      "api_model_id": "google/gemma-3-27b-it",
+      "endpoint_path": "google/gemma-3-27b-it",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.49,
+        "output_per_million_tokens": 0.71
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "stackit/google/gemma-3-27b-it",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "stackit",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

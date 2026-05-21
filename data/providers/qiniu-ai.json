@@ -1,0 +1,778 @@
+{
+  "schema_version": 1,
+  "id": "qiniu-ai",
+  "provider": "Qiniu",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/qiniu-ai.svg",
+  "base_url": "https://api.qnaigc.com/v1",
+  "domain": "developer.qiniu.com",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 91,
+      "doc": "https://developer.qiniu.com/aitokenapi",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "QINIU_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "qwen3-30b-a3b-instruct-2507",
+      "model": "Qwen3 30B A3B Instruct 2507",
+      "api_model_id": "qwen3-30b-a3b-instruct-2507",
+      "endpoint_path": "qwen3-30b-a3b-instruct-2507",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/qwen3-30b-a3b-instruct-2507",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen2.5-vl-72b-instruct",
+      "model": "Qwen2.5 VL 72B Instruct",
+      "api_model_id": "qwen2.5-vl-72b-instruct",
+      "endpoint_path": "qwen2.5-vl-72b-instruct",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/qwen2.5-vl-72b-instruct",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-r1",
+      "model": "R1",
+      "api_model_id": "deepseek-r1",
+      "endpoint_path": "deepseek-r1",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/deepseek-r1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-pro",
+      "model": "Gemini 2.5 Pro",
+      "api_model_id": "gemini-2.5-pro",
+      "endpoint_path": "gemini-2.5-pro",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/gemini-2.5-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-r1-0528",
+      "model": "R1 0528",
+      "api_model_id": "deepseek-r1-0528",
+      "endpoint_path": "deepseek-r1-0528",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/deepseek-r1-0528",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-max",
+      "model": "Qwen3 Max",
+      "api_model_id": "qwen3-max",
+      "endpoint_path": "qwen3-max",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/qwen3-max",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.5-air",
+      "model": "GLM 4.5 Air",
+      "api_model_id": "glm-4.5-air",
+      "endpoint_path": "glm-4.5-air",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/glm-4.5-air",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-235b-a22b",
+      "model": "Qwen3 235B A22B",
+      "api_model_id": "qwen3-235b-a22b",
+      "endpoint_path": "qwen3-235b-a22b",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/qwen3-235b-a22b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-397b-a17b",
+      "model": "Qwen3.5 397B A17B",
+      "api_model_id": "qwen3.5-397b-a17b",
+      "endpoint_path": "qwen3.5-397b-a17b",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/qwen3.5-397b-a17b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.5",
+      "model": "GLM 4.5",
+      "api_model_id": "glm-4.5",
+      "endpoint_path": "glm-4.5",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/glm-4.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-20b",
+      "model": "gpt-oss-20b",
+      "api_model_id": "gpt-oss-20b",
+      "endpoint_path": "gpt-oss-20b",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/gpt-oss-20b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-flash-lite",
+      "model": "Gemini 2.5 Flash Lite",
+      "api_model_id": "gemini-2.5-flash-lite",
+      "endpoint_path": "gemini-2.5-flash-lite",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/gemini-2.5-flash-lite",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-30b-a3b-thinking-2507",
+      "model": "Qwen3 30B A3B Thinking 2507",
+      "api_model_id": "qwen3-30b-a3b-thinking-2507",
+      "endpoint_path": "qwen3-30b-a3b-thinking-2507",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/qwen3-30b-a3b-thinking-2507",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-32b",
+      "model": "Qwen3 32B",
+      "api_model_id": "qwen3-32b",
+      "endpoint_path": "qwen3-32b",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/qwen3-32b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-next-80b-a3b-thinking",
+      "model": "Qwen3 Next 80B A3B Thinking",
+      "api_model_id": "qwen3-next-80b-a3b-thinking",
+      "endpoint_path": "qwen3-next-80b-a3b-thinking",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/qwen3-next-80b-a3b-thinking",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-30b-a3b",
+      "model": "Qwen3 30B A3B",
+      "api_model_id": "qwen3-30b-a3b",
+      "endpoint_path": "qwen3-30b-a3b",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/qwen3-30b-a3b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-vl-30b-a3b-thinking",
+      "model": "Qwen3 VL 30B A3B Thinking",
+      "api_model_id": "qwen3-vl-30b-a3b-thinking",
+      "endpoint_path": "qwen3-vl-30b-a3b-thinking",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/qwen3-vl-30b-a3b-thinking",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-235b-a22b-thinking-2507",
+      "model": "Qwen3 235B A22B Thinking 2507",
+      "api_model_id": "qwen3-235b-a22b-thinking-2507",
+      "endpoint_path": "qwen3-235b-a22b-thinking-2507",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/qwen3-235b-a22b-thinking-2507",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2",
+      "model": "Kimi K2 0711",
+      "api_model_id": "kimi-k2",
+      "endpoint_path": "kimi-k2",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/kimi-k2",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m1",
+      "model": "MiniMax M1",
+      "api_model_id": "MiniMax-M1",
+      "endpoint_path": "MiniMax-M1",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/MiniMax-M1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-flash",
+      "model": "Gemini 2.5 Flash",
+      "api_model_id": "gemini-2.5-flash",
+      "endpoint_path": "gemini-2.5-flash",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/gemini-2.5-flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-flash-image",
+      "model": "Nano Banana (Gemini 2.5 Flash Image)",
+      "api_model_id": "gemini-2.5-flash-image",
+      "endpoint_path": "gemini-2.5-flash-image",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/gemini-2.5-flash-image",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-next-80b-a3b-instruct",
+      "model": "Qwen3 Next 80B A3B Instruct",
+      "api_model_id": "qwen3-next-80b-a3b-instruct",
+      "endpoint_path": "qwen3-next-80b-a3b-instruct",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/qwen3-next-80b-a3b-instruct",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-3.5-haiku",
+      "model": "Claude 3.5 Haiku",
+      "api_model_id": "claude-3.5-haiku",
+      "endpoint_path": "claude-3.5-haiku",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/claude-3.5-haiku",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-120b",
+      "model": "gpt-oss-120b",
+      "api_model_id": "gpt-oss-120b",
+      "endpoint_path": "gpt-oss-120b",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/gpt-oss-120b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "model": "Kimi K2.5",
+      "api_model_id": "moonshotai/kimi-k2.5",
+      "endpoint_path": "moonshotai/kimi-k2.5",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/moonshotai/kimi-k2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2-0905",
+      "model": "Kimi K2 0905",
+      "api_model_id": "moonshotai/kimi-k2-0905",
+      "endpoint_path": "moonshotai/kimi-k2-0905",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/moonshotai/kimi-k2-0905",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2-thinking",
+      "model": "Kimi K2 Thinking",
+      "api_model_id": "moonshotai/kimi-k2-thinking",
+      "endpoint_path": "moonshotai/kimi-k2-thinking",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/moonshotai/kimi-k2-thinking",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.6",
+      "model": "GLM 4.6",
+      "api_model_id": "z-ai/glm-4.6",
+      "endpoint_path": "z-ai/glm-4.6",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/z-ai/glm-4.6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.7",
+      "model": "GLM 4.7",
+      "api_model_id": "z-ai/glm-4.7",
+      "endpoint_path": "z-ai/glm-4.7",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/z-ai/glm-4.7",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5",
+      "model": "GLM 5",
+      "api_model_id": "z-ai/glm-5",
+      "endpoint_path": "z-ai/glm-5",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/z-ai/glm-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.2",
+      "model": "GPT-5.2",
+      "api_model_id": "openai/gpt-5.2",
+      "endpoint_path": "openai/gpt-5.2",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/openai/gpt-5.2",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5",
+      "model": "GPT-5",
+      "api_model_id": "openai/gpt-5",
+      "endpoint_path": "openai/gpt-5",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/openai/gpt-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.1",
+      "model": "MiniMax M2.1",
+      "api_model_id": "minimax/minimax-m2.1",
+      "endpoint_path": "minimax/minimax-m2.1",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/minimax/minimax-m2.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2",
+      "model": "MiniMax M2",
+      "api_model_id": "minimax/minimax-m2",
+      "endpoint_path": "minimax/minimax-m2",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/minimax/minimax-m2",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.5",
+      "model": "MiniMax M2.5",
+      "api_model_id": "minimax/minimax-m2.5",
+      "endpoint_path": "minimax/minimax-m2.5",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/minimax/minimax-m2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.2-exp",
+      "model": "DeepSeek V3.2 Exp",
+      "api_model_id": "deepseek/deepseek-v3.2-exp",
+      "endpoint_path": "deepseek/deepseek-v3.2-exp",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/deepseek/deepseek-v3.2-exp",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.1-terminus",
+      "model": "DeepSeek V3.1 Terminus",
+      "api_model_id": "deepseek/deepseek-v3.1-terminus",
+      "endpoint_path": "deepseek/deepseek-v3.1-terminus",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/deepseek/deepseek-v3.1-terminus",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "step-3.5-flash",
+      "model": "Step 3.5 Flash",
+      "api_model_id": "stepfun/step-3.5-flash",
+      "endpoint_path": "stepfun/step-3.5-flash",
+      "mode": "api",
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/stepfun/step-3.5-flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "mimo-v2-flash",
+      "model": "MiMo-V2-Flash",
+      "api_model_id": "mimo-v2-flash",
+      "endpoint_path": "mimo-v2-flash",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.1,
+        "output_per_million_tokens": 0.3,
+        "cache_read_per_million_tokens": 0.01
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/mimo-v2-flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "mimo-v2-flash",
+      "model": "MiMo-V2-Flash",
+      "api_model_id": "xiaomi/mimo-v2-flash",
+      "endpoint_path": "xiaomi/mimo-v2-flash",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.1,
+        "output_per_million_tokens": 0.3,
+        "cache_read_per_million_tokens": 0.01
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qiniu-ai/xiaomi/mimo-v2-flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "qiniu-ai",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

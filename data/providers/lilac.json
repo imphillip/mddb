@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "id": "lilac",
+  "provider": "Lilac",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/lilac.svg",
+  "base_url": "https://api.getlilac.com/v1",
+  "domain": "docs.getlilac.com",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 4,
+      "doc": "https://docs.getlilac.com/inference/models",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "LILAC_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "kimi-k2.6",
+      "model": "Kimi K2.6",
+      "api_model_id": "moonshotai/kimi-k2.6",
+      "endpoint_path": "moonshotai/kimi-k2.6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.7,
+        "output_per_million_tokens": 3.5,
+        "cache_read_per_million_tokens": 0.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "lilac/moonshotai/kimi-k2.6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5.1",
+      "model": "GLM 5.1",
+      "api_model_id": "zai-org/glm-5.1",
+      "endpoint_path": "zai-org/glm-5.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.9,
+        "output_per_million_tokens": 3,
+        "cache_read_per_million_tokens": 0.27
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "lilac/zai-org/glm-5.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemma-4-31b-it",
+      "model": "Gemma 4 31B",
+      "api_model_id": "google/gemma-4-31b-it",
+      "endpoint_path": "google/gemma-4-31b-it",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.11,
+        "output_per_million_tokens": 0.35
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "lilac/google/gemma-4-31b-it",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.7",
+      "model": "MiniMax M2.7",
+      "api_model_id": "minimaxai/minimax-m2.7",
+      "endpoint_path": "minimaxai/minimax-m2.7",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 1.2,
+        "cache_read_per_million_tokens": 0.055
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "lilac/minimaxai/minimax-m2.7",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "lilac",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

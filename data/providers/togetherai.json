@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "id": "togetherai",
+  "provider": "Together AI",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/togetherai.svg",
+  "domain": "docs.together.ai",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 18,
+      "doc": "https://docs.together.ai/docs/serverless-models",
+      "npm": "@ai-sdk/togetherai",
+      "env": [
+        "TOGETHER_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "deepseek-r1",
+      "model": "R1",
+      "api_model_id": "deepseek-ai/DeepSeek-R1",
+      "endpoint_path": "deepseek-ai/DeepSeek-R1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 3,
+        "output_per_million_tokens": 7
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "togetherai/deepseek-ai/DeepSeek-R1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-pro",
+      "model": "DeepSeek V4 Pro",
+      "api_model_id": "deepseek-ai/DeepSeek-V4-Pro",
+      "endpoint_path": "deepseek-ai/DeepSeek-V4-Pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2.1,
+        "output_per_million_tokens": 4.4,
+        "cache_read_per_million_tokens": 0.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "togetherai/deepseek-ai/DeepSeek-V4-Pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.6",
+      "model": "Kimi K2.6",
+      "api_model_id": "moonshotai/Kimi-K2.6",
+      "endpoint_path": "moonshotai/Kimi-K2.6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.2,
+        "output_per_million_tokens": 4.5,
+        "cache_read_per_million_tokens": 0.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "togetherai/moonshotai/Kimi-K2.6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "model": "Kimi K2.5",
+      "api_model_id": "moonshotai/Kimi-K2.5",
+      "endpoint_path": "moonshotai/Kimi-K2.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.5,
+        "output_per_million_tokens": 2.8
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "togetherai/moonshotai/Kimi-K2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-120b",
+      "model": "gpt-oss-120b",
+      "api_model_id": "openai/gpt-oss-120b",
+      "endpoint_path": "openai/gpt-oss-120b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.15,
+        "output_per_million_tokens": 0.6
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "togetherai/openai/gpt-oss-120b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5.1",
+      "model": "GLM 5.1",
+      "api_model_id": "zai-org/GLM-5.1",
+      "endpoint_path": "zai-org/GLM-5.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.4,
+        "output_per_million_tokens": 4.4
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "togetherai/zai-org/GLM-5.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemma-4-31b-it",
+      "model": "Gemma 4 31B",
+      "api_model_id": "google/gemma-4-31B-it",
+      "endpoint_path": "google/gemma-4-31B-it",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.2,
+        "output_per_million_tokens": 0.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "togetherai/google/gemma-4-31B-it",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "rnj-1-instruct",
+      "model": "Rnj 1 Instruct",
+      "api_model_id": "essentialai/Rnj-1-Instruct",
+      "endpoint_path": "essentialai/Rnj-1-Instruct",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.15,
+        "output_per_million_tokens": 0.15
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "togetherai/essentialai/Rnj-1-Instruct",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.7",
+      "model": "MiniMax M2.7",
+      "api_model_id": "MiniMaxAI/MiniMax-M2.7",
+      "endpoint_path": "MiniMaxAI/MiniMax-M2.7",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 1.2,
+        "cache_read_per_million_tokens": 0.06
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "togetherai/MiniMaxAI/MiniMax-M2.7",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.5",
+      "model": "MiniMax M2.5",
+      "api_model_id": "MiniMaxAI/MiniMax-M2.5",
+      "endpoint_path": "MiniMaxAI/MiniMax-M2.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 1.2,
+        "cache_read_per_million_tokens": 0.06
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "togetherai/MiniMaxAI/MiniMax-M2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.6-plus",
+      "model": "Qwen3.6 Plus",
+      "api_model_id": "Qwen/Qwen3.6-Plus",
+      "endpoint_path": "Qwen/Qwen3.6-Plus",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.5,
+        "output_per_million_tokens": 3
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "togetherai/Qwen/Qwen3.6-Plus",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-397b-a17b",
+      "model": "Qwen3.5 397B A17B",
+      "api_model_id": "Qwen/Qwen3.5-397B-A17B",
+      "endpoint_path": "Qwen/Qwen3.5-397B-A17B",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.6,
+        "output_per_million_tokens": 3.6
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "togetherai/Qwen/Qwen3.5-397B-A17B",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "togetherai",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

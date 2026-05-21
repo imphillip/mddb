@@ -3,6 +3,20 @@
   "id": "friendli",
   "provider": "Friendli",
   "currency": "USD",
+  "icon_url": "https://models.dev/logos/friendli.svg",
+  "base_url": "https://api.friendli.ai/serverless/v1",
+  "domain": "friendli.ai",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 6,
+      "doc": "https://friendli.ai/docs/guides/serverless_endpoints/introduction",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "FRIENDLI_TOKEN"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "offers": [
     {
       "model_id": "deepseek-v3.2",
@@ -436,9 +450,127 @@
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
+    },
+    {
+      "model_id": "glm-5",
+      "model": "GLM 5",
+      "api_model_id": "zai-org/GLM-5",
+      "endpoint_path": "zai-org/GLM-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1,
+        "output_per_million_tokens": 3.2,
+        "cache_read_per_million_tokens": 0.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "friendli/zai-org/GLM-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5.1",
+      "model": "GLM 5.1",
+      "api_model_id": "zai-org/GLM-5.1",
+      "endpoint_path": "zai-org/GLM-5.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.4,
+        "output_per_million_tokens": 4.4,
+        "cache_read_per_million_tokens": 0.26
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "friendli/zai-org/GLM-5.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.1-8b-instruct",
+      "model": "Llama 3.1 8B Instruct",
+      "api_model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "endpoint_path": "meta-llama/Llama-3.1-8B-Instruct",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.1,
+        "output_per_million_tokens": 0.1
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "friendli/meta-llama/Llama-3.1-8B-Instruct",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.3-70b-instruct",
+      "model": "Llama 3.3 70B Instruct",
+      "api_model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "endpoint_path": "meta-llama/Llama-3.3-70B-Instruct",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.6,
+        "output_per_million_tokens": 0.6
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "friendli/meta-llama/Llama-3.3-70B-Instruct",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.5",
+      "model": "MiniMax M2.5",
+      "api_model_id": "MiniMaxAI/MiniMax-M2.5",
+      "endpoint_path": "MiniMaxAI/MiniMax-M2.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 1.2,
+        "cache_read_per_million_tokens": 0.06
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "friendli/MiniMaxAI/MiniMax-M2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
     }
   ],
-  "other_parameters": {},
-  "last_updated": "2026-05-21T21:36:01.873Z",
-  "sources": []
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "friendli",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
 }

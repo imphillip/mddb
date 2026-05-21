@@ -3,6 +3,20 @@
   "id": "ambient",
   "provider": "Ambient",
   "currency": "USD",
+  "icon_url": "https://models.dev/logos/ambient.svg",
+  "base_url": "https://api.ambient.xyz/v1",
+  "domain": "ambient.xyz",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 2,
+      "doc": "https://ambient.xyz",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "AMBIENT_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "offers": [
     {
       "model_id": "glm-5.1",
@@ -574,9 +588,38 @@
           "observed_at": "2026-05-21T19:00:07.736Z"
         }
       ]
+    },
+    {
+      "model_id": "kimi-k2.6",
+      "model": "Kimi K2.6",
+      "api_model_id": "moonshotai/kimi-k2.6",
+      "endpoint_path": "moonshotai/kimi-k2.6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.95,
+        "output_per_million_tokens": 4,
+        "cache_read_per_million_tokens": 0.2,
+        "cache_write_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "ambient/moonshotai/kimi-k2.6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
     }
   ],
-  "other_parameters": {},
-  "last_updated": "2026-05-21T21:36:01.873Z",
-  "sources": []
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "ambient",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
 }

@@ -3,6 +3,19 @@
   "id": "openai",
   "provider": "Openai",
   "currency": "USD",
+  "icon_url": "https://models.dev/logos/openai.svg",
+  "domain": "platform.openai.com",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 52,
+      "doc": "https://platform.openai.com/docs/models",
+      "npm": "@ai-sdk/openai",
+      "env": [
+        "OPENAI_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T21:32:13.480Z",
   "offers": [
     {
       "model_id": "gpt-3.5-turbo",
@@ -3516,9 +3529,879 @@
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
+    },
+    {
+      "model_id": "gpt-4o",
+      "model": "GPT-4o",
+      "api_model_id": "gpt-4o",
+      "endpoint_path": "gpt-4o",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2.5,
+        "output_per_million_tokens": 10,
+        "cache_read_per_million_tokens": 1.25
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-4o",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.2",
+      "model": "GPT-5.2",
+      "api_model_id": "gpt-5.2",
+      "endpoint_path": "gpt-5.2",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.75,
+        "output_per_million_tokens": 14,
+        "cache_read_per_million_tokens": 0.175
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5.2",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-3.5-turbo",
+      "model": "GPT-3.5 Turbo",
+      "api_model_id": "gpt-3.5-turbo",
+      "endpoint_path": "gpt-3.5-turbo",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.5,
+        "output_per_million_tokens": 1.5,
+        "cache_read_per_million_tokens": 1.25
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-3.5-turbo",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "o3-pro",
+      "model": "o3 Pro",
+      "api_model_id": "o3-pro",
+      "endpoint_path": "o3-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 20,
+        "output_per_million_tokens": 80
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/o3-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.4-nano",
+      "model": "GPT-5.4 Nano",
+      "api_model_id": "gpt-5.4-nano",
+      "endpoint_path": "gpt-5.4-nano",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.2,
+        "output_per_million_tokens": 1.25,
+        "cache_read_per_million_tokens": 0.02
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5.4-nano",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.5-pro",
+      "model": "GPT-5.5 Pro",
+      "api_model_id": "gpt-5.5-pro",
+      "endpoint_path": "gpt-5.5-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 30,
+        "output_per_million_tokens": 180
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5.5-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.1-codex-mini",
+      "model": "GPT-5.1-Codex-Mini",
+      "api_model_id": "gpt-5.1-codex-mini",
+      "endpoint_path": "gpt-5.1-codex-mini",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.25,
+        "output_per_million_tokens": 2,
+        "cache_read_per_million_tokens": 0.025
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5.1-codex-mini",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.2-pro",
+      "model": "GPT-5.2 Pro",
+      "api_model_id": "gpt-5.2-pro",
+      "endpoint_path": "gpt-5.2-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 21,
+        "output_per_million_tokens": 168
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5.2-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-4o-2024-05-13",
+      "model": "GPT-4o (2024-05-13)",
+      "api_model_id": "gpt-4o-2024-05-13",
+      "endpoint_path": "gpt-4o-2024-05-13",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 5,
+        "output_per_million_tokens": 15
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-4o-2024-05-13",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5-codex",
+      "model": "GPT-5 Codex",
+      "api_model_id": "gpt-5-codex",
+      "endpoint_path": "gpt-5-codex",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.25,
+        "output_per_million_tokens": 10,
+        "cache_read_per_million_tokens": 0.125
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5-codex",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-4.1",
+      "model": "GPT-4.1",
+      "api_model_id": "gpt-4.1",
+      "endpoint_path": "gpt-4.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2,
+        "output_per_million_tokens": 8,
+        "cache_read_per_million_tokens": 0.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-4.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5-pro",
+      "model": "GPT-5 Pro",
+      "api_model_id": "gpt-5-pro",
+      "endpoint_path": "gpt-5-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 15,
+        "output_per_million_tokens": 120
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-4.1-mini",
+      "model": "GPT-4.1 Mini",
+      "api_model_id": "gpt-4.1-mini",
+      "endpoint_path": "gpt-4.1-mini",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.4,
+        "output_per_million_tokens": 1.6,
+        "cache_read_per_million_tokens": 0.1
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-4.1-mini",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.1",
+      "model": "GPT-5.1",
+      "api_model_id": "gpt-5.1",
+      "endpoint_path": "gpt-5.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.25,
+        "output_per_million_tokens": 10,
+        "cache_read_per_million_tokens": 0.13
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5-nano",
+      "model": "GPT-5 Nano",
+      "api_model_id": "gpt-5-nano",
+      "endpoint_path": "gpt-5-nano",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.05,
+        "output_per_million_tokens": 0.4,
+        "cache_read_per_million_tokens": 0.005
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5-nano",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.4",
+      "model": "GPT-5.4",
+      "api_model_id": "gpt-5.4",
+      "endpoint_path": "gpt-5.4",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2.5,
+        "output_per_million_tokens": 15,
+        "cache_read_per_million_tokens": 0.25
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5.4",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-4o-mini",
+      "model": "GPT-4o-mini",
+      "api_model_id": "gpt-4o-mini",
+      "endpoint_path": "gpt-4o-mini",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.15,
+        "output_per_million_tokens": 0.6,
+        "cache_read_per_million_tokens": 0.08
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-4o-mini",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "o1-pro",
+      "model": "o1-pro",
+      "api_model_id": "o1-pro",
+      "endpoint_path": "o1-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 150,
+        "output_per_million_tokens": 600
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/o1-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-4-turbo",
+      "model": "GPT-4 Turbo",
+      "api_model_id": "gpt-4-turbo",
+      "endpoint_path": "gpt-4-turbo",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 10,
+        "output_per_million_tokens": 30
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-4-turbo",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.4-mini",
+      "model": "GPT-5.4 Mini",
+      "api_model_id": "gpt-5.4-mini",
+      "endpoint_path": "gpt-5.4-mini",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.75,
+        "output_per_million_tokens": 4.5,
+        "cache_read_per_million_tokens": 0.075
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5.4-mini",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "o1",
+      "model": "o1",
+      "api_model_id": "o1",
+      "endpoint_path": "o1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 15,
+        "output_per_million_tokens": 60,
+        "cache_read_per_million_tokens": 7.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/o1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.1-codex-max",
+      "model": "GPT-5.1-Codex-Max",
+      "api_model_id": "gpt-5.1-codex-max",
+      "endpoint_path": "gpt-5.1-codex-max",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.25,
+        "output_per_million_tokens": 10,
+        "cache_read_per_million_tokens": 0.125
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5.1-codex-max",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.5",
+      "model": "GPT-5.5",
+      "api_model_id": "gpt-5.5",
+      "endpoint_path": "gpt-5.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 5,
+        "output_per_million_tokens": 30,
+        "cache_read_per_million_tokens": 0.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.4-pro",
+      "model": "GPT-5.4 Pro",
+      "api_model_id": "gpt-5.4-pro",
+      "endpoint_path": "gpt-5.4-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 30,
+        "output_per_million_tokens": 180
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5.4-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "o4-mini-deep-research",
+      "model": "o4 Mini Deep Research",
+      "api_model_id": "o4-mini-deep-research",
+      "endpoint_path": "o4-mini-deep-research",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2,
+        "output_per_million_tokens": 8,
+        "cache_read_per_million_tokens": 0.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/o4-mini-deep-research",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-4.1-nano",
+      "model": "GPT-4.1 Nano",
+      "api_model_id": "gpt-4.1-nano",
+      "endpoint_path": "gpt-4.1-nano",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.1,
+        "output_per_million_tokens": 0.4,
+        "cache_read_per_million_tokens": 0.03
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-4.1-nano",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-4",
+      "model": "GPT-4",
+      "api_model_id": "gpt-4",
+      "endpoint_path": "gpt-4",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 30,
+        "output_per_million_tokens": 60
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-4",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "o4-mini",
+      "model": "o4 Mini",
+      "api_model_id": "o4-mini",
+      "endpoint_path": "o4-mini",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.1,
+        "output_per_million_tokens": 4.4,
+        "cache_read_per_million_tokens": 0.28
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/o4-mini",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.1-codex",
+      "model": "GPT-5.1-Codex",
+      "api_model_id": "gpt-5.1-codex",
+      "endpoint_path": "gpt-5.1-codex",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.25,
+        "output_per_million_tokens": 10,
+        "cache_read_per_million_tokens": 0.125
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5.1-codex",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-4o-2024-11-20",
+      "model": "GPT-4o (2024-11-20)",
+      "api_model_id": "gpt-4o-2024-11-20",
+      "endpoint_path": "gpt-4o-2024-11-20",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2.5,
+        "output_per_million_tokens": 10,
+        "cache_read_per_million_tokens": 1.25
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-4o-2024-11-20",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.2-codex",
+      "model": "GPT-5.2-Codex",
+      "api_model_id": "gpt-5.2-codex",
+      "endpoint_path": "gpt-5.2-codex",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.75,
+        "output_per_million_tokens": 14,
+        "cache_read_per_million_tokens": 0.175
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5.2-codex",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5-mini",
+      "model": "GPT-5 Mini",
+      "api_model_id": "gpt-5-mini",
+      "endpoint_path": "gpt-5-mini",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.25,
+        "output_per_million_tokens": 2,
+        "cache_read_per_million_tokens": 0.025
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5-mini",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "o3-mini",
+      "model": "o3 Mini",
+      "api_model_id": "o3-mini",
+      "endpoint_path": "o3-mini",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.1,
+        "output_per_million_tokens": 4.4,
+        "cache_read_per_million_tokens": 0.55
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/o3-mini",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.3-codex",
+      "model": "GPT-5.3-Codex",
+      "api_model_id": "gpt-5.3-codex",
+      "endpoint_path": "gpt-5.3-codex",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.75,
+        "output_per_million_tokens": 14,
+        "cache_read_per_million_tokens": 0.175
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5.3-codex",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-4o-2024-08-06",
+      "model": "GPT-4o (2024-08-06)",
+      "api_model_id": "gpt-4o-2024-08-06",
+      "endpoint_path": "gpt-4o-2024-08-06",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2.5,
+        "output_per_million_tokens": 10,
+        "cache_read_per_million_tokens": 1.25
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-4o-2024-08-06",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "o3",
+      "model": "o3",
+      "api_model_id": "o3",
+      "endpoint_path": "o3",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2,
+        "output_per_million_tokens": 8,
+        "cache_read_per_million_tokens": 0.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/o3",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "o3-deep-research",
+      "model": "o3 Deep Research",
+      "api_model_id": "o3-deep-research",
+      "endpoint_path": "o3-deep-research",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 10,
+        "output_per_million_tokens": 40,
+        "cache_read_per_million_tokens": 2.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/o3-deep-research",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5",
+      "model": "GPT-5",
+      "api_model_id": "gpt-5",
+      "endpoint_path": "gpt-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.25,
+        "output_per_million_tokens": 10,
+        "cache_read_per_million_tokens": 0.125
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "openai/gpt-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
     }
   ],
-  "other_parameters": {},
-  "last_updated": "2026-05-21T21:32:13.480Z",
-  "sources": []
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "openai",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
 }

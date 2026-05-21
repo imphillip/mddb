@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "id": "umans-ai-coding-plan",
+  "provider": "Umans AI Coding Plan",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/umans-ai-coding-plan.svg",
+  "base_url": "https://api.code.umans.ai/v1",
+  "domain": "app.umans.ai",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 5,
+      "doc": "https://app.umans.ai/offers/code/docs",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "UMANS_AI_CODING_PLAN_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "umans-ai-coding-plan",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

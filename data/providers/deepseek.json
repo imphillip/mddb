@@ -3,6 +3,20 @@
   "id": "deepseek",
   "provider": "Deepseek",
   "currency": "USD",
+  "icon_url": "https://models.dev/logos/deepseek.svg",
+  "base_url": "https://api.deepseek.com",
+  "domain": "api-docs.deepseek.com",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 4,
+      "doc": "https://api-docs.deepseek.com/quick_start/pricing",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "DEEPSEEK_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T21:36:01.873Z",
   "offers": [
     {
       "model_id": "deepseek-v4-flash",
@@ -123,9 +137,83 @@
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
+    },
+    {
+      "model_id": "deepseek-chat",
+      "model": "DeepSeek V3",
+      "api_model_id": "deepseek-chat",
+      "endpoint_path": "deepseek-chat",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.14,
+        "output_per_million_tokens": 0.28,
+        "cache_read_per_million_tokens": 0.028
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "deepseek/deepseek-chat",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-pro",
+      "model": "DeepSeek V4 Pro",
+      "api_model_id": "deepseek-v4-pro",
+      "endpoint_path": "deepseek-v4-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.74,
+        "output_per_million_tokens": 3.48,
+        "cache_read_per_million_tokens": 0.145
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "deepseek/deepseek-v4-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-flash",
+      "model": "DeepSeek V4 Flash",
+      "api_model_id": "deepseek-v4-flash",
+      "endpoint_path": "deepseek-v4-flash",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.14,
+        "output_per_million_tokens": 0.28,
+        "cache_read_per_million_tokens": 0.028
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "deepseek/deepseek-v4-flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
     }
   ],
-  "other_parameters": {},
-  "last_updated": "2026-05-21T21:36:01.873Z",
-  "sources": []
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "deepseek",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
 }

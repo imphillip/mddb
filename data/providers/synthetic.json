@@ -1,0 +1,522 @@
+{
+  "schema_version": 1,
+  "id": "synthetic",
+  "provider": "Synthetic",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/synthetic.svg",
+  "base_url": "https://api.synthetic.new/openai/v1",
+  "domain": "synthetic.new",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 33,
+      "doc": "https://synthetic.new/pricing",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "SYNTHETIC_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "deepseek-r1",
+      "model": "R1",
+      "api_model_id": "hf:deepseek-ai/DeepSeek-R1",
+      "endpoint_path": "hf:deepseek-ai/DeepSeek-R1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.55,
+        "output_per_million_tokens": 2.19
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:deepseek-ai/DeepSeek-R1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-r1-0528",
+      "model": "R1 0528",
+      "api_model_id": "hf:deepseek-ai/DeepSeek-R1-0528",
+      "endpoint_path": "hf:deepseek-ai/DeepSeek-R1-0528",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 3,
+        "output_per_million_tokens": 8
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:deepseek-ai/DeepSeek-R1-0528",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.1-terminus",
+      "model": "DeepSeek V3.1 Terminus",
+      "api_model_id": "hf:deepseek-ai/DeepSeek-V3.1-Terminus",
+      "endpoint_path": "hf:deepseek-ai/DeepSeek-V3.1-Terminus",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.2,
+        "output_per_million_tokens": 1.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:deepseek-ai/DeepSeek-V3.1-Terminus",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "model": "DeepSeek V3.2",
+      "api_model_id": "hf:deepseek-ai/DeepSeek-V3.2",
+      "endpoint_path": "hf:deepseek-ai/DeepSeek-V3.2",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.27,
+        "output_per_million_tokens": 0.4,
+        "cache_read_per_million_tokens": 0.27,
+        "cache_write_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:deepseek-ai/DeepSeek-V3.2",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2-thinking",
+      "model": "Kimi K2 Thinking",
+      "api_model_id": "hf:moonshotai/Kimi-K2-Thinking",
+      "endpoint_path": "hf:moonshotai/Kimi-K2-Thinking",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.55,
+        "output_per_million_tokens": 2.19
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:moonshotai/Kimi-K2-Thinking",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "model": "Kimi K2.5",
+      "api_model_id": "hf:moonshotai/Kimi-K2.5",
+      "endpoint_path": "hf:moonshotai/Kimi-K2.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.55,
+        "output_per_million_tokens": 2.19
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:moonshotai/Kimi-K2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-235b-a22b-thinking-2507",
+      "model": "Qwen3 235B A22B Thinking 2507",
+      "api_model_id": "hf:Qwen/Qwen3-235B-A22B-Thinking-2507",
+      "endpoint_path": "hf:Qwen/Qwen3-235B-A22B-Thinking-2507",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.65,
+        "output_per_million_tokens": 3
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:Qwen/Qwen3-235B-A22B-Thinking-2507",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-397b-a17b",
+      "model": "Qwen3.5 397B A17B",
+      "api_model_id": "hf:Qwen/Qwen3.5-397B-A17B",
+      "endpoint_path": "hf:Qwen/Qwen3.5-397B-A17B",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.6,
+        "output_per_million_tokens": 3,
+        "cache_read_per_million_tokens": 0.6
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:Qwen/Qwen3.5-397B-A17B",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-120b",
+      "model": "gpt-oss-120b",
+      "api_model_id": "hf:openai/gpt-oss-120b",
+      "endpoint_path": "hf:openai/gpt-oss-120b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.1,
+        "output_per_million_tokens": 0.1
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:openai/gpt-oss-120b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.7",
+      "model": "GLM 4.7",
+      "api_model_id": "hf:zai-org/GLM-4.7",
+      "endpoint_path": "hf:zai-org/GLM-4.7",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.55,
+        "output_per_million_tokens": 2.19
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:zai-org/GLM-4.7",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.7-flash",
+      "model": "GLM 4.7 Flash",
+      "api_model_id": "hf:zai-org/GLM-4.7-Flash",
+      "endpoint_path": "hf:zai-org/GLM-4.7-Flash",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.06,
+        "output_per_million_tokens": 0.4,
+        "cache_read_per_million_tokens": 0.06
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:zai-org/GLM-4.7-Flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5",
+      "model": "GLM 5",
+      "api_model_id": "hf:zai-org/GLM-5",
+      "endpoint_path": "hf:zai-org/GLM-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1,
+        "output_per_million_tokens": 3,
+        "cache_read_per_million_tokens": 1
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:zai-org/GLM-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5.1",
+      "model": "GLM 5.1",
+      "api_model_id": "hf:zai-org/GLM-5.1",
+      "endpoint_path": "hf:zai-org/GLM-5.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1,
+        "output_per_million_tokens": 3,
+        "cache_read_per_million_tokens": 1
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:zai-org/GLM-5.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.6",
+      "model": "GLM 4.6",
+      "api_model_id": "hf:zai-org/GLM-4.6",
+      "endpoint_path": "hf:zai-org/GLM-4.6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.55,
+        "output_per_million_tokens": 2.19
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:zai-org/GLM-4.6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.1",
+      "model": "MiniMax M2.1",
+      "api_model_id": "hf:MiniMaxAI/MiniMax-M2.1",
+      "endpoint_path": "hf:MiniMaxAI/MiniMax-M2.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.55,
+        "output_per_million_tokens": 2.19
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:MiniMaxAI/MiniMax-M2.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.5",
+      "model": "MiniMax M2.5",
+      "api_model_id": "hf:MiniMaxAI/MiniMax-M2.5",
+      "endpoint_path": "hf:MiniMaxAI/MiniMax-M2.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.6,
+        "output_per_million_tokens": 3,
+        "cache_read_per_million_tokens": 0.6
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:MiniMaxAI/MiniMax-M2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2",
+      "model": "MiniMax M2",
+      "api_model_id": "hf:MiniMaxAI/MiniMax-M2",
+      "endpoint_path": "hf:MiniMaxAI/MiniMax-M2",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.55,
+        "output_per_million_tokens": 2.19
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:MiniMaxAI/MiniMax-M2",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.1-8b-instruct",
+      "model": "Llama 3.1 8B Instruct",
+      "api_model_id": "hf:meta-llama/Llama-3.1-8B-Instruct",
+      "endpoint_path": "hf:meta-llama/Llama-3.1-8B-Instruct",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.2,
+        "output_per_million_tokens": 0.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:meta-llama/Llama-3.1-8B-Instruct",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-4-scout",
+      "model": "Llama 4 Scout",
+      "api_model_id": "hf:meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "endpoint_path": "hf:meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.15,
+        "output_per_million_tokens": 0.6
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:meta-llama/Llama-4-Scout-17B-16E-Instruct",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.1-70b-instruct",
+      "model": "Llama 3.1 70B Instruct",
+      "api_model_id": "hf:meta-llama/Llama-3.1-70B-Instruct",
+      "endpoint_path": "hf:meta-llama/Llama-3.1-70B-Instruct",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.9,
+        "output_per_million_tokens": 0.9
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:meta-llama/Llama-3.1-70B-Instruct",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.3-70b-instruct",
+      "model": "Llama 3.3 70B Instruct",
+      "api_model_id": "hf:meta-llama/Llama-3.3-70B-Instruct",
+      "endpoint_path": "hf:meta-llama/Llama-3.3-70B-Instruct",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.9,
+        "output_per_million_tokens": 0.9
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:meta-llama/Llama-3.3-70B-Instruct",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.6",
+      "model": "Kimi K2.6",
+      "api_model_id": "hf:moonshotai/Kimi-K2.6",
+      "endpoint_path": "hf:moonshotai/Kimi-K2.6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.95,
+        "output_per_million_tokens": 4,
+        "cache_read_per_million_tokens": 0.95
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "synthetic/hf:moonshotai/Kimi-K2.6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "synthetic",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

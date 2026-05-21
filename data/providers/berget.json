@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "id": "berget",
+  "provider": "Berget.AI",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/berget.svg",
+  "base_url": "https://api.berget.ai/v1",
+  "domain": "api.berget.ai",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 7,
+      "doc": "https://api.berget.ai",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "BERGET_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "gpt-oss-120b",
+      "model": "gpt-oss-120b",
+      "api_model_id": "openai/gpt-oss-120b",
+      "endpoint_path": "openai/gpt-oss-120b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.44,
+        "output_per_million_tokens": 0.99
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "berget/openai/gpt-oss-120b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.7",
+      "model": "GLM 4.7",
+      "api_model_id": "zai-org/GLM-4.7",
+      "endpoint_path": "zai-org/GLM-4.7",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.77,
+        "output_per_million_tokens": 2.75
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "berget/zai-org/GLM-4.7",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-small-3.2-24b-instruct",
+      "model": "Mistral Small 3.2 24B",
+      "api_model_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "endpoint_path": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.33,
+        "output_per_million_tokens": 0.33
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "berget/mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemma-4-31b-it",
+      "model": "Gemma 4 31B",
+      "api_model_id": "google/gemma-4-31B-it",
+      "endpoint_path": "google/gemma-4-31B-it",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.275,
+        "output_per_million_tokens": 0.55
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "berget/google/gemma-4-31B-it",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.3-70b-instruct",
+      "model": "Llama 3.3 70B Instruct",
+      "api_model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "endpoint_path": "meta-llama/Llama-3.3-70B-Instruct",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.99,
+        "output_per_million_tokens": 0.99
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "berget/meta-llama/Llama-3.3-70B-Instruct",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.6",
+      "model": "Kimi K2.6",
+      "api_model_id": "moonshotai/Kimi-K2.6",
+      "endpoint_path": "moonshotai/Kimi-K2.6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.83,
+        "output_per_million_tokens": 3.85,
+        "cache_read_per_million_tokens": 0.16
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "berget/moonshotai/Kimi-K2.6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "berget",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

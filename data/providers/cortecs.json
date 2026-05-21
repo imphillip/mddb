@@ -1,0 +1,850 @@
+{
+  "schema_version": 1,
+  "id": "cortecs",
+  "provider": "Cortecs",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/cortecs.svg",
+  "base_url": "https://api.cortecs.ai/v1",
+  "domain": "api.cortecs.ai",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 49,
+      "doc": "https://api.cortecs.ai/v1/models",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "CORTECS_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "minimax-m2.1",
+      "model": "MiniMax M2.1",
+      "api_model_id": "minimax-m2.1",
+      "endpoint_path": "minimax-m2.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.34,
+        "output_per_million_tokens": 1.34
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/minimax-m2.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "model": "Kimi K2.5",
+      "api_model_id": "kimi-k2.5",
+      "endpoint_path": "kimi-k2.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.55,
+        "output_per_million_tokens": 2.76
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/kimi-k2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-haiku-4.5",
+      "model": "Claude Haiku 4.5",
+      "api_model_id": "claude-haiku-4-5",
+      "endpoint_path": "claude-haiku-4-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.09,
+        "output_per_million_tokens": 5.43
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/claude-haiku-4-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5.1",
+      "model": "GLM 5.1",
+      "api_model_id": "glm-5.1",
+      "endpoint_path": "glm-5.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.31,
+        "output_per_million_tokens": 4.1,
+        "cache_read_per_million_tokens": 0.24
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/glm-5.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-pro",
+      "model": "Gemini 2.5 Pro",
+      "api_model_id": "gemini-2.5-pro",
+      "endpoint_path": "gemini-2.5-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.654,
+        "output_per_million_tokens": 11.024
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/gemini-2.5-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2",
+      "model": "MiniMax M2",
+      "api_model_id": "minimax-m2",
+      "endpoint_path": "minimax-m2",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.39,
+        "output_per_million_tokens": 1.57
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/minimax-m2",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-r1-0528",
+      "model": "R1 0528",
+      "api_model_id": "deepseek-r1-0528",
+      "endpoint_path": "deepseek-r1-0528",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.585,
+        "output_per_million_tokens": 2.307
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/deepseek-r1-0528",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "codestral-2508",
+      "model": "Codestral 2508",
+      "api_model_id": "codestral-2508",
+      "endpoint_path": "codestral-2508",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 0.9,
+        "cache_read_per_million_tokens": 0.03
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/codestral-2508",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen-2.5-72b-instruct",
+      "model": "Qwen2.5 72B Instruct",
+      "api_model_id": "qwen-2.5-72b-instruct",
+      "endpoint_path": "qwen-2.5-72b-instruct",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.062,
+        "output_per_million_tokens": 0.231
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/qwen-2.5-72b-instruct",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "model": "DeepSeek V3.2",
+      "api_model_id": "deepseek-v3.2",
+      "endpoint_path": "deepseek-v3.2",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.266,
+        "output_per_million_tokens": 0.444
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/deepseek-v3.2",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "hermes-4-70b",
+      "model": "Hermes 4 70B",
+      "api_model_id": "hermes-4-70b",
+      "endpoint_path": "hermes-4-70b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.116,
+        "output_per_million_tokens": 0.358
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/hermes-4-70b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "devstral-2512",
+      "model": "Devstral 2 2512",
+      "api_model_id": "devstral-2512",
+      "endpoint_path": "devstral-2512",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/devstral-2512",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.5-air",
+      "model": "GLM 4.5 Air",
+      "api_model_id": "glm-4.5-air",
+      "endpoint_path": "glm-4.5-air",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.22,
+        "output_per_million_tokens": 1.34
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/glm-4.5-air",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.5",
+      "model": "MiniMax M2.5",
+      "api_model_id": "minimax-m2.5",
+      "endpoint_path": "minimax-m2.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.32,
+        "output_per_million_tokens": 1.18
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/minimax-m2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.7-flash",
+      "model": "GLM 4.7 Flash",
+      "api_model_id": "glm-4.7-flash",
+      "endpoint_path": "glm-4.7-flash",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.09,
+        "output_per_million_tokens": 0.53
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/glm-4.7-flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-4.1",
+      "model": "GPT-4.1",
+      "api_model_id": "gpt-4.1",
+      "endpoint_path": "gpt-4.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2.354,
+        "output_per_million_tokens": 9.417
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/gpt-4.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.5",
+      "model": "GLM 4.5",
+      "api_model_id": "glm-4.5",
+      "endpoint_path": "glm-4.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.67,
+        "output_per_million_tokens": 2.46
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/glm-4.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-coder-next",
+      "model": "Qwen3 Coder Next",
+      "api_model_id": "qwen3-coder-next",
+      "endpoint_path": "qwen3-coder-next",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.158,
+        "output_per_million_tokens": 0.84
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/qwen3-coder-next",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.7",
+      "model": "MiniMax M2.7",
+      "api_model_id": "minimax-m2.7",
+      "endpoint_path": "minimax-m2.7",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.47,
+        "output_per_million_tokens": 1.4
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/minimax-m2.7",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "intellect-3",
+      "model": "INTELLECT-3",
+      "api_model_id": "intellect-3",
+      "endpoint_path": "intellect-3",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.219,
+        "output_per_million_tokens": 1.202
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/intellect-3",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-32b",
+      "model": "Qwen3 32B",
+      "api_model_id": "qwen3-32b",
+      "endpoint_path": "qwen3-32b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.099,
+        "output_per_million_tokens": 0.33
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/qwen3-32b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-next-80b-a3b-thinking",
+      "model": "Qwen3 Next 80B A3B Thinking",
+      "api_model_id": "qwen3-next-80b-a3b-thinking",
+      "endpoint_path": "qwen3-next-80b-a3b-thinking",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.164,
+        "output_per_million_tokens": 1.311
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/qwen3-next-80b-a3b-thinking",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2-thinking",
+      "model": "Kimi K2 Thinking",
+      "api_model_id": "kimi-k2-thinking",
+      "endpoint_path": "kimi-k2-thinking",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.656,
+        "output_per_million_tokens": 2.731
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/kimi-k2-thinking",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "nemotron-3-super-120b-a12b",
+      "model": "Nemotron 3 Super",
+      "api_model_id": "nemotron-3-super-120b-a12b",
+      "endpoint_path": "nemotron-3-super-120b-a12b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.266,
+        "output_per_million_tokens": 0.799
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/nemotron-3-super-120b-a12b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "nova-pro-v1",
+      "model": "Nova Pro 1.0",
+      "api_model_id": "nova-pro-v1",
+      "endpoint_path": "nova-pro-v1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.016,
+        "output_per_million_tokens": 4.061
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/nova-pro-v1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4",
+      "model": "Claude Sonnet 4",
+      "api_model_id": "claude-sonnet-4",
+      "endpoint_path": "claude-sonnet-4",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 3.307,
+        "output_per_million_tokens": 16.536
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/claude-sonnet-4",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.7",
+      "model": "GLM 4.7",
+      "api_model_id": "glm-4.7",
+      "endpoint_path": "glm-4.7",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.45,
+        "output_per_million_tokens": 2.23
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/glm-4.7",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-120b",
+      "model": "gpt-oss-120b",
+      "api_model_id": "gpt-oss-120b",
+      "endpoint_path": "gpt-oss-120b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/gpt-oss-120b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5",
+      "model": "GLM 5",
+      "api_model_id": "glm-5",
+      "endpoint_path": "glm-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.08,
+        "output_per_million_tokens": 3.44
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/glm-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.6",
+      "model": "Kimi K2.6",
+      "api_model_id": "kimi-k2.6",
+      "endpoint_path": "kimi-k2.6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.81,
+        "output_per_million_tokens": 3.54,
+        "cache_read_per_million_tokens": 0.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/kimi-k2.6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-large-2512",
+      "model": "Mistral Large 3 2512",
+      "api_model_id": "mistral-large-2512",
+      "endpoint_path": "mistral-large-2512",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.5,
+        "output_per_million_tokens": 1.5,
+        "cache_read_per_million_tokens": 0.05
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/mistral-large-2512",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-pro",
+      "model": "DeepSeek V4 Pro",
+      "api_model_id": "deepseek-v4-pro",
+      "endpoint_path": "deepseek-v4-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.553,
+        "output_per_million_tokens": 3.106,
+        "cache_read_per_million_tokens": 0.145
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/deepseek-v4-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-122b-a10b",
+      "model": "Qwen3.5-122B-A10B",
+      "api_model_id": "qwen3.5-122b-a10b",
+      "endpoint_path": "qwen3.5-122b-a10b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.444,
+        "output_per_million_tokens": 3.106
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/qwen3.5-122b-a10b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-397b-a17b",
+      "model": "Qwen3.5 397B A17B",
+      "api_model_id": "qwen3.5-397b-a17b",
+      "endpoint_path": "qwen3.5-397b-a17b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.6,
+        "output_per_million_tokens": 3.6
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/qwen3.5-397b-a17b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-flash",
+      "model": "DeepSeek V4 Flash",
+      "api_model_id": "deepseek-v4-flash",
+      "endpoint_path": "deepseek-v4-flash",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.133,
+        "output_per_million_tokens": 0.266,
+        "cache_read_per_million_tokens": 0.028
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/deepseek-v4-flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-coder-30b-a3b-instruct",
+      "model": "Qwen3 Coder 30B A3B Instruct",
+      "api_model_id": "qwen3-coder-30b-a3b-instruct",
+      "endpoint_path": "qwen3-coder-30b-a3b-instruct",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.053,
+        "output_per_million_tokens": 0.222
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/qwen3-coder-30b-a3b-instruct",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "llama-3.3-70b-instruct",
+      "model": "Llama 3.3 70B Instruct",
+      "api_model_id": "llama-3.3-70b-instruct",
+      "endpoint_path": "llama-3.3-70b-instruct",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.089,
+        "output_per_million_tokens": 0.275
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cortecs/llama-3.3-70b-instruct",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "cortecs",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

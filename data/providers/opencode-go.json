@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "id": "opencode-go",
+  "provider": "OpenCode Go",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/opencode-go.svg",
+  "base_url": "https://opencode.ai/zen/go/v1",
+  "domain": "opencode.ai",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 14,
+      "doc": "https://opencode.ai/docs/zen",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "OPENCODE_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "kimi-k2.5",
+      "model": "Kimi K2.5",
+      "api_model_id": "kimi-k2.5",
+      "endpoint_path": "kimi-k2.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.6,
+        "output_per_million_tokens": 3,
+        "cache_read_per_million_tokens": 0.1
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "opencode-go/kimi-k2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5.1",
+      "model": "GLM 5.1",
+      "api_model_id": "glm-5.1",
+      "endpoint_path": "glm-5.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.4,
+        "output_per_million_tokens": 4.4,
+        "cache_read_per_million_tokens": 0.26
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "opencode-go/glm-5.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "mimo-v2-omni",
+      "model": "MiMo-V2-Omni",
+      "api_model_id": "mimo-v2-omni",
+      "endpoint_path": "mimo-v2-omni",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.4,
+        "output_per_million_tokens": 2,
+        "cache_read_per_million_tokens": 0.08
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "opencode-go/mimo-v2-omni",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-pro",
+      "model": "DeepSeek V4 Pro",
+      "api_model_id": "deepseek-v4-pro",
+      "endpoint_path": "deepseek-v4-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.74,
+        "output_per_million_tokens": 3.48,
+        "cache_read_per_million_tokens": 0.0145
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "opencode-go/deepseek-v4-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "mimo-v2.5-pro",
+      "model": "MiMo-V2.5-Pro",
+      "api_model_id": "mimo-v2.5-pro",
+      "endpoint_path": "mimo-v2.5-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1,
+        "output_per_million_tokens": 3,
+        "cache_read_per_million_tokens": 0.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "opencode-go/mimo-v2.5-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.5",
+      "model": "MiniMax M2.5",
+      "api_model_id": "minimax-m2.5",
+      "endpoint_path": "minimax-m2.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 1.2,
+        "cache_read_per_million_tokens": 0.03
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "opencode-go/minimax-m2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.7",
+      "model": "MiniMax M2.7",
+      "api_model_id": "minimax-m2.7",
+      "endpoint_path": "minimax-m2.7",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 1.2,
+        "cache_read_per_million_tokens": 0.06
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "opencode-go/minimax-m2.7",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.6-plus",
+      "model": "Qwen3.6 Plus",
+      "api_model_id": "qwen3.6-plus",
+      "endpoint_path": "qwen3.6-plus",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.5,
+        "output_per_million_tokens": 3,
+        "cache_read_per_million_tokens": 0.05,
+        "cache_write_per_million_tokens": 0.625
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "opencode-go/qwen3.6-plus",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "mimo-v2-pro",
+      "model": "MiMo-V2-Pro",
+      "api_model_id": "mimo-v2-pro",
+      "endpoint_path": "mimo-v2-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1,
+        "output_per_million_tokens": 3,
+        "cache_read_per_million_tokens": 0.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "opencode-go/mimo-v2-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "mimo-v2.5",
+      "model": "MiMo-V2.5",
+      "api_model_id": "mimo-v2.5",
+      "endpoint_path": "mimo-v2.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.4,
+        "output_per_million_tokens": 2,
+        "cache_read_per_million_tokens": 0.08
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "opencode-go/mimo-v2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-flash",
+      "model": "DeepSeek V4 Flash",
+      "api_model_id": "deepseek-v4-flash",
+      "endpoint_path": "deepseek-v4-flash",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.14,
+        "output_per_million_tokens": 0.28,
+        "cache_read_per_million_tokens": 0.0028
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "opencode-go/deepseek-v4-flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5",
+      "model": "GLM 5",
+      "api_model_id": "glm-5",
+      "endpoint_path": "glm-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1,
+        "output_per_million_tokens": 3.2,
+        "cache_read_per_million_tokens": 0.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "opencode-go/glm-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.6",
+      "model": "Kimi K2.6",
+      "api_model_id": "kimi-k2.6",
+      "endpoint_path": "kimi-k2.6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.95,
+        "output_per_million_tokens": 4,
+        "cache_read_per_million_tokens": 0.16
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "opencode-go/kimi-k2.6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "opencode-go",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

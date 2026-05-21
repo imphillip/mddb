@@ -1,0 +1,558 @@
+{
+  "schema_version": 1,
+  "id": "github-copilot",
+  "provider": "GitHub Copilot",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/github-copilot.svg",
+  "base_url": "https://api.githubcopilot.com",
+  "domain": "docs.github.com",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 27,
+      "doc": "https://docs.github.com/en/copilot",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "GITHUB_TOKEN"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "gpt-4o",
+      "model": "GPT-4o",
+      "api_model_id": "gpt-4o",
+      "endpoint_path": "gpt-4o",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/gpt-4o",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4.6",
+      "model": "Claude Sonnet 4.6",
+      "api_model_id": "claude-sonnet-4.6",
+      "endpoint_path": "claude-sonnet-4.6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/claude-sonnet-4.6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.2",
+      "model": "GPT-5.2",
+      "api_model_id": "gpt-5.2",
+      "endpoint_path": "gpt-5.2",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/gpt-5.2",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4.5",
+      "model": "Claude Sonnet 4.5",
+      "api_model_id": "claude-sonnet-4.5",
+      "endpoint_path": "claude-sonnet-4.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/claude-sonnet-4.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-pro",
+      "model": "Gemini 2.5 Pro",
+      "api_model_id": "gemini-2.5-pro",
+      "endpoint_path": "gemini-2.5-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/gemini-2.5-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.1-codex-mini",
+      "model": "GPT-5.1-Codex-Mini",
+      "api_model_id": "gpt-5.1-codex-mini",
+      "endpoint_path": "gpt-5.1-codex-mini",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/gpt-5.1-codex-mini",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "model": "Claude Opus 4.6",
+      "api_model_id": "claude-opus-4.6",
+      "endpoint_path": "claude-opus-4.6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/claude-opus-4.6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-4.1",
+      "model": "GPT-4.1",
+      "api_model_id": "gpt-4.1",
+      "endpoint_path": "gpt-4.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/gpt-4.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.1",
+      "model": "GPT-5.1",
+      "api_model_id": "gpt-5.1",
+      "endpoint_path": "gpt-5.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/gpt-5.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.4",
+      "model": "GPT-5.4",
+      "api_model_id": "gpt-5.4",
+      "endpoint_path": "gpt-5.4",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/gpt-5.4",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.4-mini",
+      "model": "GPT-5.4 Mini",
+      "api_model_id": "gpt-5.4-mini",
+      "endpoint_path": "gpt-5.4-mini",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/gpt-5.4-mini",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-haiku-4.5",
+      "model": "Claude Haiku 4.5",
+      "api_model_id": "claude-haiku-4.5",
+      "endpoint_path": "claude-haiku-4.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/claude-haiku-4.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.1-pro-preview",
+      "model": "Gemini 3.1 Pro Preview",
+      "api_model_id": "gemini-3.1-pro-preview",
+      "endpoint_path": "gemini-3.1-pro-preview",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/gemini-3.1-pro-preview",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.1-codex-max",
+      "model": "GPT-5.1-Codex-Max",
+      "api_model_id": "gpt-5.1-codex-max",
+      "endpoint_path": "gpt-5.1-codex-max",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/gpt-5.1-codex-max",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.5",
+      "model": "GPT-5.5",
+      "api_model_id": "gpt-5.5",
+      "endpoint_path": "gpt-5.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/gpt-5.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3-flash-preview",
+      "model": "Gemini 3 Flash Preview",
+      "api_model_id": "gemini-3-flash-preview",
+      "endpoint_path": "gemini-3-flash-preview",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/gemini-3-flash-preview",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "model": "Claude Opus 4.5",
+      "api_model_id": "claude-opus-4.5",
+      "endpoint_path": "claude-opus-4.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/claude-opus-4.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4",
+      "model": "Claude Sonnet 4",
+      "api_model_id": "claude-sonnet-4",
+      "endpoint_path": "claude-sonnet-4",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/claude-sonnet-4",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.1-codex",
+      "model": "GPT-5.1-Codex",
+      "api_model_id": "gpt-5.1-codex",
+      "endpoint_path": "gpt-5.1-codex",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/gpt-5.1-codex",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.2-codex",
+      "model": "GPT-5.2-Codex",
+      "api_model_id": "gpt-5.2-codex",
+      "endpoint_path": "gpt-5.2-codex",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/gpt-5.2-codex",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5-mini",
+      "model": "GPT-5 Mini",
+      "api_model_id": "gpt-5-mini",
+      "endpoint_path": "gpt-5-mini",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/gpt-5-mini",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.3-codex",
+      "model": "GPT-5.3-Codex",
+      "api_model_id": "gpt-5.3-codex",
+      "endpoint_path": "gpt-5.3-codex",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/gpt-5.3-codex",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.7",
+      "model": "Claude Opus 4.7",
+      "api_model_id": "claude-opus-4.7",
+      "endpoint_path": "claude-opus-4.7",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/claude-opus-4.7",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5",
+      "model": "GPT-5",
+      "api_model_id": "gpt-5",
+      "endpoint_path": "gpt-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/gpt-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "github-copilot",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

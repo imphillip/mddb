@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "id": "google-vertex",
+  "provider": "Vertex",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/google-vertex.svg",
+  "domain": "cloud.google.com",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 38,
+      "doc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
+      "npm": "@ai-sdk/google-vertex",
+      "env": [
+        "GOOGLE_VERTEX_PROJECT",
+        "GOOGLE_VERTEX_LOCATION",
+        "GOOGLE_APPLICATION_CREDENTIALS"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "gemini-2.5-flash",
+      "model": "Gemini 2.5 Flash",
+      "api_model_id": "gemini-2.5-flash",
+      "endpoint_path": "gemini-2.5-flash",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 2.5,
+        "cache_read_per_million_tokens": 0.075,
+        "cache_write_per_million_tokens": 0.383
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "google-vertex/gemini-2.5-flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.1-flash-lite",
+      "model": "Gemini 3.1 Flash Lite",
+      "api_model_id": "gemini-3.1-flash-lite",
+      "endpoint_path": "gemini-3.1-flash-lite",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.25,
+        "output_per_million_tokens": 1.5,
+        "cache_read_per_million_tokens": 0.025
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "google-vertex/gemini-3.1-flash-lite",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-pro",
+      "model": "Gemini 2.5 Pro",
+      "api_model_id": "gemini-2.5-pro",
+      "endpoint_path": "gemini-2.5-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.25,
+        "output_per_million_tokens": 10,
+        "cache_read_per_million_tokens": 0.125
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "google-vertex/gemini-2.5-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-flash-lite",
+      "model": "Gemini 2.5 Flash Lite",
+      "api_model_id": "gemini-2.5-flash-lite",
+      "endpoint_path": "gemini-2.5-flash-lite",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.1,
+        "output_per_million_tokens": 0.4,
+        "cache_read_per_million_tokens": 0.01
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "google-vertex/gemini-2.5-flash-lite",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.1-pro-preview-customtools",
+      "model": "Gemini 3.1 Pro Preview Custom Tools",
+      "api_model_id": "gemini-3.1-pro-preview-customtools",
+      "endpoint_path": "gemini-3.1-pro-preview-customtools",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2,
+        "output_per_million_tokens": 12,
+        "cache_read_per_million_tokens": 0.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "google-vertex/gemini-3.1-pro-preview-customtools",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.1-flash-lite-preview",
+      "model": "Gemini 3.1 Flash Lite Preview",
+      "api_model_id": "gemini-3.1-flash-lite-preview",
+      "endpoint_path": "gemini-3.1-flash-lite-preview",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.25,
+        "output_per_million_tokens": 1.5,
+        "cache_read_per_million_tokens": 0.025
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "google-vertex/gemini-3.1-flash-lite-preview",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.1-pro-preview",
+      "model": "Gemini 3.1 Pro Preview",
+      "api_model_id": "gemini-3.1-pro-preview",
+      "endpoint_path": "gemini-3.1-pro-preview",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2,
+        "output_per_million_tokens": 12,
+        "cache_read_per_million_tokens": 0.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "google-vertex/gemini-3.1-pro-preview",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3-flash-preview",
+      "model": "Gemini 3 Flash Preview",
+      "api_model_id": "gemini-3-flash-preview",
+      "endpoint_path": "gemini-3-flash-preview",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.5,
+        "output_per_million_tokens": 3,
+        "cache_read_per_million_tokens": 0.05
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "google-vertex/gemini-3-flash-preview",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "google-vertex",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

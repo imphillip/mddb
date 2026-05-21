@@ -1,0 +1,420 @@
+{
+  "schema_version": 1,
+  "id": "perplexity-agent",
+  "provider": "Perplexity Agent",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/perplexity-agent.svg",
+  "base_url": "https://api.perplexity.ai/v1",
+  "domain": "docs.perplexity.ai",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 18,
+      "doc": "https://docs.perplexity.ai/docs/agent-api/models",
+      "npm": "@ai-sdk/openai",
+      "env": [
+        "PERPLEXITY_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "gpt-5.2",
+      "model": "GPT-5.2",
+      "api_model_id": "openai/gpt-5.2",
+      "endpoint_path": "openai/gpt-5.2",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.75,
+        "output_per_million_tokens": 14,
+        "cache_read_per_million_tokens": 0.175
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "perplexity-agent/openai/gpt-5.2",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.1",
+      "model": "GPT-5.1",
+      "api_model_id": "openai/gpt-5.1",
+      "endpoint_path": "openai/gpt-5.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.25,
+        "output_per_million_tokens": 10,
+        "cache_read_per_million_tokens": 0.125
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "perplexity-agent/openai/gpt-5.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.4",
+      "model": "GPT-5.4",
+      "api_model_id": "openai/gpt-5.4",
+      "endpoint_path": "openai/gpt-5.4",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2.5,
+        "output_per_million_tokens": 15,
+        "cache_read_per_million_tokens": 0.25
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "perplexity-agent/openai/gpt-5.4",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.5",
+      "model": "GPT-5.5",
+      "api_model_id": "openai/gpt-5.5",
+      "endpoint_path": "openai/gpt-5.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 5,
+        "output_per_million_tokens": 30,
+        "cache_read_per_million_tokens": 0.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "perplexity-agent/openai/gpt-5.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5-mini",
+      "model": "GPT-5 Mini",
+      "api_model_id": "openai/gpt-5-mini",
+      "endpoint_path": "openai/gpt-5-mini",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.25,
+        "output_per_million_tokens": 2,
+        "cache_read_per_million_tokens": 0.025
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "perplexity-agent/openai/gpt-5-mini",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "nemotron-3-super-120b-a12b",
+      "model": "Nemotron 3 Super",
+      "api_model_id": "nvidia/nemotron-3-super-120b-a12b",
+      "endpoint_path": "nvidia/nemotron-3-super-120b-a12b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.25,
+        "output_per_million_tokens": 2.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "perplexity-agent/nvidia/nemotron-3-super-120b-a12b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-haiku-4.5",
+      "model": "Claude Haiku 4.5",
+      "api_model_id": "anthropic/claude-haiku-4-5",
+      "endpoint_path": "anthropic/claude-haiku-4-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1,
+        "output_per_million_tokens": 5,
+        "cache_read_per_million_tokens": 0.1
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "perplexity-agent/anthropic/claude-haiku-4-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4.5",
+      "model": "Claude Sonnet 4.5",
+      "api_model_id": "anthropic/claude-sonnet-4-5",
+      "endpoint_path": "anthropic/claude-sonnet-4-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 3,
+        "output_per_million_tokens": 15,
+        "cache_read_per_million_tokens": 0.3
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "perplexity-agent/anthropic/claude-sonnet-4-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4.6",
+      "model": "Claude Sonnet 4.6",
+      "api_model_id": "anthropic/claude-sonnet-4-6",
+      "endpoint_path": "anthropic/claude-sonnet-4-6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 3,
+        "output_per_million_tokens": 15,
+        "cache_read_per_million_tokens": 0.3
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "perplexity-agent/anthropic/claude-sonnet-4-6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.7",
+      "model": "Claude Opus 4.7",
+      "api_model_id": "anthropic/claude-opus-4-7",
+      "endpoint_path": "anthropic/claude-opus-4-7",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 5,
+        "output_per_million_tokens": 25,
+        "cache_read_per_million_tokens": 0.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "perplexity-agent/anthropic/claude-opus-4-7",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "model": "Claude Opus 4.6",
+      "api_model_id": "anthropic/claude-opus-4-6",
+      "endpoint_path": "anthropic/claude-opus-4-6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 5,
+        "output_per_million_tokens": 25,
+        "cache_read_per_million_tokens": 0.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "perplexity-agent/anthropic/claude-opus-4-6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "model": "Claude Opus 4.5",
+      "api_model_id": "anthropic/claude-opus-4-5",
+      "endpoint_path": "anthropic/claude-opus-4-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 5,
+        "output_per_million_tokens": 25,
+        "cache_read_per_million_tokens": 0.5
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "perplexity-agent/anthropic/claude-opus-4-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-pro",
+      "model": "Gemini 2.5 Pro",
+      "api_model_id": "google/gemini-2.5-pro",
+      "endpoint_path": "google/gemini-2.5-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.25,
+        "output_per_million_tokens": 10,
+        "cache_read_per_million_tokens": 0.125
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "perplexity-agent/google/gemini-2.5-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.1-pro-preview",
+      "model": "Gemini 3.1 Pro Preview",
+      "api_model_id": "google/gemini-3.1-pro-preview",
+      "endpoint_path": "google/gemini-3.1-pro-preview",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2,
+        "output_per_million_tokens": 12,
+        "cache_read_per_million_tokens": 0.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "perplexity-agent/google/gemini-3.1-pro-preview",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3-flash-preview",
+      "model": "Gemini 3 Flash Preview",
+      "api_model_id": "google/gemini-3-flash-preview",
+      "endpoint_path": "google/gemini-3-flash-preview",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.5,
+        "output_per_million_tokens": 3,
+        "cache_read_per_million_tokens": 0.05
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "perplexity-agent/google/gemini-3-flash-preview",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-flash",
+      "model": "Gemini 2.5 Flash",
+      "api_model_id": "google/gemini-2.5-flash",
+      "endpoint_path": "google/gemini-2.5-flash",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 2.5,
+        "cache_read_per_million_tokens": 0.03
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "perplexity-agent/google/gemini-2.5-flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "sonar",
+      "model": "Sonar",
+      "api_model_id": "perplexity/sonar",
+      "endpoint_path": "perplexity/sonar",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.25,
+        "output_per_million_tokens": 2.5,
+        "cache_read_per_million_tokens": 0.0625
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "perplexity-agent/perplexity/sonar",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "perplexity-agent",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

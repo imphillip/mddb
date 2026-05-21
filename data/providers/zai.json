@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "id": "zai",
+  "provider": "Z.AI",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/zai.svg",
+  "base_url": "https://api.z.ai/api/paas/v4",
+  "domain": "docs.z.ai",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 13,
+      "doc": "https://docs.z.ai/guides/overview/pricing",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "ZHIPU_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "glm-5.1",
+      "model": "GLM 5.1",
+      "api_model_id": "glm-5.1",
+      "endpoint_path": "glm-5.1",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.4,
+        "output_per_million_tokens": 4.4,
+        "cache_read_per_million_tokens": 0.26,
+        "cache_write_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zai/glm-5.1",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5v-turbo",
+      "model": "GLM 5V Turbo",
+      "api_model_id": "glm-5v-turbo",
+      "endpoint_path": "glm-5v-turbo",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.2,
+        "output_per_million_tokens": 4,
+        "cache_read_per_million_tokens": 0.24,
+        "cache_write_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zai/glm-5v-turbo",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.5-air",
+      "model": "GLM 4.5 Air",
+      "api_model_id": "glm-4.5-air",
+      "endpoint_path": "glm-4.5-air",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.2,
+        "output_per_million_tokens": 1.1,
+        "cache_read_per_million_tokens": 0.03,
+        "cache_write_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zai/glm-4.5-air",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.5v",
+      "model": "GLM 4.5V",
+      "api_model_id": "glm-4.5v",
+      "endpoint_path": "glm-4.5v",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.6,
+        "output_per_million_tokens": 1.8
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zai/glm-4.5v",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.7-flash",
+      "model": "GLM 4.7 Flash",
+      "api_model_id": "glm-4.7-flash",
+      "endpoint_path": "glm-4.7-flash",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0,
+        "cache_read_per_million_tokens": 0,
+        "cache_write_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zai/glm-4.7-flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.6",
+      "model": "GLM 4.6",
+      "api_model_id": "glm-4.6",
+      "endpoint_path": "glm-4.6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.6,
+        "output_per_million_tokens": 2.2,
+        "cache_read_per_million_tokens": 0.11,
+        "cache_write_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zai/glm-4.6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.5",
+      "model": "GLM 4.5",
+      "api_model_id": "glm-4.5",
+      "endpoint_path": "glm-4.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.6,
+        "output_per_million_tokens": 2.2,
+        "cache_read_per_million_tokens": 0.11,
+        "cache_write_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zai/glm-4.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5-turbo",
+      "model": "GLM 5 Turbo",
+      "api_model_id": "glm-5-turbo",
+      "endpoint_path": "glm-5-turbo",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.2,
+        "output_per_million_tokens": 4,
+        "cache_read_per_million_tokens": 0.24,
+        "cache_write_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zai/glm-5-turbo",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.7",
+      "model": "GLM 4.7",
+      "api_model_id": "glm-4.7",
+      "endpoint_path": "glm-4.7",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.6,
+        "output_per_million_tokens": 2.2,
+        "cache_read_per_million_tokens": 0.11,
+        "cache_write_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zai/glm-4.7",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-5",
+      "model": "GLM 5",
+      "api_model_id": "glm-5",
+      "endpoint_path": "glm-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1,
+        "output_per_million_tokens": 3.2,
+        "cache_read_per_million_tokens": 0.2,
+        "cache_write_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zai/glm-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.6v",
+      "model": "GLM 4.6V",
+      "api_model_id": "glm-4.6v",
+      "endpoint_path": "glm-4.6v",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 0.9
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "zai/glm-4.6v",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "zai",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

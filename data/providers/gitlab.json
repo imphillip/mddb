@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "id": "gitlab",
+  "provider": "GitLab Duo",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/gitlab.svg",
+  "domain": "docs.gitlab.com",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 16,
+      "doc": "https://docs.gitlab.com/user/duo_agent_platform/",
+      "npm": "gitlab-ai-provider",
+      "env": [
+        "GITLAB_TOKEN"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "gitlab",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

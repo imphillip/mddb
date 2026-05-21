@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "id": "qihang-ai",
+  "provider": "QiHang",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/qihang-ai.svg",
+  "base_url": "https://api.qhaigc.net/v1",
+  "domain": "qhaigc.net",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 9,
+      "doc": "https://www.qhaigc.net/docs",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "QIHANG_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "gpt-5.2",
+      "model": "GPT-5.2",
+      "api_model_id": "gpt-5.2",
+      "endpoint_path": "gpt-5.2",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.25,
+        "output_per_million_tokens": 2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qihang-ai/gpt-5.2",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3-flash-preview",
+      "model": "Gemini 3 Flash Preview",
+      "api_model_id": "gemini-3-flash-preview",
+      "endpoint_path": "gemini-3-flash-preview",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.07,
+        "output_per_million_tokens": 0.43
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qihang-ai/gemini-3-flash-preview",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.2-codex",
+      "model": "GPT-5.2-Codex",
+      "api_model_id": "gpt-5.2-codex",
+      "endpoint_path": "gpt-5.2-codex",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.14,
+        "output_per_million_tokens": 1.14
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qihang-ai/gpt-5.2-codex",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-flash",
+      "model": "Gemini 2.5 Flash",
+      "api_model_id": "gemini-2.5-flash",
+      "endpoint_path": "gemini-2.5-flash",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.09,
+        "output_per_million_tokens": 0.71
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qihang-ai/gemini-2.5-flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5-mini",
+      "model": "GPT-5 Mini",
+      "api_model_id": "gpt-5-mini",
+      "endpoint_path": "gpt-5-mini",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.04,
+        "output_per_million_tokens": 0.29
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "qihang-ai/gpt-5-mini",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "qihang-ai",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

@@ -1,0 +1,515 @@
+{
+  "schema_version": 1,
+  "id": "frogbot",
+  "provider": "FrogBot",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/frogbot.svg",
+  "base_url": "https://app.frogbot.ai/api/v1",
+  "domain": "docs.frogbot.ai",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 26,
+      "doc": "https://docs.frogbot.ai",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "FROGBOT_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "kimi-k2.5",
+      "model": "Kimi K2.5",
+      "api_model_id": "kimi-k2.5",
+      "endpoint_path": "kimi-k2.5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.6,
+        "output_per_million_tokens": 3,
+        "cache_read_per_million_tokens": 0.1
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/kimi-k2.5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-haiku-4.5",
+      "model": "Claude Haiku 4.5",
+      "api_model_id": "claude-haiku-4-5",
+      "endpoint_path": "claude-haiku-4-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1,
+        "output_per_million_tokens": 5,
+        "cache_read_per_million_tokens": 0.1,
+        "cache_write_per_million_tokens": 1.25
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/claude-haiku-4-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-4o",
+      "model": "GPT-4o",
+      "api_model_id": "gpt-4o",
+      "endpoint_path": "gpt-4o",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2.5,
+        "output_per_million_tokens": 10,
+        "cache_read_per_million_tokens": 1.25
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/gpt-4o",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "grok-4.3",
+      "model": "Grok 4.3",
+      "api_model_id": "grok-4-3",
+      "endpoint_path": "grok-4-3",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.25,
+        "output_per_million_tokens": 2.5,
+        "cache_read_per_million_tokens": 0.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/grok-4-3",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-pro",
+      "model": "Gemini 2.5 Pro",
+      "api_model_id": "gemini-2.5-pro",
+      "endpoint_path": "gemini-2.5-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.25,
+        "output_per_million_tokens": 10,
+        "cache_read_per_million_tokens": 0.31
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/gemini-2.5-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-pro",
+      "model": "DeepSeek V4 Pro",
+      "api_model_id": "deepseek-v4-pro",
+      "endpoint_path": "deepseek-v4-pro",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.74,
+        "output_per_million_tokens": 3.48,
+        "cache_read_per_million_tokens": 0.14
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/deepseek-v4-pro",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.5",
+      "model": "GPT-5.5",
+      "api_model_id": "gpt-5-5",
+      "endpoint_path": "gpt-5-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2.5,
+        "output_per_million_tokens": 15,
+        "cache_read_per_million_tokens": 0.25
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/gpt-5-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.7",
+      "model": "MiniMax M2.7",
+      "api_model_id": "minimax-m2-7",
+      "endpoint_path": "minimax-m2-7",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 1.2,
+        "cache_read_per_million_tokens": 0.06
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/minimax-m2-7",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-20b",
+      "model": "gpt-oss-20b",
+      "api_model_id": "gpt-oss-20b",
+      "endpoint_path": "gpt-oss-20b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.07,
+        "output_per_million_tokens": 0.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/gpt-oss-20b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-sonnet-4.6",
+      "model": "Claude Sonnet 4.6",
+      "api_model_id": "claude-sonnet-4-6",
+      "endpoint_path": "claude-sonnet-4-6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 3,
+        "output_per_million_tokens": 15,
+        "cache_read_per_million_tokens": 0.3,
+        "cache_write_per_million_tokens": 3.75
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/claude-sonnet-4-6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.6",
+      "model": "Kimi K2.6",
+      "api_model_id": "kimi-k2-6",
+      "endpoint_path": "kimi-k2-6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.95,
+        "output_per_million_tokens": 4,
+        "cache_read_per_million_tokens": 0.16
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/kimi-k2-6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.3-codex",
+      "model": "GPT-5.3-Codex",
+      "api_model_id": "gpt-5-3-codex",
+      "endpoint_path": "gpt-5-3-codex",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 1.75,
+        "output_per_million_tokens": 14,
+        "cache_read_per_million_tokens": 0.175
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/gpt-5-3-codex",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.7",
+      "model": "Claude Opus 4.7",
+      "api_model_id": "claude-opus-4-7",
+      "endpoint_path": "claude-opus-4-7",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 5,
+        "output_per_million_tokens": 25,
+        "cache_read_per_million_tokens": 0.5,
+        "cache_write_per_million_tokens": 6.25
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/claude-opus-4-7",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.4-nano",
+      "model": "GPT-5.4 Nano",
+      "api_model_id": "gpt-5-4-nano",
+      "endpoint_path": "gpt-5-4-nano",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.2,
+        "output_per_million_tokens": 1.25,
+        "cache_read_per_million_tokens": 0.02
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/gpt-5-4-nano",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3-flash-preview",
+      "model": "Gemini 3 Flash Preview",
+      "api_model_id": "gemini-3-flash-preview",
+      "endpoint_path": "gemini-3-flash-preview",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.5,
+        "output_per_million_tokens": 3,
+        "cache_read_per_million_tokens": 0.05
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/gemini-3-flash-preview",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-5.4-mini",
+      "model": "GPT-5.4 Mini",
+      "api_model_id": "gpt-5-4-mini",
+      "endpoint_path": "gpt-5-4-mini",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.75,
+        "output_per_million_tokens": 4.5,
+        "cache_read_per_million_tokens": 0.075
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/gpt-5-4-mini",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-2.5-flash",
+      "model": "Gemini 2.5 Flash",
+      "api_model_id": "gemini-2.5-flash",
+      "endpoint_path": "gemini-2.5-flash",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 2.5,
+        "cache_read_per_million_tokens": 0.075
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/gemini-2.5-flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "model": "Claude Opus 4.6",
+      "api_model_id": "claude-opus-4-6",
+      "endpoint_path": "claude-opus-4-6",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 5,
+        "output_per_million_tokens": 25,
+        "cache_read_per_million_tokens": 0.5,
+        "cache_write_per_million_tokens": 6.25
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/claude-opus-4-6",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "minimax-m2.5",
+      "model": "MiniMax M2.5",
+      "api_model_id": "minimax-m2-5",
+      "endpoint_path": "minimax-m2-5",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.3,
+        "output_per_million_tokens": 1.2,
+        "cache_read_per_million_tokens": 0.03
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/minimax-m2-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gpt-oss-120b",
+      "model": "gpt-oss-120b",
+      "api_model_id": "gpt-oss-120b",
+      "endpoint_path": "gpt-oss-120b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0.15,
+        "output_per_million_tokens": 0.6
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/gpt-oss-120b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.1-pro-preview",
+      "model": "Gemini 3.1 Pro Preview",
+      "api_model_id": "gemini-3-1-pro-preview",
+      "endpoint_path": "gemini-3-1-pro-preview",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 2,
+        "output_per_million_tokens": 12,
+        "cache_read_per_million_tokens": 0.2
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "frogbot/gemini-3-1-pro-preview",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "frogbot",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

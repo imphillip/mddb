@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "id": "v0",
+  "provider": "v0",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/v0.svg",
+  "domain": "sdk.vercel.ai",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 3,
+      "doc": "https://sdk.vercel.ai/providers/ai-sdk-providers/vercel",
+      "npm": "@ai-sdk/vercel",
+      "env": [
+        "V0_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "v0",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}

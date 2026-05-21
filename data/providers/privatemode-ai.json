@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "privatemode-ai",
+  "provider": "Privatemode AI",
+  "currency": "USD",
+  "icon_url": "https://models.dev/logos/privatemode-ai.svg",
+  "base_url": "http://localhost:8080/v1",
+  "domain": "docs.privatemode.ai",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 5,
+      "doc": "https://docs.privatemode.ai/api/overview",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "PRIVATEMODE_API_KEY",
+        "PRIVATEMODE_ENDPOINT"
+      ]
+    }
+  },
+  "last_updated": "2026-05-21T22:27:33.665Z",
+  "offers": [
+    {
+      "model_id": "gpt-oss-120b",
+      "model": "gpt-oss-120b",
+      "api_model_id": "gpt-oss-120b",
+      "endpoint_path": "gpt-oss-120b",
+      "mode": "api",
+      "prices": {
+        "input_per_million_tokens": 0,
+        "output_per_million_tokens": 0
+      },
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "privatemode-ai/gpt-oss-120b",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "models.dev",
+      "source_id": "privatemode-ai",
+      "url": "https://models.dev/api.json",
+      "observed_at": "2026-05-21T22:27:33.665Z"
+    }
+  ]
+}
