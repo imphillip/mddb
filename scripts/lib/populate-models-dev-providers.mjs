@@ -36,6 +36,24 @@ function writeJson(path, value) {
   writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`)
 }
 
+function stableJsonValue(value) {
+  if (Array.isArray(value)) return value.map((entry) => stableJsonValue(entry))
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(Object.keys(value).sort().map((key) => [key, stableJsonValue(value[key])]))
+  }
+  return value
+}
+
+function sameJsonValue(left, right) {
+  return JSON.stringify(stableJsonValue(left)) === JSON.stringify(stableJsonValue(right))
+}
+
+function writeJsonIfChanged(path, value) {
+  if (existsSync(path) && sameJsonValue(readJson(path), value)) return false
+  writeJson(path, value)
+  return true
+}
+
 function slugify(value) {
   return String(value ?? '')
     .trim()
@@ -295,7 +313,8 @@ export function populateModelsDevProviders({ dataDir = join(process.cwd(), 'data
       skipped += 1
       continue
     }
-    writeJson(join(dataDir, file), output)
+    const outputPath = join(dataDir, file)
+    writeJsonIfChanged(outputPath, output)
     if (existing) enriched += 1
     else created += 1
   }

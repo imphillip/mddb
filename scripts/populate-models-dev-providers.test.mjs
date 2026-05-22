@@ -136,4 +136,66 @@ describe('populateModelsDevProviders', () => {
     expect(github).toMatchObject({ id: 'github', provider: 'GitHub Models', offers: [expect.objectContaining({ model_id: 'gpt-4o' })] })
     expect(() => readJson(join(providersDir, 'empty.json'))).toThrow()
   })
+
+  it('does not rewrite providers when models.dev enrichment is already semantically present', () => {
+    const root = mkdtempSync(join(tmpdir(), 'mddb-models-dev-idempotent-'))
+    const providersDir = join(root, 'providers')
+    mkdirSync(providersDir)
+    writeJson(join(root, 'models.json'), {
+      schema_version: 1,
+      models: [{ id: 'gpt-4o', model: 'GPT-4o', author: 'openai', alias: ['openai/gpt-4o'] }],
+      last_updated: '2026-01-01T00:00:00.000Z',
+    })
+    const providerPath = join(providersDir, 'openai.json')
+    const alreadyEnrichedProvider = {
+      schema_version: 1,
+      id: 'openai',
+      provider: 'OpenAI',
+      icon: 'https://models.dev/logos/openai.svg',
+      domain: 'platform.openai.com',
+      base_url: 'https://api.openai.com/v1',
+      currency: 'USD',
+      offers: [
+        { model_id: 'gpt-4o', model: 'GPT-4o', api_model_id: 'openai/gpt-4o', sources: [{ source: 'openrouter', source_id: 'openai/gpt-4o' }] },
+        {
+          model_id: 'gpt-4o',
+          model: 'GPT-4o',
+          api_model_id: 'gpt-4o',
+          endpoint_path: 'gpt-4o',
+          mode: 'api',
+          prices: [{ conditions: {}, prices: { input: { amount: 2.5, unit: 'per_1m_tokens' }, output: { amount: 10, unit: 'per_1m_tokens' } }, currency: 'USD', source: 'models.dev' }],
+          other_parameters: { source: 'models.dev', match: 'exact' },
+          sources: [{ source: 'models.dev', source_id: 'openai/gpt-4o', url: 'https://models.dev/api.json' }],
+        },
+      ],
+      other_parameters: { existing: true, models_dev: { model_count: 1, doc: 'https://platform.openai.com/docs/models', npm: '@ai-sdk/openai', env: ['OPENAI_API_KEY'] } },
+      last_updated: '2026-01-01T00:00:00.000Z',
+      sources: [
+        { source: 'openrouter', source_id: 'openai' },
+        { source: 'models.dev', source_id: 'openai', url: 'https://models.dev/api.json', observed_at: '2026-02-03T04:05:06.000Z' },
+      ],
+    }
+    writeJson(providerPath, alreadyEnrichedProvider)
+    const before = readFileSync(providerPath, 'utf8')
+
+    populateModelsDevProviders({
+      dataDir: providersDir,
+      modelsPath: join(root, 'models.json'),
+      source: {
+        openai: {
+          id: 'openai',
+          name: 'OpenAI',
+          doc: 'https://platform.openai.com/docs/models',
+          api: 'https://api.openai.com/v1',
+          npm: '@ai-sdk/openai',
+          env: ['OPENAI_API_KEY'],
+          iconURL: 'https://models.dev/logos/openai.svg',
+          models: { 'gpt-4o': { id: 'gpt-4o', name: 'GPT-4o', cost: { input: 2.5, output: 10 } } },
+        },
+      },
+      observedAt: '2026-02-03T04:05:06.000Z',
+    })
+
+    expect(readFileSync(providerPath, 'utf8')).toBe(before)
+  })
 })
