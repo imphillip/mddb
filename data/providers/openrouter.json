@@ -2,10 +2,21 @@
   "schema_version": 1,
   "id": "openrouter",
   "provider": "OpenRouter",
-  "icon": "https://models.dev/logos/openrouter.svg",
-  "domain": "openrouter.ai",
-  "base_url": "https://openrouter.ai/api/v1",
   "currency": "USD",
+  "icon": "https://models.dev/logos/openrouter.svg",
+  "base_url": "https://openrouter.ai/api/v1",
+  "domain": "openrouter.ai",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 358,
+      "doc": "https://openrouter.ai/models",
+      "npm": "@openrouter/ai-sdk-provider",
+      "env": [
+        "OPENROUTER_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-22T19:21:26.714Z",
   "offers": [
     {
       "model_id": "aion-1.0",
@@ -217,6 +228,11 @@
           "source_id": "openrouter/auto",
           "url": "https://openrouter.ai/openrouter/auto",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/openrouter/auto",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -241,6 +257,11 @@
           "source_id": "openrouter/bodybuilder",
           "url": "https://openrouter.ai/openrouter/bodybuilder",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/openrouter/bodybuilder",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -984,6 +1005,11 @@
           "source_id": "baidu/cobuddy:free",
           "url": "https://openrouter.ai/baidu/cobuddy:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/baidu/cobuddy:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -2047,6 +2073,11 @@
           "source_id": "deepseek/deepseek-v4-flash:free",
           "url": "https://openrouter.ai/deepseek/deepseek-v4-flash:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/deepseek/deepseek-v4-flash:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -2333,6 +2364,11 @@
           "source_id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
           "url": "https://openrouter.ai/cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -2592,6 +2628,11 @@
           "source_id": "openrouter/free",
           "url": "https://openrouter.ai/openrouter/free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/openrouter/free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -3893,6 +3934,11 @@
           "source_id": "google/gemma-4-26b-a4b-it:free",
           "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/google/gemma-4-26b-a4b-it:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -3982,6 +4028,11 @@
           "source_id": "google/gemma-4-31b-it:free",
           "url": "https://openrouter.ai/google/gemma-4-31b-it:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/google/gemma-4-31b-it:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -4160,6 +4211,11 @@
           "source_id": "z-ai/glm-4.5-air:free",
           "url": "https://openrouter.ai/z-ai/glm-4.5-air:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/z-ai/glm-4.5-air:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -7260,6 +7316,11 @@
           "source_id": "openai/gpt-oss-120b:free",
           "url": "https://openrouter.ai/openai/gpt-oss-120b:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/openai/gpt-oss-120b:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -7359,6 +7420,11 @@
           "source_id": "openai/gpt-oss-20b:free",
           "url": "https://openrouter.ai/openai/gpt-oss-20b:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/openai/gpt-oss-20b:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -7791,6 +7857,11 @@
           "source_id": "nousresearch/hermes-3-llama-3.1-405b:free",
           "url": "https://openrouter.ai/nousresearch/hermes-3-llama-3.1-405b:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/nousresearch/hermes-3-llama-3.1-405b:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -8887,6 +8958,11 @@
           "source_id": "poolside/laguna-m.1:free",
           "url": "https://openrouter.ai/poolside/laguna-m.1:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/poolside/laguna-m.1:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -8911,6 +8987,11 @@
           "source_id": "poolside/laguna-xs.2:free",
           "url": "https://openrouter.ai/poolside/laguna-xs.2:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/poolside/laguna-xs.2:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -8982,6 +9063,11 @@
           "source_id": "liquid/lfm-2.5-1.2b-instruct:free",
           "url": "https://openrouter.ai/liquid/lfm-2.5-1.2b-instruct:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/liquid/lfm-2.5-1.2b-instruct:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -9006,6 +9092,11 @@
           "source_id": "liquid/lfm-2.5-1.2b-thinking:free",
           "url": "https://openrouter.ai/liquid/lfm-2.5-1.2b-thinking:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/liquid/lfm-2.5-1.2b-thinking:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -9420,6 +9511,11 @@
           "source_id": "meta-llama/llama-3.2-3b-instruct:free",
           "url": "https://openrouter.ai/meta-llama/llama-3.2-3b-instruct:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/meta-llama/llama-3.2-3b-instruct:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -9505,6 +9601,11 @@
           "source_id": "meta-llama/llama-3.3-70b-instruct:free",
           "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -9832,6 +9933,11 @@
           "source_id": "google/lyria-3-clip-preview",
           "url": "https://openrouter.ai/google/lyria-3-clip-preview",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/google/lyria-3-clip-preview",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -9858,6 +9964,11 @@
           "source_id": "google/lyria-3-pro-preview",
           "url": "https://openrouter.ai/google/lyria-3-pro-preview",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/google/lyria-3-pro-preview",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -10527,6 +10638,11 @@
           "source_id": "minimax/minimax-m2.5:free",
           "url": "https://openrouter.ai/minimax/minimax-m2.5:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/minimax/minimax-m2.5:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -11677,6 +11793,11 @@
           "source_id": "nvidia/nemotron-3-nano-30b-a3b:free",
           "url": "https://openrouter.ai/nvidia/nemotron-3-nano-30b-a3b:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/nvidia/nemotron-3-nano-30b-a3b:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -11748,6 +11869,11 @@
           "source_id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
           "url": "https://openrouter.ai/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -11776,6 +11902,11 @@
           "source_id": "nvidia/nemotron-3-super-120b-a12b:free",
           "url": "https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -11849,6 +11980,11 @@
           "source_id": "nvidia/nemotron-nano-12b-v2-vl:free",
           "url": "https://openrouter.ai/nvidia/nemotron-nano-12b-v2-vl:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/nvidia/nemotron-nano-12b-v2-vl:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -11875,6 +12011,11 @@
           "source_id": "nvidia/nemotron-nano-9b-v2:free",
           "url": "https://openrouter.ai/nvidia/nemotron-nano-9b-v2:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/nvidia/nemotron-nano-9b-v2:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -12759,6 +12900,11 @@
           "source_id": "openrouter/owl-alpha",
           "url": "https://openrouter.ai/openrouter/owl-alpha",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/openrouter/owl-alpha",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -12830,6 +12976,11 @@
           "source_id": "openrouter/pareto-code",
           "url": "https://openrouter.ai/openrouter/pareto-code",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/openrouter/pareto-code",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -13894,6 +14045,11 @@
           "source_id": "qwen/qwen3-coder:free",
           "url": "https://openrouter.ai/qwen/qwen3-coder:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/qwen/qwen3-coder:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -14275,6 +14431,11 @@
           "source_id": "qwen/qwen3-next-80b-a3b-instruct:free",
           "url": "https://openrouter.ai/qwen/qwen3-next-80b-a3b-instruct:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/qwen/qwen3-next-80b-a3b-instruct:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -16538,6 +16699,11 @@
           "source_id": "arcee-ai/trinity-large-thinking:free",
           "url": "https://openrouter.ai/arcee-ai/trinity-large-thinking:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openrouter/arcee-ai/trinity-large-thinking:free",
+          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -17592,76 +17758,6 @@
         {
           "source": "models.dev",
           "source_id": "openrouter/liquid/lfm-2-24b-a2b",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "lfm-2.5-1.2b-thinking",
-      "model": "LiquidAI: LFM2.5-1.2B-Thinking",
-      "api_model_id": "liquid/lfm-2.5-1.2b-thinking:free",
-      "endpoint_path": "liquid/lfm-2.5-1.2b-thinking:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/liquid/lfm-2.5-1.2b-thinking:free",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "lfm-2.5-1.2b-instruct",
-      "model": "LiquidAI: LFM2.5-1.2B-Instruct",
-      "api_model_id": "liquid/lfm-2.5-1.2b-instruct:free",
-      "endpoint_path": "liquid/lfm-2.5-1.2b-instruct:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/liquid/lfm-2.5-1.2b-instruct:free",
           "url": "https://models.dev/api.json"
         }
       ]
@@ -18948,41 +19044,6 @@
       ]
     },
     {
-      "model_id": "gpt-oss-20b",
-      "model": "gpt-oss-20b",
-      "api_model_id": "openai/gpt-oss-20b:free",
-      "endpoint_path": "openai/gpt-oss-20b:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/openai/gpt-oss-20b:free",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "gpt-5.4-image-2",
       "model": "GPT-5.4 Image 2",
       "api_model_id": "openai/gpt-5.4-image-2",
@@ -19196,41 +19257,6 @@
         {
           "source": "models.dev",
           "source_id": "openrouter/openai/gpt-oss-20b",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "gpt-oss-120b",
-      "model": "gpt-oss-120b",
-      "api_model_id": "openai/gpt-oss-120b:free",
-      "endpoint_path": "openai/gpt-oss-120b:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/openai/gpt-oss-120b:free",
           "url": "https://models.dev/api.json"
         }
       ]
@@ -20011,130 +20037,6 @@
       ]
     },
     {
-      "model_id": "pareto-code",
-      "model": "Pareto Code Router",
-      "api_model_id": "openrouter/pareto-code",
-      "endpoint_path": "openrouter/pareto-code",
-      "mode": "api",
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/openrouter/pareto-code",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "free",
-      "model": "Free Models Router",
-      "api_model_id": "openrouter/free",
-      "endpoint_path": "openrouter/free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/openrouter/free",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "owl-alpha",
-      "model": "Owl Alpha",
-      "api_model_id": "openrouter/owl-alpha",
-      "endpoint_path": "openrouter/owl-alpha",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/openrouter/owl-alpha",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "bodybuilder",
-      "model": "Body Builder (beta)",
-      "api_model_id": "openrouter/bodybuilder",
-      "endpoint_path": "openrouter/bodybuilder",
-      "mode": "api",
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/openrouter/bodybuilder",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "auto",
-      "model": "Auto Router",
-      "api_model_id": "openrouter/auto",
-      "endpoint_path": "openrouter/auto",
-      "mode": "api",
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/openrouter/auto",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "router",
       "model": "Router",
       "api_model_id": "switchpoint/router",
@@ -20855,41 +20757,6 @@
       ]
     },
     {
-      "model_id": "hermes-3-llama-3.1-405b",
-      "model": "Hermes 3 405B Instruct",
-      "api_model_id": "nousresearch/hermes-3-llama-3.1-405b:free",
-      "endpoint_path": "nousresearch/hermes-3-llama-3.1-405b:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/nousresearch/hermes-3-llama-3.1-405b:free",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "hermes-2-pro-llama-3-8b",
       "model": "Hermes 2 Pro - Llama-3 8B",
       "api_model_id": "nousresearch/hermes-2-pro-llama-3-8b",
@@ -20925,41 +20792,6 @@
       ]
     },
     {
-      "model_id": "nemotron-3-nano-30b-a3b",
-      "model": "Nemotron 3 Nano 30B A3B",
-      "api_model_id": "nvidia/nemotron-3-nano-30b-a3b:free",
-      "endpoint_path": "nvidia/nemotron-3-nano-30b-a3b:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/nvidia/nemotron-3-nano-30b-a3b:free",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "llama-3.3-nemotron-super-49b-v1.5",
       "model": "Llama 3.3 Nemotron Super 49B V1.5",
       "api_model_id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
@@ -20990,41 +20822,6 @@
         {
           "source": "models.dev",
           "source_id": "openrouter/nvidia/llama-3.3-nemotron-super-49b-v1.5",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "nemotron-3-super-120b-a12b",
-      "model": "Nemotron 3 Super",
-      "api_model_id": "nvidia/nemotron-3-super-120b-a12b:free",
-      "endpoint_path": "nvidia/nemotron-3-super-120b-a12b:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
           "url": "https://models.dev/api.json"
         }
       ]
@@ -21095,111 +20892,6 @@
         {
           "source": "models.dev",
           "source_id": "openrouter/nvidia/nemotron-nano-9b-v2",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "nemotron-nano-9b-v2",
-      "model": "Nemotron Nano 9B V2",
-      "api_model_id": "nvidia/nemotron-nano-9b-v2:free",
-      "endpoint_path": "nvidia/nemotron-nano-9b-v2:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/nvidia/nemotron-nano-9b-v2:free",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "nemotron-nano-12b-v2-vl",
-      "model": "Nemotron Nano 12B 2 VL",
-      "api_model_id": "nvidia/nemotron-nano-12b-v2-vl:free",
-      "endpoint_path": "nvidia/nemotron-nano-12b-v2-vl:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/nvidia/nemotron-nano-12b-v2-vl:free",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "nemotron-3-nano-omni-30b-a3b-reasoning",
-      "model": "Nemotron 3 Nano Omni",
-      "api_model_id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-      "endpoint_path": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
           "url": "https://models.dev/api.json"
         }
       ]
@@ -23105,76 +22797,6 @@
     {
       "model_id": "qwen3-coder",
       "model": "Qwen3 Coder 480B A35B",
-      "api_model_id": "qwen/qwen3-coder:free",
-      "endpoint_path": "qwen/qwen3-coder:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/qwen/qwen3-coder:free",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "qwen3-next-80b-a3b-instruct",
-      "model": "Qwen3 Next 80B A3B Instruct",
-      "api_model_id": "qwen/qwen3-next-80b-a3b-instruct:free",
-      "endpoint_path": "qwen/qwen3-next-80b-a3b-instruct:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/qwen/qwen3-next-80b-a3b-instruct:free",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "qwen3-coder",
-      "model": "Qwen3 Coder 480B A35B",
       "api_model_id": "qwen/qwen3-coder",
       "endpoint_path": "qwen/qwen3-coder",
       "mode": "api",
@@ -24416,41 +24038,6 @@
       ]
     },
     {
-      "model_id": "lyria-3-clip-preview",
-      "model": "Lyria 3 Clip Preview",
-      "api_model_id": "google/lyria-3-clip-preview",
-      "endpoint_path": "google/lyria-3-clip-preview",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/google/lyria-3-clip-preview",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "gemini-2.0-flash-lite-001",
       "model": "Gemini 2.0 Flash Lite",
       "api_model_id": "google/gemini-2.0-flash-lite-001",
@@ -24559,41 +24146,6 @@
         {
           "source": "models.dev",
           "source_id": "openrouter/google/gemma-2-27b-it",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "lyria-3-pro-preview",
-      "model": "Lyria 3 Pro Preview",
-      "api_model_id": "google/lyria-3-pro-preview",
-      "endpoint_path": "google/lyria-3-pro-preview",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/google/lyria-3-pro-preview",
           "url": "https://models.dev/api.json"
         }
       ]
@@ -25697,41 +25249,6 @@
       ]
     },
     {
-      "model_id": "llama-3.2-3b-instruct",
-      "model": "Llama 3.2 3B Instruct",
-      "api_model_id": "meta-llama/llama-3.2-3b-instruct:free",
-      "endpoint_path": "meta-llama/llama-3.2-3b-instruct:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/meta-llama/llama-3.2-3b-instruct:free",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "llama-guard-3-8b",
       "model": "Llama Guard 3 8B",
       "api_model_id": "meta-llama/llama-guard-3-8b",
@@ -26007,41 +25524,6 @@
         {
           "source": "models.dev",
           "source_id": "openrouter/meta-llama/llama-3.1-8b-instruct",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "trinity-large-thinking",
-      "model": "Trinity Large Thinking",
-      "api_model_id": "arcee-ai/trinity-large-thinking:free",
-      "endpoint_path": "arcee-ai/trinity-large-thinking:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/arcee-ai/trinity-large-thinking:free",
           "url": "https://models.dev/api.json"
         }
       ]
@@ -26444,41 +25926,6 @@
       ]
     },
     {
-      "model_id": "dolphin-mistral-24b-venice-edition",
-      "model": "Venice: Uncensored",
-      "api_model_id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
-      "endpoint_path": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "reka-flash-3",
       "model": "Reka Flash 3",
       "api_model_id": "rekaai/reka-flash-3",
@@ -26724,41 +26171,6 @@
       ]
     },
     {
-      "model_id": "cobuddy",
-      "model": "CoBuddy",
-      "api_model_id": "baidu/cobuddy:free",
-      "endpoint_path": "baidu/cobuddy:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/baidu/cobuddy:free",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "ernie-4.5-vl-28b-a3b",
       "model": "ERNIE 4.5 VL 28B A3B",
       "api_model_id": "baidu/ernie-4.5-vl-28b-a3b",
@@ -26828,76 +26240,6 @@
         {
           "source": "models.dev",
           "source_id": "openrouter/~moonshotai/kimi-latest",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "laguna-xs.2",
-      "model": "Laguna XS.2",
-      "api_model_id": "poolside/laguna-xs.2:free",
-      "endpoint_path": "poolside/laguna-xs.2:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/poolside/laguna-xs.2:free",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "laguna-m.1",
-      "model": "Laguna M.1",
-      "api_model_id": "poolside/laguna-m.1:free",
-      "endpoint_path": "poolside/laguna-m.1:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/poolside/laguna-m.1:free",
           "url": "https://models.dev/api.json"
         }
       ]
@@ -27389,41 +26731,6 @@
         {
           "source": "models.dev",
           "source_id": "openrouter/z-ai/glm-4.5",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "glm-4.5-air",
-      "model": "GLM 4.5 Air",
-      "api_model_id": "z-ai/glm-4.5-air:free",
-      "endpoint_path": "z-ai/glm-4.5-air:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/z-ai/glm-4.5-air:free",
           "url": "https://models.dev/api.json"
         }
       ]
@@ -29136,41 +28443,6 @@
       ]
     },
     {
-      "model_id": "minimax-m2.5",
-      "model": "MiniMax M2.5",
-      "api_model_id": "minimax/minimax-m2.5:free",
-      "endpoint_path": "minimax/minimax-m2.5:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/minimax/minimax-m2.5:free",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "minimax-m2.7",
       "model": "MiniMax M2.7",
       "api_model_id": "minimax/minimax-m2.7",
@@ -29778,41 +29050,6 @@
     {
       "model_id": "gemma-4-26b-a4b-it",
       "model": "Gemma 4 26B A4B",
-      "api_model_id": "google/gemma-4-26b-a4b-it:free",
-      "endpoint_path": "google/gemma-4-26b-a4b-it:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/google/gemma-4-26b-a4b-it:free",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "gemma-4-26b-a4b-it",
-      "model": "Gemma 4 26B A4B",
       "api_model_id": "google/gemma-4-26b-a4b-it",
       "endpoint_path": "google/gemma-4-26b-a4b-it",
       "mode": "api",
@@ -30217,41 +29454,6 @@
       ]
     },
     {
-      "model_id": "gemma-4-31b-it",
-      "model": "Gemma 4 31B",
-      "api_model_id": "google/gemma-4-31b-it:free",
-      "endpoint_path": "google/gemma-4-31b-it:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/google/gemma-4-31b-it:free",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "gemini-3-flash-preview",
       "model": "Gemini 3 Flash Preview",
       "api_model_id": "google/gemini-3-flash-preview",
@@ -30457,41 +29659,6 @@
     {
       "model_id": "deepseek-v4-flash",
       "model": "DeepSeek V4 Flash",
-      "api_model_id": "deepseek/deepseek-v4-flash:free",
-      "endpoint_path": "deepseek/deepseek-v4-flash:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/deepseek/deepseek-v4-flash:free",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "deepseek-v4-flash",
-      "model": "DeepSeek V4 Flash",
       "api_model_id": "deepseek/deepseek-v4-flash",
       "endpoint_path": "deepseek/deepseek-v4-flash",
       "mode": "api",
@@ -30524,41 +29691,6 @@
         {
           "source": "models.dev",
           "source_id": "openrouter/deepseek/deepseek-v4-flash",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "llama-3.3-70b-instruct",
-      "model": "Llama 3.3 70B Instruct",
-      "api_model_id": "meta-llama/llama-3.3-70b-instruct:free",
-      "endpoint_path": "meta-llama/llama-3.3-70b-instruct:free",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
           "url": "https://models.dev/api.json"
         }
       ]
@@ -30794,17 +29926,6 @@
       ]
     }
   ],
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 358,
-      "doc": "https://openrouter.ai/models",
-      "npm": "@openrouter/ai-sdk-provider",
-      "env": [
-        "OPENROUTER_API_KEY"
-      ]
-    }
-  },
-  "last_updated": "2026-05-22T19:21:26.714Z",
   "sources": [
     {
       "source": "models.dev",

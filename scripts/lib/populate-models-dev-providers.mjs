@@ -188,17 +188,51 @@ function modelsDevOffer(provider, modelId, modelRecord, match) {
   }
 }
 
+function mergeSourceLists(existing, additions) {
+  return uniqueBy([
+    ...(Array.isArray(existing) ? existing : []),
+    ...(Array.isArray(additions) ? additions : []),
+  ], (source) => `${source.source}|${source.source_id}`)
+}
+
+function hasMeaningfulModelsDevPrice(offer) {
+  if (!Array.isArray(offer?.prices) || offer.prices.length === 0) return false
+  return offer.prices.some((entry) => {
+    const prices = entry?.prices && typeof entry.prices === 'object' ? entry.prices : {}
+    return Object.values(prices).some((value) => typeof value?.amount === 'number' && value.amount > 0)
+  })
+}
+
 function mergeOffers(existingOffers, provider, canonicalIndex) {
-  const additions = []
+  const offers = []
+  for (const offer of Array.isArray(existingOffers) ? existingOffers : []) {
+    const equivalentIndex = offers.findIndex((existing) => existing.model_id === offer.model_id && existing.api_model_id === offer.api_model_id)
+    if (equivalentIndex >= 0 && offer.sources?.some((source) => source?.source === 'models.dev') && !hasMeaningfulModelsDevPrice(offer)) {
+      offers[equivalentIndex] = {
+        ...offers[equivalentIndex],
+        sources: mergeSourceLists(offers[equivalentIndex].sources, offer.sources),
+      }
+      continue
+    }
+    offers.push(offer)
+  }
   for (const [modelId, modelRecord] of Object.entries(provider.models ?? {})) {
     const match = matchCanonicalModel(provider.id, modelId, modelRecord, canonicalIndex)
     if (!match) continue
-    additions.push(modelsDevOffer(provider, modelId, modelRecord, match))
+    const addition = modelsDevOffer(provider, modelId, modelRecord, match)
+    const equivalentIndex = offers.findIndex((offer) => offer.model_id === addition.model_id && offer.api_model_id === addition.api_model_id)
+    if (equivalentIndex >= 0 && !hasMeaningfulModelsDevPrice(addition)) {
+      offers[equivalentIndex] = {
+        ...offers[equivalentIndex],
+        sources: mergeSourceLists(offers[equivalentIndex].sources, addition.sources),
+      }
+      continue
+    }
+    if (!offers.some((offer) => `${offer.model_id}|${offer.api_model_id}|${offer.endpoint_path}` === `${addition.model_id}|${addition.api_model_id}|${addition.endpoint_path}`)) {
+      offers.push(addition)
+    }
   }
-  return uniqueBy([
-    ...(Array.isArray(existingOffers) ? existingOffers : []),
-    ...additions,
-  ], (offer) => `${offer.model_id}|${offer.api_model_id}|${offer.endpoint_path}`)
+  return offers
 }
 
 function providerRecordFromModelsDev(value) {

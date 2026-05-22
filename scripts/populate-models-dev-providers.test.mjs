@@ -137,6 +137,69 @@ describe('populateModelsDevProviders', () => {
     expect(() => readJson(join(providersDir, 'empty.json'))).toThrow()
   })
 
+  it('does not add a duplicate zero-cost models.dev offer when an unpriced OpenRouter offer for the same API id already exists', () => {
+    const root = mkdtempSync(join(tmpdir(), 'mddb-models-dev-zero-cost-'))
+    const providersDir = join(root, 'providers')
+    mkdirSync(providersDir)
+    writeJson(join(root, 'models.json'), {
+      schema_version: 1,
+      models: [{ id: 'cobuddy', model: 'CoBuddy', author: 'baidu', alias: ['baidu/cobuddy:free', 'baidu/cobuddy-20260430'] }],
+      last_updated: '2026-01-01T00:00:00.000Z',
+    })
+    writeJson(join(providersDir, 'openrouter.json'), {
+      schema_version: 1,
+      id: 'openrouter',
+      provider: 'OpenRouter',
+      currency: 'USD',
+      offers: [
+        {
+          model_id: 'cobuddy',
+          model: 'CoBuddy',
+          endpoint_path: '/chat/completions',
+          api_model_id: 'baidu/cobuddy:free',
+          mode: 'chat',
+          prices: [],
+          sources: [{ source: 'openrouter', source_id: 'baidu/cobuddy:free' }],
+        },
+        {
+          model_id: 'cobuddy',
+          model: 'CoBuddy',
+          endpoint_path: 'baidu/cobuddy:free',
+          api_model_id: 'baidu/cobuddy:free',
+          mode: 'api',
+          prices: [{ conditions: {}, prices: { input: { amount: 0, unit: 'per_1m_tokens' }, output: { amount: 0, unit: 'per_1m_tokens' } }, currency: 'USD', source: 'models.dev' }],
+          sources: [{ source: 'models.dev', source_id: 'openrouter/baidu/cobuddy:free', url: 'https://models.dev/api.json' }],
+        },
+      ],
+      sources: [{ source: 'openrouter', source_id: 'openrouter' }],
+      last_updated: '2026-01-01T00:00:00.000Z',
+    })
+
+    populateModelsDevProviders({
+      dataDir: providersDir,
+      modelsPath: join(root, 'models.json'),
+      source: {
+        openrouter: {
+          id: 'openrouter',
+          name: 'OpenRouter',
+          models: {
+            'baidu/cobuddy:free': { id: 'baidu/cobuddy:free', name: 'CoBuddy (free)', cost: { input: 0, output: 0 } },
+          },
+        },
+      },
+      observedAt: '2026-02-03T04:05:06.000Z',
+    })
+
+    const openrouter = readJson(join(providersDir, 'openrouter.json'))
+    expect(openrouter.offers).toHaveLength(1)
+    expect(openrouter.offers[0]).toMatchObject({ model_id: 'cobuddy', api_model_id: 'baidu/cobuddy:free', endpoint_path: '/chat/completions' })
+    expect(openrouter.offers[0].prices).toEqual([])
+    expect(openrouter.offers[0].sources).toEqual(expect.arrayContaining([
+      expect.objectContaining({ source: 'openrouter', source_id: 'baidu/cobuddy:free' }),
+      expect.objectContaining({ source: 'models.dev', source_id: 'openrouter/baidu/cobuddy:free' }),
+    ]))
+  })
+
   it('does not rewrite providers when models.dev enrichment is already semantically present', () => {
     const root = mkdtempSync(join(tmpdir(), 'mddb-models-dev-idempotent-'))
     const providersDir = join(root, 'providers')
