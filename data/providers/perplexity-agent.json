@@ -3,7 +3,7 @@
   "id": "perplexity-agent",
   "provider": "Perplexity Agent",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/perplexity-agent.svg",
+  "icon": "https://models.dev/logos/perplexity-agent.svg",
   "base_url": "https://api.perplexity.ai/v1",
   "domain": "docs.perplexity.ai",
   "other_parameters": {

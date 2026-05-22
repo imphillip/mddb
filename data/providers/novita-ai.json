@@ -3,7 +3,7 @@
   "id": "novita-ai",
   "provider": "NovitaAI",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/novita-ai.svg",
+  "icon": "https://models.dev/logos/novita-ai.svg",
   "base_url": "https://api.novita.ai/openai",
   "domain": "novita.ai",
   "other_parameters": {

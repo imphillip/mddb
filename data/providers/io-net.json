@@ -3,7 +3,7 @@
   "id": "io-net",
   "provider": "Io Net",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/io-net.svg",
+  "icon": "https://models.dev/logos/io-net.svg",
   "base_url": "https://api.intelligence.io.solutions/api/v1",
   "domain": "io.net",
   "other_parameters": {

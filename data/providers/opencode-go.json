@@ -3,7 +3,7 @@
   "id": "opencode-go",
   "provider": "OpenCode Go",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/opencode-go.svg",
+  "icon": "https://models.dev/logos/opencode-go.svg",
   "base_url": "https://opencode.ai/zen/go/v1",
   "domain": "opencode.ai",
   "other_parameters": {

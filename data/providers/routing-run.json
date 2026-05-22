@@ -3,7 +3,7 @@
   "id": "routing-run",
   "provider": "routing.run",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/routing-run.svg",
+  "icon": "https://models.dev/logos/routing-run.svg",
   "base_url": "https://api.routing.run/v1",
   "domain": "docs.routing.run",
   "other_parameters": {

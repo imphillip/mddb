@@ -3,7 +3,7 @@
   "id": "sap-ai-core",
   "provider": "SAP AI Core",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/sap-ai-core.svg",
+  "icon": "https://models.dev/logos/sap-ai-core.svg",
   "domain": "help.sap.com",
   "other_parameters": {
     "models_dev": {

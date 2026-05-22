@@ -3,7 +3,7 @@
   "id": "chutes",
   "provider": "Chutes",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/chutes.svg",
+  "icon": "https://models.dev/logos/chutes.svg",
   "base_url": "https://llm.chutes.ai/v1",
   "domain": "llm.chutes.ai",
   "other_parameters": {

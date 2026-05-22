@@ -3,7 +3,7 @@
   "id": "google",
   "provider": "Google",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/google.svg",
+  "icon": "https://models.dev/logos/google.svg",
   "domain": "ai.google.dev",
   "other_parameters": {
     "models_dev": {

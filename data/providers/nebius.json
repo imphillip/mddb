@@ -3,7 +3,7 @@
   "id": "nebius",
   "provider": "Nebius",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/nebius.svg",
+  "icon": "https://models.dev/logos/nebius.svg",
   "base_url": "https://api.tokenfactory.nebius.com/v1",
   "domain": "docs.tokenfactory.nebius.com",
   "other_parameters": {

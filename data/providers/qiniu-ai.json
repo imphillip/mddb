@@ -3,7 +3,7 @@
   "id": "qiniu-ai",
   "provider": "Qiniu",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/qiniu-ai.svg",
+  "icon": "https://models.dev/logos/qiniu-ai.svg",
   "base_url": "https://api.qnaigc.com/v1",
   "domain": "developer.qiniu.com",
   "other_parameters": {

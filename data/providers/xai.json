@@ -3,7 +3,7 @@
   "id": "xai",
   "provider": "xAI",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/xai.svg",
+  "icon": "https://models.dev/logos/xai.svg",
   "domain": "docs.x.ai",
   "other_parameters": {
     "models_dev": {

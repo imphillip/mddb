@@ -3,7 +3,7 @@
   "id": "nova",
   "provider": "Nova",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/nova.svg",
+  "icon": "https://models.dev/logos/nova.svg",
   "base_url": "https://api.nova.amazon.com/v1",
   "domain": "nova.amazon.com",
   "other_parameters": {

@@ -3,7 +3,7 @@
   "id": "vercel",
   "provider": "Vercel AI Gateway",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/vercel.svg",
+  "icon": "https://models.dev/logos/vercel.svg",
   "domain": "github.com",
   "other_parameters": {
     "models_dev": {

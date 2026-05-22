@@ -3,7 +3,7 @@
   "id": "github-models",
   "provider": "GitHub Models",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/github-models.svg",
+  "icon": "https://models.dev/logos/github-models.svg",
   "base_url": "https://models.github.ai/inference",
   "domain": "docs.github.com",
   "other_parameters": {

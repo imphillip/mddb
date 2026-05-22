@@ -3,7 +3,7 @@
   "id": "azure-cognitive-services",
   "provider": "Azure Cognitive Services",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/azure-cognitive-services.svg",
+  "icon": "https://models.dev/logos/azure-cognitive-services.svg",
   "domain": "learn.microsoft.com",
   "other_parameters": {
     "models_dev": {

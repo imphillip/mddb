@@ -3,7 +3,7 @@
   "id": "cortecs",
   "provider": "Cortecs",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/cortecs.svg",
+  "icon": "https://models.dev/logos/cortecs.svg",
   "base_url": "https://api.cortecs.ai/v1",
   "domain": "api.cortecs.ai",
   "other_parameters": {

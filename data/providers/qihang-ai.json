@@ -3,7 +3,7 @@
   "id": "qihang-ai",
   "provider": "QiHang",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/qihang-ai.svg",
+  "icon": "https://models.dev/logos/qihang-ai.svg",
   "base_url": "https://api.qhaigc.net/v1",
   "domain": "qhaigc.net",
   "other_parameters": {

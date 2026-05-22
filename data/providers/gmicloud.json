@@ -3,7 +3,7 @@
   "id": "gmicloud",
   "provider": "GMICloud",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/gmicloud.svg",
+  "icon": "https://models.dev/logos/gmicloud.svg",
   "base_url": "https://api.gmi-serving.com/v1",
   "domain": "docs.gmicloud.ai",
   "other_parameters": {

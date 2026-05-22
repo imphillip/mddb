@@ -3,7 +3,7 @@
   "id": "modelscope",
   "provider": "ModelScope",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/modelscope.svg",
+  "icon": "https://models.dev/logos/modelscope.svg",
   "base_url": "https://api-inference.modelscope.cn/v1",
   "domain": "modelscope.cn",
   "other_parameters": {

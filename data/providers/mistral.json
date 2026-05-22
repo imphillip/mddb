@@ -3,7 +3,7 @@
   "id": "mistral",
   "provider": "Mistral",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/mistral.svg",
+  "icon": "https://models.dev/logos/mistral.svg",
   "domain": "docs.mistral.ai",
   "other_parameters": {
     "models_dev": {

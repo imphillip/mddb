@@ -3,7 +3,7 @@
   "id": "upstage",
   "provider": "Upstage",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/upstage.svg",
+  "icon": "https://models.dev/logos/upstage.svg",
   "base_url": "https://api.upstage.ai/v1/solar",
   "domain": "developers.upstage.ai",
   "other_parameters": {

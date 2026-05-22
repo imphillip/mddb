@@ -62,7 +62,7 @@ function outputModalityCount(graph: OpenRouterRawGraph, searchOnlyNodeIds: Set<s
 export function renderOpenRouterProviderIndex(graph: OpenRouterRawGraph): string {
   const providers = providerSummaries(graph)
   const providedModelCount = providers.reduce((sum, provider) => sum + provider.offerCount, 0)
-  const rows = providers.map((provider) => `<a class="providerDirectoryLink providerDirectoryCard" href="/${escapeHtml(provider.id)}/"><div><span>${escapeHtml(provider.label)}</span><p>${providerSummaryCopy(provider.modelCount, provider.offerCount)}</p></div><div class="providerCardMeta"><span>${escapeHtml(provider.currency)}</span><strong>→</strong></div></a>`).join('')
+  const rows = providers.map((provider) => `<a class="providerDirectoryLink providerDirectoryCard" href="/${escapeHtml(provider.id)}/"><div><span>${providerLogoIcon(graph, provider.id, provider.label, 'providerIcon')}${escapeHtml(provider.label)}</span><p>${providerSummaryCopy(provider.modelCount, provider.offerCount)}</p></div><div class="providerCardMeta"><span>${escapeHtml(provider.currency)}</span><strong>→</strong></div></a>`).join('')
   const body = `<main class="providerPlaza"><div class="plazaHead"><div><h1>供应商广场</h1><p class="rawIntro">${providers.length} 个供应商 · 提供 ${providedModelCount} 个模型。选择供应商查看它提供的模型。</p></div></div><div class="providerDirectoryGrid">${rows}</div></main>`
   return page('供应商广场 · mddb.dev', body, 'providers', currencyToggle(graph))
 }
@@ -73,7 +73,7 @@ export function renderOpenRouterProviderDetail(graph: OpenRouterRawGraph, provid
   const modelRows = models.map((node) => renderModelRow(node, false, graph)).join('') || '<tr><td class="muted" colspan="6">暂无模型</td></tr>'
   const quickFilters = renderOutputQuickFiltersForNodes(models)
   const authorOptions = authorFilterOptionsForNodes(graph, models)
-  const body = `<main class="modelsShell providerShell"><aside class="filterPanel" aria-label="模型筛选">${renderAuthorFilterGroup(graph, authorOptions, models.length)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>${escapeHtml(label)}</h1></div></div><div class="listToolbar"><div class="quickFilters" aria-label="模态筛选">${quickFilters}</div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small data-price-unit>/M tokens</small></th><th>输出<br><small data-price-unit>/M tokens</small></th><th>读取<br><small data-price-unit>/M tokens</small></th><th>发布时间</th></tr></thead><tbody id="rows">${modelRows}</tbody></table></div><script>${modelFilterScript()}${currencyToggleScript()}</script></section></main>`
+  const body = `<main class="modelsShell providerShell"><aside class="filterPanel" aria-label="模型筛选">${renderAuthorFilterGroup(graph, authorOptions, models.length)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>${providerLogoIcon(graph, providerId, label, 'modelIcon')}${escapeHtml(label)}</h1></div></div><div class="listToolbar"><div class="quickFilters" aria-label="模态筛选">${quickFilters}</div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small data-price-unit>/M tokens</small></th><th>输出<br><small data-price-unit>/M tokens</small></th><th>读取<br><small data-price-unit>/M tokens</small></th><th>发布时间</th></tr></thead><tbody id="rows">${modelRows}</tbody></table></div><script>${modelFilterScript()}${currencyToggleScript()}</script></section></main>`
   return page(`${label} · Provider · mddb.dev`, body, 'models', currencyToggle(graph))
 }
 
@@ -427,7 +427,9 @@ function renderSourceSection(node: OpenRouterRawNode, outEdges: OpenRouterRawEdg
 
 function renderModelRow(node: OpenRouterRawNode, searchOnly = false, graph?: OpenRouterRawGraph): string {
   const modalities = `${node.derived.inputModalities.join(' · ') || '—'} → ${node.derived.outputModalities.join(' · ') || '—'}`
-  return `<tr data-model-row data-search-only="${searchOnly ? 'true' : 'false'}" data-model-status="${escapeHtml(node.status)}" data-model-provider="${escapeHtml(node.provider)}" data-model-author="${escapeHtml(normalizedAuthorValue(node.derived.author))}" data-output-modalities="${escapeHtml(node.derived.outputModalities.join(' ').toLowerCase())}" data-model-name="${escapeHtml(`${node.displayName} ${node.provider} ${node.modelId} ${node.sourceId} ${node.derived.author ?? ''}`.toLowerCase())}"><td><div class="modelName">${renderLogoIcon(undefined, `${node.providerName} logo`, node.providerName.slice(0, 1), 'modelIcon')}<div><a class="modelLink" href="${escapeHtml(node.route)}/">${escapeHtml(node.displayName)}</a><div class="modelSub">${renderModelTagCopy(node.modelId)}</div><div class="modelSub rawSource">${escapeHtml(node.derived.author ?? '—')} · ${escapeHtml(modalities)}</div></div></div></td><td class="mono">${escapeHtml(modelContextLength(node))}</td><td class="mono">${modelPriceCell(node, 'prompt', graph)}</td><td class="mono">${modelPriceCell(node, 'completion', graph)}</td><td class="mono">${modelPriceCell(node, 'input_cache_read', graph)}</td><td class="mono">${escapeHtml(modelReleasedDate(node))}</td></tr>`
+  const logoProvider = node.nodeKind === 'endpoint_deployment' ? node.provider : normalizedAuthorValue(node.derived.author) || node.provider
+  const logoLabel = node.nodeKind === 'endpoint_deployment' ? displayProviderLabel(node.providerName) : authorLabel(logoProvider)
+  return `<tr data-model-row data-search-only="${searchOnly ? 'true' : 'false'}" data-model-status="${escapeHtml(node.status)}" data-model-provider="${escapeHtml(node.provider)}" data-model-author="${escapeHtml(normalizedAuthorValue(node.derived.author))}" data-output-modalities="${escapeHtml(node.derived.outputModalities.join(' ').toLowerCase())}" data-model-name="${escapeHtml(`${node.displayName} ${node.provider} ${node.modelId} ${node.sourceId} ${node.derived.author ?? ''}`.toLowerCase())}"><td><div class="modelName">${graph ? providerLogoIcon(graph, logoProvider, logoLabel, 'modelIcon') : renderLogoIcon(undefined, `${logoLabel} logo`, logoLabel.slice(0, 1), 'modelIcon')}<div><a class="modelLink" href="${escapeHtml(node.route)}/">${escapeHtml(node.displayName)}</a><div class="modelSub">${renderModelTagCopy(node.modelId)}</div><div class="modelSub rawSource">${escapeHtml(node.derived.author ?? '—')} · ${escapeHtml(modalities)}</div></div></div></td><td class="mono">${escapeHtml(modelContextLength(node))}</td><td class="mono">${modelPriceCell(node, 'prompt', graph)}</td><td class="mono">${modelPriceCell(node, 'completion', graph)}</td><td class="mono">${modelPriceCell(node, 'input_cache_read', graph)}</td><td class="mono">${escapeHtml(modelReleasedDate(node))}</td></tr>`
 }
 
 function modelPriceCell(node: OpenRouterRawNode, key: string, graph?: OpenRouterRawGraph): string {
@@ -584,12 +586,19 @@ function authorLabel(value: string): string {
 }
 
 function renderFilterOption(graph: OpenRouterRawGraph, group: string, option: { label: string; value: string; count: number }, checked = false): string {
-  return `<label class="filterOption"><input type="radio" name="${escapeHtml(group)}-filter" data-filter-group="${escapeHtml(group)}" data-filter-value="${escapeHtml(option.value)}"${checked ? ' checked' : ''}>${renderLogoIcon(brandLogoUrl(graph, option.value), `${option.label} logo`, option.label.slice(0, 1), 'filterLogo')}<span>${escapeHtml(option.label)}</span><small>${option.count}</small></label>`
+  return `<label class="filterOption"><input type="radio" name="${escapeHtml(group)}-filter" data-filter-group="${escapeHtml(group)}" data-filter-value="${escapeHtml(option.value)}"${checked ? ' checked' : ''}>${providerLogoIcon(graph, option.value, option.label, 'filterLogo')}<span>${escapeHtml(option.label)}</span><small>${option.count}</small></label>`
 }
 
-function brandLogoUrl(graph: OpenRouterRawGraph, value: string): string | undefined {
-  if (value === 'all') return undefined
-  return graph.enrichment?.modelsDev?.brandLogos?.[value]
+function providerLogoIcon(graph: OpenRouterRawGraph, providerId: string, label: string, className: string): string {
+  return renderLogoIcon(providerLogoUrl(graph, providerId), `${label} logo`, label.slice(0, 1), className)
+}
+
+function providerLogoUrl(graph: OpenRouterRawGraph, providerId: string): string | undefined {
+  if (providerId === 'all') return undefined
+  const provider = graph.providers.find((candidate) => candidate.id === providerId)
+  const icon = provider?.raw.icon
+  if (typeof icon === 'string' && icon.trim() !== '') return icon
+  return graph.enrichment?.modelsDev?.brandLogos?.[providerId]
 }
 
 function renderLogoIcon(logoUrl: string | undefined, alt: string, fallback: string, className: string): string {

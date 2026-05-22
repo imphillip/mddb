@@ -3,7 +3,7 @@
   "id": "evroc",
   "provider": "evroc",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/evroc.svg",
+  "icon": "https://models.dev/logos/evroc.svg",
   "base_url": "https://models.think.evroc.com/v1",
   "domain": "docs.evroc.com",
   "other_parameters": {

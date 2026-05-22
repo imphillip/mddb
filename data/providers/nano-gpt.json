@@ -3,7 +3,7 @@
   "id": "nano-gpt",
   "provider": "NanoGPT",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/nano-gpt.svg",
+  "icon": "https://models.dev/logos/nano-gpt.svg",
   "base_url": "https://nano-gpt.com/api/v1",
   "domain": "docs.nano-gpt.com",
   "other_parameters": {

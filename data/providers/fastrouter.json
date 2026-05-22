@@ -3,7 +3,7 @@
   "id": "fastrouter",
   "provider": "FastRouter",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/fastrouter.svg",
+  "icon": "https://models.dev/logos/fastrouter.svg",
   "base_url": "https://go.fastrouter.ai/api/v1",
   "domain": "fastrouter.ai",
   "other_parameters": {

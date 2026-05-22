@@ -3,7 +3,7 @@
   "id": "synthetic",
   "provider": "Synthetic",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/synthetic.svg",
+  "icon": "https://models.dev/logos/synthetic.svg",
   "base_url": "https://api.synthetic.new/openai/v1",
   "domain": "synthetic.new",
   "other_parameters": {

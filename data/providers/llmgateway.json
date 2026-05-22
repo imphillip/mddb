@@ -3,7 +3,7 @@
   "id": "llmgateway",
   "provider": "LLM Gateway",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/llmgateway.svg",
+  "icon": "https://models.dev/logos/llmgateway.svg",
   "base_url": "https://api.llmgateway.io/v1",
   "domain": "llmgateway.io",
   "other_parameters": {

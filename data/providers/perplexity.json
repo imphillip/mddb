@@ -3,7 +3,7 @@
   "id": "perplexity",
   "provider": "Perplexity",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/perplexity.svg",
+  "icon": "https://models.dev/logos/perplexity.svg",
   "domain": "docs.perplexity.ai",
   "other_parameters": {
     "models_dev": {

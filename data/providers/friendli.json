@@ -3,7 +3,7 @@
   "id": "friendli",
   "provider": "Friendli",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/friendli.svg",
+  "icon": "https://models.dev/logos/friendli.svg",
   "base_url": "https://api.friendli.ai/serverless/v1",
   "domain": "friendli.ai",
   "other_parameters": {

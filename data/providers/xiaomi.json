@@ -3,7 +3,7 @@
   "id": "xiaomi",
   "provider": "Xiaomi",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/xiaomi.svg",
+  "icon": "https://models.dev/logos/xiaomi.svg",
   "base_url": "https://api.xiaomimimo.com/v1",
   "domain": "platform.xiaomimimo.com",
   "other_parameters": {

@@ -45,6 +45,7 @@ type RegistryProvider = {
   schema_version?: number
   id: string
   provider?: string
+  icon?: string
   currency?: string
   offers?: RegistryOffer[]
   other_parameters?: JsonRecord

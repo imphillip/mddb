@@ -3,7 +3,7 @@
   "id": "ambient",
   "provider": "Ambient",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/ambient.svg",
+  "icon": "https://models.dev/logos/ambient.svg",
   "base_url": "https://api.ambient.xyz/v1",
   "domain": "ambient.xyz",
   "other_parameters": {

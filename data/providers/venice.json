@@ -3,7 +3,7 @@
   "id": "venice",
   "provider": "Venice",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/venice.svg",
+  "icon": "https://models.dev/logos/venice.svg",
   "domain": "docs.venice.ai",
   "other_parameters": {
     "models_dev": {

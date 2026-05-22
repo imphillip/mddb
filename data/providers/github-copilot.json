@@ -3,7 +3,7 @@
   "id": "github-copilot",
   "provider": "GitHub Copilot",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/github-copilot.svg",
+  "icon": "https://models.dev/logos/github-copilot.svg",
   "base_url": "https://api.githubcopilot.com",
   "domain": "docs.github.com",
   "other_parameters": {

@@ -3,7 +3,7 @@
   "id": "lilac",
   "provider": "Lilac",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/lilac.svg",
+  "icon": "https://models.dev/logos/lilac.svg",
   "base_url": "https://api.getlilac.com/v1",
   "domain": "docs.getlilac.com",
   "other_parameters": {

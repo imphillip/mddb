@@ -3,7 +3,7 @@
   "id": "neuralwatt",
   "provider": "Neuralwatt",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/neuralwatt.svg",
+  "icon": "https://models.dev/logos/neuralwatt.svg",
   "base_url": "https://api.neuralwatt.com/v1",
   "domain": "portal.neuralwatt.com",
   "other_parameters": {

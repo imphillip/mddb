@@ -3,7 +3,7 @@
   "id": "inception",
   "provider": "Inception",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/inception.svg",
+  "icon": "https://models.dev/logos/inception.svg",
   "base_url": "https://api.inceptionlabs.ai/v1/",
   "domain": "platform.inceptionlabs.ai",
   "other_parameters": {

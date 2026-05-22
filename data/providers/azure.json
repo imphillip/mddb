@@ -3,7 +3,7 @@
   "id": "azure",
   "provider": "Azure",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/azure.svg",
+  "icon": "https://models.dev/logos/azure.svg",
   "domain": "learn.microsoft.com",
   "other_parameters": {
     "models_dev": {

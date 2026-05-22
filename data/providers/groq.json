@@ -3,7 +3,7 @@
   "id": "groq",
   "provider": "Groq",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/groq.svg",
+  "icon": "https://models.dev/logos/groq.svg",
   "domain": "console.groq.com",
   "other_parameters": {
     "models_dev": {

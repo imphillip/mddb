@@ -3,7 +3,7 @@
   "id": "deepinfra",
   "provider": "DeepInfra",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/deepinfra.svg",
+  "icon": "https://models.dev/logos/deepinfra.svg",
   "domain": "deepinfra.com",
   "other_parameters": {
     "models_dev": {

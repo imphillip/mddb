@@ -3,7 +3,7 @@
   "id": "privatemode-ai",
   "provider": "Privatemode AI",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/privatemode-ai.svg",
+  "icon": "https://models.dev/logos/privatemode-ai.svg",
   "base_url": "http://localhost:8080/v1",
   "domain": "docs.privatemode.ai",
   "other_parameters": {

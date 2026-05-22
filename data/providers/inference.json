@@ -3,7 +3,7 @@
   "id": "inference",
   "provider": "Inference",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/inference.svg",
+  "icon": "https://models.dev/logos/inference.svg",
   "base_url": "https://inference.net/v1",
   "domain": "inference.net",
   "other_parameters": {

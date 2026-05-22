@@ -3,7 +3,7 @@
   "id": "302ai",
   "provider": "302.AI",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/302ai.svg",
+  "icon": "https://models.dev/logos/302ai.svg",
   "base_url": "https://api.302.ai/v1",
   "domain": "doc.302.ai",
   "other_parameters": {

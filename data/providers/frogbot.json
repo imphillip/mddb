@@ -3,7 +3,7 @@
   "id": "frogbot",
   "provider": "FrogBot",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/frogbot.svg",
+  "icon": "https://models.dev/logos/frogbot.svg",
   "base_url": "https://app.frogbot.ai/api/v1",
   "domain": "docs.frogbot.ai",
   "other_parameters": {

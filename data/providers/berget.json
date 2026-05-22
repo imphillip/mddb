@@ -3,7 +3,7 @@
   "id": "berget",
   "provider": "Berget.AI",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/berget.svg",
+  "icon": "https://models.dev/logos/berget.svg",
   "base_url": "https://api.berget.ai/v1",
   "domain": "api.berget.ai",
   "other_parameters": {

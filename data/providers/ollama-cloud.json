@@ -3,7 +3,7 @@
   "id": "ollama-cloud",
   "provider": "Ollama Cloud",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/ollama-cloud.svg",
+  "icon": "https://models.dev/logos/ollama-cloud.svg",
   "base_url": "https://ollama.com/v1",
   "domain": "docs.ollama.com",
   "other_parameters": {

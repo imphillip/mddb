@@ -3,7 +3,7 @@
   "id": "submodel",
   "provider": "submodel",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/submodel.svg",
+  "icon": "https://models.dev/logos/submodel.svg",
   "base_url": "https://llm.submodel.ai/v1",
   "domain": "submodel.gitbook.io",
   "other_parameters": {

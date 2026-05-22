@@ -3,7 +3,7 @@
   "id": "siliconflow",
   "provider": "SiliconFlow",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/siliconflow.svg",
+  "icon": "https://models.dev/logos/siliconflow.svg",
   "base_url": "https://api.siliconflow.com/v1",
   "domain": "cloud.siliconflow.com",
   "other_parameters": {

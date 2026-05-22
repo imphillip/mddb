@@ -3,7 +3,7 @@
   "id": "vivgrid",
   "provider": "Vivgrid",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/vivgrid.svg",
+  "icon": "https://models.dev/logos/vivgrid.svg",
   "base_url": "https://api.vivgrid.com/v1",
   "domain": "docs.vivgrid.com",
   "other_parameters": {

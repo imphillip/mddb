@@ -3,7 +3,7 @@
   "id": "lmstudio",
   "provider": "LMStudio",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/lmstudio.svg",
+  "icon": "https://models.dev/logos/lmstudio.svg",
   "base_url": "http://127.0.0.1:1234/v1",
   "domain": "lmstudio.ai",
   "other_parameters": {

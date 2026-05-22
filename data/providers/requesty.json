@@ -3,7 +3,7 @@
   "id": "requesty",
   "provider": "Requesty",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/requesty.svg",
+  "icon": "https://models.dev/logos/requesty.svg",
   "base_url": "https://router.requesty.ai/v1",
   "domain": "requesty.ai",
   "other_parameters": {

@@ -3,7 +3,7 @@
   "id": "wafer.ai",
   "provider": "Wafer",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/wafer.ai.svg",
+  "icon": "https://models.dev/logos/wafer.ai.svg",
   "base_url": "https://pass.wafer.ai/v1",
   "domain": "docs.wafer.ai",
   "other_parameters": {

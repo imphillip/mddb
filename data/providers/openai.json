@@ -3,7 +3,7 @@
   "id": "openai",
   "provider": "Openai",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/openai.svg",
+  "icon": "https://models.dev/logos/openai.svg",
   "domain": "platform.openai.com",
   "other_parameters": {
     "models_dev": {

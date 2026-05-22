@@ -3,7 +3,7 @@
   "id": "cloudflare-workers-ai",
   "provider": "Cloudflare Workers AI",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/cloudflare-workers-ai.svg",
+  "icon": "https://models.dev/logos/cloudflare-workers-ai.svg",
   "base_url": "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/ai/v1",
   "domain": "developers.cloudflare.com",
   "other_parameters": {

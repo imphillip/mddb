@@ -3,7 +3,7 @@
   "id": "google-vertex",
   "provider": "Vertex",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/google-vertex.svg",
+  "icon": "https://models.dev/logos/google-vertex.svg",
   "domain": "cloud.google.com",
   "other_parameters": {
     "models_dev": {

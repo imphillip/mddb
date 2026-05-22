@@ -30,7 +30,7 @@ describe('populateModelsDevProviders', () => {
       id: 'openai',
       provider: 'OpenAI',
       currency: 'USD',
-      icon_url: 'https://old.example/openai.svg',
+      icon: 'https://old.example/openai.svg',
       other_parameters: { existing: true },
       offers: [{ model_id: 'gpt-4o', model: 'GPT-4o', api_model_id: 'openai/gpt-4o' }],
       sources: [{ source: 'openrouter', source_id: 'openai' }],
@@ -107,7 +107,7 @@ describe('populateModelsDevProviders', () => {
     expect(readJson(join(root, 'models.json')).models).toHaveLength(2)
 
     const openai = readJson(join(providersDir, 'openai.json'))
-    expect(openai.icon_url).toBe('https://models.dev/logos/openai.svg')
+    expect(openai.icon).toBe('https://models.dev/logos/openai.svg')
     expect(openai.base_url).toBe('https://api.openai.com/v1')
     expect(openai.domain).toBe('platform.openai.com')
     expect(openai.other_parameters).toMatchObject({ existing: true, models_dev: { model_count: 2, npm: '@ai-sdk/openai' } })
@@ -118,6 +118,7 @@ describe('populateModelsDevProviders', () => {
 
     const moonshot = readJson(join(providersDir, 'moonshot-ai.json'))
     expect(moonshot.provider).toBe('Moonshot AI')
+    expect(moonshot.icon).toBe('https://models.dev/logos/moonshotai.svg')
     expect(moonshot.offers).toEqual([expect.objectContaining({ model_id: 'kimi-k2.5', api_model_id: 'kimi-k2.5' })])
     expect(() => readJson(join(providersDir, 'moonshotai.json'))).toThrow()
 
@@ -127,6 +128,7 @@ describe('populateModelsDevProviders', () => {
 
     const tencent = readJson(join(providersDir, 'tencent.json'))
     expect(tencent.provider).toBe('Tencent')
+    expect(tencent.icon).toBe('https://models.dev/logos/tencent.svg')
     expect(tencent.offers).toEqual([expect.objectContaining({ model_id: 'gpt-4o', api_model_id: 'gpt-4o' })])
     expect(() => readJson(join(providersDir, 'tencent-coding-plan.json'))).toThrow()
 

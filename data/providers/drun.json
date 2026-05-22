@@ -3,7 +3,7 @@
   "id": "drun",
   "provider": "D.Run (China)",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/drun.svg",
+  "icon": "https://models.dev/logos/drun.svg",
   "base_url": "https://chat.d.run/v1",
   "domain": "d.run",
   "other_parameters": {

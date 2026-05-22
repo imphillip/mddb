@@ -3,7 +3,7 @@
   "id": "minimax",
   "provider": "Minimax",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/minimax.svg",
+  "icon": "https://models.dev/logos/minimax.svg",
   "base_url": "https://api.minimax.io/anthropic/v1",
   "domain": "platform.minimax.io",
   "other_parameters": {

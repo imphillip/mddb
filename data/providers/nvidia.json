@@ -3,7 +3,7 @@
   "id": "nvidia",
   "provider": "Nvidia",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/nvidia.svg",
+  "icon": "https://models.dev/logos/nvidia.svg",
   "base_url": "https://integrate.api.nvidia.com/v1",
   "domain": "docs.api.nvidia.com",
   "other_parameters": {

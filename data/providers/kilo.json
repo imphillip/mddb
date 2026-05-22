@@ -3,7 +3,7 @@
   "id": "kilo",
   "provider": "Kilo Gateway",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/kilo.svg",
+  "icon": "https://models.dev/logos/kilo.svg",
   "base_url": "https://api.kilo.ai/api/gateway",
   "domain": "kilo.ai",
   "other_parameters": {

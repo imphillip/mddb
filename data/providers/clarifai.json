@@ -3,7 +3,7 @@
   "id": "clarifai",
   "provider": "Clarifai",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/clarifai.svg",
+  "icon": "https://models.dev/logos/clarifai.svg",
   "base_url": "https://api.clarifai.com/v2/ext/openai/v1",
   "domain": "docs.clarifai.com",
   "other_parameters": {

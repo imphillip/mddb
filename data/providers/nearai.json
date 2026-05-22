@@ -3,7 +3,7 @@
   "id": "nearai",
   "provider": "NEAR AI Cloud",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/nearai.svg",
+  "icon": "https://models.dev/logos/nearai.svg",
   "base_url": "https://cloud-api.near.ai/v1",
   "domain": "docs.near.ai",
   "other_parameters": {

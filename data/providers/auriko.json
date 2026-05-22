@@ -3,7 +3,7 @@
   "id": "auriko",
   "provider": "Auriko",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/auriko.svg",
+  "icon": "https://models.dev/logos/auriko.svg",
   "base_url": "https://api.auriko.ai/v1",
   "domain": "docs.auriko.ai",
   "other_parameters": {

@@ -3,7 +3,7 @@
   "id": "hpc-ai",
   "provider": "HPC-AI",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/hpc-ai.svg",
+  "icon": "https://models.dev/logos/hpc-ai.svg",
   "base_url": "https://api.hpc-ai.com/inference/v1",
   "domain": "hpc-ai.com",
   "other_parameters": {

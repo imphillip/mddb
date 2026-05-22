@@ -3,7 +3,7 @@
   "id": "kimi-for-coding",
   "provider": "Kimi For Coding",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/kimi-for-coding.svg",
+  "icon": "https://models.dev/logos/kimi-for-coding.svg",
   "base_url": "https://api.kimi.com/coding/v1",
   "domain": "kimi.com",
   "other_parameters": {

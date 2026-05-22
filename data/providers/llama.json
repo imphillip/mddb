@@ -3,7 +3,7 @@
   "id": "llama",
   "provider": "Llama",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/llama.svg",
+  "icon": "https://models.dev/logos/llama.svg",
   "base_url": "https://api.llama.com/compat/v1/",
   "domain": "llama.developer.meta.com",
   "other_parameters": {

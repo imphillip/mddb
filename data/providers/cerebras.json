@@ -3,7 +3,7 @@
   "id": "cerebras",
   "provider": "Cerebras",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/cerebras.svg",
+  "icon": "https://models.dev/logos/cerebras.svg",
   "domain": "inference-docs.cerebras.ai",
   "other_parameters": {
     "models_dev": {

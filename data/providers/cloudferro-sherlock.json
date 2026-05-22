@@ -3,7 +3,7 @@
   "id": "cloudferro-sherlock",
   "provider": "CloudFerro Sherlock",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/cloudferro-sherlock.svg",
+  "icon": "https://models.dev/logos/cloudferro-sherlock.svg",
   "base_url": "https://api-sherlock.cloudferro.com/openai/v1/",
   "domain": "docs.sherlock.cloudferro.com",
   "other_parameters": {

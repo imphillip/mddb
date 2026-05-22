@@ -3,7 +3,7 @@
   "id": "ovhcloud",
   "provider": "OVHcloud AI Endpoints",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/ovhcloud.svg",
+  "icon": "https://models.dev/logos/ovhcloud.svg",
   "base_url": "https://oai.endpoints.kepler.ai.cloud.ovh.net/v1",
   "domain": "ovhcloud.com",
   "other_parameters": {

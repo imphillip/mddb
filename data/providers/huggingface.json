@@ -3,7 +3,7 @@
   "id": "huggingface",
   "provider": "Hugging Face",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/huggingface.svg",
+  "icon": "https://models.dev/logos/huggingface.svg",
   "base_url": "https://router.huggingface.co/v1",
   "domain": "huggingface.co",
   "other_parameters": {

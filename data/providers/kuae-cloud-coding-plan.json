@@ -3,7 +3,7 @@
   "id": "kuae-cloud-coding-plan",
   "provider": "KUAE Cloud Coding Plan",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/kuae-cloud-coding-plan.svg",
+  "icon": "https://models.dev/logos/kuae-cloud-coding-plan.svg",
   "base_url": "https://coding-plan-endpoint.kuaecloud.net/v1",
   "domain": "docs.mthreads.com",
   "other_parameters": {

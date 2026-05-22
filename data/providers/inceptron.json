@@ -3,7 +3,7 @@
   "id": "inceptron",
   "provider": "Inceptron",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/inceptron.svg",
+  "icon": "https://models.dev/logos/inceptron.svg",
   "base_url": "https://api.inceptron.io/v1",
   "domain": "docs.inceptron.io",
   "other_parameters": {

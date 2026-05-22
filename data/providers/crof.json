@@ -3,7 +3,7 @@
   "id": "crof",
   "provider": "CrofAI",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/crof.svg",
+  "icon": "https://models.dev/logos/crof.svg",
   "base_url": "https://crof.ai/v1",
   "domain": "crof.ai",
   "other_parameters": {

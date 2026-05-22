@@ -3,7 +3,7 @@
   "id": "anthropic",
   "provider": "Anthropic",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/anthropic.svg",
+  "icon": "https://models.dev/logos/anthropic.svg",
   "domain": "docs.anthropic.com",
   "other_parameters": {
     "models_dev": {

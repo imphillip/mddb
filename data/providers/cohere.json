@@ -3,7 +3,7 @@
   "id": "cohere",
   "provider": "Cohere",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/cohere.svg",
+  "icon": "https://models.dev/logos/cohere.svg",
   "domain": "docs.cohere.com",
   "other_parameters": {
     "models_dev": {

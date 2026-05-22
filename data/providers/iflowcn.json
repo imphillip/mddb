@@ -3,7 +3,7 @@
   "id": "iflowcn",
   "provider": "iFlow",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/iflowcn.svg",
+  "icon": "https://models.dev/logos/iflowcn.svg",
   "base_url": "https://apis.iflow.cn/v1",
   "domain": "platform.iflow.cn",
   "other_parameters": {

@@ -3,7 +3,7 @@
   "id": "regolo-ai",
   "provider": "Regolo AI",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/regolo-ai.svg",
+  "icon": "https://models.dev/logos/regolo-ai.svg",
   "base_url": "https://api.regolo.ai/v1",
   "domain": "docs.regolo.ai",
   "other_parameters": {

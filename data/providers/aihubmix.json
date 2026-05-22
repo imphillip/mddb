@@ -3,7 +3,7 @@
   "id": "aihubmix",
   "provider": "AIHubMix",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/aihubmix.svg",
+  "icon": "https://models.dev/logos/aihubmix.svg",
   "domain": "docs.aihubmix.com",
   "other_parameters": {
     "models_dev": {

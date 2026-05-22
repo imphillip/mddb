@@ -3,7 +3,7 @@
   "id": "morph",
   "provider": "Morph",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/morph.svg",
+  "icon": "https://models.dev/logos/morph.svg",
   "base_url": "https://api.morphllm.com/v1",
   "domain": "docs.morphllm.com",
   "other_parameters": {

@@ -3,7 +3,7 @@
   "id": "fireworks",
   "provider": "Fireworks",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/fireworks.svg",
+  "icon": "https://models.dev/logos/fireworks.svg",
   "base_url": "https://api.fireworks.ai/inference/v1/",
   "domain": "fireworks.ai",
   "other_parameters": {

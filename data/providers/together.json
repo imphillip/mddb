@@ -3,7 +3,7 @@
   "id": "together",
   "provider": "Together",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/together.svg",
+  "icon": "https://models.dev/logos/together.svg",
   "domain": "docs.together.ai",
   "other_parameters": {
     "models_dev": {

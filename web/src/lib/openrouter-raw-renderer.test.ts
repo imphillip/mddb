@@ -60,8 +60,8 @@ function graph(): OpenRouterRawGraph {
     source: { modelsPath: 'models.json', endpointsPath: 'endpoints.json', sitemapPath: 'sitemap.json', pagesPath: 'pages.json' },
     stats: { apiModels: 2, sitemapModelPages: 2, pageOnlyModels: 0, endpointWrappers: 0, endpointRows: 0, pricingObservations: 0, providerObservations: 0, sourceNodes: 2, endpointNodes: 0, pageRows: 0, nodes: 2, edges: 0 },
     providers: [
-      { id: 'openai', name: 'OpenAI', currency: 'USD', raw: { offers: [{ model_id: 'gpt-5.5' }, { model_id: 'gpt-4.1' }] } },
-      { id: 'qwen', name: 'Qwen', currency: 'CNY', raw: { offers: [{ model_id: 'qwen3-max' }] } },
+      { id: 'openai', name: 'OpenAI', currency: 'USD', raw: { icon: 'https://models.dev/logos/openai.svg', offers: [{ model_id: 'gpt-5.5' }, { model_id: 'gpt-4.1' }] } },
+      { id: 'qwen', name: 'Qwen', currency: 'CNY', raw: { icon: 'https://models.dev/logos/alibaba.svg', offers: [{ model_id: 'qwen3-max' }] } },
       { id: 'novita', name: 'Novita', currency: 'USD', raw: { offers: [] } },
     ],
     nodes,
@@ -216,7 +216,7 @@ describe('renderOpenRouterRawHome URL query state', () => {
 
 
 describe('renderOpenRouterRawHome logo enrichment', () => {
-  it('renders models.dev brand logos in the plaza brand filter without changing canonical rows', () => {
+  it('renders provider icons in the plaza brand filter without changing canonical rows', () => {
     const html = renderOpenRouterRawHome(graph())
 
     expect(html).toContain('src="https://models.dev/logos/openai.svg"')
@@ -243,7 +243,8 @@ describe('provider pages', () => {
     expect(html).not.toContain('openai.json')
     expect(html).toContain('3 个供应商')
     expect(html).toContain('<a class="providerDirectoryLink providerDirectoryCard" href="/openai/">')
-    expect(html).toContain('<span>OpenAI</span>')
+    expect(html).toContain('alt="OpenAI logo"')
+    expect(html).toContain('OpenAI</span>')
     expect(html).toContain('<label class="topSearch">⌕ <input id="q" type="search" placeholder="搜索模型 / provider / author / source" autocomplete="off"></label>')
     expect(html).toContain('data-currency-toggle')
     expect(html).toContain('1 USD')
@@ -266,7 +267,7 @@ describe('provider pages', () => {
     expect(html).toContain('OpenAI')
     expect(html).toContain('<aside class="filterPanel" aria-label="模型筛选">')
     expect(html).toContain('<span>厂牌</span>')
-    expect(html).toContain('<section class="mainPanel"><div class="plazaHead"><div><h1>OpenAI</h1>')
+    expect(html).toContain('<section class="mainPanel"><div class="plazaHead"><div><h1><span class="modelIcon"><img src="https://models.dev/logos/openai.svg" alt="OpenAI logo" loading="lazy"></span>OpenAI</h1>')
     expect(html).toContain('<div class="listToolbar"><div class="quickFilters" aria-label="模态筛选"><button class="quickFilter active" type="button" data-output-filter="all">全部 <span class="quickFilterCount" id="visibleCount">2</span></button>')
     expect(html).toContain('<button class="quickFilter" type="button" data-output-filter="text">Text <span class="quickFilterCount">2</span></button>')
     expect(html).toContain('<div class="tableWrap"><table class="modelTable">')

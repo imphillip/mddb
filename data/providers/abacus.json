@@ -3,7 +3,7 @@
   "id": "abacus",
   "provider": "Abacus",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/abacus.svg",
+  "icon": "https://models.dev/logos/abacus.svg",
   "base_url": "https://routellm.abacus.ai/v1",
   "domain": "abacus.ai",
   "other_parameters": {

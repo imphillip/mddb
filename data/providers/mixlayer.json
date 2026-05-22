@@ -3,7 +3,7 @@
   "id": "mixlayer",
   "provider": "Mixlayer",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/mixlayer.svg",
+  "icon": "https://models.dev/logos/mixlayer.svg",
   "base_url": "https://models.mixlayer.ai/v1",
   "domain": "docs.mixlayer.com",
   "other_parameters": {

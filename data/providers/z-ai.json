@@ -3,7 +3,7 @@
   "id": "z-ai",
   "provider": "Z.AI",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/z-ai.svg",
+  "icon": "https://models.dev/logos/z-ai.svg",
   "base_url": "https://open.bigmodel.cn/api/paas/v4",
   "domain": "docs.z.ai",
   "other_parameters": {

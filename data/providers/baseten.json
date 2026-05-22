@@ -3,7 +3,7 @@
   "id": "baseten",
   "provider": "BaseTen",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/baseten.svg",
+  "icon": "https://models.dev/logos/baseten.svg",
   "base_url": "https://inference.baseten.co/v1",
   "domain": "docs.baseten.co",
   "other_parameters": {

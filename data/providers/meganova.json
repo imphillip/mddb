@@ -3,7 +3,7 @@
   "id": "meganova",
   "provider": "Meganova",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/meganova.svg",
+  "icon": "https://models.dev/logos/meganova.svg",
   "base_url": "https://api.meganova.ai/v1",
   "domain": "docs.meganova.ai",
   "other_parameters": {

@@ -3,7 +3,7 @@
   "id": "tencent",
   "provider": "Tencent",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/tencent.svg",
+  "icon": "https://models.dev/logos/tencent.svg",
   "base_url": "https://tokenhub.tencentmaas.com/v1",
   "domain": "cloud.tencent.com",
   "other_parameters": {

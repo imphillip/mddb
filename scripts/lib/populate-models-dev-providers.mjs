@@ -228,7 +228,7 @@ function enrichProvider(existing, provider, observedAt, canonicalIndex) {
     id: existing.id ?? provider.id,
     provider: existing.provider ?? provider.name,
     currency: existing.currency ?? 'USD',
-    icon_url: modelsDevIconUrl(provider),
+    icon: modelsDevIconUrl(provider),
     ...(typeof provider.api === 'string' ? { base_url: existing.base_url ?? provider.api } : {}),
     ...(domainFromUrl(provider.doc) ? { domain: existing.domain ?? domainFromUrl(provider.doc) } : {}),
     other_parameters: {

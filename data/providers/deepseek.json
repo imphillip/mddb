@@ -3,7 +3,7 @@
   "id": "deepseek",
   "provider": "Deepseek",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/deepseek.svg",
+  "icon": "https://models.dev/logos/deepseek.svg",
   "base_url": "https://api.deepseek.com",
   "domain": "api-docs.deepseek.com",
   "other_parameters": {

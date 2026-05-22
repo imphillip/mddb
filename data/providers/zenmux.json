@@ -3,7 +3,7 @@
   "id": "zenmux",
   "provider": "ZenMux",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/zenmux.svg",
+  "icon": "https://models.dev/logos/zenmux.svg",
   "base_url": "https://zenmux.ai/api/v1",
   "domain": "docs.zenmux.ai",
   "other_parameters": {

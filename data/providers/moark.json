@@ -3,7 +3,7 @@
   "id": "moark",
   "provider": "Moark",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/moark.svg",
+  "icon": "https://models.dev/logos/moark.svg",
   "base_url": "https://moark.com/v1",
   "domain": "moark.com",
   "other_parameters": {

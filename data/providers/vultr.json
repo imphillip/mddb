@@ -3,7 +3,7 @@
   "id": "vultr",
   "provider": "Vultr",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/vultr.svg",
+  "icon": "https://models.dev/logos/vultr.svg",
   "base_url": "https://api.vultrinference.com/v1",
   "domain": "api.vultrinference.com",
   "other_parameters": {

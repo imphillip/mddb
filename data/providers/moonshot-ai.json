@@ -3,7 +3,7 @@
   "id": "moonshot-ai",
   "provider": "Moonshot AI",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/moonshot-ai.svg",
+  "icon": "https://models.dev/logos/moonshot-ai.svg",
   "base_url": "https://api.moonshot.cn/v1",
   "domain": "platform.moonshot.cn",
   "other_parameters": {

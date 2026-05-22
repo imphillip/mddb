@@ -3,7 +3,7 @@
   "id": "wandb",
   "provider": "WandB",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/wandb.svg",
+  "icon": "https://models.dev/logos/wandb.svg",
   "base_url": "https://api.inference.wandb.ai/v1",
   "domain": "docs.wandb.ai",
   "other_parameters": {

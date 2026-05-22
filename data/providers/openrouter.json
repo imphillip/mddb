@@ -3,7 +3,7 @@
   "id": "openrouter",
   "provider": "OpenRouter",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/openrouter.svg",
+  "icon": "https://models.dev/logos/openrouter.svg",
   "base_url": "https://openrouter.ai/api/v1",
   "domain": "openrouter.ai",
   "other_parameters": {

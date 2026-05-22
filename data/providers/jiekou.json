@@ -3,7 +3,7 @@
   "id": "jiekou",
   "provider": "Jiekou.AI",
   "currency": "USD",
-  "icon_url": "https://models.dev/logos/jiekou.svg",
+  "icon": "https://models.dev/logos/jiekou.svg",
   "base_url": "https://api.jiekou.ai/openai",
   "domain": "docs.jiekou.ai",
   "other_parameters": {
