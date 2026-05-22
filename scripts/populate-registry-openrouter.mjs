@@ -339,12 +339,63 @@ function preservePreviousOfferOrder(offers, previous) {
   for (const oldOffer of previous?.offers ?? []) {
     const key = stableOfferKey(oldOffer)
     const current = byKey.get(key)
-    if (!current) continue
-    ordered.push(current)
-    byKey.delete(key)
+    if (current) {
+      ordered.push(mergeSupplementalOfferFields(current, oldOffer))
+      byKey.delete(key)
+      continue
+    }
+    if (isSupplementalOnlyOffer(oldOffer)) ordered.push(oldOffer)
   }
   const additions = [...byKey.values()].sort((a, b) => stableOfferKey(a).localeCompare(stableOfferKey(b)))
   return [...ordered, ...additions]
+}
+
+function isOpenRouterSource(source) {
+  return typeof source?.source === 'string' && source.source.startsWith('openrouter')
+}
+
+function hasOpenRouterSource(value) {
+  return Array.isArray(value?.sources) && value.sources.some(isOpenRouterSource)
+}
+
+function isSupplementalOnlyOffer(offer) {
+  return !hasOpenRouterSource(offer)
+}
+
+function mergeSourcesBySourceId(primary, supplemental) {
+  return uniqueBy([
+    ...(Array.isArray(primary) ? primary : []),
+    ...(Array.isArray(supplemental) ? supplemental.filter((source) => !isOpenRouterSource(source)) : []),
+  ], (source) => `${source.source}|${source.source_id}`)
+}
+
+function mergeSupplementalOfferFields(current, previous) {
+  const supplementalOtherParameters = previous?.other_parameters && typeof previous.other_parameters === 'object' && !Array.isArray(previous.other_parameters)
+    ? Object.fromEntries(Object.entries(previous.other_parameters).filter(([key]) => key !== 'source_id' && key !== 'canonical_slug' && key !== 'endpoint_providers' && key !== 'endpoint_count' && key !== 'context_length' && key !== 'max_completion_tokens' && key !== 'source_model_id' && key !== 'endpoint_tag' && key !== 'max_output_tokens' && key !== 'supported_parameters' && key !== 'status' && key !== 'uptime_30min' && key !== 'latency' && key !== 'throughput'))
+    : {}
+  const other_parameters = Object.keys(supplementalOtherParameters).length
+    ? { ...supplementalOtherParameters, ...current.other_parameters }
+    : current.other_parameters
+  return {
+    ...current,
+    ...(Object.keys(supplementalOtherParameters).length ? { other_parameters } : {}),
+    sources: mergeSourcesBySourceId(current.sources, previous.sources),
+  }
+}
+
+function mergeSupplementalProviderFields(provider, previous) {
+  if (!previous) return provider
+  const next = { ...provider }
+  next.icon ??= previous.icon
+  next.domain ??= previous.domain
+  next.base_url ??= previous.base_url
+  next.sources = mergeSourcesBySourceId(provider.sources, previous.sources)
+  const previousParams = previous.other_parameters && typeof previous.other_parameters === 'object' && !Array.isArray(previous.other_parameters) ? previous.other_parameters : {}
+  next.other_parameters = {
+    ...previousParams,
+    ...(provider.other_parameters && typeof provider.other_parameters === 'object' && !Array.isArray(provider.other_parameters) ? provider.other_parameters : {}),
+  }
+  return next
 }
 
 if (!existsSync(RAW_PATH)) throw new Error(`OpenRouter raw not found: ${RAW_PATH}`)
@@ -516,14 +567,15 @@ writeJson(join(OUT_DIR, 'models.json'), {
 
 for (const provider of [...providerMap.values()].sort((a, b) => a.id.localeCompare(b.id))) {
   const previous = previousProvider(provider.id)
-  provider.offers = preservePreviousOfferOrder(uniqueBy(provider.offers, stableOfferKey), previous)
+  const mergedProvider = mergeSupplementalProviderFields(provider, previous)
+  mergedProvider.offers = preservePreviousOfferOrder(uniqueBy(mergedProvider.offers, stableOfferKey), previous)
   for (const key of ['icon', 'domain', 'base_url']) {
-    if (provider[key] === undefined) delete provider[key]
+    if (mergedProvider[key] === undefined) delete mergedProvider[key]
   }
-  if (previous && sameNonTemporal(previous, provider)) {
-    provider.last_updated = previous.last_updated
+  if (previous && sameNonTemporal(previous, mergedProvider)) {
+    mergedProvider.last_updated = previous.last_updated
   }
-  writeJson(join(PROVIDERS_DIR, `${provider.id}.json`), provider)
+  writeJson(join(PROVIDERS_DIR, `${mergedProvider.id}.json`), mergedProvider)
 }
 
 console.log(JSON.stringify({

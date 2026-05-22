@@ -220,4 +220,57 @@ describe('OpenRouter registry population provider normalization', () => {
       'aion-2.0',
     ])
   })
+
+  it('preserves models.dev provider enrichment when the OpenRouter baseline is refreshed', () => {
+    const first = populate([row('google/gemini-3.5-flash', ['Google AI Studio'])])
+    const google = first.provider('google')
+    google.icon = 'https://models.dev/logos/google.svg'
+    google.domain = 'ai.google.dev'
+    google.base_url = 'https://generativelanguage.googleapis.com/v1beta'
+    google.other_parameters = {
+      ...google.other_parameters,
+      models_dev: { doc: 'https://ai.google.dev', npm: '@ai-sdk/google', model_count: 1 },
+    }
+    google.sources = [
+      ...google.sources,
+      { source: 'models.dev', source_id: 'google', url: 'https://models.dev/api.json', observed_at: '2026-01-01T00:00:00.000Z' },
+    ]
+    google.offers.push({
+      model_id: 'gemini-3.5-flash',
+      model: 'Gemini 3.5 Flash',
+      endpoint_path: 'gemini-3.5-flash',
+      api_model_id: 'gemini-3.5-flash',
+      mode: 'api',
+      other_parameters: { source: 'models.dev', match: 'exact' },
+      sources: [{ source: 'models.dev', source_id: 'google/gemini-3.5-flash', url: 'https://models.dev/api.json' }],
+    })
+
+    const second = populate([row('google/gemini-3.5-flash', ['Google AI Studio'])], {
+      seed: {
+        modelsJson: first.modelsJson,
+        providers: {
+          google,
+          openrouter: first.provider('openrouter'),
+        },
+      },
+    })
+
+    expect(second.provider('google')).toMatchObject({
+      icon: 'https://models.dev/logos/google.svg',
+      domain: 'ai.google.dev',
+      base_url: 'https://generativelanguage.googleapis.com/v1beta',
+      other_parameters: {
+        models_dev: { doc: 'https://ai.google.dev', npm: '@ai-sdk/google', model_count: 1 },
+      },
+    })
+    expect(second.provider('google').sources).toEqual(expect.arrayContaining([
+      expect.objectContaining({ source: 'models.dev', source_id: 'google' }),
+    ]))
+    expect(second.provider('google').offers).toEqual(expect.arrayContaining([
+      expect.objectContaining({
+        api_model_id: 'gemini-3.5-flash',
+        sources: [expect.objectContaining({ source: 'models.dev', source_id: 'google/gemini-3.5-flash' })],
+      }),
+    ]))
+  })
 })
