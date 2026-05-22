@@ -2,20 +2,9 @@
   "schema_version": 1,
   "id": "deepinfra",
   "provider": "DeepInfra",
-  "currency": "USD",
   "icon": "https://models.dev/logos/deepinfra.svg",
   "domain": "deepinfra.com",
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 39,
-      "doc": "https://deepinfra.com/models",
-      "npm": "@ai-sdk/deepinfra",
-      "env": [
-        "DEEPINFRA_API_KEY"
-      ]
-    }
-  },
-  "last_updated": "2026-05-21T21:36:01.873Z",
+  "currency": "USD",
   "offers": [
     {
       "model_id": "deepseek-chat",
@@ -68,7 +57,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -465,21 +454,21 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.14,
+              "amount": 0.1,
               "unit": "per_1m_tokens"
             },
             "output": {
-              "amount": 0.28,
+              "amount": 0.2,
               "unit": "per_1m_tokens"
             }
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-22T19:21:26.714Z",
           "raw_pricing": {
-            "prompt": "0.00000014",
-            "completion": "0.00000028",
-            "input_cache_read": "0.000000028",
+            "prompt": "0.0000001",
+            "completion": "0.0000002",
+            "input_cache_read": "0.00000002",
             "discount": 0
           }
         }
@@ -529,21 +518,21 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 1.74,
+              "amount": 1.3,
               "unit": "per_1m_tokens"
             },
             "output": {
-              "amount": 3.48,
+              "amount": 2.6,
               "unit": "per_1m_tokens"
             }
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-22T19:21:26.714Z",
           "raw_pricing": {
-            "prompt": "0.00000174",
-            "completion": "0.00000348",
-            "input_cache_read": "0.000000145",
+            "prompt": "0.0000013",
+            "completion": "0.0000026",
+            "input_cache_read": "0.0000001",
             "discount": 0
           }
         }
@@ -2110,7 +2099,7 @@
           "tool_choice",
           "logit_bias"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -2412,7 +2401,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": -5
       },
       "sources": [
         {
@@ -3017,7 +3006,7 @@
           "logit_bias",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -5
       },
       "sources": [
         {
@@ -3389,7 +3378,7 @@
           "logit_bias",
           "structured_outputs"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -3512,7 +3501,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -5
+        "status": -2
       },
       "sources": [
         {
@@ -3573,7 +3562,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -5
       },
       "sources": [
         {
@@ -3949,7 +3938,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -5090,6 +5079,17 @@
       ]
     }
   ],
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 39,
+      "doc": "https://deepinfra.com/models",
+      "npm": "@ai-sdk/deepinfra",
+      "env": [
+        "DEEPINFRA_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-22T19:21:26.714Z",
   "sources": [
     {
       "source": "models.dev",

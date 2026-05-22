@@ -2,21 +2,10 @@
   "schema_version": 1,
   "id": "gmicloud",
   "provider": "GMICloud",
-  "currency": "USD",
   "icon": "https://models.dev/logos/gmicloud.svg",
-  "base_url": "https://api.gmi-serving.com/v1",
   "domain": "docs.gmicloud.ai",
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 8,
-      "doc": "https://docs.gmicloud.ai/inference-engine/api-reference/llm-api-reference",
-      "npm": "@ai-sdk/openai-compatible",
-      "env": [
-        "GMICLOUD_API_KEY"
-      ]
-    }
-  },
-  "last_updated": "2026-05-21T21:36:01.873Z",
+  "base_url": "https://api.gmi-serving.com/v1",
+  "currency": "USD",
   "offers": [
     {
       "model_id": "deepseek-chat-v3-0324",
@@ -61,7 +50,7 @@
           "structured_outputs",
           "response_format"
         ],
-        "status": -5
+        "status": 0
       },
       "sources": [
         {
@@ -173,7 +162,7 @@
           "tool_choice",
           "response_format"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -230,7 +219,7 @@
           "structured_outputs",
           "response_format"
         ],
-        "status": -5
+        "status": 0
       },
       "sources": [
         {
@@ -283,7 +272,7 @@
           "top_p",
           "seed"
         ],
-        "status": -5
+        "status": 0
       },
       "sources": [
         {
@@ -337,7 +326,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -5
+        "status": 0
       },
       "sources": [
         {
@@ -582,6 +571,17 @@
       ]
     }
   ],
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 8,
+      "doc": "https://docs.gmicloud.ai/inference-engine/api-reference/llm-api-reference",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "GMICLOUD_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-22T19:21:26.714Z",
   "sources": [
     {
       "source": "models.dev",

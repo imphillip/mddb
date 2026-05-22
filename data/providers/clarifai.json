@@ -2,21 +2,10 @@
   "schema_version": 1,
   "id": "clarifai",
   "provider": "Clarifai",
-  "currency": "USD",
   "icon": "https://models.dev/logos/clarifai.svg",
-  "base_url": "https://api.clarifai.com/v2/ext/openai/v1",
   "domain": "docs.clarifai.com",
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 12,
-      "doc": "https://docs.clarifai.com/compute/inference/",
-      "npm": "@ai-sdk/openai-compatible",
-      "env": [
-        "CLARIFAI_PAT"
-      ]
-    }
-  },
-  "last_updated": "2026-05-19T22:11:55.841Z",
+  "base_url": "https://api.clarifai.com/v2/ext/openai/v1",
+  "currency": "USD",
   "offers": [
     {
       "model_id": "trinity-mini",
@@ -286,6 +275,17 @@
       ]
     }
   ],
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 12,
+      "doc": "https://docs.clarifai.com/compute/inference/",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "CLARIFAI_PAT"
+      ]
+    }
+  },
+  "last_updated": "2026-05-22T19:21:26.714Z",
   "sources": [
     {
       "source": "models.dev",

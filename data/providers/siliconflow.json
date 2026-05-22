@@ -2,21 +2,10 @@
   "schema_version": 1,
   "id": "siliconflow",
   "provider": "SiliconFlow",
-  "currency": "USD",
   "icon": "https://models.dev/logos/siliconflow.svg",
-  "base_url": "https://api.siliconflow.com/v1",
   "domain": "cloud.siliconflow.com",
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 81,
-      "doc": "https://cloud.siliconflow.com/models",
-      "npm": "@ai-sdk/openai-compatible",
-      "env": [
-        "SILICONFLOW_CN_API_KEY"
-      ]
-    }
-  },
-  "last_updated": "2026-05-21T21:36:01.873Z",
+  "base_url": "https://api.siliconflow.com/v1",
+  "currency": "USD",
   "offers": [
     {
       "model_id": "deepseek-chat-v3-0324",
@@ -289,7 +278,7 @@
           "tool_choice",
           "max_tokens"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -482,7 +471,7 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 1.65,
+              "amount": 1.62,
               "unit": "per_1m_tokens"
             },
             "output": {
@@ -492,9 +481,9 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-22T19:21:26.714Z",
           "raw_pricing": {
-            "prompt": "0.00000165",
+            "prompt": "0.00000162",
             "completion": "0.00000348",
             "input_cache_read": "0.000000145",
             "discount": 0
@@ -518,7 +507,7 @@
           "tool_choice",
           "response_format"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -630,7 +619,7 @@
           "tool_choice",
           "tools"
         ],
-        "status": -2
+        "status": -5
       },
       "sources": [
         {
@@ -963,7 +952,7 @@
           "frequency_penalty",
           "max_tokens"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -1155,7 +1144,7 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.9,
+              "amount": 0.77,
               "unit": "per_1m_tokens"
             },
             "output": {
@@ -1165,9 +1154,9 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-22T19:21:26.714Z",
           "raw_pricing": {
-            "prompt": "0.0000009",
+            "prompt": "0.00000077",
             "completion": "0.000004",
             "input_cache_read": "0.0000002",
             "discount": 0
@@ -1305,7 +1294,7 @@
           "tool_choice",
           "max_tokens"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -1472,7 +1461,7 @@
           "tool_choice",
           "max_tokens"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -3826,8 +3815,365 @@
           "url": "https://models.dev/api.json"
         }
       ]
+    },
+    {
+      "model_id": "qwen3.5-122b-a10b",
+      "model": "Qwen3.5-122B-A10B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "siliconflow/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.26,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.08,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-22T19:21:26.714Z",
+          "raw_pricing": {
+            "prompt": "0.00000026",
+            "completion": "0.00000208",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-122b-a10b",
+        "endpoint_tag": "siliconflow/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "top_p",
+          "top_k",
+          "frequency_penalty",
+          "repetition_penalty",
+          "presence_penalty",
+          "max_tokens",
+          "response_format",
+          "structured_outputs"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-122b-a10b#SiliconFlow | qwen/qwen3.5-122b-a10b-20260224",
+          "observed_at": "2026-05-22T19:21:26.714Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-27b",
+      "model": "Qwen3.5-27B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "siliconflow/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-22T19:21:26.714Z",
+          "raw_pricing": {
+            "prompt": "0.00000025",
+            "completion": "0.000002",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-27b",
+        "endpoint_tag": "siliconflow/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "top_p",
+          "top_k",
+          "frequency_penalty",
+          "repetition_penalty",
+          "presence_penalty",
+          "max_tokens",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-27b#SiliconFlow | qwen/qwen3.5-27b-20260224",
+          "observed_at": "2026-05-22T19:21:26.714Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-35b-a3b",
+      "model": "Qwen3.5-35B-A3B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "siliconflow/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.24,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-22T19:21:26.714Z",
+          "raw_pricing": {
+            "prompt": "0.00000024",
+            "completion": "0.0000018",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-35b-a3b",
+        "endpoint_tag": "siliconflow/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "top_p",
+          "top_k",
+          "frequency_penalty",
+          "repetition_penalty",
+          "presence_penalty",
+          "max_tokens",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-35b-a3b#SiliconFlow | qwen/qwen3.5-35b-a3b-20260224",
+          "observed_at": "2026-05-22T19:21:26.714Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.5-9b",
+      "model": "Qwen3.5-9B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "siliconflow/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-22T19:21:26.714Z",
+          "raw_pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.00000015",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.5-9b",
+        "endpoint_tag": "siliconflow/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "top_p",
+          "top_k",
+          "frequency_penalty",
+          "repetition_penalty",
+          "presence_penalty",
+          "max_tokens",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "status": -5
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.5-9b#SiliconFlow | qwen/qwen3.5-9b-20260310",
+          "observed_at": "2026-05-22T19:21:26.714Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.6-27b",
+      "model": "Qwen3.6 27B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "siliconflow/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-22T19:21:26.714Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000032",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.6-27b",
+        "endpoint_tag": "siliconflow/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "top_p",
+          "top_k",
+          "frequency_penalty",
+          "repetition_penalty",
+          "presence_penalty",
+          "max_tokens",
+          "response_format",
+          "tools",
+          "tool_choice"
+        ],
+        "status": -2
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.6-27b#SiliconFlow | qwen/qwen3.6-27b-20260422",
+          "observed_at": "2026-05-22T19:21:26.714Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.6-35b-a3b",
+      "model": "Qwen3.6 35B A3B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "siliconflow/fp8",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-22T19:21:26.714Z",
+          "raw_pricing": {
+            "prompt": "0.0000002",
+            "completion": "0.0000016",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3.6-35b-a3b",
+        "endpoint_tag": "siliconflow/fp8",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "top_p",
+          "top_k",
+          "frequency_penalty",
+          "repetition_penalty",
+          "presence_penalty",
+          "max_tokens",
+          "structured_outputs",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3.6-35b-a3b#SiliconFlow | qwen/qwen3.6-35b-a3b-20260415",
+          "observed_at": "2026-05-22T19:21:26.714Z"
+        }
+      ]
     }
   ],
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 81,
+      "doc": "https://cloud.siliconflow.com/models",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "SILICONFLOW_CN_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-22T19:21:26.714Z",
   "sources": [
     {
       "source": "models.dev",

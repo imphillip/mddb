@@ -2,21 +2,10 @@
   "schema_version": 1,
   "id": "openrouter",
   "provider": "OpenRouter",
-  "currency": "USD",
   "icon": "https://models.dev/logos/openrouter.svg",
-  "base_url": "https://openrouter.ai/api/v1",
   "domain": "openrouter.ai",
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 358,
-      "doc": "https://openrouter.ai/models",
-      "npm": "@openrouter/ai-sdk-provider",
-      "env": [
-        "OPENROUTER_API_KEY"
-      ]
-    }
-  },
-  "last_updated": "2026-05-21T21:36:01.873Z",
+  "base_url": "https://openrouter.ai/api/v1",
+  "currency": "USD",
   "offers": [
     {
       "model_id": "aion-1.0",
@@ -2035,13 +2024,13 @@
         "source_id": "deepseek/deepseek-v4-flash:free",
         "canonical_slug": "deepseek/deepseek-v4-flash-20260423",
         "endpoint_providers": [
+          "DeepInfra",
           "GMICloud",
           "Baidu",
           "DeepSeek",
           "SiliconFlow",
           "Parasail",
           "AtlasCloud",
-          "DeepInfra",
           "AkashML",
           "Alibaba",
           "Novita",
@@ -2072,21 +2061,21 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.112,
+              "amount": 0.1,
               "unit": "per_1m_tokens"
             },
             "output": {
-              "amount": 0.224,
+              "amount": 0.2,
               "unit": "per_1m_tokens"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-22T19:21:26.714Z",
           "raw_pricing": {
-            "prompt": "0.000000112",
-            "completion": "0.000000224",
-            "input_cache_read": "0.000000022"
+            "prompt": "0.0000001",
+            "completion": "0.0000002",
+            "input_cache_read": "0.00000002"
           }
         }
       ],
@@ -2094,13 +2083,13 @@
         "source_id": "deepseek/deepseek-v4-flash",
         "canonical_slug": "deepseek/deepseek-v4-flash-20260423",
         "endpoint_providers": [
+          "DeepInfra",
           "GMICloud",
           "Baidu",
           "DeepSeek",
           "SiliconFlow",
           "Parasail",
           "AtlasCloud",
-          "DeepInfra",
           "AkashML",
           "Alibaba",
           "Novita",
@@ -2109,7 +2098,7 @@
         ],
         "endpoint_count": 12,
         "context_length": 1048576,
-        "max_completion_tokens": null
+        "max_completion_tokens": 16384
       },
       "sources": [
         {
@@ -2154,16 +2143,16 @@
         "canonical_slug": "deepseek/deepseek-v4-pro-20260423",
         "endpoint_providers": [
           "DeepSeek",
+          "DeepInfra",
           "GMICloud",
           "Baidu",
-          "Novita",
           "SiliconFlow",
+          "Novita",
           "Alibaba",
           "AtlasCloud",
           "Venice",
           "Parasail",
           "Fireworks",
-          "DeepInfra",
           "Together"
         ],
         "endpoint_count": 12,
@@ -3983,7 +3972,7 @@
           "Venice",
           "Together"
         ],
-        "endpoint_count": 9,
+        "endpoint_count": 10,
         "context_length": 262144,
         "max_completion_tokens": 32768
       },
@@ -4037,7 +4026,7 @@
           "Venice",
           "Together"
         ],
-        "endpoint_count": 9,
+        "endpoint_count": 10,
         "context_length": 262144,
         "max_completion_tokens": 16384
       },
@@ -4310,9 +4299,10 @@
           "Novita",
           "Z.AI",
           "AtlasCloud",
+          "Io Net",
           "Venice"
         ],
-        "endpoint_count": 5,
+        "endpoint_count": 6,
         "context_length": 202752,
         "max_completion_tokens": 131072
       },
@@ -4631,10 +4621,11 @@
           "GMICloud",
           "Baidu",
           "DeepInfra",
-          "Io Net",
           "Chutes",
           "Phala",
           "StreamLake",
+          "Io Net",
+          "BaseTen",
           "Novita",
           "AtlasCloud",
           "Parasail",
@@ -4647,7 +4638,7 @@
           "Friendli",
           "Venice"
         ],
-        "endpoint_count": 18,
+        "endpoint_count": 19,
         "context_length": 202752,
         "max_completion_tokens": null
       },
@@ -8565,10 +8556,10 @@
           "Cloudflare",
           "Parasail",
           "DeepInfra",
+          "SiliconFlow",
           "Inceptron",
           "Novita",
           "Venice",
-          "SiliconFlow",
           "Fireworks",
           "Moonshot AI",
           "WandB",
@@ -10515,7 +10506,6 @@
           "Phala",
           "Inceptron",
           "Baidu",
-          "Io Net",
           "AtlasCloud",
           "Mara",
           "Friendli",
@@ -10527,7 +10517,7 @@
           "StreamLake",
           "Venice"
         ],
-        "endpoint_count": 18,
+        "endpoint_count": 17,
         "context_length": 204800,
         "max_completion_tokens": 8192
       },
@@ -10578,7 +10568,6 @@
           "Phala",
           "Inceptron",
           "Baidu",
-          "Io Net",
           "AtlasCloud",
           "Mara",
           "Friendli",
@@ -10590,7 +10579,7 @@
           "StreamLake",
           "Venice"
         ],
-        "endpoint_count": 18,
+        "endpoint_count": 17,
         "context_length": 204800,
         "max_completion_tokens": 196608
       },
@@ -14771,6 +14760,7 @@
         "source_id": "qwen/qwen3.5-122b-a10b",
         "canonical_slug": "qwen/qwen3.5-122b-a10b-20260224",
         "endpoint_providers": [
+          "SiliconFlow",
           "Alibaba",
           "DeepInfra",
           "Ambient",
@@ -14778,9 +14768,9 @@
           "Novita",
           "Venice"
         ],
-        "endpoint_count": 6,
+        "endpoint_count": 7,
         "context_length": 262144,
-        "max_completion_tokens": 65536
+        "max_completion_tokens": 262144
       },
       "sources": [
         {
@@ -14824,12 +14814,13 @@
         "canonical_slug": "qwen/qwen3.5-27b-20260224",
         "endpoint_providers": [
           "Alibaba",
+          "SiliconFlow",
           "DeepInfra",
           "AtlasCloud",
           "Phala",
           "Novita"
         ],
-        "endpoint_count": 5,
+        "endpoint_count": 6,
         "context_length": 262144,
         "max_completion_tokens": 65536
       },
@@ -14881,10 +14872,11 @@
           "AkashML",
           "Alibaba",
           "AtlasCloud",
+          "SiliconFlow",
           "NextBit",
           "Venice"
         ],
-        "endpoint_count": 9,
+        "endpoint_count": 10,
         "context_length": 262144,
         "max_completion_tokens": null
       },
@@ -14988,10 +14980,11 @@
         "canonical_slug": "qwen/qwen3.5-9b-20260310",
         "endpoint_providers": [
           "DeepInfra",
+          "SiliconFlow",
           "Together",
           "Venice"
         ],
-        "endpoint_count": 3,
+        "endpoint_count": 4,
         "context_length": 262144,
         "max_completion_tokens": 81920
       },
@@ -15158,7 +15151,7 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.317,
+              "amount": 0.3,
               "unit": "per_1m_tokens"
             },
             "output": {
@@ -15168,9 +15161,9 @@
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-21T19:00:07.736Z",
+          "observed_at": "2026-05-22T19:21:26.714Z",
           "raw_pricing": {
-            "prompt": "0.000000317",
+            "prompt": "0.0000003",
             "completion": "0.0000032"
           }
         }
@@ -15179,6 +15172,7 @@
         "source_id": "qwen/qwen3.6-27b",
         "canonical_slug": "qwen/qwen3.6-27b-20260422",
         "endpoint_providers": [
+          "SiliconFlow",
           "Io Net",
           "DeepInfra",
           "Ambient",
@@ -15188,9 +15182,9 @@
           "Chutes",
           "WandB"
         ],
-        "endpoint_count": 8,
+        "endpoint_count": 9,
         "context_length": 262144,
-        "max_completion_tokens": 262140
+        "max_completion_tokens": 262144
       },
       "sources": [
         {
@@ -15222,11 +15216,10 @@
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-22T19:21:26.714Z",
           "raw_pricing": {
             "prompt": "0.00000015",
-            "completion": "0.000001",
-            "input_cache_read": "0.00000005"
+            "completion": "0.000001"
           }
         }
       ],
@@ -15234,15 +15227,17 @@
         "source_id": "qwen/qwen3.6-35b-a3b",
         "canonical_slug": "qwen/qwen3.6-35b-a3b-20260415",
         "endpoint_providers": [
+          "Io Net",
           "Ambient",
           "Parasail",
           "AtlasCloud",
           "AkashML",
+          "SiliconFlow",
           "WandB"
         ],
-        "endpoint_count": 5,
+        "endpoint_count": 7,
         "context_length": 262144,
-        "max_completion_tokens": 262144
+        "max_completion_tokens": 262140
       },
       "sources": [
         {
@@ -30799,6 +30794,17 @@
       ]
     }
   ],
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 358,
+      "doc": "https://openrouter.ai/models",
+      "npm": "@openrouter/ai-sdk-provider",
+      "env": [
+        "OPENROUTER_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-22T19:21:26.714Z",
   "sources": [
     {
       "source": "models.dev",

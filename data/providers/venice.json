@@ -2,20 +2,9 @@
   "schema_version": 1,
   "id": "venice",
   "provider": "Venice",
-  "currency": "USD",
   "icon": "https://models.dev/logos/venice.svg",
   "domain": "docs.venice.ai",
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 65,
-      "doc": "https://docs.venice.ai",
-      "npm": "venice-ai-sdk-provider",
-      "env": [
-        "VENICE_API_KEY"
-      ]
-    }
-  },
-  "last_updated": "2026-05-21T21:36:01.873Z",
+  "currency": "USD",
   "offers": [
     {
       "model_id": "deepseek-v4-flash",
@@ -67,7 +56,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -127,7 +116,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -188,7 +177,7 @@
           "logprobs",
           "top_logprobs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -840,7 +829,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -1010,7 +999,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -1065,7 +1054,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -2489,6 +2478,17 @@
       ]
     }
   ],
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 65,
+      "doc": "https://docs.venice.ai",
+      "npm": "venice-ai-sdk-provider",
+      "env": [
+        "VENICE_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-22T19:21:26.714Z",
   "sources": [
     {
       "source": "models.dev",

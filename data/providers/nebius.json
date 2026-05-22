@@ -2,21 +2,10 @@
   "schema_version": 1,
   "id": "nebius",
   "provider": "Nebius",
-  "currency": "USD",
   "icon": "https://models.dev/logos/nebius.svg",
-  "base_url": "https://api.tokenfactory.nebius.com/v1",
   "domain": "docs.tokenfactory.nebius.com",
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 31,
-      "doc": "https://docs.tokenfactory.nebius.com/",
-      "npm": "@ai-sdk/openai-compatible",
-      "env": [
-        "NEBIUS_API_KEY"
-      ]
-    }
-  },
-  "last_updated": "2026-05-21T21:36:01.873Z",
+  "base_url": "https://api.tokenfactory.nebius.com/v1",
+  "currency": "USD",
   "offers": [
     {
       "model_id": "gemma-3-27b-it",
@@ -348,7 +337,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -1473,6 +1462,17 @@
       ]
     }
   ],
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 31,
+      "doc": "https://docs.tokenfactory.nebius.com/",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "NEBIUS_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-22T19:21:26.714Z",
   "sources": [
     {
       "source": "models.dev",

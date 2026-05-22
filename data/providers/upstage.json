@@ -2,21 +2,10 @@
   "schema_version": 1,
   "id": "upstage",
   "provider": "Upstage",
-  "currency": "USD",
   "icon": "https://models.dev/logos/upstage.svg",
-  "base_url": "https://api.upstage.ai/v1/solar",
   "domain": "developers.upstage.ai",
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 3,
-      "doc": "https://developers.upstage.ai/docs/apis/chat",
-      "npm": "@ai-sdk/openai-compatible",
-      "env": [
-        "UPSTAGE_API_KEY"
-      ]
-    }
-  },
-  "last_updated": "2026-05-19T22:11:55.841Z",
+  "base_url": "https://api.upstage.ai/v1/solar",
+  "currency": "USD",
   "offers": [
     {
       "model_id": "solar-pro-3",
@@ -74,6 +63,17 @@
       ]
     }
   ],
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 3,
+      "doc": "https://developers.upstage.ai/docs/apis/chat",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "UPSTAGE_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-22T19:21:26.714Z",
   "sources": [
     {
       "source": "models.dev",
