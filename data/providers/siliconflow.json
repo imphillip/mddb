@@ -278,7 +278,7 @@
           "tool_choice",
           "max_tokens"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -952,7 +952,7 @@
           "frequency_penalty",
           "max_tokens"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -4037,7 +4037,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -5
+        "status": 0
       },
       "sources": [
         {
@@ -4095,7 +4095,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -4173,7 +4173,7 @@
       ]
     }
   },
-  "last_updated": "2026-05-22T19:21:26.714Z",
+  "last_updated": "2026-05-22T19:56:54.990Z",
   "sources": [
     {
       "source": "models.dev",
