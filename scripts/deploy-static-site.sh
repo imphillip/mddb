@@ -55,6 +55,18 @@ reload_nginx_if_possible() {
   fi
 }
 
+restart_update_admin_if_possible() {
+  if [[ "${RESTART_UPDATE_ADMIN:-1}" != "1" ]]; then
+    return 0
+  fi
+  if ! command -v systemctl >/dev/null 2>&1; then
+    return 0
+  fi
+  if systemctl --user list-unit-files mddb-update-admin.service >/dev/null 2>&1; then
+    systemctl --user restart mddb-update-admin.service
+  fi
+}
+
 if [[ ! -d "${RUNTIME_DIR}" ]]; then
   sudo -n mkdir -p "${RUNTIME_DIR}"
 fi
@@ -62,5 +74,6 @@ run_with_optional_sudo "${RUNTIME_DIR}" rsync "${RSYNC_ARGS[@]}" "${PUBLIC_DIR}/
 run_with_optional_sudo "${RUNTIME_DIR}" find "${RUNTIME_DIR}" -type d -exec chmod 755 {} +
 run_with_optional_sudo "${RUNTIME_DIR}" find "${RUNTIME_DIR}" -type f -exec chmod 644 {} +
 reload_nginx_if_possible
+restart_update_admin_if_possible
 
 echo "deploy-static-site: deployed ${PUBLIC_DIR} -> ${RUNTIME_DIR}"

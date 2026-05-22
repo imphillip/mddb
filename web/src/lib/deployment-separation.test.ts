@@ -75,6 +75,7 @@ describe('deployment separation', () => {
 
     expect(packageJson.scripts?.deploy).toBe('bash scripts/deploy-static-site.sh')
     expect(packageJson.scripts?.['deploy:dry-run']).toBe('DRY_RUN=1 bash scripts/deploy-static-site.sh')
+    expect(packageJson.scripts?.['serve:update']).toBe('node dist/scripts/update-admin-server.js')
     expect(packageJson.scripts?.['hooks:install']).toBe('git config core.hooksPath .internal/git-hooks')
   })
 
@@ -89,7 +90,7 @@ describe('deployment separation', () => {
     expect(hook).toContain('post-commit')
   })
 
-  it('ships a deploy script with safe defaults for the nginx runtime root', () => {
+  it('ships a deploy script with safe defaults for the nginx runtime root and restarts the update admin service', () => {
     const script = readProjectFile('scripts/deploy-static-site.sh')
 
     expect(script).toContain('WORKSPACE_DIR')
@@ -97,6 +98,8 @@ describe('deployment separation', () => {
     expect(script).toContain('RUNTIME_DIR=${RUNTIME_DIR:-/srv/models.mddb.dev/www}')
     expect(script).toContain('rsync')
     expect(script).toContain('npm run build')
+    expect(script).toContain('mddb-update-admin.service')
+    expect(script).toContain('systemctl --user restart')
   })
 
   it('deploys writable runtime directories without requiring interactive sudo', () => {
