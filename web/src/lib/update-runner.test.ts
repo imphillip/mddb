@@ -3,7 +3,7 @@ import { join } from 'node:path'
 import { tmpdir } from 'node:os'
 import { spawnSync } from 'node:child_process'
 import { describe, expect, it } from 'vitest'
-import { applyOpenRouterUpdate, previewOpenRouterUpdate } from './update-runner.js'
+import { applyOpenRouterUpdate, previewModelsDevUpdate, previewOpenRouterUpdate } from './update-runner.js'
 
 describe('update runner', () => {
   it('previews OpenRouter-generated data changes and applies only after confirmation', async () => {
@@ -42,6 +42,29 @@ describe('update runner', () => {
     expect(secondPreview.ok).toBe(true)
     expect(secondPreview.changedFiles).toContain('data/models.json')
     expect(readFileSync(join(dataDir, 'models.json'), 'utf8')).toContain('new')
+  })
+
+  it('previews models.dev provider enrichment through the same update toolbox flow', async () => {
+    const repoRoot = mkdirTempRepo()
+    await initGitRepo(repoRoot)
+    const dataDir = join(repoRoot, 'data')
+    mkdirSync(dataDir, { recursive: true })
+    writeFileSync(join(dataDir, 'models.json'), '{"models":[]}\n')
+    spawnSync('git', ['add', 'data/models.json'], { cwd: repoRoot, stdio: 'ignore' })
+    spawnSync('git', ['commit', '-m', 'baseline'], { cwd: repoRoot, stdio: 'ignore' })
+
+    const preview = await previewModelsDevUpdate({
+      repoRoot,
+      command: process.execPath,
+      args: ['-e', "const fs=require('fs'); fs.mkdirSync('data/providers',{recursive:true}); fs.writeFileSync('data/providers/openai.json', '{\\\"id\\\":\\\"openai\\\",\\\"icon\\\":\\\"https://models.dev/logos/openai.svg\\\"}\\n')"],
+      timeoutMs: 10_000,
+    })
+
+    expect(preview.ok).toBe(true)
+    expect(preview.patchFile).toContain('/.internal/update-previews/models-dev-')
+    expect(preview.changedFiles).toContain('data/providers/openai.json')
+    expect(preview.diff).toContain('+{"id":"openai","icon":"https://models.dev/logos/openai.svg"}')
+    expect(() => readFileSync(join(dataDir, 'providers', 'openai.json'), 'utf8')).toThrow()
   })
 })
 

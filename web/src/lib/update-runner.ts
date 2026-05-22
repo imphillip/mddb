@@ -9,6 +9,22 @@ export type UpdateOptions = {
   timeoutMs?: number
 }
 
+type UpdateSourceConfig = {
+  id: string
+  defaultShellCommand: string
+}
+
+const UPDATE_SOURCES = {
+  openrouter: {
+    id: 'openrouter',
+    defaultShellCommand: 'npm run data:openrouter && npm run registry:populate:openrouter',
+  },
+  modelsDev: {
+    id: 'models-dev',
+    defaultShellCommand: 'npm run data:models-dev && npm run registry:populate:models-dev',
+  },
+} satisfies Record<string, UpdateSourceConfig>
+
 export type PreviewResult = {
   ok: boolean
   changedFiles: string[]
@@ -27,15 +43,25 @@ export type ApplyResult = {
 const DEFAULT_TIMEOUT_MS = 15 * 60 * 1000
 
 export async function previewOpenRouterUpdate(options: UpdateOptions): Promise<PreviewResult> {
-  const repoRoot = resolve(options.repoRoot)
-  const patchFile = join(repoRoot, '.internal', 'update-previews', `openrouter-${Date.now()}.patch`)
-  const snapshot = await git(repoRoot, ['diff', '--binary'])
-  const command = options.command ?? 'npm'
-  const args = options.args ?? ['run', 'data:openrouter', '&&', 'npm', 'run', 'registry:populate:openrouter']
-  const run = command === 'npm' && args.includes('&&')
-    ? await runCommand(repoRoot, 'sh', ['-lc', 'npm run data:openrouter && npm run registry:populate:openrouter'], options.timeoutMs ?? DEFAULT_TIMEOUT_MS)
-    : await runCommand(repoRoot, command, args, options.timeoutMs ?? DEFAULT_TIMEOUT_MS)
+  return previewUpdate({ ...options, source: UPDATE_SOURCES.openrouter })
+}
 
+export async function previewModelsDevUpdate(options: UpdateOptions): Promise<PreviewResult> {
+  return previewUpdate({ ...options, source: UPDATE_SOURCES.modelsDev })
+}
+
+async function previewUpdate(options: UpdateOptions & { source: UpdateSourceConfig }): Promise<PreviewResult> {
+  const repoRoot = resolve(options.repoRoot)
+  const patchFile = join(repoRoot, '.internal', 'update-previews', `${options.source.id}-${Date.now()}.patch`)
+  const snapshot = await git(repoRoot, ['diff', '--binary'])
+  const command = options.command ?? 'sh'
+  const args = options.args ?? ['-lc', options.source.defaultShellCommand]
+  const run = await runCommand(repoRoot, command, args, options.timeoutMs ?? DEFAULT_TIMEOUT_MS)
+
+  await git(repoRoot, ['add', '-N', '--', 'data'], true)
+  if (existsSync(join(repoRoot, '.internal', 'source-data'))) {
+    await git(repoRoot, ['add', '-N', '--', '.internal/source-data'], true)
+  }
   const changed = await git(repoRoot, ['diff', '--name-only', '--', 'data', '.internal/source-data'])
   const diff = await git(repoRoot, ['diff', '--', 'data', '.internal/source-data'])
   mkdirSync(dirname(patchFile), { recursive: true })
@@ -43,7 +69,7 @@ export async function previewOpenRouterUpdate(options: UpdateOptions): Promise<P
   await restoreWorkingTree(repoRoot, snapshot.stdout)
 
   if (run.exitCode !== 0) {
-    throw new Error(`OpenRouter update failed (${run.exitCode})\n${run.stderr || run.stdout}`)
+    throw new Error(`${options.source.id} update failed (${run.exitCode})\n${run.stderr || run.stdout}`)
   }
 
   return {
@@ -71,6 +97,7 @@ export async function applyOpenRouterUpdate(options: { repoRoot: string, patchFi
 async function restoreWorkingTree(repoRoot: string, originalPatch: string): Promise<void> {
   await git(repoRoot, ['checkout', 'HEAD', '--', 'data'], true)
   await git(repoRoot, ['checkout', 'HEAD', '--', '.internal/source-data'], true)
+  await git(repoRoot, ['reset', '-q', '--', 'data', '.internal/source-data'], true)
   await runCommand(repoRoot, 'git', ['clean', '-fd', '--', 'data', '.internal/source-data'], 60_000)
   if (originalPatch.trim()) {
     const patchPath = join(repoRoot, '.internal', 'update-previews', `restore-${Date.now()}.patch`)
