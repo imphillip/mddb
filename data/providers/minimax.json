@@ -2,10 +2,21 @@
   "schema_version": 1,
   "id": "minimax",
   "provider": "Minimax",
-  "icon": "https://models.dev/logos/minimax.svg",
-  "domain": "platform.minimax.io",
-  "base_url": "https://api.minimax.io/anthropic/v1",
   "currency": "USD",
+  "icon": "https://models.dev/logos/minimax.svg",
+  "base_url": "https://api.minimax.io/anthropic/v1",
+  "domain": "platform.minimax.io",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 6,
+      "doc": "https://platform.minimax.io/docs/token-plan/intro",
+      "npm": "@ai-sdk/anthropic",
+      "env": [
+        "MINIMAX_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-22T19:21:26.714Z",
   "offers": [
     {
       "model_id": "minimax-01",
@@ -697,17 +708,6 @@
       ]
     }
   ],
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 6,
-      "doc": "https://platform.minimax.io/docs/token-plan/intro",
-      "npm": "@ai-sdk/anthropic",
-      "env": [
-        "MINIMAX_API_KEY"
-      ]
-    }
-  },
-  "last_updated": "2026-05-22T19:21:26.714Z",
   "sources": [
     {
       "source": "models.dev",

@@ -7,7 +7,7 @@
   "domain": "cloud.google.com",
   "other_parameters": {
     "models_dev": {
-      "model_count": 38,
+      "model_count": 39,
       "doc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
       "npm": "@ai-sdk/google-vertex",
       "env": [
@@ -331,6 +331,45 @@
         {
           "source": "models.dev",
           "source_id": "google-vertex/gemini-3-flash-preview",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.5-flash",
+      "model": "Gemini 3.5 Flash",
+      "api_model_id": "gemini-3.5-flash",
+      "endpoint_path": "gemini-3.5-flash",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 9,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "google-vertex/gemini-3.5-flash",
           "url": "https://models.dev/api.json"
         }
       ]

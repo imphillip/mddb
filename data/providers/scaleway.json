@@ -8,7 +8,7 @@
   "domain": "scaleway.com",
   "other_parameters": {
     "models_dev": {
-      "model_count": 17,
+      "model_count": 16,
       "doc": "https://www.scaleway.com/en/docs/generative-apis/",
       "npm": "@ai-sdk/openai-compatible",
       "env": [
@@ -329,6 +329,76 @@
         {
           "source": "models.dev",
           "source_id": "scaleway/llama-3.1-8b-instruct",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemma-4-26b-a4b-it",
+      "model": "Gemma 4 26B A4B",
+      "api_model_id": "gemma-4-26b-a4b-it",
+      "endpoint_path": "gemma-4-26b-a4b-it",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "scaleway/gemma-4-26b-a4b-it",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3.6-35b-a3b",
+      "model": "Qwen3.6 35B A3B",
+      "api_model_id": "qwen3.6-35b-a3b",
+      "endpoint_path": "qwen3.6-35b-a3b",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.25,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "scaleway/qwen3.6-35b-a3b",
           "url": "https://models.dev/api.json"
         }
       ]

@@ -2,10 +2,21 @@
   "schema_version": 1,
   "id": "z-ai",
   "provider": "Z.AI",
-  "icon": "https://models.dev/logos/z-ai.svg",
-  "domain": "docs.z.ai",
-  "base_url": "https://open.bigmodel.cn/api/paas/v4",
   "currency": "USD",
+  "icon": "https://models.dev/logos/z-ai.svg",
+  "base_url": "https://open.bigmodel.cn/api/paas/v4",
+  "domain": "docs.z.ai",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 12,
+      "doc": "https://docs.z.ai/guides/overview/pricing",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "ZHIPU_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-22T19:21:26.714Z",
   "offers": [
     {
       "model_id": "glm-4-32b",
@@ -1074,17 +1085,6 @@
       ]
     }
   ],
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 12,
-      "doc": "https://docs.z.ai/guides/overview/pricing",
-      "npm": "@ai-sdk/openai-compatible",
-      "env": [
-        "ZHIPU_API_KEY"
-      ]
-    }
-  },
-  "last_updated": "2026-05-22T19:21:26.714Z",
   "sources": [
     {
       "source": "models.dev",

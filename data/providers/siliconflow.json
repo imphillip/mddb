@@ -2,10 +2,21 @@
   "schema_version": 1,
   "id": "siliconflow",
   "provider": "SiliconFlow",
-  "icon": "https://models.dev/logos/siliconflow.svg",
-  "domain": "cloud.siliconflow.com",
-  "base_url": "https://api.siliconflow.com/v1",
   "currency": "USD",
+  "icon": "https://models.dev/logos/siliconflow.svg",
+  "base_url": "https://api.siliconflow.com/v1",
+  "domain": "cloud.siliconflow.com",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 81,
+      "doc": "https://cloud.siliconflow.com/models",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "SILICONFLOW_CN_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-22T19:56:54.990Z",
   "offers": [
     {
       "model_id": "deepseek-chat-v3-0324",
@@ -4163,17 +4174,6 @@
       ]
     }
   ],
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 81,
-      "doc": "https://cloud.siliconflow.com/models",
-      "npm": "@ai-sdk/openai-compatible",
-      "env": [
-        "SILICONFLOW_CN_API_KEY"
-      ]
-    }
-  },
-  "last_updated": "2026-05-22T19:56:54.990Z",
   "sources": [
     {
       "source": "models.dev",

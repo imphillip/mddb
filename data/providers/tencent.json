@@ -2,10 +2,21 @@
   "schema_version": 1,
   "id": "tencent",
   "provider": "Tencent",
-  "icon": "https://models.dev/logos/tencent.svg",
-  "domain": "cloud.tencent.com",
-  "base_url": "https://tokenhub.tencentmaas.com/v1",
   "currency": "USD",
+  "icon": "https://models.dev/logos/tencent.svg",
+  "base_url": "https://tokenhub.tencentmaas.com/v1",
+  "domain": "cloud.tencent.com",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 1,
+      "doc": "https://cloud.tencent.com/document/product/1823/130050",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "TENCENT_TOKENHUB_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-22T19:21:26.714Z",
   "offers": [
     {
       "model_id": "hy3-preview",
@@ -51,17 +62,6 @@
       ]
     }
   ],
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 1,
-      "doc": "https://cloud.tencent.com/document/product/1823/130050",
-      "npm": "@ai-sdk/openai-compatible",
-      "env": [
-        "TENCENT_TOKENHUB_API_KEY"
-      ]
-    }
-  },
-  "last_updated": "2026-05-22T19:21:26.714Z",
   "sources": [
     {
       "source": "models.dev",

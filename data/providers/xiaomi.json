@@ -2,10 +2,21 @@
   "schema_version": 1,
   "id": "xiaomi",
   "provider": "Xiaomi",
-  "icon": "https://models.dev/logos/xiaomi.svg",
-  "domain": "platform.xiaomimimo.com",
-  "base_url": "https://api.xiaomimimo.com/v1",
   "currency": "USD",
+  "icon": "https://models.dev/logos/xiaomi.svg",
+  "base_url": "https://api.xiaomimimo.com/v1",
+  "domain": "platform.xiaomimimo.com",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 5,
+      "doc": "https://platform.xiaomimimo.com/#/docs",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "XIAOMI_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-22T19:21:26.714Z",
   "offers": [
     {
       "model_id": "mimo-v2-flash",
@@ -493,17 +504,6 @@
       ]
     }
   ],
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 5,
-      "doc": "https://platform.xiaomimimo.com/#/docs",
-      "npm": "@ai-sdk/openai-compatible",
-      "env": [
-        "XIAOMI_API_KEY"
-      ]
-    }
-  },
-  "last_updated": "2026-05-22T19:21:26.714Z",
   "sources": [
     {
       "source": "models.dev",

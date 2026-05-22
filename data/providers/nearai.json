@@ -8,7 +8,7 @@
   "domain": "docs.near.ai",
   "other_parameters": {
     "models_dev": {
-      "model_count": 33,
+      "model_count": 37,
       "doc": "https://docs.near.ai/",
       "npm": "@ai-sdk/openai-compatible",
       "env": [
@@ -1110,6 +1110,84 @@
         {
           "source": "models.dev",
           "source_id": "nearai/Qwen/Qwen3.5-122B-A10B",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.5-flash",
+      "model": "Gemini 3.5 Flash",
+      "api_model_id": "google/gemini-3.5-flash",
+      "endpoint_path": "google/gemini-3.5-flash",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 9,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nearai/google/gemini-3.5-flash",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemma-4-31b-it",
+      "model": "Gemma 4 31B",
+      "api_model_id": "google/gemma-4-31B-it",
+      "endpoint_path": "google/gemma-4-31B-it",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.13,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.026,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nearai/google/gemma-4-31B-it",
           "url": "https://models.dev/api.json"
         }
       ]

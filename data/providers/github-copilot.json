@@ -8,7 +8,7 @@
   "domain": "docs.github.com",
   "other_parameters": {
     "models_dev": {
-      "model_count": 27,
+      "model_count": 28,
       "doc": "https://docs.github.com/en/copilot",
       "npm": "@ai-sdk/openai-compatible",
       "env": [
@@ -854,6 +854,41 @@
         {
           "source": "models.dev",
           "source_id": "github-copilot/gpt-5",
+          "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-3.5-flash",
+      "model": "Gemini 3.5 Flash",
+      "api_model_id": "gemini-3.5-flash",
+      "endpoint_path": "gemini-3.5-flash",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "github-copilot/gemini-3.5-flash",
           "url": "https://models.dev/api.json"
         }
       ]

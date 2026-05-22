@@ -2,10 +2,21 @@
   "schema_version": 1,
   "id": "alibaba",
   "provider": "Alibaba",
-  "icon": "https://models.dev/logos/alibaba.svg",
-  "domain": "alibabacloud.com",
-  "base_url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
   "currency": "USD",
+  "icon": "https://models.dev/logos/alibaba.svg",
+  "base_url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+  "domain": "alibabacloud.com",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 80,
+      "doc": "https://www.alibabacloud.com/help/en/model-studio/models",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "DASHSCOPE_API_KEY"
+      ]
+    }
+  },
+  "last_updated": "2026-05-22T19:56:54.990Z",
   "offers": [
     {
       "model_id": "deepseek-v3.2",
@@ -3696,17 +3707,6 @@
       ]
     }
   ],
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 80,
-      "doc": "https://www.alibabacloud.com/help/en/model-studio/models",
-      "npm": "@ai-sdk/openai-compatible",
-      "env": [
-        "DASHSCOPE_API_KEY"
-      ]
-    }
-  },
-  "last_updated": "2026-05-22T19:56:54.990Z",
   "sources": [
     {
       "source": "models.dev",
