@@ -13,6 +13,39 @@ function writeJson(path, value) {
 }
 
 describe('populateLiteLlmModels', () => {
+  it('maps LiteLLM non-chat modes to plaza filter output categories and does not invent release dates from import time', () => {
+    const root = mkdtempSync(join(tmpdir(), 'mddb-litellm-models-'))
+    const modelsPath = join(root, 'models.json')
+    mkdirSync(root, { recursive: true })
+    writeJson(modelsPath, { schema_version: 1, models: [] })
+
+    populateLiteLlmModels({
+      modelsPath,
+      observedAt: '2026-05-23T00:00:00.000Z',
+      source: {
+        'text-embedding-3-small': { mode: 'embedding', litellm_provider: 'openai' },
+        'cohere-rerank-v3.5': { mode: 'rerank', litellm_provider: 'cohere' },
+        'gpt-4o-mini-transcribe': { mode: 'audio_transcription', litellm_provider: 'openai' },
+        'gpt-4o-mini-tts': { mode: 'audio_speech', litellm_provider: 'openai', supported_modalities: ['text'], supported_output_modalities: ['audio'] },
+      },
+    })
+
+    const payload = readJson(modelsPath)
+    const byId = new Map(payload.models.map((model) => [model.id, model]))
+
+    expect(byId.get('text-embedding-3-small')?.output_modalities).toEqual(['embeddings'])
+    expect(byId.get('cohere-rerank-v3.5')?.output_modalities).toEqual(['rerank'])
+    expect(byId.get('gpt-4o-mini-transcribe')?.output_modalities).toEqual(['transcription'])
+    expect(byId.get('gpt-4o-mini-tts')?.output_modalities).toEqual(['speech'])
+    for (const model of payload.models) {
+      expect(model.release_timestamp).toBeUndefined()
+      expect(model.release_date).toBeUndefined()
+      expect(model.created).toBeUndefined()
+      expect(model.last_updated).toBeUndefined()
+      expect(model.sources[0].observed_at).toBe('2026-05-23T00:00:00.000Z')
+    }
+  })
+
   it('adds missing non-chat LiteLLM models to canonical models.json with normalized ids', () => {
     const root = mkdtempSync(join(tmpdir(), 'mddb-litellm-models-'))
     mkdirSync(root, { recursive: true })
@@ -58,14 +91,14 @@ describe('populateLiteLlmModels', () => {
       model: 'Rerank v3.5',
       author: 'cohere',
       input_modalities: ['text'],
-      output_modalities: ['ranking'],
+      output_modalities: ['rerank'],
       context_length: 4096,
       other_parameters: { litellm: expect.objectContaining({ mode: 'rerank', provider: 'cohere', raw_id: 'cohere/rerank-v3.5' }) },
     })
     expect(models.find((model) => model.id === 'gpt-4o-transcribe')).toMatchObject({
       author: 'openai',
       input_modalities: ['audio'],
-      output_modalities: ['text'],
+      output_modalities: ['transcription'],
       context_length: 16000,
       max_output_tokens: 2000,
     })
@@ -77,7 +110,7 @@ describe('populateLiteLlmModels', () => {
     expect(models.find((model) => model.id === 'text-embedding-005')).toMatchObject({
       author: 'google',
       input_modalities: ['text'],
-      output_modalities: ['embedding'],
+      output_modalities: ['embeddings'],
     })
   })
 })

@@ -209,7 +209,7 @@ function registryModelToRawModel(model: RegistryModel): JsonRecord {
     id: primarySourceId(model),
     name: model.model,
     context_length: model.context_length,
-    created: timestampSeconds(model.release_timestamp ?? releaseDateFromSources(model) ?? model.last_updated),
+    created: timestampSeconds(model.release_timestamp ?? releaseDateFromSources(model)),
     architecture: {
       input_modalities: model.input_modalities ?? [],
       output_modalities: model.output_modalities ?? [],

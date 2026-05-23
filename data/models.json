@@ -15485,7 +15485,7 @@
         "video"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8172,
       "other_parameters": {
@@ -15496,7 +15496,6 @@
           "output_vector_size": 3072
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -15517,7 +15516,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 32000,
       "max_output_tokens": 32000,
@@ -15531,7 +15530,6 @@
           "max_tokens_per_document_chunk": 512
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -15553,7 +15551,7 @@
         "image"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 128,
       "other_parameters": {
@@ -15564,7 +15562,6 @@
           "output_vector_size": 1024
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -15587,7 +15584,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8192,
       "other_parameters": {
@@ -15598,7 +15595,6 @@
           "output_vector_size": 1536
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -15633,7 +15629,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8192,
       "other_parameters": {
@@ -15644,7 +15640,6 @@
           "output_vector_size": 1024
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -15678,7 +15673,7 @@
         "image"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 77,
       "other_parameters": {
@@ -15689,7 +15684,6 @@
           "output_vector_size": 1024
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -15713,7 +15707,7 @@
         "video"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 77,
       "other_parameters": {
@@ -15724,7 +15718,6 @@
           "output_vector_size": 1024
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -15748,7 +15741,7 @@
         "video"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 77,
       "other_parameters": {
@@ -15759,7 +15752,6 @@
           "output_vector_size": 1024
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -15780,7 +15772,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -15789,7 +15781,6 @@
           "raw_id": "assemblyai/best"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -15810,7 +15801,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -15819,7 +15810,6 @@
           "raw_id": "assemblyai/nano"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -15840,7 +15830,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8191,
       "other_parameters": {
@@ -15850,7 +15840,6 @@
           "raw_id": "azure/ada"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -15872,7 +15861,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "context_length": 16000,
       "max_output_tokens": 2000,
@@ -15886,7 +15875,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -15915,7 +15903,7 @@
         "audio"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -15934,7 +15922,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -15962,7 +15949,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "context_length": 16000,
       "max_output_tokens": 2000,
@@ -15976,7 +15963,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16004,7 +15990,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "context_length": 16000,
       "max_output_tokens": 2000,
@@ -16018,7 +16004,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16047,7 +16032,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8191,
       "other_parameters": {
@@ -16057,7 +16042,6 @@
           "raw_id": "vercel_ai_gateway/openai/text-embedding-3-large"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16093,7 +16077,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8191,
       "other_parameters": {
@@ -16103,7 +16087,6 @@
           "raw_id": "vercel_ai_gateway/openai/text-embedding-3-small"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16145,7 +16128,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8191,
       "other_parameters": {
@@ -16155,7 +16138,6 @@
           "raw_id": "vercel_ai_gateway/openai/text-embedding-ada-002"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16194,7 +16176,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -16203,7 +16185,6 @@
           "raw_id": "azure/speech/azure-tts"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16224,7 +16205,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -16233,7 +16214,6 @@
           "raw_id": "azure/speech/azure-tts-hd"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16255,7 +16235,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -16267,7 +16247,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16295,7 +16274,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -16307,7 +16286,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16335,7 +16313,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -16347,7 +16325,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16375,7 +16352,7 @@
         "image"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 512,
       "other_parameters": {
@@ -16386,7 +16363,6 @@
           "output_vector_size": 1024
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16408,7 +16384,7 @@
         "image"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 512,
       "other_parameters": {
@@ -16419,7 +16395,6 @@
           "output_vector_size": 1024
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16440,7 +16415,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 4096,
       "max_output_tokens": 4096,
@@ -16452,7 +16427,6 @@
           "max_query_tokens": 2048
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16473,7 +16447,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 4096,
       "max_output_tokens": 4096,
@@ -16485,7 +16459,6 @@
           "max_query_tokens": 2048
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16506,7 +16479,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 4096,
       "max_output_tokens": 4096,
@@ -16518,7 +16491,6 @@
           "max_query_tokens": 2048
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16539,7 +16511,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 32768,
       "max_output_tokens": 32768,
@@ -16551,7 +16523,6 @@
           "max_query_tokens": 4096
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16572,7 +16543,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 32768,
       "max_output_tokens": 32768,
@@ -16584,7 +16555,6 @@
           "max_query_tokens": 4096
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16606,7 +16576,7 @@
         "image"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 128000,
       "other_parameters": {
@@ -16624,7 +16594,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16646,7 +16615,7 @@
         "image"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 512,
       "other_parameters": {
@@ -16656,7 +16625,6 @@
           "raw_id": "cohere.embed-english-v3"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16678,7 +16646,7 @@
         "image"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 512,
       "other_parameters": {
@@ -16688,7 +16656,6 @@
           "raw_id": "cohere.embed-multilingual-v3"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16710,7 +16677,7 @@
         "image"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 128000,
       "other_parameters": {
@@ -16721,7 +16688,6 @@
           "output_vector_size": 1536
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16743,7 +16709,7 @@
         "image"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 128000,
       "other_parameters": {
@@ -16754,7 +16720,6 @@
           "output_vector_size": 1536
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16775,7 +16740,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 32000,
       "max_output_tokens": 32000,
@@ -16789,7 +16754,6 @@
           "max_tokens_per_document_chunk": 512
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16810,7 +16774,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 512,
       "other_parameters": {
@@ -16821,7 +16785,6 @@
           "output_vector_size": 1024
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16842,7 +16805,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8192,
       "other_parameters": {
@@ -16853,7 +16816,6 @@
           "output_vector_size": 1024
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16874,7 +16836,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -16886,7 +16848,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16907,7 +16868,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -16919,7 +16880,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16940,7 +16900,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -16952,7 +16912,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -16973,7 +16932,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -16985,7 +16944,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17006,7 +16964,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17018,7 +16976,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17039,7 +16996,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17051,7 +17008,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17072,7 +17028,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17084,7 +17040,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17105,7 +17060,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17117,7 +17072,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17138,7 +17092,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17150,7 +17104,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17171,7 +17124,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17183,7 +17136,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17204,7 +17156,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17216,7 +17168,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17237,7 +17188,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17249,7 +17200,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17270,7 +17220,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17282,7 +17232,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17303,7 +17252,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17315,7 +17264,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17336,7 +17284,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17348,7 +17296,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17369,7 +17316,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17381,7 +17328,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17402,7 +17348,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17414,7 +17360,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17435,7 +17380,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17447,7 +17392,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17468,7 +17412,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17480,7 +17424,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17501,7 +17444,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17513,7 +17456,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17534,7 +17476,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17546,7 +17488,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17567,7 +17508,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17579,7 +17520,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17600,7 +17540,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17612,7 +17552,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17633,7 +17572,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17645,7 +17584,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17666,7 +17604,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17678,7 +17616,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17699,7 +17636,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17711,7 +17648,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17732,7 +17668,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17744,7 +17680,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17765,7 +17700,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17777,7 +17712,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17798,7 +17732,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17810,7 +17744,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17831,7 +17764,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17843,7 +17776,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17864,7 +17796,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17876,7 +17808,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17897,7 +17828,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17909,7 +17840,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17930,7 +17860,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17942,7 +17872,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17963,7 +17892,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -17975,7 +17904,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -17996,7 +17924,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -18008,7 +17936,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18029,7 +17956,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -18041,7 +17968,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18062,7 +17988,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 4096,
       "other_parameters": {
@@ -18073,7 +17999,6 @@
           "output_vector_size": 2560
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18094,7 +18019,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 4096,
       "other_parameters": {
@@ -18105,7 +18030,6 @@
           "output_vector_size": 2048
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18126,7 +18050,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 4096,
       "other_parameters": {
@@ -18137,7 +18061,6 @@
           "output_vector_size": 4096
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18158,7 +18081,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 4096,
       "other_parameters": {
@@ -18169,7 +18092,6 @@
           "output_vector_size": 2048
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18190,7 +18112,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 4096,
       "other_parameters": {
@@ -18201,7 +18123,6 @@
           "output_vector_size": 2560
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18222,7 +18143,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -18234,7 +18155,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18255,7 +18175,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -18267,7 +18187,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18288,7 +18207,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -18300,7 +18219,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18322,7 +18240,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -18331,7 +18249,6 @@
           "raw_id": "runwayml/eleven_multilingual_v2"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18358,7 +18275,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 1024,
       "other_parameters": {
@@ -18368,7 +18285,6 @@
           "raw_id": "embed-english-light-v2.0"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18389,7 +18305,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 1024,
       "other_parameters": {
@@ -18399,7 +18315,6 @@
           "raw_id": "embed-english-light-v3.0"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18420,7 +18335,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 4096,
       "other_parameters": {
@@ -18430,7 +18345,6 @@
           "raw_id": "embed-english-v2.0"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18452,7 +18366,7 @@
         "image"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 1024,
       "other_parameters": {
@@ -18462,7 +18376,6 @@
           "raw_id": "embed-english-v3.0"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18483,7 +18396,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 768,
       "other_parameters": {
@@ -18493,7 +18406,6 @@
           "raw_id": "embed-multilingual-v2.0"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18515,7 +18427,7 @@
         "image"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 1024,
       "other_parameters": {
@@ -18525,7 +18437,6 @@
           "raw_id": "embed-multilingual-v3.0"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18547,7 +18458,7 @@
         "image"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 1024,
       "other_parameters": {
@@ -18557,7 +18468,6 @@
           "raw_id": "embed-multilingual-light-v3.0"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18578,7 +18488,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 512,
       "other_parameters": {
@@ -18588,7 +18498,6 @@
           "raw_id": "fireworks_ai/WhereIsAI/UAE-Large-V1"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18609,7 +18518,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8192,
       "other_parameters": {
@@ -18619,7 +18528,6 @@
           "raw_id": "fireworks_ai/nomic-ai/nomic-embed-text-v1"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18640,7 +18548,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8192,
       "other_parameters": {
@@ -18650,7 +18558,6 @@
           "raw_id": "fireworks_ai/nomic-ai/nomic-embed-text-v1.5"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18671,7 +18578,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 512,
       "other_parameters": {
@@ -18681,7 +18588,6 @@
           "raw_id": "fireworks_ai/thenlper/gte-base"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18702,7 +18608,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 512,
       "other_parameters": {
@@ -18712,7 +18618,6 @@
           "raw_id": "fireworks_ai/thenlper/gte-large"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18735,7 +18640,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 2048,
       "other_parameters": {
@@ -18745,7 +18650,6 @@
           "raw_id": "vercel_ai_gateway/google/gemini-embedding-001"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18782,7 +18686,7 @@
         "video"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8192,
       "other_parameters": {
@@ -18795,7 +18699,6 @@
           "tpm": 10000000
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18832,7 +18735,7 @@
         "video"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8192,
       "other_parameters": {
@@ -18845,7 +18748,6 @@
           "tpm": 10000000
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18878,7 +18780,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 1000000,
       "max_output_tokens": 8192,
@@ -18890,7 +18792,6 @@
           "output_vector_size": 3072
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18911,7 +18812,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8192,
       "other_parameters": {
@@ -18924,7 +18825,6 @@
           "tpm": 10000000
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -18946,7 +18846,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -18958,7 +18858,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19002,7 +18901,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19046,7 +18944,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19090,7 +18987,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19133,7 +19029,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19171,7 +19066,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19215,7 +19109,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19242,7 +19135,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8191,
       "other_parameters": {
@@ -19252,7 +19145,6 @@
           "raw_id": "github_copilot/text-embedding-3-small-inference"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19273,7 +19165,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 512,
       "other_parameters": {
@@ -19284,7 +19176,6 @@
           "output_vector_size": 1024
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19305,7 +19196,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 512,
       "other_parameters": {
@@ -19316,7 +19207,6 @@
           "output_vector_size": 1024
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19337,7 +19227,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 4096,
       "other_parameters": {
@@ -19348,7 +19238,6 @@
           "output_vector_size": 2560
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19369,7 +19258,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "context_length": 10000,
       "max_output_tokens": 10000,
@@ -19380,7 +19269,6 @@
           "raw_id": "groq/playai-tts"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19401,7 +19289,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -19410,7 +19298,6 @@
           "raw_id": "groq/whisper-large-v3"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19432,7 +19319,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "other_parameters": {
         "litellm": {
@@ -19444,7 +19331,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19471,7 +19357,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 1024,
       "max_output_tokens": 1024,
@@ -19483,7 +19369,6 @@
           "max_document_chunks_per_query": 2048
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19504,7 +19389,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -19516,7 +19401,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19537,7 +19421,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -19549,7 +19433,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19570,7 +19453,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -19582,7 +19465,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19603,7 +19485,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -19615,7 +19497,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19636,7 +19517,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8192,
       "other_parameters": {
@@ -19646,7 +19527,6 @@
           "raw_id": "mistral/mistral-embed"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19667,7 +19547,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8192,
       "other_parameters": {
@@ -19677,7 +19557,6 @@
           "raw_id": "mistral/codestral-embed"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19698,7 +19577,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8192,
       "other_parameters": {
@@ -19708,7 +19587,6 @@
           "raw_id": "mistral/codestral-embed-2505"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19730,7 +19608,7 @@
         "video"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 2048,
       "other_parameters": {
@@ -19749,7 +19627,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19771,7 +19648,7 @@
         "video"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 2048,
       "other_parameters": {
@@ -19790,7 +19667,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19811,7 +19687,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 32768,
       "other_parameters": {
@@ -19821,7 +19697,6 @@
           "raw_id": "nebius/BAAI/bge-en-icl"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19842,7 +19717,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8192,
       "other_parameters": {
@@ -19852,7 +19727,6 @@
           "raw_id": "nebius/BAAI/bge-multilingual-gemma2"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19873,7 +19747,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 32768,
       "other_parameters": {
@@ -19883,7 +19757,6 @@
           "raw_id": "nebius/intfloat/e5-mistral-7b-instruct"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19904,7 +19777,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 512,
       "other_parameters": {
@@ -19915,7 +19788,6 @@
           "output_vector_size": 1024
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19936,7 +19808,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 512,
       "other_parameters": {
@@ -19947,7 +19819,6 @@
           "output_vector_size": 384
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -19968,7 +19839,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 512,
       "other_parameters": {
@@ -19979,7 +19850,6 @@
           "output_vector_size": 1024
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20000,7 +19870,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 512,
       "other_parameters": {
@@ -20011,7 +19881,6 @@
           "output_vector_size": 384
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20033,7 +19902,7 @@
         "image"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 512,
       "other_parameters": {
@@ -20044,7 +19913,6 @@
           "output_vector_size": 1024
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20066,7 +19934,7 @@
         "image"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 512,
       "other_parameters": {
@@ -20077,7 +19945,6 @@
           "output_vector_size": 384
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20099,7 +19966,7 @@
         "image"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 512,
       "other_parameters": {
@@ -20110,7 +19977,6 @@
           "output_vector_size": 384
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20132,7 +19998,7 @@
         "image"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 128000,
       "other_parameters": {
@@ -20143,7 +20009,6 @@
           "output_vector_size": 1536
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20164,7 +20029,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 32768,
       "other_parameters": {
@@ -20175,7 +20040,6 @@
           "output_vector_size": 1024
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20196,7 +20060,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 32768,
       "other_parameters": {
@@ -20207,7 +20071,6 @@
           "output_vector_size": 2560
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20228,7 +20091,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 4096,
       "max_output_tokens": 4096,
@@ -20240,7 +20103,6 @@
           "max_query_tokens": 2048
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20261,7 +20123,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 4096,
       "max_output_tokens": 4096,
@@ -20273,7 +20135,6 @@
           "max_query_tokens": 2048
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20294,7 +20155,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 4096,
       "max_output_tokens": 4096,
@@ -20306,7 +20167,6 @@
           "max_query_tokens": 2048
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20327,7 +20187,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 4096,
       "max_output_tokens": 4096,
@@ -20339,7 +20199,6 @@
           "max_query_tokens": 2048
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20360,7 +20219,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 4096,
       "max_output_tokens": 4096,
@@ -20372,7 +20231,6 @@
           "max_query_tokens": 2048
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20393,7 +20251,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "other_parameters": {
         "litellm": {
@@ -20402,7 +20260,6 @@
           "raw_id": "nvidia_nim/nvidia/nv-rerankqa-mistral-4b-v3"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20424,7 +20281,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "other_parameters": {
         "litellm": {
@@ -20433,7 +20290,6 @@
           "raw_id": "nvidia_nim/ranking/nvidia/llama-3.2-nv-rerankqa-1b-v2"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20460,7 +20316,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 2048,
       "other_parameters": {
@@ -20471,7 +20327,6 @@
           "output_vector_size": 768
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20493,7 +20348,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 2048,
       "other_parameters": {
@@ -20503,7 +20358,6 @@
           "raw_id": "vercel_ai_gateway/google/text-embedding-005"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20530,7 +20384,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8191,
       "other_parameters": {
@@ -20540,7 +20394,6 @@
           "raw_id": "text-embedding-ada-002-v2"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20561,7 +20414,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8192,
       "other_parameters": {
@@ -20572,7 +20425,6 @@
           "output_vector_size": 3072
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20593,7 +20445,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 3072,
       "other_parameters": {
@@ -20604,7 +20456,6 @@
           "output_vector_size": 768
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20626,7 +20477,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 2048,
       "other_parameters": {
@@ -20636,7 +20487,6 @@
           "raw_id": "vercel_ai_gateway/google/text-multilingual-embedding-002"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20663,7 +20513,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "other_parameters": {
         "litellm": {
@@ -20672,7 +20522,6 @@
           "raw_id": "together-ai-embedding-151m-to-350m"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20693,7 +20542,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "other_parameters": {
         "litellm": {
@@ -20702,7 +20551,6 @@
           "raw_id": "together-ai-embedding-up-to-150m"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20724,7 +20572,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 512,
       "other_parameters": {
@@ -20735,7 +20583,6 @@
           "output_vector_size": 768
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20762,7 +20609,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -20774,7 +20621,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20795,7 +20641,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -20807,7 +20653,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20828,7 +20673,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -20840,7 +20685,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20861,7 +20705,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -20873,7 +20717,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20894,7 +20737,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -20906,7 +20749,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20943,7 +20785,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -20980,7 +20821,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21001,7 +20841,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 16000,
       "max_output_tokens": 16000,
@@ -21013,7 +20853,6 @@
           "max_query_tokens": 16000
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21034,7 +20873,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 8000,
       "max_output_tokens": 8000,
@@ -21046,7 +20885,6 @@
           "max_query_tokens": 8000
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21067,7 +20905,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 32000,
       "max_output_tokens": 32000,
@@ -21079,7 +20917,6 @@
           "max_query_tokens": 32000
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21100,7 +20937,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 32000,
       "max_output_tokens": 32000,
@@ -21112,7 +20949,6 @@
           "max_query_tokens": 32000
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21133,7 +20969,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 4000,
       "other_parameters": {
@@ -21143,7 +20979,6 @@
           "raw_id": "voyage/voyage-2"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21164,7 +20999,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 32000,
       "other_parameters": {
@@ -21174,7 +21009,6 @@
           "raw_id": "voyage/voyage-3"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21195,7 +21029,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 32000,
       "other_parameters": {
@@ -21205,7 +21039,6 @@
           "raw_id": "voyage/voyage-3-large"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21226,7 +21059,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 32000,
       "other_parameters": {
@@ -21236,7 +21069,6 @@
           "raw_id": "voyage/voyage-3-lite"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21257,7 +21089,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 32000,
       "other_parameters": {
@@ -21267,7 +21099,6 @@
           "raw_id": "voyage/voyage-3.5"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21288,7 +21119,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 32000,
       "other_parameters": {
@@ -21298,7 +21129,6 @@
           "raw_id": "voyage/voyage-3.5-lite"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21319,7 +21149,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 16000,
       "other_parameters": {
@@ -21329,7 +21159,6 @@
           "raw_id": "voyage/voyage-code-2"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21350,7 +21179,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 32000,
       "other_parameters": {
@@ -21360,7 +21189,6 @@
           "raw_id": "voyage/voyage-code-3"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21381,7 +21209,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 120000,
       "other_parameters": {
@@ -21391,7 +21219,6 @@
           "raw_id": "voyage/voyage-context-3"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21412,7 +21239,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 32000,
       "other_parameters": {
@@ -21422,7 +21249,6 @@
           "raw_id": "voyage/voyage-finance-2"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21443,7 +21269,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 16000,
       "other_parameters": {
@@ -21453,7 +21279,6 @@
           "raw_id": "voyage/voyage-large-2"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21474,7 +21299,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 16000,
       "other_parameters": {
@@ -21484,7 +21309,6 @@
           "raw_id": "voyage/voyage-law-2"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21505,7 +21329,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 4096,
       "other_parameters": {
@@ -21515,7 +21339,6 @@
           "raw_id": "voyage/voyage-lite-01"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21536,7 +21359,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 4000,
       "other_parameters": {
@@ -21546,7 +21369,6 @@
           "raw_id": "voyage/voyage-lite-02-instruct"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21567,7 +21389,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 32000,
       "other_parameters": {
@@ -21577,7 +21399,6 @@
           "raw_id": "voyage/voyage-multimodal-3"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21617,7 +21438,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21669,7 +21489,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21721,7 +21540,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21771,7 +21589,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21809,7 +21626,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21847,7 +21663,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21868,7 +21683,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "context_length": 4096,
       "max_output_tokens": 4096,
@@ -21879,7 +21694,6 @@
           "raw_id": "fireworks_ai/accounts/fireworks/models/fireworks-asr-large"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21900,7 +21714,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "context_length": 4096,
       "max_output_tokens": 4096,
@@ -21911,7 +21725,6 @@
           "raw_id": "fireworks_ai/accounts/fireworks/models/fireworks-asr-v2"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21932,7 +21745,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 32768,
       "max_output_tokens": 32768,
@@ -21943,7 +21756,6 @@
           "raw_id": "fireworks_ai/accounts/fireworks/models/qwen3-embedding-0p6b"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21964,7 +21776,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 40960,
       "max_output_tokens": 40960,
@@ -21975,7 +21787,6 @@
           "raw_id": "fireworks_ai/accounts/fireworks/models/qwen3-embedding-4b"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -21996,7 +21807,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 40960,
       "max_output_tokens": 40960,
@@ -22007,7 +21818,6 @@
           "raw_id": "fireworks_ai/accounts/fireworks/models/qwen3-reranker-0p6b"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -22028,7 +21838,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 40960,
       "max_output_tokens": 40960,
@@ -22039,7 +21849,6 @@
           "raw_id": "fireworks_ai/accounts/fireworks/models/qwen3-reranker-4b"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -22061,7 +21870,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 40960,
       "max_output_tokens": 40960,
@@ -22072,7 +21881,6 @@
           "raw_id": "novita/qwen/qwen3-reranker-8b"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -22099,7 +21907,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "context_length": 4096,
       "max_output_tokens": 4096,
@@ -22110,7 +21918,6 @@
           "raw_id": "fireworks_ai/accounts/fireworks/models/whisper-v3"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -22131,7 +21938,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "context_length": 4096,
       "max_output_tokens": 4096,
@@ -22142,7 +21949,6 @@
           "raw_id": "fireworks_ai/accounts/fireworks/models/whisper-v3-turbo"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -22163,7 +21969,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 32768,
       "max_output_tokens": 32768,
@@ -22174,7 +21980,6 @@
           "raw_id": "novita/qwen/qwen3-embedding-0.6b"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -22196,7 +22001,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 32768,
       "max_output_tokens": 4096,
@@ -22207,7 +22012,6 @@
           "raw_id": "llamagate/qwen3-embedding-8b"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -22234,7 +22038,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8192,
       "max_output_tokens": 96000,
@@ -22245,7 +22049,6 @@
           "raw_id": "novita/baai/bge-m3"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -22266,7 +22069,7 @@
         "text"
       ],
       "output_modalities": [
-        "ranking"
+        "rerank"
       ],
       "context_length": 8000,
       "max_output_tokens": 8000,
@@ -22277,7 +22080,6 @@
           "raw_id": "novita/baai/bge-reranker-v2-m3"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -22298,7 +22100,7 @@
         "text"
       ],
       "output_modalities": [
-        "embedding"
+        "embeddings"
       ],
       "context_length": 8192,
       "other_parameters": {
@@ -22308,7 +22110,6 @@
           "raw_id": "llamagate/nomic-embed-text"
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -22329,7 +22130,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -22341,7 +22142,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -22362,7 +22162,7 @@
         "text"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -22374,7 +22174,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -22396,7 +22195,7 @@
         "audio"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -22415,7 +22214,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -22437,7 +22235,7 @@
         "audio"
       ],
       "output_modalities": [
-        "audio"
+        "speech"
       ],
       "other_parameters": {
         "litellm": {
@@ -22456,7 +22254,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -22477,7 +22274,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "context_length": 16000,
       "max_output_tokens": 2000,
@@ -22491,7 +22288,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",
@@ -22512,7 +22308,7 @@
         "audio"
       ],
       "output_modalities": [
-        "text"
+        "transcription"
       ],
       "context_length": 16000,
       "max_output_tokens": 2000,
@@ -22526,7 +22322,6 @@
           ]
         }
       },
-      "last_updated": "2026-05-23T12:13:42.510Z",
       "sources": [
         {
           "source": "litellm",

@@ -174,7 +174,7 @@ describe('renderOpenRouterRawHome currency toggle', () => {
 })
 
 describe('renderOpenRouterRawHome modality filter counts', () => {
-  it('moves total items into the All quick filter and shows counts on each modality section', () => {
+  it('moves total items into the All quick filter and shows counts on non-empty modality sections', () => {
     const testGraph = graph()
     testGraph.nodes[0]!.derived.outputModalities = ['text', 'image']
     testGraph.nodes[1]!.derived.outputModalities = ['text']
@@ -185,8 +185,34 @@ describe('renderOpenRouterRawHome modality filter counts', () => {
     expect(html).toContain('<button class="quickFilter active" type="button" data-output-filter="all">全部 <span class="quickFilterCount" id="visibleCount">2</span></button>')
     expect(html).toContain('<button class="quickFilter" type="button" data-output-filter="text">Text <span class="quickFilterCount">2</span></button>')
     expect(html).toContain('<button class="quickFilter" type="button" data-output-filter="image">Image <span class="quickFilterCount">1</span></button>')
-    expect(html).toContain('<button class="quickFilter" type="button" data-output-filter="embeddings">Embedding <span class="quickFilterCount">0</span></button>')
+    expect(html).not.toContain('data-output-filter="embeddings"')
     expect(html).toContain('.quickFilterCount')
+  })
+
+  it('normalizes LiteLLM category aliases so non-chat models appear in their plaza filters', () => {
+    const testGraph = graph()
+    const embedding = sourceNode('openai/text-embedding-3-small', 'openai')
+    embedding.derived.outputModalities = ['embedding']
+    const rerank = sourceNode('cohere/cohere-rerank-v3.5', 'cohere')
+    rerank.derived.outputModalities = ['ranking']
+    const transcription = sourceNode('openai/gpt-4o-mini-transcribe', 'openai')
+    transcription.derived.outputModalities = ['text']
+    transcription.raw.model = { id: transcription.sourceId, pricing: {}, mddb_registry: { other_parameters: { litellm: { mode: 'audio_transcription' } } } }
+    const speech = sourceNode('openai/gpt-4o-mini-tts', 'openai')
+    speech.derived.outputModalities = ['audio']
+    speech.raw.model = { id: speech.sourceId, pricing: {}, mddb_registry: { other_parameters: { litellm: { mode: 'audio_speech' } } } }
+    testGraph.nodes = [embedding, rerank, transcription, speech]
+
+    const html = renderOpenRouterRawHome(testGraph)
+
+    expect(html).toContain('data-output-filter="embeddings">Embedding <span class="quickFilterCount">1</span>')
+    expect(html).toContain('data-output-filter="rerank">Rerank <span class="quickFilterCount">1</span>')
+    expect(html).toContain('data-output-filter="transcription">Transcription <span class="quickFilterCount">1</span>')
+    expect(html).toContain('data-output-filter="speech">Speech <span class="quickFilterCount">1</span>')
+    expect(html).toContain('data-output-modalities="embeddings"')
+    expect(html).toContain('data-output-modalities="rerank"')
+    expect(html).toContain('data-output-modalities="text transcription"')
+    expect(html).toContain('data-output-modalities="audio speech"')
   })
 })
 

@@ -127,17 +127,16 @@ function displayNameFromId(id) {
 
 function modalitiesForMode(mode, row) {
   const supportedInput = Array.isArray(row.supported_modalities) ? row.supported_modalities : []
-  const supportedOutput = Array.isArray(row.supported_output_modalities) ? row.supported_output_modalities : []
   if (mode === 'embedding') {
     return {
       input: uniqueStrings(['text', ...(row.supports_embedding_image_input || row.supports_image_input ? ['image'] : []), ...(row.input_cost_per_audio_per_second ? ['audio'] : []), ...(row.input_cost_per_video_per_second ? ['video'] : [])]),
-      output: ['embedding'],
+      output: ['embeddings'],
     }
   }
-  if (mode === 'rerank') return { input: ['text'], output: ['ranking'] }
-  if (mode === 'audio_transcription') return { input: ['audio'], output: ['text'] }
-  if (mode === 'audio_speech') return { input: supportedInput.length ? supportedInput : ['text'], output: supportedOutput.length ? supportedOutput : ['audio'] }
-  if (mode === 'video_generation') return { input: supportedInput.length ? supportedInput : ['text'], output: supportedOutput.length ? supportedOutput : ['video'] }
+  if (mode === 'rerank') return { input: ['text'], output: ['rerank'] }
+  if (mode === 'audio_transcription') return { input: ['audio'], output: ['transcription'] }
+  if (mode === 'audio_speech') return { input: supportedInput.length ? supportedInput : ['text'], output: ['speech'] }
+  if (mode === 'video_generation') return { input: supportedInput.length ? supportedInput : ['text'], output: ['video'] }
   return { input: ['text'], output: ['text'] }
 }
 
@@ -203,10 +202,21 @@ function litellmParameters(rawId, row) {
 function enrichExisting(model, rawId, row, observedAt) {
   model.alias = uniqueStrings([...(Array.isArray(model.alias) ? model.alias : []), rawId])
   model.sources = mergeSources(model.sources, [sourceObservation(rawId, observedAt)])
+  const modalities = modalitiesForMode(row.mode, row)
+  if (isLiteLlmManagedModel(model)) {
+    model.input_modalities = modalities.input
+    model.output_modalities = modalities.output
+    delete model.last_updated
+  }
   model.other_parameters = {
     ...(model.other_parameters && typeof model.other_parameters === 'object' && !Array.isArray(model.other_parameters) ? model.other_parameters : {}),
     litellm: litellmParameters(rawId, row),
   }
+}
+
+function isLiteLlmManagedModel(model) {
+  const sources = Array.isArray(model.sources) ? model.sources : []
+  return sources.length > 0 && sources.every((source) => source?.source === 'litellm')
 }
 
 function createModel(rawId, row, observedAt) {
@@ -224,7 +234,6 @@ function createModel(rawId, row, observedAt) {
     other_parameters: {
       litellm: litellmParameters(rawId, row),
     },
-    last_updated: observedAt,
     sources: [sourceObservation(rawId, observedAt)],
   }
 }
