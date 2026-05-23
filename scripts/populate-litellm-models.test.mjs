@@ -63,7 +63,7 @@ describe('populateLiteLlmModels', () => {
       modelsPath,
       observedAt: '2026-02-03T04:05:06.000Z',
       source: {
-        'azure/text-embedding-3-small': { litellm_provider: 'azure', mode: 'embedding', max_input_tokens: 8191, input_cost_per_token: 0.00000002 },
+        'azure/text-embedding-3-small': { litellm_provider: 'azure', mode: 'embedding', max_input_tokens: 8191, input_cost_per_token: 0.00000002, input_cost_per_token_above_272k_tokens_priority: 0.00001 },
         'cohere/rerank-v3.5': { litellm_provider: 'cohere', mode: 'rerank', max_input_tokens: 4096, max_output_tokens: 4096, input_cost_per_query: 0.001 },
         'azure/gpt-4o-transcribe': { litellm_provider: 'azure', mode: 'audio_transcription', max_input_tokens: 16000, max_output_tokens: 2000, input_cost_per_audio_token: 0.000006 },
         'gemini/veo-3.1-generate-preview': { litellm_provider: 'gemini', mode: 'video_generation', max_input_tokens: 1024, output_cost_per_second: 0.4 },
@@ -87,6 +87,15 @@ describe('populateLiteLlmModels', () => {
     const existing = models.find((model) => model.id === 'text-embedding-3-small')
     expect(existing.alias).toEqual(expect.arrayContaining(['openai/text-embedding-3-small', 'azure/text-embedding-3-small']))
     expect(existing.sources).toEqual([expect.objectContaining({ source: 'litellm', source_id: 'azure/text-embedding-3-small' })])
+    expect(existing.other_parameters?.litellm?.prices).toEqual(expect.arrayContaining([
+      expect.objectContaining({
+        kind: 'input',
+        amount: 10,
+        unit: 'per_1m_tokens',
+        source_key: 'input_cost_per_token_above_272k_tokens_priority',
+        condition: 'above 272k tokens priority',
+      }),
+    ]))
 
     expect(models.find((model) => model.id === 'rerank-v3.5')).toMatchObject({
       model: 'Rerank v3.5',

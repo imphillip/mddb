@@ -245,11 +245,23 @@ function litellmPriceRows(row) {
     ['cache_read_input_token_cost', 'cache_read', 'per_1m_tokens', 1_000_000],
     ['cache_creation_input_token_cost', 'cache_write', 'per_1m_tokens', 1_000_000],
   ]
-  return specs.flatMap(([key, kind, unit, multiplier]) => {
-    const amount = row[key]
-    if (typeof amount !== 'number' || !Number.isFinite(amount)) return []
-    return [{ kind, amount: normalizedPriceAmount(amount * multiplier), unit, source_key: key }]
+  return specs.flatMap(([baseKey, kind, unit, multiplier]) => {
+    return Object.entries(row).flatMap(([key, amount]) => {
+      if (key !== baseKey && !key.startsWith(`${baseKey}_`)) return []
+      if (typeof amount !== 'number' || !Number.isFinite(amount)) return []
+      const price = { kind, amount: normalizedPriceAmount(amount * multiplier), unit, source_key: key }
+      const condition = litellmPriceCondition(baseKey, key)
+      if (condition) price.condition = condition
+      return [price]
+    })
   })
+}
+
+function litellmPriceCondition(baseKey, key) {
+  if (key === baseKey) return ''
+  const suffix = key.slice(baseKey.length + 1).trim()
+  if (!suffix) return ''
+  return suffix.replaceAll('_', ' ')
 }
 
 function normalizedPriceAmount(value) {

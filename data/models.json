@@ -16756,10 +16756,24 @@
                   "source_key": "input_cost_per_token"
                 },
                 {
+                  "kind": "input",
+                  "amount": 0.065,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token_batches",
+                  "condition": "batches"
+                },
+                {
                   "kind": "output",
                   "amount": 0,
                   "unit": "per_1m_tokens",
                   "source_key": "output_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token_batches",
+                  "condition": "batches"
                 }
               ]
             },
@@ -16875,10 +16889,24 @@
                   "source_key": "input_cost_per_token"
                 },
                 {
+                  "kind": "input",
+                  "amount": 0.01,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token_batches",
+                  "condition": "batches"
+                },
+                {
                   "kind": "output",
                   "amount": 0,
                   "unit": "per_1m_tokens",
                   "source_key": "output_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token_batches",
+                  "condition": "batches"
                 }
               ]
             },
@@ -21269,6 +21297,13 @@
               "source_key": "input_cost_per_token"
             },
             {
+              "kind": "input",
+              "amount": 0.15,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token_above_128k_tokens",
+              "condition": "above 128k tokens"
+            },
+            {
               "kind": "output",
               "amount": 0,
               "unit": "per_1m_tokens",
@@ -21692,6 +21727,13 @@
               "amount": 0.05,
               "unit": "per_second",
               "source_key": "output_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0.08,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second_1080p",
+              "condition": "1080p"
             }
           ]
         }
@@ -22563,6 +22605,20 @@
               "amount": 0.0005,
               "unit": "per_video_second",
               "source_key": "input_cost_per_video_per_second"
+            },
+            {
+              "kind": "input_video",
+              "amount": 0.002,
+              "unit": "per_video_second",
+              "source_key": "input_cost_per_video_per_second_above_15s_interval",
+              "condition": "above 15s interval"
+            },
+            {
+              "kind": "input_video",
+              "amount": 0.001,
+              "unit": "per_video_second",
+              "source_key": "input_cost_per_video_per_second_above_8s_interval",
+              "condition": "above 8s interval"
             }
           ]
         }
@@ -22629,6 +22685,20 @@
               "amount": 0.0005,
               "unit": "per_video_second",
               "source_key": "input_cost_per_video_per_second"
+            },
+            {
+              "kind": "input_video",
+              "amount": 0.002,
+              "unit": "per_video_second",
+              "source_key": "input_cost_per_video_per_second_above_15s_interval",
+              "condition": "above 15s interval"
+            },
+            {
+              "kind": "input_video",
+              "amount": 0.001,
+              "unit": "per_video_second",
+              "source_key": "input_cost_per_video_per_second_above_8s_interval",
+              "condition": "above 8s interval"
             }
           ]
         }
@@ -23811,10 +23881,24 @@
               "source_key": "input_cost_per_token"
             },
             {
+              "kind": "input",
+              "amount": 0.05,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token_batches",
+              "condition": "batches"
+            },
+            {
               "kind": "output",
               "amount": 0,
               "unit": "per_1m_tokens",
               "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token_batches",
+              "condition": "batches"
             }
           ]
         }
@@ -23899,6 +23983,13 @@
               "amount": 0.00625,
               "unit": "per_1m_tokens",
               "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "input",
+              "amount": 0.005,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token_batch_requests",
+              "condition": "batch requests"
             },
             {
               "kind": "output",

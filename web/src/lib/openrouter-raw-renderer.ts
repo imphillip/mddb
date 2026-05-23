@@ -359,11 +359,12 @@ function registryLitellm(node: OpenRouterRawNode): Record<string, unknown> | nul
 
 function litellmPriceRow(price: unknown, cnyRate?: number): string {
   if (!isRecord(price)) return ''
-  return priceRow(litellmPriceLabel(String(price.kind ?? 'price')), price.amount, litellmPriceUnit(String(price.unit ?? '')), cnyRate)
+  return priceRow(litellmPriceLabel(String(price.kind ?? 'price'), typeof price.condition === 'string' ? price.condition : ''), price.amount, litellmPriceUnit(String(price.unit ?? '')), cnyRate)
 }
 
-function litellmPriceLabel(kind: string): string {
-  return kind.split(/[_-]/u).map((part) => part ? `${part.slice(0, 1).toUpperCase()}${part.slice(1)}` : part).join(' ')
+function litellmPriceLabel(kind: string, condition = ''): string {
+  const label = kind.split(/[_-]/u).map((part) => part ? `${part.slice(0, 1).toUpperCase()}${part.slice(1)}` : part).join(' ')
+  return condition ? `${label} · ${condition}` : label
 }
 
 function litellmPriceUnit(unit: string): string {

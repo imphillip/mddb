@@ -331,6 +331,7 @@ describe('renderOpenRouterRawDetail LiteLLM supplemental price enrichment', () =
             raw_id: 'amazon.nova-2-multimodal-embeddings-v1:0',
             prices: [
               { kind: 'input', amount: 0.135, unit: 'per_1m_tokens', source_key: 'input_cost_per_token' },
+              { kind: 'input', amount: 0.27, unit: 'per_1m_tokens', source_key: 'input_cost_per_token_above_200k_tokens', condition: 'above 200k tokens' },
               { kind: 'input_image', amount: 0.00006, unit: 'per_image', source_key: 'input_cost_per_image' },
               { kind: 'input_audio', amount: 0.00014, unit: 'per_audio_second', source_key: 'input_cost_per_audio_per_second' },
             ],
@@ -342,6 +343,7 @@ describe('renderOpenRouterRawDetail LiteLLM supplemental price enrichment', () =
     const html = renderOpenRouterRawDetail(graph(), litellmNode)
 
     expect(html).toContain('LiteLLM 补充价格')
+    expect(html).toContain('Input · above 200k tokens')
     expect(html).toContain('Input Image')
     expect(html).toContain('per image')
     expect(html).toContain('Input Audio')
