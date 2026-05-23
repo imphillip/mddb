@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
+import { normalizeModelPrice, selectBestPrice } from './lib/model-pricing.mjs'
 
 const ROOT = process.cwd()
 const RAW_PATH = process.env.OPENROUTER_RAW_PATH ?? join(ROOT, '.internal/source-data/openrouter.raw.json')
@@ -256,6 +257,29 @@ function priceSetFromPricing(pricing, source = 'openrouter', previousPrice) {
   return [{ conditions: {}, prices, currency: 'USD', source, observed_at, raw_pricing }]
 }
 
+function modelPriceFromPricing(pricing, source, endpoint, sourceId, previousPrice) {
+  const legacyPrices = priceSetFromPricing(pricing, source, previousPrice)
+  const legacyPrice = legacyPrices[0]
+  if (!legacyPrice) return null
+  return normalizeModelPrice({
+    source,
+    source_id: sourceId,
+    source_url: sourceId ? `https://openrouter.ai/${sourceId}` : undefined,
+    currency: legacyPrice.currency ?? 'USD',
+    unit_prices: legacyPrice.prices,
+    endpoint,
+  })
+}
+
+function mergeModelPrice(model, price) {
+  if (!price) return
+  const prices = Array.isArray(model.prices) ? [...model.prices] : []
+  const index = prices.findIndex((existing) => existing.currency === price.currency && existing.endpoint?.provider_id === price.endpoint?.provider_id && existing.endpoint?.api_model_id === price.endpoint?.api_model_id)
+  if (index >= 0) prices[index] = selectBestPrice(prices[index], price)
+  else prices.push(price)
+  model.prices = prices
+}
+
 function uniqueBy(items, keyFn) {
   const seen = new Set()
   const out = []
@@ -468,8 +492,11 @@ for (const row of rows) {
     modelMap.set(modelId, {
       id: modelId,
       model: displayName,
+      name: displayName,
       alias: uniqueBy([modelRow.id, modelRow.canonical_slug, latestTarget ? row.id : undefined, latestTarget ? row.canonical_slug : undefined].filter(Boolean).filter((x) => x !== modelId), String),
+      aliases: uniqueBy([modelRow.id, modelRow.canonical_slug, latestTarget ? row.id : undefined, latestTarget ? row.canonical_slug : undefined].filter(Boolean).filter((x) => x !== modelId), String),
       author,
+      author_id: author,
       input_modalities: modalities.input,
       output_modalities: modalities.output,
       reasoning: Array.isArray(modelRow.supported_parameters) && modelRow.supported_parameters.includes('reasoning'),
@@ -488,6 +515,7 @@ for (const row of rows) {
   } else if (latestTarget) {
     const model = modelMap.get(modelId)
     model.alias = uniqueBy([...model.alias, row.id, row.canonical_slug].filter(Boolean).filter((x) => x !== modelId), String)
+    model.aliases = uniqueBy([...(model.aliases ?? []), row.id, row.canonical_slug].filter(Boolean).filter((x) => x !== modelId), String)
   }
 
   const openrouter = ensureProvider('openrouter', 'OpenRouter', {
@@ -498,6 +526,14 @@ for (const row of rows) {
   const endpoints = Array.isArray(row.openrouter_endpoint_details?.endpoints) ? row.openrouter_endpoint_details.endpoints : []
   const openrouterOfferPath = endpointPathForMode(mode)
   const previousOpenRouterOffer = previousOffer('openrouter', modelId, row.id, openrouterOfferPath)
+  const model = modelMap.get(modelId)
+  mergeModelPrice(model, modelPriceFromPricing(row.pricing, 'openrouter', {
+    provider_id: author,
+    provider_name: canonicalProviderName(author, title(author)),
+    api_model_id: row.id,
+    base_url: 'https://openrouter.ai/api/v1',
+    docs_url: `https://openrouter.ai/${row.id}`,
+  }, row.id, previousOpenRouterOffer?.prices?.[0]))
   const providerNames = uniqueBy(endpoints.map((e) => e.provider_name ?? e.provider?.name).filter(Boolean).map((name) => normalizeProviderIdentity(name).name), (x) => slugify(x))
   openrouter.offers.push({
     model_id: modelId,

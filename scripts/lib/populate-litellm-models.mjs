@@ -1,5 +1,6 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
+import { normalizeModelPrice, selectBestPrice } from './model-pricing.mjs'
 
 const SOURCE_URL = 'https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json'
 const CANONICAL_MODES = new Set(['embedding', 'rerank', 'audio_transcription', 'audio_speech', 'video_generation'])
@@ -268,12 +269,50 @@ function normalizedPriceAmount(value) {
   return Math.round((value + Number.EPSILON) * 1_000_000_000_000) / 1_000_000_000_000
 }
 
+function litellmModelPrice(rawId, row) {
+  const rows = litellmPriceRows(row)
+  if (rows.length === 0) return null
+  const unitPrices = {}
+  for (const price of rows) {
+    unitPrices[price.source_key] = {
+      amount: price.amount,
+      unit: price.unit,
+      ...(price.condition ? { condition: price.condition } : {}),
+    }
+  }
+  const author = authorFromRow(rawId, row)
+  return normalizeModelPrice({
+    source: 'litellm',
+    source_id: rawId,
+    source_url: SOURCE_URL,
+    currency: String(row.input_cost_currency ?? row.output_cost_currency ?? row.currency ?? 'USD').toUpperCase(),
+    unit_prices: unitPrices,
+    endpoint: {
+      provider_id: author,
+      provider_name: displayNameFromId(author),
+      api_model_id: rawId,
+    },
+  })
+}
+
+function mergeModelPrice(model, price) {
+  if (!price) return
+  const prices = Array.isArray(model.prices) ? [...model.prices] : []
+  const index = prices.findIndex((existing) => existing.currency === price.currency && existing.endpoint?.provider_id === price.endpoint?.provider_id && existing.endpoint?.api_model_id === price.endpoint?.api_model_id)
+  if (index >= 0) prices[index] = selectBestPrice(prices[index], price)
+  else prices.push(price)
+  model.prices = prices
+}
+
 function applyLiteLlmDeprecationDate(model, row) {
   if (typeof row.deprecation_date === 'string' && row.deprecation_date.trim() !== '') model.deprecation_date = row.deprecation_date.trim()
 }
 
 function enrichExisting(model, rawId, row, observedAt) {
   model.alias = uniqueStrings([...(Array.isArray(model.alias) ? model.alias : []), rawId])
+  model.aliases = uniqueStrings([...(Array.isArray(model.aliases) ? model.aliases : []), rawId])
+  model.author_id ??= model.author
+  model.name ??= model.model
   model.sources = mergeSources(model.sources, [sourceObservation(rawId, observedAt)])
   const modalities = modalitiesForMode(row.mode, row)
   if (isLiteLlmManagedModel(model)) {
@@ -286,6 +325,7 @@ function enrichExisting(model, rawId, row, observedAt) {
     litellm: mergeLiteLlmParameters(model.other_parameters?.litellm, rawId, row),
   }
   applyLiteLlmDeprecationDate(model, row)
+  mergeModelPrice(model, litellmModelPrice(rawId, row))
 }
 
 function isLiteLlmManagedModel(model) {
@@ -299,8 +339,11 @@ function createModel(rawId, row, observedAt) {
   const model = {
     id,
     model: displayNameFromId(id),
+    name: displayNameFromId(id),
     alias: [rawId],
+    aliases: [rawId],
     author: authorFromRow(rawId, row),
+    author_id: authorFromRow(rawId, row),
     input_modalities: modalities.input,
     output_modalities: modalities.output,
     ...(typeof row.max_input_tokens === 'number' ? { context_length: row.max_input_tokens } : typeof row.max_tokens === 'number' ? { context_length: row.max_tokens } : {}),
@@ -310,6 +353,7 @@ function createModel(rawId, row, observedAt) {
     },
     sources: [sourceObservation(rawId, observedAt)],
   }
+  mergeModelPrice(model, litellmModelPrice(rawId, row))
   applyLiteLlmDeprecationDate(model, row)
   return model
 }
