@@ -14,6 +14,9 @@
       "env": [
         "MOONSHOT_API_KEY"
       ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "Moonshot AI"
     }
   },
   "last_updated": "2026-05-22T19:21:26.714Z",
@@ -161,13 +164,32 @@
       ],
       "other_parameters": {
         "source": "models.dev",
-        "match": "exact"
+        "match": "exact",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "Moonshot AI",
+          "tags": [
+            "Reasoning",
+            "Tools",
+            "Files",
+            "Open Weights",
+            "Vision",
+            "262.1K"
+          ],
+          "match": "exact_source_id"
+        }
       },
       "sources": [
         {
           "source": "models.dev",
           "source_id": "moonshotai-cn/kimi-k2.6",
           "url": "https://models.dev/api.json"
+        },
+        {
+          "source": "basellm-newapi",
+          "source_id": "Moonshot AI/kimi-k2.6",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
         }
       ]
     },
@@ -256,6 +278,12 @@
       "source_id": "moonshotai-cn",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:53:17.232Z"
+    },
+    {
+      "source": "basellm-newapi",
+      "source_id": "Moonshot AI",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
     }
   ]
 }

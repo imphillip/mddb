@@ -4452,13 +4452,31 @@
       ],
       "other_parameters": {
         "source": "models.dev",
-        "match": "exact"
+        "match": "exact",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "OpenAI",
+          "tags": [
+            "Reasoning",
+            "Tools",
+            "Files",
+            "Vision",
+            "200K"
+          ],
+          "match": "exact_source_id"
+        }
       },
       "sources": [
         {
           "source": "models.dev",
           "source_id": "openai/o4-mini-deep-research",
           "url": "https://models.dev/api.json"
+        },
+        {
+          "source": "basellm-newapi",
+          "source_id": "OpenAI/o4-mini-deep-research",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
         }
       ]
     },
@@ -4974,6 +4992,9 @@
       "env": [
         "OPENAI_API_KEY"
       ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "OpenAI"
     }
   },
   "last_updated": "2026-05-22T19:21:26.714Z",
@@ -4983,6 +5004,12 @@
       "source_id": "openai",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:27:33.665Z"
+    },
+    {
+      "source": "basellm-newapi",
+      "source_id": "OpenAI",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
     }
   ]
 }

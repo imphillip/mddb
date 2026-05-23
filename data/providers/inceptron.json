@@ -281,13 +281,32 @@
       ],
       "other_parameters": {
         "source": "models.dev",
-        "match": "exact"
+        "match": "exact",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "Inceptron",
+          "tags": [
+            "Reasoning",
+            "Tools",
+            "Files",
+            "Open Weights",
+            "Vision",
+            "262.1K"
+          ],
+          "match": "exact_source_id"
+        }
       },
       "sources": [
         {
           "source": "models.dev",
           "source_id": "inceptron/moonshotai/Kimi-K2.6",
           "url": "https://models.dev/api.json"
+        },
+        {
+          "source": "basellm-newapi",
+          "source_id": "Inceptron/moonshotai/Kimi-K2.6",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
         }
       ]
     },
@@ -343,6 +362,9 @@
       "env": [
         "INCEPTRON_API_KEY"
       ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "Inceptron"
     }
   },
   "last_updated": "2026-05-22T19:21:26.714Z",
@@ -352,6 +374,12 @@
       "source_id": "inceptron",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:27:33.665Z"
+    },
+    {
+      "source": "basellm-newapi",
+      "source_id": "Inceptron",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
     }
   ]
 }

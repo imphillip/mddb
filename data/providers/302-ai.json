@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "id": "302-ai",
+  "provider": "302.AI",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "qwen3-30b-a3b",
+      "model": "Qwen3 30B A3B",
+      "api_model_id": "qwen3-30b-a3b",
+      "endpoint_path": "qwen3-30b-a3b",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.11,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.08,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "basellm-newapi",
+          "observed_at": "2026-05-22T23:59:49.266Z",
+          "raw_pricing": {
+            "price_per_m_input": 0.11,
+            "price_per_m_output": 1.08,
+            "price_per_m_cache_read": null,
+            "price_per_m_cache_write": null,
+            "ratio_model": 0.055,
+            "ratio_completion": 9.818181818181818,
+            "ratio_cache": null,
+            "base_rule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source": "basellm-newapi",
+        "vendor_name": "302.AI",
+        "tags": [
+          "Tools",
+          "128K"
+        ],
+        "match": "exact_source_id"
+      },
+      "sources": [
+        {
+          "source": "basellm-newapi",
+          "source_id": "302.AI/qwen3-30b-a3b",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "basellm-newapi",
+      "source_id": "302.AI",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
+    }
+  ],
+  "last_updated": "2026-05-22T23:59:49.266Z",
+  "other_parameters": {
+    "basellm_newapi": {
+      "vendor_name": "302.AI"
+    }
+  }
+}

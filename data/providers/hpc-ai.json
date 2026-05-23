@@ -14,6 +14,9 @@
       "env": [
         "HPC_AI_API_KEY"
       ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "HPC-AI"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",
@@ -86,13 +89,30 @@
       ],
       "other_parameters": {
         "source": "models.dev",
-        "match": "normalized"
+        "match": "normalized",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "HPC-AI",
+          "tags": [
+            "Reasoning",
+            "Tools",
+            "Open Weights",
+            "202K"
+          ],
+          "match": "model_id_only"
+        }
       },
       "sources": [
         {
           "source": "models.dev",
           "source_id": "hpc-ai/zai-org/glm-5.1",
           "url": "https://models.dev/api.json"
+        },
+        {
+          "source": "basellm-newapi",
+          "source_id": "HPC-AI/zai-org/glm-5.1",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
         }
       ]
     },
@@ -142,6 +162,12 @@
       "source_id": "hpc-ai",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:27:33.665Z"
+    },
+    {
+      "source": "basellm-newapi",
+      "source_id": "HPC-AI",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
     }
   ]
 }

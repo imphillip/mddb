@@ -14,6 +14,9 @@
       "env": [
         "VULTR_API_KEY"
       ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "Vultr"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",
@@ -113,13 +116,29 @@
       ],
       "other_parameters": {
         "source": "models.dev",
-        "match": "exact"
+        "match": "exact",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "Vultr",
+          "tags": [
+            "Tools",
+            "Open Weights",
+            "194K"
+          ],
+          "match": "exact_source_id"
+        }
       },
       "sources": [
         {
           "source": "models.dev",
           "source_id": "vultr/MiniMax-M2.5",
           "url": "https://models.dev/api.json"
+        },
+        {
+          "source": "basellm-newapi",
+          "source_id": "Vultr/MiniMax-M2.5",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
         }
       ]
     },
@@ -165,6 +184,12 @@
       "source_id": "vultr",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:27:33.665Z"
+    },
+    {
+      "source": "basellm-newapi",
+      "source_id": "Vultr",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
     }
   ]
 }

@@ -14,6 +14,9 @@
       "env": [
         "PERPLEXITY_API_KEY"
       ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "Perplexity Agent"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",
@@ -667,13 +670,28 @@
       ],
       "other_parameters": {
         "source": "models.dev",
-        "match": "exact"
+        "match": "exact",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "Perplexity Agent",
+          "tags": [
+            "Tools",
+            "128K"
+          ],
+          "match": "exact_source_id"
+        }
       },
       "sources": [
         {
           "source": "models.dev",
           "source_id": "perplexity-agent/perplexity/sonar",
           "url": "https://models.dev/api.json"
+        },
+        {
+          "source": "basellm-newapi",
+          "source_id": "Perplexity Agent/perplexity/sonar",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
         }
       ]
     }
@@ -684,6 +702,12 @@
       "source_id": "perplexity-agent",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:27:33.665Z"
+    },
+    {
+      "source": "basellm-newapi",
+      "source_id": "Perplexity Agent",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
     }
   ]
 }

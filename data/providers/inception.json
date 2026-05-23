@@ -92,13 +92,29 @@
       ],
       "other_parameters": {
         "source": "models.dev",
-        "match": "exact"
+        "match": "exact",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "Inception",
+          "tags": [
+            "Reasoning",
+            "Tools",
+            "128K"
+          ],
+          "match": "exact_source_id"
+        }
       },
       "sources": [
         {
           "source": "models.dev",
           "source_id": "inception/mercury-2",
           "url": "https://models.dev/api.json"
+        },
+        {
+          "source": "basellm-newapi",
+          "source_id": "Inception/mercury-2",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
         }
       ]
     }
@@ -111,6 +127,9 @@
       "env": [
         "INCEPTION_API_KEY"
       ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "Inception"
     }
   },
   "last_updated": "2026-05-22T19:21:26.714Z",
@@ -120,6 +139,12 @@
       "source_id": "inception",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:27:33.665Z"
+    },
+    {
+      "source": "basellm-newapi",
+      "source_id": "Inception",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
     }
   ]
 }

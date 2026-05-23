@@ -14,6 +14,9 @@
       "env": [
         "STEPFUN_API_KEY"
       ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "StepFun"
     }
   },
   "last_updated": "2026-05-22T19:21:26.714Z",
@@ -102,13 +105,30 @@
       ],
       "other_parameters": {
         "source": "models.dev",
-        "match": "exact"
+        "match": "exact",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "StepFun",
+          "tags": [
+            "Reasoning",
+            "Tools",
+            "Open Weights",
+            "256K"
+          ],
+          "match": "exact_source_id"
+        }
       },
       "sources": [
         {
           "source": "models.dev",
           "source_id": "stepfun/step-3.5-flash",
           "url": "https://models.dev/api.json"
+        },
+        {
+          "source": "basellm-newapi",
+          "source_id": "StepFun/step-3.5-flash",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
         }
       ]
     }
@@ -125,6 +145,12 @@
       "source_id": "stepfun-ai",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:53:17.232Z"
+    },
+    {
+      "source": "basellm-newapi",
+      "source_id": "StepFun",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
     }
   ]
 }

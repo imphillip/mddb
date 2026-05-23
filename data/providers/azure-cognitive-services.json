@@ -14,6 +14,9 @@
         "AZURE_COGNITIVE_SERVICES_RESOURCE_NAME",
         "AZURE_COGNITIVE_SERVICES_API_KEY"
       ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "Azure Cognitive Services"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",
@@ -1045,13 +1048,28 @@
       ],
       "other_parameters": {
         "source": "models.dev",
-        "match": "exact"
+        "match": "exact",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "Azure Cognitive Services",
+          "tags": [
+            "Open Weights",
+            "128K"
+          ],
+          "match": "exact_source_id"
+        }
       },
       "sources": [
         {
           "source": "models.dev",
           "source_id": "azure-cognitive-services/phi-4",
           "url": "https://models.dev/api.json"
+        },
+        {
+          "source": "basellm-newapi",
+          "source_id": "Azure Cognitive Services/phi-4",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
         }
       ]
     },
@@ -1923,6 +1941,12 @@
       "source_id": "azure-cognitive-services",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:27:33.665Z"
+    },
+    {
+      "source": "basellm-newapi",
+      "source_id": "Azure Cognitive Services",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
     }
   ]
 }

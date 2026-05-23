@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "id": "jiekou-ai",
+  "provider": "Jiekou.AI",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "glm-4.7-flash",
+      "model": "GLM 4.7 Flash",
+      "api_model_id": "zai-org/glm-4.7-flash",
+      "endpoint_path": "zai-org/glm-4.7-flash",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.07,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "basellm-newapi",
+          "observed_at": "2026-05-22T23:59:49.266Z",
+          "raw_pricing": {
+            "price_per_m_input": 0.07,
+            "price_per_m_output": 0.4,
+            "price_per_m_cache_read": null,
+            "price_per_m_cache_write": null,
+            "ratio_model": 0.035,
+            "ratio_completion": 5.714285714285714,
+            "ratio_cache": null,
+            "base_rule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source": "basellm-newapi",
+        "vendor_name": "Jiekou.AI",
+        "tags": [
+          "Reasoning",
+          "Tools",
+          "Open Weights",
+          "200K"
+        ],
+        "match": "model_id_only"
+      },
+      "sources": [
+        {
+          "source": "basellm-newapi",
+          "source_id": "Jiekou.AI/zai-org/glm-4.7-flash",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "basellm-newapi",
+      "source_id": "Jiekou.AI",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
+    }
+  ],
+  "last_updated": "2026-05-22T23:59:49.266Z",
+  "other_parameters": {
+    "basellm_newapi": {
+      "vendor_name": "Jiekou.AI"
+    }
+  }
+}

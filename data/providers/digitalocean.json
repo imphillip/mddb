@@ -14,6 +14,9 @@
       "env": [
         "DIGITALOCEAN_ACCESS_TOKEN"
       ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "DigitalOcean"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",
@@ -183,13 +186,30 @@
       ],
       "other_parameters": {
         "source": "models.dev",
-        "match": "exact"
+        "match": "exact",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "DigitalOcean",
+          "tags": [
+            "Reasoning",
+            "Tools",
+            "Open Weights",
+            "262.1K"
+          ],
+          "match": "exact_source_id"
+        }
       },
       "sources": [
         {
           "source": "models.dev",
           "source_id": "digitalocean/qwen3.5-397b-a17b",
           "url": "https://models.dev/api.json"
+        },
+        {
+          "source": "basellm-newapi",
+          "source_id": "DigitalOcean/qwen3.5-397b-a17b",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
         }
       ]
     },
@@ -410,6 +430,12 @@
       "source_id": "digitalocean",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:27:33.665Z"
+    },
+    {
+      "source": "basellm-newapi",
+      "source_id": "DigitalOcean",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
     }
   ]
 }

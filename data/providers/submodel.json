@@ -14,6 +14,9 @@
       "env": [
         "SUBMODEL_INSTAGEN_ACCESS_KEY"
       ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "submodel"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",
@@ -113,13 +116,29 @@
       ],
       "other_parameters": {
         "source": "models.dev",
-        "match": "normalized"
+        "match": "normalized",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "submodel",
+          "tags": [
+            "Tools",
+            "Open Weights",
+            "131.1K"
+          ],
+          "match": "model_id_only"
+        }
       },
       "sources": [
         {
           "source": "models.dev",
           "source_id": "submodel/zai-org/GLM-4.5-Air",
           "url": "https://models.dev/api.json"
+        },
+        {
+          "source": "basellm-newapi",
+          "source_id": "submodel/zai-org/GLM-4.5-Air",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
         }
       ]
     },
@@ -165,6 +184,12 @@
       "source_id": "submodel",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:27:33.665Z"
+    },
+    {
+      "source": "basellm-newapi",
+      "source_id": "submodel",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
     }
   ]
 }

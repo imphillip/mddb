@@ -320,13 +320,30 @@
       ],
       "other_parameters": {
         "source": "models.dev",
-        "match": "normalized"
+        "match": "normalized",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "Nvidia",
+          "tags": [
+            "Reasoning",
+            "Tools",
+            "Open Weights",
+            "262.1K"
+          ],
+          "match": "model_id_only"
+        }
       },
       "sources": [
         {
           "source": "models.dev",
           "source_id": "nvidia/nvidia/nemotron-3-super-120b-a12b",
           "url": "https://models.dev/api.json"
+        },
+        {
+          "source": "basellm-newapi",
+          "source_id": "Nvidia/nvidia/nemotron-3-super-120b-a12b",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
         }
       ]
     },
@@ -1152,6 +1169,9 @@
       "env": [
         "NVIDIA_API_KEY"
       ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "Nvidia"
     }
   },
   "last_updated": "2026-05-22T19:21:26.714Z",
@@ -1161,6 +1181,12 @@
       "source_id": "nvidia",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:27:33.665Z"
+    },
+    {
+      "source": "basellm-newapi",
+      "source_id": "Nvidia",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
     }
   ]
 }

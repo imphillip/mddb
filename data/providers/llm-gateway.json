@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "id": "llm-gateway",
+  "provider": "LLM Gateway",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "sonar-reasoning-pro",
+      "model": "Sonar Reasoning Pro",
+      "api_model_id": "sonar-reasoning-pro",
+      "endpoint_path": "sonar-reasoning-pro",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "basellm-newapi",
+          "observed_at": "2026-05-22T23:59:49.266Z",
+          "raw_pricing": {
+            "price_per_m_input": 2,
+            "price_per_m_output": 8,
+            "price_per_m_cache_read": null,
+            "price_per_m_cache_write": null,
+            "ratio_model": 1,
+            "ratio_completion": 4,
+            "ratio_cache": null,
+            "base_rule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source": "basellm-newapi",
+        "vendor_name": "LLM Gateway",
+        "tags": [
+          "Reasoning",
+          "Files",
+          "Vision",
+          "128K"
+        ],
+        "match": "exact_source_id"
+      },
+      "sources": [
+        {
+          "source": "basellm-newapi",
+          "source_id": "LLM Gateway/sonar-reasoning-pro",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "basellm-newapi",
+      "source_id": "LLM Gateway",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
+    }
+  ],
+  "last_updated": "2026-05-22T23:59:49.266Z",
+  "other_parameters": {
+    "basellm_newapi": {
+      "vendor_name": "LLM Gateway"
+    }
+  }
+}

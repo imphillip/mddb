@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "id": "alibaba-china",
+  "provider": "Alibaba (China)",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "deepseek-v3.2",
+      "model": "DeepSeek V3.2",
+      "api_model_id": "siliconflow/deepseek-v3.2",
+      "endpoint_path": "siliconflow/deepseek-v3.2",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.27,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.42,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "basellm-newapi",
+          "observed_at": "2026-05-22T23:59:49.266Z",
+          "raw_pricing": {
+            "price_per_m_input": 0.27,
+            "price_per_m_output": 0.42,
+            "price_per_m_cache_read": null,
+            "price_per_m_cache_write": null,
+            "ratio_model": 0.135,
+            "ratio_completion": 1.5555555555555554,
+            "ratio_cache": null,
+            "base_rule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source": "basellm-newapi",
+        "vendor_name": "Alibaba (China)",
+        "tags": [
+          "Reasoning",
+          "Tools",
+          "163.8K"
+        ],
+        "match": "model_id_only"
+      },
+      "sources": [
+        {
+          "source": "basellm-newapi",
+          "source_id": "Alibaba (China)/siliconflow/deepseek-v3.2",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "basellm-newapi",
+      "source_id": "Alibaba (China)",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
+    }
+  ],
+  "last_updated": "2026-05-22T23:59:49.266Z",
+  "other_parameters": {
+    "basellm_newapi": {
+      "vendor_name": "Alibaba (China)"
+    }
+  }
+}

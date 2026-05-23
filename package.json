@@ -17,6 +17,7 @@
     "data:litellm": "node scripts/fetch-litellm-model-prices.mjs",
     "registry:populate:openrouter": "node scripts/populate-registry-openrouter.mjs",
     "registry:populate:models-dev": "node scripts/populate-models-dev-providers.mjs",
+    "registry:populate:basellm": "node scripts/populate-basellm-newapi-providers.mjs",
     "data:basellm": "node scripts/fetch-basellm-newapi.mjs",
     "data:fx": "node scripts/fetch-exchange-rate.mjs",
     "data:aihot": "node scripts/fetch-aihot-model-news.mjs",

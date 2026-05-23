@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "id": "nanogpt",
+  "provider": "NanoGPT",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "glm-5.1",
+      "model": "GLM 5.1",
+      "api_model_id": "zai-org/glm-5.1",
+      "endpoint_path": "zai-org/glm-5.1",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.55,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "basellm-newapi",
+          "observed_at": "2026-05-22T23:59:49.266Z",
+          "raw_pricing": {
+            "price_per_m_input": 0.3,
+            "price_per_m_output": 2.55,
+            "price_per_m_cache_read": null,
+            "price_per_m_cache_write": null,
+            "ratio_model": 0.15,
+            "ratio_completion": 8.5,
+            "ratio_cache": null,
+            "base_rule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source": "basellm-newapi",
+        "vendor_name": "NanoGPT",
+        "tags": [
+          "Reasoning",
+          "Tools",
+          "Open Weights",
+          "200K"
+        ],
+        "match": "model_id_only"
+      },
+      "sources": [
+        {
+          "source": "basellm-newapi",
+          "source_id": "NanoGPT/zai-org/glm-5.1",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "basellm-newapi",
+      "source_id": "NanoGPT",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
+    }
+  ],
+  "last_updated": "2026-05-22T23:59:49.266Z",
+  "other_parameters": {
+    "basellm_newapi": {
+      "vendor_name": "NanoGPT"
+    }
+  }
+}

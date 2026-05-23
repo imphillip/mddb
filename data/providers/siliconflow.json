@@ -14,6 +14,9 @@
       "env": [
         "SILICONFLOW_CN_API_KEY"
       ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "SiliconFlow"
     }
   },
   "last_updated": "2026-05-22T19:56:54.990Z",
@@ -2226,13 +2229,31 @@
       ],
       "other_parameters": {
         "source": "models.dev",
-        "match": "normalized"
+        "match": "normalized",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "SiliconFlow",
+          "tags": [
+            "Reasoning",
+            "Tools",
+            "Files",
+            "Vision",
+            "200K"
+          ],
+          "match": "model_id_only"
+        }
       },
       "sources": [
         {
           "source": "models.dev",
           "source_id": "siliconflow/zai-org/GLM-5V-Turbo",
           "url": "https://models.dev/api.json"
+        },
+        {
+          "source": "basellm-newapi",
+          "source_id": "SiliconFlow/zai-org/GLM-5V-Turbo",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
         }
       ]
     },
@@ -4186,6 +4207,12 @@
       "source_id": "siliconflow-cn",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:53:17.232Z"
+    },
+    {
+      "source": "basellm-newapi",
+      "source_id": "SiliconFlow",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
     }
   ]
 }

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "id": "siliconflow-china",
+  "provider": "SiliconFlow (China)",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "glm-4.6v",
+      "model": "GLM 4.6V",
+      "api_model_id": "zai-org/GLM-4.6V",
+      "endpoint_path": "zai-org/GLM-4.6V",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.9,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "basellm-newapi",
+          "observed_at": "2026-05-22T23:59:49.266Z",
+          "raw_pricing": {
+            "price_per_m_input": 0.3,
+            "price_per_m_output": 0.9,
+            "price_per_m_cache_read": null,
+            "price_per_m_cache_write": null,
+            "ratio_model": 0.15,
+            "ratio_completion": 3,
+            "ratio_cache": null,
+            "base_rule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source": "basellm-newapi",
+        "vendor_name": "SiliconFlow (China)",
+        "tags": [
+          "Reasoning",
+          "Tools",
+          "Files",
+          "Vision",
+          "131K"
+        ],
+        "match": "model_id_only"
+      },
+      "sources": [
+        {
+          "source": "basellm-newapi",
+          "source_id": "SiliconFlow (China)/zai-org/GLM-4.6V",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "basellm-newapi",
+      "source_id": "SiliconFlow (China)",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
+    }
+  ],
+  "last_updated": "2026-05-22T23:59:49.266Z",
+  "other_parameters": {
+    "basellm_newapi": {
+      "vendor_name": "SiliconFlow (China)"
+    }
+  }
+}

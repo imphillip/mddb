@@ -2702,13 +2702,28 @@
       ],
       "other_parameters": {
         "source": "models.dev",
-        "match": "exact"
+        "match": "exact",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "Azure",
+          "tags": [
+            "Open Weights",
+            "128K"
+          ],
+          "match": "exact_source_id"
+        }
       },
       "sources": [
         {
           "source": "models.dev",
           "source_id": "azure/phi-4",
           "url": "https://models.dev/api.json"
+        },
+        {
+          "source": "basellm-newapi",
+          "source_id": "Azure/phi-4",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
         }
       ]
     },
@@ -4375,6 +4390,9 @@
         "AZURE_RESOURCE_NAME",
         "AZURE_API_KEY"
       ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "Azure"
     }
   },
   "last_updated": "2026-05-22T19:56:54.990Z",
@@ -4384,6 +4402,12 @@
       "source_id": "azure",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:27:33.665Z"
+    },
+    {
+      "source": "basellm-newapi",
+      "source_id": "Azure",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
     }
   ]
 }

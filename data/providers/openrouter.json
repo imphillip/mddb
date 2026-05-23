@@ -14,6 +14,9 @@
       "env": [
         "OPENROUTER_API_KEY"
       ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "OpenRouter"
     }
   },
   "last_updated": "2026-05-22T19:21:26.714Z",
@@ -4744,7 +4747,19 @@
         ],
         "endpoint_count": 1,
         "context_length": 202752,
-        "max_completion_tokens": 131072
+        "max_completion_tokens": 131072,
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "OpenRouter",
+          "tags": [
+            "Reasoning",
+            "Tools",
+            "Files",
+            "Vision",
+            "202.8K"
+          ],
+          "match": "exact_source_id"
+        }
       },
       "sources": [
         {
@@ -4752,6 +4767,12 @@
           "source_id": "z-ai/glm-5v-turbo",
           "url": "https://openrouter.ai/z-ai/glm-5v-turbo",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "basellm-newapi",
+          "source_id": "OpenRouter/z-ai/glm-5v-turbo",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
         }
       ]
     },
@@ -29932,6 +29953,12 @@
       "source_id": "openrouter",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:27:33.665Z"
+    },
+    {
+      "source": "basellm-newapi",
+      "source_id": "OpenRouter",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
     }
   ]
 }

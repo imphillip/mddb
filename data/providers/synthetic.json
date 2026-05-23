@@ -14,6 +14,9 @@
       "env": [
         "SYNTHETIC_API_KEY"
       ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "Synthetic"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",
@@ -487,13 +490,30 @@
       ],
       "other_parameters": {
         "source": "models.dev",
-        "match": "normalized"
+        "match": "normalized",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "Synthetic",
+          "tags": [
+            "Reasoning",
+            "Tools",
+            "Open Weights",
+            "196.6K"
+          ],
+          "match": "model_id_only"
+        }
       },
       "sources": [
         {
           "source": "models.dev",
           "source_id": "synthetic/hf:zai-org/GLM-5.1",
           "url": "https://models.dev/api.json"
+        },
+        {
+          "source": "basellm-newapi",
+          "source_id": "Synthetic/hf:zai-org/GLM-5.1",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
         }
       ]
     },
@@ -827,6 +847,12 @@
       "source_id": "synthetic",
       "url": "https://models.dev/api.json",
       "observed_at": "2026-05-21T22:27:33.665Z"
+    },
+    {
+      "source": "basellm-newapi",
+      "source_id": "Synthetic",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
     }
   ]
 }

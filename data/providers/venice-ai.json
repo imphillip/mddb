@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "id": "venice-ai",
+  "provider": "Venice AI",
+  "currency": "USD",
+  "offers": [
+    {
+      "model_id": "qwen3-235b-a22b-thinking-2507",
+      "model": "Qwen3 235B A22B Thinking 2507",
+      "api_model_id": "qwen3-235b-a22b-thinking-2507",
+      "endpoint_path": "qwen3-235b-a22b-thinking-2507",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.45,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "basellm-newapi",
+          "observed_at": "2026-05-22T23:59:49.266Z",
+          "raw_pricing": {
+            "price_per_m_input": 0.45,
+            "price_per_m_output": 3.5,
+            "price_per_m_cache_read": null,
+            "price_per_m_cache_write": null,
+            "ratio_model": 0.225,
+            "ratio_completion": 7.777777777777778,
+            "ratio_cache": null,
+            "base_rule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source": "basellm-newapi",
+        "vendor_name": "Venice AI",
+        "tags": [
+          "Reasoning",
+          "Tools",
+          "Open Weights",
+          "128K"
+        ],
+        "match": "exact_source_id"
+      },
+      "sources": [
+        {
+          "source": "basellm-newapi",
+          "source_id": "Venice AI/qwen3-235b-a22b-thinking-2507",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-22T23:59:49.266Z"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "basellm-newapi",
+      "source_id": "Venice AI",
+      "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+      "observed_at": "2026-05-22T23:59:49.266Z"
+    }
+  ],
+  "last_updated": "2026-05-22T23:59:49.266Z",
+  "other_parameters": {
+    "basellm_newapi": {
+      "vendor_name": "Venice AI"
+    }
+  }
+}

@@ -10,7 +10,7 @@ function renderSourceCards(): string {
   const sources = [
     { id: 'openrouter', name: 'OpenRouter', enabled: true, note: '已接入脚本：抓取模型、端点、页面补充，并生成 registry 数据。' },
     { id: 'models-dev', name: 'models.dev', enabled: true, note: 'models.dev Provider 富化：抓取 API 快照并补齐 Provider icon/元数据。' },
-    { id: 'basellm', name: 'BaseLLM', enabled: false, note: '占位：后续接入价格/可用性补充。' },
+    { id: 'basellm', name: 'BaseLLM', enabled: true, note: 'BaseLLM / NewAPI 价格叠加：只对齐既有模型 ID，补充 Provider 价格，不新增 canonical 模型。' },
     { id: 'litellm', name: 'LiteLLM', enabled: false, note: '占位：后续接入模型价格补充。' },
   ]
   return sources.map((source) => `<article class="card source" data-source-id="${source.id}" data-enabled="${source.enabled}"><span class="badge ${source.enabled ? 'ready' : ''}">${source.enabled ? '可点击' : '占位'}</span><h2>${source.name}</h2><p class="muted">${source.note}</p><div class="actions"><button class="button" data-preview="${source.id}" ${source.enabled ? '' : 'disabled'}>预览 diff</button></div></article>`).join('')

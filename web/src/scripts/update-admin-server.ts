@@ -5,7 +5,7 @@ import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { renderUpdateAdminPage } from '../lib/update-admin-renderer.js'
 import { summarizeRegistryDiff } from '../lib/update-diff-summary.js'
-import { applyOpenRouterUpdate, previewModelsDevUpdate, previewOpenRouterUpdate } from '../lib/update-runner.js'
+import { applyOpenRouterUpdate, previewBaseLlmUpdate, previewModelsDevUpdate, previewOpenRouterUpdate } from '../lib/update-runner.js'
 
 const repoRoot = process.cwd()
 const publicDir = join(repoRoot, 'public')
@@ -44,6 +44,13 @@ const server = createServer(async (req, res) => {
       sendJson(res, 200, result.ok ? { ...result, summary: summarizeRegistryDiff(result.diff, result.changedFiles) } : result)
       return
     }
+    if (req.method === 'POST' && url.pathname === '/api/update/basellm/preview') {
+      const body = await readJson(req)
+      if (!verifyPassword(body.password)) return sendJson(res, 401, { ok: false, error: 'unauthorized' })
+      const result = await previewBaseLlmUpdate({ repoRoot })
+      sendJson(res, 200, result.ok ? { ...result, summary: summarizeRegistryDiff(result.diff, result.changedFiles) } : result)
+      return
+    }
     if (req.method === 'POST' && url.pathname === '/api/update/openrouter/apply') {
       const body = await readJson(req)
       if (!verifyPassword(body.password)) return sendJson(res, 401, { ok: false, error: 'unauthorized' })
@@ -52,6 +59,13 @@ const server = createServer(async (req, res) => {
       return
     }
     if (req.method === 'POST' && url.pathname === '/api/update/models-dev/apply') {
+      const body = await readJson(req)
+      if (!verifyPassword(body.password)) return sendJson(res, 401, { ok: false, error: 'unauthorized' })
+      const result = await applyOpenRouterUpdate({ repoRoot, patchFile: String(body.patchFile ?? '') })
+      sendJson(res, result.ok ? 200 : 500, result)
+      return
+    }
+    if (req.method === 'POST' && url.pathname === '/api/update/basellm/apply') {
       const body = await readJson(req)
       if (!verifyPassword(body.password)) return sendJson(res, 401, { ok: false, error: 'unauthorized' })
       const result = await applyOpenRouterUpdate({ repoRoot, patchFile: String(body.patchFile ?? '') })

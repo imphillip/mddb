@@ -23,6 +23,10 @@ const UPDATE_SOURCES = {
     id: 'models-dev',
     defaultShellCommand: 'npm run data:models-dev && npm run registry:populate:models-dev',
   },
+  baseLlm: {
+    id: 'basellm',
+    defaultShellCommand: 'npm run data:basellm && npm run registry:populate:basellm',
+  },
 } satisfies Record<string, UpdateSourceConfig>
 
 export type PreviewResult = {
@@ -48,6 +52,10 @@ export async function previewOpenRouterUpdate(options: UpdateOptions): Promise<P
 
 export async function previewModelsDevUpdate(options: UpdateOptions): Promise<PreviewResult> {
   return previewUpdate({ ...options, source: UPDATE_SOURCES.modelsDev })
+}
+
+export async function previewBaseLlmUpdate(options: UpdateOptions): Promise<PreviewResult> {
+  return previewUpdate({ ...options, source: UPDATE_SOURCES.baseLlm })
 }
 
 async function previewUpdate(options: UpdateOptions & { source: UpdateSourceConfig }): Promise<PreviewResult> {
