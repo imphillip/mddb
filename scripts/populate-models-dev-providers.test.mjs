@@ -13,15 +13,34 @@ function writeJson(path, value) {
 }
 
 describe('populateModelsDevProviders', () => {
-  it('enriches provider metadata and safe offers against existing canonical providers only', () => {
-    const root = mkdtempSync(join(tmpdir(), 'mddb-models-dev-providers-'))
+  it('enriches models with author icons only and does not create provider offers or prices', () => {
+    const root = mkdtempSync(join(tmpdir(), 'mddb-models-dev-icons-'))
     const providersDir = join(root, 'providers')
     mkdirSync(providersDir)
     writeJson(join(root, 'models.json'), {
       schema_version: 1,
       models: [
-        { id: 'gpt-4o', model: 'GPT-4o', author: 'openai', alias: ['openai/gpt-4o'] },
-        { id: 'kimi-k2.5', model: 'Kimi K2.5', author: 'moonshot-ai', alias: ['moonshotai/kimi-k2.5'] },
+        {
+          id: 'gpt-4o',
+          model: 'GPT-4o',
+          name: 'GPT-4o',
+          author: 'openai',
+          author_id: 'openai',
+          alias: ['openai/gpt-4o'],
+          aliases: ['openai/gpt-4o'],
+          prices: [{ source: 'openrouter', currency: 'USD', unit_prices: { input: { amount: 2.5, unit: 'per_1m_tokens' } }, endpoint: { provider_id: 'openai', provider_name: 'OpenAI' } }],
+          sources: [{ source: 'openrouter', source_id: 'openai/gpt-4o' }],
+        },
+        {
+          id: 'kimi-k2.5',
+          model: 'Kimi K2.5',
+          name: 'Kimi K2.5',
+          author: 'moonshot-ai',
+          author_id: 'moonshot-ai',
+          alias: ['moonshotai/kimi-k2.5'],
+          aliases: ['moonshotai/kimi-k2.5'],
+          sources: [{ source: 'openrouter', source_id: 'moonshotai/kimi-k2.5' }],
+        },
       ],
       last_updated: '2026-01-01T00:00:00.000Z',
     })
@@ -29,30 +48,8 @@ describe('populateModelsDevProviders', () => {
       schema_version: 1,
       id: 'openai',
       provider: 'OpenAI',
-      currency: 'USD',
-      icon: 'https://old.example/openai.svg',
-      other_parameters: { existing: true },
-      offers: [{ model_id: 'gpt-4o', model: 'GPT-4o', api_model_id: 'openai/gpt-4o' }],
+      offers: [{ model_id: 'gpt-4o', api_model_id: 'openai/gpt-4o' }],
       sources: [{ source: 'openrouter', source_id: 'openai' }],
-      last_updated: '2026-01-01T00:00:00.000Z',
-    })
-    writeJson(join(providersDir, 'moonshot-ai.json'), {
-      schema_version: 1,
-      id: 'moonshot-ai',
-      provider: 'Moonshot AI',
-      currency: 'USD',
-      offers: [],
-      sources: [{ source: 'openrouter', source_id: 'moonshot-ai' }],
-      last_updated: '2026-01-01T00:00:00.000Z',
-    })
-    writeJson(join(providersDir, 'tencent.json'), {
-      schema_version: 1,
-      id: 'tencent',
-      provider: 'Tencent',
-      currency: 'USD',
-      offers: [],
-      sources: [{ source: 'openrouter', source_id: 'tencent' }],
-      last_updated: '2026-01-01T00:00:00.000Z',
     })
     const source = {
       openai: {
@@ -63,204 +60,69 @@ describe('populateModelsDevProviders', () => {
         npm: '@ai-sdk/openai',
         env: ['OPENAI_API_KEY'],
         iconURL: 'https://models.dev/logos/openai.svg',
-        models: {
-          'gpt-4o': { id: 'gpt-4o', name: 'GPT-4o', cost: { input: 2.5, output: 10 } },
-          'models-dev-only-model': { id: 'models-dev-only-model', name: 'Do Not Import' },
-        },
+        models: { 'gpt-4o': { id: 'gpt-4o', name: 'GPT-4o', cost: { input: 2.5, output: 10 } } },
       },
       moonshotai: {
         id: 'moonshotai',
         name: 'Moonshot AI',
         iconURL: 'https://models.dev/logos/moonshotai.svg',
-        models: {
-          'kimi-k2.5': { id: 'kimi-k2.5', name: 'Kimi K2.5' },
-        },
-      },
-      'tencent-coding-plan': {
-        id: 'tencent-coding-plan',
-        name: 'Tencent Coding Plan (China)',
-        models: {
-          'gpt-4o': { id: 'gpt-4o', name: 'GPT-4o' },
-        },
+        models: { 'kimi-k2.5': { id: 'kimi-k2.5', name: 'Kimi K2.5' } },
       },
       github: {
         id: 'github',
         name: 'GitHub Models',
         iconURL: 'https://models.dev/logos/github.svg',
-        models: {
-          'gpt-4o': { id: 'gpt-4o', name: 'GPT-4o' },
-        },
-      },
-      empty: {
-        id: 'empty',
-        name: 'Empty Provider',
-        iconURL: 'https://models.dev/logos/empty.svg',
-        models: {
-          'unknown-model': { id: 'unknown-model', name: 'Unknown Model' },
-        },
+        models: { 'gpt-4o': { id: 'gpt-4o', name: 'GPT-4o' } },
       },
     }
 
-    const result = populateModelsDevProviders({ dataDir: providersDir, modelsPath: join(root, 'models.json'), source, observedAt: '2026-02-03T04:05:06.000Z' })
+    const result = populateModelsDevProviders({ modelsPath: join(root, 'models.json'), source, observedAt: '2026-02-03T04:05:06.000Z' })
 
-    expect(result).toEqual({ enriched: 3, created: 1, skipped: 1 })
-    expect(readJson(join(root, 'models.json')).models).toHaveLength(2)
-
-    const openai = readJson(join(providersDir, 'openai.json'))
-    expect(openai.icon).toBe('/assets/provider-icons/openai.svg')
-    expect(openai.base_url).toBe('https://api.openai.com/v1')
-    expect(openai.domain).toBe('platform.openai.com')
-    expect(openai.other_parameters).toMatchObject({ existing: true, models_dev: { model_count: 2, npm: '@ai-sdk/openai', remote_icon: 'https://models.dev/logos/openai.svg' } })
-    expect(openai.offers).toEqual(expect.arrayContaining([
-      expect.objectContaining({ model_id: 'gpt-4o', api_model_id: 'openai/gpt-4o' }),
-      expect.objectContaining({ model_id: 'gpt-4o', api_model_id: 'gpt-4o', prices: [expect.objectContaining({ source: 'models.dev' })] }),
+    expect(result).toEqual({ enriched: 2, created: 0, skipped: 0 })
+    const models = readJson(join(root, 'models.json')).models
+    expect(models).toHaveLength(2)
+    expect(models[0].icon).toBe('/assets/provider-icons/openai.svg')
+    expect(models[0].other_parameters.models_dev.remote_icon).toBe('https://models.dev/logos/openai.svg')
+    expect(models[0].prices).toEqual([{ source: 'openrouter', currency: 'USD', unit_prices: { input: { amount: 2.5, unit: 'per_1m_tokens' } }, endpoint: { provider_id: 'openai', provider_name: 'OpenAI' } }])
+    expect(models[0].sources).toEqual(expect.arrayContaining([
+      expect.objectContaining({ source: 'openrouter', source_id: 'openai/gpt-4o' }),
+      expect.objectContaining({ source: 'models.dev', source_id: 'openai' }),
     ]))
+    expect(models[1].icon).toBe('/assets/provider-icons/moonshot-ai.svg')
+    expect(models[1].other_parameters.models_dev.remote_icon).toBe('https://models.dev/logos/moonshotai.svg')
 
-    const moonshot = readJson(join(providersDir, 'moonshot-ai.json'))
-    expect(moonshot.provider).toBe('Moonshot AI')
-    expect(moonshot.icon).toBe('/assets/provider-icons/moonshot-ai.svg')
-    expect(moonshot.other_parameters.models_dev.remote_icon).toBe('https://models.dev/logos/moonshotai.svg')
-    expect(moonshot.offers).toEqual([expect.objectContaining({ model_id: 'kimi-k2.5', api_model_id: 'kimi-k2.5' })])
-    expect(() => readJson(join(providersDir, 'moonshotai.json'))).toThrow()
-
-    writeJson(join(providersDir, 'moonshotai.json'), { id: 'moonshotai', provider: 'Moonshot AI', offers: [], sources: [{ source: 'models.dev', source_id: 'moonshotai' }] })
-    populateModelsDevProviders({ dataDir: providersDir, modelsPath: join(root, 'models.json'), source: { moonshotai: source.moonshotai }, observedAt: '2026-02-03T04:05:06.000Z' })
-    expect(() => readJson(join(providersDir, 'moonshotai.json'))).toThrow()
-
-    const tencent = readJson(join(providersDir, 'tencent.json'))
-    expect(tencent.provider).toBe('Tencent')
-    expect(tencent.icon).toBe('/assets/provider-icons/tencent.svg')
-    expect(tencent.other_parameters.models_dev.remote_icon).toBe('https://models.dev/logos/tencent.svg')
-    expect(tencent.offers).toEqual([expect.objectContaining({ model_id: 'gpt-4o', api_model_id: 'gpt-4o' })])
-    expect(() => readJson(join(providersDir, 'tencent-coding-plan.json'))).toThrow()
-
-    const github = readJson(join(providersDir, 'github.json'))
-    expect(github).toMatchObject({ id: 'github', provider: 'GitHub Models', offers: [expect.objectContaining({ model_id: 'gpt-4o' })] })
-    expect(() => readJson(join(providersDir, 'empty.json'))).toThrow()
-  })
-
-  it('does not add a duplicate zero-cost models.dev offer when an unpriced OpenRouter offer for the same API id already exists', () => {
-    const root = mkdtempSync(join(tmpdir(), 'mddb-models-dev-zero-cost-'))
-    const providersDir = join(root, 'providers')
-    mkdirSync(providersDir)
-    writeJson(join(root, 'models.json'), {
-      schema_version: 1,
-      models: [{ id: 'cobuddy', model: 'CoBuddy', author: 'baidu', alias: ['baidu/cobuddy:free', 'baidu/cobuddy-20260430'] }],
-      last_updated: '2026-01-01T00:00:00.000Z',
-    })
-    writeJson(join(providersDir, 'openrouter.json'), {
-      schema_version: 1,
-      id: 'openrouter',
-      provider: 'OpenRouter',
-      currency: 'USD',
-      offers: [
-        {
-          model_id: 'cobuddy',
-          model: 'CoBuddy',
-          endpoint_path: '/chat/completions',
-          api_model_id: 'baidu/cobuddy:free',
-          mode: 'chat',
-          prices: [],
-          sources: [{ source: 'openrouter', source_id: 'baidu/cobuddy:free' }],
-        },
-        {
-          model_id: 'cobuddy',
-          model: 'CoBuddy',
-          endpoint_path: 'baidu/cobuddy:free',
-          api_model_id: 'baidu/cobuddy:free',
-          mode: 'api',
-          prices: [{ conditions: {}, prices: { input: { amount: 0, unit: 'per_1m_tokens' }, output: { amount: 0, unit: 'per_1m_tokens' } }, currency: 'USD', source: 'models.dev' }],
-          sources: [{ source: 'models.dev', source_id: 'openrouter/baidu/cobuddy:free', url: 'https://models.dev/api.json' }],
-        },
-      ],
-      sources: [{ source: 'openrouter', source_id: 'openrouter' }],
-      last_updated: '2026-01-01T00:00:00.000Z',
-    })
-
-    populateModelsDevProviders({
-      dataDir: providersDir,
-      modelsPath: join(root, 'models.json'),
-      source: {
-        openrouter: {
-          id: 'openrouter',
-          name: 'OpenRouter',
-          models: {
-            'baidu/cobuddy:free': { id: 'baidu/cobuddy:free', name: 'CoBuddy (free)', cost: { input: 0, output: 0 } },
-          },
-        },
-      },
-      observedAt: '2026-02-03T04:05:06.000Z',
-    })
-
-    const openrouter = readJson(join(providersDir, 'openrouter.json'))
-    expect(openrouter.offers).toHaveLength(1)
-    expect(openrouter.offers[0]).toMatchObject({ model_id: 'cobuddy', api_model_id: 'baidu/cobuddy:free', endpoint_path: '/chat/completions' })
-    expect(openrouter.offers[0].prices).toEqual([])
-    expect(openrouter.offers[0].sources).toEqual(expect.arrayContaining([
-      expect.objectContaining({ source: 'openrouter', source_id: 'baidu/cobuddy:free' }),
-      expect.objectContaining({ source: 'models.dev', source_id: 'openrouter/baidu/cobuddy:free' }),
-    ]))
-  })
-
-  it('does not rewrite providers when models.dev enrichment is already semantically present', () => {
-    const root = mkdtempSync(join(tmpdir(), 'mddb-models-dev-idempotent-'))
-    const providersDir = join(root, 'providers')
-    mkdirSync(providersDir)
-    writeJson(join(root, 'models.json'), {
-      schema_version: 1,
-      models: [{ id: 'gpt-4o', model: 'GPT-4o', author: 'openai', alias: ['openai/gpt-4o'] }],
-      last_updated: '2026-01-01T00:00:00.000Z',
-    })
-    const providerPath = join(providersDir, 'openai.json')
-    const alreadyEnrichedProvider = {
+    const openaiProvider = readJson(join(providersDir, 'openai.json'))
+    expect(openaiProvider).toEqual({
       schema_version: 1,
       id: 'openai',
       provider: 'OpenAI',
-      icon: '/assets/provider-icons/openai.svg',
-      domain: 'platform.openai.com',
-      base_url: 'https://api.openai.com/v1',
-      currency: 'USD',
-      offers: [
-        { model_id: 'gpt-4o', model: 'GPT-4o', api_model_id: 'openai/gpt-4o', sources: [{ source: 'openrouter', source_id: 'openai/gpt-4o' }] },
-        {
-          model_id: 'gpt-4o',
-          model: 'GPT-4o',
-          api_model_id: 'gpt-4o',
-          endpoint_path: 'gpt-4o',
-          mode: 'api',
-          prices: [{ conditions: {}, prices: { input: { amount: 2.5, unit: 'per_1m_tokens' }, output: { amount: 10, unit: 'per_1m_tokens' } }, currency: 'USD', source: 'models.dev' }],
-          other_parameters: { source: 'models.dev', match: 'exact' },
-          sources: [{ source: 'models.dev', source_id: 'openai/gpt-4o', url: 'https://models.dev/api.json' }],
-        },
-      ],
-      other_parameters: { existing: true, models_dev: { model_count: 1, doc: 'https://platform.openai.com/docs/models', npm: '@ai-sdk/openai', env: ['OPENAI_API_KEY'], remote_icon: 'https://models.dev/logos/openai.svg' } },
-      last_updated: '2026-01-01T00:00:00.000Z',
-      sources: [
-        { source: 'openrouter', source_id: 'openai' },
-        { source: 'models.dev', source_id: 'openai', url: 'https://models.dev/api.json', observed_at: '2026-02-03T04:05:06.000Z' },
-      ],
-    }
-    writeJson(providerPath, alreadyEnrichedProvider)
-    const before = readFileSync(providerPath, 'utf8')
+      offers: [{ model_id: 'gpt-4o', api_model_id: 'openai/gpt-4o' }],
+      sources: [{ source: 'openrouter', source_id: 'openai' }],
+    })
+  })
 
-    populateModelsDevProviders({
-      dataDir: providersDir,
+  it('is idempotent when icon enrichment is already present', () => {
+    const root = mkdtempSync(join(tmpdir(), 'mddb-models-dev-icons-idempotent-'))
+    writeJson(join(root, 'models.json'), {
+      schema_version: 1,
+      models: [{
+        id: 'gpt-4o',
+        model: 'GPT-4o',
+        name: 'GPT-4o',
+        author: 'openai',
+        author_id: 'openai',
+        icon: '/assets/provider-icons/openai.svg',
+        other_parameters: { models_dev: { remote_icon: 'https://models.dev/logos/openai.svg' } },
+        sources: [{ source: 'models.dev', source_id: 'openai', url: 'https://models.dev/api.json', observed_at: '2026-02-03T04:05:06.000Z' }],
+      }],
+    })
+
+    const result = populateModelsDevProviders({
       modelsPath: join(root, 'models.json'),
-      source: {
-        openai: {
-          id: 'openai',
-          name: 'OpenAI',
-          doc: 'https://platform.openai.com/docs/models',
-          api: 'https://api.openai.com/v1',
-          npm: '@ai-sdk/openai',
-          env: ['OPENAI_API_KEY'],
-          iconURL: 'https://models.dev/logos/openai.svg',
-          models: { 'gpt-4o': { id: 'gpt-4o', name: 'GPT-4o', cost: { input: 2.5, output: 10 } } },
-        },
-      },
+      source: { openai: { id: 'openai', name: 'OpenAI', iconURL: 'https://models.dev/logos/openai.svg' } },
       observedAt: '2026-02-03T04:05:06.000Z',
     })
 
-    expect(readFileSync(providerPath, 'utf8')).toBe(before)
+    expect(result).toEqual({ enriched: 0, created: 0, skipped: 0 })
   })
 })
