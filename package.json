@@ -15,6 +15,7 @@
     "data:openrouter:models-only": "OPENROUTER_FETCH_ENDPOINTS=0 node scripts/fetch-openrouter-models.mjs",
     "data:models-dev": "node scripts/fetch-models-dev-api.mjs",
     "data:litellm": "node scripts/fetch-litellm-model-prices.mjs",
+    "registry:populate:litellm": "node scripts/populate-litellm-models.mjs",
     "registry:populate:openrouter": "node scripts/populate-registry-openrouter.mjs",
     "registry:populate:models-dev": "node scripts/populate-models-dev-providers.mjs",
     "registry:populate:basellm": "node scripts/populate-basellm-newapi-providers.mjs",
