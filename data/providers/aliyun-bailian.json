@@ -50,7 +50,13 @@
         "source": "basellm-newapi",
         "vendor_name": "aliyun-bailian",
         "tags": [],
-        "match": "exact_source_id"
+        "match": "exact_source_id",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "aliyun-bailian",
+          "tags": [],
+          "match": "exact_source_id"
+        }
       },
       "sources": [
         {

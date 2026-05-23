@@ -8,12 +8,12 @@
   "other_parameters": {
     "models_dev": {
       "model_count": 13,
+      "remote_icon": "https://models.dev/logos/evroc.svg",
       "doc": "https://docs.evroc.com/products/think/overview.html",
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "EVROC_API_KEY"
       ],
-      "remote_icon": "https://models.dev/logos/evroc.svg",
       "icon_status": "disabled_broken_svg"
     },
     "basellm_newapi": {
@@ -148,6 +148,32 @@
           },
           "currency": "USD",
           "source": "models.dev"
+        },
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.24,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.94,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "basellm-newapi",
+          "observed_at": "2026-05-23T17:49:59.198Z",
+          "raw_pricing": {
+            "price_per_m_input": 0.24,
+            "price_per_m_output": 0.94,
+            "price_per_m_cache_read": null,
+            "price_per_m_cache_write": null,
+            "ratio_model": 0.12,
+            "ratio_completion": 3.9166666666666665,
+            "ratio_cache": null,
+            "base_rule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens"
+          }
         }
       ],
       "other_parameters": {

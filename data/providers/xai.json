@@ -291,6 +291,36 @@
           },
           "currency": "USD",
           "source": "models.dev"
+        },
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "basellm-newapi",
+          "observed_at": "2026-05-23T17:49:59.198Z",
+          "raw_pricing": {
+            "price_per_m_input": 1,
+            "price_per_m_output": 2,
+            "price_per_m_cache_read": 0.2,
+            "price_per_m_cache_write": null,
+            "ratio_model": 0.5,
+            "ratio_completion": 2,
+            "ratio_cache": 0.2,
+            "base_rule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens"
+          }
         }
       ],
       "other_parameters": {

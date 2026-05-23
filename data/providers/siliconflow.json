@@ -9,12 +9,12 @@
   "other_parameters": {
     "models_dev": {
       "model_count": 81,
+      "remote_icon": "https://models.dev/logos/siliconflow.svg",
       "doc": "https://cloud.siliconflow.com/models",
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "SILICONFLOW_CN_API_KEY"
-      ],
-      "remote_icon": "https://models.dev/logos/siliconflow.svg"
+      ]
     },
     "basellm_newapi": {
       "vendor_name": "SiliconFlow"
@@ -2226,6 +2226,32 @@
           },
           "currency": "USD",
           "source": "models.dev"
+        },
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "basellm-newapi",
+          "observed_at": "2026-05-23T17:49:59.198Z",
+          "raw_pricing": {
+            "price_per_m_input": 1.2,
+            "price_per_m_output": 4,
+            "price_per_m_cache_read": null,
+            "price_per_m_cache_write": null,
+            "ratio_model": 0.6,
+            "ratio_completion": 3.3333333333333335,
+            "ratio_cache": null,
+            "base_rule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens"
+          }
         }
       ],
       "other_parameters": {

@@ -9,12 +9,12 @@
   "other_parameters": {
     "models_dev": {
       "model_count": 1,
+      "remote_icon": "https://models.dev/logos/tencent.svg",
       "doc": "https://cloud.tencent.com/document/product/1823/130050",
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "TENCENT_TOKENHUB_API_KEY"
-      ],
-      "remote_icon": "https://models.dev/logos/tencent.svg"
+      ]
     }
   },
   "last_updated": "2026-05-22T19:21:26.714Z",

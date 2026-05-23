@@ -9,12 +9,12 @@
   "other_parameters": {
     "models_dev": {
       "model_count": 6,
+      "remote_icon": "https://models.dev/logos/minimax.svg",
       "doc": "https://platform.minimax.io/docs/token-plan/intro",
       "npm": "@ai-sdk/anthropic",
       "env": [
         "MINIMAX_API_KEY"
-      ],
-      "remote_icon": "https://models.dev/logos/minimax.svg"
+      ]
     },
     "basellm_newapi": {
       "vendor_name": "minimax"
@@ -624,6 +624,40 @@
           },
           "currency": "USD",
           "source": "models.dev"
+        },
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_read": {
+              "amount": 0.06,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.375,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "basellm-newapi",
+          "observed_at": "2026-05-23T17:49:59.198Z",
+          "raw_pricing": {
+            "price_per_m_input": 0.3,
+            "price_per_m_output": 1.2,
+            "price_per_m_cache_read": 0.06,
+            "price_per_m_cache_write": 0.375,
+            "ratio_model": 0.15,
+            "ratio_completion": 4,
+            "ratio_cache": 0.2,
+            "base_rule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens"
+          }
         }
       ],
       "other_parameters": {

@@ -8,12 +8,12 @@
   "other_parameters": {
     "models_dev": {
       "model_count": 244,
+      "remote_icon": "https://models.dev/logos/vercel.svg",
       "doc": "https://github.com/vercel/ai/tree/5eb85cc45a259553501f535b8ac79a77d0e79223/packages/gateway",
       "npm": "@ai-sdk/gateway",
       "env": [
         "AI_GATEWAY_API_KEY"
-      ],
-      "remote_icon": "https://models.dev/logos/vercel.svg"
+      ]
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",
@@ -4863,6 +4863,366 @@
           "source": "models.dev",
           "source_id": "vercel/xiaomi/mimo-v2.5",
           "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "embed-v4.0",
+      "model": "Embed v4.0",
+      "api_model_id": "cohere/embed-v4.0",
+      "endpoint_path": "cohere/embed-v4.0",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.12,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "vercel/cohere/embed-v4.0",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
+        }
+      ]
+    },
+    {
+      "model_id": "voyage-3.5",
+      "model": "Voyage 3.5",
+      "api_model_id": "voyage/voyage-3.5",
+      "endpoint_path": "voyage/voyage-3.5",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.06,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "vercel/voyage/voyage-3.5",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
+        }
+      ]
+    },
+    {
+      "model_id": "voyage-law-2",
+      "model": "Voyage Law 2",
+      "api_model_id": "voyage/voyage-law-2",
+      "endpoint_path": "voyage/voyage-law-2",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.12,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "vercel/voyage/voyage-law-2",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
+        }
+      ]
+    },
+    {
+      "model_id": "voyage-3.5-lite",
+      "model": "Voyage 3.5 Lite",
+      "api_model_id": "voyage/voyage-3.5-lite",
+      "endpoint_path": "voyage/voyage-3.5-lite",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.02,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "vercel/voyage/voyage-3.5-lite",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
+        }
+      ]
+    },
+    {
+      "model_id": "voyage-3-large",
+      "model": "Voyage 3 Large",
+      "api_model_id": "voyage/voyage-3-large",
+      "endpoint_path": "voyage/voyage-3-large",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.18,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "vercel/voyage/voyage-3-large",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
+        }
+      ]
+    },
+    {
+      "model_id": "voyage-finance-2",
+      "model": "Voyage Finance 2",
+      "api_model_id": "voyage/voyage-finance-2",
+      "endpoint_path": "voyage/voyage-finance-2",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.12,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "vercel/voyage/voyage-finance-2",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
+        }
+      ]
+    },
+    {
+      "model_id": "voyage-code-2",
+      "model": "Voyage Code 2",
+      "api_model_id": "voyage/voyage-code-2",
+      "endpoint_path": "voyage/voyage-code-2",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.12,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "vercel/voyage/voyage-code-2",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
+        }
+      ]
+    },
+    {
+      "model_id": "voyage-code-3",
+      "model": "Voyage Code 3",
+      "api_model_id": "voyage/voyage-code-3",
+      "endpoint_path": "voyage/voyage-code-3",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.18,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "vercel/voyage/voyage-code-3",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
+        }
+      ]
+    },
+    {
+      "model_id": "codestral-embed",
+      "model": "Codestral Embed",
+      "api_model_id": "mistral/codestral-embed",
+      "endpoint_path": "mistral/codestral-embed",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "vercel/mistral/codestral-embed",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral-embed",
+      "model": "Mistral Embed",
+      "api_model_id": "mistral/mistral-embed",
+      "endpoint_path": "mistral/mistral-embed",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "vercel/mistral/mistral-embed",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
         }
       ]
     }

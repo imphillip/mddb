@@ -46,7 +46,17 @@
           "Tools",
           "163.8K"
         ],
-        "match": "model_id_only"
+        "match": "model_id_only",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "Alibaba (China)",
+          "tags": [
+            "Reasoning",
+            "Tools",
+            "163.8K"
+          ],
+          "match": "model_id_only"
+        }
       },
       "sources": [
         {

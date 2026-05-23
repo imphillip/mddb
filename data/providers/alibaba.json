@@ -9,12 +9,12 @@
   "other_parameters": {
     "models_dev": {
       "model_count": 80,
+      "remote_icon": "https://models.dev/logos/alibaba.svg",
       "doc": "https://www.alibabacloud.com/help/en/model-studio/models",
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "DASHSCOPE_API_KEY"
-      ],
-      "remote_icon": "https://models.dev/logos/alibaba.svg"
+      ]
     },
     "basellm_newapi": {
       "vendor_name": "Alibaba"
@@ -3760,7 +3760,17 @@
           "Tools",
           "1M"
         ],
-        "match": "exact_source_id"
+        "match": "exact_source_id",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "Alibaba",
+          "tags": [
+            "Reasoning",
+            "Tools",
+            "1M"
+          ],
+          "match": "exact_source_id"
+        }
       },
       "sources": [
         {

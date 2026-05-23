@@ -52,7 +52,19 @@
           "Vision",
           "200K"
         ],
-        "match": "exact_source_id"
+        "match": "exact_source_id",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "Zhipu AI",
+          "tags": [
+            "Reasoning",
+            "Tools",
+            "Files",
+            "Vision",
+            "200K"
+          ],
+          "match": "exact_source_id"
+        }
       },
       "sources": [
         {

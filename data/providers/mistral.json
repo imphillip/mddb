@@ -2,9 +2,24 @@
   "schema_version": 1,
   "id": "mistral",
   "provider": "Mistral",
+  "currency": "USD",
   "icon": "/assets/provider-icons/mistral.svg",
   "domain": "docs.mistral.ai",
-  "currency": "USD",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 28,
+      "remote_icon": "https://models.dev/logos/mistral.svg",
+      "doc": "https://docs.mistral.ai/getting-started/models/",
+      "npm": "@ai-sdk/mistral",
+      "env": [
+        "MISTRAL_API_KEY"
+      ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "Mistral"
+    }
+  },
+  "last_updated": "2026-05-22T19:21:26.714Z",
   "offers": [
     {
       "model_id": "codestral-2508",
@@ -1319,6 +1334,32 @@
           },
           "currency": "USD",
           "source": "models.dev"
+        },
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "basellm-newapi",
+          "observed_at": "2026-05-23T17:49:59.198Z",
+          "raw_pricing": {
+            "price_per_m_input": 0.15,
+            "price_per_m_output": 0.6,
+            "price_per_m_cache_read": null,
+            "price_per_m_cache_write": null,
+            "ratio_model": 0.075,
+            "ratio_completion": 4,
+            "ratio_cache": null,
+            "base_rule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens"
+          }
         }
       ],
       "other_parameters": {
@@ -1491,23 +1532,44 @@
           "url": "https://models.dev/api.json"
         }
       ]
+    },
+    {
+      "model_id": "mistral-embed",
+      "model": "Mistral Embed",
+      "api_model_id": "mistral-embed",
+      "endpoint_path": "mistral-embed",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "mistral/mistral-embed",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
+        }
+      ]
     }
   ],
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 28,
-      "doc": "https://docs.mistral.ai/getting-started/models/",
-      "npm": "@ai-sdk/mistral",
-      "env": [
-        "MISTRAL_API_KEY"
-      ],
-      "remote_icon": "https://models.dev/logos/mistral.svg"
-    },
-    "basellm_newapi": {
-      "vendor_name": "Mistral"
-    }
-  },
-  "last_updated": "2026-05-22T19:21:26.714Z",
   "sources": [
     {
       "source": "models.dev",

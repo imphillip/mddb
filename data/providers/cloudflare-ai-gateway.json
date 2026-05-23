@@ -8,14 +8,14 @@
   "other_parameters": {
     "models_dev": {
       "model_count": 75,
+      "remote_icon": "https://models.dev/logos/cloudflare-ai-gateway.svg",
       "doc": "https://developers.cloudflare.com/ai-gateway/",
       "npm": "ai-gateway-provider",
       "env": [
         "CLOUDFLARE_API_TOKEN",
         "CLOUDFLARE_ACCOUNT_ID",
         "CLOUDFLARE_GATEWAY_ID"
-      ],
-      "remote_icon": "https://models.dev/logos/cloudflare-ai-gateway.svg"
+      ]
     },
     "basellm_newapi": {
       "vendor_name": "Cloudflare AI Gateway"
@@ -909,6 +909,32 @@
           },
           "currency": "USD",
           "source": "models.dev"
+        },
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.06,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "basellm-newapi",
+          "observed_at": "2026-05-23T17:49:59.198Z",
+          "raw_pricing": {
+            "price_per_m_input": 0.06,
+            "price_per_m_output": 0.4,
+            "price_per_m_cache_read": null,
+            "price_per_m_cache_write": null,
+            "ratio_model": 0.03,
+            "ratio_completion": 6.666666666666667,
+            "ratio_cache": null,
+            "base_rule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens"
+          }
         }
       ],
       "other_parameters": {
@@ -1772,6 +1798,114 @@
           "source": "models.dev",
           "source_id": "cloudflare-ai-gateway/openai/gpt-5.5",
           "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "nova-3",
+      "model": "Nova 3",
+      "api_model_id": "workers-ai/@cf/deepgram/nova-3",
+      "endpoint_path": "workers-ai/@cf/deepgram/nova-3",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cloudflare-ai-gateway/workers-ai/@cf/deepgram/nova-3",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
+        }
+      ]
+    },
+    {
+      "model_id": "bge-base-en-v1.5",
+      "model": "Bge Base En v1.5",
+      "api_model_id": "workers-ai/@cf/baai/bge-base-en-v1.5",
+      "endpoint_path": "workers-ai/@cf/baai/bge-base-en-v1.5",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.067,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cloudflare-ai-gateway/workers-ai/@cf/baai/bge-base-en-v1.5",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
+        }
+      ]
+    },
+    {
+      "model_id": "bge-m3",
+      "model": "Bge M3",
+      "api_model_id": "workers-ai/@cf/baai/bge-m3",
+      "endpoint_path": "workers-ai/@cf/baai/bge-m3",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.012,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "cloudflare-ai-gateway/workers-ai/@cf/baai/bge-m3",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
         }
       ]
     }

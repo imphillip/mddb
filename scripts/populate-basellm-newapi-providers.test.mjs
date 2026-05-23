@@ -61,7 +61,16 @@ describe('populateBaseLlmNewapiProviders', () => {
 
     const openai = readJson(join(providersDir, 'openai.json'))
     expect(openai.offers).toHaveLength(1)
-    expect(openai.offers[0].prices).toEqual([expect.objectContaining({ source: 'openrouter-endpoint' })])
+    expect(openai.offers[0].prices).toEqual(expect.arrayContaining([
+      expect.objectContaining({ source: 'openrouter-endpoint' }),
+      expect.objectContaining({
+        source: 'basellm-newapi',
+        prices: expect.objectContaining({
+          input: { amount: 2.5, unit: 'per_1m_tokens' },
+          output: { amount: 10, unit: 'per_1m_tokens' },
+        }),
+      }),
+    ]))
     expect(openai.offers[0].sources).toEqual(expect.arrayContaining([
       expect.objectContaining({ source: 'openrouter:endpoints' }),
       expect.objectContaining({ source: 'basellm-newapi', source_id: 'OpenAI/openai/gpt-4o' }),

@@ -9,13 +9,13 @@
   "other_parameters": {
     "models_dev": {
       "model_count": 5,
+      "remote_icon": "https://models.dev/logos/privatemode-ai.svg",
       "doc": "https://docs.privatemode.ai/api/overview",
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "PRIVATEMODE_API_KEY",
         "PRIVATEMODE_ENDPOINT"
-      ],
-      "remote_icon": "https://models.dev/logos/privatemode-ai.svg"
+      ]
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",
@@ -52,6 +52,78 @@
           "source": "models.dev",
           "source_id": "privatemode-ai/gpt-oss-120b",
           "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "whisper-large-v3",
+      "model": "Whisper Large v3",
+      "api_model_id": "whisper-large-v3",
+      "endpoint_path": "whisper-large-v3",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "privatemode-ai/whisper-large-v3",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-embedding-4b",
+      "model": "Qwen3 Embedding 4b",
+      "api_model_id": "qwen3-embedding-4b",
+      "endpoint_path": "qwen3-embedding-4b",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "privatemode-ai/qwen3-embedding-4b",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
         }
       ]
     }

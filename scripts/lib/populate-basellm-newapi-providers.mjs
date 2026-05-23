@@ -214,7 +214,7 @@ function mergeBaseLlmOffer(existingOffers, row, match, observedAt) {
         ...(existing.other_parameters && typeof existing.other_parameters === 'object' && !Array.isArray(existing.other_parameters) ? existing.other_parameters : {}),
         basellm_newapi: addition.other_parameters,
       },
-      ...(hasMeaningfulNonBaseLlmPrice(existing) ? {} : { prices: uniqueBy([...(Array.isArray(existing.prices) ? existing.prices : []), ...(addition.prices ?? [])], (entry) => `${entry.source}|${JSON.stringify(stableJsonValue(entry.conditions ?? {}))}`) }),
+      prices: uniqueBy([...(Array.isArray(existing.prices) ? existing.prices : []), ...(addition.prices ?? [])], (entry) => `${entry.source}|${JSON.stringify(stableJsonValue(entry.conditions ?? {}))}`),
     }
     return offers
   }

@@ -57,7 +57,20 @@
           "Audio",
           "1M"
         ],
-        "match": "model_id_only"
+        "match": "model_id_only",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "Vertex",
+          "tags": [
+            "Reasoning",
+            "Tools",
+            "Files",
+            "Vision",
+            "Audio",
+            "1M"
+          ],
+          "match": "model_id_only"
+        }
       },
       "sources": [
         {

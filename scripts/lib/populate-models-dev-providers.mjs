@@ -156,7 +156,7 @@ function matchCanonicalModel(providerId, modelId, modelRecord, index) {
   return null
 }
 
-function modelsDevOffer(provider, modelId, modelRecord, match) {
+function modelsDevOffer(provider, modelId, modelRecord, match, observedAt) {
   const cost = modelRecord && typeof modelRecord.cost === 'object' && !Array.isArray(modelRecord.cost) ? modelRecord.cost : undefined
   const prices = cost ? {
     ...(typeof cost.input === 'number' ? { input: { amount: cost.input, unit: 'per_1m_tokens' } } : {}),
@@ -184,6 +184,7 @@ function modelsDevOffer(provider, modelId, modelRecord, match) {
       source: 'models.dev',
       source_id: `${provider.modelsDevId ?? provider.id}/${modelId}`,
       url: SOURCE_URL,
+      observed_at: observedAt,
     }],
   }
 }
@@ -203,7 +204,7 @@ function hasMeaningfulModelsDevPrice(offer) {
   })
 }
 
-function mergeOffers(existingOffers, provider, canonicalIndex) {
+function mergeOffers(existingOffers, provider, canonicalIndex, observedAt) {
   const offers = []
   for (const offer of Array.isArray(existingOffers) ? existingOffers : []) {
     const equivalentIndex = offers.findIndex((existing) => existing.model_id === offer.model_id && existing.api_model_id === offer.api_model_id)
@@ -219,7 +220,7 @@ function mergeOffers(existingOffers, provider, canonicalIndex) {
   for (const [modelId, modelRecord] of Object.entries(provider.models ?? {})) {
     const match = matchCanonicalModel(provider.id, modelId, modelRecord, canonicalIndex)
     if (!match) continue
-    const addition = modelsDevOffer(provider, modelId, modelRecord, match)
+    const addition = modelsDevOffer(provider, modelId, modelRecord, match, observedAt)
     const equivalentIndex = offers.findIndex((offer) => offer.model_id === addition.model_id && offer.api_model_id === addition.api_model_id)
     if (equivalentIndex >= 0 && !hasMeaningfulModelsDevPrice(addition)) {
       offers[equivalentIndex] = {
@@ -292,7 +293,7 @@ function enrichProvider(existing, provider, observedAt, canonicalIndex) {
       models_dev: modelsDevParameters(provider),
     },
     last_updated: existing.last_updated ?? observedAt,
-    offers: mergeOffers(existing.offers, provider, canonicalIndex),
+    offers: mergeOffers(existing.offers, provider, canonicalIndex, observedAt),
     sources: mergeSources(existing.sources, provider, observedAt),
   }
 }

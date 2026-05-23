@@ -51,7 +51,18 @@
           "Open Weights",
           "131.1K"
         ],
-        "match": "model_id_only"
+        "match": "model_id_only",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "Fireworks AI",
+          "tags": [
+            "Reasoning",
+            "Tools",
+            "Open Weights",
+            "131.1K"
+          ],
+          "match": "model_id_only"
+        }
       },
       "sources": [
         {

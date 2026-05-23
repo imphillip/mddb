@@ -9,12 +9,12 @@
   "other_parameters": {
     "models_dev": {
       "model_count": 13,
+      "remote_icon": "https://models.dev/logos/regolo-ai.svg",
       "doc": "https://docs.regolo.ai/",
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "REGOLO_API_KEY"
-      ],
-      "remote_icon": "https://models.dev/logos/regolo-ai.svg"
+      ]
     },
     "basellm_newapi": {
       "vendor_name": "Regolo AI"
@@ -78,6 +78,32 @@
           },
           "currency": "USD",
           "source": "models.dev"
+        },
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "basellm-newapi",
+          "observed_at": "2026-05-23T17:49:59.198Z",
+          "raw_pricing": {
+            "price_per_m_input": 0.15,
+            "price_per_m_output": 0.6,
+            "price_per_m_cache_read": null,
+            "price_per_m_cache_write": null,
+            "ratio_model": 0.075,
+            "ratio_completion": 4,
+            "ratio_cache": null,
+            "base_rule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens"
+          }
         }
       ],
       "other_parameters": {
@@ -283,6 +309,78 @@
           "source": "models.dev",
           "source_id": "regolo-ai/llama-3.1-8b-instruct",
           "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-embedding-8b",
+      "model": "Qwen3 Embedding 8b",
+      "api_model_id": "qwen3-embedding-8b",
+      "endpoint_path": "qwen3-embedding-8b",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "regolo-ai/qwen3-embedding-8b",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-reranker-4b",
+      "model": "Qwen3 Reranker 4b",
+      "api_model_id": "qwen3-reranker-4b",
+      "endpoint_path": "qwen3-reranker-4b",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.12,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.12,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "regolo-ai/qwen3-reranker-4b",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
         }
       ]
     }

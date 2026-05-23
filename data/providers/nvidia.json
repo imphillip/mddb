@@ -2,10 +2,25 @@
   "schema_version": 1,
   "id": "nvidia",
   "provider": "Nvidia",
-  "icon": "/assets/provider-icons/nvidia.svg",
-  "domain": "docs.api.nvidia.com",
-  "base_url": "https://integrate.api.nvidia.com/v1",
   "currency": "USD",
+  "icon": "/assets/provider-icons/nvidia.svg",
+  "base_url": "https://integrate.api.nvidia.com/v1",
+  "domain": "docs.api.nvidia.com",
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 92,
+      "remote_icon": "https://models.dev/logos/nvidia.svg",
+      "doc": "https://docs.api.nvidia.com/nim/",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "NVIDIA_API_KEY"
+      ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "Nvidia"
+    }
+  },
+  "last_updated": "2026-05-22T19:21:26.714Z",
   "offers": [
     {
       "model_id": "deepseek-v3.2",
@@ -316,6 +331,32 @@
           },
           "currency": "USD",
           "source": "models.dev"
+        },
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "basellm-newapi",
+          "observed_at": "2026-05-23T17:49:59.198Z",
+          "raw_pricing": {
+            "price_per_m_input": 0.2,
+            "price_per_m_output": 0.8,
+            "price_per_m_cache_read": null,
+            "price_per_m_cache_write": null,
+            "ratio_model": 0.1,
+            "ratio_completion": 4,
+            "ratio_cache": null,
+            "base_rule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens"
+          }
         }
       ],
       "other_parameters": {
@@ -1159,23 +1200,44 @@
           "url": "https://models.dev/api.json"
         }
       ]
+    },
+    {
+      "model_id": "bge-m3",
+      "model": "Bge M3",
+      "api_model_id": "baai/bge-m3",
+      "endpoint_path": "baai/bge-m3",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "nvidia/baai/bge-m3",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
+        }
+      ]
     }
   ],
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 92,
-      "doc": "https://docs.api.nvidia.com/nim/",
-      "npm": "@ai-sdk/openai-compatible",
-      "env": [
-        "NVIDIA_API_KEY"
-      ],
-      "remote_icon": "https://models.dev/logos/nvidia.svg"
-    },
-    "basellm_newapi": {
-      "vendor_name": "Nvidia"
-    }
-  },
-  "last_updated": "2026-05-22T19:21:26.714Z",
   "sources": [
     {
       "source": "models.dev",

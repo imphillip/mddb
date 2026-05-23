@@ -8,14 +8,14 @@
   "other_parameters": {
     "models_dev": {
       "model_count": 39,
+      "remote_icon": "https://models.dev/logos/google-vertex.svg",
       "doc": "https://cloud.google.com/vertex-ai/generative-ai/docs/models",
       "npm": "@ai-sdk/google-vertex",
       "env": [
         "GOOGLE_VERTEX_PROJECT",
         "GOOGLE_VERTEX_LOCATION",
         "GOOGLE_APPLICATION_CREDENTIALS"
-      ],
-      "remote_icon": "https://models.dev/logos/google-vertex.svg"
+      ]
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",
@@ -372,6 +372,42 @@
           "source": "models.dev",
           "source_id": "google-vertex/gemini-3.5-flash",
           "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "gemini-embedding-001",
+      "model": "Gemini Embedding 001",
+      "api_model_id": "gemini-embedding-001",
+      "endpoint_path": "gemini-embedding-001",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "google-vertex/gemini-embedding-001",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
         }
       ]
     }

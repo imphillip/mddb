@@ -9,12 +9,12 @@
   "other_parameters": {
     "models_dev": {
       "model_count": 8,
+      "remote_icon": "https://models.dev/logos/stackit.svg",
       "doc": "https://docs.stackit.cloud/products/data-and-ai/ai-model-serving/basics/available-shared-models",
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "STACKIT_API_KEY"
-      ],
-      "remote_icon": "https://models.dev/logos/stackit.svg"
+      ]
     },
     "basellm_newapi": {
       "vendor_name": "STACKIT"
@@ -43,6 +43,32 @@
           },
           "currency": "USD",
           "source": "models.dev"
+        },
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.49,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.71,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "basellm-newapi",
+          "observed_at": "2026-05-23T17:49:59.198Z",
+          "raw_pricing": {
+            "price_per_m_input": 0.49,
+            "price_per_m_output": 0.71,
+            "price_per_m_cache_read": null,
+            "price_per_m_cache_write": null,
+            "ratio_model": 0.245,
+            "ratio_completion": 1.4489795918367347,
+            "ratio_cache": null,
+            "base_rule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens"
+          }
         }
       ],
       "other_parameters": {
@@ -106,6 +132,42 @@
           "source": "models.dev",
           "source_id": "stackit/google/gemma-3-27b-it",
           "url": "https://models.dev/api.json"
+        }
+      ]
+    },
+    {
+      "model_id": "e5-mistral-7b-instruct",
+      "model": "E5 Mistral 7b Instruct",
+      "api_model_id": "intfloat/e5-mistral-7b-instruct",
+      "endpoint_path": "intfloat/e5-mistral-7b-instruct",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.02,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.02,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "models.dev"
+        }
+      ],
+      "other_parameters": {
+        "source": "models.dev",
+        "match": "normalized"
+      },
+      "sources": [
+        {
+          "source": "models.dev",
+          "source_id": "stackit/intfloat/e5-mistral-7b-instruct",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-23T17:52:34.339Z"
         }
       ]
     }

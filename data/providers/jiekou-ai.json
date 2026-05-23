@@ -47,7 +47,18 @@
           "Open Weights",
           "200K"
         ],
-        "match": "model_id_only"
+        "match": "model_id_only",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "Jiekou.AI",
+          "tags": [
+            "Reasoning",
+            "Tools",
+            "Open Weights",
+            "200K"
+          ],
+          "match": "model_id_only"
+        }
       },
       "sources": [
         {

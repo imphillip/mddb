@@ -51,7 +51,18 @@
           "Open Weights",
           "256K"
         ],
-        "match": "exact_source_id"
+        "match": "exact_source_id",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "Qiniu",
+          "tags": [
+            "Reasoning",
+            "Tools",
+            "Open Weights",
+            "256K"
+          ],
+          "match": "exact_source_id"
+        }
       },
       "sources": [
         {

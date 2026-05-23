@@ -142,6 +142,63 @@
           "url": "https://models.dev/api.json"
         }
       ]
+    },
+    {
+      "model_id": "qwen3-embedding-4b",
+      "model": "Qwen3 Embedding 4b",
+      "api_model_id": "qwen/qwen3-embedding-4b",
+      "endpoint_path": "qwen/qwen3-embedding-4b",
+      "mode": "api",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.01,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "basellm-newapi",
+          "observed_at": "2026-05-23T17:49:59.198Z",
+          "raw_pricing": {
+            "price_per_m_input": 0.01,
+            "price_per_m_output": null,
+            "price_per_m_cache_read": null,
+            "price_per_m_cache_write": null,
+            "ratio_model": 0.005,
+            "ratio_completion": null,
+            "ratio_cache": null,
+            "base_rule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens"
+          }
+        }
+      ],
+      "other_parameters": {
+        "source": "basellm-newapi",
+        "vendor_name": "Inference",
+        "tags": [
+          "Open Weights",
+          "32K"
+        ],
+        "match": "model_id_only",
+        "basellm_newapi": {
+          "source": "basellm-newapi",
+          "vendor_name": "Inference",
+          "tags": [
+            "Open Weights",
+            "32K"
+          ],
+          "match": "model_id_only"
+        }
+      },
+      "sources": [
+        {
+          "source": "basellm-newapi",
+          "source_id": "Inference/qwen/qwen3-embedding-4b",
+          "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
+          "observed_at": "2026-05-23T17:49:59.198Z"
+        }
+      ]
     }
   ],
   "sources": [
