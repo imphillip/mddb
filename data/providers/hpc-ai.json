@@ -3,7 +3,7 @@
   "id": "hpc-ai",
   "provider": "HPC-AI",
   "currency": "USD",
-  "icon": "https://models.dev/logos/hpc-ai.svg",
+  "icon": "/assets/provider-icons/hpc-ai.svg",
   "base_url": "https://api.hpc-ai.com/inference/v1",
   "domain": "hpc-ai.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "HPC_AI_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/hpc-ai.svg"
     },
     "basellm_newapi": {
       "vendor_name": "HPC-AI"

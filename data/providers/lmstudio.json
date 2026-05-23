@@ -3,7 +3,7 @@
   "id": "lmstudio",
   "provider": "LMStudio",
   "currency": "USD",
-  "icon": "https://models.dev/logos/lmstudio.svg",
+  "icon": "/assets/provider-icons/lmstudio.svg",
   "base_url": "http://127.0.0.1:1234/v1",
   "domain": "lmstudio.ai",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "LMSTUDIO_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/lmstudio.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

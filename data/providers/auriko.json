@@ -3,7 +3,7 @@
   "id": "auriko",
   "provider": "Auriko",
   "currency": "USD",
-  "icon": "https://models.dev/logos/auriko.svg",
+  "icon": "/assets/provider-icons/auriko.svg",
   "base_url": "https://api.auriko.ai/v1",
   "domain": "docs.auriko.ai",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "AURIKO_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/auriko.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Auriko"

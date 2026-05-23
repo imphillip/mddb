@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "friendli",
   "provider": "Friendli",
-  "icon": "https://models.dev/logos/friendli.svg",
+  "icon": "/assets/provider-icons/friendli.svg",
   "domain": "friendli.ai",
   "base_url": "https://api.friendli.ai/serverless/v1",
   "currency": "USD",
@@ -652,7 +652,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "FRIENDLI_TOKEN"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/friendli.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Friendli"

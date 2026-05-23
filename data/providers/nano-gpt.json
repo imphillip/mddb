@@ -3,7 +3,7 @@
   "id": "nano-gpt",
   "provider": "NanoGPT",
   "currency": "USD",
-  "icon": "https://models.dev/logos/nano-gpt.svg",
+  "icon": "/assets/provider-icons/nano-gpt.svg",
   "base_url": "https://nano-gpt.com/api/v1",
   "domain": "docs.nano-gpt.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "NANO_GPT_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/nano-gpt.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

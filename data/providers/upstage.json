@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "upstage",
   "provider": "Upstage",
-  "icon": "https://models.dev/logos/upstage.svg",
+  "icon": "/assets/provider-icons/upstage.svg",
   "domain": "developers.upstage.ai",
   "base_url": "https://api.upstage.ai/v1/solar",
   "currency": "USD",
@@ -70,7 +70,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "UPSTAGE_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/upstage.svg"
     }
   },
   "last_updated": "2026-05-22T19:21:26.714Z",

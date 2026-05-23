@@ -3,7 +3,7 @@
   "id": "siliconflow",
   "provider": "SiliconFlow",
   "currency": "USD",
-  "icon": "https://models.dev/logos/siliconflow.svg",
+  "icon": "/assets/provider-icons/siliconflow.svg",
   "base_url": "https://api.siliconflow.com/v1",
   "domain": "cloud.siliconflow.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "SILICONFLOW_CN_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/siliconflow.svg"
     },
     "basellm_newapi": {
       "vendor_name": "SiliconFlow"

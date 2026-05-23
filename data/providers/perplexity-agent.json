@@ -3,7 +3,7 @@
   "id": "perplexity-agent",
   "provider": "Perplexity Agent",
   "currency": "USD",
-  "icon": "https://models.dev/logos/perplexity-agent.svg",
+  "icon": "/assets/provider-icons/perplexity-agent.svg",
   "base_url": "https://api.perplexity.ai/v1",
   "domain": "docs.perplexity.ai",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai",
       "env": [
         "PERPLEXITY_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/perplexity-agent.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Perplexity Agent"

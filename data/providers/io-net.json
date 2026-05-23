@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "io-net",
   "provider": "Io Net",
-  "icon": "https://models.dev/logos/io-net.svg",
+  "icon": "/assets/provider-icons/io-net.svg",
   "domain": "io.net",
   "base_url": "https://api.intelligence.io.solutions/api/v1",
   "currency": "USD",
@@ -726,7 +726,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "IOINTELLIGENCE_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/io-net.svg"
     },
     "basellm_newapi": {
       "vendor_name": "IO.NET"

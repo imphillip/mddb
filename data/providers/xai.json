@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "xai",
   "provider": "xAI",
-  "icon": "https://models.dev/logos/xai.svg",
+  "icon": "/assets/provider-icons/xai.svg",
   "domain": "docs.x.ai",
   "currency": "USD",
   "offers": [
@@ -370,7 +370,8 @@
       "npm": "@ai-sdk/xai",
       "env": [
         "XAI_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/xai.svg"
     },
     "basellm_newapi": {
       "vendor_name": "xAI"

@@ -3,7 +3,7 @@
   "id": "vercel",
   "provider": "Vercel AI Gateway",
   "currency": "USD",
-  "icon": "https://models.dev/logos/vercel.svg",
+  "icon": "/assets/provider-icons/vercel.svg",
   "domain": "github.com",
   "other_parameters": {
     "models_dev": {
@@ -12,7 +12,8 @@
       "npm": "@ai-sdk/gateway",
       "env": [
         "AI_GATEWAY_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/vercel.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

@@ -3,7 +3,7 @@
   "id": "regolo-ai",
   "provider": "Regolo AI",
   "currency": "USD",
-  "icon": "https://models.dev/logos/regolo-ai.svg",
+  "icon": "/assets/provider-icons/regolo-ai.svg",
   "base_url": "https://api.regolo.ai/v1",
   "domain": "docs.regolo.ai",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "REGOLO_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/regolo-ai.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Regolo AI"

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "azure",
   "provider": "Azure",
-  "icon": "https://models.dev/logos/azure.svg",
+  "icon": "/assets/provider-icons/azure.svg",
   "domain": "learn.microsoft.com",
   "currency": "USD",
   "offers": [
@@ -4389,7 +4389,8 @@
       "env": [
         "AZURE_RESOURCE_NAME",
         "AZURE_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/azure.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Azure"

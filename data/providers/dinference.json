@@ -3,7 +3,7 @@
   "id": "dinference",
   "provider": "DInference",
   "currency": "USD",
-  "icon": "https://models.dev/logos/dinference.svg",
+  "icon": "/assets/provider-icons/dinference.svg",
   "base_url": "https://api.dinference.com/v1",
   "domain": "dinference.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "DINFERENCE_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/dinference.svg"
     },
     "basellm_newapi": {
       "vendor_name": "DInference"

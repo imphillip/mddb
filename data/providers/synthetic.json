@@ -3,7 +3,7 @@
   "id": "synthetic",
   "provider": "Synthetic",
   "currency": "USD",
-  "icon": "https://models.dev/logos/synthetic.svg",
+  "icon": "/assets/provider-icons/synthetic.svg",
   "base_url": "https://api.synthetic.new/openai/v1",
   "domain": "synthetic.new",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "SYNTHETIC_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/synthetic.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Synthetic"

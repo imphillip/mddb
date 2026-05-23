@@ -3,7 +3,7 @@
   "id": "sap-ai-core",
   "provider": "SAP AI Core",
   "currency": "USD",
-  "icon": "https://models.dev/logos/sap-ai-core.svg",
+  "icon": "/assets/provider-icons/sap-ai-core.svg",
   "domain": "help.sap.com",
   "other_parameters": {
     "models_dev": {
@@ -12,7 +12,8 @@
       "npm": "@jerome-benoit/sap-ai-provider-v2",
       "env": [
         "AICORE_SERVICE_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/sap-ai-core.svg"
     },
     "basellm_newapi": {
       "vendor_name": "SAP AI Core"

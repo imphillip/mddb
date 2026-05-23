@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "inceptron",
   "provider": "Inceptron",
-  "icon": "https://models.dev/logos/inceptron.svg",
+  "icon": "/assets/provider-icons/inceptron.svg",
   "domain": "docs.inceptron.io",
   "base_url": "https://api.inceptron.io/v1",
   "currency": "USD",
@@ -361,7 +361,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "INCEPTRON_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/inceptron.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Inceptron"

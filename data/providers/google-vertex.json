@@ -3,7 +3,7 @@
   "id": "google-vertex",
   "provider": "Vertex",
   "currency": "USD",
-  "icon": "https://models.dev/logos/google-vertex.svg",
+  "icon": "/assets/provider-icons/google-vertex.svg",
   "domain": "cloud.google.com",
   "other_parameters": {
     "models_dev": {
@@ -14,7 +14,8 @@
         "GOOGLE_VERTEX_PROJECT",
         "GOOGLE_VERTEX_LOCATION",
         "GOOGLE_APPLICATION_CREDENTIALS"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/google-vertex.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

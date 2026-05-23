@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "morph",
   "provider": "Morph",
-  "icon": "https://models.dev/logos/morph.svg",
+  "icon": "/assets/provider-icons/morph.svg",
   "domain": "docs.morphllm.com",
   "base_url": "https://api.morphllm.com/v1",
   "currency": "USD",
@@ -491,7 +491,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "MORPH_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/morph.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Morph"

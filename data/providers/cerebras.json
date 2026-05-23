@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "cerebras",
   "provider": "Cerebras",
-  "icon": "https://models.dev/logos/cerebras.svg",
+  "icon": "/assets/provider-icons/cerebras.svg",
   "domain": "inference-docs.cerebras.ai",
   "currency": "USD",
   "offers": [
@@ -314,7 +314,8 @@
       "npm": "@ai-sdk/cerebras",
       "env": [
         "CEREBRAS_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/cerebras.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Cerebras"

@@ -3,7 +3,7 @@
   "id": "cortecs",
   "provider": "Cortecs",
   "currency": "USD",
-  "icon": "https://models.dev/logos/cortecs.svg",
+  "icon": "/assets/provider-icons/cortecs.svg",
   "base_url": "https://api.cortecs.ai/v1",
   "domain": "api.cortecs.ai",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "CORTECS_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/cortecs.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Cortecs"

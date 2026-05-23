@@ -3,7 +3,7 @@
   "id": "minimax",
   "provider": "Minimax",
   "currency": "USD",
-  "icon": "https://models.dev/logos/minimax.svg",
+  "icon": "/assets/provider-icons/minimax.svg",
   "base_url": "https://api.minimax.io/anthropic/v1",
   "domain": "platform.minimax.io",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/anthropic",
       "env": [
         "MINIMAX_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/minimax.svg"
     },
     "basellm_newapi": {
       "vendor_name": "minimax"

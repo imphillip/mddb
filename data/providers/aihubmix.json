@@ -3,7 +3,7 @@
   "id": "aihubmix",
   "provider": "AIHubMix",
   "currency": "USD",
-  "icon": "https://models.dev/logos/aihubmix.svg",
+  "icon": "/assets/provider-icons/aihubmix.svg",
   "domain": "docs.aihubmix.com",
   "other_parameters": {
     "models_dev": {
@@ -12,7 +12,8 @@
       "npm": "@aihubmix/ai-sdk-provider",
       "env": [
         "AIHUBMIX_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/aihubmix.svg"
     },
     "basellm_newapi": {
       "vendor_name": "AIHubMix"

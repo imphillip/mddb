@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "inception",
   "provider": "Inception",
-  "icon": "https://models.dev/logos/inception.svg",
+  "icon": "/assets/provider-icons/inception.svg",
   "domain": "platform.inceptionlabs.ai",
   "base_url": "https://api.inceptionlabs.ai/v1/",
   "currency": "USD",
@@ -126,7 +126,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "INCEPTION_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/inception.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Inception"

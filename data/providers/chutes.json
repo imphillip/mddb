@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "chutes",
   "provider": "Chutes",
-  "icon": "https://models.dev/logos/chutes.svg",
+  "icon": "/assets/provider-icons/chutes.svg",
   "domain": "llm.chutes.ai",
   "base_url": "https://llm.chutes.ai/v1",
   "currency": "USD",
@@ -952,7 +952,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "CHUTES_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/chutes.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Chutes"

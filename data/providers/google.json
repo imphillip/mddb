@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "google",
   "provider": "Google",
-  "icon": "https://models.dev/logos/google.svg",
+  "icon": "/assets/provider-icons/google.svg",
   "domain": "ai.google.dev",
   "currency": "USD",
   "offers": [
@@ -1378,7 +1378,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-7,
+              "amount": 1e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -1452,7 +1452,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-7,
+              "amount": 1e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -1526,7 +1526,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 7.5e-8,
+              "amount": 7.5e-08,
               "unit": "per_image"
             },
             "web_search": {
@@ -1597,7 +1597,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 7.5e-8,
+              "amount": 7.5e-08,
               "unit": "per_image"
             },
             "web_search": {
@@ -1668,7 +1668,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-7,
+              "amount": 3e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -1744,7 +1744,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-7,
+              "amount": 3e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -1820,7 +1820,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-7,
+              "amount": 3e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -1896,7 +1896,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-7,
+              "amount": 3e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -1972,7 +1972,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-7,
+              "amount": 3e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -2045,7 +2045,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-7,
+              "amount": 3e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -2118,7 +2118,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-7,
+              "amount": 1e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -2194,7 +2194,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-7,
+              "amount": 1e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -2270,7 +2270,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-7,
+              "amount": 1e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -2346,7 +2346,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-7,
+              "amount": 1e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -2422,7 +2422,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -2498,7 +2498,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -2574,7 +2574,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -2650,7 +2650,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -2726,7 +2726,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -2802,7 +2802,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -2878,7 +2878,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -2954,7 +2954,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -3030,7 +3030,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -3106,7 +3106,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -3182,7 +3182,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -3258,7 +3258,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -3334,7 +3334,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 5e-7,
+              "amount": 5e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -3410,7 +3410,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 5e-7,
+              "amount": 5e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -3486,7 +3486,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -3561,7 +3561,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -3756,7 +3756,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2.5e-7,
+              "amount": 2.5e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -3832,7 +3832,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2.5e-7,
+              "amount": 2.5e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -3908,7 +3908,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2.5e-7,
+              "amount": 2.5e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -3984,7 +3984,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2.5e-7,
+              "amount": 2.5e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -4060,7 +4060,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -4136,7 +4136,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -4212,7 +4212,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -5107,7 +5107,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.0000015,
+              "amount": 1.5e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -5183,7 +5183,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.0000015,
+              "amount": 1.5e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -5767,7 +5767,8 @@
         "GOOGLE_API_KEY",
         "GOOGLE_GENERATIVE_AI_API_KEY",
         "GEMINI_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/google.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Google"

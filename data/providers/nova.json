@@ -3,7 +3,7 @@
   "id": "nova",
   "provider": "Nova",
   "currency": "USD",
-  "icon": "https://models.dev/logos/nova.svg",
+  "icon": "/assets/provider-icons/nova.svg",
   "base_url": "https://api.nova.amazon.com/v1",
   "domain": "nova.amazon.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "NOVA_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/nova.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

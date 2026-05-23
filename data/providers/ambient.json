@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "ambient",
   "provider": "Ambient",
-  "icon": "https://models.dev/logos/ambient.svg",
+  "icon": "/assets/provider-icons/ambient.svg",
   "domain": "ambient.xyz",
   "base_url": "https://api.ambient.xyz/v1",
   "currency": "USD",
@@ -648,7 +648,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "AMBIENT_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/ambient.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Ambient"

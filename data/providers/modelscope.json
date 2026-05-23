@@ -3,7 +3,7 @@
   "id": "modelscope",
   "provider": "ModelScope",
   "currency": "USD",
-  "icon": "https://models.dev/logos/modelscope.svg",
+  "icon": "/assets/provider-icons/modelscope.svg",
   "base_url": "https://api-inference.modelscope.cn/v1",
   "domain": "modelscope.cn",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "MODELSCOPE_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/modelscope.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

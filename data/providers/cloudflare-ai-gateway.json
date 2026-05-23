@@ -3,7 +3,7 @@
   "id": "cloudflare-ai-gateway",
   "provider": "Cloudflare AI Gateway",
   "currency": "USD",
-  "icon": "https://models.dev/logos/cloudflare-ai-gateway.svg",
+  "icon": "/assets/provider-icons/cloudflare-ai-gateway.svg",
   "domain": "developers.cloudflare.com",
   "other_parameters": {
     "models_dev": {
@@ -14,7 +14,8 @@
         "CLOUDFLARE_API_TOKEN",
         "CLOUDFLARE_ACCOUNT_ID",
         "CLOUDFLARE_GATEWAY_ID"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/cloudflare-ai-gateway.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Cloudflare AI Gateway"

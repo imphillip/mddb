@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "groq",
   "provider": "Groq",
-  "icon": "https://models.dev/logos/groq.svg",
+  "icon": "/assets/provider-icons/groq.svg",
   "domain": "console.groq.com",
   "currency": "USD",
   "offers": [
@@ -796,7 +796,8 @@
       "npm": "@ai-sdk/groq",
       "env": [
         "GROQ_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/groq.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Groq"

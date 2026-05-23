@@ -3,7 +3,7 @@
   "id": "scaleway",
   "provider": "Scaleway",
   "currency": "USD",
-  "icon": "https://models.dev/logos/scaleway.svg",
+  "icon": "/assets/provider-icons/scaleway.svg",
   "base_url": "https://api.scaleway.ai/v1",
   "domain": "scaleway.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "SCALEWAY_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/scaleway.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Scaleway"

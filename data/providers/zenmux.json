@@ -3,7 +3,7 @@
   "id": "zenmux",
   "provider": "ZenMux",
   "currency": "USD",
-  "icon": "https://models.dev/logos/zenmux.svg",
+  "icon": "/assets/provider-icons/zenmux.svg",
   "base_url": "https://zenmux.ai/api/v1",
   "domain": "docs.zenmux.ai",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "ZENMUX_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/zenmux.svg"
     },
     "basellm_newapi": {
       "vendor_name": "ZenMux"

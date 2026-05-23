@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "cohere",
   "provider": "Cohere",
-  "icon": "https://models.dev/logos/cohere.svg",
+  "icon": "/assets/provider-icons/cohere.svg",
   "domain": "docs.cohere.com",
   "currency": "USD",
   "offers": [
@@ -398,7 +398,8 @@
       "npm": "@ai-sdk/cohere",
       "env": [
         "COHERE_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/cohere.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Cohere"

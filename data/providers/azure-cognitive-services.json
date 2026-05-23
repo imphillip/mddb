@@ -3,7 +3,7 @@
   "id": "azure-cognitive-services",
   "provider": "Azure Cognitive Services",
   "currency": "USD",
-  "icon": "https://models.dev/logos/azure-cognitive-services.svg",
+  "icon": "/assets/provider-icons/azure-cognitive-services.svg",
   "domain": "learn.microsoft.com",
   "other_parameters": {
     "models_dev": {
@@ -13,7 +13,8 @@
       "env": [
         "AZURE_COGNITIVE_SERVICES_RESOURCE_NAME",
         "AZURE_COGNITIVE_SERVICES_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/azure-cognitive-services.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Azure Cognitive Services"

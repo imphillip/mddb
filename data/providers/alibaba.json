@@ -3,7 +3,7 @@
   "id": "alibaba",
   "provider": "Alibaba",
   "currency": "USD",
-  "icon": "https://models.dev/logos/alibaba.svg",
+  "icon": "/assets/provider-icons/alibaba.svg",
   "base_url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
   "domain": "alibabacloud.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "DASHSCOPE_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/alibaba.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Alibaba"

@@ -3,7 +3,7 @@
   "id": "stepfun",
   "provider": "Stepfun",
   "currency": "USD",
-  "icon": "https://models.dev/logos/stepfun.svg",
+  "icon": "/assets/provider-icons/stepfun.svg",
   "base_url": "https://api.stepfun.com/v1",
   "domain": "platform.stepfun.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "STEPFUN_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/stepfun.svg"
     },
     "basellm_newapi": {
       "vendor_name": "StepFun"

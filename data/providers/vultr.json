@@ -3,7 +3,7 @@
   "id": "vultr",
   "provider": "Vultr",
   "currency": "USD",
-  "icon": "https://models.dev/logos/vultr.svg",
+  "icon": "/assets/provider-icons/vultr.svg",
   "base_url": "https://api.vultrinference.com/v1",
   "domain": "api.vultrinference.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "VULTR_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/vultr.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Vultr"

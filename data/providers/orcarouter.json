@@ -3,7 +3,7 @@
   "id": "orcarouter",
   "provider": "OrcaRouter",
   "currency": "USD",
-  "icon": "https://models.dev/logos/orcarouter.svg",
+  "icon": "/assets/provider-icons/orcarouter.svg",
   "base_url": "https://api.orcarouter.ai/v1",
   "domain": "docs.orcarouter.ai",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "ORCAROUTER_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/orcarouter.svg"
     },
     "basellm_newapi": {
       "vendor_name": "OrcaRouter"

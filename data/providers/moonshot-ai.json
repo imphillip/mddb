@@ -3,7 +3,7 @@
   "id": "moonshot-ai",
   "provider": "Moonshot AI",
   "currency": "USD",
-  "icon": "https://models.dev/logos/moonshot-ai.svg",
+  "icon": "/assets/provider-icons/moonshot-ai.svg",
   "base_url": "https://api.moonshot.cn/v1",
   "domain": "platform.moonshot.cn",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "MOONSHOT_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/moonshot-ai.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Moonshot AI"

@@ -3,7 +3,7 @@
   "id": "neuralwatt",
   "provider": "Neuralwatt",
   "currency": "USD",
-  "icon": "https://models.dev/logos/neuralwatt.svg",
+  "icon": "/assets/provider-icons/neuralwatt.svg",
   "base_url": "https://api.neuralwatt.com/v1",
   "domain": "portal.neuralwatt.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "NEURALWATT_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/neuralwatt.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Neuralwatt"

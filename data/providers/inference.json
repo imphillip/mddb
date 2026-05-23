@@ -3,7 +3,7 @@
   "id": "inference",
   "provider": "Inference",
   "currency": "USD",
-  "icon": "https://models.dev/logos/inference.svg",
+  "icon": "/assets/provider-icons/inference.svg",
   "base_url": "https://inference.net/v1",
   "domain": "inference.net",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "INFERENCE_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/inference.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Inference"

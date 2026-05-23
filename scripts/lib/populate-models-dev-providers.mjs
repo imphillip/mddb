@@ -261,17 +261,21 @@ function mergeSources(existing, provider, observedAt) {
   ], (source) => `${source.source}|${source.source_id}`)
 }
 
+function modelsDevRemoteIconUrl(provider) {
+  if (typeof provider.iconURL === 'string' && provider.iconURL.trim() !== '') return provider.iconURL
+  return `https://models.dev/logos/${provider.id}.svg`
+}
+
+function localProviderIconPath(provider) {
+  return `/assets/provider-icons/${provider.id}.svg`
+}
+
 function modelsDevParameters(provider) {
-  const params = { model_count: Object.keys(provider.models ?? {}).length }
+  const params = { model_count: Object.keys(provider.models ?? {}).length, remote_icon: modelsDevRemoteIconUrl(provider) }
   if (typeof provider.doc === 'string') params.doc = provider.doc
   if (typeof provider.npm === 'string') params.npm = provider.npm
   if (Array.isArray(provider.env) && provider.env.every((item) => typeof item === 'string')) params.env = provider.env
   return params
-}
-
-function modelsDevIconUrl(provider) {
-  if (typeof provider.iconURL === 'string' && provider.iconURL.trim() !== '') return provider.iconURL
-  return `https://models.dev/logos/${provider.id}.svg`
 }
 
 function enrichProvider(existing, provider, observedAt, canonicalIndex) {
@@ -280,7 +284,7 @@ function enrichProvider(existing, provider, observedAt, canonicalIndex) {
     id: existing.id ?? provider.id,
     provider: existing.provider ?? provider.name,
     currency: existing.currency ?? 'USD',
-    icon: modelsDevIconUrl(provider),
+    icon: localProviderIconPath(provider),
     ...(typeof provider.api === 'string' ? { base_url: existing.base_url ?? provider.api } : {}),
     ...(domainFromUrl(provider.doc) ? { domain: existing.domain ?? domainFromUrl(provider.doc) } : {}),
     other_parameters: {

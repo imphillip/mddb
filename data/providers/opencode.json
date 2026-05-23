@@ -3,7 +3,7 @@
   "id": "opencode",
   "provider": "OpenCode Zen",
   "currency": "USD",
-  "icon": "https://models.dev/logos/opencode.svg",
+  "icon": "/assets/provider-icons/opencode.svg",
   "base_url": "https://opencode.ai/zen/v1",
   "domain": "opencode.ai",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "OPENCODE_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/opencode.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

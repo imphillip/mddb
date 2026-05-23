@@ -3,7 +3,7 @@
   "id": "openrouter",
   "provider": "OpenRouter",
   "currency": "USD",
-  "icon": "https://models.dev/logos/openrouter.svg",
+  "icon": "/assets/provider-icons/openrouter.svg",
   "base_url": "https://openrouter.ai/api/v1",
   "domain": "openrouter.ai",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@openrouter/ai-sdk-provider",
       "env": [
         "OPENROUTER_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/openrouter.svg"
     },
     "basellm_newapi": {
       "vendor_name": "OpenRouter"
@@ -2662,7 +2663,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-7,
+              "amount": 1e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -2727,7 +2728,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 7.5e-8,
+              "amount": 7.5e-08,
               "unit": "per_image"
             },
             "web_search": {
@@ -2790,7 +2791,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-7,
+              "amount": 3e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -2855,7 +2856,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-7,
+              "amount": 3e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -2920,7 +2921,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-7,
+              "amount": 1e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -2985,7 +2986,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-7,
+              "amount": 1e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -3050,7 +3051,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -3115,7 +3116,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -3180,7 +3181,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -3245,7 +3246,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 5e-7,
+              "amount": 5e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -3310,7 +3311,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -3427,7 +3428,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2.5e-7,
+              "amount": 2.5e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -3492,7 +3493,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2.5e-7,
+              "amount": 2.5e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -3557,7 +3558,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -3622,7 +3623,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -17133,7 +17134,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.0000015,
+              "amount": 1.5e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -17455,7 +17456,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -17518,7 +17519,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.0000015,
+              "amount": 1.5e-06,
               "unit": "per_image"
             },
             "web_search": {

@@ -3,7 +3,7 @@
   "id": "mixlayer",
   "provider": "Mixlayer",
   "currency": "USD",
-  "icon": "https://models.dev/logos/mixlayer.svg",
+  "icon": "/assets/provider-icons/mixlayer.svg",
   "base_url": "https://models.mixlayer.ai/v1",
   "domain": "docs.mixlayer.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "MIXLAYER_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/mixlayer.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Mixlayer"

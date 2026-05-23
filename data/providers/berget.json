@@ -3,7 +3,7 @@
   "id": "berget",
   "provider": "Berget.AI",
   "currency": "USD",
-  "icon": "https://models.dev/logos/berget.svg",
+  "icon": "/assets/provider-icons/berget.svg",
   "base_url": "https://api.berget.ai/v1",
   "domain": "api.berget.ai",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "BERGET_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/berget.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

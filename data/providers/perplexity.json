@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "perplexity",
   "provider": "Perplexity",
-  "icon": "https://models.dev/logos/perplexity.svg",
+  "icon": "/assets/provider-icons/perplexity.svg",
   "domain": "docs.perplexity.ai",
   "currency": "USD",
   "offers": [
@@ -473,7 +473,8 @@
       "npm": "@ai-sdk/perplexity",
       "env": [
         "PERPLEXITY_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/perplexity.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Perplexity"

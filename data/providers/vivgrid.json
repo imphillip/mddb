@@ -3,7 +3,7 @@
   "id": "vivgrid",
   "provider": "Vivgrid",
   "currency": "USD",
-  "icon": "https://models.dev/logos/vivgrid.svg",
+  "icon": "/assets/provider-icons/vivgrid.svg",
   "base_url": "https://api.vivgrid.com/v1",
   "domain": "docs.vivgrid.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai",
       "env": [
         "VIVGRID_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/vivgrid.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Vivgrid"

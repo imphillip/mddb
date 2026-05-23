@@ -3,7 +3,7 @@
   "id": "qiniu-ai",
   "provider": "Qiniu",
   "currency": "USD",
-  "icon": "https://models.dev/logos/qiniu-ai.svg",
+  "icon": "/assets/provider-icons/qiniu-ai.svg",
   "base_url": "https://api.qnaigc.com/v1",
   "domain": "developer.qiniu.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "QINIU_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/qiniu-ai.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

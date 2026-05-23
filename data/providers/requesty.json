@@ -3,7 +3,7 @@
   "id": "requesty",
   "provider": "Requesty",
   "currency": "USD",
-  "icon": "https://models.dev/logos/requesty.svg",
+  "icon": "/assets/provider-icons/requesty.svg",
   "base_url": "https://router.requesty.ai/v1",
   "domain": "requesty.ai",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "REQUESTY_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/requesty.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Requesty"

@@ -3,7 +3,7 @@
   "id": "submodel",
   "provider": "submodel",
   "currency": "USD",
-  "icon": "https://models.dev/logos/submodel.svg",
+  "icon": "/assets/provider-icons/submodel.svg",
   "base_url": "https://llm.submodel.ai/v1",
   "domain": "submodel.gitbook.io",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "SUBMODEL_INSTAGEN_ACCESS_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/submodel.svg"
     },
     "basellm_newapi": {
       "vendor_name": "submodel"

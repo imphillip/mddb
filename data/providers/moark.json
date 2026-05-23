@@ -3,7 +3,7 @@
   "id": "moark",
   "provider": "Moark",
   "currency": "USD",
-  "icon": "https://models.dev/logos/moark.svg",
+  "icon": "/assets/provider-icons/moark.svg",
   "base_url": "https://moark.com/v1",
   "domain": "moark.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "MOARK_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/moark.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Moark"

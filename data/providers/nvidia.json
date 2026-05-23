@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "nvidia",
   "provider": "Nvidia",
-  "icon": "https://models.dev/logos/nvidia.svg",
+  "icon": "/assets/provider-icons/nvidia.svg",
   "domain": "docs.api.nvidia.com",
   "base_url": "https://integrate.api.nvidia.com/v1",
   "currency": "USD",
@@ -1168,7 +1168,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "NVIDIA_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/nvidia.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Nvidia"

@@ -3,7 +3,7 @@
   "id": "together",
   "provider": "Together",
   "currency": "USD",
-  "icon": "https://models.dev/logos/together.svg",
+  "icon": "/assets/provider-icons/together.svg",
   "domain": "docs.together.ai",
   "other_parameters": {
     "models_dev": {
@@ -12,7 +12,8 @@
       "npm": "@ai-sdk/togetherai",
       "env": [
         "TOGETHER_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/together.svg"
     }
   },
   "last_updated": "2026-05-22T19:56:54.990Z",

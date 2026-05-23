@@ -3,7 +3,7 @@
   "id": "kimi-for-coding",
   "provider": "Kimi For Coding",
   "currency": "USD",
-  "icon": "https://models.dev/logos/kimi-for-coding.svg",
+  "icon": "/assets/provider-icons/kimi-for-coding.svg",
   "base_url": "https://api.kimi.com/coding/v1",
   "domain": "kimi.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/anthropic",
       "env": [
         "KIMI_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/kimi-for-coding.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

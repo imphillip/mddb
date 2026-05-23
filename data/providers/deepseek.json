@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "deepseek",
   "provider": "Deepseek",
-  "icon": "https://models.dev/logos/deepseek.svg",
+  "icon": "/assets/provider-icons/deepseek.svg",
   "domain": "api-docs.deepseek.com",
   "base_url": "https://api.deepseek.com",
   "currency": "USD",
@@ -269,7 +269,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "DEEPSEEK_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/deepseek.svg"
     },
     "basellm_newapi": {
       "vendor_name": "DeepSeek"

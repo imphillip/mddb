@@ -3,7 +3,7 @@
   "id": "novita-ai",
   "provider": "NovitaAI",
   "currency": "USD",
-  "icon": "https://models.dev/logos/novita-ai.svg",
+  "icon": "/assets/provider-icons/novita-ai.svg",
   "base_url": "https://api.novita.ai/openai",
   "domain": "novita.ai",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "NOVITA_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/novita-ai.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

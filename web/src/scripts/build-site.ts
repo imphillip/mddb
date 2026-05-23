@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { buildDataQualityReport } from '../lib/data-quality.js'
 import { buildRegistryGraphFromFiles } from '../lib/registry-graph.js'
@@ -10,6 +10,7 @@ const graph = buildRegistryGraphFromFiles()
 attachCurrency(graph, join(process.cwd(), '.internal', 'source-data', 'exchange-rate-usd-cny.raw.json'))
 
 rmSync(outputDir, { recursive: true, force: true })
+copyProviderIcons(join(process.cwd(), 'data', 'provider-icons'), join(outputDir, 'assets', 'provider-icons'))
 
 writePage('index.html', renderOpenRouterRawHome(graph))
 writePage('providers/index.html', renderOpenRouterProviderIndex(graph))
@@ -45,6 +46,15 @@ function attachCurrency(graph: { currency?: unknown }, path: string): void {
     rawRate,
     source: String(record.source ?? 'https://open.er-api.com/v6/latest/USD'),
     updatedAt: String(record.updatedAt ?? new Date().toISOString()),
+  }
+}
+
+function copyProviderIcons(sourceDir: string, targetDir: string): void {
+  if (!existsSync(sourceDir)) return
+  mkdirSync(targetDir, { recursive: true })
+  for (const name of readdirSync(sourceDir)) {
+    if (!name.endsWith('.svg')) continue
+    writeFileSync(join(targetDir, name), readFileSync(join(sourceDir, name)))
   }
 }
 

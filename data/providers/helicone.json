@@ -3,7 +3,7 @@
   "id": "helicone",
   "provider": "Helicone",
   "currency": "USD",
-  "icon": "https://models.dev/logos/helicone.svg",
+  "icon": "/assets/provider-icons/helicone.svg",
   "base_url": "https://ai-gateway.helicone.ai/v1",
   "domain": "helicone.ai",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "HELICONE_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/helicone.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Helicone"

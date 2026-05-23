@@ -3,7 +3,7 @@
   "id": "llama",
   "provider": "Llama",
   "currency": "USD",
-  "icon": "https://models.dev/logos/llama.svg",
+  "icon": "/assets/provider-icons/llama.svg",
   "base_url": "https://api.llama.com/compat/v1/",
   "domain": "llama.developer.meta.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "LLAMA_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/llama.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

@@ -3,7 +3,7 @@
   "id": "huggingface",
   "provider": "Hugging Face",
   "currency": "USD",
-  "icon": "https://models.dev/logos/huggingface.svg",
+  "icon": "/assets/provider-icons/huggingface.svg",
   "base_url": "https://router.huggingface.co/v1",
   "domain": "huggingface.co",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "HF_TOKEN"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/huggingface.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

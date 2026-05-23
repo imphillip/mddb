@@ -3,7 +3,7 @@
   "id": "ovhcloud",
   "provider": "OVHcloud AI Endpoints",
   "currency": "USD",
-  "icon": "https://models.dev/logos/ovhcloud.svg",
+  "icon": "/assets/provider-icons/ovhcloud.svg",
   "base_url": "https://oai.endpoints.kepler.ai.cloud.ovh.net/v1",
   "domain": "ovhcloud.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "OVHCLOUD_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/ovhcloud.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

@@ -3,7 +3,7 @@
   "id": "fastrouter",
   "provider": "FastRouter",
   "currency": "USD",
-  "icon": "https://models.dev/logos/fastrouter.svg",
+  "icon": "/assets/provider-icons/fastrouter.svg",
   "base_url": "https://go.fastrouter.ai/api/v1",
   "domain": "fastrouter.ai",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "FASTROUTER_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/fastrouter.svg"
     },
     "basellm_newapi": {
       "vendor_name": "FastRouter"

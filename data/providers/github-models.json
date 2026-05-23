@@ -3,7 +3,7 @@
   "id": "github-models",
   "provider": "GitHub Models",
   "currency": "USD",
-  "icon": "https://models.dev/logos/github-models.svg",
+  "icon": "/assets/provider-icons/github-models.svg",
   "base_url": "https://models.github.ai/inference",
   "domain": "docs.github.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "GITHUB_TOKEN"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/github-models.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

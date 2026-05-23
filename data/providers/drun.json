@@ -3,7 +3,7 @@
   "id": "drun",
   "provider": "D.Run (China)",
   "currency": "USD",
-  "icon": "https://models.dev/logos/drun.svg",
+  "icon": "/assets/provider-icons/drun.svg",
   "base_url": "https://chat.d.run/v1",
   "domain": "d.run",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "DRUN_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/drun.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

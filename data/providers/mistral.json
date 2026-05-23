@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "mistral",
   "provider": "Mistral",
-  "icon": "https://models.dev/logos/mistral.svg",
+  "icon": "/assets/provider-icons/mistral.svg",
   "domain": "docs.mistral.ai",
   "currency": "USD",
   "offers": [
@@ -1500,7 +1500,8 @@
       "npm": "@ai-sdk/mistral",
       "env": [
         "MISTRAL_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/mistral.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Mistral"

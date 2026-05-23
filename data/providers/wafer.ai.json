@@ -3,7 +3,7 @@
   "id": "wafer.ai",
   "provider": "Wafer",
   "currency": "USD",
-  "icon": "https://models.dev/logos/wafer.ai.svg",
+  "icon": "/assets/provider-icons/wafer.ai.svg",
   "base_url": "https://pass.wafer.ai/v1",
   "domain": "docs.wafer.ai",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "WAFER_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/wafer.ai.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

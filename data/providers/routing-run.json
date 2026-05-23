@@ -3,7 +3,7 @@
   "id": "routing-run",
   "provider": "routing.run",
   "currency": "USD",
-  "icon": "https://models.dev/logos/routing-run.svg",
+  "icon": "/assets/provider-icons/routing-run.svg",
   "base_url": "https://api.routing.run/v1",
   "domain": "docs.routing.run",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "ROUTING_RUN_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/routing-run.svg"
     },
     "basellm_newapi": {
       "vendor_name": "routing.run"

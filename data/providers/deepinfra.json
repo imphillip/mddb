@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "deepinfra",
   "provider": "DeepInfra",
-  "icon": "https://models.dev/logos/deepinfra.svg",
+  "icon": "/assets/provider-icons/deepinfra.svg",
   "domain": "deepinfra.com",
   "currency": "USD",
   "offers": [
@@ -5086,7 +5086,8 @@
       "npm": "@ai-sdk/deepinfra",
       "env": [
         "DEEPINFRA_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/deepinfra.svg"
     }
   },
   "last_updated": "2026-05-22T19:56:54.990Z",

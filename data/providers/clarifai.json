@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "clarifai",
   "provider": "Clarifai",
-  "icon": "https://models.dev/logos/clarifai.svg",
+  "icon": "/assets/provider-icons/clarifai.svg",
   "domain": "docs.clarifai.com",
   "base_url": "https://api.clarifai.com/v2/ext/openai/v1",
   "currency": "USD",
@@ -299,7 +299,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "CLARIFAI_PAT"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/clarifai.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Clarifai"

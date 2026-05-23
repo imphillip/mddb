@@ -3,7 +3,7 @@
   "id": "lilac",
   "provider": "Lilac",
   "currency": "USD",
-  "icon": "https://models.dev/logos/lilac.svg",
+  "icon": "/assets/provider-icons/lilac.svg",
   "base_url": "https://api.getlilac.com/v1",
   "domain": "docs.getlilac.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "LILAC_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/lilac.svg"
     },
     "basellm_newapi": {
       "vendor_name": "Lilac"

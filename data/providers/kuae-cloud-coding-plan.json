@@ -3,7 +3,7 @@
   "id": "kuae-cloud-coding-plan",
   "provider": "KUAE Cloud Coding Plan",
   "currency": "USD",
-  "icon": "https://models.dev/logos/kuae-cloud-coding-plan.svg",
+  "icon": "/assets/provider-icons/kuae-cloud-coding-plan.svg",
   "base_url": "https://coding-plan-endpoint.kuaecloud.net/v1",
   "domain": "docs.mthreads.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "KUAE_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/kuae-cloud-coding-plan.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

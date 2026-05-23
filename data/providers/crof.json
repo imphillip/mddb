@@ -3,7 +3,7 @@
   "id": "crof",
   "provider": "CrofAI",
   "currency": "USD",
-  "icon": "https://models.dev/logos/crof.svg",
+  "icon": "/assets/provider-icons/crof.svg",
   "base_url": "https://crof.ai/v1",
   "domain": "crof.ai",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "CROF_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/crof.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

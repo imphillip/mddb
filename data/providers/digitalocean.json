@@ -3,7 +3,7 @@
   "id": "digitalocean",
   "provider": "DigitalOcean",
   "currency": "USD",
-  "icon": "https://models.dev/logos/digitalocean.svg",
+  "icon": "/assets/provider-icons/digitalocean.svg",
   "base_url": "https://inference.do-ai.run/v1",
   "domain": "docs.digitalocean.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "DIGITALOCEAN_ACCESS_TOKEN"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/digitalocean.svg"
     },
     "basellm_newapi": {
       "vendor_name": "DigitalOcean"

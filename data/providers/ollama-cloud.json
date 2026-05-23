@@ -3,7 +3,7 @@
   "id": "ollama-cloud",
   "provider": "Ollama Cloud",
   "currency": "USD",
-  "icon": "https://models.dev/logos/ollama-cloud.svg",
+  "icon": "/assets/provider-icons/ollama-cloud.svg",
   "base_url": "https://ollama.com/v1",
   "domain": "docs.ollama.com",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "OLLAMA_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/ollama-cloud.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

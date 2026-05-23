@@ -3,7 +3,7 @@
   "id": "stackit",
   "provider": "STACKIT",
   "currency": "USD",
-  "icon": "https://models.dev/logos/stackit.svg",
+  "icon": "/assets/provider-icons/stackit.svg",
   "base_url": "https://api.openai-compat.model-serving.eu01.onstackit.cloud/v1",
   "domain": "docs.stackit.cloud",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "STACKIT_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/stackit.svg"
     },
     "basellm_newapi": {
       "vendor_name": "STACKIT"

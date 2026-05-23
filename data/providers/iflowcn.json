@@ -3,7 +3,7 @@
   "id": "iflowcn",
   "provider": "iFlow",
   "currency": "USD",
-  "icon": "https://models.dev/logos/iflowcn.svg",
+  "icon": "/assets/provider-icons/iflowcn.svg",
   "base_url": "https://apis.iflow.cn/v1",
   "domain": "platform.iflow.cn",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "IFLOW_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/iflowcn.svg"
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",

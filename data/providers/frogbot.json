@@ -3,7 +3,7 @@
   "id": "frogbot",
   "provider": "FrogBot",
   "currency": "USD",
-  "icon": "https://models.dev/logos/frogbot.svg",
+  "icon": "/assets/provider-icons/frogbot.svg",
   "base_url": "https://app.frogbot.ai/api/v1",
   "domain": "docs.frogbot.ai",
   "other_parameters": {
@@ -13,7 +13,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "env": [
         "FROGBOT_API_KEY"
-      ]
+      ],
+      "remote_icon": "https://models.dev/logos/frogbot.svg"
     },
     "basellm_newapi": {
       "vendor_name": "FrogBot"
