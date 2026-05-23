@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { buildRegistryGraphFromFiles } from './registry-graph.js'
-import { renderOpenRouterProviderDetail, renderOpenRouterProviderIndex, renderOpenRouterRawDetail, renderOpenRouterRawHome } from './openrouter-raw-renderer.js'
+import { renderOpenRouterRawDetail, renderOpenRouterRawHome } from './openrouter-raw-renderer.js'
 
 describe('registry graph adapter', () => {
   const graph = buildRegistryGraphFromFiles()
@@ -19,7 +19,7 @@ describe('registry graph adapter', () => {
     expect(evrocProvider?.raw.other_parameters).toMatchObject({ models_dev: { remote_icon: 'https://models.dev/logos/evroc.svg', icon_status: 'disabled_broken_svg' } })
   })
 
-  it('renders the current plaza, provider, and detail UI from the new registry graph', () => {
+  it('renders the current model plaza and detail UI from the new registry graph', () => {
     const home = renderOpenRouterRawHome(graph)
     const writerVisibleRows = [...home.matchAll(/<tr data-model-row data-search-only="false"[^>]*data-model-author="writer"[\s\S]*?<\/tr>/gu)].map((match) => match[0])
     expect(writerVisibleRows).toHaveLength(1)
@@ -28,10 +28,6 @@ describe('registry graph adapter', () => {
     expect(writerVisibleRows[0]).not.toContain('href="/amazon/palmyra-x5/"')
     expect(writerVisibleRows[0]).toContain('data-price-source-provider=')
     expect(writerVisibleRows[0]).toContain('priceValue')
-    const provider = renderOpenRouterProviderDetail(graph, 'openai')
-    const providerIndex = renderOpenRouterProviderIndex(graph)
-    const novitaProvider = renderOpenRouterProviderDetail(graph, 'novita')
-    const deepInfraProvider = renderOpenRouterProviderDetail(graph, 'deepinfra')
     const node = graph.nodes.find((candidate) => candidate.route === '/openai/gpt-5.5')
     expect(node).toBeTruthy()
     const detail = renderOpenRouterRawDetail(graph, node!)
@@ -49,24 +45,6 @@ describe('registry graph adapter', () => {
     expect((node!.raw.model as { created?: unknown }).created).toBe(1777051893)
     expect(detail).toContain('<span>Released</span><b>2026-04-24</b>')
     expect(home).not.toContain('/new-models/')
-    expect(provider).toContain('OpenAI')
-    expect(provider).toContain('<img src="/assets/provider-icons/openai.svg" alt="OpenAI logo" loading="lazy">')
-    expect(provider).toContain('class="modelsShell providerShell"')
-    expect(provider).toContain('<span>厂牌</span>')
-    expect(provider).toContain('class="modelTable"')
-    expect(provider).not.toContain('返回模型广场')
-    expect(provider).not.toContain('个模型 / offer')
-    expect(providerIndex).toContain('href="/novita/"')
-    expect(providerIndex).toContain('自研 ')
-    expect(providerIndex).toContain('提供 ')
-    expect(novitaProvider).toContain('Novita</h1>')
-    expect(novitaProvider).toContain('class="modelsShell providerShell"')
-    expect(novitaProvider).toContain('class="modelTable"')
-    expect(novitaProvider).toContain('data-model-row')
-    expect(novitaProvider).toContain('DeepSeek')
-    expect(novitaProvider).not.toContain('个模型 / offer')
-    expect(deepInfraProvider).toContain('DeepInfra</h1>')
-    expect(deepInfraProvider).toContain('class="modelTable"')
     expect(detail).toContain('Model ID')
     expect(detail).toContain('价格')
     expect(detail).toContain('元数据')
@@ -117,11 +95,8 @@ describe('registry graph adapter', () => {
     expect(palmyraSourceDetail).not.toContain('class="relationChips"')
     expect(palmyraSourceDetail).toContain('Amazon provider 报价')
     expect(palmyraSourceDetail).toContain('data-price-source-provider="amazon"')
-    expect(palmyraSourceDetail).toContain('data-usd="0.6"')
-    expect(palmyraSourceDetail).toContain('data-usd="6"')
-    expect(palmyraSourceDetail).toContain('其他 provider deployment 报价请点开查看')
-    expect(palmyraSourceDetail).toContain('href="/openrouter/palmyra-x5/"')
-    expect(palmyraSourceDetail).toContain('OpenRouter')
+    expect(palmyraSourceDetail).not.toContain('data-usd=')
+    expect(palmyraSourceDetail).not.toContain('data-cny=')
     expect(palmyraSourceDetail).not.toContain('href="/amazon/palmyra-x5/"')
     const palmyraOpenRouter = graph.nodes.find((candidate) => candidate.route === '/openrouter/palmyra-x5')
     expect(palmyraOpenRouter).toBeTruthy()

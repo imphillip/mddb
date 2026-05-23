@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { OpenRouterRawGraph, OpenRouterRawNode } from './openrouter-raw-graph.js'
-import { renderOpenRouterProviderDetail, renderOpenRouterProviderIndex, renderOpenRouterRawDetail, renderOpenRouterRawHome } from './openrouter-raw-renderer.js'
+import { renderOpenRouterRawDetail, renderOpenRouterRawHome } from './openrouter-raw-renderer.js'
 
 function sourceNode(sourceId: string, author: string): OpenRouterRawNode {
   const [, modelId = sourceId] = sourceId.split('/')
@@ -89,35 +89,32 @@ function graph(): OpenRouterRawGraph {
 }
 
 describe('shared navigation contract', () => {
-  it('uses the same brand, search, menu, GitHub and currency controls on plaza, provider and detail pages', () => {
+  it('uses the same brand, search, menu, and GitHub controls on plaza and detail pages', () => {
     const testGraph = graph()
     const pages = [
       renderOpenRouterRawHome(testGraph),
-      renderOpenRouterProviderDetail(testGraph, 'openai'),
       renderOpenRouterRawDetail(testGraph, testGraph.nodes[0]!),
     ]
 
     for (const html of pages) {
       expect(html).toContain('<header class="topbar"><nav class="nav"><a class="brandmark" href="/">')
-      expect(html).toContain('<label class="topSearch">⌕ <input id="q" type="search" placeholder="搜索模型 / provider / author / source" autocomplete="off"></label>')
+      expect(html).toContain('<label class="topSearch">⌕ <input id="q" type="search" placeholder="搜索模型 / author / source" autocomplete="off"></label>')
       expect(html).toContain('<a class="githubLink" href="https://github.com/imphillip/mddb"')
-      expect(html).toContain('<div class="navlinks"><a class="active" href="/">模型广场</a><a href="/providers/">供应商广场</a></div>')
-      expect(html).toContain('class="currencyToggle"')
-      expect(html).toContain('data-currency-toggle')
+      expect(html).toContain('<div class="navlinks"><a class="active" href="/">模型广场</a></div>')
+      expect(html).not.toContain('供应商广场')
+      expect(html).not.toContain('data-currency-toggle')
       expect(html.indexOf('class="brandmark"')).toBeLessThan(html.indexOf('class="topSearch"'))
       expect(html.indexOf('class="topSearch"')).toBeLessThan(html.indexOf('class="githubLink"'))
       expect(html.indexOf('class="githubLink"')).toBeLessThan(html.indexOf('class="navlinks"'))
-      expect(html.indexOf('class="navlinks"')).toBeLessThan(html.indexOf('data-currency-toggle'))
     }
   })
 })
 
 describe('mobile responsive layout', () => {
-  it('renders mobile CSS that makes nav wrap compactly and keeps plaza/provider/detail pages usable on narrow screens', () => {
+  it('renders mobile CSS that makes nav wrap compactly and keeps plaza/detail pages usable on narrow screens', () => {
     const testGraph = graph()
     const pages = [
       renderOpenRouterRawHome(testGraph),
-      renderOpenRouterProviderDetail(testGraph, 'openai'),
       renderOpenRouterRawDetail(testGraph, testGraph.nodes[0]!),
     ]
 
@@ -127,7 +124,6 @@ describe('mobile responsive layout', () => {
       expect(html).toContain('.brandZh{display:none}')
       expect(html).toContain('.topSearch{order:5;width:100%')
       expect(html).toContain('.navlinks{order:3;margin-left:0')
-      expect(html).toContain('.currencyControl{order:4;margin-left:auto')
       expect(html).toContain('.modelsShell{display:block')
       expect(html).toContain('.filterPanel{position:static')
       expect(html).toContain('.mainPanel{padding:20px 14px 56px')
@@ -139,37 +135,33 @@ describe('mobile responsive layout', () => {
   })
 })
 
-describe('renderOpenRouterRawHome currency toggle', () => {
-  it('renders a nav currency toggle with inline FX rate and dual USD/CNY prices capped at 4 decimals', () => {
+describe('renderOpenRouterRawHome price display', () => {
+  it('renders explicit currency symbols without a nav currency toggle', () => {
     const testGraph = graph()
     testGraph.nodes[0]!.raw.endpointWrapper = { response: { data: { endpoints: [{ tag: 'openai', provider_name: 'OpenAI', pricing: { prompt: '0.00000125', completion: '0.00001', input_cache_read: '0.000000125' } }] } } }
 
     const plazaHtml = renderOpenRouterRawHome(testGraph)
-    const providerHtml = renderOpenRouterProviderDetail(testGraph, 'openai')
     const detailHtml = renderOpenRouterRawDetail(testGraph, testGraph.nodes[0]!)
 
-    for (const html of [plazaHtml, providerHtml, detailHtml]) {
-      expect(html).toContain('class="currencyToggle"')
-      expect(html).toContain('data-currency-toggle')
-      expect(html).toContain('data-usd="1.25"')
-      expect(html).toContain('data-cny="8.5"')
-      expect(html).toContain('data-usd="10"')
-      expect(html).toContain('data-cny="68"')
-      expect(html).toContain('const prices=Array.from(document.querySelectorAll(\'[data-usd][data-cny]\'))')
+    for (const html of [plazaHtml, detailHtml]) {
+      expect(html).not.toContain('class="currencyToggle"')
+      expect(html).not.toContain('data-currency-toggle')
+      expect(html).not.toContain('data-usd=')
+      expect(html).not.toContain('data-cny=')
+      expect(html).not.toContain("localStorage.setItem('mddb.currency'")
+      expect(html).toContain('<span class="priceCurrencySymbol">$</span><span class="priceAmount">1.25</span>')
+      expect(html).toContain('<span class="priceCurrencySymbol">$</span><span class="priceAmount">10</span>')
     }
 
     expect(plazaHtml).toContain('class="githubLink"')
     expect(plazaHtml).toContain('<a class="brandmark" href="/">')
     expect(plazaHtml).not.toContain('模型动态')
-    expect(plazaHtml).toContain('<div class="navlinks"><a class="active" href="/">模型广场</a><a href="/providers/">供应商广场</a></div>')
-    expect(plazaHtml.indexOf('data-currency-toggle')).toBeGreaterThan(plazaHtml.indexOf('模型广场'))
+    expect(plazaHtml).toContain('<div class="navlinks"><a class="active" href="/">模型广场</a></div>')
+    expect(plazaHtml).not.toContain('供应商广场')
     expect(plazaHtml).toContain('.githubLink{width:34px')
     expect(plazaHtml).toContain('.githubLink svg{width:18px')
-    expect(plazaHtml).toContain('USD')
-    expect(plazaHtml).toContain('CNY')
-    expect(plazaHtml).toContain('>1 USD</button>')
-    expect(plazaHtml).toContain('>6.8 CNY</button>')
-    expect(plazaHtml).not.toContain('1 USD ≈ 6.8 CNY')
+    expect(plazaHtml).not.toContain('>1 USD</button>')
+    expect(plazaHtml).not.toContain('>6.8 CNY</button>')
   })
 })
 
@@ -253,64 +245,13 @@ describe('renderOpenRouterRawHome logo enrichment', () => {
 })
 
 describe('provider pages', () => {
-  it('renders supplier plaza cards from every registry provider file', () => {
-    const html = renderOpenRouterProviderIndex(graph())
+  it('does not export provider directory renderers from the open-source frontend', () => {
+    const html = renderOpenRouterRawHome(graph())
 
-    expect(html).toContain('<h1>供应商广场</h1>')
-    expect(html).toContain('<div class="navlinks"><a href="/">模型广场</a><a class="active" href="/providers/">供应商广场</a></div>')
-    expect(html).toContain('providerPlaza')
-    expect(html).toContain('providerDirectoryGrid')
-    expect(html).toContain('grid-template-columns:repeat(auto-fill,minmax(220px,1fr))')
-    expect(html).toContain('@media(max-width:720px)')
-    expect(html).toContain('.providerDirectoryGrid{grid-template-columns:1fr')
-    expect(html).not.toContain('<aside class="filterPanel">')
-    expect(html).not.toContain('registry/providers/*.json')
-    expect(html).not.toContain('<code>openai.json</code>')
-    expect(html).not.toContain('openai.json')
-    expect(html).toContain('3 个供应商')
-    expect(html).toContain('<a class="providerDirectoryLink providerDirectoryCard" href="/openai/">')
-    expect(html).toContain('alt="OpenAI logo"')
-    expect(html).toContain('OpenAI</span>')
-    expect(html).toContain('<label class="topSearch">⌕ <input id="q" type="search" placeholder="搜索模型 / provider / author / source" autocomplete="off"></label>')
-    expect(html).toContain('data-currency-toggle')
-    expect(html).toContain('1 USD')
-    expect(html).not.toContain('<div class="topSearch">⌕ 搜索</div>')
-    expect(html).toContain('自研 1 个模型 · 提供 2 个模型')
-    expect(html).toContain('<span>USD</span>')
-    expect(html).toContain('<a class="providerDirectoryLink providerDirectoryCard" href="/qwen/">')
-    expect(html).toContain('自研 1 个模型 · 提供 1 个模型')
-    expect(html).toContain('<a class="providerDirectoryLink providerDirectoryCard" href="/novita/">')
-    expect(html).not.toContain('0 个模型 · 0 个 offer')
-    expect(html).not.toContain('0 个模型')
-    expect(html).not.toContain('offer')
-    expect(html).toContain('暂无模型')
-    expect(html).toContain('供应商广场 · mddb.dev')
-  })
-
-  it('renders provider offer models with the model plaza homepage layout and left brand filters', () => {
-    const html = renderOpenRouterProviderDetail(graph(), 'openai')
-
-    expect(html).toContain('OpenAI')
-    expect(html).toContain('<aside class="filterPanel" aria-label="模型筛选">')
-    expect(html).toContain('<span>厂牌</span>')
-    expect(html).toContain('<section class="mainPanel"><div class="plazaHead"><div><h1><span class="modelIcon"><img src="https://models.dev/logos/openai.svg" alt="OpenAI logo" loading="lazy"></span>OpenAI</h1>')
-    expect(html).toContain('<div class="listToolbar"><div class="quickFilters" aria-label="模态筛选"><button class="quickFilter active" type="button" data-output-filter="all">全部 <span class="quickFilterCount" id="visibleCount">2</span></button>')
-    expect(html).toContain('<button class="quickFilter" type="button" data-output-filter="text">Text <span class="quickFilterCount">2</span></button>')
-    expect(html).toContain('<div class="tableWrap"><table class="modelTable">')
-    expect(html).toContain('<thead><tr><th>模型</th><th>上下文</th><th>输入<br><small data-price-unit>/M tokens</small></th><th>输出<br><small data-price-unit>/M tokens</small></th><th>读取<br><small data-price-unit>/M tokens</small></th><th>发布时间</th></tr></thead>')
-    expect(html).toContain('<a class="modelLink" href="/openai/gpt-5.5/">gpt-5.5</a>')
-    expect(html).toContain('OpenAI: gpt-5.5 offer')
-    expect(html).toContain('data-model-row')
-    expect(html).toContain(`${modelFilterScriptMarker()}`)
-    expect(html).toContain('href="/"')
-    expect(html).not.toContain('class="providerDetailGrid"')
-    expect(html).not.toContain('class="filterPanel providerNewsRail"')
-    expect(html).not.toContain('← 返回模型广场')
-    expect(html).not.toContain('模型动态')
-    expect(html).not.toContain('<h2>OpenAI 相关动态</h2>')
-    expect(html).toContain('href="/providers/"')
-    expect(html).not.toContain('Provider 列表')
-    expect(html).not.toContain('qwen3-max')
+    expect(html).not.toContain('供应商广场')
+    expect(html).not.toContain('href="/providers/"')
+    expect(html).not.toContain('providerPlaza')
+    expect(html).not.toContain('providerDirectoryGrid')
   })
 })
 
@@ -352,51 +293,36 @@ describe('renderOpenRouterRawDetail LiteLLM supplemental price enrichment', () =
 })
 
 describe('renderOpenRouterRawDetail BaseLLM price enrichment', () => {
-  it('uses BaseLLM as supplemental pricing for missing OpenRouter prices without replacing canonical endpoint prices or free routes', () => {
+  it('does not render BaseLLM/NewAPI supplemental prices in the open-source frontend', () => {
     const missingPriceNode = sourceNode('jinaai/jina-embeddings-v4', 'jinaai')
-    const openRouterPricedNode = sourceNode('openai/gpt-5.5', 'openai')
-    openRouterPricedNode.raw.endpointWrapper = { response: { data: { endpoints: [{ tag: 'openai', provider_name: 'OpenAI', pricing: { prompt: '0.00000125', completion: '0.00001' } }] } } }
-    const freeRouteNode = sourceNode('deepseek/deepseek-chat:free', 'deepseek')
-    const nodes = [missingPriceNode, openRouterPricedNode, freeRouteNode]
     const testGraph: OpenRouterRawGraph = {
       ...graph(),
-      nodes,
-      stats: { ...graph().stats, nodes: nodes.length, sourceNodes: nodes.length },
+      nodes: [missingPriceNode],
       enrichment: {
         baseLlm: {
           path: 'data/basellm-newapi.json',
           source: 'https://basellm.github.io/llm-metadata/api/newapi/models.json',
-          modelRows: 3,
-          uniqueModelNames: 3,
-          providerRows: 2,
-          tokenPricedRows: 3,
+          modelRows: 1,
+          uniqueModelNames: 1,
+          providerRows: 1,
+          tokenPricedRows: 1,
           unitPricedRows: 0,
           unknownPricedRows: 0,
-          exactSourceMatches: 3,
+          exactSourceMatches: 1,
           modelIdOnlyMatches: 0,
           normalizedNameMatches: 0,
           pricingBySourceId: {
             'jinaai/jina-embeddings-v4': [{ providerName: 'BaseLLM Provider', sourceModelId: 'jinaai/jina-embeddings-v4', billingKind: 'token', pricePerMillionInput: 0.02, pricePerMillionOutput: 0.02, contextWindow: '8,192', tags: ['Embedding'] }],
-            'openai/gpt-5.5': [{ providerName: 'Cheap Proxy', sourceModelId: 'openai/gpt-5.5', billingKind: 'token', pricePerMillionInput: 0.01, pricePerMillionOutput: 0.02, contextWindow: '—', tags: [] }],
-            'deepseek/deepseek-chat:free': [{ providerName: 'Free Route', sourceModelId: 'deepseek/deepseek-chat:free', billingKind: 'token', pricePerMillionInput: 0, pricePerMillionOutput: 0, contextWindow: '—', tags: ['Free'] }],
           },
         },
       },
     }
 
-    const missingHtml = renderOpenRouterRawDetail(testGraph, missingPriceNode)
-    expect(missingHtml).toContain('BaseLLM / NewAPI 补充价格')
-    expect(missingHtml).toContain('data-usd="0.02"')
-    expect(missingHtml).toContain('BaseLLM Provider')
+    const html = renderOpenRouterRawDetail(testGraph, missingPriceNode)
 
-    const canonicalHtml = renderOpenRouterRawDetail(testGraph, openRouterPricedNode)
-    expect(canonicalHtml).toContain('data-usd="1.25"')
-    expect(canonicalHtml).not.toContain('Cheap Proxy')
-    expect(canonicalHtml).not.toContain('$0.01')
-
-    const freeHtml = renderOpenRouterRawDetail(testGraph, freeRouteNode)
-    expect(freeHtml).not.toContain('BaseLLM / NewAPI 补充价格')
-    expect(freeHtml).not.toContain('Free Route')
+    expect(html).not.toContain('BaseLLM / NewAPI')
+    expect(html).not.toContain('BaseLLM Provider')
+    expect(html).not.toContain('$0.02')
   })
 })
 

@@ -1,13 +1,13 @@
-import type { BaseLlmSupplementalPrice, OpenRouterRawEdge, OpenRouterRawGraph, OpenRouterRawNode } from './openrouter-raw-graph.js'
+import type { OpenRouterRawEdge, OpenRouterRawGraph, OpenRouterRawNode } from './openrouter-raw-graph.js'
 
 const css = String.raw`
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap');
-:root{--bg:#fff;--fg:#171717;--muted:#666;--soft:#fafafa;--line:#eaeaea;--line2:#f2f2f2;--blue:#2563eb;--green:#0a7f42;--shadow:rgba(0,0,0,.06) 0 1px 2px,rgba(0,0,0,.04) 0 6px 20px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:Geist,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-feature-settings:'liga'}a{color:inherit;text-decoration:none}.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{height:60px;max-width:1360px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:22px}.brandmark{font-weight:600;letter-spacing:-.4px;display:flex;align-items:center;gap:10px}.brandZh{color:#666;font-weight:500;letter-spacing:0;font-size:14px;border-left:1px solid var(--line);padding-left:10px}.logo{width:22px;height:22px;border-radius:7px;background:#171717;display:inline-grid;place-items:center;color:#fff}.logo svg{width:15px;height:15px;display:block}.topSearch{width:300px;height:34px;border:1px solid var(--line);border-radius:999px;background:#fafafa;color:#7a7a7a;display:flex;align-items:center;gap:8px;padding:0 13px;font-size:13px}.topSearch input{border:0;background:transparent;outline:0;width:100%;font:inherit;color:#333}.topSearch input::placeholder{color:#999}.navlinks{display:flex;gap:20px;margin-left:auto;font-size:14px;color:#555}.navlinks a,.navlinks span{padding:20px 0 18px;border-bottom:2px solid transparent}.navlinks a.active{color:#111;border-bottom-color:#111}.navlinks .disabled{color:#aaa;cursor:not-allowed;pointer-events:none;border-bottom-color:transparent}.githubLink{width:34px;height:34px;border:1px solid var(--line);border-radius:999px;display:inline-grid;place-items:center;color:#555;background:#fff;flex:0 0 34px}.githubLink:hover{color:#111;border-color:#cfcfcf;background:#fafafa}.githubLink svg{width:18px;height:18px;display:block}.currencyControl{display:inline-flex;align-items:center}.currencyToggle{display:inline-flex;align-items:center;gap:3px;border:1px solid var(--line);border-radius:999px;padding:3px;background:#fff}.currencyToggle button{border:0;border-radius:999px;background:transparent;color:#666;font:600 12px Geist,system-ui,sans-serif;padding:6px 10px;cursor:pointer}.currencyToggle button.active{background:#111;color:#fff}.priceCurrencySymbol{display:inline}.priceAmount{font-variant-numeric:tabular-nums}.priceUnit{display:none}.wrap{max-width:1180px;margin:0 auto;padding:0 24px}.homeEmpty{min-height:calc(100vh - 60px);display:grid;place-items:center;text-align:center}.homeEmpty h1{font-size:52px;line-height:1;letter-spacing:-2.4px;margin:12px 0}.homeEmpty p{color:var(--muted);font-size:16px}.eyebrow{font:500 12px 'Geist Mono',ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;color:#777}.modelsShell{max-width:1360px;margin:0 auto;display:grid;grid-template-columns:268px minmax(0,1fr);min-height:calc(100vh - 60px)}.filterPanel{border-right:1px solid var(--line);padding:28px 18px 48px;background:#fff}.filterTitle{font-size:13px;font-weight:600;margin:0 0 12px;color:#333}.filterGroup{border-bottom:1px solid var(--line2);padding:14px 0}.filterHead{display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:500}.filterMore{margin-top:6px}.filterMore summary{cursor:pointer;color:#666;font-size:13px;padding:8px 0;list-style:none}.filterMore summary::-webkit-details-marker{display:none}.filterMore summary::after{content:'展开';float:right;color:#999}.filterMore[open] summary::after{content:'收起'}.filterMore[open] summary{color:#333}.filterOption{display:flex;align-items:center;gap:9px;padding:8px 0;color:#555;font-size:14px}.filterLogo{width:18px;height:18px;border:1px solid var(--line);border-radius:5px;background:#fff;display:inline-grid;place-items:center;flex:0 0 auto;font-size:10px;font-weight:600;color:#555;overflow:hidden}.filterLogo img{max-width:13px;max-height:13px}.check{width:16px;height:16px;border:1px solid #cfcfcf;border-radius:4px;display:inline-grid;place-items:center;font-size:11px;color:#fff}.check.on{background:#111;border-color:#111}.mainPanel{padding:30px 32px 80px;overflow:hidden}.plazaHead{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:22px}.plazaHead h1{font-size:38px;letter-spacing:-1.6px;margin:0}.controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.modelSearch{width:260px;height:38px;border:1px solid var(--line);border-radius:8px;padding:0 12px;font:14px inherit}.btn{height:38px;border:1px solid var(--line);border-radius:8px;background:#fff;padding:0 12px;font-weight:500;color:#333}.iconBtn{width:38px;padding:0}.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:8px;overflow:auto}.tab{display:flex;gap:6px;align-items:center;padding:12px 10px 10px;border-bottom:2px solid transparent;color:#666;font-size:14px;white-space:nowrap}.tab.active{color:#111;border-bottom-color:#111}.tab b{font-weight:500}.tableWrap{overflow:auto}.modelTable{width:100%;border-collapse:collapse;min-width:720px}.modelTable th{text-align:left;color:#777;font-size:12px;font-weight:500;padding:13px 12px;border-bottom:1px solid var(--line);white-space:nowrap}.modelTable td{padding:16px 12px;border-bottom:1px solid var(--line2);vertical-align:middle;font-size:14px}.modelName{display:flex;align-items:center;gap:11px;min-width:270px}.modelIcon{width:28px;height:28px;border-radius:8px;border:1px solid var(--line);background:#fafafa;display:grid;place-items:center;font-weight:600;font-size:13px;overflow:hidden}.modelIcon img{max-width:20px;max-height:20px}.providerIcon{width:22px;height:22px;border-radius:6px;border:1px solid var(--line);background:#fff;display:inline-grid;place-items:center;vertical-align:middle;margin-right:8px;overflow:hidden;font-size:11px}.providerIcon img{max-width:16px;max-height:16px}.modelLink{font-weight:500}.modelLink:hover{text-decoration:underline;text-underline-offset:3px}.modelSub{color:#777;font-size:12px;margin-top:4px}.modelTagCopy{display:inline-flex;align-items:center;gap:6px;color:#555}.modelTagCopy code{background:#f5f5f5;border:1px solid var(--line);border-radius:6px;padding:2px 6px;font-size:11px}.copyTagBtn{border:1px solid var(--line);border-radius:999px;background:#fff;color:#555;padding:2px 7px;font:500 11px Geist,system-ui,sans-serif;cursor:pointer}.copyTagBtn:hover{border-color:#cfcfcf;color:#111;background:#fafafa}.pill{display:inline-flex;align-items:center;border-radius:999px;background:#f5f7ff;color:#1d4ed8;padding:2px 8px;font-size:12px;font-weight:500}.mono{font-family:'Geist Mono',ui-monospace,monospace}.muted{color:var(--muted)}.detailHero{border-bottom:1px solid var(--line);padding:64px 0 36px;background:linear-gradient(180deg,#fafafa,#fff)}.detailHero h1{font-size:54px;line-height:1;letter-spacing:-2.4px;margin:12px 0}.detailHero p{max-width:760px;color:#4d4d4d;line-height:1.7;font-size:18px}.detailGrid{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:28px;padding-top:38px;padding-bottom:80px}.toc{display:flex;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding:16px 0;margin-bottom:24px}.toc a{font-size:14px;color:#666}.toc a:hover{color:#171717}.panel{box-shadow:var(--shadow);border:1px solid var(--line);border-radius:12px;background:#fff;padding:22px;margin-bottom:16px}.panel h2{font-size:28px;letter-spacing:-1px;margin:0 0 12px}.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0}.metabox{background:#fafafa;border-radius:8px;padding:10px;border:1px solid var(--line)}.metabox span{display:block;color:#808080;font-size:11px;text-transform:uppercase}.metabox b{font-size:13px;overflow-wrap:anywhere}.metaWide{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.providerRow,.variant{border-top:1px solid var(--line);padding:16px 0}.providerRow:first-of-type,.variant:first-of-type{border-top:0}.rowTop{display:flex;align-items:center;justify-content:space-between;gap:12px}.providers{font-size:13px;color:#4d4d4d;line-height:1.5}.providers strong{color:#171717}.priceGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.apiBox{background:#171717;color:#fff;border-radius:10px;padding:16px;font-family:'Geist Mono',monospace;font-size:13px;overflow:auto}.footer{border-top:1px solid var(--line);padding:28px 24px;color:#666;font-size:13px}@media(max-width:900px){.topSearch{display:none}.navlinks{gap:14px}.modelsShell,.detailGrid{grid-template-columns:1fr}.filterPanel{border-right:0;border-bottom:1px solid var(--line)}.plazaHead{align-items:flex-start;flex-direction:column}.modelSearch{width:100%}.meta{grid-template-columns:1fr}.detailHero h1{font-size:42px}}
+:root{--bg:#fff;--fg:#171717;--muted:#666;--soft:#fafafa;--line:#eaeaea;--line2:#f2f2f2;--blue:#2563eb;--green:#0a7f42;--shadow:rgba(0,0,0,.06) 0 1px 2px,rgba(0,0,0,.04) 0 6px 20px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:Geist,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-feature-settings:'liga'}a{color:inherit;text-decoration:none}.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{height:60px;max-width:1360px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:22px}.brandmark{font-weight:600;letter-spacing:-.4px;display:flex;align-items:center;gap:10px}.brandZh{color:#666;font-weight:500;letter-spacing:0;font-size:14px;border-left:1px solid var(--line);padding-left:10px}.logo{width:22px;height:22px;border-radius:7px;background:#171717;display:inline-grid;place-items:center;color:#fff}.logo svg{width:15px;height:15px;display:block}.topSearch{width:300px;height:34px;border:1px solid var(--line);border-radius:999px;background:#fafafa;color:#7a7a7a;display:flex;align-items:center;gap:8px;padding:0 13px;font-size:13px}.topSearch input{border:0;background:transparent;outline:0;width:100%;font:inherit;color:#333}.topSearch input::placeholder{color:#999}.navlinks{display:flex;gap:20px;margin-left:auto;font-size:14px;color:#555}.navlinks a,.navlinks span{padding:20px 0 18px;border-bottom:2px solid transparent}.navlinks a.active{color:#111;border-bottom-color:#111}.navlinks .disabled{color:#aaa;cursor:not-allowed;pointer-events:none;border-bottom-color:transparent}.githubLink{width:34px;height:34px;border:1px solid var(--line);border-radius:999px;display:inline-grid;place-items:center;color:#555;background:#fff;flex:0 0 34px}.githubLink:hover{color:#111;border-color:#cfcfcf;background:#fafafa}.githubLink svg{width:18px;height:18px;display:block}.priceCurrencySymbol{display:inline}.priceAmount{font-variant-numeric:tabular-nums}.priceUnit{display:none}.wrap{max-width:1180px;margin:0 auto;padding:0 24px}.homeEmpty{min-height:calc(100vh - 60px);display:grid;place-items:center;text-align:center}.homeEmpty h1{font-size:52px;line-height:1;letter-spacing:-2.4px;margin:12px 0}.homeEmpty p{color:var(--muted);font-size:16px}.eyebrow{font:500 12px 'Geist Mono',ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;color:#777}.modelsShell{max-width:1360px;margin:0 auto;display:grid;grid-template-columns:268px minmax(0,1fr);min-height:calc(100vh - 60px)}.filterPanel{border-right:1px solid var(--line);padding:28px 18px 48px;background:#fff}.filterTitle{font-size:13px;font-weight:600;margin:0 0 12px;color:#333}.filterGroup{border-bottom:1px solid var(--line2);padding:14px 0}.filterHead{display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:500}.filterMore{margin-top:6px}.filterMore summary{cursor:pointer;color:#666;font-size:13px;padding:8px 0;list-style:none}.filterMore summary::-webkit-details-marker{display:none}.filterMore summary::after{content:'展开';float:right;color:#999}.filterMore[open] summary::after{content:'收起'}.filterMore[open] summary{color:#333}.filterOption{display:flex;align-items:center;gap:9px;padding:8px 0;color:#555;font-size:14px}.filterLogo{width:18px;height:18px;border:1px solid var(--line);border-radius:5px;background:#fff;display:inline-grid;place-items:center;flex:0 0 auto;font-size:10px;font-weight:600;color:#555;overflow:hidden}.filterLogo img{max-width:13px;max-height:13px}.check{width:16px;height:16px;border:1px solid #cfcfcf;border-radius:4px;display:inline-grid;place-items:center;font-size:11px;color:#fff}.check.on{background:#111;border-color:#111}.mainPanel{padding:30px 32px 80px;overflow:hidden}.plazaHead{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:22px}.plazaHead h1{font-size:38px;letter-spacing:-1.6px;margin:0}.controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.modelSearch{width:260px;height:38px;border:1px solid var(--line);border-radius:8px;padding:0 12px;font:14px inherit}.btn{height:38px;border:1px solid var(--line);border-radius:8px;background:#fff;padding:0 12px;font-weight:500;color:#333}.iconBtn{width:38px;padding:0}.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:8px;overflow:auto}.tab{display:flex;gap:6px;align-items:center;padding:12px 10px 10px;border-bottom:2px solid transparent;color:#666;font-size:14px;white-space:nowrap}.tab.active{color:#111;border-bottom-color:#111}.tab b{font-weight:500}.tableWrap{overflow:auto}.modelTable{width:100%;border-collapse:collapse;min-width:720px}.modelTable th{text-align:left;color:#777;font-size:12px;font-weight:500;padding:13px 12px;border-bottom:1px solid var(--line);white-space:nowrap}.modelTable td{padding:16px 12px;border-bottom:1px solid var(--line2);vertical-align:middle;font-size:14px}.modelName{display:flex;align-items:center;gap:11px;min-width:270px}.modelIcon{width:28px;height:28px;border-radius:8px;border:1px solid var(--line);background:#fafafa;display:grid;place-items:center;font-weight:600;font-size:13px;overflow:hidden}.modelIcon img{max-width:20px;max-height:20px}.providerIcon{width:22px;height:22px;border-radius:6px;border:1px solid var(--line);background:#fff;display:inline-grid;place-items:center;vertical-align:middle;margin-right:8px;overflow:hidden;font-size:11px}.providerIcon img{max-width:16px;max-height:16px}.modelLink{font-weight:500}.modelLink:hover{text-decoration:underline;text-underline-offset:3px}.modelSub{color:#777;font-size:12px;margin-top:4px}.modelTagCopy{display:inline-flex;align-items:center;gap:6px;color:#555}.modelTagCopy code{background:#f5f5f5;border:1px solid var(--line);border-radius:6px;padding:2px 6px;font-size:11px}.copyTagBtn{border:1px solid var(--line);border-radius:999px;background:#fff;color:#555;padding:2px 7px;font:500 11px Geist,system-ui,sans-serif;cursor:pointer}.copyTagBtn:hover{border-color:#cfcfcf;color:#111;background:#fafafa}.pill{display:inline-flex;align-items:center;border-radius:999px;background:#f5f7ff;color:#1d4ed8;padding:2px 8px;font-size:12px;font-weight:500}.mono{font-family:'Geist Mono',ui-monospace,monospace}.muted{color:var(--muted)}.detailHero{border-bottom:1px solid var(--line);padding:64px 0 36px;background:linear-gradient(180deg,#fafafa,#fff)}.detailHero h1{font-size:54px;line-height:1;letter-spacing:-2.4px;margin:12px 0}.detailHero p{max-width:760px;color:#4d4d4d;line-height:1.7;font-size:18px}.detailGrid{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:28px;padding-top:38px;padding-bottom:80px}.toc{display:flex;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding:16px 0;margin-bottom:24px}.toc a{font-size:14px;color:#666}.toc a:hover{color:#171717}.panel{box-shadow:var(--shadow);border:1px solid var(--line);border-radius:12px;background:#fff;padding:22px;margin-bottom:16px}.panel h2{font-size:28px;letter-spacing:-1px;margin:0 0 12px}.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0}.metabox{background:#fafafa;border-radius:8px;padding:10px;border:1px solid var(--line)}.metabox span{display:block;color:#808080;font-size:11px;text-transform:uppercase}.metabox b{font-size:13px;overflow-wrap:anywhere}.metaWide{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.providerRow,.variant{border-top:1px solid var(--line);padding:16px 0}.providerRow:first-of-type,.variant:first-of-type{border-top:0}.rowTop{display:flex;align-items:center;justify-content:space-between;gap:12px}.providers{font-size:13px;color:#4d4d4d;line-height:1.5}.providers strong{color:#171717}.priceGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.apiBox{background:#171717;color:#fff;border-radius:10px;padding:16px;font-family:'Geist Mono',monospace;font-size:13px;overflow:auto}.footer{border-top:1px solid var(--line);padding:28px 24px;color:#666;font-size:13px}@media(max-width:900px){.topSearch{display:none}.navlinks{gap:14px}.modelsShell,.detailGrid{grid-template-columns:1fr}.filterPanel{border-right:0;border-bottom:1px solid var(--line)}.plazaHead{align-items:flex-start;flex-direction:column}.modelSearch{width:100%}.meta{grid-template-columns:1fr}.detailHero h1{font-size:42px}}
 
 .detailSingle{display:block;max-width:980px;padding-top:38px;padding-bottom:80px}.backToPlaza{display:inline-flex;align-items:center;justify-content:center;margin-bottom:22px}.priceVariantGrid{display:grid;gap:16px}.priceVariantCard{border:1px solid var(--line);border-radius:14px;background:#fff;padding:18px}.priceVariantCard h3{margin:0 0 14px;line-height:1.35}.priceList{display:grid;gap:0;margin:0}.priceItem{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line2);padding:10px 0;line-height:1.45}.priceItem:first-child{padding-top:0}.priceItem:last-child{border-bottom:0;padding-bottom:0}.priceItem dt{color:#777}.priceItem dd{margin:0;text-align:right}.statusLine{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}.priceVariantCard+.priceVariantCard{margin-top:0}.detailHeroCompact{padding:52px 0 30px}.summaryStrip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:24px;max-width:900px}.summaryStrip div{border:1px solid var(--line);border-radius:14px;background:#fff;padding:14px 16px;box-shadow:var(--shadow)}.summaryStrip span{display:block;color:#777;font-size:12px;margin-bottom:4px}.summaryStrip b{font-size:18px;letter-spacing:-.3px}.priorityPanel{border-color:#dbe7ff;background:linear-gradient(180deg,#fbfdff,#fff)}.subtlePanel{background:#fcfcfc}.metadataPanel details>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;width:max-content}.metadataPanel details>summary::-webkit-details-marker{display:none}.metadataPanel details>summary h2{margin:0}.metadataPanel .detailsChevron{color:#777;font-size:18px;line-height:1;transition:transform .16s ease}.metadataPanel details[open] .detailsChevron{transform:rotate(180deg)}.metadataPanel .raw{margin-top:16px}.stickyCard{position:sticky;top:82px}.availabilityGrid{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.pricingProviderHint{margin-top:16px;margin-bottom:0;line-height:1.6}.providerChip{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:#fafafa;padding:7px 11px;font-size:13px;color:#333;line-height:1}.providerCloud{line-height:1.8}.sourceList{display:grid;gap:8px;margin-top:14px}.sourceItem{display:flex;justify-content:space-between;gap:14px;border:1px solid var(--line);border-radius:10px;padding:12px;background:#fafafa}.sourceItem span{color:#666;font-size:13px}.relationChips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.relationChip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;background:#fff;padding:7px 10px;font-size:13px;color:#333}.relationChip small{color:#777}.modelIdHero{margin-top:12px;font-size:15px;color:#555}.heroRelations{margin-top:14px}.relationPanel{margin-bottom:16px}.relationPanel .relationChips{margin-bottom:0}.specRows{display:grid;gap:10px;margin-top:16px}.specRow{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px}.reviewList{margin:0;padding-left:18px;color:#555;line-height:1.7}.specVariant{border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0;background:#fff}.specVariant+.specVariant{border-top:1px solid var(--line)}.moreBlock{margin-top:12px;border:1px dashed var(--line);border-radius:12px;padding:12px;background:#fcfcfc}.moreBlock summary{cursor:pointer;color:#555;font-weight:500}.modelTable th{background:#fafafa}.modelTable td,.modelTable th{line-height:1.45}.modelTable td:nth-child(3){text-align:right}.copyTagBtn svg{width:13px;height:13px;display:block}.copyTagBtn.copied{width:auto;padding:2px 7px}@media(max-width:900px){.summaryStrip{grid-template-columns:repeat(2,1fr)}.stickyCard{position:static}.sourceItem{display:block}.sourceItem span{display:block;margin-top:4px}}
-.providerPlaza{max-width:1360px;margin:0 auto;padding:30px 32px 80px}.providerPlaza .plazaHead{margin-bottom:24px}.providerDirectoryGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}.providerDirectoryCard{min-height:136px;border:1px solid var(--line);border-radius:16px;background:#fff;padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between;gap:16px}.providerDirectoryCard:hover{border-color:#d4d4d4;transform:translateY(-1px)}.providerDirectoryCard span{font-size:18px;font-weight:600;letter-spacing:-.3px}.providerDirectoryCard p{margin:6px 0 0;color:#666;font-size:13px}.providerCardMeta{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#777;font-size:12px}.providerCardMeta span{font-size:12px;font-weight:500;letter-spacing:0}.providerCardMeta strong{font-size:18px;color:#333}.badge{display:inline-flex;border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:2px 8px;font-size:12px;margin:2px;color:#555}.badge.api{color:var(--green)}.badge.page_only{color:#b91c1c}.statGrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:18px 0 24px}.statCard{border:1px solid var(--line);border-radius:14px;background:#fff;padding:14px 16px;box-shadow:var(--shadow)}.statCard span{display:block;color:#777;font-size:12px;margin-bottom:4px}.statCard b{font-size:20px;letter-spacing:-.3px}.rawIntro{max-width:880px;color:#666;line-height:1.7}.filterHint{color:#999;font-size:12px;margin-top:8px}.edge{border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0;background:#fff}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.section{margin-bottom:18px}.kv{display:grid;grid-template-columns:180px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--line2)}.kv span{color:#777}.kv b{font-weight:500;word-break:break-word}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.tabs a{border:1px solid var(--line);border-radius:999px;padding:8px 12px;background:#fff;color:#333}.modelTable td:nth-child(3){text-align:left}.rawSource{word-break:break-all}.mono,code,pre{font-family:Geist Mono,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.statusLine{display:flex;flex-wrap:wrap;gap:4px}.providerSummary{color:#777;font-size:12px;margin-top:4px}.providerRailNewsList{display:grid;gap:10px;margin-top:12px}.providerRailNewsCard{border-top:1px solid var(--line2);padding-top:10px}.providerRailNewsCard time{display:block;color:#999;font-size:11px;margin-bottom:4px}.providerRailNewsCard a{display:block;color:#333;font-size:13px;line-height:1.45}.providerRailNewsCard a:hover{text-decoration:underline;text-underline-offset:3px}.searchBox{width:100%;height:38px;border:1px solid var(--line);border-radius:8px;padding:0 12px;font:14px inherit;margin-bottom:14px}.listToolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 18px}.listCount{color:#555;font-size:14px}.listCount b{color:#111}.quickFilters{display:flex;gap:8px;flex-wrap:wrap}.quickFilter{border:1px solid var(--line);border-radius:999px;background:#fff;color:#444;padding:7px 11px;font:500 13px inherit;cursor:pointer;display:inline-flex;align-items:center;gap:6px}.quickFilterCount{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;border-radius:999px;background:#f2f2f2;color:#666;font-size:11px;padding:0 6px}.quickFilter:hover,.quickFilter.active{border-color:#111;color:#111;background:#fafafa}.quickFilter.active .quickFilterCount{background:#111;color:#fff}.filterOption input{accent-color:#111}@media(max-width:900px){.statGrid,.two{grid-template-columns:1fr}.kv{grid-template-columns:1fr}.modelTable{min-width:900px}}@media(max-width:720px){.nav{height:auto;min-height:56px;padding:10px 14px;gap:10px;flex-wrap:wrap}.brandmark{gap:8px;min-width:0}.brandmark span:not(.logo):not(.brandZh){font-size:15px}.brandZh{display:none}.githubLink{order:2}.navlinks{order:3;margin-left:0;gap:12px;font-size:13px}.navlinks a,.navlinks span{padding:8px 0 6px}.currencyControl{order:4;margin-left:auto}.currencyToggle button{padding:5px 8px;font-size:11px}.topSearch{order:5;width:100%;display:flex;height:34px}.modelsShell{display:block;min-height:auto}.filterPanel{position:static;border-right:0;border-bottom:1px solid var(--line);padding:16px 14px;background:#fff}.filterGroup{padding:10px 0}.filterOption{padding:7px 0}.mainPanel{padding:20px 14px 56px;overflow:visible}.plazaHead{align-items:flex-start;flex-direction:column;margin-bottom:16px}.plazaHead h1{font-size:30px;letter-spacing:-.8px}.listToolbar{overflow-x:auto;margin:0 -14px 16px;padding:0 14px}.quickFilters{flex-wrap:nowrap}.quickFilter{white-space:nowrap}.tableWrap{margin:0 -14px;padding:0 14px;overflow-x:auto;-webkit-overflow-scrolling:touch}.modelTable{min-width:760px}.modelTable td{padding:12px 10px}.modelName{min-width:230px}.detailHero{padding:34px 0 22px}.detailHero h1{font-size:34px;letter-spacing:-1.2px}.wrap{padding:0 14px}.detailSingle{padding-top:22px;padding-bottom:56px}.panel{padding:16px;border-radius:12px}.panel h2{font-size:24px}.toc{overflow-x:auto;flex-wrap:nowrap;white-space:nowrap}.summaryStrip{grid-template-columns:1fr}.specRow{grid-template-columns:1fr}.priceItem{display:block}.priceItem dd{text-align:left;margin-top:4px}.providerNewsRail .filterGroup{border-bottom:0}.providerRailNewsList{gap:8px}.providerPlaza{padding:20px 14px 56px}.providerDirectoryGrid{grid-template-columns:1fr;gap:12px}}`
+.badge{display:inline-flex;border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:2px 8px;font-size:12px;margin:2px;color:#555}.badge.api{color:var(--green)}.badge.page_only{color:#b91c1c}.statGrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:18px 0 24px}.statCard{border:1px solid var(--line);border-radius:14px;background:#fff;padding:14px 16px;box-shadow:var(--shadow)}.statCard span{display:block;color:#777;font-size:12px;margin-bottom:4px}.statCard b{font-size:20px;letter-spacing:-.3px}.rawIntro{max-width:880px;color:#666;line-height:1.7}.filterHint{color:#999;font-size:12px;margin-top:8px}.edge{border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0;background:#fff}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.section{margin-bottom:18px}.kv{display:grid;grid-template-columns:180px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--line2)}.kv span{color:#777}.kv b{font-weight:500;word-break:break-word}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.tabs a{border:1px solid var(--line);border-radius:999px;padding:8px 12px;background:#fff;color:#333}.modelTable td:nth-child(3){text-align:left}.rawSource{word-break:break-all}.mono,code,pre{font-family:Geist Mono,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.statusLine{display:flex;flex-wrap:wrap;gap:4px}.providerSummary{color:#777;font-size:12px;margin-top:4px}.providerRailNewsList{display:grid;gap:10px;margin-top:12px}.providerRailNewsCard{border-top:1px solid var(--line2);padding-top:10px}.providerRailNewsCard time{display:block;color:#999;font-size:11px;margin-bottom:4px}.providerRailNewsCard a{display:block;color:#333;font-size:13px;line-height:1.45}.providerRailNewsCard a:hover{text-decoration:underline;text-underline-offset:3px}.searchBox{width:100%;height:38px;border:1px solid var(--line);border-radius:8px;padding:0 12px;font:14px inherit;margin-bottom:14px}.listToolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 18px}.listCount{color:#555;font-size:14px}.listCount b{color:#111}.quickFilters{display:flex;gap:8px;flex-wrap:wrap}.quickFilter{border:1px solid var(--line);border-radius:999px;background:#fff;color:#444;padding:7px 11px;font:500 13px inherit;cursor:pointer;display:inline-flex;align-items:center;gap:6px}.quickFilterCount{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;border-radius:999px;background:#f2f2f2;color:#666;font-size:11px;padding:0 6px}.quickFilter:hover,.quickFilter.active{border-color:#111;color:#111;background:#fafafa}.quickFilter.active .quickFilterCount{background:#111;color:#fff}.filterOption input{accent-color:#111}@media(max-width:900px){.statGrid,.two{grid-template-columns:1fr}.kv{grid-template-columns:1fr}.modelTable{min-width:900px}}@media(max-width:720px){.nav{height:auto;min-height:56px;padding:10px 14px;gap:10px;flex-wrap:wrap}.brandmark{gap:8px;min-width:0}.brandmark span:not(.logo):not(.brandZh){font-size:15px}.brandZh{display:none}.githubLink{order:2}.navlinks{order:3;margin-left:0;gap:12px;font-size:13px}.navlinks a,.navlinks span{padding:8px 0 6px}.topSearch{order:5;width:100%;display:flex;height:34px}.modelsShell{display:block;min-height:auto}.filterPanel{position:static;border-right:0;border-bottom:1px solid var(--line);padding:16px 14px;background:#fff}.filterGroup{padding:10px 0}.filterOption{padding:7px 0}.mainPanel{padding:20px 14px 56px;overflow:visible}.plazaHead{align-items:flex-start;flex-direction:column;margin-bottom:16px}.plazaHead h1{font-size:30px;letter-spacing:-.8px}.listToolbar{overflow-x:auto;margin:0 -14px 16px;padding:0 14px}.quickFilters{flex-wrap:nowrap}.quickFilter{white-space:nowrap}.tableWrap{margin:0 -14px;padding:0 14px;overflow-x:auto;-webkit-overflow-scrolling:touch}.modelTable{min-width:760px}.modelTable td{padding:12px 10px}.modelName{min-width:230px}.detailHero{padding:34px 0 22px}.detailHero h1{font-size:34px;letter-spacing:-1.2px}.wrap{padding:0 14px}.detailSingle{padding-top:22px;padding-bottom:56px}.panel{padding:16px;border-radius:12px}.panel h2{font-size:24px}.toc{overflow-x:auto;flex-wrap:nowrap;white-space:nowrap}.summaryStrip{grid-template-columns:1fr}.specRow{grid-template-columns:1fr}.priceItem{display:block}.priceItem dd{text-align:left;margin-top:4px}.providerNewsRail .filterGroup{border-bottom:0}.providerRailNewsList{gap:8px}}`
 
-type ActivePage = 'models' | 'providers'
+type ActivePage = 'models'
 
 export function renderOpenRouterRawHome(graph: OpenRouterRawGraph): string {
   const authorOptions = authorFilterOptions(graph)
@@ -15,18 +15,13 @@ export function renderOpenRouterRawHome(graph: OpenRouterRawGraph): string {
   const visibleRows = graph.nodes.filter((node) => !searchOnlyNodeIds.has(node.id)).length
   const rows = graph.nodes.slice().sort(compareNodesByReleaseDesc).map((node) => renderModelRow(node, searchOnlyNodeIds.has(node.id), graph)).join('')
   const quickFilters = renderOutputQuickFilters(graph, searchOnlyNodeIds, visibleRows)
-  const body = `<main class="modelsShell"><aside class="filterPanel" aria-label="模型筛选">${renderAuthorFilterGroup(graph, authorOptions, visibleRows)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>模型广场</h1></div></div><div class="listToolbar"><div class="quickFilters" aria-label="模态筛选">${quickFilters}</div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small data-price-unit>/M tokens</small></th><th>输出<br><small data-price-unit>/M tokens</small></th><th>读取<br><small data-price-unit>/M tokens</small></th><th>发布时间</th></tr></thead><tbody id="rows">${rows}</tbody></table></div><script>${modelFilterScript()}${currencyToggleScript()}</script></section></main>`
-  return page('模型广场 · mddb.dev', body, 'models', currencyToggle(graph))
+  const body = `<main class="modelsShell"><aside class="filterPanel" aria-label="模型筛选">${renderAuthorFilterGroup(graph, authorOptions, visibleRows)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>模型广场</h1></div></div><div class="listToolbar"><div class="quickFilters" aria-label="模态筛选">${quickFilters}</div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small>/M tokens</small></th><th>输出<br><small>/M tokens</small></th><th>读取<br><small>/M tokens</small></th><th>发布时间</th></tr></thead><tbody id="rows">${rows}</tbody></table></div><script>${modelFilterScript()}</script></section></main>`
+  return page('模型广场 · mddb.dev', body, 'models')
 }
 
 
 function renderOutputQuickFilters(graph: OpenRouterRawGraph, searchOnlyNodeIds: Set<string>, visibleRows: number): string {
   const filters = outputQuickFilters(visibleRows, (modality) => outputModalityCount(graph, searchOnlyNodeIds, modality))
-  return filters.map((filter, index) => `<button class="quickFilter${index === 0 ? ' active' : ''}" type="button" data-output-filter="${escapeHtml(filter.value)}">${escapeHtml(filter.label)} <span class="quickFilterCount"${filter.value === 'all' ? ' id="visibleCount"' : ''}>${filter.count}</span></button>`).join('')
-}
-
-function renderOutputQuickFiltersForNodes(nodes: OpenRouterRawNode[]): string {
-  const filters = outputQuickFilters(nodes.length, (modality) => nodeOutputModalityCount(nodes, modality))
   return filters.map((filter, index) => `<button class="quickFilter${index === 0 ? ' active' : ''}" type="button" data-output-filter="${escapeHtml(filter.value)}">${escapeHtml(filter.label)} <span class="quickFilterCount"${filter.value === 'all' ? ' id="visibleCount"' : ''}>${filter.count}</span></button>`).join('')
 }
 
@@ -69,25 +64,7 @@ function outputModalityCount(graph: OpenRouterRawGraph, searchOnlyNodeIds: Set<s
 }
 
 
-export function renderOpenRouterProviderIndex(graph: OpenRouterRawGraph): string {
-  const providers = providerSummaries(graph)
-  const providedModelCount = providers.reduce((sum, provider) => sum + provider.offerCount, 0)
-  const rows = providers.map((provider) => `<a class="providerDirectoryLink providerDirectoryCard" href="/${escapeHtml(provider.id)}/"><div><span>${providerLogoIcon(graph, provider.id, provider.label, 'providerIcon')}${escapeHtml(provider.label)}</span><p>${providerSummaryCopy(provider.modelCount, provider.offerCount)}</p></div><div class="providerCardMeta"><span>${escapeHtml(provider.currency)}</span><strong>→</strong></div></a>`).join('')
-  const body = `<main class="providerPlaza"><div class="plazaHead"><div><h1>供应商广场</h1><p class="rawIntro">${providers.length} 个供应商 · 提供 ${providedModelCount} 个模型。选择供应商查看它提供的模型。</p></div></div><div class="providerDirectoryGrid">${rows}</div></main>`
-  return page('供应商广场 · mddb.dev', body, 'providers', currencyToggle(graph))
-}
-
-export function renderOpenRouterProviderDetail(graph: OpenRouterRawGraph, providerId: string): string {
-  const models = providerOfferModels(graph, providerId)
-  const label = providerDisplayName(graph, providerId)
-  const modelRows = models.map((node) => renderModelRow(node, false, graph)).join('') || '<tr><td class="muted" colspan="6">暂无模型</td></tr>'
-  const quickFilters = renderOutputQuickFiltersForNodes(models)
-  const authorOptions = authorFilterOptionsForNodes(graph, models)
-  const body = `<main class="modelsShell providerShell"><aside class="filterPanel" aria-label="模型筛选">${renderAuthorFilterGroup(graph, authorOptions, models.length)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>${providerLogoIcon(graph, providerId, label, 'modelIcon')}${escapeHtml(label)}</h1></div></div><div class="listToolbar"><div class="quickFilters" aria-label="模态筛选">${quickFilters}</div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small data-price-unit>/M tokens</small></th><th>输出<br><small data-price-unit>/M tokens</small></th><th>读取<br><small data-price-unit>/M tokens</small></th><th>发布时间</th></tr></thead><tbody id="rows">${modelRows}</tbody></table></div><script>${modelFilterScript()}${currencyToggleScript()}</script></section></main>`
-  return page(`${label} · Provider · mddb.dev`, body, 'models', currencyToggle(graph))
-}
-
-function compareNodesByReleaseDesc(a: OpenRouterRawNode, b: OpenRouterRawNode): number {
+export function compareNodesByReleaseDesc(a: OpenRouterRawNode, b: OpenRouterRawNode): number {
   const diff = modelReleaseTimestamp(b) - modelReleaseTimestamp(a)
   return diff !== 0 ? diff : a.displayName.localeCompare(b.displayName)
 }
@@ -102,8 +79,8 @@ export function renderOpenRouterRawDetail(graph: OpenRouterRawGraph, node: OpenR
   const outEdges = graph.edges.filter((edge) => edge.from === node.id)
   const inEdges = graph.edges.filter((edge) => edge.to === node.id && edge.from !== node.id)
   const title = modelDetailTitle(node)
-  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/">← 返回模型广场</a><div class="eyebrow">${detailEyebrow(node)}</div><h1>${escapeHtml(title)}</h1><div class="modelIdHero">Model ID ${renderModelTagCopy(node.modelId)}</div><div hidden>${modelDescription(node)}</div>${renderHeroRelations(graph, node, outEdges, inEdges)}</div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#spec">规格</a><a href="#pricing">价格</a><a href="#source">元数据</a></nav>${renderSpecSection(node)}${renderPricingSection(graph, node, outEdges, inEdges)}${renderSourceSection(node, outEdges, inEdges)}</article></div><script>${currencyToggleScript()}</script></main>`
-  return page(`${title} · mddb.dev`, body, 'models', currencyToggle(graph))
+  const body = `<main><section class="detailHero detailHeroCompact"><div class="wrap"><a class="btn backToPlaza" href="/">← 返回模型广场</a><div class="eyebrow">${detailEyebrow(node)}</div><h1>${escapeHtml(title)}</h1><div class="modelIdHero">Model ID ${renderModelTagCopy(node.modelId)}</div><div hidden>${modelDescription(node)}</div>${renderHeroRelations(graph, node, outEdges, inEdges)}</div></section><div class="wrap detailSingle databaseDetail"><article><nav class="toc" aria-label="模型页面章节"><a href="#spec">规格</a><a href="#pricing">价格</a><a href="#source">元数据</a></nav>${renderSpecSection(node)}${renderPricingSection(graph, node, outEdges, inEdges)}${renderSourceSection(node, outEdges, inEdges)}</article></div></main>`
+  return page(`${title} · mddb.dev`, body, 'models')
 }
 
 function modelDetailTitle(node: OpenRouterRawNode): string {
@@ -119,46 +96,6 @@ function detailEyebrow(node: OpenRouterRawNode): string {
   return `Author · ${escapeHtml(node.derived.author ?? '—')}`
 }
 
-function providerSummaries(graph: OpenRouterRawGraph): Array<{ id: string; label: string; modelCount: number; offerCount: number; currency: string }> {
-  return graph.providers
-    .map((provider) => ({
-      id: provider.id,
-      label: displayProviderLabel(provider.name),
-      modelCount: visibleProviderModels(graph, provider.id).length,
-      offerCount: providerOfferCount(provider.raw),
-      currency: provider.currency,
-    }))
-    .sort((a, b) => b.offerCount - a.offerCount || b.modelCount - a.modelCount || a.label.localeCompare(b.label))
-}
-
-function providerSummaryCopy(modelCount: number, offerCount: number): string {
-  const parts: string[] = []
-  if (modelCount > 0) parts.push(`自研 ${modelCount} 个模型`)
-  if (offerCount > 0) parts.push(`提供 ${offerCount} 个模型`)
-  return parts.join(' · ') || '暂无模型'
-}
-
-function providerOfferCount(raw: Record<string, unknown>): number {
-  const offers = raw.offers
-  return Array.isArray(offers) ? offers.length : 0
-}
-
-function providerOfferModels(graph: OpenRouterRawGraph, providerId: string): OpenRouterRawNode[] {
-  const searchOnlyNodeIds = modelPlazaSearchOnlyNodeIds(graph)
-  const direct = graph.nodes.filter((node) => node.provider === providerId && !searchOnlyNodeIds.has(node.id))
-  const offers = graph.nodes.filter((node) => node.provider === providerId && searchOnlyNodeIds.has(node.id))
-  return [...direct, ...offers].sort(compareNodesByReleaseDesc)
-}
-
-function visibleProviderModels(graph: OpenRouterRawGraph, providerId: string): OpenRouterRawNode[] {
-  const searchOnlyNodeIds = modelPlazaSearchOnlyNodeIds(graph)
-  return graph.nodes.filter((node) => node.provider === providerId && !searchOnlyNodeIds.has(node.id)).sort(compareNodesByReleaseDesc)
-}
-
-function providerDisplayName(graph: OpenRouterRawGraph, providerId: string): string {
-  const node = graph.nodes.find((candidate) => candidate.provider === providerId)
-  return displayProviderLabel(node?.providerName ?? providerId)
-}
 
 function displayProviderLabel(value: string): string {
   if (!value) return value
@@ -281,16 +218,14 @@ function rawModelArray(node: OpenRouterRawNode, key: string): string[] {
 }
 
 function renderPricingSection(graph: OpenRouterRawGraph, node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[], inEdges: OpenRouterRawEdge[]): string {
+  void inEdges
   const canonicalLink = node.nodeKind === 'endpoint_deployment' ? canonicalModelLink(graph, node, outEdges) : ''
   const fallbackEndpoint = node.nodeKind === 'endpoint_deployment' ? undefined : sampleDeploymentPricingEndpoint(graph, node)
-  const fallbackProvider = fallbackEndpoint ? endpointProviderSlug(fallbackEndpoint) : ''
-  const providerLinks = node.nodeKind === 'endpoint_deployment' ? '' : pricingProviderLinks(graph, node, inEdges, fallbackProvider)
-  const endpointPricing = endpointPricingCards(node, graph.currency?.rate)
-  const fallbackPricing = endpointPricing ? '' : fallbackDeploymentPricingCards(fallbackEndpoint, node, graph.currency?.rate)
-  const supplementalPricing = endpointPricing || fallbackPricing ? '' : baseLlmSupplementalPricingCards(graph, node)
-  const litellmPricing = endpointPricing || fallbackPricing || supplementalPricing ? '' : litellmSupplementalPricingCards(node, graph.currency?.rate)
-  const empty = providerLinks || canonicalLink ? '' : '<p class="muted">无结构化 provider pricing；如本节点为 alias/snapshot/deployment，请先看上方关联模型跳转到 anchor。</p>'
-  return `<section id="pricing" class="panel"><h2>价格</h2>${canonicalLink}${endpointPricing || fallbackPricing || supplementalPricing || litellmPricing || empty}${providerLinks}</section>`
+  const endpointPricing = endpointPricingCards(node)
+  const fallbackPricing = endpointPricing ? '' : fallbackDeploymentPricingCards(fallbackEndpoint, node)
+  const litellmPricing = endpointPricing || fallbackPricing ? '' : litellmSupplementalPricingCards(node)
+  const empty = canonicalLink ? '' : '<p class="muted">无结构化官方价格；如本节点为 alias/snapshot/deployment，请先看上方关联模型跳转到 anchor。</p>'
+  return `<section id="pricing" class="panel"><h2>价格</h2>${canonicalLink}${endpointPricing || fallbackPricing || litellmPricing || empty}</section>`
 }
 
 function canonicalModelLink(graph: OpenRouterRawGraph, node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[]): string {
@@ -300,49 +235,11 @@ function canonicalModelLink(graph: OpenRouterRawGraph, node: OpenRouterRawNode, 
   return `<p class="muted">当前是 provider deployment 页面。<a class="modelLink" href="${escapeHtml(target.route)}/">查看 canonical 模型页</a>。</p>`
 }
 
-function pricingProviderLinks(graph: OpenRouterRawGraph, node: OpenRouterRawNode, inEdges: OpenRouterRawEdge[], excludeProvider = ''): string {
-  const providerEdges = inEdges.filter((edge) => edge.type === 'deployment_of')
-  if (providerEdges.length === 0) return ''
-  const links = providerEdges
-    .map((edge) => graph.nodes.find((candidate) => candidate.id === edge.from))
-    .filter((providerNode): providerNode is OpenRouterRawNode => providerNode !== undefined && providerNode.provider !== node.provider && providerNode.provider !== excludeProvider)
-    .sort((a, b) => displayProviderLabel(a.providerName).localeCompare(displayProviderLabel(b.providerName)))
-    .map((providerNode) => `<a class="providerChip" href="${escapeHtml(providerNode.route)}/">${escapeHtml(displayProviderLabel(providerNode.providerName))}</a>`)
-    .join('')
-  return links ? `<div class="muted pricingProviderHint">其他 provider deployment 报价请点开查看：</div><div class="availabilityGrid" aria-label="提供此模型的 provider">${links}</div>` : ''
-}
-
-function baseLlmSupplementalPricingCards(graph: OpenRouterRawGraph, node: OpenRouterRawNode): string {
-  if (node.sourceId.toLowerCase().endsWith(':free')) return ''
-  const prices = graph.enrichment?.baseLlm?.pricingBySourceId?.[node.sourceId] ?? []
-  const usable = prices.filter((price) => price.billingKind !== 'unknown')
-  if (usable.length === 0) return ''
-  return `<div class="priceVariantGrid"><div class="muted">BaseLLM / NewAPI 补充价格；仅用于 OpenRouter 缺失结构化价格时，不覆盖 OpenRouter 官方/endpoint 价格。</div>${usable.map((price) => renderBaseLlmPricingCard(price, graph.currency?.rate)).join('')}</div>`
-}
-
-function renderBaseLlmPricingCard(price: BaseLlmSupplementalPrice, cnyRate?: number): string {
-  const rows = price.billingKind === 'unit' ? [
-    priceRow('Request / unit', price.unitPrice, 'USD/direct', cnyRate),
-  ] : [
-    priceRow('Input / prompt', price.pricePerMillionInput ?? price.derivedInputPriceFromRatio, 'USD/direct_per_1M', cnyRate),
-    priceRow('Output / completion', price.pricePerMillionOutput ?? price.derivedOutputPriceFromRatio, 'USD/direct_per_1M', cnyRate),
-    priceRow('Cache read', price.pricePerMillionCacheRead, 'USD/direct_per_1M', cnyRate),
-    priceRow('Cache write', price.pricePerMillionCacheWrite, 'USD/direct_per_1M', cnyRate),
-  ]
-  const meta = [
-    `provider ${price.providerName}`,
-    `source ${price.sourceModelId}`,
-    `context ${price.contextWindow}`,
-    ...price.tags.map((tag) => `tag ${tag}`),
-  ].map((item) => `<span class="badge">${escapeHtml(item)}</span>`).join('')
-  return `<div class="priceVariantCard"><h3>BaseLLM / NewAPI 补充价格 · ${escapeHtml(price.providerName)}</h3><dl class="priceList">${rows.filter(Boolean).join('')}</dl><div class="statusLine">${meta}</div></div>`
-}
-
-function litellmSupplementalPricingCards(node: OpenRouterRawNode, cnyRate?: number): string {
+function litellmSupplementalPricingCards(node: OpenRouterRawNode): string {
   const litellm = registryLitellm(node)
   const prices = Array.isArray(litellm?.prices) ? litellm.prices : []
   if (prices.length === 0) return ''
-  const rows = prices.map((price) => litellmPriceRow(price, cnyRate)).filter(Boolean).join('')
+  const rows = prices.map((price) => litellmPriceRow(price)).filter(Boolean).join('')
   const meta = [
     `provider ${String(litellm?.provider ?? 'litellm')}`,
     `source ${String(litellm?.raw_id ?? node.sourceId)}`,
@@ -357,9 +254,9 @@ function registryLitellm(node: OpenRouterRawNode): Record<string, unknown> | nul
   return isRecord(other.litellm) ? other.litellm : null
 }
 
-function litellmPriceRow(price: unknown, cnyRate?: number): string {
+function litellmPriceRow(price: unknown): string {
   if (!isRecord(price)) return ''
-  return priceRow(litellmPriceLabel(String(price.kind ?? 'price'), typeof price.condition === 'string' ? price.condition : ''), price.amount, litellmPriceUnit(String(price.unit ?? '')), cnyRate)
+  return priceRow(litellmPriceLabel(String(price.kind ?? 'price'), typeof price.condition === 'string' ? price.condition : ''), price.amount, litellmPriceUnit(String(price.unit ?? '')))
 }
 
 function litellmPriceLabel(kind: string, condition = ''): string {
@@ -379,13 +276,13 @@ function litellmPriceUnit(unit: string): string {
   return unit
 }
 
-function endpointPricingCards(node: OpenRouterRawNode, cnyRate?: number): string {
+function endpointPricingCards(node: OpenRouterRawNode): string {
   const endpoints = currentProviderEndpoints(node)
   if (endpoints.length === 0) return ''
-  return `<div class="priceVariantGrid">${endpoints.map((endpoint) => renderEndpointPricingCard(endpoint, cnyRate)).join('')}</div>`
+  return `<div class="priceVariantGrid">${endpoints.map((endpoint) => renderEndpointPricingCard(endpoint)).join('')}</div>`
 }
 
-function fallbackDeploymentPricingCards(endpoint: Record<string, unknown> | undefined, node: OpenRouterRawNode, cnyRate?: number): string {
+function fallbackDeploymentPricingCards(endpoint: Record<string, unknown> | undefined, node: OpenRouterRawNode): string {
   if (!endpoint) return ''
   const provider = endpointProviderSlug(endpoint)
   const author = normalizedAuthorValue(node.derived.author)
@@ -393,7 +290,7 @@ function fallbackDeploymentPricingCards(endpoint: Record<string, unknown> | unde
   const note = provider === author
     ? `${escapeHtml(displayProviderLabel(node.providerName))} provider 报价。`
     : `${escapeHtml(label)} provider 报价；canonical author 暂无自有报价。`
-  return `<div class="priceVariantGrid"><div class="muted">${note}</div>${renderEndpointPricingCard(endpoint, cnyRate, provider)}</div>`
+  return `<div class="priceVariantGrid"><div class="muted">${note}</div>${renderEndpointPricingCard(endpoint, provider)}</div>`
 }
 
 function currentProviderEndpoints(node: OpenRouterRawNode): Record<string, unknown>[] {
@@ -406,48 +303,53 @@ function endpointProviderSlug(endpoint: Record<string, unknown>): string {
   return tag.replace(/\//gu, '-').trim().toLowerCase().replace(/[^a-z0-9._-]+/gu, '-') || 'unknown'
 }
 
-function renderEndpointPricingCard(endpoint: Record<string, unknown>, cnyRate?: number, sourceProvider = ''): string {
+function renderEndpointPricingCard(endpoint: Record<string, unknown>, sourceProvider = ''): string {
   const pricing = isRecord(endpoint.pricing) ? endpoint.pricing : {}
   const rows = [
-    priceRow('Input / prompt', pricing.prompt, 'USD/1M tokens', cnyRate),
-    priceRow('Output / completion', pricing.completion, 'USD/1M tokens', cnyRate),
-    priceRow('Cache read', pricing.input_cache_read, 'USD/1M tokens', cnyRate),
-    priceRow('Web search', pricing.web_search, 'USD/request', cnyRate),
+    priceRow('Input / prompt', pricing.prompt, 'USD/1M tokens'),
+    priceRow('Output / completion', pricing.completion, 'USD/1M tokens'),
+    priceRow('Cache read', pricing.input_cache_read, 'USD/1M tokens'),
+    priceRow('Web search', pricing.web_search, 'USD/request'),
   ].filter(Boolean).join('')
   const sourceAttribute = sourceProvider ? ` data-price-source-provider="${escapeHtml(sourceProvider)}"` : ''
   return `<div class="priceVariantCard"${sourceAttribute}><dl class="priceList">${rows}</dl></div>`
 }
 
-function priceRow(label: string, value: unknown, unit: string, cnyRate?: number): string {
+function priceRow(label: string, value: unknown, unit: string): string {
   if (value === null || value === undefined || value === '') return ''
-  return `<div class="priceItem"><dt>${escapeHtml(label)}</dt><dd>${formatPrice(value, unit, cnyRate)}</dd></div>`
+  return `<div class="priceItem"><dt>${escapeHtml(label)}</dt><dd>${formatPrice(value, unit)}</dd></div>`
 }
 
-function formatPrice(value: unknown, unit: string, cnyRate?: number): string {
-  if (unit === 'USD/1M tokens') return `${currencyPriceHtml(Number(value) * 1_000_000, cnyRate)} <span class="muted">per 1M tokens</span>`
-  if (unit === 'USD/direct_per_1M') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per 1M tokens</span>`
-  if (unit === 'USD/direct_per_1M_audio') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per 1M audio tokens</span>`
-  if (unit === 'USD/query') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per query</span>`
-  if (unit === 'USD/image') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per image</span>`
-  if (unit === 'USD/second') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per second</span>`
-  if (unit === 'USD/audio_second') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per audio second</span>`
-  if (unit === 'USD/video_second') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per video second</span>`
-  if (unit === 'USD/request') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per request</span>`
-  if (unit === 'USD/direct') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per request</span>`
+function formatPrice(value: unknown, unit: string): string {
+  if (unit === 'USD/1M tokens') return `${currencyPriceHtml(Number(value) * 1_000_000, 'USD')} <span class="muted">per 1M tokens</span>`
+  if (unit === 'USD/direct_per_1M') return `${currencyPriceHtml(Number(value), 'USD')} <span class="muted">per 1M tokens</span>`
+  if (unit === 'USD/direct_per_1M_audio') return `${currencyPriceHtml(Number(value), 'USD')} <span class="muted">per 1M audio tokens</span>`
+  if (unit === 'USD/query') return `${currencyPriceHtml(Number(value), 'USD')} <span class="muted">per query</span>`
+  if (unit === 'USD/image') return `${currencyPriceHtml(Number(value), 'USD')} <span class="muted">per image</span>`
+  if (unit === 'USD/second') return `${currencyPriceHtml(Number(value), 'USD')} <span class="muted">per second</span>`
+  if (unit === 'USD/audio_second') return `${currencyPriceHtml(Number(value), 'USD')} <span class="muted">per audio second</span>`
+  if (unit === 'USD/video_second') return `${currencyPriceHtml(Number(value), 'USD')} <span class="muted">per video second</span>`
+  if (unit === 'USD/request') return `${currencyPriceHtml(Number(value), 'USD')} <span class="muted">per request</span>`
+  if (unit === 'USD/direct') return `${currencyPriceHtml(Number(value), 'USD')} <span class="muted">per request</span>`
   return `<code>${escapeHtml(String(value))}</code>${unit ? ` <span class="muted">${escapeHtml(unit)}</span>` : ''}`
 }
 
 function formatUsdPerMillionTokens(value: unknown): string {
   const numeric = Number(value)
   if (!Number.isFinite(numeric)) return `$${escapeHtml(String(value))}`
-  return currencyPriceHtml(numeric * 1_000_000)
+  return currencyPriceHtml(numeric * 1_000_000, 'USD')
 }
 
-function currencyPriceHtml(usdValue: number, cnyRate = 7): string {
-  if (!Number.isFinite(usdValue)) return '<code>—</code>'
-  const usd = formatPriceAmount(usdValue)
-  const cny = formatPriceAmount(usdValue * cnyRate)
-  return `<code class="priceValue" data-usd="${usd}" data-cny="${cny}"><span class="priceCurrencySymbol">$</span><span class="priceAmount">${usd}</span></code>`
+function currencyPriceHtml(value: number, currency = 'USD'): string {
+  if (!Number.isFinite(value)) return '<code>—</code>'
+  const symbol = currencySymbol(currency)
+  return `<code class="priceValue"><span class="priceCurrencySymbol">${escapeHtml(symbol)}</span><span class="priceAmount">${formatPriceAmount(value)}</span></code>`
+}
+
+function currencySymbol(currency: string): string {
+  if (currency === 'USD') return '$'
+  if (currency === 'CNY') return '￥'
+  return `${currency} `
 }
 
 function formatPriceAmount(value: number): string {
@@ -498,7 +400,7 @@ function modelPriceCell(node: OpenRouterRawNode, key: string, graph?: OpenRouter
   if (value === null || value === undefined || value === '') return '—'
   const provider = endpointProviderSlug(endpoint)
   const sourceAttribute = provider ? ` data-price-source-provider="${escapeHtml(provider)}"` : ''
-  return `<span${sourceAttribute}>${formatUsdPerMillionTokensWithRate(value, graph?.currency?.rate)}</span>`
+  return `<span${sourceAttribute}>${formatUsdPerMillionTokensWithRate(value)}</span>`
 }
 
 function sampleDeploymentPricingEndpoint(graph: OpenRouterRawGraph | undefined, node: OpenRouterRawNode): Record<string, unknown> | undefined {
@@ -531,28 +433,20 @@ function endpointPricingScore(endpoint: Record<string, unknown>): number {
   }, 0)
 }
 
-function formatUsdPerMillionTokensWithRate(value: unknown, cnyRate?: number): string {
+function formatUsdPerMillionTokensWithRate(value: unknown): string {
   const numeric = Number(value)
   if (!Number.isFinite(numeric)) return `$${escapeHtml(String(value))}`
-  return currencyPriceHtml(numeric * 1_000_000, cnyRate)
+  return currencyPriceHtml(numeric * 1_000_000, 'USD')
 }
 
-function page(title: string, body: string, activePage: ActivePage, navExtra = ''): string {
-  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(title)}</title><style>${css}</style></head><body>${nav(activePage, navExtra)}${body}<script>${copyModelTagScript()}</script>${footer()}</body></html>`
+function page(title: string, body: string, activePage: ActivePage): string {
+  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(title)}</title><style>${css}</style></head><body>${nav(activePage)}${body}<script>${copyModelTagScript()}</script>${footer()}</body></html>`
 }
 
-function nav(activePage: ActivePage, navExtra = ''): string {
+function nav(activePage: ActivePage): string {
   const modelsClass = activePage === 'models' ? ' class="active"' : ''
-  const providersClass = activePage === 'providers' ? ' class="active"' : ''
-  const search = '<label class="topSearch">⌕ <input id="q" type="search" placeholder="搜索模型 / provider / author / source" autocomplete="off"></label>'
-  return `<header class="topbar"><nav class="nav"><a class="brandmark" href="/">${databaseLogo()}<span>mddb.dev</span><span class="brandZh">大模型数据库</span></a>${search}<a class="githubLink" href="https://github.com/imphillip/mddb" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库">${githubLogo()}</a><div class="navlinks"><a${modelsClass} href="/">模型广场</a><a${providersClass} href="/providers/">供应商广场</a></div>${navExtra}</nav></header>`
-}
-
-function currencyToggle(graph: OpenRouterRawGraph): string {
-  const currency = graph.currency
-  if (!currency) return ''
-  const title = `${formatDisplayNumber(1)} USD / ${formatDisplayNumber(currency.rate)} CNY · ${currency.source}`
-  return `<div class="currencyControl"><div class="currencyToggle" data-currency-toggle title="${escapeHtml(title)}"><button type="button" class="active" data-currency="USD">1 USD</button><button type="button" data-currency="CNY">${escapeHtml(formatDisplayNumber(currency.rate))} CNY</button></div></div>`
+  const search = '<label class="topSearch">⌕ <input id="q" type="search" placeholder="搜索模型 / author / source" autocomplete="off"></label>'
+  return `<header class="topbar"><nav class="nav"><a class="brandmark" href="/">${databaseLogo()}<span>mddb.dev</span><span class="brandZh">大模型数据库</span></a>${search}<a class="githubLink" href="https://github.com/imphillip/mddb" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库">${githubLogo()}</a><div class="navlinks"><a${modelsClass} href="/">模型广场</a></div></nav></header>`
 }
 
 function databaseLogo(): string {
@@ -582,17 +476,6 @@ function authorFilterOptions(graph: OpenRouterRawGraph): Array<{ label: string; 
   return sortAuthorOptions(rows)
 }
 
-function authorFilterOptionsForNodes(graph: OpenRouterRawGraph, nodes: OpenRouterRawNode[]): Array<{ label: string; value: string; count: number }> {
-  const counts = new Map<string, { label: string; value: string; count: number }>()
-  for (const node of nodes) {
-    const value = normalizedAuthorValue(node.derived.author)
-    const label = authorLabel(value)
-    const current = counts.get(value)
-    if (current === undefined) counts.set(value, { label, value, count: 1 })
-    else current.count += 1
-  }
-  return sortAuthorOptions(Array.from(counts.values()))
-}
 
 function sortAuthorOptions(rows: Array<{ label: string; value: string; count: number }>): Array<{ label: string; value: string; count: number }> {
   const featured = featuredAuthorValues()
@@ -754,30 +637,6 @@ if(q) q.addEventListener('input',applyModelFilters);
 window.applyModelFilters=applyModelFilters;
 window.modelPlazaProviderUrl=function(provider){return '/?provider='+encodeURIComponent(provider)};
 applyModelFilters();
-})();`
-}
-
-function currencyToggleScript(): string {
-  return String.raw`
-(function(){
-const toggle=document.querySelector('[data-currency-toggle]');
-if(!toggle)return;
-const buttons=Array.from(toggle.querySelectorAll('[data-currency]'));
-const prices=Array.from(document.querySelectorAll('[data-usd][data-cny]'));
-function setCurrency(currency){
-  buttons.forEach(button=>button.classList.toggle('active',button.dataset.currency===currency));
-  prices.forEach(price=>{
-    const amount=price.querySelector('.priceAmount');
-    const symbol=price.querySelector('.priceCurrencySymbol');
-    if(amount) amount.textContent=currency==='CNY' ? price.dataset.cny : price.dataset.usd;
-    if(symbol) symbol.textContent=currency==='CNY' ? '¥' : '$';
-  });
-  try{localStorage.setItem('mddb.currency',currency)}catch(error){}
-}
-buttons.forEach(button=>button.addEventListener('click',()=>setCurrency(button.dataset.currency||'USD')));
-let saved='USD';
-try{saved=localStorage.getItem('mddb.currency')||'USD'}catch(error){}
-setCurrency(saved==='CNY'?'CNY':'USD');
 })();`
 }
 

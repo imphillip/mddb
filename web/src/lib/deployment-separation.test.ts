@@ -28,16 +28,19 @@ describe('deployment separation', () => {
     expect(packageJson.scripts?.['data:openrouter']).toBe('node scripts/fetch-openrouter-models.mjs')
   })
 
-  it('keeps transient news exports out of public data while preserving exchange-rate support', () => {
+  it('keeps transient news exports out of public data and omits frontend currency conversion', () => {
     const packageJson = JSON.parse(readProjectFile('package.json')) as { scripts?: Record<string, string> }
     const buildScript = readProjectFile('web/src/scripts/build-site.ts')
+    const renderer = readProjectFile('web/src/lib/openrouter-raw-renderer.ts')
     const gitignore = readProjectFile('.gitignore')
 
     expect(gitignore).toContain('data/model-news-tagged.json')
     expect(() => readProjectFile('data/model-news-tagged.json')).toThrow()
     expect(packageJson.scripts?.['data:fx']).toBe('node scripts/fetch-exchange-rate.mjs')
-    expect(buildScript).toContain("'.internal', 'source-data', 'exchange-rate-usd-cny.raw.json'")
-    expect(buildScript).toContain('attachCurrency')
+    expect(buildScript).not.toContain('attachCurrency')
+    expect(renderer).not.toContain('data-currency-toggle')
+    expect(renderer).not.toContain('data-usd=')
+    expect(renderer).not.toContain('data-cny=')
   })
 
   it('keeps the public README compact and focused on the current registry shape', () => {
@@ -47,7 +50,7 @@ describe('deployment separation', () => {
     expect(readme).toContain('data/providers/*.json')
     expect(readme).toContain('GitHub Raw')
     expect(readme).toContain('OpenRouter')
-    expect(readme).toContain('BaseLLM / NewAPI')
+    expect(readme).not.toContain('BaseLLM / NewAPI')
     expect(readme).toContain('models.dev')
     expect(readme).toContain('LiteLLM')
     expect(readme).not.toContain('AIHOT')
