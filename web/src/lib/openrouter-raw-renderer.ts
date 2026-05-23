@@ -288,8 +288,9 @@ function renderPricingSection(graph: OpenRouterRawGraph, node: OpenRouterRawNode
   const endpointPricing = endpointPricingCards(node, graph.currency?.rate)
   const fallbackPricing = endpointPricing ? '' : fallbackDeploymentPricingCards(fallbackEndpoint, node, graph.currency?.rate)
   const supplementalPricing = endpointPricing || fallbackPricing ? '' : baseLlmSupplementalPricingCards(graph, node)
+  const litellmPricing = endpointPricing || fallbackPricing || supplementalPricing ? '' : litellmSupplementalPricingCards(node, graph.currency?.rate)
   const empty = providerLinks || canonicalLink ? '' : '<p class="muted">无结构化 provider pricing；如本节点为 alias/snapshot/deployment，请先看上方关联模型跳转到 anchor。</p>'
-  return `<section id="pricing" class="panel"><h2>价格</h2>${canonicalLink}${endpointPricing || fallbackPricing || supplementalPricing || empty}${providerLinks}</section>`
+  return `<section id="pricing" class="panel"><h2>价格</h2>${canonicalLink}${endpointPricing || fallbackPricing || supplementalPricing || litellmPricing || empty}${providerLinks}</section>`
 }
 
 function canonicalModelLink(graph: OpenRouterRawGraph, node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[]): string {
@@ -335,6 +336,46 @@ function renderBaseLlmPricingCard(price: BaseLlmSupplementalPrice, cnyRate?: num
     ...price.tags.map((tag) => `tag ${tag}`),
   ].map((item) => `<span class="badge">${escapeHtml(item)}</span>`).join('')
   return `<div class="priceVariantCard"><h3>BaseLLM / NewAPI 补充价格 · ${escapeHtml(price.providerName)}</h3><dl class="priceList">${rows.filter(Boolean).join('')}</dl><div class="statusLine">${meta}</div></div>`
+}
+
+function litellmSupplementalPricingCards(node: OpenRouterRawNode, cnyRate?: number): string {
+  const litellm = registryLitellm(node)
+  const prices = Array.isArray(litellm?.prices) ? litellm.prices : []
+  if (prices.length === 0) return ''
+  const rows = prices.map((price) => litellmPriceRow(price, cnyRate)).filter(Boolean).join('')
+  const meta = [
+    `provider ${String(litellm?.provider ?? 'litellm')}`,
+    `source ${String(litellm?.raw_id ?? node.sourceId)}`,
+  ].map((item) => `<span class="badge">${escapeHtml(item)}</span>`).join('')
+  return `<div class="priceVariantGrid"><div class="muted">LiteLLM 补充价格；仅用于非 chat 模态缺失结构化 provider 报价时。</div><div class="priceVariantCard"><h3>LiteLLM 补充价格</h3><dl class="priceList">${rows}</dl><div class="statusLine">${meta}</div></div></div>`
+}
+
+function registryLitellm(node: OpenRouterRawNode): Record<string, unknown> | null {
+  const model = isRecord(node.raw.model) ? node.raw.model : {}
+  const registry = isRecord(model.mddb_registry) ? model.mddb_registry : {}
+  const other = isRecord(registry.other_parameters) ? registry.other_parameters : {}
+  return isRecord(other.litellm) ? other.litellm : null
+}
+
+function litellmPriceRow(price: unknown, cnyRate?: number): string {
+  if (!isRecord(price)) return ''
+  return priceRow(litellmPriceLabel(String(price.kind ?? 'price')), price.amount, litellmPriceUnit(String(price.unit ?? '')), cnyRate)
+}
+
+function litellmPriceLabel(kind: string): string {
+  return kind.split(/[_-]/u).map((part) => part ? `${part.slice(0, 1).toUpperCase()}${part.slice(1)}` : part).join(' ')
+}
+
+function litellmPriceUnit(unit: string): string {
+  if (unit === 'per_1m_tokens') return 'USD/direct_per_1M'
+  if (unit === 'per_1m_audio_tokens') return 'USD/direct_per_1M_audio'
+  if (unit === 'per_query') return 'USD/query'
+  if (unit === 'per_image') return 'USD/image'
+  if (unit === 'per_second') return 'USD/second'
+  if (unit === 'per_audio_second') return 'USD/audio_second'
+  if (unit === 'per_video_second') return 'USD/video_second'
+  if (unit === 'per_request') return 'USD/request'
+  return unit
 }
 
 function endpointPricingCards(node: OpenRouterRawNode, cnyRate?: number): string {
@@ -384,6 +425,12 @@ function priceRow(label: string, value: unknown, unit: string, cnyRate?: number)
 function formatPrice(value: unknown, unit: string, cnyRate?: number): string {
   if (unit === 'USD/1M tokens') return `${currencyPriceHtml(Number(value) * 1_000_000, cnyRate)} <span class="muted">per 1M tokens</span>`
   if (unit === 'USD/direct_per_1M') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per 1M tokens</span>`
+  if (unit === 'USD/direct_per_1M_audio') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per 1M audio tokens</span>`
+  if (unit === 'USD/query') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per query</span>`
+  if (unit === 'USD/image') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per image</span>`
+  if (unit === 'USD/second') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per second</span>`
+  if (unit === 'USD/audio_second') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per audio second</span>`
+  if (unit === 'USD/video_second') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per video second</span>`
   if (unit === 'USD/request') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per request</span>`
   if (unit === 'USD/direct') return `${currencyPriceHtml(Number(value), cnyRate)} <span class="muted">per request</span>`
   return `<code>${escapeHtml(String(value))}</code>${unit ? ` <span class="muted">${escapeHtml(unit)}</span>` : ''}`

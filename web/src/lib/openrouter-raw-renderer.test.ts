@@ -318,6 +318,37 @@ function modelFilterScriptMarker(): string {
   return 'window.applyModelFilters=applyModelFilters;'
 }
 
+describe('renderOpenRouterRawDetail LiteLLM supplemental price enrichment', () => {
+  it('renders LiteLLM non-chat multimodal and unit prices when no provider price exists', () => {
+    const litellmNode = sourceNode('amazon/amazon.nova-2-multimodal-embeddings-v1:0', 'amazon')
+    litellmNode.raw.model = {
+      id: litellmNode.sourceId,
+      pricing: {},
+      mddb_registry: {
+        other_parameters: {
+          litellm: {
+            provider: 'bedrock',
+            raw_id: 'amazon.nova-2-multimodal-embeddings-v1:0',
+            prices: [
+              { kind: 'input', amount: 0.135, unit: 'per_1m_tokens', source_key: 'input_cost_per_token' },
+              { kind: 'input_image', amount: 0.00006, unit: 'per_image', source_key: 'input_cost_per_image' },
+              { kind: 'input_audio', amount: 0.00014, unit: 'per_audio_second', source_key: 'input_cost_per_audio_per_second' },
+            ],
+          },
+        },
+      },
+    }
+
+    const html = renderOpenRouterRawDetail(graph(), litellmNode)
+
+    expect(html).toContain('LiteLLM 补充价格')
+    expect(html).toContain('Input Image')
+    expect(html).toContain('per image')
+    expect(html).toContain('Input Audio')
+    expect(html).toContain('per audio second')
+  })
+})
+
 describe('renderOpenRouterRawDetail BaseLLM price enrichment', () => {
   it('uses BaseLLM as supplemental pricing for missing OpenRouter prices without replacing canonical endpoint prices or free routes', () => {
     const missingPriceNode = sourceNode('jinaai/jina-embeddings-v4', 'jinaai')

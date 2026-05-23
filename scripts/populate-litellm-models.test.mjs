@@ -49,7 +49,8 @@ describe('populateLiteLlmModels', () => {
   it('adds missing non-chat LiteLLM models to canonical models.json with normalized ids', () => {
     const root = mkdtempSync(join(tmpdir(), 'mddb-litellm-models-'))
     mkdirSync(root, { recursive: true })
-    writeJson(join(root, 'models.json'), {
+    const modelsPath = join(root, 'models.json')
+    writeJson(modelsPath, {
       schema_version: 1,
       models: [
         { id: 'gpt-4o', model: 'GPT-4o', author: 'openai', alias: ['openai/gpt-4o'], input_modalities: ['text'], output_modalities: ['text'] },
@@ -59,7 +60,7 @@ describe('populateLiteLlmModels', () => {
     })
 
     const result = populateLiteLlmModels({
-      modelsPath: join(root, 'models.json'),
+      modelsPath,
       observedAt: '2026-02-03T04:05:06.000Z',
       source: {
         'azure/text-embedding-3-small': { litellm_provider: 'azure', mode: 'embedding', max_input_tokens: 8191, input_cost_per_token: 0.00000002 },
@@ -73,7 +74,7 @@ describe('populateLiteLlmModels', () => {
     })
 
     expect(result).toEqual({ added: 4, enriched: 1, skipped: 2 })
-    const models = readJson(join(root, 'models.json')).models
+    const models = readJson(modelsPath).models
     expect(models.map((model) => model.id)).toEqual([
       'gpt-4o',
       'text-embedding-3-small',
@@ -111,6 +112,26 @@ describe('populateLiteLlmModels', () => {
       author: 'google',
       input_modalities: ['text'],
       output_modalities: ['embeddings'],
+    })
+    expect(models.find((model) => model.id === 'text-embedding-005')).not.toHaveProperty('deprecation_date')
+
+    populateLiteLlmModels({
+      modelsPath,
+      observedAt: '2026-05-23T00:00:00.000Z',
+      source: {
+        'text-embedding-005': { mode: 'embedding', litellm_provider: 'vertex_ai-embedding-models', deprecation_date: '2026-01-14' },
+      },
+    })
+
+    expect(readJson(modelsPath).models.find((model) => model.id === 'text-embedding-005')).toMatchObject({
+      deprecation_date: '2026-01-14',
+      other_parameters: { litellm: expect.objectContaining({
+        deprecation_date: '2026-01-14',
+        observations: expect.arrayContaining([
+          expect.objectContaining({ raw_id: 'vertex_ai/text-embedding-005', prices: expect.arrayContaining([{ kind: 'input', amount: 0.1, unit: 'per_1m_tokens', source_key: 'input_cost_per_token' }]) }),
+          expect.objectContaining({ raw_id: 'text-embedding-005', deprecation_date: '2026-01-14' }),
+        ]),
+      }) },
     })
   })
 })

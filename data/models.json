@@ -15493,7 +15493,39 @@
           "mode": "embedding",
           "provider": "bedrock",
           "raw_id": "amazon.nova-2-multimodal-embeddings-v1:0",
-          "output_vector_size": 3072
+          "output_vector_size": 3072,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.135,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input_image",
+              "amount": 0.00006,
+              "unit": "per_image",
+              "source_key": "input_cost_per_image"
+            },
+            {
+              "kind": "input_audio",
+              "amount": 0.00014,
+              "unit": "per_audio_second",
+              "source_key": "input_cost_per_audio_per_second"
+            },
+            {
+              "kind": "input_video",
+              "amount": 0.0007,
+              "unit": "per_video_second",
+              "source_key": "input_cost_per_video_per_second"
+            }
+          ]
         }
       },
       "sources": [
@@ -15527,7 +15559,27 @@
           "raw_id": "amazon.rerank-v1:0",
           "max_query_tokens": 32000,
           "max_document_chunks_per_query": 100,
-          "max_tokens_per_document_chunk": 512
+          "max_tokens_per_document_chunk": 512,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input",
+              "amount": 0.001,
+              "unit": "per_query",
+              "source_key": "input_cost_per_query"
+            }
+          ]
         }
       },
       "sources": [
@@ -15559,7 +15611,27 @@
           "mode": "embedding",
           "provider": "bedrock",
           "raw_id": "amazon.titan-embed-image-v1",
-          "output_vector_size": 1024
+          "output_vector_size": 1024,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.8,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input_image",
+              "amount": 0.00006,
+              "unit": "per_image",
+              "source_key": "input_cost_per_image"
+            }
+          ]
         }
       },
       "sources": [
@@ -15592,7 +15664,83 @@
           "mode": "embedding",
           "provider": "bedrock",
           "raw_id": "bedrock/us-gov-west-1/amazon.titan-embed-text-v1",
-          "output_vector_size": 1536
+          "output_vector_size": 1536,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "embedding",
+              "provider": "bedrock",
+              "raw_id": "bedrock/us-gov-east-1/amazon.titan-embed-text-v1",
+              "output_vector_size": 1536,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.1,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "bedrock",
+              "raw_id": "amazon.titan-embed-text-v1",
+              "output_vector_size": 1536,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.1,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "bedrock",
+              "raw_id": "bedrock/us-gov-west-1/amazon.titan-embed-text-v1",
+              "output_vector_size": 1536,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.1,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            }
+          ]
         }
       },
       "sources": [
@@ -15637,7 +15785,83 @@
           "mode": "embedding",
           "provider": "bedrock",
           "raw_id": "bedrock/us-gov-west-1/amazon.titan-embed-text-v2:0",
-          "output_vector_size": 1024
+          "output_vector_size": 1024,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.2,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "embedding",
+              "provider": "bedrock",
+              "raw_id": "bedrock/us-gov-east-1/amazon.titan-embed-text-v2:0",
+              "output_vector_size": 1024,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.2,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "bedrock",
+              "raw_id": "amazon.titan-embed-text-v2:0",
+              "output_vector_size": 1024,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.2,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "bedrock",
+              "raw_id": "bedrock/us-gov-west-1/amazon.titan-embed-text-v2:0",
+              "output_vector_size": 1024,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.2,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            }
+          ]
         }
       },
       "sources": [
@@ -15681,7 +15905,21 @@
           "mode": "embedding",
           "provider": "bedrock",
           "raw_id": "twelvelabs.marengo-embed-2-7-v1:0",
-          "output_vector_size": 1024
+          "output_vector_size": 1024,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 70,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -15715,7 +15953,39 @@
           "mode": "embedding",
           "provider": "bedrock",
           "raw_id": "us.twelvelabs.marengo-embed-2-7-v1:0",
-          "output_vector_size": 1024
+          "output_vector_size": 1024,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 70,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input_image",
+              "amount": 0.0001,
+              "unit": "per_image",
+              "source_key": "input_cost_per_image"
+            },
+            {
+              "kind": "input_audio",
+              "amount": 0.00014,
+              "unit": "per_audio_second",
+              "source_key": "input_cost_per_audio_per_second"
+            },
+            {
+              "kind": "input_video",
+              "amount": 0.0007,
+              "unit": "per_video_second",
+              "source_key": "input_cost_per_video_per_second"
+            }
+          ]
         }
       },
       "sources": [
@@ -15749,7 +16019,39 @@
           "mode": "embedding",
           "provider": "bedrock",
           "raw_id": "eu.twelvelabs.marengo-embed-2-7-v1:0",
-          "output_vector_size": 1024
+          "output_vector_size": 1024,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 70,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input_image",
+              "amount": 0.0001,
+              "unit": "per_image",
+              "source_key": "input_cost_per_image"
+            },
+            {
+              "kind": "input_audio",
+              "amount": 0.00014,
+              "unit": "per_audio_second",
+              "source_key": "input_cost_per_audio_per_second"
+            },
+            {
+              "kind": "input_video",
+              "amount": 0.0007,
+              "unit": "per_video_second",
+              "source_key": "input_cost_per_video_per_second"
+            }
+          ]
         }
       },
       "sources": [
@@ -15778,7 +16080,21 @@
         "litellm": {
           "mode": "audio_transcription",
           "provider": "assemblyai",
-          "raw_id": "assemblyai/best"
+          "raw_id": "assemblyai/best",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00003333,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
+          ]
         }
       },
       "sources": [
@@ -15807,7 +16123,21 @@
         "litellm": {
           "mode": "audio_transcription",
           "provider": "assemblyai",
-          "raw_id": "assemblyai/nano"
+          "raw_id": "assemblyai/nano",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00010278,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
+          ]
         }
       },
       "sources": [
@@ -15837,7 +16167,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "azure",
-          "raw_id": "azure/ada"
+          "raw_id": "azure/ada",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -15872,6 +16216,84 @@
           "raw_id": "gpt-4o-mini-transcribe",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 1.25,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 5,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input_audio",
+              "amount": 1.25,
+              "unit": "per_1m_audio_tokens",
+              "source_key": "input_cost_per_audio_token"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "audio_transcription",
+              "provider": "azure",
+              "raw_id": "azure/gpt-4o-mini-transcribe",
+              "supported_endpoints": [
+                "/v1/audio/transcriptions"
+              ],
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 1.25,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 5,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                },
+                {
+                  "kind": "input_audio",
+                  "amount": 1.25,
+                  "unit": "per_1m_audio_tokens",
+                  "source_key": "input_cost_per_audio_token"
+                }
+              ]
+            },
+            {
+              "mode": "audio_transcription",
+              "provider": "openai",
+              "raw_id": "gpt-4o-mini-transcribe",
+              "supported_endpoints": [
+                "/v1/audio/transcriptions"
+              ],
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 1.25,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 5,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                },
+                {
+                  "kind": "input_audio",
+                  "amount": 1.25,
+                  "unit": "per_1m_audio_tokens",
+                  "source_key": "input_cost_per_audio_token"
+                }
+              ]
+            }
           ]
         }
       },
@@ -15919,6 +16341,116 @@
           ],
           "supported_output_modalities": [
             "audio"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 2.5,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 10,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0.00025,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            },
+            {
+              "kind": "output_audio",
+              "amount": 12,
+              "unit": "per_1m_audio_tokens",
+              "source_key": "output_cost_per_audio_token"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "audio_speech",
+              "provider": "azure",
+              "raw_id": "azure/gpt-4o-mini-tts",
+              "supported_endpoints": [
+                "/v1/audio/speech"
+              ],
+              "supported_modalities": [
+                "text",
+                "audio"
+              ],
+              "supported_output_modalities": [
+                "audio"
+              ],
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 2.5,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 10,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0.00025,
+                  "unit": "per_second",
+                  "source_key": "output_cost_per_second"
+                },
+                {
+                  "kind": "output_audio",
+                  "amount": 12,
+                  "unit": "per_1m_audio_tokens",
+                  "source_key": "output_cost_per_audio_token"
+                }
+              ]
+            },
+            {
+              "mode": "audio_speech",
+              "provider": "openai",
+              "raw_id": "gpt-4o-mini-tts",
+              "supported_endpoints": [
+                "/v1/audio/speech"
+              ],
+              "supported_modalities": [
+                "text",
+                "audio"
+              ],
+              "supported_output_modalities": [
+                "audio"
+              ],
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 2.5,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 10,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0.00025,
+                  "unit": "per_second",
+                  "source_key": "output_cost_per_second"
+                },
+                {
+                  "kind": "output_audio",
+                  "amount": 12,
+                  "unit": "per_1m_audio_tokens",
+                  "source_key": "output_cost_per_audio_token"
+                }
+              ]
+            }
           ]
         }
       },
@@ -15960,6 +16492,84 @@
           "raw_id": "gpt-4o-transcribe",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 2.5,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 10,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input_audio",
+              "amount": 2.5,
+              "unit": "per_1m_audio_tokens",
+              "source_key": "input_cost_per_audio_token"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "audio_transcription",
+              "provider": "azure",
+              "raw_id": "azure/gpt-4o-transcribe",
+              "supported_endpoints": [
+                "/v1/audio/transcriptions"
+              ],
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 2.5,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 10,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                },
+                {
+                  "kind": "input_audio",
+                  "amount": 2.5,
+                  "unit": "per_1m_audio_tokens",
+                  "source_key": "input_cost_per_audio_token"
+                }
+              ]
+            },
+            {
+              "mode": "audio_transcription",
+              "provider": "openai",
+              "raw_id": "gpt-4o-transcribe",
+              "supported_endpoints": [
+                "/v1/audio/transcriptions"
+              ],
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 2.5,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 10,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                },
+                {
+                  "kind": "input_audio",
+                  "amount": 2.5,
+                  "unit": "per_1m_audio_tokens",
+                  "source_key": "input_cost_per_audio_token"
+                }
+              ]
+            }
           ]
         }
       },
@@ -16001,6 +16611,84 @@
           "raw_id": "gpt-4o-transcribe-diarize",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 2.5,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 10,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input_audio",
+              "amount": 2.5,
+              "unit": "per_1m_audio_tokens",
+              "source_key": "input_cost_per_audio_token"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "audio_transcription",
+              "provider": "azure",
+              "raw_id": "azure/gpt-4o-transcribe-diarize",
+              "supported_endpoints": [
+                "/v1/audio/transcriptions"
+              ],
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 2.5,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 10,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                },
+                {
+                  "kind": "input_audio",
+                  "amount": 2.5,
+                  "unit": "per_1m_audio_tokens",
+                  "source_key": "input_cost_per_audio_token"
+                }
+              ]
+            },
+            {
+              "mode": "audio_transcription",
+              "provider": "openai",
+              "raw_id": "gpt-4o-transcribe-diarize",
+              "supported_endpoints": [
+                "/v1/audio/transcriptions"
+              ],
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 2.5,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 10,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                },
+                {
+                  "kind": "input_audio",
+                  "amount": 2.5,
+                  "unit": "per_1m_audio_tokens",
+                  "source_key": "input_cost_per_audio_token"
+                }
+              ]
+            }
           ]
         }
       },
@@ -16039,7 +16727,81 @@
         "litellm": {
           "mode": "embedding",
           "provider": "vercel_ai_gateway",
-          "raw_id": "vercel_ai_gateway/openai/text-embedding-3-large"
+          "raw_id": "vercel_ai_gateway/openai/text-embedding-3-large",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.13,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "embedding",
+              "provider": "openai",
+              "raw_id": "text-embedding-3-large",
+              "output_vector_size": 3072,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.13,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "azure",
+              "raw_id": "azure/text-embedding-3-large",
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.13,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "vercel_ai_gateway",
+              "raw_id": "vercel_ai_gateway/openai/text-embedding-3-large",
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.13,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            }
+          ]
         }
       },
       "sources": [
@@ -16084,7 +16846,87 @@
         "litellm": {
           "mode": "embedding",
           "provider": "vercel_ai_gateway",
-          "raw_id": "vercel_ai_gateway/openai/text-embedding-3-small"
+          "raw_id": "vercel_ai_gateway/openai/text-embedding-3-small",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.02,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "embedding",
+              "provider": "openai",
+              "raw_id": "text-embedding-3-small",
+              "output_vector_size": 1536,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.02,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "github_copilot",
+              "raw_id": "github_copilot/text-embedding-3-small"
+            },
+            {
+              "mode": "embedding",
+              "provider": "azure",
+              "raw_id": "azure/text-embedding-3-small",
+              "deprecation_date": "2026-04-30",
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.02,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "vercel_ai_gateway",
+              "raw_id": "vercel_ai_gateway/openai/text-embedding-3-small",
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.02,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            }
+          ]
         }
       },
       "sources": [
@@ -16112,7 +16954,8 @@
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
           "observed_at": "2026-05-23T12:13:42.510Z"
         }
-      ]
+      ],
+      "deprecation_date": "2026-04-30"
     },
     {
       "id": "text-embedding-ada-002",
@@ -16135,7 +16978,86 @@
         "litellm": {
           "mode": "embedding",
           "provider": "vercel_ai_gateway",
-          "raw_id": "vercel_ai_gateway/openai/text-embedding-ada-002"
+          "raw_id": "vercel_ai_gateway/openai/text-embedding-ada-002",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "embedding",
+              "provider": "openai",
+              "raw_id": "text-embedding-ada-002",
+              "output_vector_size": 1536,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.1,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "github_copilot",
+              "raw_id": "github_copilot/text-embedding-ada-002"
+            },
+            {
+              "mode": "embedding",
+              "provider": "azure",
+              "raw_id": "azure/text-embedding-ada-002",
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.1,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "vercel_ai_gateway",
+              "raw_id": "vercel_ai_gateway/openai/text-embedding-ada-002",
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.1,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            }
+          ]
         }
       },
       "sources": [
@@ -16244,6 +17166,21 @@
           "raw_id": "tts-1",
           "supported_endpoints": [
             "/v1/audio/speech"
+          ],
+          "observations": [
+            {
+              "mode": "audio_speech",
+              "provider": "azure",
+              "raw_id": "azure/tts-1"
+            },
+            {
+              "mode": "audio_speech",
+              "provider": "openai",
+              "raw_id": "tts-1",
+              "supported_endpoints": [
+                "/v1/audio/speech"
+              ]
+            }
           ]
         }
       },
@@ -16283,6 +17220,21 @@
           "raw_id": "tts-1-hd",
           "supported_endpoints": [
             "/v1/audio/speech"
+          ],
+          "observations": [
+            {
+              "mode": "audio_speech",
+              "provider": "azure",
+              "raw_id": "azure/tts-1-hd"
+            },
+            {
+              "mode": "audio_speech",
+              "provider": "openai",
+              "raw_id": "tts-1-hd",
+              "supported_endpoints": [
+                "/v1/audio/speech"
+              ]
+            }
           ]
         }
       },
@@ -16322,6 +17274,63 @@
           "raw_id": "whisper-1",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.0001,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0.0001,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "audio_transcription",
+              "provider": "azure",
+              "raw_id": "azure/whisper-1",
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.0001,
+                  "unit": "per_second",
+                  "source_key": "input_cost_per_second"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0.0001,
+                  "unit": "per_second",
+                  "source_key": "output_cost_per_second"
+                }
+              ]
+            },
+            {
+              "mode": "audio_transcription",
+              "provider": "openai",
+              "raw_id": "whisper-1",
+              "supported_endpoints": [
+                "/v1/audio/transcriptions"
+              ],
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.0001,
+                  "unit": "per_second",
+                  "source_key": "input_cost_per_second"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0.0001,
+                  "unit": "per_second",
+                  "source_key": "output_cost_per_second"
+                }
+              ]
+            }
           ]
         }
       },
@@ -16360,7 +17369,21 @@
           "mode": "embedding",
           "provider": "azure_ai",
           "raw_id": "azure_ai/Cohere-embed-v3-english",
-          "output_vector_size": 1024
+          "output_vector_size": 1024,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -16392,7 +17415,21 @@
           "mode": "embedding",
           "provider": "azure_ai",
           "raw_id": "azure_ai/Cohere-embed-v3-multilingual",
-          "output_vector_size": 1024
+          "output_vector_size": 1024,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -16424,7 +17461,27 @@
           "mode": "rerank",
           "provider": "azure_ai",
           "raw_id": "azure_ai/cohere-rerank-v3-english",
-          "max_query_tokens": 2048
+          "max_query_tokens": 2048,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input",
+              "amount": 0.002,
+              "unit": "per_query",
+              "source_key": "input_cost_per_query"
+            }
+          ]
         }
       },
       "sources": [
@@ -16456,7 +17513,27 @@
           "mode": "rerank",
           "provider": "azure_ai",
           "raw_id": "azure_ai/cohere-rerank-v3-multilingual",
-          "max_query_tokens": 2048
+          "max_query_tokens": 2048,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input",
+              "amount": 0.002,
+              "unit": "per_query",
+              "source_key": "input_cost_per_query"
+            }
+          ]
         }
       },
       "sources": [
@@ -16488,7 +17565,27 @@
           "mode": "rerank",
           "provider": "azure_ai",
           "raw_id": "azure_ai/cohere-rerank-v3.5",
-          "max_query_tokens": 2048
+          "max_query_tokens": 2048,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input",
+              "amount": 0.002,
+              "unit": "per_query",
+              "source_key": "input_cost_per_query"
+            }
+          ]
         }
       },
       "sources": [
@@ -16520,7 +17617,27 @@
           "mode": "rerank",
           "provider": "azure_ai",
           "raw_id": "azure_ai/cohere-rerank-v4.0-pro",
-          "max_query_tokens": 4096
+          "max_query_tokens": 4096,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input",
+              "amount": 0.0025,
+              "unit": "per_query",
+              "source_key": "input_cost_per_query"
+            }
+          ]
         }
       },
       "sources": [
@@ -16552,7 +17669,27 @@
           "mode": "rerank",
           "provider": "azure_ai",
           "raw_id": "azure_ai/cohere-rerank-v4.0-fast",
-          "max_query_tokens": 4096
+          "max_query_tokens": 4096,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input",
+              "amount": 0.002,
+              "unit": "per_query",
+              "source_key": "input_cost_per_query"
+            }
+          ]
         }
       },
       "sources": [
@@ -16591,6 +17728,20 @@
           "supported_modalities": [
             "text",
             "image"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.12,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
           ]
         }
       },
@@ -16622,7 +17773,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "bedrock",
-          "raw_id": "cohere.embed-english-v3"
+          "raw_id": "cohere.embed-english-v3",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -16653,7 +17818,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "bedrock",
-          "raw_id": "cohere.embed-multilingual-v3"
+          "raw_id": "cohere.embed-multilingual-v3",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -16685,7 +17864,21 @@
           "mode": "embedding",
           "provider": "bedrock",
           "raw_id": "cohere.embed-v4:0",
-          "output_vector_size": 1536
+          "output_vector_size": 1536,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.12,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -16717,7 +17910,21 @@
           "mode": "embedding",
           "provider": "cohere",
           "raw_id": "cohere/embed-v4.0",
-          "output_vector_size": 1536
+          "output_vector_size": 1536,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.12,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -16751,7 +17958,27 @@
           "raw_id": "cohere.rerank-v3-5:0",
           "max_query_tokens": 32000,
           "max_document_chunks_per_query": 100,
-          "max_tokens_per_document_chunk": 512
+          "max_tokens_per_document_chunk": 512,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input",
+              "amount": 0.002,
+              "unit": "per_query",
+              "source_key": "input_cost_per_query"
+            }
+          ]
         }
       },
       "sources": [
@@ -16782,7 +18009,21 @@
           "mode": "embedding",
           "provider": "databricks",
           "raw_id": "databricks/databricks-bge-large-en",
-          "output_vector_size": 1024
+          "output_vector_size": 1024,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.10003,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -16813,7 +18054,21 @@
           "mode": "embedding",
           "provider": "databricks",
           "raw_id": "databricks/databricks-gte-large-en",
-          "output_vector_size": 1024
+          "output_vector_size": 1024,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.12999,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -16845,6 +18100,20 @@
           "raw_id": "deepgram/base",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00020833,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -16877,6 +18146,20 @@
           "raw_id": "deepgram/base-conversationalai",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00020833,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -16909,6 +18192,20 @@
           "raw_id": "deepgram/base-finance",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00020833,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -16941,6 +18238,20 @@
           "raw_id": "deepgram/base-general",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00020833,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -16973,6 +18284,20 @@
           "raw_id": "deepgram/base-meeting",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00020833,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17005,6 +18330,20 @@
           "raw_id": "deepgram/base-phonecall",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00020833,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17037,6 +18376,20 @@
           "raw_id": "deepgram/base-video",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00020833,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17069,6 +18422,20 @@
           "raw_id": "deepgram/base-voicemail",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00020833,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17101,6 +18468,20 @@
           "raw_id": "deepgram/enhanced",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00024167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17133,6 +18514,20 @@
           "raw_id": "deepgram/enhanced-finance",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00024167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17165,6 +18560,20 @@
           "raw_id": "deepgram/enhanced-general",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00024167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17197,6 +18606,20 @@
           "raw_id": "deepgram/enhanced-meeting",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00024167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17229,6 +18652,20 @@
           "raw_id": "deepgram/enhanced-phonecall",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00024167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17261,6 +18698,20 @@
           "raw_id": "deepgram/nova",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00007167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17293,6 +18744,20 @@
           "raw_id": "deepgram/nova-2",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00007167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17325,6 +18790,20 @@
           "raw_id": "deepgram/nova-2-atc",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00007167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17357,6 +18836,20 @@
           "raw_id": "deepgram/nova-2-automotive",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00007167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17389,6 +18882,20 @@
           "raw_id": "deepgram/nova-2-conversationalai",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00007167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17421,6 +18928,20 @@
           "raw_id": "deepgram/nova-2-drivethru",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00007167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17453,6 +18974,20 @@
           "raw_id": "deepgram/nova-2-finance",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00007167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17485,6 +19020,20 @@
           "raw_id": "deepgram/nova-2-general",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00007167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17517,6 +19066,20 @@
           "raw_id": "deepgram/nova-2-meeting",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00007167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17549,6 +19112,20 @@
           "raw_id": "deepgram/nova-2-phonecall",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00007167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17581,6 +19158,20 @@
           "raw_id": "deepgram/nova-2-video",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00007167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17613,6 +19204,20 @@
           "raw_id": "deepgram/nova-2-voicemail",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00007167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17645,6 +19250,20 @@
           "raw_id": "deepgram/nova-3",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00007167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17677,6 +19296,20 @@
           "raw_id": "deepgram/nova-3-general",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00007167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17709,6 +19342,20 @@
           "raw_id": "deepgram/nova-3-medical",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00008667,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17741,6 +19388,20 @@
           "raw_id": "deepgram/nova-general",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00007167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17773,6 +19434,20 @@
           "raw_id": "deepgram/nova-phonecall",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00007167,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17805,6 +19480,20 @@
           "raw_id": "deepgram/whisper",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.0001,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17837,6 +19526,20 @@
           "raw_id": "deepgram/whisper-base",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.0001,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17869,6 +19572,20 @@
           "raw_id": "deepgram/whisper-large",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.0001,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17901,6 +19618,20 @@
           "raw_id": "deepgram/whisper-medium",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.0001,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17933,6 +19664,20 @@
           "raw_id": "deepgram/whisper-small",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.0001,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17965,6 +19710,20 @@
           "raw_id": "deepgram/whisper-tiny",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.0001,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -17996,7 +19755,21 @@
           "mode": "embedding",
           "provider": "volcengine",
           "raw_id": "doubao-embedding",
-          "output_vector_size": 2560
+          "output_vector_size": 2560,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -18027,7 +19800,21 @@
           "mode": "embedding",
           "provider": "volcengine",
           "raw_id": "doubao-embedding-large",
-          "output_vector_size": 2048
+          "output_vector_size": 2048,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -18058,7 +19845,21 @@
           "mode": "embedding",
           "provider": "volcengine",
           "raw_id": "doubao-embedding-large-text-240915",
-          "output_vector_size": 4096
+          "output_vector_size": 4096,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -18089,7 +19890,21 @@
           "mode": "embedding",
           "provider": "volcengine",
           "raw_id": "doubao-embedding-large-text-250515",
-          "output_vector_size": 2048
+          "output_vector_size": 2048,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -18120,7 +19935,21 @@
           "mode": "embedding",
           "provider": "volcengine",
           "raw_id": "doubao-embedding-text-240715",
-          "output_vector_size": 2560
+          "output_vector_size": 2560,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -18152,6 +19981,20 @@
           "raw_id": "elevenlabs/scribe_v1",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.0000611,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -18184,6 +20027,20 @@
           "raw_id": "elevenlabs/scribe_v1_experimental",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.0000611,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -18246,7 +20103,22 @@
         "litellm": {
           "mode": "audio_speech",
           "provider": "runwayml",
-          "raw_id": "runwayml/eleven_multilingual_v2"
+          "raw_id": "runwayml/eleven_multilingual_v2",
+          "observations": [
+            {
+              "mode": "audio_speech",
+              "provider": "elevenlabs",
+              "raw_id": "elevenlabs/eleven_multilingual_v2",
+              "supported_endpoints": [
+                "/v1/audio/speech"
+              ]
+            },
+            {
+              "mode": "audio_speech",
+              "provider": "runwayml",
+              "raw_id": "runwayml/eleven_multilingual_v2"
+            }
+          ]
         }
       },
       "sources": [
@@ -18282,7 +20154,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "cohere",
-          "raw_id": "embed-english-light-v2.0"
+          "raw_id": "embed-english-light-v2.0",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -18312,7 +20198,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "cohere",
-          "raw_id": "embed-english-light-v3.0"
+          "raw_id": "embed-english-light-v3.0",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -18342,7 +20242,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "cohere",
-          "raw_id": "embed-english-v2.0"
+          "raw_id": "embed-english-v2.0",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -18373,7 +20287,27 @@
         "litellm": {
           "mode": "embedding",
           "provider": "cohere",
-          "raw_id": "embed-english-v3.0"
+          "raw_id": "embed-english-v3.0",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input_image",
+              "amount": 0.0001,
+              "unit": "per_image",
+              "source_key": "input_cost_per_image"
+            }
+          ]
         }
       },
       "sources": [
@@ -18403,7 +20337,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "cohere",
-          "raw_id": "embed-multilingual-v2.0"
+          "raw_id": "embed-multilingual-v2.0",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -18434,7 +20382,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "cohere",
-          "raw_id": "embed-multilingual-v3.0"
+          "raw_id": "embed-multilingual-v3.0",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -18465,7 +20427,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "cohere",
-          "raw_id": "embed-multilingual-light-v3.0"
+          "raw_id": "embed-multilingual-light-v3.0",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 100,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -18495,7 +20471,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "fireworks_ai-embedding-models",
-          "raw_id": "fireworks_ai/WhereIsAI/UAE-Large-V1"
+          "raw_id": "fireworks_ai/WhereIsAI/UAE-Large-V1",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.016,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -18525,7 +20515,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "fireworks_ai-embedding-models",
-          "raw_id": "fireworks_ai/nomic-ai/nomic-embed-text-v1"
+          "raw_id": "fireworks_ai/nomic-ai/nomic-embed-text-v1",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.008,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -18555,7 +20559,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "fireworks_ai-embedding-models",
-          "raw_id": "fireworks_ai/nomic-ai/nomic-embed-text-v1.5"
+          "raw_id": "fireworks_ai/nomic-ai/nomic-embed-text-v1.5",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.008,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -18585,7 +20603,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "fireworks_ai-embedding-models",
-          "raw_id": "fireworks_ai/thenlper/gte-base"
+          "raw_id": "fireworks_ai/thenlper/gte-base",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.008,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -18615,7 +20647,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "fireworks_ai-embedding-models",
-          "raw_id": "fireworks_ai/thenlper/gte-large"
+          "raw_id": "fireworks_ai/thenlper/gte-large",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.016,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -18647,7 +20693,84 @@
         "litellm": {
           "mode": "embedding",
           "provider": "vercel_ai_gateway",
-          "raw_id": "vercel_ai_gateway/google/gemini-embedding-001"
+          "raw_id": "vercel_ai_gateway/google/gemini-embedding-001",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.15,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "embedding",
+              "provider": "gemini",
+              "raw_id": "gemini/gemini-embedding-001",
+              "output_vector_size": 3072,
+              "rpm": 10000,
+              "tpm": 10000000,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.15,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "vertex_ai-embedding-models",
+              "raw_id": "gemini-embedding-001",
+              "output_vector_size": 3072,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.15,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "vercel_ai_gateway",
+              "raw_id": "vercel_ai_gateway/google/gemini-embedding-001",
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.15,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            }
+          ]
         }
       },
       "sources": [
@@ -18696,7 +20819,157 @@
           "raw_id": "gemini/gemini-embedding-2-preview",
           "output_vector_size": 3072,
           "rpm": 10000,
-          "tpm": 10000000
+          "tpm": 10000000,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.2,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input_image",
+              "amount": 0.00012,
+              "unit": "per_image",
+              "source_key": "input_cost_per_image"
+            },
+            {
+              "kind": "input_audio",
+              "amount": 0.00016,
+              "unit": "per_audio_second",
+              "source_key": "input_cost_per_audio_per_second"
+            },
+            {
+              "kind": "input_video",
+              "amount": 0.00079,
+              "unit": "per_video_second",
+              "source_key": "input_cost_per_video_per_second"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "embedding",
+              "provider": "vertex_ai",
+              "raw_id": "vertex_ai/gemini-embedding-2-preview",
+              "output_vector_size": 3072,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.2,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                },
+                {
+                  "kind": "input_image",
+                  "amount": 0.00012,
+                  "unit": "per_image",
+                  "source_key": "input_cost_per_image"
+                },
+                {
+                  "kind": "input_audio",
+                  "amount": 0.00016,
+                  "unit": "per_audio_second",
+                  "source_key": "input_cost_per_audio_per_second"
+                },
+                {
+                  "kind": "input_video",
+                  "amount": 0.00079,
+                  "unit": "per_video_second",
+                  "source_key": "input_cost_per_video_per_second"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "vertex_ai-embedding-models",
+              "raw_id": "gemini-embedding-2-preview",
+              "output_vector_size": 3072,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.2,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                },
+                {
+                  "kind": "input_image",
+                  "amount": 0.00012,
+                  "unit": "per_image",
+                  "source_key": "input_cost_per_image"
+                },
+                {
+                  "kind": "input_audio",
+                  "amount": 0.00016,
+                  "unit": "per_audio_second",
+                  "source_key": "input_cost_per_audio_per_second"
+                },
+                {
+                  "kind": "input_video",
+                  "amount": 0.00079,
+                  "unit": "per_video_second",
+                  "source_key": "input_cost_per_video_per_second"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "gemini",
+              "raw_id": "gemini/gemini-embedding-2-preview",
+              "output_vector_size": 3072,
+              "rpm": 10000,
+              "tpm": 10000000,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.2,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                },
+                {
+                  "kind": "input_image",
+                  "amount": 0.00012,
+                  "unit": "per_image",
+                  "source_key": "input_cost_per_image"
+                },
+                {
+                  "kind": "input_audio",
+                  "amount": 0.00016,
+                  "unit": "per_audio_second",
+                  "source_key": "input_cost_per_audio_per_second"
+                },
+                {
+                  "kind": "input_video",
+                  "amount": 0.00079,
+                  "unit": "per_video_second",
+                  "source_key": "input_cost_per_video_per_second"
+                }
+              ]
+            }
+          ]
         }
       },
       "sources": [
@@ -18745,7 +21018,157 @@
           "raw_id": "gemini/gemini-embedding-2",
           "output_vector_size": 3072,
           "rpm": 10000,
-          "tpm": 10000000
+          "tpm": 10000000,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.2,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input_image",
+              "amount": 0.00012,
+              "unit": "per_image",
+              "source_key": "input_cost_per_image"
+            },
+            {
+              "kind": "input_audio",
+              "amount": 0.00016,
+              "unit": "per_audio_second",
+              "source_key": "input_cost_per_audio_per_second"
+            },
+            {
+              "kind": "input_video",
+              "amount": 0.00079,
+              "unit": "per_video_second",
+              "source_key": "input_cost_per_video_per_second"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "embedding",
+              "provider": "vertex_ai",
+              "raw_id": "vertex_ai/gemini-embedding-2",
+              "output_vector_size": 3072,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.2,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                },
+                {
+                  "kind": "input_image",
+                  "amount": 0.00012,
+                  "unit": "per_image",
+                  "source_key": "input_cost_per_image"
+                },
+                {
+                  "kind": "input_audio",
+                  "amount": 0.00016,
+                  "unit": "per_audio_second",
+                  "source_key": "input_cost_per_audio_per_second"
+                },
+                {
+                  "kind": "input_video",
+                  "amount": 0.00079,
+                  "unit": "per_video_second",
+                  "source_key": "input_cost_per_video_per_second"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "vertex_ai-embedding-models",
+              "raw_id": "gemini-embedding-2",
+              "output_vector_size": 3072,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.2,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                },
+                {
+                  "kind": "input_image",
+                  "amount": 0.00012,
+                  "unit": "per_image",
+                  "source_key": "input_cost_per_image"
+                },
+                {
+                  "kind": "input_audio",
+                  "amount": 0.00016,
+                  "unit": "per_audio_second",
+                  "source_key": "input_cost_per_audio_per_second"
+                },
+                {
+                  "kind": "input_video",
+                  "amount": 0.00079,
+                  "unit": "per_video_second",
+                  "source_key": "input_cost_per_video_per_second"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "gemini",
+              "raw_id": "gemini/gemini-embedding-2",
+              "output_vector_size": 3072,
+              "rpm": 10000,
+              "tpm": 10000000,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.2,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                },
+                {
+                  "kind": "input_image",
+                  "amount": 0.00012,
+                  "unit": "per_image",
+                  "source_key": "input_cost_per_image"
+                },
+                {
+                  "kind": "input_audio",
+                  "amount": 0.00016,
+                  "unit": "per_audio_second",
+                  "source_key": "input_cost_per_audio_per_second"
+                },
+                {
+                  "kind": "input_video",
+                  "amount": 0.00079,
+                  "unit": "per_video_second",
+                  "source_key": "input_cost_per_video_per_second"
+                }
+              ]
+            }
+          ]
         }
       },
       "sources": [
@@ -18789,7 +21212,21 @@
           "mode": "embedding",
           "provider": "vertex_ai-language-models",
           "raw_id": "gemini-flash-experimental",
-          "output_vector_size": 3072
+          "output_vector_size": 3072,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -18820,9 +21257,24 @@
           "mode": "embedding",
           "provider": "gemini",
           "raw_id": "gemini/gemini-1.5-flash",
+          "deprecation_date": "2025-09-29",
           "output_vector_size": 3072,
           "rpm": 10000,
-          "tpm": 10000000
+          "tpm": 10000000,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.075,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -18832,7 +21284,8 @@
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
           "observed_at": "2026-05-23T12:13:42.510Z"
         }
-      ]
+      ],
+      "deprecation_date": "2025-09-29"
     },
     {
       "id": "gemini-2.5-flash-preview-tts",
@@ -18855,6 +21308,68 @@
           "raw_id": "gemini-2.5-flash-preview-tts",
           "supported_endpoints": [
             "/v1/audio/speech"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.3,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 2.5,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "audio_speech",
+              "provider": "gemini",
+              "raw_id": "gemini/gemini-2.5-flash-preview-tts",
+              "supported_endpoints": [
+                "/v1/audio/speech"
+              ],
+              "rpm": 10,
+              "tpm": 4000000,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.3,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 2.5,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            },
+            {
+              "mode": "audio_speech",
+              "provider": "gemini",
+              "raw_id": "gemini-2.5-flash-preview-tts",
+              "supported_endpoints": [
+                "/v1/audio/speech"
+              ],
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.3,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 2.5,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            }
           ]
         }
       },
@@ -18898,6 +21413,54 @@
           ],
           "supported_output_modalities": [
             "video"
+          ],
+          "prices": [
+            {
+              "kind": "output",
+              "amount": 0.35,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "video_generation",
+              "provider": "gemini",
+              "raw_id": "gemini/veo-2.0-generate-001",
+              "supported_modalities": [
+                "text"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output",
+                  "amount": 0.35,
+                  "unit": "per_second",
+                  "source_key": "output_cost_per_second"
+                }
+              ]
+            },
+            {
+              "mode": "video_generation",
+              "provider": "vertex_ai-video-models",
+              "raw_id": "vertex_ai/veo-2.0-generate-001",
+              "supported_modalities": [
+                "text"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output",
+                  "amount": 0.35,
+                  "unit": "per_second",
+                  "source_key": "output_cost_per_second"
+                }
+              ]
+            }
           ]
         }
       },
@@ -18941,6 +21504,54 @@
           ],
           "supported_output_modalities": [
             "video"
+          ],
+          "prices": [
+            {
+              "kind": "output",
+              "amount": 0.15,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "video_generation",
+              "provider": "gemini",
+              "raw_id": "gemini/veo-3.1-fast-generate-preview",
+              "supported_modalities": [
+                "text"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output",
+                  "amount": 0.15,
+                  "unit": "per_second",
+                  "source_key": "output_cost_per_second"
+                }
+              ]
+            },
+            {
+              "mode": "video_generation",
+              "provider": "vertex_ai-video-models",
+              "raw_id": "vertex_ai/veo-3.1-fast-generate-preview",
+              "supported_modalities": [
+                "text"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output",
+                  "amount": 0.15,
+                  "unit": "per_second",
+                  "source_key": "output_cost_per_second"
+                }
+              ]
+            }
           ]
         }
       },
@@ -18984,6 +21595,54 @@
           ],
           "supported_output_modalities": [
             "video"
+          ],
+          "prices": [
+            {
+              "kind": "output",
+              "amount": 0.4,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "video_generation",
+              "provider": "gemini",
+              "raw_id": "gemini/veo-3.1-generate-preview",
+              "supported_modalities": [
+                "text"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output",
+                  "amount": 0.4,
+                  "unit": "per_second",
+                  "source_key": "output_cost_per_second"
+                }
+              ]
+            },
+            {
+              "mode": "video_generation",
+              "provider": "vertex_ai-video-models",
+              "raw_id": "vertex_ai/veo-3.1-generate-preview",
+              "supported_modalities": [
+                "text"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output",
+                  "amount": 0.4,
+                  "unit": "per_second",
+                  "source_key": "output_cost_per_second"
+                }
+              ]
+            }
           ]
         }
       },
@@ -19026,6 +21685,14 @@
           ],
           "supported_output_modalities": [
             "video"
+          ],
+          "prices": [
+            {
+              "kind": "output",
+              "amount": 0.05,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -19063,6 +21730,54 @@
           ],
           "supported_output_modalities": [
             "video"
+          ],
+          "prices": [
+            {
+              "kind": "output",
+              "amount": 0.15,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "video_generation",
+              "provider": "gemini",
+              "raw_id": "gemini/veo-3.1-fast-generate-001",
+              "supported_modalities": [
+                "text"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output",
+                  "amount": 0.15,
+                  "unit": "per_second",
+                  "source_key": "output_cost_per_second"
+                }
+              ]
+            },
+            {
+              "mode": "video_generation",
+              "provider": "vertex_ai-video-models",
+              "raw_id": "vertex_ai/veo-3.1-fast-generate-001",
+              "supported_modalities": [
+                "text"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output",
+                  "amount": 0.15,
+                  "unit": "per_second",
+                  "source_key": "output_cost_per_second"
+                }
+              ]
+            }
           ]
         }
       },
@@ -19106,6 +21821,54 @@
           ],
           "supported_output_modalities": [
             "video"
+          ],
+          "prices": [
+            {
+              "kind": "output",
+              "amount": 0.4,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "video_generation",
+              "provider": "gemini",
+              "raw_id": "gemini/veo-3.1-generate-001",
+              "supported_modalities": [
+                "text"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output",
+                  "amount": 0.4,
+                  "unit": "per_second",
+                  "source_key": "output_cost_per_second"
+                }
+              ]
+            },
+            {
+              "mode": "video_generation",
+              "provider": "vertex_ai-video-models",
+              "raw_id": "vertex_ai/veo-3.1-generate-001",
+              "supported_modalities": [
+                "text"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output",
+                  "amount": 0.4,
+                  "unit": "per_second",
+                  "source_key": "output_cost_per_second"
+                }
+              ]
+            }
           ]
         }
       },
@@ -19173,7 +21936,21 @@
           "mode": "embedding",
           "provider": "gigachat",
           "raw_id": "gigachat/Embeddings",
-          "output_vector_size": 1024
+          "output_vector_size": 1024,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -19204,7 +21981,21 @@
           "mode": "embedding",
           "provider": "gigachat",
           "raw_id": "gigachat/Embeddings-2",
-          "output_vector_size": 1024
+          "output_vector_size": 1024,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -19235,7 +22026,21 @@
           "mode": "embedding",
           "provider": "gigachat",
           "raw_id": "gigachat/EmbeddingsGigaR",
-          "output_vector_size": 2560
+          "output_vector_size": 2560,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -19295,7 +22100,21 @@
         "litellm": {
           "mode": "audio_transcription",
           "provider": "groq",
-          "raw_id": "groq/whisper-large-v3"
+          "raw_id": "groq/whisper-large-v3",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00003083,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
+          ]
         }
       },
       "sources": [
@@ -19328,6 +22147,63 @@
           "raw_id": "watsonx/whisper-large-v3-turbo",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.0001,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0.0001,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "audio_transcription",
+              "provider": "groq",
+              "raw_id": "groq/whisper-large-v3-turbo",
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.00001111,
+                  "unit": "per_second",
+                  "source_key": "input_cost_per_second"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_second",
+                  "source_key": "output_cost_per_second"
+                }
+              ]
+            },
+            {
+              "mode": "audio_transcription",
+              "provider": "watsonx",
+              "raw_id": "watsonx/whisper-large-v3-turbo",
+              "supported_endpoints": [
+                "/v1/audio/transcriptions"
+              ],
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.0001,
+                  "unit": "per_second",
+                  "source_key": "input_cost_per_second"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0.0001,
+                  "unit": "per_second",
+                  "source_key": "output_cost_per_second"
+                }
+              ]
+            }
           ]
         }
       },
@@ -19366,7 +22242,21 @@
           "mode": "rerank",
           "provider": "jina_ai",
           "raw_id": "jina-reranker-v2-base-multilingual",
-          "max_document_chunks_per_query": 2048
+          "max_document_chunks_per_query": 2048,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.018,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0.018,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -19524,7 +22414,15 @@
         "litellm": {
           "mode": "embedding",
           "provider": "mistral",
-          "raw_id": "mistral/mistral-embed"
+          "raw_id": "mistral/mistral-embed",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -19554,7 +22452,15 @@
         "litellm": {
           "mode": "embedding",
           "provider": "mistral",
-          "raw_id": "mistral/codestral-embed"
+          "raw_id": "mistral/codestral-embed",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.15,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -19584,7 +22490,15 @@
         "litellm": {
           "mode": "embedding",
           "provider": "mistral",
-          "raw_id": "mistral/codestral-embed-2505"
+          "raw_id": "mistral/codestral-embed-2505",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.15,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -19624,6 +22538,32 @@
             "text",
             "image",
             "video"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.8,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input_image",
+              "amount": 0.0001,
+              "unit": "per_image",
+              "source_key": "input_cost_per_image"
+            },
+            {
+              "kind": "input_video",
+              "amount": 0.0005,
+              "unit": "per_video_second",
+              "source_key": "input_cost_per_video_per_second"
+            }
           ]
         }
       },
@@ -19664,6 +22604,32 @@
             "text",
             "image",
             "video"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.8,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input_image",
+              "amount": 0.0001,
+              "unit": "per_image",
+              "source_key": "input_cost_per_image"
+            },
+            {
+              "kind": "input_video",
+              "amount": 0.0005,
+              "unit": "per_video_second",
+              "source_key": "input_cost_per_video_per_second"
+            }
           ]
         }
       },
@@ -19694,7 +22660,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "nebius",
-          "raw_id": "nebius/BAAI/bge-en-icl"
+          "raw_id": "nebius/BAAI/bge-en-icl",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.01,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -19724,7 +22704,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "nebius",
-          "raw_id": "nebius/BAAI/bge-multilingual-gemma2"
+          "raw_id": "nebius/BAAI/bge-multilingual-gemma2",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.01,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -19754,7 +22748,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "nebius",
-          "raw_id": "nebius/intfloat/e5-mistral-7b-instruct"
+          "raw_id": "nebius/intfloat/e5-mistral-7b-instruct",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.01,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -19785,7 +22793,21 @@
           "mode": "embedding",
           "provider": "oci",
           "raw_id": "oci/cohere.embed-english-v3.0",
-          "output_vector_size": 1024
+          "output_vector_size": 1024,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -19816,7 +22838,21 @@
           "mode": "embedding",
           "provider": "oci",
           "raw_id": "oci/cohere.embed-english-light-v3.0",
-          "output_vector_size": 384
+          "output_vector_size": 384,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -19847,7 +22883,21 @@
           "mode": "embedding",
           "provider": "oci",
           "raw_id": "oci/cohere.embed-multilingual-v3.0",
-          "output_vector_size": 1024
+          "output_vector_size": 1024,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -19878,7 +22928,21 @@
           "mode": "embedding",
           "provider": "oci",
           "raw_id": "oci/cohere.embed-multilingual-light-v3.0",
-          "output_vector_size": 384
+          "output_vector_size": 384,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -19910,7 +22974,21 @@
           "mode": "embedding",
           "provider": "oci",
           "raw_id": "oci/cohere.embed-english-image-v3.0",
-          "output_vector_size": 1024
+          "output_vector_size": 1024,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -19942,7 +23020,21 @@
           "mode": "embedding",
           "provider": "oci",
           "raw_id": "oci/cohere.embed-english-light-image-v3.0",
-          "output_vector_size": 384
+          "output_vector_size": 384,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -19974,7 +23066,21 @@
           "mode": "embedding",
           "provider": "oci",
           "raw_id": "oci/cohere.embed-multilingual-light-image-v3.0",
-          "output_vector_size": 384
+          "output_vector_size": 384,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -20006,7 +23112,21 @@
           "mode": "embedding",
           "provider": "oci",
           "raw_id": "oci/cohere.embed-v4.0",
-          "output_vector_size": 1536
+          "output_vector_size": 1536,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.12,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -20037,7 +23157,21 @@
           "mode": "embedding",
           "provider": "perplexity",
           "raw_id": "perplexity/pplx-embed-v1-0.6b",
-          "output_vector_size": 1024
+          "output_vector_size": 1024,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.004,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -20068,7 +23202,21 @@
           "mode": "embedding",
           "provider": "perplexity",
           "raw_id": "perplexity/pplx-embed-v1-4b",
-          "output_vector_size": 2560
+          "output_vector_size": 2560,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.03,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -20100,7 +23248,27 @@
           "mode": "rerank",
           "provider": "cohere",
           "raw_id": "rerank-english-v2.0",
-          "max_query_tokens": 2048
+          "max_query_tokens": 2048,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input",
+              "amount": 0.002,
+              "unit": "per_query",
+              "source_key": "input_cost_per_query"
+            }
+          ]
         }
       },
       "sources": [
@@ -20132,7 +23300,27 @@
           "mode": "rerank",
           "provider": "cohere",
           "raw_id": "rerank-english-v3.0",
-          "max_query_tokens": 2048
+          "max_query_tokens": 2048,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input",
+              "amount": 0.002,
+              "unit": "per_query",
+              "source_key": "input_cost_per_query"
+            }
+          ]
         }
       },
       "sources": [
@@ -20164,7 +23352,27 @@
           "mode": "rerank",
           "provider": "cohere",
           "raw_id": "rerank-multilingual-v2.0",
-          "max_query_tokens": 2048
+          "max_query_tokens": 2048,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input",
+              "amount": 0.002,
+              "unit": "per_query",
+              "source_key": "input_cost_per_query"
+            }
+          ]
         }
       },
       "sources": [
@@ -20196,7 +23404,27 @@
           "mode": "rerank",
           "provider": "cohere",
           "raw_id": "rerank-multilingual-v3.0",
-          "max_query_tokens": 2048
+          "max_query_tokens": 2048,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input",
+              "amount": 0.002,
+              "unit": "per_query",
+              "source_key": "input_cost_per_query"
+            }
+          ]
         }
       },
       "sources": [
@@ -20228,7 +23456,27 @@
           "mode": "rerank",
           "provider": "cohere",
           "raw_id": "rerank-v3.5",
-          "max_query_tokens": 2048
+          "max_query_tokens": 2048,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input",
+              "amount": 0.002,
+              "unit": "per_query",
+              "source_key": "input_cost_per_query"
+            }
+          ]
         }
       },
       "sources": [
@@ -20257,7 +23505,27 @@
         "litellm": {
           "mode": "rerank",
           "provider": "nvidia_nim",
-          "raw_id": "nvidia_nim/nvidia/nv-rerankqa-mistral-4b-v3"
+          "raw_id": "nvidia_nim/nvidia/nv-rerankqa-mistral-4b-v3",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_query",
+              "source_key": "input_cost_per_query"
+            }
+          ]
         }
       },
       "sources": [
@@ -20287,7 +23555,79 @@
         "litellm": {
           "mode": "rerank",
           "provider": "nvidia_nim",
-          "raw_id": "nvidia_nim/ranking/nvidia/llama-3.2-nv-rerankqa-1b-v2"
+          "raw_id": "nvidia_nim/ranking/nvidia/llama-3.2-nv-rerankqa-1b-v2",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_query",
+              "source_key": "input_cost_per_query"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "rerank",
+              "provider": "nvidia_nim",
+              "raw_id": "nvidia_nim/nvidia/llama-3_2-nv-rerankqa-1b-v2",
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                },
+                {
+                  "kind": "input",
+                  "amount": 0,
+                  "unit": "per_query",
+                  "source_key": "input_cost_per_query"
+                }
+              ]
+            },
+            {
+              "mode": "rerank",
+              "provider": "nvidia_nim",
+              "raw_id": "nvidia_nim/ranking/nvidia/llama-3.2-nv-rerankqa-1b-v2",
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                },
+                {
+                  "kind": "input",
+                  "amount": 0,
+                  "unit": "per_query",
+                  "source_key": "input_cost_per_query"
+                }
+              ]
+            }
+          ]
         }
       },
       "sources": [
@@ -20324,7 +23664,22 @@
           "mode": "embedding",
           "provider": "vertex_ai-embedding-models",
           "raw_id": "text-embedding-004",
-          "output_vector_size": 768
+          "deprecation_date": "2026-01-14",
+          "output_vector_size": 768,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -20334,7 +23689,8 @@
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
           "observed_at": "2026-05-23T12:13:42.510Z"
         }
-      ]
+      ],
+      "deprecation_date": "2026-01-14"
     },
     {
       "id": "text-embedding-005",
@@ -20355,7 +23711,62 @@
         "litellm": {
           "mode": "embedding",
           "provider": "vercel_ai_gateway",
-          "raw_id": "vercel_ai_gateway/google/text-embedding-005"
+          "raw_id": "vercel_ai_gateway/google/text-embedding-005",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.025,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "embedding",
+              "provider": "vertex_ai-embedding-models",
+              "raw_id": "text-embedding-005",
+              "output_vector_size": 768,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.1,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "vercel_ai_gateway",
+              "raw_id": "vercel_ai_gateway/google/text-embedding-005",
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.025,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            }
+          ]
         }
       },
       "sources": [
@@ -20391,7 +23802,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "openai",
-          "raw_id": "text-embedding-ada-002-v2"
+          "raw_id": "text-embedding-ada-002-v2",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -20422,7 +23847,21 @@
           "mode": "embedding",
           "provider": "vertex_ai-embedding-models",
           "raw_id": "text-embedding-large-exp-03-07",
-          "output_vector_size": 3072
+          "output_vector_size": 3072,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -20453,7 +23892,21 @@
           "mode": "embedding",
           "provider": "vertex_ai-embedding-models",
           "raw_id": "text-embedding-preview-0409",
-          "output_vector_size": 768
+          "output_vector_size": 768,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.00625,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -20484,7 +23937,62 @@
         "litellm": {
           "mode": "embedding",
           "provider": "vercel_ai_gateway",
-          "raw_id": "vercel_ai_gateway/google/text-multilingual-embedding-002"
+          "raw_id": "vercel_ai_gateway/google/text-multilingual-embedding-002",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.025,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "embedding",
+              "provider": "vertex_ai-embedding-models",
+              "raw_id": "text-multilingual-embedding-002",
+              "output_vector_size": 768,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.1,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "vercel_ai_gateway",
+              "raw_id": "vercel_ai_gateway/google/text-multilingual-embedding-002",
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.025,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            }
+          ]
         }
       },
       "sources": [
@@ -20519,7 +24027,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "together_ai",
-          "raw_id": "together-ai-embedding-151m-to-350m"
+          "raw_id": "together-ai-embedding-151m-to-350m",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.016,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -20548,7 +24070,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "together_ai",
-          "raw_id": "together-ai-embedding-up-to-150m"
+          "raw_id": "together-ai-embedding-up-to-150m",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.008,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -20580,7 +24116,63 @@
           "mode": "embedding",
           "provider": "together_ai",
           "raw_id": "together_ai/BAAI/bge-base-en-v1.5",
-          "output_vector_size": 768
+          "output_vector_size": 768,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.008,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "embedding",
+              "provider": "together_ai",
+              "raw_id": "together_ai/baai/bge-base-en-v1.5",
+              "output_vector_size": 768,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.008,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "together_ai",
+              "raw_id": "together_ai/BAAI/bge-base-en-v1.5",
+              "output_vector_size": 768,
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.008,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            }
+          ]
         }
       },
       "sources": [
@@ -20782,6 +24374,14 @@
           ],
           "supported_output_modalities": [
             "video"
+          ],
+          "prices": [
+            {
+              "kind": "output",
+              "amount": 0.15,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -20818,6 +24418,14 @@
           ],
           "supported_output_modalities": [
             "video"
+          ],
+          "prices": [
+            {
+              "kind": "output",
+              "amount": 0.4,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
           ]
         }
       },
@@ -20850,7 +24458,21 @@
           "mode": "rerank",
           "provider": "voyage",
           "raw_id": "voyage/rerank-2",
-          "max_query_tokens": 16000
+          "max_query_tokens": 16000,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.05,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -20882,7 +24504,21 @@
           "mode": "rerank",
           "provider": "voyage",
           "raw_id": "voyage/rerank-2-lite",
-          "max_query_tokens": 8000
+          "max_query_tokens": 8000,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.02,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -20914,7 +24550,21 @@
           "mode": "rerank",
           "provider": "voyage",
           "raw_id": "voyage/rerank-2.5",
-          "max_query_tokens": 32000
+          "max_query_tokens": 32000,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.05,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -20946,7 +24596,21 @@
           "mode": "rerank",
           "provider": "voyage",
           "raw_id": "voyage/rerank-2.5-lite",
-          "max_query_tokens": 32000
+          "max_query_tokens": 32000,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.02,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -20976,7 +24640,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "voyage",
-          "raw_id": "voyage/voyage-2"
+          "raw_id": "voyage/voyage-2",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21006,7 +24684,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "voyage",
-          "raw_id": "voyage/voyage-3"
+          "raw_id": "voyage/voyage-3",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.06,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21036,7 +24728,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "voyage",
-          "raw_id": "voyage/voyage-3-large"
+          "raw_id": "voyage/voyage-3-large",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.18,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21066,7 +24772,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "voyage",
-          "raw_id": "voyage/voyage-3-lite"
+          "raw_id": "voyage/voyage-3-lite",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.02,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21096,7 +24816,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "voyage",
-          "raw_id": "voyage/voyage-3.5"
+          "raw_id": "voyage/voyage-3.5",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.06,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21126,7 +24860,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "voyage",
-          "raw_id": "voyage/voyage-3.5-lite"
+          "raw_id": "voyage/voyage-3.5-lite",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.02,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21156,7 +24904,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "voyage",
-          "raw_id": "voyage/voyage-code-2"
+          "raw_id": "voyage/voyage-code-2",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.12,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21186,7 +24948,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "voyage",
-          "raw_id": "voyage/voyage-code-3"
+          "raw_id": "voyage/voyage-code-3",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.18,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21216,7 +24992,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "voyage",
-          "raw_id": "voyage/voyage-context-3"
+          "raw_id": "voyage/voyage-context-3",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.18,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21246,7 +25036,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "voyage",
-          "raw_id": "voyage/voyage-finance-2"
+          "raw_id": "voyage/voyage-finance-2",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.12,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21276,7 +25080,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "voyage",
-          "raw_id": "voyage/voyage-large-2"
+          "raw_id": "voyage/voyage-large-2",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.12,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21306,7 +25124,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "voyage",
-          "raw_id": "voyage/voyage-law-2"
+          "raw_id": "voyage/voyage-law-2",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.12,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21336,7 +25168,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "voyage",
-          "raw_id": "voyage/voyage-lite-01"
+          "raw_id": "voyage/voyage-lite-01",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21366,7 +25212,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "voyage",
-          "raw_id": "voyage/voyage-lite-02-instruct"
+          "raw_id": "voyage/voyage-lite-02-instruct",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21396,7 +25256,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "voyage",
-          "raw_id": "voyage/voyage-multimodal-3"
+          "raw_id": "voyage/voyage-multimodal-3",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.12,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21435,6 +25309,75 @@
           ],
           "supported_output_modalities": [
             "video"
+          ],
+          "prices": [
+            {
+              "kind": "output_video",
+              "amount": 0.1,
+              "unit": "per_video_second",
+              "source_key": "output_cost_per_video_per_second"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "video_generation",
+              "provider": "azure",
+              "raw_id": "azure/sora-2",
+              "supported_modalities": [
+                "text"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output_video",
+                  "amount": 0.1,
+                  "unit": "per_video_second",
+                  "source_key": "output_cost_per_video_per_second"
+                }
+              ]
+            },
+            {
+              "mode": "video_generation",
+              "provider": "openai",
+              "raw_id": "openai/sora-2",
+              "supported_modalities": [
+                "text",
+                "image"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output_video",
+                  "amount": 0.1,
+                  "unit": "per_video_second",
+                  "source_key": "output_cost_per_video_per_second"
+                }
+              ]
+            },
+            {
+              "mode": "video_generation",
+              "provider": "openai",
+              "raw_id": "sora-2",
+              "supported_modalities": [
+                "text",
+                "image"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output_video",
+                  "amount": 0.1,
+                  "unit": "per_video_second",
+                  "source_key": "output_cost_per_video_per_second"
+                }
+              ]
+            }
           ]
         }
       },
@@ -21486,6 +25429,75 @@
           ],
           "supported_output_modalities": [
             "video"
+          ],
+          "prices": [
+            {
+              "kind": "output_video",
+              "amount": 0.3,
+              "unit": "per_video_second",
+              "source_key": "output_cost_per_video_per_second"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "video_generation",
+              "provider": "azure",
+              "raw_id": "azure/sora-2-pro",
+              "supported_modalities": [
+                "text"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output_video",
+                  "amount": 0.3,
+                  "unit": "per_video_second",
+                  "source_key": "output_cost_per_video_per_second"
+                }
+              ]
+            },
+            {
+              "mode": "video_generation",
+              "provider": "openai",
+              "raw_id": "openai/sora-2-pro",
+              "supported_modalities": [
+                "text",
+                "image"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output_video",
+                  "amount": 0.3,
+                  "unit": "per_video_second",
+                  "source_key": "output_cost_per_video_per_second"
+                }
+              ]
+            },
+            {
+              "mode": "video_generation",
+              "provider": "openai",
+              "raw_id": "sora-2-pro",
+              "supported_modalities": [
+                "text",
+                "image"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output_video",
+                  "amount": 0.3,
+                  "unit": "per_video_second",
+                  "source_key": "output_cost_per_video_per_second"
+                }
+              ]
+            }
           ]
         }
       },
@@ -21537,6 +25549,75 @@
           ],
           "supported_output_modalities": [
             "video"
+          ],
+          "prices": [
+            {
+              "kind": "output_video",
+              "amount": 0.5,
+              "unit": "per_video_second",
+              "source_key": "output_cost_per_video_per_second"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "video_generation",
+              "provider": "azure",
+              "raw_id": "azure/sora-2-pro-high-res",
+              "supported_modalities": [
+                "text"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output_video",
+                  "amount": 0.5,
+                  "unit": "per_video_second",
+                  "source_key": "output_cost_per_video_per_second"
+                }
+              ]
+            },
+            {
+              "mode": "video_generation",
+              "provider": "openai",
+              "raw_id": "openai/sora-2-pro-high-res",
+              "supported_modalities": [
+                "text",
+                "image"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output_video",
+                  "amount": 0.5,
+                  "unit": "per_video_second",
+                  "source_key": "output_cost_per_video_per_second"
+                }
+              ]
+            },
+            {
+              "mode": "video_generation",
+              "provider": "openai",
+              "raw_id": "sora-2-pro-high-res",
+              "supported_modalities": [
+                "text",
+                "image"
+              ],
+              "supported_output_modalities": [
+                "video"
+              ],
+              "prices": [
+                {
+                  "kind": "output_video",
+                  "amount": 0.5,
+                  "unit": "per_video_second",
+                  "source_key": "output_cost_per_video_per_second"
+                }
+              ]
+            }
           ]
         }
       },
@@ -21586,6 +25667,14 @@
           ],
           "supported_output_modalities": [
             "video"
+          ],
+          "prices": [
+            {
+              "kind": "output_video",
+              "amount": 0.05,
+              "unit": "per_video_second",
+              "source_key": "output_cost_per_video_per_second"
+            }
           ]
         }
       },
@@ -21623,6 +25712,14 @@
           ],
           "supported_output_modalities": [
             "video"
+          ],
+          "prices": [
+            {
+              "kind": "output_video",
+              "amount": 0.15,
+              "unit": "per_video_second",
+              "source_key": "output_cost_per_video_per_second"
+            }
           ]
         }
       },
@@ -21660,6 +25757,14 @@
           ],
           "supported_output_modalities": [
             "video"
+          ],
+          "prices": [
+            {
+              "kind": "output_video",
+              "amount": 0.05,
+              "unit": "per_video_second",
+              "source_key": "output_cost_per_video_per_second"
+            }
           ]
         }
       },
@@ -21691,7 +25796,21 @@
         "litellm": {
           "mode": "audio_transcription",
           "provider": "fireworks_ai",
-          "raw_id": "fireworks_ai/accounts/fireworks/models/fireworks-asr-large"
+          "raw_id": "fireworks_ai/accounts/fireworks/models/fireworks-asr-large",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21722,7 +25841,21 @@
         "litellm": {
           "mode": "audio_transcription",
           "provider": "fireworks_ai",
-          "raw_id": "fireworks_ai/accounts/fireworks/models/fireworks-asr-v2"
+          "raw_id": "fireworks_ai/accounts/fireworks/models/fireworks-asr-v2",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21753,7 +25886,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "fireworks_ai",
-          "raw_id": "fireworks_ai/accounts/fireworks/models/qwen3-embedding-0p6b"
+          "raw_id": "fireworks_ai/accounts/fireworks/models/qwen3-embedding-0p6b",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21784,7 +25931,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "fireworks_ai",
-          "raw_id": "fireworks_ai/accounts/fireworks/models/qwen3-embedding-4b"
+          "raw_id": "fireworks_ai/accounts/fireworks/models/qwen3-embedding-4b",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21815,7 +25976,21 @@
         "litellm": {
           "mode": "rerank",
           "provider": "fireworks_ai",
-          "raw_id": "fireworks_ai/accounts/fireworks/models/qwen3-reranker-0p6b"
+          "raw_id": "fireworks_ai/accounts/fireworks/models/qwen3-reranker-0p6b",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21846,7 +26021,21 @@
         "litellm": {
           "mode": "rerank",
           "provider": "fireworks_ai",
-          "raw_id": "fireworks_ai/accounts/fireworks/models/qwen3-reranker-4b"
+          "raw_id": "fireworks_ai/accounts/fireworks/models/qwen3-reranker-4b",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21878,7 +26067,61 @@
         "litellm": {
           "mode": "rerank",
           "provider": "novita",
-          "raw_id": "novita/qwen/qwen3-reranker-8b"
+          "raw_id": "novita/qwen/qwen3-reranker-8b",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.05,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0.05,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "rerank",
+              "provider": "fireworks_ai",
+              "raw_id": "fireworks_ai/accounts/fireworks/models/qwen3-reranker-8b",
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            },
+            {
+              "mode": "rerank",
+              "provider": "novita",
+              "raw_id": "novita/qwen/qwen3-reranker-8b",
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.05,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0.05,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            }
+          ]
         }
       },
       "sources": [
@@ -21915,7 +26158,21 @@
         "litellm": {
           "mode": "audio_transcription",
           "provider": "fireworks_ai",
-          "raw_id": "fireworks_ai/accounts/fireworks/models/whisper-v3"
+          "raw_id": "fireworks_ai/accounts/fireworks/models/whisper-v3",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21946,7 +26203,21 @@
         "litellm": {
           "mode": "audio_transcription",
           "provider": "fireworks_ai",
-          "raw_id": "fireworks_ai/accounts/fireworks/models/whisper-v3-turbo"
+          "raw_id": "fireworks_ai/accounts/fireworks/models/whisper-v3-turbo",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -21977,7 +26248,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "novita",
-          "raw_id": "novita/qwen/qwen3-embedding-0.6b"
+          "raw_id": "novita/qwen/qwen3-embedding-0.6b",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.07,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -22009,7 +26294,61 @@
         "litellm": {
           "mode": "embedding",
           "provider": "llamagate",
-          "raw_id": "llamagate/qwen3-embedding-8b"
+          "raw_id": "llamagate/qwen3-embedding-8b",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.02,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ],
+          "observations": [
+            {
+              "mode": "embedding",
+              "provider": "novita",
+              "raw_id": "novita/qwen/qwen3-embedding-8b",
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.07,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            },
+            {
+              "mode": "embedding",
+              "provider": "llamagate",
+              "raw_id": "llamagate/qwen3-embedding-8b",
+              "prices": [
+                {
+                  "kind": "input",
+                  "amount": 0.02,
+                  "unit": "per_1m_tokens",
+                  "source_key": "input_cost_per_token"
+                },
+                {
+                  "kind": "output",
+                  "amount": 0,
+                  "unit": "per_1m_tokens",
+                  "source_key": "output_cost_per_token"
+                }
+              ]
+            }
+          ]
         }
       },
       "sources": [
@@ -22046,7 +26385,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "novita",
-          "raw_id": "novita/baai/bge-m3"
+          "raw_id": "novita/baai/bge-m3",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.01,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0.01,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -22077,7 +26430,21 @@
         "litellm": {
           "mode": "rerank",
           "provider": "novita",
-          "raw_id": "novita/baai/bge-reranker-v2-m3"
+          "raw_id": "novita/baai/bge-reranker-v2-m3",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.01,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0.01,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -22107,7 +26474,21 @@
         "litellm": {
           "mode": "embedding",
           "provider": "llamagate",
-          "raw_id": "llamagate/nomic-embed-text"
+          "raw_id": "llamagate/nomic-embed-text",
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.02,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            }
+          ]
         }
       },
       "sources": [
@@ -22211,6 +26592,32 @@
           ],
           "supported_output_modalities": [
             "audio"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 2.5,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 10,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0.00025,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            },
+            {
+              "kind": "output_audio",
+              "amount": 12,
+              "unit": "per_1m_audio_tokens",
+              "source_key": "output_cost_per_audio_token"
+            }
           ]
         }
       },
@@ -22251,6 +26658,32 @@
           ],
           "supported_output_modalities": [
             "audio"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 2.5,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 10,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 0.00025,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            },
+            {
+              "kind": "output_audio",
+              "amount": 12,
+              "unit": "per_1m_audio_tokens",
+              "source_key": "output_cost_per_audio_token"
+            }
           ]
         }
       },
@@ -22285,6 +26718,26 @@
           "raw_id": "gpt-4o-mini-transcribe-2025-03-20",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 1.25,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 5,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input_audio",
+              "amount": 1.25,
+              "unit": "per_1m_audio_tokens",
+              "source_key": "input_cost_per_audio_token"
+            }
           ]
         }
       },
@@ -22319,6 +26772,26 @@
           "raw_id": "gpt-4o-mini-transcribe-2025-12-15",
           "supported_endpoints": [
             "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 1.25,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            },
+            {
+              "kind": "output",
+              "amount": 5,
+              "unit": "per_1m_tokens",
+              "source_key": "output_cost_per_token"
+            },
+            {
+              "kind": "input_audio",
+              "amount": 1.25,
+              "unit": "per_1m_audio_tokens",
+              "source_key": "input_cost_per_audio_token"
+            }
           ]
         }
       },

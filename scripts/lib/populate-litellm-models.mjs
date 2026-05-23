@@ -144,6 +144,10 @@ function uniqueStrings(values) {
   return [...new Set(values.filter((value) => typeof value === 'string' && value.trim() !== '').map((value) => value.trim()))]
 }
 
+function isRecord(value) {
+  return value !== null && typeof value === 'object' && !Array.isArray(value)
+}
+
 function normalizeModelKey(value) {
   return tailId(value).replace(/[-_\s]+/gu, '-').replace(/(?<=\d)-(?=\d)/gu, '.')
 }
@@ -187,16 +191,73 @@ function mergeSources(existing, additions) {
   return output
 }
 
+function mergeLiteLlmParameters(existing, rawId, row) {
+  const current = isRecord(existing) ? existing : {}
+  const currentRawId = typeof current.raw_id === 'string' ? current.raw_id : ''
+  const currentObservation = currentRawId ? Object.fromEntries(Object.entries(current).filter(([key]) => key !== 'observations')) : null
+  const observations = [...(currentObservation ? [currentObservation] : []), ...(Array.isArray(current.observations) ? current.observations : [])]
+  const next = litellmParameters(rawId, row)
+  const merged = []
+  const seen = new Set()
+  for (const entry of observations) {
+    if (!isRecord(entry) || typeof entry.raw_id !== 'string') continue
+    const key = JSON.stringify(stableJsonValue(entry))
+    if (seen.has(key)) continue
+    seen.add(key)
+    if (entry.raw_id !== rawId) merged.push(entry)
+  }
+  merged.push(next)
+  return {
+    ...next,
+    ...(merged.length > 1 ? { observations: merged } : {}),
+  }
+}
+
 function litellmParameters(rawId, row) {
   const params = {
     mode: row.mode,
     provider: row.litellm_provider,
     raw_id: rawId,
   }
-  for (const key of ['output_vector_size', 'max_query_tokens', 'max_document_chunks_per_query', 'max_tokens_per_document_chunk', 'supported_endpoints', 'supported_modalities', 'supported_output_modalities', 'rpm', 'tpm']) {
+  for (const key of ['deprecation_date', 'output_vector_size', 'max_query_tokens', 'max_document_chunks_per_query', 'max_tokens_per_document_chunk', 'supported_endpoints', 'supported_modalities', 'supported_output_modalities', 'rpm', 'tpm']) {
     if (row[key] !== undefined) params[key] = row[key]
   }
+  const prices = litellmPriceRows(row)
+  if (prices.length > 0) params.prices = prices
   return params
+}
+
+function litellmPriceRows(row) {
+  const specs = [
+    ['input_cost_per_token', 'input', 'per_1m_tokens', 1_000_000],
+    ['output_cost_per_token', 'output', 'per_1m_tokens', 1_000_000],
+    ['input_cost_per_query', 'input', 'per_query', 1],
+    ['input_cost_per_request', 'input', 'per_request', 1],
+    ['input_cost_per_second', 'input', 'per_second', 1],
+    ['output_cost_per_second', 'output', 'per_second', 1],
+    ['input_cost_per_audio_token', 'input_audio', 'per_1m_audio_tokens', 1_000_000],
+    ['output_cost_per_audio_token', 'output_audio', 'per_1m_audio_tokens', 1_000_000],
+    ['input_cost_per_image', 'input_image', 'per_image', 1],
+    ['output_cost_per_image', 'output_image', 'per_image', 1],
+    ['input_cost_per_audio_per_second', 'input_audio', 'per_audio_second', 1],
+    ['input_cost_per_video_per_second', 'input_video', 'per_video_second', 1],
+    ['output_cost_per_video_per_second', 'output_video', 'per_video_second', 1],
+    ['cache_read_input_token_cost', 'cache_read', 'per_1m_tokens', 1_000_000],
+    ['cache_creation_input_token_cost', 'cache_write', 'per_1m_tokens', 1_000_000],
+  ]
+  return specs.flatMap(([key, kind, unit, multiplier]) => {
+    const amount = row[key]
+    if (typeof amount !== 'number' || !Number.isFinite(amount)) return []
+    return [{ kind, amount: normalizedPriceAmount(amount * multiplier), unit, source_key: key }]
+  })
+}
+
+function normalizedPriceAmount(value) {
+  return Math.round((value + Number.EPSILON) * 1_000_000_000_000) / 1_000_000_000_000
+}
+
+function applyLiteLlmDeprecationDate(model, row) {
+  if (typeof row.deprecation_date === 'string' && row.deprecation_date.trim() !== '') model.deprecation_date = row.deprecation_date.trim()
 }
 
 function enrichExisting(model, rawId, row, observedAt) {
@@ -210,8 +271,9 @@ function enrichExisting(model, rawId, row, observedAt) {
   }
   model.other_parameters = {
     ...(model.other_parameters && typeof model.other_parameters === 'object' && !Array.isArray(model.other_parameters) ? model.other_parameters : {}),
-    litellm: litellmParameters(rawId, row),
+    litellm: mergeLiteLlmParameters(model.other_parameters?.litellm, rawId, row),
   }
+  applyLiteLlmDeprecationDate(model, row)
 }
 
 function isLiteLlmManagedModel(model) {
@@ -222,7 +284,7 @@ function isLiteLlmManagedModel(model) {
 function createModel(rawId, row, observedAt) {
   const id = canonicalIdFromRaw(rawId, row)
   const modalities = modalitiesForMode(row.mode, row)
-  return {
+  const model = {
     id,
     model: displayNameFromId(id),
     alias: [rawId],
@@ -236,6 +298,8 @@ function createModel(rawId, row, observedAt) {
     },
     sources: [sourceObservation(rawId, observedAt)],
   }
+  applyLiteLlmDeprecationDate(model, row)
+  return model
 }
 
 function sourceRows(source) {
