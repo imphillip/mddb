@@ -3,7 +3,6 @@
   "id": "evroc",
   "provider": "evroc",
   "currency": "USD",
-  "icon": "/assets/provider-icons/evroc.svg",
   "base_url": "https://models.think.evroc.com/v1",
   "domain": "docs.evroc.com",
   "other_parameters": {
@@ -14,7 +13,8 @@
       "env": [
         "EVROC_API_KEY"
       ],
-      "remote_icon": "https://models.dev/logos/evroc.svg"
+      "remote_icon": "https://models.dev/logos/evroc.svg",
+      "icon_status": "disabled_broken_svg"
     },
     "basellm_newapi": {
       "vendor_name": "evroc"

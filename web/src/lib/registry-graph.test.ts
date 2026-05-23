@@ -14,7 +14,9 @@ describe('registry graph adapter', () => {
     expect(graph.schema.urlShape).toBe('/<provider>/<model-id>')
     const openaiProvider = graph.providers.find((provider) => provider.id === 'openai')
     expect(openaiProvider?.raw.icon).toBe('/assets/provider-icons/openai.svg')
-    expect(openaiProvider?.raw.other_parameters).toMatchObject({ models_dev: { remote_icon: 'https://models.dev/logos/openai.svg' } })
+    const evrocProvider = graph.providers.find((provider) => provider.id === 'evroc')
+    expect(evrocProvider?.raw.icon).toBeUndefined()
+    expect(evrocProvider?.raw.other_parameters).toMatchObject({ models_dev: { remote_icon: 'https://models.dev/logos/evroc.svg', icon_status: 'disabled_broken_svg' } })
   })
 
   it('renders the current plaza, provider, and detail UI from the new registry graph', () => {
@@ -40,6 +42,8 @@ describe('registry graph adapter', () => {
     expect(home).toContain('模型广场')
     expect(home).toContain('data-model-row')
     expect(home).toContain('<img src="/assets/provider-icons/openai.svg" alt="OpenAI logo" loading="lazy">')
+    expect(home).toContain('<img src="/assets/provider-icons/openai.svg" alt="OpenAI logo" loading="lazy"></span><div><a class="modelLink" href="/evroc/gpt-oss-120b/">')
+    expect(home).not.toContain('<img src="/assets/provider-icons/evroc.svg" alt="evroc logo" loading="lazy"></span><div><a class="modelLink" href="/evroc/gpt-oss-120b/">')
     expect(home).toContain('GPT-5.5')
     expect(home.indexOf('Claude Opus 4.6')).toBeLessThan(home.indexOf('Palmyra X5'))
     expect((node!.raw.model as { created?: unknown }).created).toBe(1777051893)

@@ -427,8 +427,8 @@ function renderSourceSection(node: OpenRouterRawNode, outEdges: OpenRouterRawEdg
 
 function renderModelRow(node: OpenRouterRawNode, searchOnly = false, graph?: OpenRouterRawGraph): string {
   const modalities = `${node.derived.inputModalities.join(' · ') || '—'} → ${node.derived.outputModalities.join(' · ') || '—'}`
-  const logoProvider = node.nodeKind === 'endpoint_deployment' ? node.provider : normalizedAuthorValue(node.derived.author) || node.provider
-  const logoLabel = node.nodeKind === 'endpoint_deployment' ? displayProviderLabel(node.providerName) : authorLabel(logoProvider)
+  const logoProvider = normalizedAuthorValue(node.derived.author) || node.provider
+  const logoLabel = authorLabel(logoProvider)
   return `<tr data-model-row data-search-only="${searchOnly ? 'true' : 'false'}" data-model-status="${escapeHtml(node.status)}" data-model-provider="${escapeHtml(node.provider)}" data-model-author="${escapeHtml(normalizedAuthorValue(node.derived.author))}" data-output-modalities="${escapeHtml(node.derived.outputModalities.join(' ').toLowerCase())}" data-model-name="${escapeHtml(`${node.displayName} ${node.provider} ${node.modelId} ${node.sourceId} ${node.derived.author ?? ''}`.toLowerCase())}"><td><div class="modelName">${graph ? providerLogoIcon(graph, logoProvider, logoLabel, 'modelIcon') : renderLogoIcon(undefined, `${logoLabel} logo`, logoLabel.slice(0, 1), 'modelIcon')}<div><a class="modelLink" href="${escapeHtml(node.route)}/">${escapeHtml(node.displayName)}</a><div class="modelSub">${renderModelTagCopy(node.modelId)}</div><div class="modelSub rawSource">${escapeHtml(node.derived.author ?? '—')} · ${escapeHtml(modalities)}</div></div></div></td><td class="mono">${escapeHtml(modelContextLength(node))}</td><td class="mono">${modelPriceCell(node, 'prompt', graph)}</td><td class="mono">${modelPriceCell(node, 'completion', graph)}</td><td class="mono">${modelPriceCell(node, 'input_cache_read', graph)}</td><td class="mono">${escapeHtml(modelReleasedDate(node))}</td></tr>`
 }
 
