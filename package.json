@@ -18,8 +18,6 @@
     "registry:populate:litellm": "node scripts/populate-litellm-models.mjs",
     "registry:populate:openrouter": "node scripts/populate-registry-openrouter.mjs",
     "registry:populate:models-dev": "node scripts/populate-models-dev-providers.mjs",
-    "registry:populate:basellm": "node scripts/populate-basellm-newapi-providers.mjs",
-    "data:basellm": "node scripts/fetch-basellm-newapi.mjs",
     "data:fx": "node scripts/fetch-exchange-rate.mjs",
     "data:aihot": "node scripts/fetch-aihot-model-news.mjs",
     "data:news": "npm run data:aihot && npm run build && node scripts/build-model-news-vocabulary.mjs && node scripts/tag-aihot-model-news.mjs && node scripts/export-model-news.mjs",
