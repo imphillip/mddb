@@ -183,6 +183,16 @@ describe('renderOpenRouterRawHome modality filter counts', () => {
     expect(html).toContain('.quickFilterCount')
   })
 
+  it('updates quick filter counts from the current search result set instead of static all-model counts', () => {
+    const html = renderOpenRouterRawHome(graph())
+
+    expect(html).toContain('const quickFilterCounts=Object.fromEntries(outputButtons.map(button=>[button.dataset.outputFilter||\'all\',button.querySelector(\'.quickFilterCount\')]).filter((entry)=>entry[1]));')
+    expect(html).toContain('const facetCounts={all:0};')
+    expect(html).toContain('const baseVisible=authorOk&&providerOk&&queryOk&&visibilityOk;')
+    expect(html).toContain('if(baseVisible){facetCounts.all+=1;for(const modality of rowOutputModalities(row)){facetCounts[modality]=(facetCounts[modality]||0)+1;}}')
+    expect(html).toContain('if(quickFilterCounts[facet])quickFilterCounts[facet].textContent=String(facetCounts[facet]||0);')
+  })
+
   it('normalizes LiteLLM category aliases so non-chat models appear in their plaza filters', () => {
     const testGraph = graph()
     const embedding = sourceNode('openai/text-embedding-3-small', 'openai')
@@ -212,7 +222,7 @@ describe('renderOpenRouterRawHome modality filter counts', () => {
 
 
 describe('renderOpenRouterRawHome URL query state', () => {
-  it('hydrates provider query params so tag links can reveal search-only deployment rows', () => {
+  it('keeps endpoint-only deployment rows out of the model plaza while preserving provider query hydration', () => {
     const testGraph = graph()
     const togetherEndpoint = endpointNode('together/gpt-oss-120b', 'together', 'openai')
     testGraph.nodes.push(togetherEndpoint)
@@ -226,11 +236,28 @@ describe('renderOpenRouterRawHome URL query state', () => {
 
     const html = renderOpenRouterRawHome(testGraph)
 
-    expect(html).toContain('data-model-provider="together"')
-    expect(html).toContain('data-search-only="true"')
+    expect(html).not.toContain('data-model-provider="together"')
+    expect(html).not.toContain('data-search-only="true"')
     expect(html).toContain("params.get('provider')")
     expect(html).toContain("/?provider=")
     expect(html).toContain('history.replaceState')
+  })
+  it('does not expose endpoint-only deployer/provider offers as separate model plaza rows', () => {
+    const testGraph = graph()
+    const canonical = sourceNode('x-ai/grok-4.20', 'xai')
+    canonical.displayName = 'Grok 4.20'
+    canonical.derived.author = 'xai'
+    const deployerOffer = endpointNode('x-ai/grok-4.20', 'together', 'xai')
+    deployerOffer.displayName = 'Together: Grok 4.20'
+    testGraph.nodes = [canonical, deployerOffer]
+    testGraph.edges = [{ id: 'edge:together:grok-4.20', from: deployerOffer.id, to: canonical.id, type: 'deployment_of', label: 'Together offers Grok 4.20' }]
+
+    const html = renderOpenRouterRawHome(testGraph)
+
+    expect(html).toContain('data-model-name="grok 4.20 xai grok-4.20 x-ai/grok-4.20 xai"')
+    expect(html).not.toContain('data-model-provider="together"')
+    expect(html).not.toContain('data-search-only="true"')
+    expect(html).not.toContain('Together: Grok 4.20')
   })
 })
 

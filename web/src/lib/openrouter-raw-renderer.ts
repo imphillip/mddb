@@ -13,7 +13,7 @@ export function renderOpenRouterRawHome(graph: OpenRouterRawGraph): string {
   const authorOptions = authorFilterOptions(graph)
   const searchOnlyNodeIds = modelPlazaSearchOnlyNodeIds(graph)
   const visibleRows = graph.nodes.filter((node) => !searchOnlyNodeIds.has(node.id)).length
-  const rows = graph.nodes.slice().sort(compareNodesByReleaseDesc).map((node) => renderModelRow(node, searchOnlyNodeIds.has(node.id), graph)).join('')
+  const rows = graph.nodes.slice().filter((node) => !searchOnlyNodeIds.has(node.id)).sort(compareNodesByReleaseDesc).map((node) => renderModelRow(node, false, graph)).join('')
   const quickFilters = renderOutputQuickFilters(graph, searchOnlyNodeIds, visibleRows)
   const body = `<main class="modelsShell"><aside class="filterPanel" aria-label="模型筛选">${renderAuthorFilterGroup(graph, authorOptions, visibleRows)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>模型广场</h1></div></div><div class="listToolbar"><div class="quickFilters" aria-label="模态筛选">${quickFilters}</div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small>/M tokens</small></th><th>输出<br><small>/M tokens</small></th><th>读取<br><small>/M tokens</small></th><th>发布时间</th></tr></thead><tbody id="rows">${rows}</tbody></table></div><script>${modelFilterScript()}</script></section></main>`
   return page('模型广场 · mddb.dev', body, 'models')
@@ -592,6 +592,7 @@ const outputButtons=Array.from(document.querySelectorAll('[data-output-filter]')
 const modelRows=Array.from(document.querySelectorAll('[data-model-row]'));
 const q=document.getElementById('q');
 const visibleCount=document.getElementById('visibleCount');
+const quickFilterCounts=Object.fromEntries(outputButtons.map(button=>[button.dataset.outputFilter||'all',button.querySelector('.quickFilterCount')]).filter((entry)=>entry[1]));
 const params=new URLSearchParams(window.location.search);
 let outputFilter=params.get('output')||'all';
 let providerFilter=(params.get('provider')||'all').toLowerCase();
@@ -612,18 +613,23 @@ function updateUrl(){
 function applyModelFilters(){
   const author=selected('author');
   const query=(q&&q.value||'').toLowerCase();
+  const facetCounts={all:0};
   let count=0;
+  function rowOutputModalities(row){return (row.dataset.outputModalities||'').split(/\s+/).filter(Boolean)}
   modelRows.forEach(row=>{
     const authorOk=author==='all'||author===(row.dataset.modelAuthor||'');
     const providerOk=providerFilter==='all'||providerFilter===(row.dataset.modelProvider||'').toLowerCase();
     const searchOnly=row.dataset.searchOnly==='true';
-    const outputOk=outputFilter==='all'||(row.dataset.outputModalities||'').split(/\s+/).includes(outputFilter);
     const queryOk=!query||(row.dataset.modelName||row.innerText||'').toLowerCase().includes(query);
     const visibilityOk=!searchOnly||!!query||providerFilter!=='all';
-    const visible=authorOk&&providerOk&&outputOk&&queryOk&&visibilityOk;
+    const baseVisible=authorOk&&providerOk&&queryOk&&visibilityOk;
+    if(baseVisible){facetCounts.all+=1;for(const modality of rowOutputModalities(row)){facetCounts[modality]=(facetCounts[modality]||0)+1;}}
+    const outputOk=outputFilter==='all'||rowOutputModalities(row).includes(outputFilter);
+    const visible=baseVisible&&outputOk;
     row.hidden=!visible;
     if(visible) count+=1;
   });
+  for(const facet of Object.keys(quickFilterCounts)){if(quickFilterCounts[facet])quickFilterCounts[facet].textContent=String(facetCounts[facet]||0);}
   if(visibleCount) visibleCount.textContent=String(count);
   updateUrl();
 }

@@ -55,8 +55,10 @@ describe('open-source unified models.json contract', () => {
     expect(missingEmbeddedEndpoints.slice(0, 20).map((model) => model.id)).toEqual([])
   })
 
-  it('excludes BaseLLM/NewAPI from open-source model data', () => {
-    const offenders = readModels().filter((model) => JSON.stringify(model).includes('basellm-newapi'))
+  it('excludes provider/router products from canonical model data', () => {
+    const routerIds = ['auto', 'bodybuilder', 'free', 'owl-alpha', 'pareto-code', 'router']
+    const offenders = readModels().filter((model) => routerIds.includes(String(model.id ?? '')))
+
     expect(offenders.map((model) => model.id)).toEqual([])
   })
 })
