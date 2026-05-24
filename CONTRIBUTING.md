@@ -8,11 +8,9 @@ Good public contributions include:
 
 - canonical model identity corrections;
 - alias additions with source evidence;
-- snapshot and variant classification fixes;
-- provider deployment and availability observations;
-- pricing normalization and conversion fixes;
+- model spec, modality, context, lifecycle, and capability fixes;
+- source/provenance improvements for `data/models.json`;
 - importer improvements that preserve raw source records;
-- tests for model normalization, source importers, waiting-list classification, and rendering;
 - public JSON export/schema improvements;
 - website improvements that are generated from registry data.
 
@@ -27,12 +25,9 @@ For any model-data change, include the evidence needed for review:
 - proposed classification:
   - canonical model;
   - alias;
-  - snapshot;
-  - variant;
-  - deployment;
-  - price fact;
+  - capability/spec update;
+  - lifecycle update;
   - rejected wrapper/proxy/typo;
-  - waiting-list candidate;
 - explanation of why the classification is correct;
 - tests or fixture updates when the rule is reusable.
 
@@ -45,14 +40,14 @@ mddb.dev is OpenRouter-first for canonical identity and treats secondary sources
 Reviewers should reject or request changes for PRs that:
 
 - turn provider routes into canonical model tags without evidence;
-- create duplicate models for snapshots, aliases, regions, or cloud wrappers;
+- create duplicate models for aliases, regions, or cloud wrappers;
 - overwrite primary canonical identity with a secondary-source spelling;
 - discard raw upstream evidence during normalization;
-- collapse meaningful variants into one price or context window;
+- collapse meaningful model capabilities or lifecycle facts without evidence;
 - add wrapper, proxy, typo, or gateway names as first-class models;
 - make generated output non-deterministic.
 
-When identity is ambiguous, keep the record in the waiting list until there is enough evidence.
+When identity is ambiguous, keep it out of `data/models.json` until there is enough evidence.
 
 ## Development workflow
 
@@ -84,7 +79,7 @@ Before submitting, confirm:
 
 - [ ] The change has source evidence when it affects registry data.
 - [ ] Canonical tags are stable logical model IDs, not provider routes.
-- [ ] Aliases, snapshots, variants, deployments, and price facts are classified separately.
+- [ ] Aliases and wrapper/proxy routes are not promoted into duplicate models.
 - [ ] Raw source/provenance is preserved where normalization transforms fields.
 - [ ] Tests were added or updated for general rules.
 - [ ] `npm test` passes.

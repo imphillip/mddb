@@ -31,34 +31,32 @@ describe('deployment separation', () => {
   })
 
   it('keeps transient news exports out of public data and omits frontend currency conversion', () => {
-    const packageJson = JSON.parse(readProjectFile('package.json')) as { scripts?: Record<string, string> }
     const buildScript = readProjectFile('web/src/scripts/build-site.ts')
     const renderer = readProjectFile('web/src/lib/openrouter-raw-renderer.ts')
     const gitignore = readProjectFile('.gitignore')
 
     expect(gitignore).toContain('data/model-news-tagged.json')
     expect(() => readProjectFile('data/model-news-tagged.json')).toThrow()
-    expect(packageJson.scripts?.['data:fx']).toBe('node scripts/fetch-exchange-rate.mjs')
     expect(buildScript).not.toContain('attachCurrency')
     expect(renderer).not.toContain('data-currency-toggle')
     expect(renderer).not.toContain('data-usd=')
     expect(renderer).not.toContain('data-cny=')
   })
 
-  it('keeps the public README compact and focused on the current registry shape', () => {
+  it('keeps the public README compact and focused on models.json', () => {
     const readme = readProjectFile('README.md')
 
     expect(readme).toContain('data/models.json')
-    expect(readme).toContain('data/providers/*.json')
-    expect(readme).toContain('GitHub Raw')
+    expect(readme).toContain('raw.githubusercontent.com/imphillip/mddb/main/data/models.json')
+    expect(readme).toContain('前端只保留两类页面')
+    expect(readme).toContain('scripts/')
     expect(readme).toContain('OpenRouter')
-    expect(readme).not.toContain('BaseLLM / NewAPI')
-    expect(readme).toContain('models.dev')
     expect(readme).toContain('LiteLLM')
+    expect(readme).toContain('models.dev')
+    expect(readme).not.toContain('BaseLLM / NewAPI')
     expect(readme).not.toContain('AIHOT')
     expect(readme).not.toContain('项目的核心不是前端站点')
     expect(readme).not.toContain('## 数据质量与 refresh gate')
-    expect(readme).not.toContain('## 开发')
     expect(readme).not.toContain('## 公开贡献流程')
     expect(readme).not.toContain('data/registry')
   })
@@ -70,7 +68,8 @@ describe('deployment separation', () => {
 
     expect(publicDocs).toContain('data/schema/models.schema.json')
     expect(publicDocs).toContain('data/schema/provider.schema.json')
-    expect(readme).toContain('docs/mddb-schema-v1.md')
+    expect(readme).toContain('data/models.json')
+    expect(readme).toContain('data/schema/models.schema.json')
     expect(gitignore).toContain('.internal/')
     expect(() => readProjectFile('docs/mddb-wiki-registry-refactor-plan.md')).toThrow()
   })
@@ -81,18 +80,14 @@ describe('deployment separation', () => {
     expect(packageJson.scripts?.deploy).toBe('bash scripts/deploy-static-site.sh')
     expect(packageJson.scripts?.['deploy:dry-run']).toBe('DRY_RUN=1 bash scripts/deploy-static-site.sh')
     expect(packageJson.scripts?.['serve:update']).toBe('node dist/scripts/update-admin-server.js')
-    expect(packageJson.scripts?.['hooks:install']).toBe('git config core.hooksPath .internal/git-hooks')
   })
 
-  it('keeps deploy prompt hooks local-only instead of publishing them as public source', () => {
+  it('keeps private maintainer notes and generated outputs out of public source', () => {
     const gitignore = readProjectFile('.gitignore')
-    const hook = readProjectFile('.internal/git-hooks/post-commit')
 
     expect(gitignore).toContain('.internal/')
     expect(() => readProjectFile('.githooks/post-commit')).toThrow()
-    expect(hook).toContain('npm run deploy')
-    expect(hook).toContain('MDDB_SKIP_POST_COMMIT_DEPLOY')
-    expect(hook).toContain('post-commit')
+    expect(() => readProjectFile('.hermes/plans/2026-05-23-unified-models-open-source-refactor.md')).toThrow()
   })
 
   it('ships a deploy script with safe defaults for the nginx runtime root and restarts the update admin service', () => {

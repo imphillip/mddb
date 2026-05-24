@@ -14,5 +14,5 @@ public/
 # Large reproducible OpenRouter page extraction snapshots (regenerate with npm run data:openrouter)
 data/openrouter-model-pages.json
 
-# Transient model-news exports are generated from local AIHOT SQLite state.
+# Removed model-news exports should stay out of public data.
 data/model-news-tagged.json

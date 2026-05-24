@@ -19,15 +19,12 @@
     "registry:populate:openrouter": "node scripts/populate-registry-openrouter.mjs",
     "registry:populate:models-dev": "node scripts/populate-models-dev-providers.mjs",
     "data:fx": "node scripts/fetch-exchange-rate.mjs",
-    "data:aihot": "node scripts/fetch-aihot-model-news.mjs",
-    "data:news": "npm run data:aihot && npm run build && node scripts/build-model-news-vocabulary.mjs && node scripts/tag-aihot-model-news.mjs && node scripts/export-model-news.mjs",
     "data:quality": "npm run build && node scripts/check-refresh-gate.mjs",
     "data:gate": "node scripts/check-refresh-gate.mjs",
     "serve": "npx http-server public -p 4173 -c-1",
     "serve:update": "node dist/scripts/update-admin-server.js",
     "deploy": "bash scripts/deploy-static-site.sh",
-    "deploy:dry-run": "DRY_RUN=1 bash scripts/deploy-static-site.sh",
-    "hooks:install": "git config core.hooksPath .internal/git-hooks"
+    "deploy:dry-run": "DRY_RUN=1 bash scripts/deploy-static-site.sh"
   },
   "keywords": [],
   "author": "",
@@ -39,7 +36,5 @@
   },
   "private": true,
   "type": "module",
-  "dependencies": {
-    "better-sqlite3": "^12.10.0"
-  }
+  "dependencies": {}
 }

@@ -1,61 +1,81 @@
 # mddb.dev
 
-mddb.dev 是一个开源的大模型元数据注册表（LLM model registry），主要维护两类 JSON：
+mddb.dev 是一个开源的大模型参数库。项目重新聚焦在一个核心文件：`data/models.json`。
 
-- `data/models.json`：模型注册表，记录模型身份、研发方、规格、模态、能力、alias 与来源证据；
-- `data/providers/*.json`：供应商注册表，记录 provider 提供的模型 offer、API model id、endpoint、价格、参数与来源证据。
+目标很简单：把主流大模型的身份、作者、模态、上下文、输出上限、工具调用、推理能力、发布时间、下架状态和来源证据整理成一份可读、可查、可被程序直接消费的 JSON。
 
-公开站点：<https://models.mddb.dev/>。
+公开站点：<https://models.mddb.dev/>
 
-后续如果需要直接消费数据，可以优先使用 GitHub Raw 链接读取这些 JSON 文件。
-
-## 当前公开站点
-
-- `/`：模型广场，支持厂牌筛选、搜索、模态筛选、模型 tag 复制和显式币种价格展示；
-- `/<provider>/<model-id>/`：模型详情页，展示规格、价格、来源、关系和原始证据。
-
-## 数据文件
+## 核心数据
 
 ### `data/models.json`
 
-模型事实表。典型字段包括：
+这是项目的核心产物，也是优先消费入口。
 
-- `id`：mddb 内部 canonical model id；
-- `model`：展示名；
-- `alias`：上游或生态里的等价 / 近似 model id；
-- `author`：研发方 / 自研模型归属；
-- `input_modalities` / `output_modalities`：输入输出模态；
-- `context_length` / `max_output_tokens`：关键规格；
-- `reasoning` / `tool_calling` / `other_parameters`：能力与补充参数；
+Raw URL：
+
+```text
+https://raw.githubusercontent.com/imphillip/mddb/main/data/models.json
+```
+
+典型字段：
+
+- `id`：canonical model id，用于 URL slug 和程序引用；
+- `model`：模型正式名称；
+- `alias`：上游或生态里的别名 / 快照名；
+- `author`：模型研发方；
+- `input_modalities` / `output_modalities`：输入、输出模态；
+- `context_length` / `max_output_tokens`：关键上下文参数；
+- `reasoning` / `tool_calling`：能力标记；
+- `knowledge_cutoff` / `released` / `deprecation`：时间信息；
+- `other_parameters`：暂未归类但值得保留的参数；
 - `sources`：来源证据。
 
-### `data/providers/*.json`
+`data/providers/*.json` 仍可作为采集和校验过程中的辅助数据，但项目的公开重点是 `models.json`。
 
-每个 provider 一个 JSON 文件。典型字段包括：
+## 前端
 
-- `id` / `provider`：供应商 id 与展示名；
-- `currency`：默认币种；
-- `offers[]`：该供应商提供的模型；
-  - `model_id`：指向 `data/models.json` 中的 canonical model id；
-  - `model`：展示名；
-  - `api_model_id`：该 provider/API 实际使用的 model tag；
-  - `endpoint_path` / `mode`：接口与调用形态；
-  - `prices[]`：价格事实；
-  - `sources[]` / `other_parameters`：来源证据与补充参数。
+前端只保留两类页面：
 
-JSON Schema 说明见 [`docs/mddb-schema-v1.md`](docs/mddb-schema-v1.md)，schema 文件位于 `data/schema/`。
+- `/`：模型列表页，用于搜索、筛选和快速浏览模型参数；
+- `/<provider>/<model-id>/`：模型详情页，展示单个模型的规格、来源、关系和补充信息。
 
-## 数据源
+前端不是项目核心，只是 `models.json` 的浏览器视图。
 
-当前参考的数据源包括：
+## 数据脚本
 
-- OpenRouter
-- models.dev
-- LiteLLM `model_prices_and_context_window.json`
+`scripts/` 保存数据采集、清洗、合并和质量检查脚本。当前主要覆盖：
 
-## 本地环境变量
+- 从 OpenRouter 拉取模型和 endpoint 数据；
+- 从 LiteLLM 补充非聊天模型和参数；
+- 从 models.dev 补充厂牌 / 图标等轻量信息；
+- 归一化组织名、模型 ID、模态和价格字段；
+- 生成静态站点；
+- 运行数据质量检查。
 
-私密配置不要提交到仓库。仓库只保留 `.env.example` 模板；本地或部署环境使用 `.env.local`：
+常用命令：
+
+```bash
+npm run data:openrouter
+npm run data:litellm
+npm run data:models-dev
+npm run registry:populate:openrouter
+npm run registry:populate:litellm
+npm run registry:populate:models-dev
+npm run data:quality
+npm run build
+```
+
+## 本地开发
+
+```bash
+npm install
+npm test
+npm run build
+npm run serve
+```
+
+私密配置不要提交。需要本地密钥时复制模板：
 
 ```bash
 cp .env.example .env.local
@@ -63,22 +83,21 @@ cp .env.example .env.local
 
 常用变量：
 
-- `OPENROUTER_API_KEY`：OpenRouter 数据抓取 / 更新脚本使用；没有时相关脚本可能无法拉取最新数据。
-- `UPDATE_ADMIN_PASSWORD`：内部 `/update/` 数据同步管理台密码；部署环境请使用长随机值。
+- `OPENROUTER_API_KEY`：OpenRouter 数据抓取 / 更新脚本使用；
+- `UPDATE_ADMIN_PASSWORD`：内部 `/update/` 更新管理台密码。
 
-`.env.local` 已在 `.gitignore` 中忽略，填入真实 key 或密码后不要提交。
+`.env.local` 已在 `.gitignore` 中忽略。
 
 ## 仓库结构
 
 ```text
 data/
-  models.json                    模型注册表
-  providers/*.json               供应商 / offer 注册表
-  schema/*.schema.json           JSON Schema
-docs/
-  mddb-schema-v1.md              数据格式说明
-scripts/                         数据抓取、导入与构建脚本
-web/src/                         静态站点源码
+  models.json                    核心模型参数表
+  providers/*.json               采集 / 校验辅助数据
+  schema/*.schema.json           JSON Schema（核心 schema：data/schema/models.schema.json）
+scripts/                         数据采集、处理、质量检查脚本
+web/src/                         两页静态前端源码
+public/                          构建产物，不提交
 ```
 
 ## License
