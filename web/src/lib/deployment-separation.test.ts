@@ -21,6 +21,8 @@ describe('deployment separation', () => {
     expect(buildScript).toContain('buildRegistryGraphFromFiles')
     expect(buildScript).toContain('buildDataQualityReport')
     expect(buildScript).toContain("'graph/data-quality.json'")
+    expect(buildScript).toContain("'favicon.svg'")
+    expect(buildScript).toContain("'web', 'src', 'assets', 'favicon.svg'")
     expect(adapter).toContain("'data', 'models.json'")
     expect(adapter).toContain("'data', 'providers'")
     expect(adapter).not.toContain("'data', 'registry'")

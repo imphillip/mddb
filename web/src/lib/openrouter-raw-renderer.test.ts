@@ -99,7 +99,8 @@ describe('shared navigation contract', () => {
     for (const html of pages) {
       expect(html).toContain('<header class="topbar"><nav class="nav"><a class="brandmark" href="/">')
       expect(html).toContain('<label class="topSearch">⌕ <input id="q" type="search" placeholder="搜索模型 / author / source" autocomplete="off"></label>')
-      expect(html).toContain('<div class="navlinks"><a href="https://raw.githubusercontent.com/imphillip/mddb/main/data/models.json" target="_blank" rel="noopener noreferrer">models.json</a><a class="githubLink" href="https://github.com/imphillip/mddb"')
+      expect(html).toContain('<div class="navlinks"><a href="https://raw.githubusercontent.com/imphillip/mddb/main/data/models.json" target="_blank" rel="noopener noreferrer">models.json</a></div><a class="githubLink" href="https://github.com/imphillip/mddb"')
+      expect(html).toContain('<link rel="icon" href="/favicon.svg" type="image/svg+xml">')
       expect(html).not.toContain('<a class="active" href="/">模型广场</a>')
       expect(html).not.toContain('供应商广场')
       expect(html).not.toContain('data-currency-toggle')
@@ -156,7 +157,7 @@ describe('renderOpenRouterRawHome price display', () => {
     expect(plazaHtml).toContain('class="githubLink"')
     expect(plazaHtml).toContain('<a class="brandmark" href="/">')
     expect(plazaHtml).not.toContain('模型动态')
-    expect(plazaHtml).toContain('<div class="navlinks"><a href="https://raw.githubusercontent.com/imphillip/mddb/main/data/models.json" target="_blank" rel="noopener noreferrer">models.json</a><a class="githubLink" href="https://github.com/imphillip/mddb"')
+    expect(plazaHtml).toContain('<div class="navlinks"><a href="https://raw.githubusercontent.com/imphillip/mddb/main/data/models.json" target="_blank" rel="noopener noreferrer">models.json</a></div><a class="githubLink" href="https://github.com/imphillip/mddb"')
     expect(plazaHtml).not.toContain('<a class="active" href="/">模型广场</a>')
     expect(plazaHtml).not.toContain('供应商广场')
     expect(plazaHtml).toContain('.githubLink{width:34px')

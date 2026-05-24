@@ -12,6 +12,7 @@ rmSync(outputDir, { recursive: true, force: true })
 copyProviderIcons(join(process.cwd(), 'data', 'provider-icons'), join(outputDir, 'assets', 'provider-icons'))
 
 writePage('index.html', renderOpenRouterRawHome(graph))
+writePage('favicon.svg', readFileSync(join(process.cwd(), 'web', 'src', 'assets', 'favicon.svg'), 'utf8'))
 writePage('update/index.html', renderUpdateAdminPage())
 writePage('graph/openrouter.json', JSON.stringify(graph, null, 2))
 const dataQuality = buildDataQualityReport(graph)

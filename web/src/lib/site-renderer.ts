@@ -14,11 +14,11 @@ const expandedBrandFilterNames = new Set(['ByteDance', 'MoonshotAI', 'Xiaomi'])
 const collapsedBrandFilterNames = new Set(['Arcee AI', 'NVIDIA'])
 
 function page(title: string, body: string, activePage: ActivePage, headExtra = ''): string {
-  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(title)}</title>${headExtra}<style>${css}</style></head><body>${nav(activePage)}${body}<script>${copyModelTagScript()}</script>${footer()}</body></html>`
+  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(title)}</title><link rel="icon" href="/favicon.svg" type="image/svg+xml">${headExtra}<style>${css}</style></head><body>${nav(activePage)}${body}<script>${copyModelTagScript()}</script>${footer()}</body></html>`
 }
 
 function nav(activePage: ActivePage): string {
-  return `<header class="topbar"><nav class="nav"><a class="brandmark" href="/">${databaseLogo()}<span>mddb.dev</span><span class="brandZh">大模型数据库</span></a><div class="topSearch">⌕ 搜索</div><div class="navlinks"><a href="https://raw.githubusercontent.com/imphillip/mddb/main/data/models.json" target="_blank" rel="noopener noreferrer">models.json</a><a class="githubLink" href="https://github.com/imphillip/mddb" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库">${githubLogo()}</a></div></nav></header>`
+  return `<header class="topbar"><nav class="nav"><a class="brandmark" href="/">${databaseLogo()}<span>mddb.dev</span><span class="brandZh">大模型数据库</span></a><div class="topSearch">⌕ 搜索</div><div class="navlinks"><a href="https://raw.githubusercontent.com/imphillip/mddb/main/data/models.json" target="_blank" rel="noopener noreferrer">models.json</a></div><a class="githubLink" href="https://github.com/imphillip/mddb" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库">${githubLogo()}</a></nav></header>`
 }
 
 function databaseLogo(): string {
