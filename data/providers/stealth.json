@@ -3,45 +3,7 @@
   "id": "stealth",
   "provider": "Stealth",
   "currency": "USD",
-  "offers": [
-    {
-      "model_id": "owl-alpha",
-      "model": "Owl Alpha",
-      "endpoint_path": "/chat/completions",
-      "api_model_id": "stealth/int8",
-      "mode": "chat",
-      "prices": [],
-      "other_parameters": {
-        "source_model_id": "openrouter/owl-alpha",
-        "endpoint_tag": "stealth/int8",
-        "context_length": 1048756,
-        "max_output_tokens": 262144,
-        "supported_parameters": [
-          "max_tokens",
-          "temperature",
-          "top_p",
-          "top_k",
-          "frequency_penalty",
-          "presence_penalty",
-          "repetition_penalty",
-          "seed",
-          "logit_bias",
-          "stop",
-          "tools",
-          "response_format",
-          "structured_outputs"
-        ],
-        "status": 0
-      },
-      "sources": [
-        {
-          "source": "openrouter:endpoints",
-          "source_id": "openrouter/owl-alpha#Stealth | openrouter/owl-alpha",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    }
-  ],
+  "offers": [],
   "other_parameters": {},
   "last_updated": "2026-05-19T22:11:55.841Z",
   "sources": []

@@ -977,41 +977,6 @@
       ]
     },
     {
-      "model_id": "auto",
-      "model": "Auto Router",
-      "api_model_id": "auto",
-      "endpoint_path": "auto",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "llmgateway/auto",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "llama-3.1-8b-instruct",
       "model": "Llama 3.1 8B Instruct",
       "api_model_id": "llama-3.1-8b-instruct",

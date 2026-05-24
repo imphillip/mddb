@@ -38,7 +38,7 @@ describe('registry graph adapter', () => {
     expect(home).toContain('模型广场')
     expect(home).toContain('data-model-row')
     expect(home).toContain('<img src="/assets/provider-icons/openai.svg" alt="OpenAI logo" loading="lazy">')
-    expect(home).toContain('<img src="/assets/provider-icons/openai.svg" alt="OpenAI logo" loading="lazy"></span><div><a class="modelLink" href="/evroc/gpt-oss-120b/">')
+    expect(home).toContain('href="/openai/gpt-oss-120b/">gpt-oss-120b')
     expect(home).not.toContain('<img src="/assets/provider-icons/evroc.svg" alt="evroc logo" loading="lazy"></span><div><a class="modelLink" href="/evroc/gpt-oss-120b/">')
     expect(home).toContain('GPT-5.5')
     expect(home.indexOf('Claude Opus 4.6')).toBeLessThan(home.indexOf('Palmyra X5'))

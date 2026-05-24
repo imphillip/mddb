@@ -212,64 +212,6 @@
       ]
     },
     {
-      "model_id": "auto",
-      "model": "Auto Router",
-      "endpoint_path": "/images/generations",
-      "api_model_id": "openrouter/auto",
-      "mode": "image",
-      "prices": [],
-      "other_parameters": {
-        "source_id": "openrouter/auto",
-        "canonical_slug": "openrouter/auto",
-        "endpoint_providers": [],
-        "endpoint_count": 0,
-        "context_length": 2000000,
-        "max_completion_tokens": null
-      },
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "openrouter/auto",
-          "url": "https://openrouter.ai/openrouter/auto",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        },
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/openrouter/auto",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "bodybuilder",
-      "model": "Body Builder (beta)",
-      "endpoint_path": "/chat/completions",
-      "api_model_id": "openrouter/bodybuilder",
-      "mode": "chat",
-      "prices": [],
-      "other_parameters": {
-        "source_id": "openrouter/bodybuilder",
-        "canonical_slug": "openrouter/bodybuilder",
-        "endpoint_providers": [],
-        "endpoint_count": 0,
-        "context_length": 128000,
-        "max_completion_tokens": null
-      },
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "openrouter/bodybuilder",
-          "url": "https://openrouter.ai/openrouter/bodybuilder",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        },
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/openrouter/bodybuilder",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "claude-3-haiku",
       "model": "Claude 3 Haiku",
       "endpoint_path": "/images/generations",
@@ -2608,35 +2550,6 @@
           "source_id": "baidu/ernie-4.5-vl-424b-a47b",
           "url": "https://openrouter.ai/baidu/ernie-4.5-vl-424b-a47b",
           "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    },
-    {
-      "model_id": "free",
-      "model": "Free Models Router",
-      "endpoint_path": "/images/generations",
-      "api_model_id": "openrouter/free",
-      "mode": "image",
-      "prices": [],
-      "other_parameters": {
-        "source_id": "openrouter/free",
-        "canonical_slug": "openrouter/free",
-        "endpoint_providers": [],
-        "endpoint_count": 0,
-        "context_length": 200000,
-        "max_completion_tokens": null
-      },
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "openrouter/free",
-          "url": "https://openrouter.ai/openrouter/free",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        },
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/openrouter/free",
-          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -12930,37 +12843,6 @@
       ]
     },
     {
-      "model_id": "owl-alpha",
-      "model": "Owl Alpha",
-      "endpoint_path": "/chat/completions",
-      "api_model_id": "openrouter/owl-alpha",
-      "mode": "chat",
-      "prices": [],
-      "other_parameters": {
-        "source_id": "openrouter/owl-alpha",
-        "canonical_slug": "openrouter/owl-alpha",
-        "endpoint_providers": [
-          "Stealth"
-        ],
-        "endpoint_count": 1,
-        "context_length": 1048756,
-        "max_completion_tokens": 262144
-      },
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "openrouter/owl-alpha",
-          "url": "https://openrouter.ai/openrouter/owl-alpha",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        },
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/openrouter/owl-alpha",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "palmyra-x5",
       "model": "Palmyra X5",
       "endpoint_path": "/chat/completions",
@@ -13004,35 +12886,6 @@
           "source_id": "writer/palmyra-x5",
           "url": "https://openrouter.ai/writer/palmyra-x5",
           "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    },
-    {
-      "model_id": "pareto-code",
-      "model": "Pareto Code Router",
-      "endpoint_path": "/chat/completions",
-      "api_model_id": "openrouter/pareto-code",
-      "mode": "chat",
-      "prices": [],
-      "other_parameters": {
-        "source_id": "openrouter/pareto-code",
-        "canonical_slug": "openrouter/pareto-code",
-        "endpoint_providers": [],
-        "endpoint_count": 0,
-        "context_length": 2000000,
-        "max_completion_tokens": null
-      },
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "openrouter/pareto-code",
-          "url": "https://openrouter.ai/openrouter/pareto-code",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        },
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/openrouter/pareto-code",
-          "url": "https://models.dev/api.json"
         }
       ]
     },
@@ -15980,53 +15833,6 @@
           "source": "openrouter",
           "source_id": "thedrummer/rocinante-12b",
           "url": "https://openrouter.ai/thedrummer/rocinante-12b",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    },
-    {
-      "model_id": "router",
-      "model": "Router",
-      "endpoint_path": "/chat/completions",
-      "api_model_id": "switchpoint/router",
-      "mode": "chat",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.85,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 3.4,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
-          "raw_pricing": {
-            "prompt": "0.00000085",
-            "completion": "0.0000034"
-          }
-        }
-      ],
-      "other_parameters": {
-        "source_id": "switchpoint/router",
-        "canonical_slug": "switchpoint/router",
-        "endpoint_providers": [
-          "Switchpoint"
-        ],
-        "endpoint_count": 1,
-        "context_length": 131072,
-        "max_completion_tokens": null
-      },
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "switchpoint/router",
-          "url": "https://openrouter.ai/switchpoint/router",
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
@@ -20084,41 +19890,6 @@
         {
           "source": "models.dev",
           "source_id": "openrouter/aion-labs/aion-1.0-mini",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "router",
-      "model": "Router",
-      "api_model_id": "switchpoint/router",
-      "endpoint_path": "switchpoint/router",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.85,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 3.4,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/switchpoint/router",
           "url": "https://models.dev/api.json"
         }
       ]

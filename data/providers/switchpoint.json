@@ -3,62 +3,7 @@
   "id": "switchpoint",
   "provider": "Switchpoint",
   "currency": "USD",
-  "offers": [
-    {
-      "model_id": "router",
-      "model": "Router",
-      "endpoint_path": "/chat/completions",
-      "api_model_id": "switchpoint",
-      "mode": "chat",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.85,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 3.4,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
-          "raw_pricing": {
-            "prompt": "0.00000085",
-            "completion": "0.0000034",
-            "discount": 0
-          }
-        }
-      ],
-      "other_parameters": {
-        "source_model_id": "switchpoint/router",
-        "endpoint_tag": "switchpoint",
-        "context_length": 131072,
-        "max_output_tokens": null,
-        "supported_parameters": [
-          "reasoning",
-          "include_reasoning",
-          "max_tokens",
-          "temperature",
-          "top_p",
-          "stop",
-          "top_k",
-          "seed"
-        ],
-        "status": 0
-      },
-      "sources": [
-        {
-          "source": "openrouter:endpoints",
-          "source_id": "switchpoint/router#Switchpoint | switchpoint/router",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    }
-  ],
+  "offers": [],
   "other_parameters": {},
   "last_updated": "2026-05-19T22:11:55.841Z",
   "sources": []

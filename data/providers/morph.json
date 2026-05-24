@@ -440,41 +440,6 @@
       ]
     },
     {
-      "model_id": "auto",
-      "model": "Auto Router",
-      "api_model_id": "auto",
-      "endpoint_path": "auto",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.85,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 1.55,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "morph/auto",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "morph-v3-fast",
       "model": "Morph V3 Fast",
       "api_model_id": "morph-v3-fast",
