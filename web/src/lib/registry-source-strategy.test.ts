@@ -18,7 +18,7 @@ function modelPayload(root = process.cwd()): { models: JsonRecord[] } {
 }
 
 describe('registry source strategy invariants', () => {
-  it('keeps canonical model identities unique and backed by OpenRouter or LiteLLM', () => {
+  it('keeps canonical model identities unique and backed by OpenRouter, LiteLLM, or Bailian', () => {
     const models = modelPayload().models
     const duplicateModelIds = duplicates(models.map((model) => model.id))
     expect(duplicateModelIds).toEqual([])
@@ -27,7 +27,7 @@ describe('registry source strategy invariants', () => {
     expect(duplicateAliases).toEqual([])
 
     const invalidModelSources = models
-      .filter((model) => !hasSource(model, 'openrouter') && !hasSource(model, 'litellm'))
+      .filter((model) => !hasSource(model, 'openrouter') && !hasSource(model, 'litellm') && !hasSource(model, 'bailian_model_market'))
       .map((model) => model.id)
     expect(invalidModelSources).toEqual([])
 

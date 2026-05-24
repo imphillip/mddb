@@ -55,6 +55,17 @@ describe('open-source unified models.json contract', () => {
     expect(missingEmbeddedEndpoints.slice(0, 20).map((model) => model.id)).toEqual([])
   })
 
+  it('embeds Bailian CNY prices without adding region/currency schema fields', () => {
+    const models = readModels()
+    const qwenMax = models.find((model) => model.id === 'qwen3.7-max')
+    const bailianPrices = ((qwenMax?.prices ?? []) as JsonRecord[]).filter((price: JsonRecord) => price.source === 'bailian_model_market')
+
+    expect(bailianPrices.length).toBeGreaterThan(0)
+    expect(bailianPrices.some((price: JsonRecord) => price.currency === 'CNY' && price.endpoint?.provider_id === 'alibaba-bailian-cn')).toBe(true)
+    expect(JSON.stringify(qwenMax)).not.toContain('pricing_currency')
+    expect(JSON.stringify(qwenMax)).not.toContain('service_site')
+  })
+
   it('excludes provider/router products from canonical model data', () => {
     const routerIds = ['auto', 'bodybuilder', 'free', 'owl-alpha', 'pareto-code', 'router']
     const offenders = readModels().filter((model) => routerIds.includes(String(model.id ?? '')))
