@@ -18,8 +18,7 @@ function page(title: string, body: string, activePage: ActivePage, headExtra = '
 }
 
 function nav(activePage: ActivePage): string {
-  const modelsClass = activePage === 'models' ? ' class="active"' : ''
-  return `<header class="topbar"><nav class="nav"><a class="brandmark" href="/">${databaseLogo()}<span>mddb.dev</span><span class="brandZh">大模型数据库</span></a><div class="topSearch">⌕ 搜索</div><div class="navlinks"><a${modelsClass} href="/">模型广场</a></div><a class="githubLink" href="https://github.com/imphillip/mddb" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库">${githubLogo()}</a></nav></header>`
+  return `<header class="topbar"><nav class="nav"><a class="brandmark" href="/">${databaseLogo()}<span>mddb.dev</span><span class="brandZh">大模型数据库</span></a><div class="topSearch">⌕ 搜索</div><div class="navlinks"><a href="https://raw.githubusercontent.com/imphillip/mddb/main/data/models.json" target="_blank" rel="noopener noreferrer">models.json</a><a class="githubLink" href="https://github.com/imphillip/mddb" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库">${githubLogo()}</a></div></nav></header>`
 }
 
 function databaseLogo(): string {
