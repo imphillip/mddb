@@ -15,7 +15,7 @@ export function renderOpenRouterRawHome(graph: OpenRouterRawGraph): string {
   const visibleRows = graph.nodes.filter((node) => !searchOnlyNodeIds.has(node.id)).length
   const rows = graph.nodes.slice().filter((node) => !searchOnlyNodeIds.has(node.id)).sort(compareNodesByReleaseDesc).map((node) => renderModelRow(node, false, graph)).join('')
   const quickFilters = renderOutputQuickFilters(graph, searchOnlyNodeIds, visibleRows)
-  const body = `<main class="modelsShell"><aside class="filterPanel" aria-label="模型筛选">${renderAuthorFilterGroup(graph, authorOptions, visibleRows)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>模型广场</h1></div></div><div class="listToolbar"><div class="quickFilters" aria-label="模态筛选">${quickFilters}</div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>输入<br><small>/M tokens</small></th><th>输出<br><small>/M tokens</small></th><th>读取<br><small>/M tokens</small></th><th>发布时间</th></tr></thead><tbody id="rows">${rows}</tbody></table></div><script>${modelFilterScript()}</script></section></main>`
+  const body = `<main class="modelsShell"><aside class="filterPanel" aria-label="模型筛选">${renderAuthorFilterGroup(graph, authorOptions, visibleRows)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>模型广场</h1></div></div><div class="listToolbar"><div class="quickFilters" aria-label="模态筛选">${quickFilters}</div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>价格</th><th>阶梯</th><th>发布时间</th></tr></thead><tbody id="rows">${rows}</tbody></table></div><script>${modelFilterScript()}</script></section></main>`
   return page('模型广场 · mddb.dev', body, 'models')
 }
 
@@ -286,6 +286,7 @@ function registryPriceUnit(unit: string, currency: string): string {
 }
 
 function displayRegistryPriceSource(source: string): string {
+  if (source === 'litellm') return 'LiteLLM'
   if (source === 'bailian_model_market') return 'Bailian Model Market'
   if (source === 'openrouter') return 'OpenRouter'
   return source.split(/[_-]/u).map((part) => part ? `${part.slice(0, 1).toUpperCase()}${part.slice(1)}` : part).join(' ')
@@ -477,7 +478,125 @@ function renderModelRow(node: OpenRouterRawNode, searchOnly = false, graph?: Ope
   const logoProvider = normalizedAuthorValue(node.derived.author) || node.provider
   const logoLabel = authorLabel(logoProvider)
   const outputModalities = normalizedOutputModalities(node)
-  return `<tr data-model-row data-search-only="${searchOnly ? 'true' : 'false'}" data-model-status="${escapeHtml(node.status)}" data-model-provider="${escapeHtml(node.provider)}" data-model-author="${escapeHtml(normalizedAuthorValue(node.derived.author))}" data-output-modalities="${escapeHtml(outputModalities.join(' '))}" data-model-name="${escapeHtml(`${node.displayName} ${node.provider} ${node.modelId} ${node.sourceId} ${node.derived.author ?? ''}`.toLowerCase())}"><td><div class="modelName">${graph ? providerLogoIcon(graph, logoProvider, logoLabel, 'modelIcon') : renderLogoIcon(undefined, `${logoLabel} logo`, logoLabel.slice(0, 1), 'modelIcon')}<div><a class="modelLink" href="${escapeHtml(node.route)}/">${escapeHtml(node.displayName)}</a><div class="modelSub">${renderModelTagCopy(node.modelId)}</div><div class="modelSub rawSource">${escapeHtml(node.derived.author ?? '—')} · ${escapeHtml(modalities)}</div></div></div></td><td class="mono">${escapeHtml(modelContextLength(node))}</td><td class="mono">${modelPriceCell(node, 'prompt', graph)}</td><td class="mono">${modelPriceCell(node, 'completion', graph)}</td><td class="mono">${modelPriceCell(node, 'input_cache_read', graph)}</td><td class="mono">${escapeHtml(modelReleasedDate(node))}</td></tr>`
+  return `<tr data-model-row data-search-only="${searchOnly ? 'true' : 'false'}" data-model-status="${escapeHtml(node.status)}" data-model-provider="${escapeHtml(node.provider)}" data-model-author="${escapeHtml(normalizedAuthorValue(node.derived.author))}" data-output-modalities="${escapeHtml(outputModalities.join(' '))}" data-model-name="${escapeHtml(`${node.displayName} ${node.provider} ${node.modelId} ${node.sourceId} ${node.derived.author ?? ''}`.toLowerCase())}"><td><div class="modelName">${graph ? providerLogoIcon(graph, logoProvider, logoLabel, 'modelIcon') : renderLogoIcon(undefined, `${logoLabel} logo`, logoLabel.slice(0, 1), 'modelIcon')}<div><a class="modelLink" href="${escapeHtml(node.route)}/">${escapeHtml(node.displayName)}</a><div class="modelSub">${renderModelTagCopy(node.modelId)}</div><div class="modelSub rawSource">${escapeHtml(node.derived.author ?? '—')} · ${escapeHtml(modalities)}</div></div></div></td><td class="mono">${escapeHtml(modelContextLength(node))}</td><td class="mono priceCell">${modelPriceSummaryCell(node, graph)}</td><td class="tierCell">${modelPriceTierCell(node, graph)}</td><td class="mono">${escapeHtml(modelReleasedDate(node))}</td></tr>`
+}
+
+type PriceCellSummary = {
+  html: string
+  source: string
+  condition: string
+  tierCount: number
+}
+
+function modelPriceSummaryCell(node: OpenRouterRawNode, graph?: OpenRouterRawGraph): string {
+  const summary = preferredModelPriceSummary(node, graph)
+  if (!summary) return '—'
+  const source = summary.source ? `<span class="priceSource">${escapeHtml(displayRegistryPriceSource(summary.source))}</span>` : ''
+  return `<div class="priceSummary"${summary.source ? ` data-price-source-provider="${escapeHtml(summary.source)}"` : ''}>${summary.html}${source}</div>`
+}
+
+function modelPriceTierCell(node: OpenRouterRawNode, graph?: OpenRouterRawGraph): string {
+  const summary = preferredModelPriceSummary(node, graph)
+  if (!summary?.condition) return '—'
+  const count = summary.tierCount > 1 ? ` <span class="tierCount">${summary.tierCount} 档</span>` : ''
+  return `<span class="tierCondition">${escapeHtml(summary.condition)}</span>${count}`
+}
+
+function preferredModelPriceSummary(node: OpenRouterRawNode, graph?: OpenRouterRawGraph): PriceCellSummary | null {
+  const registrySummary = registryModelPriceSummary(node)
+  if (registrySummary) return registrySummary
+  const input = modelPriceCell(node, 'prompt', graph)
+  const output = modelPriceCell(node, 'completion', graph)
+  const parts = [
+    input === '—' ? '' : `<span><span class="priceLabel">Input</span> ${input}</span>`,
+    output === '—' ? '' : `<span><span class="priceLabel">Output</span> ${output}</span>`,
+  ].filter(Boolean)
+  if (parts.length === 0) return null
+  return { html: parts.join(' <span class="priceSeparator">/</span> '), source: '', condition: '', tierCount: 0 }
+}
+
+function registryModelPriceSummary(node: OpenRouterRawNode): PriceCellSummary | null {
+  const prices = preferredRegistryListPrices(node)
+  if (prices.length === 0) return null
+  const input = firstRegistryListEntry(prices, 'input')
+  const output = firstRegistryListEntry(prices, 'output')
+  const entries = [
+    input ? `<span><span class="priceLabel">Input</span> ${formatPrice(input.entry.amount, registryPriceUnit(String(input.entry.unit ?? ''), String(input.price.currency ?? 'USD')))}</span>` : '',
+    output ? `<span><span class="priceLabel">Output</span> ${formatPrice(output.entry.amount, registryPriceUnit(String(output.entry.unit ?? ''), String(output.price.currency ?? 'USD')))}</span>` : '',
+  ].filter(Boolean)
+  if (entries.length === 0) return null
+  const price = input?.price ?? output?.price
+  const unitPrices = price && (isRecord(price.unit_prices) ? price.unit_prices : isRecord(price.prices) ? price.prices : undefined)
+  const condition = (unitPrices ? firstPriceCondition(unitPrices) : '') || (price ? registryPriceCondition(price) : '')
+  const source = typeof price?.source === 'string' ? price.source : ''
+  return { html: entries.join(' <span class="priceSeparator">/</span> '), source, condition, tierCount: matchingTierCount(node, source, condition) }
+}
+
+function firstRegistryListEntry(prices: Record<string, unknown>[], canonicalKey: 'input' | 'output'): { price: Record<string, unknown>; entry: Record<string, unknown> } | null {
+  for (const price of prices) {
+    const unitPrices = isRecord(price.unit_prices) ? price.unit_prices : isRecord(price.prices) ? price.prices : undefined
+    const entry = unitPrices ? registryListPriceEntry(unitPrices, canonicalKey) : null
+    if (entry) return { price, entry }
+  }
+  return null
+}
+
+function registryListPriceEntry(unitPrices: Record<string, unknown>, canonicalKey: 'input' | 'output'): Record<string, unknown> | null {
+  const exact = unitPrices[canonicalKey]
+  if (isRecord(exact) && Number.isFinite(Number(exact.amount))) return exact
+  const prefix = canonicalKey === 'input' ? /^input(?:_|$)|^prompt(?:_|$)|^input_cost/u : /^output(?:_|$)|^completion(?:_|$)|^output_cost/u
+  for (const [key, value] of Object.entries(unitPrices)) {
+    if (prefix.test(key) && isRecord(value) && Number.isFinite(Number(value.amount))) return value
+  }
+  return null
+}
+
+function firstPriceCondition(unitPrices: Record<string, unknown>): string {
+  for (const value of Object.values(unitPrices)) {
+    if (isRecord(value) && typeof value.condition === 'string' && value.condition.trim()) return value.condition.trim()
+  }
+  return ''
+}
+
+function registryPriceCondition(price: Record<string, unknown>): string {
+  const conditions = isRecord(price.conditions) ? price.conditions : undefined
+  return typeof conditions?.label === 'string' ? conditions.label : ''
+}
+
+function matchingTierCount(node: OpenRouterRawNode, source: string, condition: string): number {
+  if (!condition) return 0
+  const registry = registryModel(node)
+  const prices = Array.isArray(registry.prices) ? registry.prices.filter((candidate): candidate is Record<string, unknown> => isRecord(candidate)) : []
+  const sameSource = prices.filter((price) => (source ? price.source === source : true))
+  const seen = new Set<string>()
+  for (const price of sameSource) {
+    const unitPrices = isRecord(price.unit_prices) ? price.unit_prices : isRecord(price.prices) ? price.prices : undefined
+    if (!unitPrices) continue
+    const value = firstPriceCondition(unitPrices) || registryPriceCondition(price)
+    if (value) seen.add(value)
+  }
+  return seen.size || 1
+}
+
+function preferredRegistryListPrices(node: OpenRouterRawNode): Record<string, unknown>[] {
+  const registry = registryModel(node)
+  const prices = Array.isArray(registry.prices) ? pricesWithListEntries(registry.prices) : []
+  const rank = (price: Record<string, unknown>): number => {
+    if (price.currency === 'CNY' && price.source === 'bailian_model_market') return 0
+    if (price.currency === 'CNY' && price.source === 'volcengine_ark') return 1
+    if (price.currency === 'CNY') return 2
+    if (price.currency === 'USD' && price.source === 'openrouter') return 3
+    return 4
+  }
+  return prices.slice().sort((a, b) => rank(a) - rank(b))
+}
+
+function pricesWithListEntries(prices: unknown[]): Record<string, unknown>[] {
+  return prices.filter((price): price is Record<string, unknown> => {
+    if (!isRecord(price)) return false
+    const unitPrices = isRecord(price.unit_prices) ? price.unit_prices : isRecord(price.prices) ? price.prices : undefined
+    return Boolean(unitPrices && (registryListPriceEntry(unitPrices, 'input') || registryListPriceEntry(unitPrices, 'output')))
+  })
 }
 
 function modelPriceCell(node: OpenRouterRawNode, key: string, graph?: OpenRouterRawGraph): string {

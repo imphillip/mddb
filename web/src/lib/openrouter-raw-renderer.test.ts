@@ -154,11 +154,34 @@ describe('renderOpenRouterRawHome price display', () => {
     const plazaHtml = renderOpenRouterRawHome(testGraph)
     const detailHtml = renderOpenRouterRawDetail(testGraph, qwen)
 
+    expect(plazaHtml).toContain('<th>模型</th><th>上下文</th><th>价格</th><th>阶梯</th><th>发布时间</th>')
+    expect(plazaHtml).toContain('<span class="priceLabel">Input</span>')
+    expect(plazaHtml).toContain('<span class="priceLabel">Output</span>')
+    expect(plazaHtml).toContain('Bailian Model Market')
     expect(plazaHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">0.8</span>')
     expect(plazaHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">2</span>')
     expect(detailHtml).toContain('Bailian Model Market')
     expect(detailHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">0.8</span>')
     expect(detailHtml).toContain('<span class="priceCurrencySymbol">$</span><span class="priceAmount">0.26</span>')
+  })
+  it('summarizes the first tier in a dedicated tier column without adding model schema fields', () => {
+    const testGraph = graph()
+    const qwen = testGraph.nodes[1]!
+    qwen.raw.model = {
+      ...qwen.raw.model as Record<string, unknown>,
+      mddb_registry: {
+        prices: [
+          { currency: 'USD', source: 'litellm', prices: { input_cost_per_token_above_128k_tokens: { amount: 0.15, unit: 'per_1m_tokens', condition: 'above 128k tokens' }, output_cost_per_token_above_128k_tokens: { amount: 0.6, unit: 'per_1m_tokens', condition: 'above 128k tokens' } } },
+          { currency: 'USD', source: 'litellm', prices: { input_cost_per_token_above_272k_tokens: { amount: 0.3, unit: 'per_1m_tokens', condition: 'above 272k tokens' }, output_cost_per_token_above_272k_tokens: { amount: 1.2, unit: 'per_1m_tokens', condition: 'above 272k tokens' } } },
+        ],
+      },
+    }
+
+    const plazaHtml = renderOpenRouterRawHome(testGraph)
+
+    expect(plazaHtml).toContain('<td class="tierCell"><span class="tierCondition">above 128k tokens</span> <span class="tierCount">2 档</span></td>')
+    expect(plazaHtml).toContain('<span class="priceSource">LiteLLM</span>')
+    expect(plazaHtml).not.toContain('input_cost_per_token_above_272k_tokens')
   })
 })
 
