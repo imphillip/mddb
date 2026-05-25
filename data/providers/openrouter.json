@@ -2576,7 +2576,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-7,
+              "amount": 1e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -2641,7 +2641,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 7.5e-8,
+              "amount": 7.5e-08,
               "unit": "per_image"
             },
             "web_search": {
@@ -2704,7 +2704,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-7,
+              "amount": 3e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -2769,7 +2769,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-7,
+              "amount": 3e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -2834,7 +2834,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-7,
+              "amount": 1e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -2899,7 +2899,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-7,
+              "amount": 1e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -2964,7 +2964,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -3029,7 +3029,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -3094,7 +3094,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -3159,7 +3159,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 5e-7,
+              "amount": 5e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -3224,7 +3224,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -3341,7 +3341,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2.5e-7,
+              "amount": 2.5e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -3406,7 +3406,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2.5e-7,
+              "amount": 2.5e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -3471,7 +3471,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -3536,7 +3536,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -8615,52 +8615,6 @@
           "source": "openrouter",
           "source_id": "moonshotai/kimi-k2.6",
           "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    },
-    {
-      "model_id": "kimi-latest",
-      "model": "Kimi Latest",
-      "endpoint_path": "/images/generations",
-      "api_model_id": "~moonshotai/kimi-latest",
-      "mode": "image",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.73,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 3.49,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
-          "raw_pricing": {
-            "prompt": "0.00000073",
-            "completion": "0.00000349",
-            "input_cache_read": "0.00000025"
-          }
-        }
-      ],
-      "other_parameters": {
-        "source_id": "~moonshotai/kimi-latest",
-        "canonical_slug": "~moonshotai/kimi-latest",
-        "endpoint_providers": [],
-        "endpoint_count": 0,
-        "context_length": 262144,
-        "max_completion_tokens": 262142
-      },
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "~moonshotai/kimi-latest",
-          "url": "https://openrouter.ai/~moonshotai/kimi-latest",
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
@@ -16970,7 +16924,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.0000015,
+              "amount": 1.5e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -17292,7 +17246,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -17355,7 +17309,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.0000015,
+              "amount": 1.5e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -26024,45 +25978,6 @@
         {
           "source": "models.dev",
           "source_id": "openrouter/baidu/ernie-4.5-vl-28b-a3b",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "kimi-latest",
-      "model": "Kimi Latest",
-      "api_model_id": "~moonshotai/kimi-latest",
-      "endpoint_path": "~moonshotai/kimi-latest",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.73,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 3.49,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.25,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/~moonshotai/kimi-latest",
           "url": "https://models.dev/api.json"
         }
       ]

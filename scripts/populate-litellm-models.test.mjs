@@ -70,10 +70,12 @@ describe('populateLiteLlmModels', () => {
         'vertex_ai/text-embedding-005': { litellm_provider: 'vertex_ai-embedding-models', mode: 'embedding', max_input_tokens: 2048, input_cost_per_token: 0.0000001 },
         'openai/gpt-4o': { litellm_provider: 'openai', mode: 'chat', max_input_tokens: 128000 },
         'some-provider/brand-new-chat': { litellm_provider: 'some_provider', mode: 'chat' },
+        'bedrock/amazon.titan-embed-text-v2:0': { litellm_provider: 'bedrock', mode: 'embedding', input_cost_per_token: 0.00000002 },
+        'azure/azure-tts': { litellm_provider: 'azure', mode: 'audio_speech', input_cost_per_token: 0.00000002 },
       },
     })
 
-    expect(result).toEqual({ added: 4, enriched: 1, skipped: 2 })
+    expect(result).toEqual({ added: 4, enriched: 1, skipped: 4 })
     const models = readJson(modelsPath).models
     expect(models.map((model) => model.id)).toEqual([
       'gpt-4o',

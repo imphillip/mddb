@@ -1,6 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { normalizeModelPrice, selectBestPrice } from './model-pricing.mjs'
+import { canonicalRegistryRejectReason } from '../prune-noncanonical-models.mjs'
 
 const SOURCE_URL = 'https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json'
 const CANONICAL_MODES = new Set(['embedding', 'rerank', 'audio_transcription', 'audio_speech', 'video_generation'])
@@ -205,7 +206,7 @@ function mergeLiteLlmParameters(existing, rawId, row) {
     const key = JSON.stringify(stableJsonValue(entry))
     if (seen.has(key)) continue
     seen.add(key)
-    if (entry.raw_id !== rawId) merged.push(entry)
+    if (entry.raw_id !== rawId && !canonicalRegistryRejectReason({ id: canonicalIdFromRaw(entry.raw_id, row) })) merged.push(entry)
   }
   merged.push(next)
   return {
@@ -375,7 +376,7 @@ export function populateLiteLlmModels({ modelsPath = join(process.cwd(), 'data',
       continue
     }
     const id = canonicalIdFromRaw(rawId, row)
-    if (!id || /(^|[-.])(latest|auto|router|route)([-.]|$)/u.test(id)) {
+    if (!id || /(^|[-.])(latest|auto|router|route)([-.]|$)/u.test(id) || canonicalRegistryRejectReason({ id })) {
       stats.skipped += 1
       continue
     }

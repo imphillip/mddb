@@ -72,4 +72,26 @@ describe('open-source unified models.json contract', () => {
 
     expect(offenders.map((model) => model.id)).toEqual([])
   })
+
+  it('excludes provider-routed aliases and moving latest/service routes from canonical model data', () => {
+    const providerRoutePatterns = [
+      /^(amazon|cohere)\..*:0$/u,
+      /^(eu\.|us\.)?twelvelabs\..*:0$/u,
+      /^azure-tts/u,
+    ]
+    const movingOrServiceRoutePatterns = [
+      /-latest$/u,
+      /(?:^|-)realtime(?:$|-)/u,
+      /(?:^|-)filetrans(?:$|-)/u,
+      /(?:^|-)livetranslate(?:$|-)/u,
+      /(?:^|-)vc-realtime(?:$|-)/u,
+      /(?:^|-)vd-realtime(?:$|-)/u,
+    ]
+    const offenders = readModels().filter((model) => {
+      const id = String(model.id ?? '')
+      return providerRoutePatterns.some((pattern) => pattern.test(id)) || movingOrServiceRoutePatterns.some((pattern) => pattern.test(id))
+    })
+
+    expect(offenders.map((model) => model.id).slice(0, 50)).toEqual([])
+  })
 })

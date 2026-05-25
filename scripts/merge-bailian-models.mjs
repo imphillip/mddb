@@ -161,6 +161,12 @@ const excludedBailianModelIdPatterns = [
   /^wordart(?:-|$)/u,
   /^tongyi-intent-detect(?:-|$)/u,
   /^cosyvoice-(?:clone-v1|v1|v2)$/u,
+  /-latest$/u,
+  /(?:^|-)realtime(?:$|-)/u,
+  /(?:^|-)filetrans(?:$|-)/u,
+  /(?:^|-)livetranslate(?:$|-)/u,
+  /(?:^|-)vc-realtime(?:$|-)/u,
+  /(?:^|-)vd-realtime(?:$|-)/u,
 ]
 function isExcludedBailianService(row) {
   const fact = factFor(row)

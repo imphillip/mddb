@@ -11964,45 +11964,6 @@
       ]
     },
     {
-      "model_id": "kimi-latest",
-      "model": "Kimi Latest",
-      "api_model_id": "~moonshotai/kimi-latest",
-      "endpoint_path": "~moonshotai/kimi-latest",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.74,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 3.49,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.14,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "kilo/~moonshotai/kimi-latest",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "laguna-xs.2",
       "model": "Laguna XS.2",
       "api_model_id": "poolside/laguna-xs.2:free",

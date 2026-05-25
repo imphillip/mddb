@@ -165,6 +165,8 @@ describe('merge-bailian-models', () => {
         bailianRow('facechain-generation', 'FaceChain人物写真生成'),
         bailianRow('paraformer-v2', 'Paraformer语音识别-v2'),
         bailianRow('sambert-zhina-v1', 'Sambert语音合成-知娜'),
+        bailianRow('qwen-plus-latest', 'Qwen-Plus-Latest'),
+        bailianRow('qwen3-asr-flash-realtime', 'Qwen3-ASR-Flash-Realtime'),
       ],
     })
 
