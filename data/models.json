@@ -636,7 +636,7 @@
             },
             {
               "kind": "input_image",
-              "amount": 0.00006,
+              "amount": 6e-05,
               "unit": "per_image",
               "source_key": "input_cost_per_image"
             },
@@ -679,7 +679,7 @@
               "unit": "per_1m_tokens"
             },
             "input_cost_per_image": {
-              "amount": 0.00006,
+              "amount": 6e-05,
               "unit": "per_image"
             },
             "input_cost_per_audio_per_second": {
@@ -826,7 +826,7 @@
             },
             {
               "kind": "input_image",
-              "amount": 0.00006,
+              "amount": 6e-05,
               "unit": "per_image",
               "source_key": "input_cost_per_image"
             }
@@ -857,7 +857,7 @@
               "unit": "per_1m_tokens"
             },
             "input_cost_per_image": {
-              "amount": 0.00006,
+              "amount": 6e-05,
               "unit": "per_image"
             }
           },
@@ -3580,7 +3580,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00003333,
+              "amount": 3.333e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -3609,7 +3609,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00003333,
+              "amount": 3.333e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -8431,7 +8431,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -8460,7 +8460,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -8505,7 +8505,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -8534,7 +8534,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -8579,7 +8579,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -8608,7 +8608,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -8653,7 +8653,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -8682,7 +8682,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -8727,7 +8727,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -8756,7 +8756,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -8801,7 +8801,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -8830,7 +8830,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -8875,7 +8875,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -8904,7 +8904,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -8949,7 +8949,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -8978,7 +8978,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -9023,7 +9023,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -9052,7 +9052,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -9097,7 +9097,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -9126,7 +9126,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -9171,7 +9171,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -9200,7 +9200,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -9245,7 +9245,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -9274,7 +9274,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -9319,7 +9319,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -9348,7 +9348,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -9393,7 +9393,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -9422,7 +9422,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -9467,7 +9467,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00008667,
+              "amount": 8.667e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -9496,7 +9496,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00008667,
+              "amount": 8.667e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -9541,7 +9541,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -9570,7 +9570,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -9615,7 +9615,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -9644,7 +9644,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -11399,7 +11399,7 @@
           "remote_icon": "https://models.dev/logos/deepseek.svg"
         }
       },
-      "last_updated": "2026-05-24T21:05:37Z",
+      "last_updated": "2026-05-19T12:12:53Z",
       "sources": [
         {
           "source": "openrouter",
@@ -11424,6 +11424,12 @@
           "source_id": "siliconflow/deepseek-v3.2",
           "url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/siliconflow/deepseek-v3.2?serviceSite=asia-pacific-china",
           "observed_at": "2026-05-24T21:05:37Z"
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "deepseek-v3-2-251201",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=deepseek-v3-2",
+          "observed_at": "2026-05-19T12:12:53Z"
         }
       ],
       "prices": [
@@ -11657,6 +11663,118 @@
             "api_model_id": "deepseek-v3.2",
             "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
             "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/deepseek-v3.2?serviceSite=asia-pacific-china"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "deepseek-v3-2-251201",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=deepseek-v3-2",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "deepseek-v3-2-251201",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=deepseek-v3-2"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "deepseek-v3-2-251201",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=deepseek-v3-2",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (32, 128]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "deepseek-v3-2-251201",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=deepseek-v3-2"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "deepseek-v3-2-251201",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=deepseek-v3-2",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 7.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 1.08,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "按购买时长后付费"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "deepseek-v3-2-251201",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=deepseek-v3-2"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "deepseek-v3-2-251201",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=deepseek-v3-2",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 86.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 12.96,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "包天预付费"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "deepseek-v3-2-251201",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=deepseek-v3-2"
           }
         }
       ],
@@ -12399,7 +12517,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.0000611,
+              "amount": 6.11e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -12428,7 +12546,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.0000611,
+              "amount": 6.11e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -12473,7 +12591,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.0000611,
+              "amount": 6.11e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -12502,7 +12620,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.0000611,
+              "amount": 6.11e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -14310,7 +14428,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-7,
+              "amount": 1e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -14408,7 +14526,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 7.5e-8,
+              "amount": 7.5e-08,
               "unit": "per_image"
             },
             "web_search": {
@@ -14508,7 +14626,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-7,
+              "amount": 3e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -14602,7 +14720,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-7,
+              "amount": 3e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -14702,7 +14820,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-7,
+              "amount": 1e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -14802,7 +14920,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-7,
+              "amount": 1e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -15065,7 +15183,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -15100,7 +15218,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -15201,7 +15319,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -15303,7 +15421,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -15405,7 +15523,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 5e-7,
+              "amount": 5e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -15503,7 +15621,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -15695,7 +15813,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2.5e-7,
+              "amount": 2.5e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -15797,7 +15915,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2.5e-7,
+              "amount": 2.5e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -15899,7 +16017,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -16001,7 +16119,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -16105,7 +16223,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.0000015,
+              "amount": 1.5e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -16140,7 +16258,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.0000015,
+              "amount": 1.5e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -19593,7 +19711,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00003083,
+              "amount": 3.083e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -19631,7 +19749,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00003083,
+              "amount": 3.083e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -19698,7 +19816,7 @@
               "prices": [
                 {
                   "kind": "input",
-                  "amount": 0.00001111,
+                  "amount": 1.111e-05,
                   "unit": "per_second",
                   "source_key": "input_cost_per_second"
                 },
@@ -19766,7 +19884,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00001111,
+              "amount": 1.111e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -63484,6 +63602,355 @@
       "prices": []
     },
     {
+      "id": "doubao-1-5-lite-32k-250115",
+      "model": "Doubao-1-5-Lite-32K-250115",
+      "name": "Doubao-1-5-Lite-32K-250115",
+      "alias": [
+        "doubao-1-5-lite-32k"
+      ],
+      "aliases": [
+        "doubao-1-5-lite-32k"
+      ],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2025-01-15",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-1-5-lite-32k-250115",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-lite-32k",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-1-5-lite-32k-250115",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-lite-32k",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.75,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 1.5,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "-"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-1-5-lite-32k-250115",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-lite-32k"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-1-5-lite-32k-250115",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-lite-32k",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.72,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.144,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "按购买时长后付费"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-1-5-lite-32k-250115",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-lite-32k"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-1-5-lite-32k-250115",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-lite-32k",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 8.64,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 1.728,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "包天预付费"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-1-5-lite-32k-250115",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-lite-32k"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-1-5-lite-32k-250115",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-lite-32k",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 60,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "30"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-1-5-lite-32k-250115",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-lite-32k"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-1-5-pro-32k-250115",
+      "model": "Doubao-1-5-PRO-32K-250115",
+      "name": "Doubao-1-5-PRO-32K-250115",
+      "alias": [],
+      "aliases": [],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2025-01-15",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-1-5-pro-32k-250115",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-pro-32k",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-1-5-pro-32k-250115",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-pro-32k",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 5,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "-"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-1-5-pro-32k-250115",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-pro-32k"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-1-5-pro-32k-250115",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-pro-32k",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 100,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "50"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-1-5-pro-32k-250115",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-pro-32k"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-1-5-pro-32k-character-250715",
+      "model": "Doubao-1-5-PRO-32K-Character-250715",
+      "name": "Doubao-1-5-PRO-32K-Character-250715",
+      "alias": [],
+      "aliases": [],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2025-07-15",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-1-5-pro-32k-character-250715",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-pro-32k-character",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-1-5-pro-32k-character-250715",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-pro-32k-character",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 1.92,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.48,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "按购买时长后付费"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-1-5-pro-32k-character-250715",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-pro-32k-character"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-1-5-pro-32k-character-250715",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-pro-32k-character",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 23.04,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 5.76,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "包天预付费"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-1-5-pro-32k-character-250715",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-pro-32k-character"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-1-5-pro-32k-character-250715",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-pro-32k-character",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 5,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "-"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-1-5-pro-32k-character-250715",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-pro-32k-character"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-1-5-vision-pro-32k-250115",
+      "model": "Doubao-1-5-Vision-PRO-32K-250115",
+      "name": "Doubao-1-5-Vision-PRO-32K-250115",
+      "alias": [
+        "doubao-1-5-vision-pro-32k"
+      ],
+      "aliases": [
+        "doubao-1-5-vision-pro-32k"
+      ],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2025-01-15",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-1-5-vision-pro-32k-250115",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-1-5-vision-pro-32k",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": []
+    },
+    {
       "id": "doubao-embedding",
       "model": "Doubao Embedding",
       "name": "Doubao Embedding",
@@ -63847,6 +64314,3050 @@
           }
         }
       ]
+    },
+    {
+      "id": "doubao-embedding-vision-250615",
+      "model": "Doubao-Embedding-Vision-250615",
+      "name": "Doubao-Embedding-Vision-250615",
+      "alias": [],
+      "aliases": [],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output_modalities": [
+        "embedding"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2025-06-15",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-embedding-vision-250615",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-embedding-vision",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-embedding-vision-250615",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-embedding-vision",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 1.8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "0.70"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-embedding-vision-250615",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-embedding-vision"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-embedding-vision-251215",
+      "model": "Doubao-Embedding-Vision-251215",
+      "name": "Doubao-Embedding-Vision-251215",
+      "alias": [],
+      "aliases": [],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output_modalities": [
+        "embedding"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2025-12-15",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-embedding-vision-251215",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-embedding-vision",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-embedding-vision-251215",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-embedding-vision",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 1.8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "0.70"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-embedding-vision-251215",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-embedding-vision"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seed-1-6-250615",
+      "model": "Doubao-Seed-1-6-250615",
+      "name": "Doubao-Seed-1-6-250615",
+      "alias": [],
+      "aliases": [],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 256000,
+      "max_output_tokens": 32000,
+      "created": "2025-06-15",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-250615",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-250615",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]\n\n且输出长度 [0, 0.2]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-250615",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-250615",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]\n\n且输出长度 (0.2,+∞)"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-250615",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-250615",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 2.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 32,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (32, 128]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-250615",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-250615",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 12,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (128, 256]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-250615",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-250615",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 1.92,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.48,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "按购买时长后付费"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-250615",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-250615",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 23.04,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 5.76,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "包天预付费"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-250615",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-250615",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 80,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "40"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-250615",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-250615",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-250615",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seed-1-6-251015",
+      "model": "Doubao-Seed-1-6-251015",
+      "name": "Doubao-Seed-1-6-251015",
+      "alias": [],
+      "aliases": [],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 256000,
+      "max_output_tokens": 32000,
+      "created": "2025-10-15",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-251015",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-251015",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]\n\n且输出长度 [0, 0.2]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-251015",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-251015",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]\n\n且输出长度 (0.2,+∞)"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-251015",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-251015",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 2.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 32,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (32, 128]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-251015",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-251015",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 12,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (128, 256]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-251015",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-251015",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 1.92,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.48,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "按购买时长后付费"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-251015",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-251015",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 23.04,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 5.76,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "包天预付费"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-251015",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-251015",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 80,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "40"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-251015",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-251015",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-251015",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seed-1-6-flash-250615",
+      "model": "Doubao-Seed-1-6-Flash-250615",
+      "name": "Doubao-Seed-1-6-Flash-250615",
+      "alias": [],
+      "aliases": [],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 256000,
+      "max_output_tokens": 32000,
+      "created": "2025-06-15",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-flash-250615",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-flash",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-flash-250615",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-flash",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 3,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-flash-250615",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-flash"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-flash-250615",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-flash",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 6,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (32, 128]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-flash-250615",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-flash"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-flash-250615",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-flash",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.03,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (128, 256]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-flash-250615",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-flash"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-flash-250615",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-flash",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 14,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "7"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-flash-250615",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-flash"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seed-1-6-flash-250828",
+      "model": "Doubao-Seed-1-6-Flash-250828",
+      "name": "Doubao-Seed-1-6-Flash-250828",
+      "alias": [],
+      "aliases": [],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 256000,
+      "max_output_tokens": 32000,
+      "created": "2025-08-28",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-flash-250828",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-flash",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-flash-250828",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-flash",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 3,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-flash-250828",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-flash"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-flash-250828",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-flash",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 6,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (32, 128]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-flash-250828",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-flash"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-flash-250828",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-flash",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.03,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (128, 256]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-flash-250828",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-flash"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-flash-250828",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-flash",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 14,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "7"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-flash-250828",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-flash"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seed-1-6-vision-250815",
+      "model": "Doubao-Seed-1-6-Vision-250815",
+      "name": "Doubao-Seed-1-6-Vision-250815",
+      "alias": [
+        "doubao-seed-1-6-vision"
+      ],
+      "aliases": [
+        "doubao-seed-1-6-vision"
+      ],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 256000,
+      "max_output_tokens": 32000,
+      "created": "2025-08-15",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-vision-250815",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-vision",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-vision-250815",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-vision",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-vision-250815",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-vision"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-vision-250815",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-vision",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (32, 128]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-vision-250815",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-vision"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-vision-250815",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-vision",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 12,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (128, 256]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-vision-250815",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-vision"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-vision-250815",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-vision",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 1.92,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.48,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "按购买时长后付费"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-vision-250815",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-vision"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-6-vision-250815",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-vision",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 23.04,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 5.76,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "包天预付费"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-6-vision-250815",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-6-vision"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seed-1-8-251228",
+      "model": "Doubao-Seed-1-8-251228",
+      "name": "Doubao-Seed-1-8-251228",
+      "alias": [
+        "doubao-seed-1-8"
+      ],
+      "aliases": [
+        "doubao-seed-1-8"
+      ],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 256000,
+      "max_output_tokens": 32000,
+      "created": "2025-12-28",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-8-251228",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-8",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-8-251228",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-8",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]\n\n且输出长度 [0, 0.2]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-8-251228",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-8"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-8-251228",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-8",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]\n\n且输出长度 (0.2,+∞)"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-8-251228",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-8"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-8-251228",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-8",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (32, 128]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-8-251228",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-8"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-8-251228",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-8",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 12,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (128, 256]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-8-251228",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-8"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-8-251228",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-8",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 1.92,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.48,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "按购买时长后付费"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-8-251228",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-8"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-1-8-251228",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-8",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 23.04,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 5.76,
+              "unit": "per_1m_tokens_hour"
+            }
+          },
+          "conditions": {
+            "label": "包天预付费"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-1-8-251228",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-1-8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seed-2-0-code-preview-260215",
+      "model": "Doubao-Seed-2-0-Code-Preview-260215",
+      "name": "Doubao-Seed-2-0-Code-Preview-260215",
+      "alias": [
+        "doubao-seed-2-0-code"
+      ],
+      "aliases": [
+        "doubao-seed-2-0-code"
+      ],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2026-02-15",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-code-preview-260215",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-code-preview",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-code-preview-260215",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-code-preview",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 1.6,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.64,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-2-0-code-preview-260215",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-code-preview"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-code-preview-260215",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-code-preview",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 2.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.96,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 12,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (32, 128]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-2-0-code-preview-260215",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-code-preview"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-code-preview-260215",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-code-preview",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 4.8,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 1.92,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 24,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (128, 256]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-2-0-code-preview-260215",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-code-preview"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seed-2-0-lite-260215",
+      "model": "Doubao-Seed-2-0-Lite-260215",
+      "name": "Doubao-Seed-2-0-Lite-260215",
+      "alias": [],
+      "aliases": [],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 256000,
+      "max_output_tokens": 128000,
+      "created": "2026-02-15",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-lite-260215",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-lite",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-lite-260215",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-lite",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.12,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 1.8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-2-0-lite-260215",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-lite"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-lite-260215",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-lite",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.45,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.18,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 2.7,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (32, 128]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-2-0-lite-260215",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-lite"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-lite-260215",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-lite",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.9,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.36,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 5.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (128, 256]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-2-0-lite-260215",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-lite"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seed-2-0-lite-260428",
+      "model": "Doubao-Seed-2-0-Lite-260428",
+      "name": "Doubao-Seed-2-0-Lite-260428",
+      "alias": [],
+      "aliases": [],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2026-04-28",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-lite-260428",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-lite",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-lite-260428",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-lite",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.12,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 1.8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-2-0-lite-260428",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-lite"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-lite-260428",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-lite",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.45,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.18,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 2.7,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (32, 128]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-2-0-lite-260428",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-lite"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-lite-260428",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-lite",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.9,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.36,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 5.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (128, 256]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-2-0-lite-260428",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-lite"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seed-2-0-mini-260215",
+      "model": "Doubao-Seed-2-0-Mini-260215",
+      "name": "Doubao-Seed-2-0-Mini-260215",
+      "alias": [],
+      "aliases": [],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 256000,
+      "max_output_tokens": 128000,
+      "created": "2026-02-15",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-mini-260215",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-mini",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-mini-260215",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-mini",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.04,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-2-0-mini-260215",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-mini"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-mini-260215",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-mini",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.08,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (32, 128]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-2-0-mini-260215",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-mini"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-mini-260215",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-mini",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (128, 256]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-2-0-mini-260215",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-mini"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seed-2-0-mini-260428",
+      "model": "Doubao-Seed-2-0-Mini-260428",
+      "name": "Doubao-Seed-2-0-Mini-260428",
+      "alias": [],
+      "aliases": [],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2026-04-28",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-mini-260428",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-mini",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-mini-260428",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-mini",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.04,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-2-0-mini-260428",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-mini"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-mini-260428",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-mini",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.08,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (32, 128]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-2-0-mini-260428",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-mini"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-mini-260428",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-mini",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (128, 256]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-2-0-mini-260428",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-mini"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seed-2-0-pro-260215",
+      "model": "Doubao-Seed-2-0-PRO-260215",
+      "name": "Doubao-Seed-2-0-PRO-260215",
+      "alias": [
+        "doubao-seed-2-0-pro"
+      ],
+      "aliases": [
+        "doubao-seed-2-0-pro"
+      ],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2026-02-15",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-pro-260215",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-pro",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-pro-260215",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-pro",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 1.6,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.64,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-2-0-pro-260215",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-pro"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-pro-260215",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-pro",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 2.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.96,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 12,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (32, 128]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-2-0-pro-260215",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-pro"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-2-0-pro-260215",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-pro",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 4.8,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 1.92,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 24,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (128, 256]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-2-0-pro-260215",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-2-0-pro"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seed-character-251128",
+      "model": "Doubao-Seed-Character-251128",
+      "name": "Doubao-Seed-Character-251128",
+      "alias": [
+        "doubao-seed-character"
+      ],
+      "aliases": [
+        "doubao-seed-character"
+      ],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2025-11-28",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-character-251128",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-character",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-character-251128",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-character",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.8,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.017,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-character-251128",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-character"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-character-251128",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-character",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.017,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 0.16,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (32, 128]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-character-251128",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-character"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seed-code-preview-251028",
+      "model": "Doubao-Seed-Code-Preview-251028",
+      "name": "Doubao-Seed-Code-Preview-251028",
+      "alias": [
+        "doubao-seed-code"
+      ],
+      "aliases": [
+        "doubao-seed-code"
+      ],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2025-10-28",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-code-preview-251028",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-code-preview",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-code-preview-251028",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-code-preview",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.017,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 0.24,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-code-preview-251028",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-code-preview"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-code-preview-251028",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-code-preview",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 1.4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.017,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 0.24,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 12,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (32, 128]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-code-preview-251028",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-code-preview"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-code-preview-251028",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-code-preview",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 2.8,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.017,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 0.24,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 16,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (128, 256]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-code-preview-251028",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-code-preview"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seed-translation-250915",
+      "model": "Doubao-Seed-Translation-250915",
+      "name": "Doubao-Seed-Translation-250915",
+      "alias": [
+        "doubao-seed-translation"
+      ],
+      "aliases": [
+        "doubao-seed-translation"
+      ],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "context_length": 4000,
+      "created": "2025-09-15",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-translation-250915",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-translation",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed-translation-250915",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-translation",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.24,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 1.8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "-"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed-translation-250915",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-translation"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seed3d-2-0-260328",
+      "model": "Doubao-Seed3d-2-0-260328",
+      "name": "Doubao-Seed3d-2-0-260328",
+      "alias": [
+        "doubao-seed3d-2-0"
+      ],
+      "aliases": [
+        "doubao-seed3d-2-0"
+      ],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "3d"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2026-03-28",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed3d-2-0-260328",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed3d-2-0",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed3d-2-0-260328",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed3d-2.0",
+          "currency": "CNY",
+          "unit_prices": {
+            "output": {
+              "amount": 3,
+              "unit": "per_call"
+            }
+          },
+          "conditions": {
+            "label": "default"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed3d-2-0-260328",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed3d-2-0"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed3d-2-0-260328",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed3d-2.0",
+          "currency": "CNY",
+          "unit_prices": {
+            "output": {
+              "amount": 2.4,
+              "unit": "per_call"
+            }
+          },
+          "conditions": {
+            "label": "variant 2"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed3d-2-0-260328",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed3d-2-0"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed3d-2-0-260328",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed3d-2.0",
+          "currency": "CNY",
+          "unit_prices": {
+            "output": {
+              "amount": 3,
+              "unit": "per_call"
+            }
+          },
+          "conditions": {
+            "label": "variant 3"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed3d-2-0-260328",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed3d-2-0"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seed3d-2-0-260328",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed3d-2.0",
+          "currency": "CNY",
+          "unit_prices": {
+            "output": {
+              "amount": 0.8,
+              "unit": "per_call"
+            }
+          },
+          "conditions": {
+            "label": "variant 4"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seed3d-2-0-260328",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed3d-2-0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seedance-1-0-pro-250528",
+      "model": "Doubao-Seedance-1-0-PRO-250528",
+      "name": "Doubao-Seedance-1-0-PRO-250528",
+      "alias": [
+        "doubao-seedance-1-0-pro"
+      ],
+      "aliases": [
+        "doubao-seedance-1-0-pro"
+      ],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output_modalities": [
+        "video"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2025-05-28",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-1-0-pro-250528",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1-0-pro",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-1-0-pro-250528",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1.0-pro",
+          "currency": "CNY",
+          "unit_prices": {
+            "video": {
+              "amount": 15,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "default"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seedance-1-0-pro-250528",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1-0-pro"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-1-0-pro-250528",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1.0-pro",
+          "currency": "CNY",
+          "unit_prices": {
+            "video": {
+              "amount": 7.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "variant 2"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seedance-1-0-pro-250528",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1-0-pro"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seedance-1-0-pro-fast-251015",
+      "model": "Doubao-Seedance-1-0-PRO-Fast-251015",
+      "name": "Doubao-Seedance-1-0-PRO-Fast-251015",
+      "alias": [
+        "doubao-seedance-1-0-pro-fast"
+      ],
+      "aliases": [
+        "doubao-seedance-1-0-pro-fast"
+      ],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output_modalities": [
+        "video"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2025-10-15",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-1-0-pro-fast-251015",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1-0-pro-fast",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-1-0-pro-fast-251015",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1.0-pro-fast",
+          "currency": "CNY",
+          "unit_prices": {
+            "video": {
+              "amount": 4.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "default"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seedance-1-0-pro-fast-251015",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1-0-pro-fast"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-1-0-pro-fast-251015",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1.0-pro-fast",
+          "currency": "CNY",
+          "unit_prices": {
+            "video": {
+              "amount": 2.1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "variant 2"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seedance-1-0-pro-fast-251015",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1-0-pro-fast"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seedance-1-5-pro-251215",
+      "model": "Doubao-Seedance-1-5-PRO-251215",
+      "name": "Doubao-Seedance-1-5-PRO-251215",
+      "alias": [
+        "doubao-seedance-1-5-pro"
+      ],
+      "aliases": [
+        "doubao-seedance-1-5-pro"
+      ],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output_modalities": [
+        "video"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2025-12-15",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-1-5-pro-251215",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1-5-pro",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-1-5-pro-251215",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1.5-pro",
+          "currency": "CNY",
+          "unit_prices": {
+            "video": {
+              "amount": 16,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "default"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seedance-1-5-pro-251215",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1-5-pro"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-1-5-pro-251215",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1.5-pro",
+          "currency": "CNY",
+          "unit_prices": {
+            "video": {
+              "amount": 8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "variant 2"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seedance-1-5-pro-251215",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1-5-pro"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-1-5-pro-251215",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1.5-pro",
+          "currency": "CNY",
+          "unit_prices": {
+            "video": {
+              "amount": 8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "variant 3"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seedance-1-5-pro-251215",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1-5-pro"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-1-5-pro-251215",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1.5-pro",
+          "currency": "CNY",
+          "unit_prices": {
+            "video": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "variant 4"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seedance-1-5-pro-251215",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-1-5-pro"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seedance-2-0-260128",
+      "model": "Doubao-Seedance-2-0-260128",
+      "name": "Doubao-Seedance-2-0-260128",
+      "alias": [
+        "doubao-seedance-2-0"
+      ],
+      "aliases": [
+        "doubao-seedance-2-0"
+      ],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output_modalities": [
+        "video"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2026-01-28",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-2-0-260128",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-2-0",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-2-0-260128",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-2.0",
+          "currency": "CNY",
+          "unit_prices": {
+            "video": {
+              "amount": 480,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "default"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seedance-2-0-260128",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-2-0"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-2-0-260128",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-2.0",
+          "currency": "CNY",
+          "unit_prices": {
+            "video": {
+              "amount": 720,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "variant 2"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seedance-2-0-260128",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-2-0"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-2-0-260128",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-2.0",
+          "currency": "CNY",
+          "unit_prices": {
+            "video": {
+              "amount": 46,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "variant 3"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seedance-2-0-260128",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-2-0"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-2-0-260128",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-2.0",
+          "currency": "CNY",
+          "unit_prices": {
+            "video": {
+              "amount": 28,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "variant 4"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seedance-2-0-260128",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-2-0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seedance-2-0-fast-260128",
+      "model": "Doubao-Seedance-2-0-Fast-260128",
+      "name": "Doubao-Seedance-2-0-Fast-260128",
+      "alias": [
+        "doubao-seedance-2-0-fast"
+      ],
+      "aliases": [
+        "doubao-seedance-2-0-fast"
+      ],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output_modalities": [
+        "video"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2026-01-28",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-2-0-fast-260128",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-2-0-fast",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-2-0-fast-260128",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-2.0-fast",
+          "currency": "CNY",
+          "unit_prices": {
+            "video": {
+              "amount": 37,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "default"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seedance-2-0-fast-260128",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-2-0-fast"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedance-2-0-fast-260128",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-2.0-fast",
+          "currency": "CNY",
+          "unit_prices": {
+            "video": {
+              "amount": 22,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "variant 2"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seedance-2-0-fast-260128",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedance-2-0-fast"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seedream-4-0-250828",
+      "model": "Doubao-Seedream-4-0-250828",
+      "name": "Doubao-Seedream-4-0-250828",
+      "alias": [
+        "doubao-seedream-4-0"
+      ],
+      "aliases": [
+        "doubao-seedream-4-0"
+      ],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2025-08-28",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedream-4-0-250828",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedream-4-0",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedream-4-0-250828",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedream-4.0",
+          "currency": "CNY",
+          "unit_prices": {
+            "image": {
+              "amount": 0.2,
+              "unit": "per_image"
+            }
+          },
+          "conditions": {
+            "label": "default"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seedream-4-0-250828",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedream-4-0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seedream-4-5-251128",
+      "model": "Doubao-Seedream-4-5-251128",
+      "name": "Doubao-Seedream-4-5-251128",
+      "alias": [
+        "doubao-seedream-4-5"
+      ],
+      "aliases": [
+        "doubao-seedream-4-5"
+      ],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2025-11-28",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedream-4-5-251128",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedream-4-5",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedream-4-5-251128",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedream-4.5",
+          "currency": "CNY",
+          "unit_prices": {
+            "image": {
+              "amount": 0.25,
+              "unit": "per_image"
+            }
+          },
+          "conditions": {
+            "label": "default"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "doubao-seedream-4-5-251128",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedream-4-5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao-seedream-5-0-260128",
+      "model": "Doubao-Seedream-5-0-260128",
+      "name": "Doubao-Seedream-5-0-260128",
+      "alias": [
+        "doubao-seedream-5-0"
+      ],
+      "aliases": [
+        "doubao-seedream-5-0"
+      ],
+      "author": "volcengine",
+      "author_id": "volcengine",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "image"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "created": "2026-01-28",
+      "last_updated": "2026-05-19T12:12:53Z",
+      "sources": [
+        {
+          "source": "volcengine_ark",
+          "source_id": "doubao-seedream-5-0-260128",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedream-5-0",
+          "observed_at": "2026-05-19T12:12:53Z"
+        }
+      ],
+      "prices": []
     },
     {
       "id": "rerank-2",
@@ -69411,7 +72922,7 @@
           "remote_icon": "https://models.dev/logos/zhipuai.svg"
         }
       },
-      "last_updated": "2026-05-24T18:53:07Z",
+      "last_updated": "2026-05-19T12:12:53Z",
       "sources": [
         {
           "source": "openrouter",
@@ -69430,6 +72941,12 @@
           "source_id": "glm-4.7",
           "url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/glm-4.7?serviceSite=asia-pacific-china",
           "observed_at": "2026-05-24T18:53:07Z"
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "glm-4-7-251222",
+          "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=glm-4-7",
+          "observed_at": "2026-05-19T12:12:53Z"
         }
       ],
       "prices": [
@@ -69454,6 +72971,108 @@
             "api_model_id": "z-ai/glm-4.7",
             "base_url": "https://openrouter.ai/api/v1",
             "docs_url": "https://openrouter.ai/z-ai/glm-4.7"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "glm-4-7-251222",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=glm-4-7",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.017,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 0.4,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]\n\n且输出长度 [0, 0.2]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "glm-4-7-251222",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=glm-4-7"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "glm-4-7-251222",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=glm-4-7",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.017,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 14,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 [0, 32]\n\n且输出长度 (0.2,+∞)"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "glm-4-7-251222",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=glm-4-7"
+          }
+        },
+        {
+          "source": "volcengine_ark",
+          "source_id": "glm-4-7-251222",
+          "source_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=glm-4-7",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 4,
+              "unit": "per_1m_tokens"
+            },
+            "cache_write": {
+              "amount": 0.017,
+              "unit": "per_1m_tokens_hour"
+            },
+            "cache_read": {
+              "amount": 0.8,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 16,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入长度 (32, 200]"
+          },
+          "endpoint": {
+            "provider_id": "volcengine-ark-cn",
+            "provider_name": "Volcengine Ark (China)",
+            "api_model_id": "glm-4-7-251222",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=glm-4-7"
           }
         }
       ],
