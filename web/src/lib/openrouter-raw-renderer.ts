@@ -276,6 +276,8 @@ function registryPriceLabel(kind: string): string {
 function registryPriceUnit(unit: string, currency: string): string {
   if (unit === 'per_1m_tokens' || unit === 'per_million_tokens') return `${currency}/direct_per_1M`
   if (unit === 'per_1m_audio_tokens') return `${currency}/direct_per_1M_audio`
+  if (unit === 'per_video_second') return `${currency}/video_second`
+  if (unit === 'per_second') return `${currency}/second`
   if (unit === 'per_query') return `${currency}/query`
   if (unit === 'per_image') return `${currency}/image`
   if (unit === 'per_second') return `${currency}/second`
@@ -542,7 +544,8 @@ function registryModelPriceSummary(node: OpenRouterRawNode): PriceCellSummary | 
     if (displayPrices.length > 0) return !priceCondition
     return priceCondition === condition
   })
-  const entries = registryDisplayEntries(selectedPrices.length > 0 ? selectedPrices : [primaryPrice!])
+  let entries = registryDisplayEntries(selectedPrices.length > 0 ? selectedPrices : [primaryPrice!])
+  if (entries.length === 0 && condition) entries = registryAnyDisplayEntries([primaryPrice!])
   if (entries.length === 0) return null
   const html = entries.map((entry) => `<span class="priceLine"><span class="priceLabel">${escapeHtml(entry.label)}</span> ${formatPrice(entry.amount, registryPriceUnit(entry.unit, entry.currency))}</span>`).join('')
   return { html, source, condition, tierCount: condition ? matchingTierCount(node, source, condition) : 0 }
@@ -570,6 +573,25 @@ function registryDisplayEntries(prices: Record<string, unknown>[]): PriceDisplay
   return entries
 }
 
+function registryAnyDisplayEntries(prices: Record<string, unknown>[]): PriceDisplayEntry[] {
+  const entries: PriceDisplayEntry[] = []
+  const seen = new Set<string>()
+  for (const price of prices) {
+    const unitPrices = isRecord(price.unit_prices) ? price.unit_prices : isRecord(price.prices) ? price.prices : undefined
+    if (!unitPrices) continue
+    for (const [key, value] of Object.entries(unitPrices)) {
+      if (!isRecord(value) || !Number.isFinite(Number(value.amount))) continue
+      const label = registryPriceDimensionLabel(registryCanonicalDimensionKey(key))
+      const unit = String(value.unit ?? '')
+      const dedupeKey = `${label}\0${unit}`
+      if (seen.has(dedupeKey)) continue
+      seen.add(dedupeKey)
+      entries.push({ label, amount: value.amount, unit, currency: String(price.currency ?? 'USD') })
+    }
+  }
+  return entries
+}
+
 function registryCanonicalDimensionKey(key: string): string {
   if (/^input(?:_|$)|^prompt(?:_|$)|^input_cost/u.test(key)) return 'input'
   if (/^output(?:_|$)|^completion(?:_|$)|^output_cost/u.test(key)) return 'output'
@@ -582,6 +604,7 @@ function registryPriceDimensionLabel(key: string): string {
     prompt: 'Input',
     output: 'Output',
     completion: 'Output',
+    video: 'Video',
     cache_write: 'Cache write',
     input_cache_write: 'Cache write',
     cache_read: 'Cache read',

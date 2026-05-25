@@ -196,24 +196,27 @@ describe('renderOpenRouterRawHome price display', () => {
     expect(plazaHtml).not.toContain('<span class="tierCondition">输入</span>')
   })
 
-  it('summarizes true tier conditions before price without adding model schema fields', () => {
+  it('shows Bailian video tier conditions, tier count, and the first tier price in the model list', () => {
     const testGraph = graph()
     const qwen = testGraph.nodes[1]!
     qwen.raw.model = {
       ...qwen.raw.model as Record<string, unknown>,
       mddb_registry: {
         prices: [
-          { currency: 'USD', source: 'litellm', prices: { input_cost_per_token_above_128k_tokens: { amount: 0.15, unit: 'per_1m_tokens' }, output_cost_per_token_above_128k_tokens: { amount: 0.6, unit: 'per_1m_tokens' } } },
-          { currency: 'USD', source: 'litellm', prices: { input_cost_per_token_above_272k_tokens: { amount: 0.3, unit: 'per_1m_tokens' }, output_cost_per_token_above_272k_tokens: { amount: 1.2, unit: 'per_1m_tokens' } } },
+          { currency: 'CNY', source: 'bailian_model_market', unit_prices: { video: { amount: 0.9, unit: 'per_video_second' } }, conditions: { label: '视频生成（720P）', bailian_type: 'video_ratio_720p' } },
+          { currency: 'CNY', source: 'bailian_model_market', unit_prices: { video: { amount: 1.2, unit: 'per_video_second' } }, conditions: { label: '视频生成（1080P）', bailian_type: 'video_ratio_1080p' } },
+          { currency: 'CNY', source: 'bailian_model_market', unit_prices: { '720p_no_audio-720p': { amount: 0.6, unit: 'per_video_second' } }, conditions: { label: '视频生成（720P 无声）', bailian_type: '720P_no_audio' } },
+          { currency: 'CNY', source: 'bailian_model_market', unit_prices: { '1080p_no_audio-1080p': { amount: 0.8, unit: 'per_video_second' } }, conditions: { label: '视频生成（1080P 无声）', bailian_type: '1080P_no_audio' } },
         ],
       },
     }
 
     const plazaHtml = renderOpenRouterRawHome(testGraph)
 
-    expect(plazaHtml).toContain('<td class="conditionCell"><span class="tierCondition">above 128k tokens</span> <span class="tierCount">2 档</span></td>')
-    expect(plazaHtml).toContain('<td class="sourceCell"><span class="priceSource">LiteLLM</span></td>')
-    expect(plazaHtml).not.toContain('input_cost_per_token_above_272k_tokens')
+    expect(plazaHtml).toContain('<td class="conditionCell"><span class="tierCondition">视频生成（720P）</span> <span class="tierCount">4 档</span></td>')
+    expect(plazaHtml).toContain('<span class="priceLabel">Video</span>')
+    expect(plazaHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">0.9</span>')
+    expect(plazaHtml).toContain('per video second')
   })
 })
 
