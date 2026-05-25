@@ -72,7 +72,11 @@ export function compareNodesByReleaseDesc(a: OpenRouterRawNode, b: OpenRouterRaw
 function modelReleaseTimestamp(node: OpenRouterRawNode): number {
   const created = rawModelField(node, 'created')
   const timestamp = Number(created)
-  return Number.isFinite(timestamp) ? timestamp : 0
+  if (Number.isFinite(timestamp)) return timestamp
+  const snapshot = snapshotDateFromModelId(node.sourceId) ?? snapshotDateFromModelId(node.modelId)
+  if (!snapshot) return 0
+  const time = Date.parse(`${snapshot}T00:00:00.000Z`)
+  return Number.isFinite(time) ? Math.floor(time / 1000) : 0
 }
 
 export function renderOpenRouterRawDetail(graph: OpenRouterRawGraph, node: OpenRouterRawNode): string {

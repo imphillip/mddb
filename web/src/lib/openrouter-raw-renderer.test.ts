@@ -167,6 +167,37 @@ describe('renderOpenRouterRawHome price display', () => {
   })
 })
 
+describe('renderOpenRouterRawHome default sorting', () => {
+  it('orders brand filters by visible canonical model count after featured brands and orders rows by release date descending', () => {
+    const testGraph = graph()
+    const qwenNew = sourceNode('qwen/qwen-new', 'qwen')
+    qwenNew.raw.model = { ...qwenNew.raw.model as Record<string, unknown>, created: 2_000 }
+    const openaiOld = sourceNode('openai/openai-old', 'openai')
+    openaiOld.raw.model = { ...openaiOld.raw.model as Record<string, unknown>, created: 1_000 }
+    const alphaOne = sourceNode('alpha/alpha-one', 'alpha')
+    alphaOne.raw.model = { ...alphaOne.raw.model as Record<string, unknown>, created: 1_500 }
+    const alphaTwo = sourceNode('alpha/alpha-two', 'alpha')
+    alphaTwo.raw.model = { ...alphaTwo.raw.model as Record<string, unknown>, created: 1_200 }
+    const betaOne = sourceNode('beta/beta-one', 'beta')
+    betaOne.raw.model = { ...betaOne.raw.model as Record<string, unknown>, created: 1_800 }
+    const missingCreatedButDated = sourceNode('zeta/model-2026-05-20', 'zeta')
+    missingCreatedButDated.raw.model = { id: missingCreatedButDated.sourceId, pricing: {} }
+    testGraph.nodes = [openaiOld, alphaOne, betaOne, qwenNew, alphaTwo, missingCreatedButDated]
+    testGraph.edges = []
+
+    const html = renderOpenRouterRawHome(testGraph)
+
+    expect(html.indexOf('data-filter-value="openai"')).toBeLessThan(html.indexOf('data-filter-value="qwen"'))
+    expect(html.indexOf('data-filter-value="alpha"')).toBeLessThan(html.indexOf('data-filter-value="beta"'))
+    expect(html.indexOf('data-filter-value="beta"')).toBeLessThan(html.indexOf('data-filter-value="zeta"'))
+    expect(html.indexOf('model-2026-05-20')).toBeLessThan(html.indexOf('qwen-new'))
+    expect(html.indexOf('qwen-new')).toBeLessThan(html.indexOf('beta-one'))
+    expect(html.indexOf('beta-one')).toBeLessThan(html.indexOf('alpha-one'))
+    expect(html.indexOf('alpha-one')).toBeLessThan(html.indexOf('alpha-two'))
+    expect(html.indexOf('alpha-two')).toBeLessThan(html.indexOf('openai-old'))
+  })
+})
+
 describe('renderOpenRouterRawHome modality filter counts', () => {
   it('moves total items into the All quick filter and shows counts on non-empty modality sections', () => {
     const testGraph = graph()
