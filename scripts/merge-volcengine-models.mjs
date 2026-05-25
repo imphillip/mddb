@@ -104,6 +104,19 @@ function numberCell(value) {
   if (!text) return Number.NaN
   return Number(text)
 }
+function parseConditionLabel(label) {
+  const text = clean(label)
+  const m = text.match(/输入长度\s*([\[(])\s*(\d+(?:\.\d+)?)\s*,\s*(\d+(?:\.\d+)?)\s*([\])])/u)
+  if (!m) return text ? { label: text } : {}
+  const lower = Math.round(Number(m[2]) * 1000)
+  const upper = Math.round(Number(m[3]) * 1000)
+  const out = { label: text, type: 'input_token' }
+  if (m[1] === '[') out.gte = lower
+  else out.gt = lower
+  if (m[4] === ']') out.lte = upper
+  else out.lt = upper
+  return out
+}
 function priceRowsForTextModel(id, sourceId, rows) {
   const out = []
   let current = ''
@@ -120,7 +133,7 @@ function priceRowsForTextModel(id, sourceId, rows) {
     if (Number.isFinite(cacheWrite)) unit_prices.cache_write = { amount: cacheWrite, unit: 'per_1m_tokens_hour' }
     if (Number.isFinite(cacheRead)) unit_prices.cache_read = { amount: cacheRead, unit: 'per_1m_tokens' }
     if (Number.isFinite(amountOut)) unit_prices.output = { amount: amountOut, unit: 'per_1m_tokens' }
-    if (Object.keys(unit_prices).length) out.push({ source: sourceName, source_id: id, source_url: sourceUrl(id), currency: 'CNY', unit_prices, conditions: clean(cells[1] || '') ? { label: clean(cells[1]) } : {}, endpoint: endpoint(id) })
+    if (Object.keys(unit_prices).length) out.push({ source: sourceName, source_id: id, source_url: sourceUrl(id), currency: 'CNY', unit_prices, conditions: parseConditionLabel(cells[1] || ''), endpoint: endpoint(id) })
   }
   return out
 }
@@ -225,7 +238,8 @@ for (const fact of facts.values()) {
     if (mode === 'exact') matchedExact++; else matchedNormalized++
     const before = array(model.prices).length
     model.sources = mergeSources(model.sources, src)
-    model.prices = mergePrices(model.prices, prices)
+    const existingPrices = array(model.prices).filter((price) => price.source !== sourceName)
+    model.prices = mergePrices(existingPrices, prices)
     model.context_length ??= fact.context_length
     model.max_output_tokens ??= fact.max_output_tokens
     model.input_modalities = unique([...(model.input_modalities || []), ...fact.input_modalities])

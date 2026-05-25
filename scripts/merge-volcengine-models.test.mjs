@@ -60,6 +60,18 @@ describe('merge-volcengine-models', () => {
     expect(lite).toBeTruthy()
     expect(lite.sources.some((s) => s.source === 'volcengine_ark' && s.source_id === 'doubao-seed-2-0-lite-260428')).toBe(true)
     expect(lite.prices.some((p) => p.source === 'volcengine_ark' && p.currency === 'CNY' && p.unit_prices.input.amount === 0.6 && p.unit_prices.output.amount === 3.6)).toBe(true)
+    expect(lite.prices).toEqual(expect.arrayContaining([
+      expect.objectContaining({
+        source: 'volcengine_ark',
+        currency: 'CNY',
+        conditions: { label: '输入长度 [0, 32]', type: 'input_token', gte: 0, lte: 32000 },
+      }),
+      expect.objectContaining({
+        source: 'volcengine_ark',
+        currency: 'CNY',
+        conditions: { label: '输入长度 (32, 128]', type: 'input_token', gt: 32000, lte: 128000 },
+      }),
+    ]))
     expect(lite.context_length).toBe(256000)
     expect(lite.input_modalities).toEqual(['text', 'image'])
     expect(lite.output_modalities).toEqual(['text'])

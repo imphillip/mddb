@@ -82,6 +82,16 @@ function findTarget(row) {
   for (const key of keys) if (normalized.has(norm(key))) return { model: normalized.get(norm(key)), mode: 'normalized' }
   return { model: null, mode: 'new' }
 }
+function tierCondition(tier) {
+  const out = {}
+  if (tier.range_name) out.label = tier.range_name
+  const start = Number(tier.range_start)
+  const end = Number(tier.range_end)
+  out.type = 'input_token'
+  if (Number.isFinite(start) && start > 0) out.gt = start
+  if (Number.isFinite(end)) out.lte = end
+  return out
+}
 function priceRowFor(row, p, condition = {}) {
   const amount = Number(p.price)
   if (!Number.isFinite(amount)) return null
@@ -93,26 +103,26 @@ function priceRowFor(row, p, condition = {}) {
     source_url: sourceUrl(row),
     currency: p.currency || row.pricing_currency || 'CNY',
     unit_prices: { [key]: { amount, unit: unit(priceUnit(p), key, label) } },
-    conditions: Object.assign({}, condition, p.discount !== undefined ? { discount: p.discount } : {}, label && !condition.label ? { label } : {}, p.type ? { bailian_type: p.type } : {}),
+    conditions: Object.assign({}, condition, p.discount !== undefined ? { discount: p.discount } : {}, label && !condition.label ? { label } : {}, p.type && !condition.type ? { bailian_type: p.type } : {}),
     endpoint: { provider_id: providerId, provider_name: providerName, api_model_id: row.model_id || row.model_code, base_url: row.api_base_url || apiBaseUrl, docs_url: sourceUrl(row) },
   }
 }
 function pricesFor(row) {
   const rows = []
+  const addMerged = (price) => {
+    if (!price) return
+    const key = JSON.stringify([price.source, price.source_id, price.currency, price.conditions || {}, price.endpoint?.provider_id, price.endpoint?.api_model_id])
+    const prevIndex = rows.findIndex((item) => JSON.stringify([item.source, item.source_id, item.currency, item.conditions || {}, item.endpoint?.provider_id, item.endpoint?.api_model_id]) === key)
+    if (prevIndex >= 0) rows[prevIndex] = { ...rows[prevIndex], ...price, unit_prices: { ...(rows[prevIndex].unit_prices || {}), ...(price.unit_prices || {}) } }
+    else rows.push(price)
+  }
   for (const p of array(row.pricing)) {
-    const rowPrice = priceRowFor(row, p)
-    if (rowPrice) rows.push(rowPrice)
+    addMerged(priceRowFor(row, p))
   }
   for (const tier of array(row.tiered_pricing)) {
-    const condition = Object.assign(
-      {},
-      tier.range_name ? { label: tier.range_name } : {},
-      tier.range_start !== undefined ? { bailian_range_start: tier.range_start } : {},
-      tier.range_end !== undefined ? { bailian_range_end: tier.range_end } : {},
-    )
+    const condition = tierCondition(tier)
     for (const p of array(tier.pricing)) {
-      const rowPrice = priceRowFor(row, p, condition)
-      if (rowPrice) rows.push(rowPrice)
+      addMerged(priceRowFor(row, p, condition))
     }
   }
   for (const tool of array(row.tool_pricing)) {
@@ -142,8 +152,17 @@ function mergePriceRows(existing, incoming) {
     p.endpoint?.provider_id,
     p.endpoint?.api_model_id,
   ])
+  const mergeUnitPrices = (a, b) => {
+    const incoming = b || {}
+    if (Object.keys(incoming).some((key) => Object.prototype.hasOwnProperty.call(a || {}, key))) return { ...(a || {}), ...incoming }
+    return { ...incoming }
+  }
   for (const p of array(existing)) byExact.set(semanticKey(p), p)
-  for (const p of incoming) byExact.set(semanticKey(p), p)
+  for (const p of incoming) {
+    const key = semanticKey(p)
+    const prev = byExact.get(key)
+    byExact.set(key, prev ? { ...prev, ...p, unit_prices: mergeUnitPrices(prev.unit_prices, p.unit_prices) } : p)
+  }
   return [...byExact.values()]
 }
 function mergeSources(existing, incoming) {
@@ -247,7 +266,8 @@ for (const row of bailianModels) {
   if (model) {
     if (mode === 'exact') matchedExact++; else matchedNormalized++
     const beforePrices = array(model.prices).length
-    model.prices = mergePriceRows(model.prices, prices)
+    const existingPrices = array(model.prices).filter((price) => price.source !== sourceName)
+    model.prices = mergePriceRows(existingPrices, prices)
     model.sources = mergeSources(model.sources, src)
     if (!array(model.alias).map((a) => String(a).toLowerCase()).includes(String(row.model_id || '').toLowerCase()) && row.model_id && row.model_id !== model.id) model.alias = unique([...(model.alias || []), row.model_id])
     if (!array(model.aliases).map((a) => String(a).toLowerCase()).includes(String(row.model_id || '').toLowerCase()) && row.model_id && row.model_id !== model.id) model.aliases = unique([...(model.aliases || []), row.model_id])

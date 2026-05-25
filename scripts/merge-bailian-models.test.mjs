@@ -191,21 +191,23 @@ describe('merge-bailian-models', () => {
     expect(model.prices).toEqual(expect.arrayContaining([
       expect.objectContaining({
         currency: 'CNY',
-        unit_prices: { input: { amount: 9, unit: 'per_1m_tokens' } },
-        conditions: expect.objectContaining({ label: '输入<=128k', bailian_range_start: 0, bailian_range_end: 131072 }),
+        unit_prices: {
+          input: { amount: 9, unit: 'per_1m_tokens' },
+          output: { amount: 54, unit: 'per_1m_tokens' },
+        },
+        conditions: { label: '输入<=128k', type: 'input_token', lte: 131072 },
       }),
       expect.objectContaining({
         currency: 'CNY',
-        unit_prices: { output: { amount: 54, unit: 'per_1m_tokens' } },
-        conditions: expect.objectContaining({ label: '输入<=128k', bailian_range_start: 0, bailian_range_end: 131072 }),
-      }),
-      expect.objectContaining({
-        currency: 'CNY',
-        unit_prices: { input: { amount: 15, unit: 'per_1m_tokens' } },
-        conditions: expect.objectContaining({ label: '128k<输入<=256k', bailian_range_start: 131072, bailian_range_end: 262144 }),
+        unit_prices: {
+          input: { amount: 15, unit: 'per_1m_tokens' },
+          output: { amount: 90, unit: 'per_1m_tokens' },
+        },
+        conditions: { label: '128k<输入<=256k', type: 'input_token', gt: 131072, lte: 262144 },
       }),
     ]))
-    expect(model.prices).toHaveLength(4)
+    expect(model.prices).toHaveLength(2)
+    expect(JSON.stringify(model.prices)).not.toContain('bailian_range_')
   })
 
   it('does not create Qwen application endpoints or legacy service wrappers as canonical models', () => {
