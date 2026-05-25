@@ -87,5 +87,39 @@ describe('merge-bailian-models', () => {
         conditions: expect.objectContaining({ label: '视频生成（720P 无声）', bailian_type: '720P_no_audio' }),
       }),
     ]))
+    expect(kling.prices).toHaveLength(3)
+  })
+
+  it('replaces older Bailian price rows for the same condition when price keys become more specific', () => {
+    const models = runMerge({
+      seedModels: [{
+        id: 'kling-v3-video-generation',
+        model: 'Kling Video 3.0',
+        name: 'Kling Video 3.0',
+        author: 'kling',
+        author_id: 'kling',
+        sources: [],
+        prices: [{
+          source: 'bailian_model_market',
+          source_id: 'kling/kling-v3-video-generation',
+          currency: 'CNY',
+          unit_prices: { '720p_no_audio': { amount: 0.6, unit: 'per_second' } },
+          conditions: { label: '视频生成（720P 无声）', bailian_type: '720P_no_audio' },
+          endpoint: { provider_id: 'alibaba-bailian-cn', provider_name: 'Alibaba Cloud Bailian (China)', api_model_id: 'kling/kling-v3-video-generation' },
+        }],
+      }],
+      bailianModels: [
+        klingRow('kling-v3-video-generation', 'Kling Video 3.0', [
+          { price: '0.6', priceName: '视频生成（720P 无声）', priceUnit: '每秒', type: '720P_no_audio', currency: 'CNY' },
+        ]),
+      ],
+    })
+
+    expect(models[0].prices).toEqual([
+      expect.objectContaining({
+        unit_prices: { '720p_no_audio-720p': { amount: 0.6, unit: 'per_video_second' } },
+        conditions: { label: '视频生成（720P 无声）', bailian_type: '720P_no_audio' },
+      }),
+    ])
   })
 })

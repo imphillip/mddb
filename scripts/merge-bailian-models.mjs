@@ -116,15 +116,18 @@ function pricesFor(row) {
   return rows
 }
 function mergePriceRows(existing, incoming) {
-  const seen = new Set()
-  const out = []
-  for (const p of [...array(existing), ...incoming]) {
-    const key = JSON.stringify([p.source, p.source_id, p.currency, p.conditions || {}, p.unit_prices || {}, p.endpoint?.provider_id, p.endpoint?.api_model_id])
-    if (seen.has(key)) continue
-    seen.add(key)
-    out.push(p)
-  }
-  return out
+  const byExact = new Map()
+  const semanticKey = (p) => JSON.stringify([
+    p.source,
+    p.source_id,
+    p.currency,
+    p.conditions || {},
+    p.endpoint?.provider_id,
+    p.endpoint?.api_model_id,
+  ])
+  for (const p of array(existing)) byExact.set(semanticKey(p), p)
+  for (const p of incoming) byExact.set(semanticKey(p), p)
+  return [...byExact.values()]
 }
 function mergeSources(existing, incoming) {
   const seen = new Set()
