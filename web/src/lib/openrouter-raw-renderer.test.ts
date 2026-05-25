@@ -154,17 +154,46 @@ describe('renderOpenRouterRawHome price display', () => {
     const plazaHtml = renderOpenRouterRawHome(testGraph)
     const detailHtml = renderOpenRouterRawDetail(testGraph, qwen)
 
-    expect(plazaHtml).toContain('<th>模型</th><th>上下文</th><th>价格</th><th>阶梯</th><th>发布时间</th>')
+    expect(plazaHtml).not.toContain('<h1>模型广场</h1>')
+    expect(plazaHtml).toContain('<th>模型</th><th>上下文</th><th>条件</th><th>价格</th><th>来源</th><th>发布时间</th>')
     expect(plazaHtml).toContain('<span class="priceLabel">Input</span>')
     expect(plazaHtml).toContain('<span class="priceLabel">Output</span>')
-    expect(plazaHtml).toContain('Bailian Model Market')
+    expect(plazaHtml).toContain('<td class="sourceCell"><span class="priceSource">Bailian Model Market</span></td>')
     expect(plazaHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">0.8</span>')
     expect(plazaHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">2</span>')
     expect(detailHtml).toContain('Bailian Model Market')
     expect(detailHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">0.8</span>')
     expect(detailHtml).toContain('<span class="priceCurrencySymbol">$</span><span class="priceAmount">0.26</span>')
   })
-  it('summarizes the first tier in a dedicated tier column without adding model schema fields', () => {
+  it('shows only true tier conditions before price and keeps ordinary price dimensions in the price cell', () => {
+    const testGraph = graph()
+    const qwen = testGraph.nodes[1]!
+    qwen.raw.model = {
+      ...qwen.raw.model as Record<string, unknown>,
+      mddb_registry: {
+        prices: [
+          { currency: 'CNY', source: 'bailian_model_market', unit_prices: { input: { amount: 12, unit: 'per_1m_tokens' } }, conditions: { label: '输入', bailian_type: 'input_token' } },
+          { currency: 'CNY', source: 'bailian_model_market', unit_prices: { output: { amount: 36, unit: 'per_1m_tokens' } }, conditions: { label: '输出', bailian_type: 'output_token' } },
+          { currency: 'CNY', source: 'bailian_model_market', unit_prices: { cache_write: { amount: 15, unit: 'per_1m_tokens' } }, conditions: { label: '显式缓存创建', bailian_type: 'input_token_cache_creation_5m' } },
+          { currency: 'CNY', source: 'bailian_model_market', unit_prices: { cache_read: { amount: 1.2, unit: 'per_1m_tokens' } }, conditions: { label: '显式缓存命中', bailian_type: 'input_token_cache_read' } },
+          { currency: 'CNY', source: 'bailian_model_market', unit_prices: { web_search: { amount: 4, unit: 'per_1k_calls' } }, conditions: { label: 'web_search', bailian_type: 'tool_pricing' } },
+        ],
+      },
+    }
+
+    const plazaHtml = renderOpenRouterRawHome(testGraph)
+
+    expect(plazaHtml).toContain('<td class="conditionCell">—</td><td class="mono priceCell"><div class="priceSummary" data-price-source-provider="bailian_model_market">')
+    expect(plazaHtml).toContain('<span class="priceLabel">Input</span>')
+    expect(plazaHtml).toContain('<span class="priceLabel">Output</span>')
+    expect(plazaHtml).toContain('<span class="priceLabel">Cache write</span>')
+    expect(plazaHtml).toContain('<span class="priceLabel">Cache read</span>')
+    expect(plazaHtml).toContain('<span class="priceLabel">web_search</span>')
+    expect(plazaHtml).not.toContain('7 档')
+    expect(plazaHtml).not.toContain('<span class="tierCondition">输入</span>')
+  })
+
+  it('summarizes true tier conditions before price without adding model schema fields', () => {
     const testGraph = graph()
     const qwen = testGraph.nodes[1]!
     qwen.raw.model = {
@@ -179,8 +208,8 @@ describe('renderOpenRouterRawHome price display', () => {
 
     const plazaHtml = renderOpenRouterRawHome(testGraph)
 
-    expect(plazaHtml).toContain('<td class="tierCell"><span class="tierCondition">above 128k tokens</span> <span class="tierCount">2 档</span></td>')
-    expect(plazaHtml).toContain('<span class="priceSource">LiteLLM</span>')
+    expect(plazaHtml).toContain('<td class="conditionCell"><span class="tierCondition">above 128k tokens</span> <span class="tierCount">2 档</span></td>')
+    expect(plazaHtml).toContain('<td class="sourceCell"><span class="priceSource">LiteLLM</span></td>')
     expect(plazaHtml).not.toContain('input_cost_per_token_above_272k_tokens')
   })
 })

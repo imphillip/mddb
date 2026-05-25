@@ -15,8 +15,8 @@ export function renderOpenRouterRawHome(graph: OpenRouterRawGraph): string {
   const visibleRows = graph.nodes.filter((node) => !searchOnlyNodeIds.has(node.id)).length
   const rows = graph.nodes.slice().filter((node) => !searchOnlyNodeIds.has(node.id)).sort(compareNodesByReleaseDesc).map((node) => renderModelRow(node, false, graph)).join('')
   const quickFilters = renderOutputQuickFilters(graph, searchOnlyNodeIds, visibleRows)
-  const body = `<main class="modelsShell"><aside class="filterPanel" aria-label="模型筛选">${renderAuthorFilterGroup(graph, authorOptions, visibleRows)}</aside><section class="mainPanel"><div class="plazaHead"><div><h1>模型广场</h1></div></div><div class="listToolbar"><div class="quickFilters" aria-label="模态筛选">${quickFilters}</div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>价格</th><th>阶梯</th><th>发布时间</th></tr></thead><tbody id="rows">${rows}</tbody></table></div><script>${modelFilterScript()}</script></section></main>`
-  return page('模型广场 · mddb.dev', body, 'models')
+  const body = `<main class="modelsShell"><aside class="filterPanel" aria-label="模型筛选">${renderAuthorFilterGroup(graph, authorOptions, visibleRows)}</aside><section class="mainPanel"><div class="listToolbar"><div class="quickFilters" aria-label="模态筛选">${quickFilters}</div></div><div class="tableWrap"><table class="modelTable"><thead><tr><th>模型</th><th>上下文</th><th>条件</th><th>价格</th><th>来源</th><th>发布时间</th></tr></thead><tbody id="rows">${rows}</tbody></table></div><script>${modelFilterScript()}</script></section></main>`
+  return page('模型列表 · mddb.dev', body, 'models')
 }
 
 
@@ -478,7 +478,7 @@ function renderModelRow(node: OpenRouterRawNode, searchOnly = false, graph?: Ope
   const logoProvider = normalizedAuthorValue(node.derived.author) || node.provider
   const logoLabel = authorLabel(logoProvider)
   const outputModalities = normalizedOutputModalities(node)
-  return `<tr data-model-row data-search-only="${searchOnly ? 'true' : 'false'}" data-model-status="${escapeHtml(node.status)}" data-model-provider="${escapeHtml(node.provider)}" data-model-author="${escapeHtml(normalizedAuthorValue(node.derived.author))}" data-output-modalities="${escapeHtml(outputModalities.join(' '))}" data-model-name="${escapeHtml(`${node.displayName} ${node.provider} ${node.modelId} ${node.sourceId} ${node.derived.author ?? ''}`.toLowerCase())}"><td><div class="modelName">${graph ? providerLogoIcon(graph, logoProvider, logoLabel, 'modelIcon') : renderLogoIcon(undefined, `${logoLabel} logo`, logoLabel.slice(0, 1), 'modelIcon')}<div><a class="modelLink" href="${escapeHtml(node.route)}/">${escapeHtml(node.displayName)}</a><div class="modelSub">${renderModelTagCopy(node.modelId)}</div><div class="modelSub rawSource">${escapeHtml(node.derived.author ?? '—')} · ${escapeHtml(modalities)}</div></div></div></td><td class="mono">${escapeHtml(modelContextLength(node))}</td><td class="mono priceCell">${modelPriceSummaryCell(node, graph)}</td><td class="tierCell">${modelPriceTierCell(node, graph)}</td><td class="mono">${escapeHtml(modelReleasedDate(node))}</td></tr>`
+  return `<tr data-model-row data-search-only="${searchOnly ? 'true' : 'false'}" data-model-status="${escapeHtml(node.status)}" data-model-provider="${escapeHtml(node.provider)}" data-model-author="${escapeHtml(normalizedAuthorValue(node.derived.author))}" data-output-modalities="${escapeHtml(outputModalities.join(' '))}" data-model-name="${escapeHtml(`${node.displayName} ${node.provider} ${node.modelId} ${node.sourceId} ${node.derived.author ?? ''}`.toLowerCase())}"><td><div class="modelName">${graph ? providerLogoIcon(graph, logoProvider, logoLabel, 'modelIcon') : renderLogoIcon(undefined, `${logoLabel} logo`, logoLabel.slice(0, 1), 'modelIcon')}<div><a class="modelLink" href="${escapeHtml(node.route)}/">${escapeHtml(node.displayName)}</a><div class="modelSub">${renderModelTagCopy(node.modelId)}</div><div class="modelSub rawSource">${escapeHtml(node.derived.author ?? '—')} · ${escapeHtml(modalities)}</div></div></div></td><td class="mono">${escapeHtml(modelContextLength(node))}</td><td class="conditionCell">${modelPriceConditionCell(node, graph)}</td><td class="mono priceCell">${modelPriceSummaryCell(node, graph)}</td><td class="sourceCell">${modelPriceSourceCell(node, graph)}</td><td class="mono">${escapeHtml(modelReleasedDate(node))}</td></tr>`
 }
 
 type PriceCellSummary = {
@@ -488,18 +488,30 @@ type PriceCellSummary = {
   tierCount: number
 }
 
+type PriceDisplayEntry = {
+  label: string
+  amount: unknown
+  unit: string
+  currency: string
+}
+
 function modelPriceSummaryCell(node: OpenRouterRawNode, graph?: OpenRouterRawGraph): string {
   const summary = preferredModelPriceSummary(node, graph)
   if (!summary) return '—'
-  const source = summary.source ? `<span class="priceSource">${escapeHtml(displayRegistryPriceSource(summary.source))}</span>` : ''
-  return `<div class="priceSummary"${summary.source ? ` data-price-source-provider="${escapeHtml(summary.source)}"` : ''}>${summary.html}${source}</div>`
+  return `<div class="priceSummary"${summary.source ? ` data-price-source-provider="${escapeHtml(summary.source)}"` : ''}>${summary.html}</div>`
 }
 
-function modelPriceTierCell(node: OpenRouterRawNode, graph?: OpenRouterRawGraph): string {
+function modelPriceConditionCell(node: OpenRouterRawNode, graph?: OpenRouterRawGraph): string {
   const summary = preferredModelPriceSummary(node, graph)
   if (!summary?.condition) return '—'
   const count = summary.tierCount > 1 ? ` <span class="tierCount">${summary.tierCount} 档</span>` : ''
   return `<span class="tierCondition">${escapeHtml(summary.condition)}</span>${count}`
+}
+
+function modelPriceSourceCell(node: OpenRouterRawNode, graph?: OpenRouterRawGraph): string {
+  const summary = preferredModelPriceSummary(node, graph)
+  if (!summary?.source) return '—'
+  return `<span class="priceSource">${escapeHtml(displayRegistryPriceSource(summary.source))}</span>`
 }
 
 function preferredModelPriceSummary(node: OpenRouterRawNode, graph?: OpenRouterRawGraph): PriceCellSummary | null {
@@ -518,18 +530,85 @@ function preferredModelPriceSummary(node: OpenRouterRawNode, graph?: OpenRouterR
 function registryModelPriceSummary(node: OpenRouterRawNode): PriceCellSummary | null {
   const prices = preferredRegistryListPrices(node)
   if (prices.length === 0) return null
-  const input = firstRegistryListEntry(prices, 'input')
-  const output = firstRegistryListEntry(prices, 'output')
-  const entries = [
-    input ? `<span><span class="priceLabel">Input</span> ${formatPrice(input.entry.amount, registryPriceUnit(String(input.entry.unit ?? ''), String(input.price.currency ?? 'USD')))}</span>` : '',
-    output ? `<span><span class="priceLabel">Output</span> ${formatPrice(output.entry.amount, registryPriceUnit(String(output.entry.unit ?? ''), String(output.price.currency ?? 'USD')))}</span>` : '',
-  ].filter(Boolean)
+  const displayPrices = prices.filter((price) => !isTrueTierPrice(price))
+  const entries = registryDisplayEntries(displayPrices.length > 0 ? displayPrices : prices)
   if (entries.length === 0) return null
-  const price = input?.price ?? output?.price
-  const unitPrices = price && (isRecord(price.unit_prices) ? price.unit_prices : isRecord(price.prices) ? price.prices : undefined)
-  const condition = (unitPrices ? firstPriceCondition(unitPrices) : '') || (price ? registryPriceCondition(price) : '')
-  const source = typeof price?.source === 'string' ? price.source : ''
-  return { html: entries.join(' <span class="priceSeparator">/</span> '), source, condition, tierCount: matchingTierCount(node, source, condition) }
+  const primaryPrice = displayPrices[0] ?? prices[0]
+  const condition = trueTierCondition(prices)
+  const source = typeof primaryPrice?.source === 'string' ? primaryPrice.source : ''
+  const html = entries.map((entry) => `<span><span class="priceLabel">${escapeHtml(entry.label)}</span> ${formatPrice(entry.amount, registryPriceUnit(entry.unit, entry.currency))}</span>`).join(' <span class="priceSeparator">/</span> ')
+  return { html, source, condition, tierCount: condition ? matchingTierCount(node, source, condition) : 0 }
+}
+
+function registryDisplayEntries(prices: Record<string, unknown>[]): PriceDisplayEntry[] {
+  const entries: PriceDisplayEntry[] = []
+  const seen = new Set<string>()
+  for (const price of prices) {
+    const unitPrices = isRecord(price.unit_prices) ? price.unit_prices : isRecord(price.prices) ? price.prices : undefined
+    if (!unitPrices) continue
+    for (const [key, value] of Object.entries(unitPrices)) {
+      if (!isRecord(value) || !Number.isFinite(Number(value.amount))) continue
+      const dimensionKey = registryCanonicalDimensionKey(key)
+      const label = registryPriceDimensionLabel(dimensionKey)
+      const unit = String(value.unit ?? '')
+      const dedupeKey = `${dimensionKey}\0${unit}`
+      if (seen.has(dedupeKey)) continue
+      seen.add(dedupeKey)
+      entries.push({ label, amount: value.amount, unit, currency: String(price.currency ?? 'USD') })
+    }
+  }
+  return entries
+}
+
+function registryCanonicalDimensionKey(key: string): string {
+  if (/^input(?:_|$)|^prompt(?:_|$)|^input_cost/u.test(key)) return 'input'
+  if (/^output(?:_|$)|^completion(?:_|$)|^output_cost/u.test(key)) return 'output'
+  return key
+}
+
+function registryPriceDimensionLabel(key: string): string {
+  const labels: Record<string, string> = {
+    input: 'Input',
+    prompt: 'Input',
+    output: 'Output',
+    completion: 'Output',
+    cache_write: 'Cache write',
+    input_cache_write: 'Cache write',
+    cache_read: 'Cache read',
+    input_cache_read: 'Cache read',
+  }
+  return labels[key] ?? key
+}
+
+function isTrueTierPrice(price: Record<string, unknown>): boolean {
+  return Boolean(priceTrueTierCondition(price))
+}
+
+function trueTierCondition(prices: Record<string, unknown>[]): string {
+  for (const price of prices) {
+    const condition = priceTrueTierCondition(price)
+    if (condition) return condition
+  }
+  return ''
+}
+
+function priceTrueTierCondition(price: Record<string, unknown>): string {
+  const conditions = isRecord(price.conditions) ? price.conditions : undefined
+  const label = typeof conditions?.label === 'string' ? conditions.label.trim() : ''
+  if (label && isSemanticTierCondition(label)) return label
+  const unitPrices = isRecord(price.unit_prices) ? price.unit_prices : isRecord(price.prices) ? price.prices : undefined
+  if (!unitPrices) return ''
+  for (const value of Object.values(unitPrices)) {
+    if (!isRecord(value) || typeof value.condition !== 'string') continue
+    const condition = value.condition.trim()
+    if (condition && isSemanticTierCondition(condition)) return condition
+  }
+  return ''
+}
+
+function isSemanticTierCondition(condition: string): boolean {
+  const value = condition.toLowerCase()
+  return /(?:^|\b)(above|below|under|over|<=|>=|<|>|between|context|tokens|resolution|pixels|720p|1080p|4k|seconds?|minutes?|interval)(?:\b|$)/u.test(value)
 }
 
 function firstRegistryListEntry(prices: Record<string, unknown>[], canonicalKey: 'input' | 'output'): { price: Record<string, unknown>; entry: Record<string, unknown> } | null {
@@ -572,7 +651,7 @@ function matchingTierCount(node: OpenRouterRawNode, source: string, condition: s
   for (const price of sameSource) {
     const unitPrices = isRecord(price.unit_prices) ? price.unit_prices : isRecord(price.prices) ? price.prices : undefined
     if (!unitPrices) continue
-    const value = firstPriceCondition(unitPrices) || registryPriceCondition(price)
+    const value = priceTrueTierCondition(price)
     if (value) seen.add(value)
   }
   return seen.size || 1
@@ -595,7 +674,7 @@ function pricesWithListEntries(prices: unknown[]): Record<string, unknown>[] {
   return prices.filter((price): price is Record<string, unknown> => {
     if (!isRecord(price)) return false
     const unitPrices = isRecord(price.unit_prices) ? price.unit_prices : isRecord(price.prices) ? price.prices : undefined
-    return Boolean(unitPrices && (registryListPriceEntry(unitPrices, 'input') || registryListPriceEntry(unitPrices, 'output')))
+    return Boolean(unitPrices && Object.values(unitPrices).some((value) => isRecord(value) && Number.isFinite(Number(value.amount))))
   })
 }
 

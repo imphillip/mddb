@@ -35,7 +35,8 @@ describe('registry graph adapter', () => {
     expect(titledNode).toBeTruthy()
     const titledDetail = renderOpenRouterRawDetail(graph, titledNode!)
 
-    expect(home).toContain('模型广场')
+    expect(home).toContain('模型列表 · mddb.dev')
+    expect(home).not.toContain('<h1>模型广场</h1>')
     expect(home).toContain('data-model-row')
     expect(home).toContain('<img src="/assets/provider-icons/openai.svg" alt="OpenAI logo" loading="lazy">')
     expect(home).toContain('href="/openai/gpt-oss-120b/">gpt-oss-120b')
