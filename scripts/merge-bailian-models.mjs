@@ -36,6 +36,8 @@ function titleFromId(id) {
 }
 function array(value) { return Array.isArray(value) ? value.filter((item) => item !== undefined && item !== null) : [] }
 function unique(values) { return Array.from(new Set(values.filter((value) => value !== undefined && value !== null && value !== ''))) }
+const priceUnit = (p) => p.unit ?? p.priceUnit
+const priceLabel = (p) => p.label ?? p.priceName
 function modality(value) {
   const map = { Text: 'text', Image: 'image', Audio: 'audio', Video: 'video' }
   return map[value] || String(value || '').toLowerCase()
@@ -80,23 +82,38 @@ function findTarget(row) {
   for (const key of keys) if (normalized.has(norm(key))) return { model: normalized.get(norm(key)), mode: 'normalized' }
   return { model: null, mode: 'new' }
 }
+function priceRowFor(row, p, condition = {}) {
+  const amount = Number(p.price)
+  if (!Number.isFinite(amount)) return null
+  const label = priceLabel(p)
+  const key = priceKey([p.type, label].filter(Boolean).join(' '))
+  return {
+    source: sourceName,
+    source_id: row.model_id || row.model_code,
+    source_url: sourceUrl(row),
+    currency: p.currency || row.pricing_currency || 'CNY',
+    unit_prices: { [key]: { amount, unit: unit(priceUnit(p), key, label) } },
+    conditions: Object.assign({}, condition, p.discount !== undefined ? { discount: p.discount } : {}, label && !condition.label ? { label } : {}, p.type ? { bailian_type: p.type } : {}),
+    endpoint: { provider_id: providerId, provider_name: providerName, api_model_id: row.model_id || row.model_code, base_url: row.api_base_url || apiBaseUrl, docs_url: sourceUrl(row) },
+  }
+}
 function pricesFor(row) {
   const rows = []
-  const priceUnit = (p) => p.unit ?? p.priceUnit
-  const priceLabel = (p) => p.label ?? p.priceName
   for (const p of array(row.pricing)) {
-    const amount = Number(p.price)
-    if (!Number.isFinite(amount)) continue
-    const key = priceKey([p.type, priceLabel(p)].filter(Boolean).join(' '))
-    rows.push({
-      source: sourceName,
-      source_id: row.model_id || row.model_code,
-      source_url: sourceUrl(row),
-      currency: p.currency || row.pricing_currency || 'CNY',
-      unit_prices: { [key]: { amount, unit: unit(priceUnit(p), key, priceLabel(p)) } },
-      conditions: Object.assign({}, p.discount !== undefined ? { discount: p.discount } : {}, priceLabel(p) ? { label: priceLabel(p) } : {}, p.type ? { bailian_type: p.type } : {}),
-      endpoint: { provider_id: providerId, provider_name: providerName, api_model_id: row.model_id || row.model_code, base_url: row.api_base_url || apiBaseUrl, docs_url: sourceUrl(row) },
-    })
+    const rowPrice = priceRowFor(row, p)
+    if (rowPrice) rows.push(rowPrice)
+  }
+  for (const tier of array(row.tiered_pricing)) {
+    const condition = Object.assign(
+      {},
+      tier.range_name ? { label: tier.range_name } : {},
+      tier.range_start !== undefined ? { bailian_range_start: tier.range_start } : {},
+      tier.range_end !== undefined ? { bailian_range_end: tier.range_end } : {},
+    )
+    for (const p of array(tier.pricing)) {
+      const rowPrice = priceRowFor(row, p, condition)
+      if (rowPrice) rows.push(rowPrice)
+    }
   }
   for (const tool of array(row.tool_pricing)) {
     for (const p of array(tool.prices)) {

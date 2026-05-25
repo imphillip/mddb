@@ -147,6 +147,67 @@ describe('merge-bailian-models', () => {
     ])
   })
 
+  it('imports Bailian tiered pricing rows when the source stores prices under tiered_pricing', () => {
+    const models = runMerge({
+      seedModels: [{
+        id: 'qwen3.6-max-preview',
+        model: 'Qwen3.6 Max Preview',
+        name: 'Qwen3.6 Max Preview',
+        author: 'qwen',
+        author_id: 'qwen',
+        sources: [{ source: 'openrouter', source_id: 'qwen/qwen3.6-max-preview' }],
+        prices: [],
+      }],
+      bailianModels: [{
+        ...bailianRow('qwen3.6-max-preview', 'Qwen3.6-Max-Preview'),
+        pricing: [],
+        tiered_pricing: [
+          {
+            range_name: '输入<=128k',
+            range_start: 0,
+            range_end: 131072,
+            pricing: [
+              { type: 'input_token', label: '输入', price: 9, currency: 'CNY', unit: '每百万tokens' },
+              { type: 'output_token', label: '输出', price: 54, currency: 'CNY', unit: '每百万tokens' },
+            ],
+          },
+          {
+            range_name: '128k<输入<=256k',
+            range_start: 131072,
+            range_end: 262144,
+            pricing: [
+              { type: 'input_token', label: '输入', price: 15, currency: 'CNY', unit: '每百万tokens' },
+              { type: 'output_token', label: '输出', price: 90, currency: 'CNY', unit: '每百万tokens' },
+            ],
+          },
+        ],
+      }],
+    })
+
+    const model = models[0]
+    expect(model.sources).toEqual(expect.arrayContaining([
+      expect.objectContaining({ source: 'bailian_model_market', source_id: 'qwen3.6-max-preview' }),
+    ]))
+    expect(model.prices).toEqual(expect.arrayContaining([
+      expect.objectContaining({
+        currency: 'CNY',
+        unit_prices: { input: { amount: 9, unit: 'per_1m_tokens' } },
+        conditions: expect.objectContaining({ label: '输入<=128k', bailian_range_start: 0, bailian_range_end: 131072 }),
+      }),
+      expect.objectContaining({
+        currency: 'CNY',
+        unit_prices: { output: { amount: 54, unit: 'per_1m_tokens' } },
+        conditions: expect.objectContaining({ label: '输入<=128k', bailian_range_start: 0, bailian_range_end: 131072 }),
+      }),
+      expect.objectContaining({
+        currency: 'CNY',
+        unit_prices: { input: { amount: 15, unit: 'per_1m_tokens' } },
+        conditions: expect.objectContaining({ label: '128k<输入<=256k', bailian_range_start: 131072, bailian_range_end: 262144 }),
+      }),
+    ]))
+    expect(model.prices).toHaveLength(4)
+  })
+
   it('does not create Qwen application endpoints or legacy service wrappers as canonical models', () => {
     const seedModels = ['aitryon-plus', 'facechain-generation', 'paraformer-v2', 'sambert-zhina-v1'].map((id) => ({
       id,
