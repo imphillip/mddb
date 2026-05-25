@@ -22,6 +22,30 @@ function runMerge({ bailianModels, seedModels = [] }) {
   return JSON.parse(readFileSync(join(root, 'data', 'models.json'), 'utf8')).models
 }
 
+function bailianRow(id, name, provider = 'qwen', overrides = {}) {
+  return {
+    model_id: id,
+    model_code: id,
+    name,
+    provider,
+    source_url: `https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/${id}?serviceSite=asia-pacific-china`,
+    api_base_url: 'https://dashscope.aliyuncs.com/compatible-mode/v1',
+    pricing_currency: 'CNY',
+    pricing: [],
+    candidate_model_fact: {
+      id,
+      model: name,
+      author: provider,
+      sources: [{ source: 'bailian_model_market', source_id: id, observed_at: '2026-05-25T00:00:00Z' }],
+      other_parameters: {
+        request_modality: ['Text'],
+        response_modality: ['Text'],
+      },
+    },
+    ...overrides,
+  }
+}
+
 function klingRow(id, name, prices = []) {
   return {
     model_id: `kling/${id}`,
@@ -121,5 +145,29 @@ describe('merge-bailian-models', () => {
         conditions: { label: '视频生成（720P 无声）', bailian_type: '720P_no_audio' },
       }),
     ])
+  })
+
+  it('does not create Qwen application endpoints or legacy service wrappers as canonical models', () => {
+    const seedModels = ['aitryon-plus', 'facechain-generation', 'paraformer-v2', 'sambert-zhina-v1'].map((id) => ({
+      id,
+      model: id,
+      name: id,
+      author: 'qwen',
+      author_id: 'qwen',
+      sources: [{ source: 'bailian_model_market', source_id: id }],
+      prices: [],
+    }))
+    const models = runMerge({
+      seedModels,
+      bailianModels: [
+        bailianRow('qwen-plus', 'Qwen-Plus'),
+        bailianRow('aitryon-plus', 'AI试衣-Plus版'),
+        bailianRow('facechain-generation', 'FaceChain人物写真生成'),
+        bailianRow('paraformer-v2', 'Paraformer语音识别-v2'),
+        bailianRow('sambert-zhina-v1', 'Sambert语音合成-知娜'),
+      ],
+    })
+
+    expect(models.map((model) => model.id)).toEqual(['qwen-plus'])
   })
 })

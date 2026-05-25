@@ -141,6 +141,41 @@ function mergeSources(existing, incoming) {
   return out
 }
 function factFor(row) { return row.candidate_model_fact && typeof row.candidate_model_fact === 'object' ? row.candidate_model_fact : {} }
+const excludedBailianModelIdPatterns = [
+  /^aitryon(?:-|$)/u,
+  /^animate-anyone(?:-|$)/u,
+  /^emo(?:-|$)/u,
+  /^emoji(?:-|$)/u,
+  /^facechain(?:-|$)/u,
+  /^gummy(?:-|$)/u,
+  /^image-(?:erase-completion|instance-segmentation|out-painting)$/u,
+  /^liveportrait(?:-|$)/u,
+  /^paraformer(?:-|$)/u,
+  /^sambert(?:-|$)/u,
+  /^shoemodel(?:-|$)/u,
+  /^speech-biasing$/u,
+  /^video-style-transform$/u,
+  /^videoretalk$/u,
+  /^virtualmodel(?:-|$)/u,
+  /^voice-enrollment$/u,
+  /^wordart(?:-|$)/u,
+  /^tongyi-intent-detect(?:-|$)/u,
+  /^cosyvoice-(?:clone-v1|v1|v2)$/u,
+]
+function isExcludedBailianService(row) {
+  const fact = factFor(row)
+  const id = slug(fact.id || row.model_id || row.model_code || row.name)
+  const author = slug(fact.author || row.provider || '')
+  if (author !== 'qwen' && author !== 'qwen-domain-model') return false
+  return excludedBailianModelIdPatterns.some((pattern) => pattern.test(id))
+}
+function isExcludedExistingModel(model) {
+  const id = slug(model.id || model.model || model.name)
+  const author = slug(model.author_id || model.author || '')
+  if (author !== 'qwen' && author !== 'qwen-domain-model') return false
+  if (!array(model.sources).some((source) => source.source === sourceName)) return false
+  return excludedBailianModelIdPatterns.some((pattern) => pattern.test(id))
+}
 function newModel(row) {
   const fact = factFor(row)
   const id = slug(fact.id || row.model_id || row.model_code || row.name)
@@ -169,9 +204,20 @@ function newModel(row) {
     prices: pricesFor(row),
   }
 }
-let matchedExact = 0, matchedNormalized = 0, created = 0, updated = 0, priceRowsAdded = 0
-const sampleNew = [], sampleUpdated = []
+let matchedExact = 0, matchedNormalized = 0, created = 0, updated = 0, priceRowsAdded = 0, skipped = 0
+const sampleNew = [], sampleUpdated = [], sampleSkipped = []
+for (let i = models.length - 1; i >= 0; i--) {
+  if (!isExcludedExistingModel(models[i])) continue
+  skipped++
+  if (sampleSkipped.length < 30) sampleSkipped.push(models[i].id)
+  models.splice(i, 1)
+}
 for (const row of bailianModels) {
+  if (isExcludedBailianService(row)) {
+    skipped++
+    if (sampleSkipped.length < 30) sampleSkipped.push(row.model_id || row.model_code || row.name)
+    continue
+  }
   const { model, mode } = findTarget(row)
   const prices = pricesFor(row)
   const src = sourceEntry(row)
@@ -198,6 +244,6 @@ for (const row of bailianModels) {
   }
 }
 modelsPayload.models = models.sort((a, b) => String(a.author_id || a.author || '').localeCompare(String(b.author_id || b.author || '')) || String(a.id).localeCompare(String(b.id)))
-const summary = { apply, bailian: bailianModels.length, before: JSON.parse(fs.readFileSync(modelsPath, 'utf8')).models.length, after: models.length, matchedExact, matchedNormalized, created, priceRowsAdded, cnyModels: models.filter((m) => array(m.prices).some((p) => p.source === sourceName && p.currency === 'CNY')).length, sampleUpdated, sampleNew }
+const summary = { apply, bailian: bailianModels.length, before: JSON.parse(fs.readFileSync(modelsPath, 'utf8')).models.length, after: models.length, matchedExact, matchedNormalized, created, skipped, priceRowsAdded, cnyModels: models.filter((m) => array(m.prices).some((p) => p.source === sourceName && p.currency === 'CNY')).length, sampleUpdated, sampleNew, sampleSkipped }
 if (apply) fs.writeFileSync(modelsPath, JSON.stringify(modelsPayload, null, 2) + '\n')
 console.log(JSON.stringify(summary, null, 2))
