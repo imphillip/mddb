@@ -227,9 +227,10 @@ function renderPricingSection(graph: OpenRouterRawGraph, node: OpenRouterRawNode
   const fallbackEndpoint = node.nodeKind === 'endpoint_deployment' ? undefined : sampleDeploymentPricingEndpoint(graph, node)
   const endpointPricing = endpointPricingCards(node)
   const fallbackPricing = endpointPricing ? '' : fallbackDeploymentPricingCards(fallbackEndpoint, node)
-  const litellmPricing = endpointPricing || fallbackPricing ? '' : litellmSupplementalPricingCards(node)
+  const registryPricing = endpointPricing || fallbackPricing ? '' : registryPricingCards(node)
+  const litellmPricing = endpointPricing || fallbackPricing || registryPricing ? '' : litellmSupplementalPricingCards(node)
   const empty = canonicalLink ? '' : '<p class="muted">无结构化官方价格；如本节点为 alias/snapshot/deployment，请先看上方关联模型跳转到 anchor。</p>'
-  return `<section id="pricing" class="panel"><h2>价格</h2>${canonicalLink}${endpointPricing || fallbackPricing || litellmPricing || empty}</section>`
+  return `<section id="pricing" class="panel"><h2>价格</h2>${canonicalLink}${endpointPricing || fallbackPricing || registryPricing || litellmPricing || empty}</section>`
 }
 
 function canonicalModelLink(graph: OpenRouterRawGraph, node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[]): string {
@@ -237,6 +238,62 @@ function canonicalModelLink(graph: OpenRouterRawGraph, node: OpenRouterRawNode, 
   const target = edge ? graph.nodes.find((candidate) => candidate.id === edge.to) : undefined
   if (!target || target.route === node.route) return ''
   return `<p class="muted">当前是 provider deployment 页面。<a class="modelLink" href="${escapeHtml(target.route)}/">查看 canonical 模型页</a>。</p>`
+}
+
+function registryPricingCards(node: OpenRouterRawNode): string {
+  const registry = registryModel(node)
+  const prices = Array.isArray(registry.prices) ? registry.prices : []
+  if (prices.length === 0) return ''
+  const cards = prices.map((price) => registryPriceCard(price)).filter(Boolean).join('')
+  return cards ? `<div class="priceVariantGrid">${cards}</div>` : ''
+}
+
+function registryPriceCard(price: unknown): string {
+  if (!isRecord(price)) return ''
+  const unitPrices = isRecord(price.unit_prices) ? price.unit_prices : isRecord(price.prices) ? price.prices : undefined
+  if (!unitPrices) return ''
+  const rows = Object.entries(unitPrices).map(([kind, value]) => registryPriceRow(kind, value, String(price.currency ?? 'USD'))).filter(Boolean).join('')
+  if (!rows) return ''
+  const source = String(price.source ?? 'registry')
+  const label = displayRegistryPriceSource(source)
+  const condition = isRecord(price.conditions) && typeof price.conditions.label === 'string' ? ` · ${price.conditions.label}` : ''
+  return `<div class="priceVariantCard"><h3>${escapeHtml(label)}${escapeHtml(condition)}</h3><dl class="priceList">${rows}</dl></div>`
+}
+
+function registryPriceRow(kind: string, value: unknown, currency: string): string {
+  if (!isRecord(value)) return ''
+  return priceRow(registryPriceLabel(kind), value.amount, registryPriceUnit(String(value.unit ?? ''), currency))
+}
+
+function registryPriceLabel(kind: string): string {
+  if (kind === 'input') return 'Input / prompt'
+  if (kind === 'output') return 'Output / completion'
+  if (kind === 'cache_read') return 'Cache read'
+  if (kind === 'cache_write') return 'Cache write'
+  return kind.split(/[_-]/u).map((part) => part ? `${part.slice(0, 1).toUpperCase()}${part.slice(1)}` : part).join(' ')
+}
+
+function registryPriceUnit(unit: string, currency: string): string {
+  if (unit === 'per_1m_tokens' || unit === 'per_million_tokens') return `${currency}/direct_per_1M`
+  if (unit === 'per_1m_audio_tokens') return `${currency}/direct_per_1M_audio`
+  if (unit === 'per_query') return `${currency}/query`
+  if (unit === 'per_image') return `${currency}/image`
+  if (unit === 'per_second') return `${currency}/second`
+  if (unit === 'per_audio_second') return `${currency}/audio_second`
+  if (unit === 'per_video_second') return `${currency}/video_second`
+  if (unit === 'per_request') return `${currency}/request`
+  return unit
+}
+
+function displayRegistryPriceSource(source: string): string {
+  if (source === 'bailian_model_market') return 'Bailian Model Market'
+  if (source === 'openrouter') return 'OpenRouter'
+  return source.split(/[_-]/u).map((part) => part ? `${part.slice(0, 1).toUpperCase()}${part.slice(1)}` : part).join(' ')
+}
+
+function registryModel(node: OpenRouterRawNode): Record<string, unknown> {
+  const model = isRecord(node.raw.model) ? node.raw.model : {}
+  return isRecord(model.mddb_registry) ? model.mddb_registry : {}
 }
 
 function litellmSupplementalPricingCards(node: OpenRouterRawNode): string {
@@ -325,16 +382,42 @@ function priceRow(label: string, value: unknown, unit: string): string {
 }
 
 function formatPrice(value: unknown, unit: string): string {
-  if (unit === 'USD/1M tokens') return `${currencyPriceHtml(Number(value) * 1_000_000, 'USD')} <span class="muted">per 1M tokens</span>`
-  if (unit === 'USD/direct_per_1M') return `${currencyPriceHtml(Number(value), 'USD')} <span class="muted">per 1M tokens</span>`
-  if (unit === 'USD/direct_per_1M_audio') return `${currencyPriceHtml(Number(value), 'USD')} <span class="muted">per 1M audio tokens</span>`
-  if (unit === 'USD/query') return `${currencyPriceHtml(Number(value), 'USD')} <span class="muted">per query</span>`
-  if (unit === 'USD/image') return `${currencyPriceHtml(Number(value), 'USD')} <span class="muted">per image</span>`
-  if (unit === 'USD/second') return `${currencyPriceHtml(Number(value), 'USD')} <span class="muted">per second</span>`
-  if (unit === 'USD/audio_second') return `${currencyPriceHtml(Number(value), 'USD')} <span class="muted">per audio second</span>`
-  if (unit === 'USD/video_second') return `${currencyPriceHtml(Number(value), 'USD')} <span class="muted">per video second</span>`
-  if (unit === 'USD/request') return `${currencyPriceHtml(Number(value), 'USD')} <span class="muted">per request</span>`
-  if (unit === 'USD/direct') return `${currencyPriceHtml(Number(value), 'USD')} <span class="muted">per request</span>`
+  if (unit.endsWith('/1M tokens')) {
+    const currency = unit.slice(0, -'/1M tokens'.length) || 'USD'
+    return `${currencyPriceHtml(Number(value) * 1_000_000, currency)} <span class="muted">per 1M tokens</span>`
+  }
+  if (unit.endsWith('/direct_per_1M')) {
+    const currency = unit.slice(0, -'/direct_per_1M'.length) || 'USD'
+    return `${currencyPriceHtml(Number(value), currency)} <span class="muted">per 1M tokens</span>`
+  }
+  if (unit.endsWith('/direct_per_1M_audio')) {
+    const currency = unit.slice(0, -'/direct_per_1M_audio'.length) || 'USD'
+    return `${currencyPriceHtml(Number(value), currency)} <span class="muted">per 1M audio tokens</span>`
+  }
+  if (unit.endsWith('/query')) {
+    const currency = unit.slice(0, -'/query'.length) || 'USD'
+    return `${currencyPriceHtml(Number(value), currency)} <span class="muted">per query</span>`
+  }
+  if (unit.endsWith('/image')) {
+    const currency = unit.slice(0, -'/image'.length) || 'USD'
+    return `${currencyPriceHtml(Number(value), currency)} <span class="muted">per image</span>`
+  }
+  if (unit.endsWith('/second')) {
+    const currency = unit.slice(0, -'/second'.length) || 'USD'
+    return `${currencyPriceHtml(Number(value), currency)} <span class="muted">per second</span>`
+  }
+  if (unit.endsWith('/audio_second')) {
+    const currency = unit.slice(0, -'/audio_second'.length) || 'USD'
+    return `${currencyPriceHtml(Number(value), currency)} <span class="muted">per audio second</span>`
+  }
+  if (unit.endsWith('/video_second')) {
+    const currency = unit.slice(0, -'/video_second'.length) || 'USD'
+    return `${currencyPriceHtml(Number(value), currency)} <span class="muted">per video second</span>`
+  }
+  if (unit.endsWith('/request') || unit.endsWith('/direct')) {
+    const currency = unit.replace(/\/(request|direct)$/u, '') || 'USD'
+    return `${currencyPriceHtml(Number(value), currency)} <span class="muted">per request</span>`
+  }
   return `<code>${escapeHtml(String(value))}</code>${unit ? ` <span class="muted">${escapeHtml(unit)}</span>` : ''}`
 }
 
@@ -398,13 +481,67 @@ function renderModelRow(node: OpenRouterRawNode, searchOnly = false, graph?: Ope
 }
 
 function modelPriceCell(node: OpenRouterRawNode, key: string, graph?: OpenRouterRawGraph): string {
+  const sourcePrice = sourceModelPriceCell(node, key)
+  if (sourcePrice) return sourcePrice
   const endpoint = currentProviderEndpoints(node)[0] ?? sampleDeploymentPricingEndpoint(graph, node)
   if (!endpoint || !isRecord(endpoint.pricing)) return '—'
   const value = endpoint.pricing[key]
   if (value === null || value === undefined || value === '') return '—'
   const provider = endpointProviderSlug(endpoint)
   const sourceAttribute = provider ? ` data-price-source-provider="${escapeHtml(provider)}"` : ''
-  return `<span${sourceAttribute}>${formatUsdPerMillionTokensWithRate(value)}</span>`
+  return `<span${sourceAttribute}>${formatPrice(value, priceCellUnit(endpoint.pricing, key, 'USD'))}</span>`
+}
+
+function sourceModelPriceCell(node: OpenRouterRawNode, key: string): string {
+  const model = isRecord(node.raw.model) ? node.raw.model : {}
+  const pricing = isRecord(model.pricing) ? model.pricing : undefined
+  if (pricing) {
+    const value = pricing[key]
+    if (value !== null && value !== undefined && value !== '') {
+      const source = typeof pricing[`${key}_source`] === 'string' ? String(pricing[`${key}_source`]) : ''
+      const sourceAttribute = source ? ` data-price-source-provider="${escapeHtml(source)}"` : ''
+      const currency = typeof pricing[`${key}_currency`] === 'string' ? String(pricing[`${key}_currency`]) : 'USD'
+      return `<span${sourceAttribute}>${formatPrice(value, priceCellUnit(pricing, key, currency))}</span>`
+    }
+  }
+  return registryModelPriceCell(node, key)
+}
+
+function registryModelPriceCell(node: OpenRouterRawNode, key: string): string {
+  const registryKey = key === 'prompt' ? 'input' : key === 'completion' ? 'output' : key === 'input_cache_read' ? 'cache_read' : key === 'input_cache_write' ? 'cache_write' : key
+  const price = preferredRegistryTokenPrice(node, registryKey)
+  const unitPrices = price && isRecord(price.unit_prices) ? price.unit_prices : price && isRecord(price.prices) ? price.prices : undefined
+  const value = unitPrices && isRecord(unitPrices[registryKey]) ? unitPrices[registryKey] : undefined
+  if (!value || value.amount === null || value.amount === undefined || value.amount === '') return ''
+  const currency = String(price?.currency ?? 'USD')
+  const source = typeof price?.source === 'string' ? price.source : ''
+  const sourceAttribute = source ? ` data-price-source-provider="${escapeHtml(source)}"` : ''
+  return `<span${sourceAttribute}>${formatPrice(value.amount, registryPriceUnit(String(value.unit ?? ''), currency))}</span>`
+}
+
+function preferredRegistryTokenPrice(node: OpenRouterRawNode, registryKey: string): Record<string, unknown> | undefined {
+  const registry = registryModel(node)
+  const prices = Array.isArray(registry.prices) ? registry.prices.filter((price): price is Record<string, unknown> => isRecord(price)) : []
+  const tokenPrices = prices.filter((price): price is Record<string, unknown> => {
+    const unitPrices = isRecord(price.unit_prices) ? price.unit_prices : isRecord(price.prices) ? price.prices : undefined
+    const value = unitPrices && isRecord(unitPrices[registryKey]) ? unitPrices[registryKey] : undefined
+    return Boolean(value && isTokenPriceUnit(value.unit) && Number.isFinite(Number(value.amount)))
+  })
+  return tokenPrices.find((price) => price.currency === 'CNY' && price.source === 'bailian_model_market')
+    ?? tokenPrices.find((price) => price.currency === 'CNY')
+    ?? tokenPrices.find((price) => price.currency === 'USD' && price.source === 'openrouter')
+    ?? tokenPrices[0]
+}
+
+function isTokenPriceUnit(unit: unknown): boolean {
+  return unit === 'per_1m_tokens' || unit === 'per_million_tokens'
+}
+
+function priceCellUnit(pricing: Record<string, unknown>, key: string, currency: string): string {
+  const unit = pricing[`${key}_unit`]
+  if (unit === 'per_1m_tokens' || unit === 'per_million_tokens') return `${currency}/direct_per_1M`
+  if (unit === 'per_1m_audio_tokens') return `${currency}/direct_per_1M_audio`
+  return `${currency}/1M tokens`
 }
 
 function sampleDeploymentPricingEndpoint(graph: OpenRouterRawGraph | undefined, node: OpenRouterRawNode): Record<string, unknown> | undefined {

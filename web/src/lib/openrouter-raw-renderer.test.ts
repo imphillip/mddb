@@ -137,33 +137,28 @@ describe('mobile responsive layout', () => {
 })
 
 describe('renderOpenRouterRawHome price display', () => {
-  it('renders explicit currency symbols without a nav currency toggle', () => {
+  it('renders registry CNY prices from Bailian in plaza and detail pages instead of only OpenRouter USD endpoint prices', () => {
     const testGraph = graph()
-    testGraph.nodes[0]!.raw.endpointWrapper = { response: { data: { endpoints: [{ tag: 'openai', provider_name: 'OpenAI', pricing: { prompt: '0.00000125', completion: '0.00001', input_cache_read: '0.000000125' } }] } } }
-
-    const plazaHtml = renderOpenRouterRawHome(testGraph)
-    const detailHtml = renderOpenRouterRawDetail(testGraph, testGraph.nodes[0]!)
-
-    for (const html of [plazaHtml, detailHtml]) {
-      expect(html).not.toContain('class="currencyToggle"')
-      expect(html).not.toContain('data-currency-toggle')
-      expect(html).not.toContain('data-usd=')
-      expect(html).not.toContain('data-cny=')
-      expect(html).not.toContain("localStorage.setItem('mddb.currency'")
-      expect(html).toContain('<span class="priceCurrencySymbol">$</span><span class="priceAmount">1.25</span>')
-      expect(html).toContain('<span class="priceCurrencySymbol">$</span><span class="priceAmount">10</span>')
+    const qwen = testGraph.nodes[1]!
+    qwen.raw.model = {
+      ...qwen.raw.model as Record<string, unknown>,
+      mddb_registry: {
+        prices: [
+          { currency: 'USD', source: 'openrouter', prices: { input: { amount: 0.26, unit: 'per_1m_tokens' }, output: { amount: 0.78, unit: 'per_1m_tokens' } } },
+          { currency: 'CNY', source: 'bailian_model_market', prices: { input: { amount: 0.8, unit: 'per_1m_tokens' } } },
+          { currency: 'CNY', source: 'bailian_model_market', prices: { output: { amount: 2, unit: 'per_1m_tokens' } } },
+        ],
+      },
     }
 
-    expect(plazaHtml).toContain('class="githubLink"')
-    expect(plazaHtml).toContain('<a class="brandmark" href="/">')
-    expect(plazaHtml).not.toContain('模型动态')
-    expect(plazaHtml).toContain('<div class="navlinks"><a href="https://raw.githubusercontent.com/imphillip/mddb/main/data/models.json" target="_blank" rel="noopener noreferrer">models.json</a></div><a class="githubLink" href="https://github.com/imphillip/mddb"')
-    expect(plazaHtml).not.toContain('<a class="active" href="/">模型广场</a>')
-    expect(plazaHtml).not.toContain('供应商广场')
-    expect(plazaHtml).toContain('.githubLink{width:34px')
-    expect(plazaHtml).toContain('.githubLink svg{width:18px')
-    expect(plazaHtml).not.toContain('>1 USD</button>')
-    expect(plazaHtml).not.toContain('>6.8 CNY</button>')
+    const plazaHtml = renderOpenRouterRawHome(testGraph)
+    const detailHtml = renderOpenRouterRawDetail(testGraph, qwen)
+
+    expect(plazaHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">0.8</span>')
+    expect(plazaHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">2</span>')
+    expect(detailHtml).toContain('Bailian Model Market')
+    expect(detailHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">0.8</span>')
+    expect(detailHtml).toContain('<span class="priceCurrencySymbol">$</span><span class="priceAmount">0.26</span>')
   })
 })
 

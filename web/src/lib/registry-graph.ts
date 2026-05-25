@@ -16,6 +16,7 @@ type RegistryModel = {
   context_length?: number | null
   max_output_tokens?: number | null
   release_timestamp?: number | string | null
+  prices?: RegistryPrice[]
   other_parameters?: JsonRecord
   last_updated?: string
   sources?: JsonRecord[]
@@ -24,8 +25,11 @@ type RegistryModel = {
 type RegistryPrice = {
   conditions?: JsonRecord
   prices?: Record<string, { amount?: number; unit?: string }>
+  unit_prices?: Record<string, { amount?: number; unit?: string }>
   currency?: string
   source?: string
+  source_id?: string
+  source_url?: string
   observed_at?: string
   raw_pricing?: JsonRecord
 }
@@ -220,8 +224,42 @@ function registryModelToRawModel(model: RegistryModel): JsonRecord {
       max_completion_tokens: model.max_output_tokens,
     },
     supported_parameters: model.other_parameters?.supported_parameters,
+    pricing: rawPricingFromModelPrices(model.prices ?? []),
     mddb_registry: model,
   }
+}
+
+function rawPricingFromModelPrices(prices: RegistryPrice[]): JsonRecord {
+  const selected = selectPreferredModelPrice(prices)
+  const unitPrices = selected?.unit_prices ?? selected?.prices
+  const currency = selected?.currency ?? 'USD'
+  if (!unitPrices) return {}
+  const out: JsonRecord = {}
+  for (const [kind, value] of Object.entries(unitPrices)) {
+    if (!value || value.amount === undefined) continue
+    const key = kind === 'input' ? 'prompt' : kind === 'output' ? 'completion' : kind === 'cache_read' ? 'input_cache_read' : kind === 'cache_write' ? 'input_cache_write' : kind
+    out[key] = value.amount
+    out[`${key}_unit`] = value.unit
+    out[`${key}_currency`] = currency
+    if (selected?.source) out[`${key}_source`] = selected.source
+  }
+  return out
+}
+
+function selectPreferredModelPrice(prices: RegistryPrice[]): RegistryPrice | undefined {
+  const tokenRows = prices.filter((price) => {
+    const unitPrices = price.unit_prices ?? price.prices
+    if (!unitPrices) return false
+    return ['input', 'output', 'cache_read', 'cache_write'].some((key) => isTokenUnit(unitPrices[key]?.unit) && Number.isFinite(Number(unitPrices[key]?.amount)))
+  })
+  return tokenRows.find((price) => price.currency === 'CNY' && price.source === 'bailian_model_market')
+    ?? tokenRows.find((price) => price.currency === 'CNY')
+    ?? tokenRows.find((price) => price.currency === 'USD' && price.source === 'openrouter')
+    ?? tokenRows[0]
+}
+
+function isTokenUnit(unit: unknown): boolean {
+  return unit === 'per_1m_tokens' || unit === 'per_million_tokens'
 }
 
 function endpointFromOffer(provider: RegistryProvider, offer: RegistryOffer): JsonRecord {
