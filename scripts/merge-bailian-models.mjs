@@ -10,7 +10,7 @@ const bailianPath = path.join(root, '.internal/sources/bailian-model-market.json
 const modelsPath = path.join(root, 'data/models.json')
 const bailianPayload = JSON.parse(fs.readFileSync(bailianPath, 'utf8'))
 const modelsPayload = JSON.parse(fs.readFileSync(modelsPath, 'utf8'))
-const bailianModels = Array.isArray(bailianPayload.models) ? bailianPayload.models : []
+const bailianModels = (Array.isArray(bailianPayload.models) ? bailianPayload.models : []).filter((row) => row.list_observed !== false)
 const models = Array.isArray(modelsPayload.models) ? modelsPayload.models : []
 
 const sourceName = 'bailian_model_market'
@@ -52,15 +52,18 @@ function priceKey(type) {
   if (t.includes('input') || t.includes('text')) return 'input'
   return slug(t || 'custom') || 'custom'
 }
-function unit(rawUnit, key) {
-  const u = String(rawUnit || '')
+function unit(rawUnit, key, context = '') {
+  const u = String(rawUnit || '').trim()
+  const c = `${key} ${context}`.toLowerCase()
   if (u.includes('百万') && u.toLowerCase().includes('token')) return 'per_1m_tokens'
   if (u.includes('千次')) return 'per_1k_calls'
   if (u.includes('张')) return 'per_image'
-  if (u.includes('秒')) return key.includes('video') ? 'per_video_second' : 'per_second'
+  if (u.includes('秒')) return c.includes('video') || c.includes('视频') ? 'per_video_second' : 'per_second'
   return u || 'custom'
 }
+
 function sourceUrl(row) { return row.source_url || `https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/${encodeURIComponent(row.model_id || row.model_code)}?serviceSite=asia-pacific-china` }
+
 function sourceEntry(row) {
   return { source: sourceName, source_id: row.model_id || row.model_code, url: sourceUrl(row), observed_at: row.candidate_model_fact?.sources?.find((s) => s.source === sourceName)?.observed_at || bailianPayload.last_batch_observation?.observed_at || now }
 }
@@ -79,17 +82,19 @@ function findTarget(row) {
 }
 function pricesFor(row) {
   const rows = []
+  const priceUnit = (p) => p.unit ?? p.priceUnit
+  const priceLabel = (p) => p.label ?? p.priceName
   for (const p of array(row.pricing)) {
     const amount = Number(p.price)
     if (!Number.isFinite(amount)) continue
-    const key = priceKey(p.type || p.label)
+    const key = priceKey([p.type, priceLabel(p)].filter(Boolean).join(' '))
     rows.push({
       source: sourceName,
       source_id: row.model_id || row.model_code,
       source_url: sourceUrl(row),
       currency: p.currency || row.pricing_currency || 'CNY',
-      unit_prices: { [key]: { amount, unit: unit(p.unit, key) } },
-      conditions: Object.assign({}, p.discount !== undefined ? { discount: p.discount } : {}, p.label ? { label: p.label } : {}, p.type ? { bailian_type: p.type } : {}),
+      unit_prices: { [key]: { amount, unit: unit(priceUnit(p), key, priceLabel(p)) } },
+      conditions: Object.assign({}, p.discount !== undefined ? { discount: p.discount } : {}, priceLabel(p) ? { label: priceLabel(p) } : {}, p.type ? { bailian_type: p.type } : {}),
       endpoint: { provider_id: providerId, provider_name: providerName, api_model_id: row.model_id || row.model_code, base_url: row.api_base_url || apiBaseUrl, docs_url: sourceUrl(row) },
     })
   }

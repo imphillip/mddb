@@ -636,7 +636,7 @@
             },
             {
               "kind": "input_image",
-              "amount": 0.00006,
+              "amount": 6e-05,
               "unit": "per_image",
               "source_key": "input_cost_per_image"
             },
@@ -679,7 +679,7 @@
               "unit": "per_1m_tokens"
             },
             "input_cost_per_image": {
-              "amount": 0.00006,
+              "amount": 6e-05,
               "unit": "per_image"
             },
             "input_cost_per_audio_per_second": {
@@ -826,7 +826,7 @@
             },
             {
               "kind": "input_image",
-              "amount": 0.00006,
+              "amount": 6e-05,
               "unit": "per_image",
               "source_key": "input_cost_per_image"
             }
@@ -857,7 +857,7 @@
               "unit": "per_1m_tokens"
             },
             "input_cost_per_image": {
-              "amount": 0.00006,
+              "amount": 6e-05,
               "unit": "per_image"
             }
           },
@@ -3580,7 +3580,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00003333,
+              "amount": 3.333e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -3609,7 +3609,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00003333,
+              "amount": 3.333e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -8431,7 +8431,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -8460,7 +8460,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -8505,7 +8505,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -8534,7 +8534,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -8579,7 +8579,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -8608,7 +8608,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -8653,7 +8653,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -8682,7 +8682,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -8727,7 +8727,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -8756,7 +8756,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -8801,7 +8801,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -8830,7 +8830,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -8875,7 +8875,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -8904,7 +8904,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -8949,7 +8949,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -8978,7 +8978,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -9023,7 +9023,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -9052,7 +9052,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -9097,7 +9097,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -9126,7 +9126,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -9171,7 +9171,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -9200,7 +9200,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -9245,7 +9245,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -9274,7 +9274,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -9319,7 +9319,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -9348,7 +9348,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -9393,7 +9393,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -9422,7 +9422,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -9467,7 +9467,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00008667,
+              "amount": 8.667e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -9496,7 +9496,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00008667,
+              "amount": 8.667e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -9541,7 +9541,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -9570,7 +9570,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -9615,7 +9615,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -9644,7 +9644,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00007167,
+              "amount": 7.167e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -12399,7 +12399,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.0000611,
+              "amount": 6.11e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -12428,7 +12428,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.0000611,
+              "amount": 6.11e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -12473,7 +12473,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.0000611,
+              "amount": 6.11e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -12502,7 +12502,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.0000611,
+              "amount": 6.11e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -14310,7 +14310,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-7,
+              "amount": 1e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -14408,7 +14408,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 7.5e-8,
+              "amount": 7.5e-08,
               "unit": "per_image"
             },
             "web_search": {
@@ -14508,7 +14508,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-7,
+              "amount": 3e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -14602,7 +14602,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-7,
+              "amount": 3e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -14702,7 +14702,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-7,
+              "amount": 1e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -14802,7 +14802,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-7,
+              "amount": 1e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -15065,7 +15065,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -15100,7 +15100,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -15201,7 +15201,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -15303,7 +15303,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.00000125,
+              "amount": 1.25e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -15405,7 +15405,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 5e-7,
+              "amount": 5e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -15503,7 +15503,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -15695,7 +15695,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2.5e-7,
+              "amount": 2.5e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -15797,7 +15797,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2.5e-7,
+              "amount": 2.5e-07,
               "unit": "per_image"
             },
             "web_search": {
@@ -15899,7 +15899,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -16001,7 +16001,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.000002,
+              "amount": 2e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -16105,7 +16105,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.0000015,
+              "amount": 1.5e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -16140,7 +16140,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 0.0000015,
+              "amount": 1.5e-06,
               "unit": "per_image"
             },
             "web_search": {
@@ -19593,7 +19593,7 @@
           "prices": [
             {
               "kind": "input",
-              "amount": 0.00003083,
+              "amount": 3.083e-05,
               "unit": "per_second",
               "source_key": "input_cost_per_second"
             },
@@ -19631,7 +19631,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00003083,
+              "amount": 3.083e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -19698,7 +19698,7 @@
               "prices": [
                 {
                   "kind": "input",
-                  "amount": 0.00001111,
+                  "amount": 1.111e-05,
                   "unit": "per_second",
                   "source_key": "input_cost_per_second"
                 },
@@ -19766,7 +19766,7 @@
           "currency": "USD",
           "unit_prices": {
             "input_cost_per_second": {
-              "amount": 0.00001111,
+              "amount": 1.111e-05,
               "unit": "per_second"
             },
             "output_cost_per_second": {
@@ -20947,158 +20947,6 @@
       ]
     },
     {
-      "id": "kling-v3-image-generation",
-      "model": "Kling Image 3.0",
-      "name": "Kling Image 3.0",
-      "alias": [
-        "kling/kling-v3-image-generation"
-      ],
-      "aliases": [
-        "kling/kling-v3-image-generation"
-      ],
-      "author": "kling",
-      "author_id": "kling",
-      "input_modalities": [
-        "image",
-        "text"
-      ],
-      "output_modalities": [
-        "image"
-      ],
-      "reasoning": false,
-      "tool_calling": false,
-      "other_parameters": {
-        "bailian_capabilities": [
-          "IG"
-        ],
-        "bailian_features": [
-          "model-experience"
-        ],
-        "open_source": false,
-        "version_tag": "MAJOR",
-        "model_alias": "",
-        "request_modality": [
-          "Image",
-          "Text"
-        ],
-        "response_modality": [
-          "Image"
-        ]
-      },
-      "last_updated": "2026-05-24T20:13:44Z",
-      "sources": [
-        {
-          "source": "bailian_model_market",
-          "source_id": "kling/kling-v3-image-generation",
-          "url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/kling/kling-v3-image-generation?serviceSite=asia-pacific-china",
-          "observed_at": "2026-05-24T20:13:44Z"
-        }
-      ],
-      "prices": []
-    },
-    {
-      "id": "kling-v3-omni-image-generation",
-      "model": "Kling Image 3.0 Omni",
-      "name": "Kling Image 3.0 Omni",
-      "alias": [
-        "kling/kling-v3-omni-image-generation"
-      ],
-      "aliases": [
-        "kling/kling-v3-omni-image-generation"
-      ],
-      "author": "kling",
-      "author_id": "kling",
-      "input_modalities": [
-        "image",
-        "text"
-      ],
-      "output_modalities": [
-        "image"
-      ],
-      "reasoning": false,
-      "tool_calling": false,
-      "other_parameters": {
-        "bailian_capabilities": [
-          "IG"
-        ],
-        "bailian_features": [
-          "model-experience"
-        ],
-        "open_source": false,
-        "version_tag": "MAJOR",
-        "model_alias": "",
-        "request_modality": [
-          "Image",
-          "Text"
-        ],
-        "response_modality": [
-          "Image"
-        ]
-      },
-      "last_updated": "2026-05-24T20:13:44Z",
-      "sources": [
-        {
-          "source": "bailian_model_market",
-          "source_id": "kling/kling-v3-omni-image-generation",
-          "url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/kling/kling-v3-omni-image-generation?serviceSite=asia-pacific-china",
-          "observed_at": "2026-05-24T20:13:44Z"
-        }
-      ],
-      "prices": []
-    },
-    {
-      "id": "kling-v3-omni-video-generation",
-      "model": "Kling Video 3.0 Omni",
-      "name": "Kling Video 3.0 Omni",
-      "alias": [
-        "kling/kling-v3-omni-video-generation"
-      ],
-      "aliases": [
-        "kling/kling-v3-omni-video-generation"
-      ],
-      "author": "kling",
-      "author_id": "kling",
-      "input_modalities": [
-        "image",
-        "text",
-        "video"
-      ],
-      "output_modalities": [
-        "video"
-      ],
-      "reasoning": false,
-      "tool_calling": false,
-      "other_parameters": {
-        "bailian_capabilities": [
-          "VG"
-        ],
-        "bailian_features": [
-          "model-experience"
-        ],
-        "open_source": false,
-        "version_tag": "MAJOR",
-        "model_alias": "",
-        "request_modality": [
-          "Image",
-          "Text",
-          "Video"
-        ],
-        "response_modality": [
-          "Video"
-        ]
-      },
-      "last_updated": "2026-05-24T20:13:44Z",
-      "sources": [
-        {
-          "source": "bailian_model_market",
-          "source_id": "kling/kling-v3-omni-video-generation",
-          "url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/kling/kling-v3-omni-video-generation?serviceSite=asia-pacific-china",
-          "observed_at": "2026-05-24T20:13:44Z"
-        }
-      ],
-      "prices": []
-    },
-    {
       "id": "kling-v3-video-generation",
       "model": "Kling Video 3.0",
       "name": "Kling Video 3.0",
@@ -21146,7 +20994,100 @@
           "observed_at": "2026-05-24T20:13:44Z"
         }
       ],
-      "prices": []
+      "prices": [
+        {
+          "source": "bailian_model_market",
+          "source_id": "kling/kling-v3-video-generation",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/kling/kling-v3-video-generation?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "video": {
+              "amount": 0.9,
+              "unit": "per_video_second"
+            }
+          },
+          "conditions": {
+            "label": "视频生成（720P）",
+            "bailian_type": "video_ratio_720p"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "kling/kling-v3-video-generation",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/kling/kling-v3-video-generation?serviceSite=asia-pacific-china"
+          }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "kling/kling-v3-video-generation",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/kling/kling-v3-video-generation?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "video": {
+              "amount": 1.2,
+              "unit": "per_video_second"
+            }
+          },
+          "conditions": {
+            "label": "视频生成（1080P）",
+            "bailian_type": "video_ratio_1080p"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "kling/kling-v3-video-generation",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/kling/kling-v3-video-generation?serviceSite=asia-pacific-china"
+          }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "kling/kling-v3-video-generation",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/kling/kling-v3-video-generation?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "720p_no_audio-720p": {
+              "amount": 0.6,
+              "unit": "per_video_second"
+            }
+          },
+          "conditions": {
+            "label": "视频生成（720P 无声）",
+            "bailian_type": "720P_no_audio"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "kling/kling-v3-video-generation",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/kling/kling-v3-video-generation?serviceSite=asia-pacific-china"
+          }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "kling/kling-v3-video-generation",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/kling/kling-v3-video-generation?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "1080p_no_audio-1080p": {
+              "amount": 0.8,
+              "unit": "per_video_second"
+            }
+          },
+          "conditions": {
+            "label": "视频生成（1080P 无声）",
+            "bailian_type": "1080P_no_audio"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "kling/kling-v3-video-generation",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/kling/kling-v3-video-generation?serviceSite=asia-pacific-china"
+          }
+        }
+      ]
     },
     {
       "id": "kat-coder-pro-v2",
@@ -69779,6 +69720,54 @@
             "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
             "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/wan2.6-i2v?serviceSite=asia-pacific-china"
           }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "wan2.6-i2v",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/wan2.6-i2v?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "720p_batch-720p-batch-chat": {
+              "amount": 0.6,
+              "unit": "per_video_second"
+            }
+          },
+          "conditions": {
+            "discount": 0.5,
+            "label": "视频生成（720P Batch Chat）",
+            "bailian_type": "720P_batch"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "wan2.6-i2v",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/wan2.6-i2v?serviceSite=asia-pacific-china"
+          }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "wan2.6-i2v",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/wan2.6-i2v?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "1080p_batch-1080p-batch-chat": {
+              "amount": 1,
+              "unit": "per_video_second"
+            }
+          },
+          "conditions": {
+            "discount": 0.5,
+            "label": "视频生成（1080P Batch Chat）",
+            "bailian_type": "1080P_batch"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "wan2.6-i2v",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/wan2.6-i2v?serviceSite=asia-pacific-china"
+          }
         }
       ]
     },
@@ -69909,6 +69898,52 @@
             "1080p_no_audio": {
               "amount": 0.25,
               "unit": "per_second"
+            }
+          },
+          "conditions": {
+            "label": "视频生成（1080P 无声）",
+            "bailian_type": "1080P_no_audio"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "wan2.6-i2v-flash",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/wan2.6-i2v-flash?serviceSite=asia-pacific-china"
+          }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "wan2.6-i2v-flash",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/wan2.6-i2v-flash?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "720p_no_audio-720p": {
+              "amount": 0.15,
+              "unit": "per_video_second"
+            }
+          },
+          "conditions": {
+            "label": "视频生成（720P 无声）",
+            "bailian_type": "720P_no_audio"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "wan2.6-i2v-flash",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/wan2.6-i2v-flash?serviceSite=asia-pacific-china"
+          }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "wan2.6-i2v-flash",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/wan2.6-i2v-flash?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "1080p_no_audio-1080p": {
+              "amount": 0.25,
+              "unit": "per_video_second"
             }
           },
           "conditions": {
