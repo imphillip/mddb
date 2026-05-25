@@ -155,10 +155,11 @@ describe('renderOpenRouterRawHome price display', () => {
     const detailHtml = renderOpenRouterRawDetail(testGraph, qwen)
 
     expect(plazaHtml).not.toContain('<h1>模型广场</h1>')
-    expect(plazaHtml).toContain('<th>模型</th><th>上下文</th><th>条件</th><th>价格</th><th>来源</th><th>发布时间</th>')
+    expect(plazaHtml).toContain('<th>模型</th><th>上下文</th><th>条件</th><th>价格</th><th>发布时间</th>')
+    expect(plazaHtml).not.toContain('<th>来源</th>')
     expect(plazaHtml).toContain('<span class="priceLabel">Input</span>')
     expect(plazaHtml).toContain('<span class="priceLabel">Output</span>')
-    expect(plazaHtml).toContain('<td class="sourceCell"><span class="priceSource">Bailian Model Market</span></td>')
+    expect(plazaHtml).not.toContain('class="sourceCell"')
     expect(plazaHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">0.8</span>')
     expect(plazaHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">2</span>')
     expect(detailHtml).toContain('Bailian Model Market')
@@ -183,40 +184,40 @@ describe('renderOpenRouterRawHome price display', () => {
 
     const plazaHtml = renderOpenRouterRawHome(testGraph)
 
-    const priceCellMatch = plazaHtml.match(/<td class="mono priceCell">([\s\S]*?)<\/td><td class="sourceCell"><span class="priceSource">Bailian Model Market<\/span><\/td>/u)
-    expect(priceCellMatch?.[1]).toContain('<span class="priceLine"><span class="priceLabel">Input</span>')
-    expect(priceCellMatch?.[1]).toContain('<span class="priceLine"><span class="priceLabel">Output</span>')
-    expect(priceCellMatch?.[1]).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">12</span>')
-    expect(priceCellMatch?.[1]).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">36</span>')
-    expect(priceCellMatch?.[1]).not.toContain('Cache write')
-    expect(priceCellMatch?.[1]).not.toContain('Cache read')
-    expect(priceCellMatch?.[1]).not.toContain('web_search')
-    expect(priceCellMatch?.[1]).not.toContain('priceSeparator')
+    const rows = Array.from(plazaHtml.matchAll(/<td class="mono priceCell">([\s\S]*?)<\/td><td class="mono">/gu)).map((match) => match[1] ?? '')
+    const priceCell = rows.find((row) => row.includes('12') && row.includes('36')) ?? ''
+    expect(priceCell).toContain('<span class="priceLine"><span class="priceLabel">Input</span>')
+    expect(priceCell).toContain('<span class="priceLine"><span class="priceLabel">Output</span>')
+    expect(priceCell).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">12</span>')
+    expect(priceCell).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">36</span>')
+    expect(priceCell).not.toContain('Cache write')
+    expect(priceCell).not.toContain('Cache read')
+    expect(priceCell).not.toContain('web_search')
+    expect(priceCell).not.toContain('priceSeparator')
     expect(plazaHtml).not.toContain('7 档')
     expect(plazaHtml).not.toContain('<span class="tierCondition">输入</span>')
   })
 
-  it('shows Bailian video tier conditions, tier count, and the first tier price in the model list', () => {
+  it('keeps list condition and prices from the same selected CNY tiered price group', () => {
     const testGraph = graph()
     const qwen = testGraph.nodes[1]!
     qwen.raw.model = {
       ...qwen.raw.model as Record<string, unknown>,
       mddb_registry: {
         prices: [
-          { currency: 'CNY', source: 'bailian_model_market', unit_prices: { video: { amount: 0.9, unit: 'per_video_second' } }, conditions: { label: '视频生成（720P）', bailian_type: 'video_ratio_720p' } },
-          { currency: 'CNY', source: 'bailian_model_market', unit_prices: { video: { amount: 1.2, unit: 'per_video_second' } }, conditions: { label: '视频生成（1080P）', bailian_type: 'video_ratio_1080p' } },
-          { currency: 'CNY', source: 'bailian_model_market', unit_prices: { '720p_no_audio-720p': { amount: 0.6, unit: 'per_video_second' } }, conditions: { label: '视频生成（720P 无声）', bailian_type: '720P_no_audio' } },
-          { currency: 'CNY', source: 'bailian_model_market', unit_prices: { '1080p_no_audio-1080p': { amount: 0.8, unit: 'per_video_second' } }, conditions: { label: '视频生成（1080P 无声）', bailian_type: '1080P_no_audio' } },
+          { currency: 'USD', source: 'openrouter', unit_prices: { input: { amount: 1.04, unit: 'per_1m_tokens' }, output: { amount: 6.24, unit: 'per_1m_tokens' } } },
+          { currency: 'CNY', source: 'bailian_model_market', conditions: { label: '输入<=128k', type: 'input_token', lte: 131072 }, unit_prices: { input: { amount: 9, unit: 'per_1m_tokens' }, output: { amount: 54, unit: 'per_1m_tokens' }, cache_write: { amount: 11.25, unit: 'per_1m_tokens' } } },
+          { currency: 'CNY', source: 'bailian_model_market', conditions: { label: '128k<输入<=256k', type: 'input_token', gt: 131072, lte: 262144 }, unit_prices: { input: { amount: 15, unit: 'per_1m_tokens' }, output: { amount: 90, unit: 'per_1m_tokens' } } },
         ],
       },
     }
 
     const plazaHtml = renderOpenRouterRawHome(testGraph)
 
-    expect(plazaHtml).toContain('<td class="conditionCell"><span class="tierCondition">视频生成（720P）</span> <span class="tierCount">4 档</span></td>')
-    expect(plazaHtml).toContain('<span class="priceLabel">Video</span>')
-    expect(plazaHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">0.9</span>')
-    expect(plazaHtml).toContain('per video second')
+    expect(plazaHtml).toContain('<td class="conditionCell"><span class="tierCondition">输入&lt;=128k</span> <span class="tierCount">2 档</span></td>')
+    expect(plazaHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">9</span>')
+    expect(plazaHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">54</span>')
+    expect(plazaHtml).not.toContain('<span class="priceCurrencySymbol">$</span><span class="priceAmount">1.04</span>')
   })
 })
 
