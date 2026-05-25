@@ -165,7 +165,7 @@ describe('renderOpenRouterRawHome price display', () => {
     expect(detailHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">0.8</span>')
     expect(detailHtml).toContain('<span class="priceCurrencySymbol">$</span><span class="priceAmount">0.26</span>')
   })
-  it('shows only true tier conditions before price and keeps ordinary price dimensions in the price cell', () => {
+  it('shows only Input and Output as separate lines for token metered list prices', () => {
     const testGraph = graph()
     const qwen = testGraph.nodes[1]!
     qwen.raw.model = {
@@ -183,12 +183,15 @@ describe('renderOpenRouterRawHome price display', () => {
 
     const plazaHtml = renderOpenRouterRawHome(testGraph)
 
-    expect(plazaHtml).toContain('<td class="conditionCell">—</td><td class="mono priceCell"><div class="priceSummary" data-price-source-provider="bailian_model_market">')
-    expect(plazaHtml).toContain('<span class="priceLabel">Input</span>')
-    expect(plazaHtml).toContain('<span class="priceLabel">Output</span>')
-    expect(plazaHtml).toContain('<span class="priceLabel">Cache write</span>')
-    expect(plazaHtml).toContain('<span class="priceLabel">Cache read</span>')
-    expect(plazaHtml).toContain('<span class="priceLabel">web_search</span>')
+    const priceCellMatch = plazaHtml.match(/<td class="mono priceCell">([\s\S]*?)<\/td><td class="sourceCell"><span class="priceSource">Bailian Model Market<\/span><\/td>/u)
+    expect(priceCellMatch?.[1]).toContain('<span class="priceLine"><span class="priceLabel">Input</span>')
+    expect(priceCellMatch?.[1]).toContain('<span class="priceLine"><span class="priceLabel">Output</span>')
+    expect(priceCellMatch?.[1]).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">12</span>')
+    expect(priceCellMatch?.[1]).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">36</span>')
+    expect(priceCellMatch?.[1]).not.toContain('Cache write')
+    expect(priceCellMatch?.[1]).not.toContain('Cache read')
+    expect(priceCellMatch?.[1]).not.toContain('web_search')
+    expect(priceCellMatch?.[1]).not.toContain('priceSeparator')
     expect(plazaHtml).not.toContain('7 档')
     expect(plazaHtml).not.toContain('<span class="tierCondition">输入</span>')
   })
@@ -200,8 +203,8 @@ describe('renderOpenRouterRawHome price display', () => {
       ...qwen.raw.model as Record<string, unknown>,
       mddb_registry: {
         prices: [
-          { currency: 'USD', source: 'litellm', prices: { input_cost_per_token_above_128k_tokens: { amount: 0.15, unit: 'per_1m_tokens', condition: 'above 128k tokens' }, output_cost_per_token_above_128k_tokens: { amount: 0.6, unit: 'per_1m_tokens', condition: 'above 128k tokens' } } },
-          { currency: 'USD', source: 'litellm', prices: { input_cost_per_token_above_272k_tokens: { amount: 0.3, unit: 'per_1m_tokens', condition: 'above 272k tokens' }, output_cost_per_token_above_272k_tokens: { amount: 1.2, unit: 'per_1m_tokens', condition: 'above 272k tokens' } } },
+          { currency: 'USD', source: 'litellm', prices: { input_cost_per_token_above_128k_tokens: { amount: 0.15, unit: 'per_1m_tokens' }, output_cost_per_token_above_128k_tokens: { amount: 0.6, unit: 'per_1m_tokens' } } },
+          { currency: 'USD', source: 'litellm', prices: { input_cost_per_token_above_272k_tokens: { amount: 0.3, unit: 'per_1m_tokens' }, output_cost_per_token_above_272k_tokens: { amount: 1.2, unit: 'per_1m_tokens' } } },
         ],
       },
     }
