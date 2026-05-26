@@ -123,16 +123,13 @@ describe('OpenRouter registry population provider normalization', () => {
 
     expect(catalog.models.map((model) => [model.id, model.author, model.model])).toEqual(expect.arrayContaining([
       ['claude-opus-4.7-fast', 'anthropic', 'Claude Opus 4.7 (Fast)'],
-      ['claude-haiku-latest', 'anthropic', 'Claude Haiku Latest'],
       ['kimi-k2', 'moonshot-ai', 'Kimi K2'],
-      ['kimi-latest', 'moonshot-ai', 'Kimi Latest'],
-      ['owl-alpha', 'openrouter', 'Owl Alpha'],
       ['llama-4-scout', 'meta-llama', 'Llama 4 Scout'],
       ['hermes-4-70b', 'nousresearch', 'Hermes 4 70B'],
       ['cobuddy', 'baidu', 'CoBuddy'],
       ['gemma-4-26b-a4b-it', 'google', 'Gemma 4 26B A4B'],
-      ['gpt-oss-120b', 'openai', 'gpt-oss-120b'],
     ]))
+    expect(catalog.models.map((model) => model.id)).not.toEqual(expect.arrayContaining(['kimi-latest', 'owl-alpha']))
   })
 
   it('preserves existing observation timestamps for unchanged models and offers', () => {

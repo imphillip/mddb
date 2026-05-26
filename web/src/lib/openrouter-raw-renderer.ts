@@ -296,7 +296,32 @@ function displayRegistryPriceSource(source: string): string {
 
 function registryModel(node: OpenRouterRawNode): Record<string, unknown> {
   const model = isRecord(node.raw.model) ? node.raw.model : {}
+  if (isRecord(model.mddb_model)) return model.mddb_model
   return isRecord(model.mddb_registry) ? model.mddb_registry : {}
+}
+
+function registryPriceRows(node: OpenRouterRawNode): Record<string, unknown>[] {
+  const registry = registryModel(node)
+  if (Array.isArray(registry.prices)) return registry.prices.filter((price): price is Record<string, unknown> => isRecord(price))
+  const model = isRecord(node.raw.model) ? node.raw.model : {}
+  const offers = Array.isArray(model.offers) ? model.offers.filter((offer): offer is Record<string, unknown> => isRecord(offer)) : []
+  const rows: Record<string, unknown>[] = []
+  for (const offer of offers) {
+    const prices = Array.isArray(offer.prices) ? offer.prices : []
+    for (const price of prices) {
+      if (!isRecord(price)) continue
+      rows.push({
+        source: price.source ?? offer.source,
+        source_id: price.source_id ?? offer.source_id,
+        source_url: price.source_url ?? offer.url,
+        currency: price.currency ?? offer.currency,
+        conditions: price.conditions,
+        unit_prices: price.unit_prices ?? price.prices,
+        prices: price.prices ?? price.unit_prices,
+      })
+    }
+  }
+  return rows
 }
 
 function litellmSupplementalPricingCards(node: OpenRouterRawNode): string {
@@ -687,8 +712,7 @@ function registryPriceCondition(price: Record<string, unknown>): string {
 
 function matchingTierCount(node: OpenRouterRawNode, source: string, currency: string, condition: string): number {
   if (!condition) return 0
-  const registry = registryModel(node)
-  const prices = Array.isArray(registry.prices) ? registry.prices.filter((candidate): candidate is Record<string, unknown> => isRecord(candidate)) : []
+  const prices = registryPriceRows(node)
   const sameGroup = prices.filter((price) => (source ? price.source === source : true) && (currency ? price.currency === currency : true))
   const seen = new Set<string>()
   for (const price of sameGroup) {
@@ -701,8 +725,7 @@ function matchingTierCount(node: OpenRouterRawNode, source: string, currency: st
 }
 
 function preferredRegistryListPrices(node: OpenRouterRawNode): Record<string, unknown>[] {
-  const registry = registryModel(node)
-  const prices = Array.isArray(registry.prices) ? pricesWithListEntries(registry.prices) : []
+  const prices = pricesWithListEntries(registryPriceRows(node))
   const rank = (price: Record<string, unknown>): number => {
     if (price.currency === 'CNY' && price.source === 'bailian_model_market') return 0
     if (price.currency === 'CNY' && price.source === 'volcengine_ark') return 1
@@ -761,8 +784,7 @@ function registryModelPriceCell(node: OpenRouterRawNode, key: string): string {
 }
 
 function preferredRegistryTokenPrice(node: OpenRouterRawNode, registryKey: string): Record<string, unknown> | undefined {
-  const registry = registryModel(node)
-  const prices = Array.isArray(registry.prices) ? registry.prices.filter((price): price is Record<string, unknown> => isRecord(price)) : []
+  const prices = registryPriceRows(node)
   const tokenPrices = prices.filter((price): price is Record<string, unknown> => {
     const unitPrices = isRecord(price.unit_prices) ? price.unit_prices : isRecord(price.prices) ? price.prices : undefined
     const value = unitPrices && isRecord(unitPrices[registryKey]) ? unitPrices[registryKey] : undefined

@@ -344,7 +344,7 @@ function latestAliasTargets(rows) {
     const modelId = stripProviderNamespace(row.id, author)
     const entry = { row, author, modelId, release: releaseTimestampSeconds(row) ?? 0 }
     if (isLatestRow(row)) latest.push(entry)
-    else explicit.push({ ...entry, seriesKeys: explicitSeriesKeys(modelId) })
+    else if (!String(row.id).startsWith('~')) explicit.push({ ...entry, seriesKeys: explicitSeriesKeys(modelId) })
   }
   const targets = new Map()
   for (const alias of latest) {
@@ -371,7 +371,7 @@ function preservePreviousOfferOrder(offers, previous) {
     if (isSupplementalOnlyOffer(oldOffer)) ordered.push(oldOffer)
   }
   const additions = [...byKey.values()].sort((a, b) => stableOfferKey(a).localeCompare(stableOfferKey(b)))
-  return [...ordered, ...additions]
+  return removeRouterProductOffers({ offers: [...ordered, ...additions] }).offers
 }
 
 function isOpenRouterSource(source) {
@@ -478,6 +478,7 @@ for (const row of rows) {
   if (!row?.id) continue
   const author = inferAuthor(row)
   const sourceModelId = stripProviderNamespace(row.id, author)
+  if (isLatestRow(row) && !latestTargets.has(row.id)) continue
   const latestTarget = latestTargets.get(row.id)
   const modelId = latestTarget?.modelId ?? sourceModelId
   const displayName = latestTarget ? modelDisplayName(latestTarget.row, author, modelId) : modelDisplayName(row, author, modelId)
@@ -584,7 +585,12 @@ for (const row of rows) {
   }
 }
 
-const models = [...modelMap.values()].sort((a, b) => a.id.localeCompare(b.id))
+const ROUTER_PRODUCT_IDS = new Set(['auto', 'bodybuilder', 'free', 'owl-alpha', 'pareto-code', 'router'])
+function removeRouterProductOffers(provider) {
+  provider.offers = (provider.offers ?? []).filter((offer) => !ROUTER_PRODUCT_IDS.has(offer?.model_id))
+  return provider
+}
+const models = [...modelMap.values()].filter((model) => !ROUTER_PRODUCT_IDS.has(model.id)).sort((a, b) => a.id.localeCompare(b.id))
 for (const model of models) {
   for (const key of ['context_length', 'max_output_tokens', 'knowledge_cutoff', 'released', 'deprecation']) {
     if (model[key] === undefined) delete model[key]
@@ -602,7 +608,7 @@ writeJson(join(OUT_DIR, 'models.json'), {
 
 for (const provider of [...providerMap.values()].sort((a, b) => a.id.localeCompare(b.id))) {
   const previous = previousProvider(provider.id)
-  const mergedProvider = mergeSupplementalProviderFields(provider, previous)
+  const mergedProvider = removeRouterProductOffers(mergeSupplementalProviderFields(provider, previous))
   mergedProvider.offers = preservePreviousOfferOrder(uniqueBy(mergedProvider.offers, stableOfferKey), previous)
   for (const key of ['icon', 'domain', 'base_url']) {
     if (mergedProvider[key] === undefined) delete mergedProvider[key]

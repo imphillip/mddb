@@ -7,8 +7,11 @@ type JsonRecord = Record<string, unknown>
 type RegistryModel = {
   id: string
   model?: string
+  name?: string
   alias?: string[]
+  aliases?: string[]
   author?: string
+  author_id?: string
   input_modalities?: string[]
   output_modalities?: string[]
   reasoning?: boolean
@@ -17,6 +20,7 @@ type RegistryModel = {
   max_output_tokens?: number | null
   release_timestamp?: number | string | null
   prices?: RegistryPrice[]
+  offers?: RegistryOffer[]
   other_parameters?: JsonRecord
   last_updated?: string
   sources?: JsonRecord[]
@@ -30,6 +34,7 @@ type RegistryPrice = {
   source?: string
   source_id?: string
   source_url?: string
+  endpoint?: JsonRecord
   observed_at?: string
   raw_pricing?: JsonRecord
 }
@@ -226,8 +231,66 @@ function registryModelToRawModel(model: RegistryModel): JsonRecord {
     },
     supported_parameters: model.other_parameters?.supported_parameters,
     pricing: rawPricingFromModelPrices(model.prices ?? []),
-    mddb_registry: model,
+    offers: registryOffersForModel(model),
+    mddb_model: registryModelFacts(model),
   }
+}
+
+function registryModelFacts(model: RegistryModel): JsonRecord {
+  const out: JsonRecord = {}
+  const passthroughKeys = [
+    'id', 'model', 'name', 'alias', 'aliases', 'author', 'author_id', 'input_modalities', 'output_modalities',
+    'reasoning', 'tool_calling', 'context_length', 'max_output_tokens', 'release_timestamp', 'other_parameters',
+    'last_updated', 'sources',
+  ] as const
+  for (const key of passthroughKeys) {
+    const value = model[key]
+    if (value !== undefined) out[key] = value
+  }
+  return out
+}
+
+function registryOffersForModel(model: RegistryModel): JsonRecord[] {
+  if (Array.isArray(model.offers) && model.offers.length > 0) return model.offers as unknown as JsonRecord[]
+  const groups = new Map<string, JsonRecord>()
+  for (const price of model.prices ?? []) {
+    const endpoint = isRecord(price.endpoint) ? price.endpoint : {}
+    const providerId = String(endpoint.provider_id ?? price.source ?? 'unknown')
+    const source = String(price.source ?? 'unknown')
+    const sourceId = String(price.source_id ?? endpoint.api_model_id ?? primarySourceId(model))
+    const key = JSON.stringify([source, providerId, sourceId, price.source_url ?? endpoint.docs_url ?? ''])
+    let offer = groups.get(key)
+    if (!offer) {
+      offer = {
+        source,
+        source_id: sourceId,
+        url: price.source_url ?? endpoint.docs_url,
+        observed_at: price.observed_at,
+        provider_id: providerId,
+        provider_name: endpoint.provider_name,
+        api_model_id: endpoint.api_model_id ?? sourceId,
+        base_url: endpoint.base_url,
+        currency: price.currency,
+        prices: [],
+      }
+      groups.set(key, offer)
+    }
+    const prices = Array.isArray(offer.prices) ? offer.prices as JsonRecord[] : []
+    prices.push(registryOfferPrice(price))
+    offer.prices = prices
+  }
+  return Array.from(groups.values())
+}
+
+function registryOfferPrice(price: RegistryPrice): JsonRecord {
+  const out: JsonRecord = {}
+  const values = price.unit_prices ?? price.prices
+  if (values) out.prices = values
+  if (price.currency) out.currency = price.currency
+  if (price.conditions) out.conditions = price.conditions
+  if (price.raw_pricing) out.raw_pricing = price.raw_pricing
+  if (price.observed_at) out.observed_at = price.observed_at
+  return out
 }
 
 function rawPricingFromModelPrices(prices: RegistryPrice[]): JsonRecord {
