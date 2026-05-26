@@ -1,8 +1,10 @@
 import { describe, expect, it } from 'vitest'
 import {
+  bailianApiEnvelopeData,
   buildBailianCatalog,
   extractVolcengineDocFromHtml,
   mergeBailianPayload,
+  normalizeBailianModelDetail,
   selectChangedBailianSlugs,
   volcengineContentToMarkdown,
 } from './lib/incremental-source-fetch.mjs'
@@ -51,6 +53,30 @@ describe('incremental China provider fetch helpers', () => {
       expect.objectContaining({ model_id: 'qwen-new', pricing: [{ price: 2 }], list_observed: true }),
       expect.objectContaining({ model_id: 'qwen-old', pricing: [{ price: 9 }], list_observed: false }),
     ]))
+  })
+
+  it('unwraps Bailian direct HTTP gateway envelopes and normalizes details', () => {
+    const inner = {
+      model: 'qwen-plus',
+      modelId: 'qwen-plus',
+      name: 'Qwen Plus',
+      provider: 'qwen',
+      prices: [{ type: 'INFERENCE_INPUT', priceName: '输入', price: '0.8', priceUnit: '元/每百万tokens' }],
+      multiPrices: [{ rangeName: 'default', rangeStart: 0, rangeEnd: 1000, prices: [{ type: 'INFERENCE_OUTPUT', price: 2 }] }],
+      builtInToolMultiPrices: [{ type: 'web_search', name: 'web_search', supportedApi: 'Responses API', prices: [{ type: 'CALL', price: 4 }] }],
+      modelInfo: { contextWindow: 131072, maxInputTokens: 129024, maxOutputTokens: 8192 },
+    }
+    const data = bailianApiEnvelopeData({ code: '200', data: { DataV2: { data: { code: '200', data: inner } } } })
+    const detail = normalizeBailianModelDetail(data, { model: 'qwen-plus', serviceSite: 'asia-pacific-china' })
+
+    expect(detail).toMatchObject({
+      model_id: 'qwen-plus',
+      pricing_currency: 'CNY',
+      pricing: [expect.objectContaining({ price: 0.8, unit: '元/每百万tokens' })],
+      tiered_pricing: [expect.objectContaining({ range_start_tokens: 0, range_end_tokens: 1000 })],
+      tool_pricing: [expect.objectContaining({ name: 'web_search' })],
+      limits: expect.objectContaining({ context_window: 131072 }),
+    })
   })
 
   it('extracts Volcengine SSR doc content and converts rich ops to markdown text', () => {

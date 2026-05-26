@@ -101,6 +101,100 @@ export function mergeBailianPayload(previousPayload, { catalog, details, fetched
   }
 }
 
+export function bailianApiEnvelopeData(json, api = 'Bailian API') {
+  if (json?.code && json.code !== '200') throw new Error(`${api} returned ${json.code}: ${json.message || ''}`.trim())
+  const dataV2 = json?.data?.DataV2
+  if (!dataV2) throw new Error(`${api} response missing data.DataV2`)
+  const inner = dataV2.data
+  if (inner?.code && inner.code !== '200') throw new Error(`${api} returned ${inner.code}: ${inner.message || inner.codeEnum || ''}`.trim())
+  return inner?.data ?? inner
+}
+
+export function normalizeBailianModelDetail(item, { model, serviceSite } = {}) {
+  if (!item || typeof item !== 'object') throw new Error(`Bailian API returned no model item for ${model || 'unknown model'}`)
+  const flatPricing = Array.isArray(item.prices) ? item.prices.map(normalizeBailianPrice) : []
+  const tieredPricing = Array.isArray(item.multiPrices) ? item.multiPrices.map(normalizeBailianTier) : []
+  const toolPricing = Array.isArray(item.builtInToolMultiPrices) ? item.builtInToolMultiPrices.map((tool) => ({
+    type: tool.type || null,
+    name: tool.name || null,
+    supported_api: tool.supportedApi || null,
+    doc_url: tool.docUrl || null,
+    prices: Array.isArray(tool.prices) ? tool.prices.map(normalizeBailianPrice) : [],
+    raw: tool,
+  })) : []
+  return {
+    model_code: item.model || model,
+    model_id: item.modelId || item.model || model,
+    name: item.name || null,
+    provider: item.provider || item.providerId || null,
+    description: item.description || item.shortDescription || null,
+    equivalent_snapshot: item.equivalentSnapshot || null,
+    open_source: Boolean(item.openSource),
+    collection_tag: item.collectionTag || null,
+    version_tag: item.versionTag || null,
+    capabilities: item.capabilities || item.typeIds || [],
+    features: item.features || [],
+    pricing: flatPricing.length ? flatPricing : null,
+    pricing_currency: 'CNY',
+    tiered_pricing: tieredPricing.length ? tieredPricing : null,
+    tool_pricing: toolPricing,
+    limits: {
+      context_window: asNumber(item.contextWindow ?? item.modelInfo?.contextWindow),
+      max_input_tokens: asNumber(item.maxInputTokens ?? item.modelInfo?.maxInputTokens),
+      max_output_tokens: asNumber(item.maxOutputTokens ?? item.modelInfo?.maxOutputTokens),
+      max_reasoning_tokens: asNumber(item.modelInfo?.maxReasoningTokens),
+      reasoning_max_input_tokens: asNumber(item.maxInputTokensThinking ?? item.modelInfo?.reasoningMaxInputTokens),
+      reasoning_max_output_tokens: asNumber(item.maxOutputTokensThinking ?? item.modelInfo?.reasoningMaxOutputTokens),
+    },
+    qpm_info: item.qpmInfo || null,
+    api_base_url: parseBailianBaseUrl(item) || null,
+    doc_url: item.docUrl || null,
+    service_sites: item.serviceSites || (serviceSite ? [serviceSite] : []),
+    latest_online_at: item.latestOnlineAt || item.onlineTime || null,
+    list_observed: true,
+    raw: item,
+  }
+}
+
+function normalizeBailianPrice(price) {
+  return {
+    type: price.type || null,
+    label: price.priceName || null,
+    price: asNumber(price.price),
+    currency: price.currency || 'CNY',
+    unit: price.priceUnit || null,
+    discount: asNumber(price.discount),
+    raw: price,
+  }
+}
+
+function normalizeBailianTier(tier) {
+  return {
+    range_name: tier.rangeName || null,
+    range_start_tokens: asNumber(tier.rangeStart),
+    range_end_tokens: asNumber(tier.rangeEnd),
+    prices: Array.isArray(tier.prices) ? tier.prices.map(normalizeBailianPrice) : [],
+    raw: tier,
+  }
+}
+
+function parseBailianBaseUrl(item) {
+  const code = item?.sampleCodeV2?.openai?.completionsAPI?.python?.code
+    || item?.sampleCodeV2?.openai?.completionsAPI?.curl?.code
+    || item?.sampleCode?.openai?.python
+    || item?.sampleCode?.openai?.curl
+    || ''
+  return String(code).match(/base_?url\s*=\s*["']([^"']+)/iu)?.[1]
+    || String(code).match(/https:\/\/[^\s"']+/u)?.[0]
+    || ''
+}
+
+function asNumber(value) {
+  if (value === null || value === undefined || value === '') return null
+  const n = Number(value)
+  return Number.isFinite(n) ? n : null
+}
+
 export function extractVolcengineDocFromHtml(html, fallback = {}) {
   const data = extractWindowJson(html, '_ROUTER_DATA') || extractWindowJson(html, '_SSR_DATA')
   if (!data) throw new Error('Could not find Volcengine document JSON state in HTML')

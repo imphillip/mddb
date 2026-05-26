@@ -9709,7 +9709,7 @@
           "remote_icon": "https://models.dev/logos/deepseek.svg"
         }
       },
-      "last_updated": "2026-05-24T19:26:40Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "openrouter",
@@ -9766,31 +9766,9 @@
             }
           },
           "conditions": {
+            "discount": null,
             "label": "输入",
             "bailian_type": "input_token"
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "deepseek-v3.1",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/deepseek-v3.1?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "deepseek-v3.1",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/deepseek-v3.1?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 0.8,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "输入（缓存命中）",
-            "bailian_type": "input_token_cache"
           },
           "endpoint": {
             "provider_id": "alibaba-bailian-cn",
@@ -9812,8 +9790,33 @@
             }
           },
           "conditions": {
+            "discount": null,
             "label": "输出",
             "bailian_type": "output_token"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "deepseek-v3.1",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/deepseek-v3.1?serviceSite=asia-pacific-china"
+          }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "deepseek-v3.1",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/deepseek-v3.1?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.8,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "discount": null,
+            "label": "输入（缓存命中）",
+            "bailian_type": "input_token_cache"
           },
           "endpoint": {
             "provider_id": "alibaba-bailian-cn",
@@ -10210,7 +10213,7 @@
           "Text"
         ]
       },
-      "last_updated": "2026-05-24T19:42:03Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "bailian_model_market",
@@ -10255,7 +10258,7 @@
           "Text"
         ]
       },
-      "last_updated": "2026-05-24T19:42:03Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "bailian_model_market",
@@ -10264,7 +10267,56 @@
           "observed_at": "2026-05-24T19:42:03Z"
         }
       ],
-      "prices": []
+      "prices": [
+        {
+          "source": "bailian_model_market",
+          "source_id": "deepseek-r1-distill-qwen-14b",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/deepseek-r1-distill-qwen-14b?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "discount": null,
+            "label": "输入",
+            "bailian_type": "input_token"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "deepseek-r1-distill-qwen-14b",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/deepseek-r1-distill-qwen-14b?serviceSite=asia-pacific-china"
+          }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "deepseek-r1-distill-qwen-14b",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/deepseek-r1-distill-qwen-14b?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "output": {
+              "amount": 3,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "discount": null,
+            "label": "输出",
+            "bailian_type": "output_token"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "deepseek-r1-distill-qwen-14b",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/deepseek-r1-distill-qwen-14b?serviceSite=asia-pacific-china"
+          }
+        }
+      ]
     },
     {
       "id": "deepseek-r1-distill-qwen-32b",
@@ -10312,7 +10364,7 @@
           "remote_icon": "https://models.dev/logos/deepseek.svg"
         }
       },
-      "last_updated": "2026-05-24T19:42:03Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "openrouter",
@@ -10356,6 +10408,54 @@
             "base_url": "https://openrouter.ai/api/v1",
             "docs_url": "https://openrouter.ai/deepseek/deepseek-r1-distill-qwen-32b"
           }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "deepseek-r1-distill-qwen-32b",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/deepseek-r1-distill-qwen-32b?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "discount": null,
+            "label": "输入",
+            "bailian_type": "input_token"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "deepseek-r1-distill-qwen-32b",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/deepseek-r1-distill-qwen-32b?serviceSite=asia-pacific-china"
+          }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "deepseek-r1-distill-qwen-32b",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/deepseek-r1-distill-qwen-32b?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "output": {
+              "amount": 6,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "discount": null,
+            "label": "输出",
+            "bailian_type": "output_token"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "deepseek-r1-distill-qwen-32b",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/deepseek-r1-distill-qwen-32b?serviceSite=asia-pacific-china"
+          }
         }
       ],
       "icon": "/assets/provider-icons/deepseek.svg"
@@ -10394,7 +10494,7 @@
           "Text"
         ]
       },
-      "last_updated": "2026-05-24T19:42:03Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "bailian_model_market",
@@ -10403,7 +10503,56 @@
           "observed_at": "2026-05-24T19:42:03Z"
         }
       ],
-      "prices": []
+      "prices": [
+        {
+          "source": "bailian_model_market",
+          "source_id": "deepseek-r1-distill-qwen-7b",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/deepseek-r1-distill-qwen-7b?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.5,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "discount": null,
+            "label": "输入",
+            "bailian_type": "input_token"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "deepseek-r1-distill-qwen-7b",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/deepseek-r1-distill-qwen-7b?serviceSite=asia-pacific-china"
+          }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "deepseek-r1-distill-qwen-7b",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/deepseek-r1-distill-qwen-7b?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "output": {
+              "amount": 1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "discount": null,
+            "label": "输出",
+            "bailian_type": "output_token"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "deepseek-r1-distill-qwen-7b",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/deepseek-r1-distill-qwen-7b?serviceSite=asia-pacific-china"
+          }
+        }
+      ]
     },
     {
       "id": "deepseek-v3.1-terminus",
@@ -10565,7 +10714,7 @@
           "remote_icon": "https://models.dev/logos/deepseek.svg"
         }
       },
-      "last_updated": "2026-05-19T12:12:53Z",
+      "last_updated": "2026-05-24T21:05:37Z",
       "sources": [
         {
           "source": "openrouter",
@@ -10792,7 +10941,7 @@
           "remote_icon": "https://models.dev/logos/deepseek.svg"
         }
       },
-      "last_updated": "2026-05-24T18:19:06Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "openrouter",
@@ -10849,6 +10998,7 @@
             }
           },
           "conditions": {
+            "discount": null,
             "label": "输入",
             "bailian_type": "input_token"
           },
@@ -10872,6 +11022,7 @@
             }
           },
           "conditions": {
+            "discount": null,
             "label": "输出",
             "bailian_type": "output_token"
           },
@@ -11070,7 +11221,7 @@
           "remote_icon": "https://models.dev/logos/deepseek.svg"
         }
       },
-      "last_updated": "2026-05-24T17:57:28Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "openrouter",
@@ -11127,6 +11278,7 @@
             }
           },
           "conditions": {
+            "discount": null,
             "label": "输入",
             "bailian_type": "input_token"
           },
@@ -11150,6 +11302,7 @@
             }
           },
           "conditions": {
+            "discount": null,
             "label": "输出",
             "bailian_type": "output_token"
           },
@@ -11173,6 +11326,7 @@
             }
           },
           "conditions": {
+            "discount": null,
             "label": "输入（缓存命中）",
             "bailian_type": "input_token_cache"
           },
@@ -11240,7 +11394,7 @@
           "remote_icon": "https://models.dev/logos/deepseek.svg"
         }
       },
-      "last_updated": "2026-05-24T17:57:28Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "openrouter",
@@ -11297,6 +11451,7 @@
             }
           },
           "conditions": {
+            "discount": null,
             "label": "输入",
             "bailian_type": "input_token"
           },
@@ -11320,6 +11475,7 @@
             }
           },
           "conditions": {
+            "discount": null,
             "label": "输出",
             "bailian_type": "output_token"
           },
@@ -11343,6 +11499,7 @@
             }
           },
           "conditions": {
+            "discount": null,
             "label": "输入（缓存命中）",
             "bailian_type": "input_token_cache"
           },
@@ -19000,7 +19157,7 @@
           "Video"
         ]
       },
-      "last_updated": "2026-05-24T17:49:03Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "bailian_model_market",
@@ -19058,7 +19215,9 @@
             "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/happyhorse-1.0-i2v?serviceSite=asia-pacific-china"
           }
         }
-      ]
+      ],
+      "context_length": null,
+      "max_output_tokens": null
     },
     {
       "id": "happyhorse-1.0-r2v",
@@ -19095,7 +19254,7 @@
           "Video"
         ]
       },
-      "last_updated": "2026-05-24T17:49:03Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "bailian_model_market",
@@ -19153,7 +19312,9 @@
             "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/happyhorse-1.0-r2v?serviceSite=asia-pacific-china"
           }
         }
-      ]
+      ],
+      "context_length": null,
+      "max_output_tokens": null
     },
     {
       "id": "happyhorse-1.0-t2v",
@@ -19188,7 +19349,7 @@
           "Video"
         ]
       },
-      "last_updated": "2026-05-24T17:49:03Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "bailian_model_market",
@@ -19246,7 +19407,9 @@
             "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/happyhorse-1.0-t2v?serviceSite=asia-pacific-china"
           }
         }
-      ]
+      ],
+      "context_length": null,
+      "max_output_tokens": null
     },
     {
       "id": "happyhorse-1.0-video-edit",
@@ -19280,7 +19443,7 @@
           "Video"
         ]
       },
-      "last_updated": "2026-05-24T17:49:03Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "bailian_model_market",
@@ -19338,7 +19501,9 @@
             "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/happyhorse-1.0-video-edit?serviceSite=asia-pacific-china"
           }
         }
-      ]
+      ],
+      "context_length": null,
+      "max_output_tokens": null
     },
     {
       "id": "granite-4.0-h-micro",
@@ -20026,6 +20191,158 @@
           }
         }
       ]
+    },
+    {
+      "id": "kling-v3-image-generation",
+      "model": "Kling Image 3.0",
+      "name": "Kling Image 3.0",
+      "alias": [
+        "kling/kling-v3-image-generation"
+      ],
+      "aliases": [
+        "kling/kling-v3-image-generation"
+      ],
+      "author": "kling",
+      "author_id": "kling",
+      "input_modalities": [
+        "image",
+        "text"
+      ],
+      "output_modalities": [
+        "image"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "other_parameters": {
+        "bailian_capabilities": [
+          "IG"
+        ],
+        "bailian_features": [
+          "model-experience"
+        ],
+        "open_source": false,
+        "version_tag": "MAJOR",
+        "model_alias": "",
+        "request_modality": [
+          "Image",
+          "Text"
+        ],
+        "response_modality": [
+          "Image"
+        ]
+      },
+      "last_updated": "2026-05-24T20:13:44Z",
+      "sources": [
+        {
+          "source": "bailian_model_market",
+          "source_id": "kling/kling-v3-image-generation",
+          "url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/kling/kling-v3-image-generation?serviceSite=asia-pacific-china",
+          "observed_at": "2026-05-24T20:13:44Z"
+        }
+      ],
+      "prices": []
+    },
+    {
+      "id": "kling-v3-omni-image-generation",
+      "model": "Kling Image 3.0 Omni",
+      "name": "Kling Image 3.0 Omni",
+      "alias": [
+        "kling/kling-v3-omni-image-generation"
+      ],
+      "aliases": [
+        "kling/kling-v3-omni-image-generation"
+      ],
+      "author": "kling",
+      "author_id": "kling",
+      "input_modalities": [
+        "image",
+        "text"
+      ],
+      "output_modalities": [
+        "image"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "other_parameters": {
+        "bailian_capabilities": [
+          "IG"
+        ],
+        "bailian_features": [
+          "model-experience"
+        ],
+        "open_source": false,
+        "version_tag": "MAJOR",
+        "model_alias": "",
+        "request_modality": [
+          "Image",
+          "Text"
+        ],
+        "response_modality": [
+          "Image"
+        ]
+      },
+      "last_updated": "2026-05-24T20:13:44Z",
+      "sources": [
+        {
+          "source": "bailian_model_market",
+          "source_id": "kling/kling-v3-omni-image-generation",
+          "url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/kling/kling-v3-omni-image-generation?serviceSite=asia-pacific-china",
+          "observed_at": "2026-05-24T20:13:44Z"
+        }
+      ],
+      "prices": []
+    },
+    {
+      "id": "kling-v3-omni-video-generation",
+      "model": "Kling Video 3.0 Omni",
+      "name": "Kling Video 3.0 Omni",
+      "alias": [
+        "kling/kling-v3-omni-video-generation"
+      ],
+      "aliases": [
+        "kling/kling-v3-omni-video-generation"
+      ],
+      "author": "kling",
+      "author_id": "kling",
+      "input_modalities": [
+        "image",
+        "text",
+        "video"
+      ],
+      "output_modalities": [
+        "video"
+      ],
+      "reasoning": false,
+      "tool_calling": false,
+      "other_parameters": {
+        "bailian_capabilities": [
+          "VG"
+        ],
+        "bailian_features": [
+          "model-experience"
+        ],
+        "open_source": false,
+        "version_tag": "MAJOR",
+        "model_alias": "",
+        "request_modality": [
+          "Image",
+          "Text",
+          "Video"
+        ],
+        "response_modality": [
+          "Video"
+        ]
+      },
+      "last_updated": "2026-05-24T20:13:44Z",
+      "sources": [
+        {
+          "source": "bailian_model_market",
+          "source_id": "kling/kling-v3-omni-video-generation",
+          "url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/kling/kling-v3-omni-video-generation?serviceSite=asia-pacific-china",
+          "observed_at": "2026-05-24T20:13:44Z"
+        }
+      ],
+      "prices": []
     },
     {
       "id": "kling-v3-video-generation",
@@ -45824,7 +46141,7 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-24T18:19:06Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "openrouter",
@@ -45866,217 +46183,16 @@
         {
           "source": "bailian_model_market",
           "source_id": "qwen3-max",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 1.25,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 5,
-              "unit": "per_1m_tokens"
-            },
-            "cache_write": {
-              "amount": 3.125,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.25,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "输入<=32k",
-            "type": "input_token",
-            "lte": 32768
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3-max",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3-max",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 2.5,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 10,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "输入<=32k",
-            "type": "input_token",
-            "lte": 32768,
-            "discount": 0.5
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3-max",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3-max",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 2,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 8,
-              "unit": "per_1m_tokens"
-            },
-            "cache_write": {
-              "amount": 5,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.4,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "32k<输入<=128k",
-            "type": "input_token",
-            "gt": 32768,
-            "lte": 131072
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3-max",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3-max",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 4,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 16,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "32k<输入<=128k",
-            "type": "input_token",
-            "gt": 32768,
-            "lte": 131072,
-            "discount": 0.5
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3-max",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3-max",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 3.5,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 14,
-              "unit": "per_1m_tokens"
-            },
-            "cache_write": {
-              "amount": 8.75,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.7,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "128k<输入<=256k",
-            "type": "input_token",
-            "gt": 131072,
-            "lte": 262144
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3-max",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3-max",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 7,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 28,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "128k<输入<=256k",
-            "type": "input_token",
-            "gt": 131072,
-            "lte": 262144,
-            "discount": 0.5
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3-max",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3-max",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/group-qwen3-max?serviceSite=asia-pacific-china",
           "currency": "CNY",
           "unit_prices": {
             "search_strategy": {
               "amount": 4,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "search_strategy:agent",
-            "supported_api": "Completions API",
-            "doc_url": "https://help.aliyun.com/document_detail/2867560.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -46084,24 +46200,22 @@
             "provider_name": "Alibaba Cloud Bailian (China)",
             "api_model_id": "qwen3-max",
             "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china"
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/group-qwen3-max?serviceSite=asia-pacific-china"
           }
         },
         {
           "source": "bailian_model_market",
           "source_id": "qwen3-max",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/group-qwen3-max?serviceSite=asia-pacific-china",
           "currency": "CNY",
           "unit_prices": {
             "search_strategy": {
               "amount": 4,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "search_strategy:agent_max",
-            "supported_api": "Completions API",
-            "doc_url": "https://help.aliyun.com/document_detail/2867560.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -46109,24 +46223,22 @@
             "provider_name": "Alibaba Cloud Bailian (China)",
             "api_model_id": "qwen3-max",
             "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china"
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/group-qwen3-max?serviceSite=asia-pacific-china"
           }
         },
         {
           "source": "bailian_model_market",
           "source_id": "qwen3-max",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/group-qwen3-max?serviceSite=asia-pacific-china",
           "currency": "CNY",
           "unit_prices": {
             "web_search": {
               "amount": 4,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "web_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2867560.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -46134,13 +46246,13 @@
             "provider_name": "Alibaba Cloud Bailian (China)",
             "api_model_id": "qwen3-max",
             "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china"
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/group-qwen3-max?serviceSite=asia-pacific-china"
           }
         },
         {
           "source": "bailian_model_market",
           "source_id": "qwen3-max",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/group-qwen3-max?serviceSite=asia-pacific-china",
           "currency": "CNY",
           "unit_prices": {
             "code_interpreter": {
@@ -46150,8 +46262,6 @@
           },
           "conditions": {
             "label": "code_interpreter",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2990719.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -46159,13 +46269,13 @@
             "provider_name": "Alibaba Cloud Bailian (China)",
             "api_model_id": "qwen3-max",
             "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china"
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/group-qwen3-max?serviceSite=asia-pacific-china"
           }
         },
         {
           "source": "bailian_model_market",
           "source_id": "qwen3-max",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/group-qwen3-max?serviceSite=asia-pacific-china",
           "currency": "CNY",
           "unit_prices": {
             "web_extractor": {
@@ -46175,8 +46285,6 @@
           },
           "conditions": {
             "label": "web_extractor",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3016816.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -46184,7 +46292,7 @@
             "provider_name": "Alibaba Cloud Bailian (China)",
             "api_model_id": "qwen3-max",
             "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3-max?serviceSite=asia-pacific-china"
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/group-qwen3-max?serviceSite=asia-pacific-china"
           }
         }
       ]
@@ -50455,7 +50563,7 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-24T17:57:28Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "openrouter",
@@ -50500,72 +50608,13 @@
           "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-122b-a10b?serviceSite=asia-pacific-china",
           "currency": "CNY",
           "unit_prices": {
-            "input": {
-              "amount": 0.8,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 6.4,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "输入<=128k",
-            "type": "input_token",
-            "lte": 131072
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-122b-a10b",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-122b-a10b?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-122b-a10b",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-122b-a10b?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 2,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 16,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "128k<输入<=256k",
-            "type": "input_token",
-            "gt": 131072,
-            "lte": 262144
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-122b-a10b",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-122b-a10b?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-122b-a10b",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-122b-a10b?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
             "web_search": {
               "amount": 4,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "web_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2867560.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -50589,8 +50638,6 @@
           },
           "conditions": {
             "label": "web_extractor",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3016816.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -50614,8 +50661,6 @@
           },
           "conditions": {
             "label": "code_interpreter",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2990719.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -50634,13 +50679,11 @@
           "unit_prices": {
             "t2i_search": {
               "amount": 24,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "t2i_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3022091.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -50659,13 +50702,11 @@
           "unit_prices": {
             "i2i_search": {
               "amount": 48,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "i2i_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3022096.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -50730,7 +50771,7 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-24T17:49:03Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "openrouter",
@@ -50775,72 +50816,13 @@
           "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-27b?serviceSite=asia-pacific-china",
           "currency": "CNY",
           "unit_prices": {
-            "input": {
-              "amount": 0.6,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 4.8,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "输入<=128k",
-            "type": "input_token",
-            "lte": 131072
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-27b",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-27b?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-27b",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-27b?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 1.8,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 14.4,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "128k<输入<=256k",
-            "type": "input_token",
-            "gt": 131072,
-            "lte": 262144
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-27b",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-27b?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-27b",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-27b?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
             "web_search": {
               "amount": 4,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "web_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2867560.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -50864,8 +50846,6 @@
           },
           "conditions": {
             "label": "web_extractor",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3016816.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -50889,8 +50869,6 @@
           },
           "conditions": {
             "label": "code_interpreter",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2990719.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -50909,13 +50887,11 @@
           "unit_prices": {
             "t2i_search": {
               "amount": 24,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "t2i_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3022091.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -50934,13 +50910,11 @@
           "unit_prices": {
             "i2i_search": {
               "amount": 48,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "i2i_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3022096.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -51004,7 +50978,7 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-24T17:49:03Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "openrouter",
@@ -51049,72 +51023,13 @@
           "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-35b-a3b?serviceSite=asia-pacific-china",
           "currency": "CNY",
           "unit_prices": {
-            "input": {
-              "amount": 0.4,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 3.2,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "输入<=128k",
-            "type": "input_token",
-            "lte": 131072
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-35b-a3b",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-35b-a3b?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-35b-a3b",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-35b-a3b?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 1.6,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 12.8,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "128k<输入<=256k",
-            "type": "input_token",
-            "gt": 131072,
-            "lte": 262144
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-35b-a3b",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-35b-a3b?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-35b-a3b",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-35b-a3b?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
             "web_search": {
               "amount": 4,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "web_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2867560.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -51138,8 +51053,6 @@
           },
           "conditions": {
             "label": "web_extractor",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3016816.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -51163,8 +51076,6 @@
           },
           "conditions": {
             "label": "code_interpreter",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2990719.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -51183,13 +51094,11 @@
           "unit_prices": {
             "t2i_search": {
               "amount": 24,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "t2i_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3022091.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -51208,13 +51117,11 @@
           "unit_prices": {
             "i2i_search": {
               "amount": 48,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "i2i_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3022096.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -51280,7 +51187,7 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-24T17:57:28Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "openrouter",
@@ -51325,72 +51232,13 @@
           "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-397b-a17b?serviceSite=asia-pacific-china",
           "currency": "CNY",
           "unit_prices": {
-            "input": {
-              "amount": 1.2,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 7.2,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "输入<=128k",
-            "type": "input_token",
-            "lte": 131072
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-397b-a17b",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-397b-a17b?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-397b-a17b",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-397b-a17b?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 3,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 18,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "128k<输入<=256k",
-            "type": "input_token",
-            "gt": 131072,
-            "lte": 262144
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-397b-a17b",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-397b-a17b?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-397b-a17b",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-397b-a17b?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
             "web_search": {
               "amount": 4,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "web_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2867560.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -51414,8 +51262,6 @@
           },
           "conditions": {
             "label": "web_extractor",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3016816.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -51439,8 +51285,6 @@
           },
           "conditions": {
             "label": "code_interpreter",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2990719.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -51459,13 +51303,11 @@
           "unit_prices": {
             "t2i_search": {
               "amount": 24,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "t2i_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3022091.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -51484,13 +51326,11 @@
           "unit_prices": {
             "i2i_search": {
               "amount": 48,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "i2i_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3022096.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -51636,7 +51476,7 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-24T17:49:03Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "openrouter",
@@ -51681,214 +51521,13 @@
           "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-flash?serviceSite=asia-pacific-china",
           "currency": "CNY",
           "unit_prices": {
-            "input": {
-              "amount": 0.1,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 1,
-              "unit": "per_1m_tokens"
-            },
-            "cache_write": {
-              "amount": 0.25,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.02,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "输入<=128k",
-            "type": "input_token",
-            "lte": 131072
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-flash",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-flash?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-flash",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-flash?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 0.2,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 2,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "输入<=128k",
-            "type": "input_token",
-            "lte": 131072,
-            "discount": 0.5
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-flash",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-flash?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-flash",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-flash?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 0.4,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 4,
-              "unit": "per_1m_tokens"
-            },
-            "cache_write": {
-              "amount": 1,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.08,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "128k<输入<=256k",
-            "type": "input_token",
-            "gt": 131072,
-            "lte": 262144
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-flash",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-flash?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-flash",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-flash?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 0.8,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 8,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "128k<输入<=256k",
-            "type": "input_token",
-            "gt": 131072,
-            "lte": 262144,
-            "discount": 0.5
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-flash",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-flash?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-flash",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-flash?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 0.6,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 6,
-              "unit": "per_1m_tokens"
-            },
-            "cache_write": {
-              "amount": 1.5,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.12,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "256k<输入<=1m",
-            "type": "input_token",
-            "gt": 262144,
-            "lte": 1000000
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-flash",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-flash?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-flash",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-flash?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 1.2,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 12,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "256k<输入<=1m",
-            "type": "input_token",
-            "gt": 262144,
-            "lte": 1000000,
-            "discount": 0.5
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-flash",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-flash?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-flash",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-flash?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
             "web_search": {
               "amount": 4,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "web_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2867560.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -51912,8 +51551,6 @@
           },
           "conditions": {
             "label": "web_extractor",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3016816.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -51937,8 +51574,6 @@
           },
           "conditions": {
             "label": "code_interpreter",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2990719.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -51957,13 +51592,11 @@
           "unit_prices": {
             "t2i_search": {
               "amount": 24,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "t2i_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3022091.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -51982,13 +51615,11 @@
           "unit_prices": {
             "i2i_search": {
               "amount": 48,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "i2i_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3022096.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -52774,7 +52405,7 @@
           "Text"
         ]
       },
-      "last_updated": "2026-05-24T17:49:03Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "bailian_model_market",
@@ -52790,214 +52421,13 @@
           "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china",
           "currency": "CNY",
           "unit_prices": {
-            "input": {
-              "amount": 0.4,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 2.4,
-              "unit": "per_1m_tokens"
-            },
-            "cache_write": {
-              "amount": 1,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.08,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "输入<=128k",
-            "type": "input_token",
-            "lte": 131072
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-plus",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-plus",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 0.8,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 4.8,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "输入<=128k",
-            "type": "input_token",
-            "lte": 131072,
-            "discount": 0.5
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-plus",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-plus",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 1,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 6,
-              "unit": "per_1m_tokens"
-            },
-            "cache_write": {
-              "amount": 2.5,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.2,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "128k<输入<=256k",
-            "type": "input_token",
-            "gt": 131072,
-            "lte": 262144
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-plus",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-plus",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 2,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 12,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "128k<输入<=256k",
-            "type": "input_token",
-            "gt": 131072,
-            "lte": 262144,
-            "discount": 0.5
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-plus",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-plus",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 2,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 12,
-              "unit": "per_1m_tokens"
-            },
-            "cache_write": {
-              "amount": 5,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.4,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "256k<输入<=1m",
-            "type": "input_token",
-            "gt": 262144,
-            "lte": 1000000
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-plus",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-plus",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 4,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 24,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "256k<输入<=1m",
-            "type": "input_token",
-            "gt": 262144,
-            "lte": 1000000,
-            "discount": 0.5
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.5-plus",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.5-plus",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
             "web_search": {
               "amount": 4,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "web_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2867560.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -53021,8 +52451,6 @@
           },
           "conditions": {
             "label": "web_extractor",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3016816.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -53046,8 +52474,6 @@
           },
           "conditions": {
             "label": "code_interpreter",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2990719.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -53066,13 +52492,11 @@
           "unit_prices": {
             "t2i_search": {
               "amount": 24,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "t2i_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3022091.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -53091,13 +52515,11 @@
           "unit_prices": {
             "i2i_search": {
               "amount": 48,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "i2i_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3022096.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -53780,7 +53202,7 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-24T21:05:37Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "openrouter",
@@ -53828,15 +53250,36 @@
             "input": {
               "amount": 3,
               "unit": "per_1m_tokens"
-            },
+            }
+          },
+          "conditions": {
+            "discount": null,
+            "label": "输入",
+            "bailian_type": "input_token"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "qwen3.6-27b",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-27b?serviceSite=asia-pacific-china"
+          }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "qwen3.6-27b",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-27b?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
             "output": {
               "amount": 18,
               "unit": "per_1m_tokens"
             }
           },
           "conditions": {
-            "label": "输入<=256k",
-            "type": "input_token"
+            "discount": null,
+            "label": "输出",
+            "bailian_type": "output_token"
           },
           "endpoint": {
             "provider_id": "alibaba-bailian-cn",
@@ -53900,7 +53343,7 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-24T17:49:03Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "openrouter",
@@ -53951,6 +53394,7 @@
             }
           },
           "conditions": {
+            "discount": null,
             "label": "输入",
             "bailian_type": "input_token"
           },
@@ -53974,6 +53418,7 @@
             }
           },
           "conditions": {
+            "discount": null,
             "label": "输出",
             "bailian_type": "output_token"
           },
@@ -53998,8 +53443,6 @@
           },
           "conditions": {
             "label": "web_extractor",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3016816.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -54018,13 +53461,11 @@
           "unit_prices": {
             "web_search": {
               "amount": 4,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "web_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2867560.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -54048,8 +53489,6 @@
           },
           "conditions": {
             "label": "code_interpreter",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2990719.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -54068,13 +53507,11 @@
           "unit_prices": {
             "i2i_search": {
               "amount": 48,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "i2i_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3022096.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -54093,13 +53530,11 @@
           "unit_prices": {
             "t2i_search": {
               "amount": 24,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "t2i_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3022091.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -54154,7 +53589,7 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-24T17:49:03Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "openrouter",
@@ -54199,88 +53634,13 @@
           "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-flash?serviceSite=asia-pacific-china",
           "currency": "CNY",
           "unit_prices": {
-            "input": {
-              "amount": 1.2,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 7.2,
-              "unit": "per_1m_tokens"
-            },
-            "cache_write": {
-              "amount": 1.5,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.12,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "输入<=256k",
-            "type": "input_token",
-            "lte": 262144
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.6-flash",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-flash?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.6-flash",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-flash?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 4.8,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 28.8,
-              "unit": "per_1m_tokens"
-            },
-            "cache_write": {
-              "amount": 6,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.48,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "256k<输入<=1m",
-            "type": "input_token",
-            "gt": 262144,
-            "lte": 1000000
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.6-flash",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-flash?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.6-flash",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-flash?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
             "web_search": {
               "amount": 4,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "web_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2867560.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -54304,8 +53664,6 @@
           },
           "conditions": {
             "label": "code_interpreter",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2990719.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -54329,8 +53687,6 @@
           },
           "conditions": {
             "label": "web_extractor",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3016816.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -54349,13 +53705,11 @@
           "unit_prices": {
             "i2i_search": {
               "amount": 48,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "i2i_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3022096.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -54374,13 +53728,11 @@
           "unit_prices": {
             "t2i_search": {
               "amount": 24,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "t2i_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3022091.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -54677,7 +54029,7 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-24T18:19:06Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "openrouter",
@@ -54714,79 +54066,6 @@
             "api_model_id": "qwen/qwen3.6-max-preview",
             "base_url": "https://openrouter.ai/api/v1",
             "docs_url": "https://openrouter.ai/qwen/qwen3.6-max-preview"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.6-max-preview",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-max-preview?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 9,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 54,
-              "unit": "per_1m_tokens"
-            },
-            "cache_write": {
-              "amount": 11.25,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.9,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "输入<=128k",
-            "type": "input_token",
-            "lte": 131072
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.6-max-preview",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-max-preview?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.6-max-preview",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-max-preview?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 15,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 90,
-              "unit": "per_1m_tokens"
-            },
-            "cache_write": {
-              "amount": 18.75,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 1.5,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "128k<输入<=256k",
-            "type": "input_token",
-            "gt": 131072,
-            "lte": 262144
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.6-max-preview",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-max-preview?serviceSite=asia-pacific-china"
           }
         }
       ]
@@ -54835,7 +54114,7 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-24T17:49:03Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "openrouter",
@@ -54880,147 +54159,13 @@
           "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-plus?serviceSite=asia-pacific-china",
           "currency": "CNY",
           "unit_prices": {
-            "input": {
-              "amount": 1,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 6,
-              "unit": "per_1m_tokens"
-            },
-            "cache_write": {
-              "amount": 2.5,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.2,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "输入<=256k",
-            "type": "input_token",
-            "lte": 262144
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.6-plus",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-plus?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.6-plus",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-plus?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 2,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 12,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "输入<=256k",
-            "type": "input_token",
-            "lte": 262144,
-            "discount": 0.5
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.6-plus",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-plus?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.6-plus",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-plus?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 4,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 24,
-              "unit": "per_1m_tokens"
-            },
-            "cache_write": {
-              "amount": 10,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.8,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "256k<输入<=1m",
-            "type": "input_token",
-            "gt": 262144,
-            "lte": 1000000
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.6-plus",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-plus?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.6-plus",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-plus?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 8,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 48,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "256k<输入<=1m",
-            "type": "input_token",
-            "gt": 262144,
-            "lte": 1000000,
-            "discount": 0.5
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "qwen3.6-plus",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-plus?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "qwen3.6-plus",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-plus?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
             "web_search": {
               "amount": 4,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "web_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2867560.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -55044,8 +54189,6 @@
           },
           "conditions": {
             "label": "code_interpreter",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2990719.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -55069,8 +54212,6 @@
           },
           "conditions": {
             "label": "web_extractor",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3016816.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -55089,13 +54230,11 @@
           "unit_prices": {
             "i2i_search": {
               "amount": 48,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "i2i_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3022096.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -55114,13 +54253,11 @@
           "unit_prices": {
             "t2i_search": {
               "amount": 24,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "t2i_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3022091.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -55290,7 +54427,7 @@
           "top_p"
         ]
       },
-      "last_updated": "2026-05-24T17:49:03Z",
+      "last_updated": "2026-05-26T19:49:45.231Z",
       "sources": [
         {
           "source": "openrouter",
@@ -55384,11 +54521,36 @@
           "currency": "CNY",
           "unit_prices": {
             "input": {
+              "amount": 2.4,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "discount": 0.5,
+            "label": "输入（缓存命中）",
+            "bailian_type": "input_token_cache"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "qwen3.7-max",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.7-max?serviceSite=asia-pacific-china"
+          }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "qwen3.7-max",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.7-max?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
               "amount": 6,
               "unit": "per_1m_tokens"
             }
           },
           "conditions": {
+            "discount": null,
             "label": "输入（Batch File）",
             "bailian_type": "input_token_batch"
           },
@@ -55412,6 +54574,7 @@
             }
           },
           "conditions": {
+            "discount": null,
             "label": "输出（Batch File）",
             "bailian_type": "output_token_batch"
           },
@@ -55483,6 +54646,7 @@
             }
           },
           "conditions": {
+            "discount": 0.5,
             "label": "输入（Batch Chat)",
             "bailian_type": "input_token_batch_chat"
           },
@@ -55506,6 +54670,7 @@
             }
           },
           "conditions": {
+            "discount": 0.5,
             "label": "输出（Batch Chat)",
             "bailian_type": "output_token_batch_chat"
           },
@@ -55530,8 +54695,6 @@
           },
           "conditions": {
             "label": "code_interpreter",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2990719.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -55555,8 +54718,6 @@
           },
           "conditions": {
             "label": "web_extractor",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/3016816.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -55575,13 +54736,11 @@
           "unit_prices": {
             "web_search": {
               "amount": 4,
-              "unit": "per_1k_calls"
+              "unit": "custom"
             }
           },
           "conditions": {
             "label": "web_search",
-            "supported_api": "Responses API",
-            "doc_url": "https://help.aliyun.com/document_detail/2867560.html",
             "bailian_type": "tool_pricing"
           },
           "endpoint": {
@@ -55810,6 +54969,154 @@
             "api_model_id": "qwen3.7-max-2026-05-20",
             "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
             "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.7-max-2026-05-20?serviceSite=asia-pacific-china"
+          }
+        }
+      ]
+    },
+    {
+      "id": "qwen3.7-max-preview",
+      "model": "Qwen3.7-Max-Preview",
+      "name": "Qwen3.7-Max-Preview",
+      "alias": [],
+      "aliases": [],
+      "author": "qwen",
+      "author_id": "qwen",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "reasoning": true,
+      "tool_calling": true,
+      "context_length": 1000000,
+      "max_output_tokens": 65536,
+      "other_parameters": {},
+      "last_updated": "2026-05-26T19:49:45.231Z",
+      "sources": [
+        {
+          "source": "bailian_model_market",
+          "source_id": "qwen3.7-max-preview",
+          "url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.7-max-preview?serviceSite=asia-pacific-china",
+          "observed_at": "2026-05-26T19:49:45.231Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "bailian_model_market",
+          "source_id": "qwen3.7-max-preview",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.7-max-preview?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 12,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "discount": null,
+            "label": "输入",
+            "bailian_type": "input_token"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "qwen3.7-max-preview",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.7-max-preview?serviceSite=asia-pacific-china"
+          }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "qwen3.7-max-preview",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.7-max-preview?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "output": {
+              "amount": 36,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "discount": null,
+            "label": "输出",
+            "bailian_type": "output_token"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "qwen3.7-max-preview",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.7-max-preview?serviceSite=asia-pacific-china"
+          }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "qwen3.7-max-preview",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.7-max-preview?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "code_interpreter": {
+              "amount": 0,
+              "unit": "custom"
+            }
+          },
+          "conditions": {
+            "label": "code_interpreter",
+            "bailian_type": "tool_pricing"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "qwen3.7-max-preview",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.7-max-preview?serviceSite=asia-pacific-china"
+          }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "qwen3.7-max-preview",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.7-max-preview?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "web_extractor": {
+              "amount": 0,
+              "unit": "custom"
+            }
+          },
+          "conditions": {
+            "label": "web_extractor",
+            "bailian_type": "tool_pricing"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "qwen3.7-max-preview",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.7-max-preview?serviceSite=asia-pacific-china"
+          }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "qwen3.7-max-preview",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.7-max-preview?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "web_search": {
+              "amount": 4,
+              "unit": "custom"
+            }
+          },
+          "conditions": {
+            "label": "web_search",
+            "bailian_type": "tool_pricing"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "qwen3.7-max-preview",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.7-max-preview?serviceSite=asia-pacific-china"
           }
         }
       ]
@@ -75549,7 +74856,7 @@
           "remote_icon": "https://models.dev/logos/zhipuai.svg"
         }
       },
-      "last_updated": "2026-05-19T12:12:53Z",
+      "last_updated": "2026-05-24T18:53:07Z",
       "sources": [
         {
           "source": "openrouter",
@@ -75598,60 +74905,6 @@
             "api_model_id": "z-ai/glm-4.7",
             "base_url": "https://openrouter.ai/api/v1",
             "docs_url": "https://openrouter.ai/z-ai/glm-4.7"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "glm-4.7",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/glm-4.7?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 0.6,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 14,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "输入<=32k",
-            "type": "input_token"
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "glm-4.7",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/glm-4.7?serviceSite=asia-pacific-china"
-          }
-        },
-        {
-          "source": "bailian_model_market",
-          "source_id": "glm-4.7",
-          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/glm-4.7?serviceSite=asia-pacific-china",
-          "currency": "CNY",
-          "unit_prices": {
-            "input": {
-              "amount": 0.8,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 16,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "conditions": {
-            "label": "32k<输入<=200k",
-            "type": "input_token"
-          },
-          "endpoint": {
-            "provider_id": "alibaba-bailian-cn",
-            "provider_name": "Alibaba Cloud Bailian (China)",
-            "api_model_id": "glm-4.7",
-            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/glm-4.7?serviceSite=asia-pacific-china"
           }
         },
         {
@@ -75763,6 +75016,60 @@
             "api_model_id": "glm-4-7-251222",
             "base_url": "https://ark.cn-beijing.volces.com/api/v3",
             "docs_url": "https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=glm-4-7"
+          }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "glm-4.7",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/glm-4.7?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.6,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 14,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "输入<=32k",
+            "type": "input_token"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "glm-4.7",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/glm-4.7?serviceSite=asia-pacific-china"
+          }
+        },
+        {
+          "source": "bailian_model_market",
+          "source_id": "glm-4.7",
+          "source_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/glm-4.7?serviceSite=asia-pacific-china",
+          "currency": "CNY",
+          "unit_prices": {
+            "input": {
+              "amount": 0.8,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 16,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "conditions": {
+            "label": "32k<输入<=200k",
+            "type": "input_token"
+          },
+          "endpoint": {
+            "provider_id": "alibaba-bailian-cn",
+            "provider_name": "Alibaba Cloud Bailian (China)",
+            "api_model_id": "glm-4.7",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "docs_url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/glm-4.7?serviceSite=asia-pacific-china"
           }
         }
       ],
