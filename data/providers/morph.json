@@ -244,7 +244,7 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.48,
+              "amount": 0.478,
               "unit": "per_1m_tokens"
             },
             "output": {
@@ -254,11 +254,11 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-26T11:36:34.989Z",
           "raw_pricing": {
-            "prompt": "0.00000048",
+            "prompt": "0.000000478",
             "completion": "0.0000035",
-            "input_cache_read": "0.00000039",
+            "input_cache_read": "0.000000239",
             "discount": 0
           }
         }
@@ -489,7 +489,7 @@
       "vendor_name": "Morph"
     }
   },
-  "last_updated": "2026-05-22T19:21:26.714Z",
+  "last_updated": "2026-05-26T11:36:34.989Z",
   "sources": [
     {
       "source": "models.dev",

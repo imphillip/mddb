@@ -70,7 +70,7 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.22,
+              "amount": 0.35,
               "unit": "per_1m_tokens"
             },
             "output": {
@@ -80,9 +80,9 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-21T19:00:07.736Z",
+          "observed_at": "2026-05-26T11:36:34.989Z",
           "raw_pricing": {
-            "prompt": "0.00000022",
+            "prompt": "0.00000035",
             "completion": "0.00000059",
             "discount": 0
           }
@@ -100,7 +100,7 @@
           "top_k",
           "stop"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -483,6 +483,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-22T19:21:26.714Z",
+  "last_updated": "2026-05-26T11:36:34.989Z",
   "sources": []
 }

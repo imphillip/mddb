@@ -2,25 +2,9 @@
   "schema_version": 1,
   "id": "azure",
   "provider": "Azure",
-  "currency": "USD",
   "icon": "/assets/provider-icons/azure.svg",
   "domain": "learn.microsoft.com",
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 103,
-      "remote_icon": "https://models.dev/logos/azure.svg",
-      "doc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
-      "npm": "@ai-sdk/azure",
-      "env": [
-        "AZURE_RESOURCE_NAME",
-        "AZURE_API_KEY"
-      ]
-    },
-    "basellm_newapi": {
-      "vendor_name": "Azure"
-    }
-  },
-  "last_updated": "2026-05-22T19:56:54.990Z",
+  "currency": "USD",
   "offers": [
     {
       "model_id": "claude-opus-4.6",
@@ -435,7 +419,7 @@
           "temperature",
           "top_p"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -555,7 +539,7 @@
           "temperature",
           "top_p"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -4596,6 +4580,22 @@
       ]
     }
   ],
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 103,
+      "remote_icon": "https://models.dev/logos/azure.svg",
+      "doc": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models",
+      "npm": "@ai-sdk/azure",
+      "env": [
+        "AZURE_RESOURCE_NAME",
+        "AZURE_API_KEY"
+      ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "Azure"
+    }
+  },
+  "last_updated": "2026-05-26T11:36:34.989Z",
   "sources": [
     {
       "source": "models.dev",

@@ -2,24 +2,9 @@
   "schema_version": 1,
   "id": "mistral",
   "provider": "Mistral",
-  "currency": "USD",
   "icon": "/assets/provider-icons/mistral.svg",
   "domain": "docs.mistral.ai",
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 28,
-      "remote_icon": "https://models.dev/logos/mistral.svg",
-      "doc": "https://docs.mistral.ai/getting-started/models/",
-      "npm": "@ai-sdk/mistral",
-      "env": [
-        "MISTRAL_API_KEY"
-      ]
-    },
-    "basellm_newapi": {
-      "vendor_name": "Mistral"
-    }
-  },
-  "last_updated": "2026-05-22T19:21:26.714Z",
+  "currency": "USD",
   "offers": [
     {
       "model_id": "codestral-2508",
@@ -1570,6 +1555,21 @@
       ]
     }
   ],
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 28,
+      "remote_icon": "https://models.dev/logos/mistral.svg",
+      "doc": "https://docs.mistral.ai/getting-started/models/",
+      "npm": "@ai-sdk/mistral",
+      "env": [
+        "MISTRAL_API_KEY"
+      ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "Mistral"
+    }
+  },
+  "last_updated": "2026-05-26T11:36:34.989Z",
   "sources": [
     {
       "source": "models.dev",

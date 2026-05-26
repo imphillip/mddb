@@ -2,26 +2,9 @@
   "schema_version": 1,
   "id": "google",
   "provider": "Google",
-  "currency": "USD",
   "icon": "/assets/provider-icons/google.svg",
   "domain": "ai.google.dev",
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 21,
-      "remote_icon": "https://models.dev/logos/google.svg",
-      "doc": "https://ai.google.dev/gemini-api/docs/models",
-      "npm": "@ai-sdk/google",
-      "env": [
-        "GOOGLE_API_KEY",
-        "GOOGLE_GENERATIVE_AI_API_KEY",
-        "GEMINI_API_KEY"
-      ]
-    },
-    "basellm_newapi": {
-      "vendor_name": "Google"
-    }
-  },
-  "last_updated": "2026-05-22T19:56:54.990Z",
+  "currency": "USD",
   "offers": [
     {
       "model_id": "claude-3-haiku",
@@ -1362,7 +1345,7 @@
           "tool_choice",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -1956,7 +1939,7 @@
           "tool_choice",
           "stop"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -2558,7 +2541,7 @@
           "tool_choice",
           "stop"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -2862,7 +2845,7 @@
           "tool_choice",
           "stop"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -3166,7 +3149,7 @@
           "tool_choice",
           "stop"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -3816,7 +3799,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -3968,7 +3951,7 @@
           "tool_choice",
           "tools"
         ],
-        "status": 0
+        "status": -5
       },
       "sources": [
         {
@@ -5860,6 +5843,23 @@
       ]
     }
   ],
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 21,
+      "remote_icon": "https://models.dev/logos/google.svg",
+      "doc": "https://ai.google.dev/gemini-api/docs/models",
+      "npm": "@ai-sdk/google",
+      "env": [
+        "GOOGLE_API_KEY",
+        "GOOGLE_GENERATIVE_AI_API_KEY",
+        "GEMINI_API_KEY"
+      ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "Google"
+    }
+  },
+  "last_updated": "2026-05-26T11:36:34.989Z",
   "sources": [
     {
       "source": "models.dev",

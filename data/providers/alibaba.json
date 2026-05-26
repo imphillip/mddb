@@ -2,25 +2,10 @@
   "schema_version": 1,
   "id": "alibaba",
   "provider": "Alibaba",
-  "currency": "USD",
   "icon": "/assets/provider-icons/alibaba.svg",
-  "base_url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
   "domain": "alibabacloud.com",
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 80,
-      "remote_icon": "https://models.dev/logos/alibaba.svg",
-      "doc": "https://www.alibabacloud.com/help/en/model-studio/models",
-      "npm": "@ai-sdk/openai-compatible",
-      "env": [
-        "DASHSCOPE_API_KEY"
-      ]
-    },
-    "basellm_newapi": {
-      "vendor_name": "Alibaba"
-    }
-  },
-  "last_updated": "2026-05-22T19:56:54.990Z",
+  "base_url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+  "currency": "USD",
   "offers": [
     {
       "model_id": "deepseek-v3.2",
@@ -71,7 +56,7 @@
           "tools",
           "structured_outputs"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -1688,7 +1673,7 @@
           "logprobs",
           "top_logprobs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -1747,7 +1732,7 @@
           "top_logprobs",
           "logprobs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -1806,7 +1791,7 @@
           "top_logprobs",
           "logprobs"
         ],
-        "status": -5
+        "status": 0
       },
       "sources": [
         {
@@ -3782,6 +3767,21 @@
       ]
     }
   ],
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 80,
+      "remote_icon": "https://models.dev/logos/alibaba.svg",
+      "doc": "https://www.alibabacloud.com/help/en/model-studio/models",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "DASHSCOPE_API_KEY"
+      ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "Alibaba"
+    }
+  },
+  "last_updated": "2026-05-26T11:36:34.989Z",
   "sources": [
     {
       "source": "models.dev",

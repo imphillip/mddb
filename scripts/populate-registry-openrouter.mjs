@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { normalizeModelPrice, selectBestPrice } from './lib/model-pricing.mjs'
 
@@ -438,7 +438,6 @@ if (existsSync(PROVIDERS_DIR)) {
 const previousProvider = (id) => previousProviders.get(id) ?? null
 const previousOffer = (providerId, modelId, apiModelId, endpointPath) => previousProvider(providerId)?.offers?.find((offer) => stableOfferKey(offer) === `${modelId}|${apiModelId}|${endpointPath}`)
 mkdirSync(OUT_DIR, { recursive: true })
-rmSync(PROVIDERS_DIR, { recursive: true, force: true })
 mkdirSync(PROVIDERS_DIR, { recursive: true })
 
 const modelMap = new Map()

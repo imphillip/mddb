@@ -57,7 +57,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -5
+        "status": -2
       },
       "sources": [
         {
@@ -540,7 +540,7 @@
       "other_parameters": {
         "source_model_id": "deepseek/deepseek-v4-pro",
         "endpoint_tag": "deepinfra/fp4",
-        "context_length": 65536,
+        "context_length": 1048576,
         "max_output_tokens": 16384,
         "supported_parameters": [
           "reasoning",
@@ -1119,7 +1119,7 @@
           "structured_outputs",
           "logit_bias"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -2401,7 +2401,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -3006,7 +3006,7 @@
           "logit_bias",
           "structured_outputs"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -3501,7 +3501,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -3875,7 +3875,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -5090,7 +5090,7 @@
       "remote_icon": "https://models.dev/logos/deepinfra.svg"
     }
   },
-  "last_updated": "2026-05-22T19:56:54.990Z",
+  "last_updated": "2026-05-26T11:36:34.989Z",
   "sources": [
     {
       "source": "models.dev",

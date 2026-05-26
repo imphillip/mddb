@@ -37,7 +37,7 @@
       "other_parameters": {
         "source_model_id": "z-ai/glm-5",
         "endpoint_tag": "streamlake",
-        "context_length": 200000,
+        "context_length": 198000,
         "max_output_tokens": 128000,
         "supported_parameters": [
           "reasoning",
@@ -181,21 +181,21 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.95,
+              "amount": 0.9025,
               "unit": "per_1m_tokens"
             },
             "output": {
-              "amount": 4,
+              "amount": 3.8,
               "unit": "per_1m_tokens"
             }
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-21T19:00:07.736Z",
+          "observed_at": "2026-05-26T11:36:34.989Z",
           "raw_pricing": {
-            "prompt": "0.00000095",
-            "completion": "0.000004",
-            "input_cache_read": "0.00000016",
+            "prompt": "0.0000009025",
+            "completion": "0.0000038",
+            "input_cache_read": "0.000000152",
             "discount": 0
           }
         }
@@ -282,9 +282,390 @@
           "observed_at": "2026-05-21T19:00:07.736Z"
         }
       ]
+    },
+    {
+      "model_id": "deepseek-chat",
+      "model": "DeepSeek V3",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "streamlake",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.2288,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.9144,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-26T11:36:34.989Z",
+          "raw_pricing": {
+            "prompt": "0.0000002288",
+            "completion": "0.0000009144",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-chat",
+        "endpoint_tag": "streamlake",
+        "context_length": 128000,
+        "max_output_tokens": 16000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "frequency_penalty",
+          "stop",
+          "presence_penalty"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-chat#StreamLake | deepseek/deepseek-chat-v3",
+          "observed_at": "2026-05-26T11:36:34.989Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "model": "DeepSeek V3.2",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "streamlake",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.2574,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.3861,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-26T11:36:34.989Z",
+          "raw_pricing": {
+            "prompt": "0.0000002574",
+            "completion": "0.0000003861",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v3.2",
+        "endpoint_tag": "streamlake",
+        "context_length": 128000,
+        "max_output_tokens": 64000,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "frequency_penalty",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v3.2#StreamLake | deepseek/deepseek-v3.2-20251201",
+          "observed_at": "2026-05-26T11:36:34.989Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-flash",
+      "model": "DeepSeek V4 Flash",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "streamlake",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.154,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.308,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-26T11:36:34.989Z",
+          "raw_pricing": {
+            "prompt": "0.000000154",
+            "completion": "0.000000308",
+            "input_cache_read": "0.00000000308",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v4-flash:free",
+        "endpoint_tag": "streamlake",
+        "context_length": 1024000,
+        "max_output_tokens": 384000,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "frequency_penalty",
+          "stop"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v4-flash:free#StreamLake | deepseek/deepseek-v4-flash-20260423",
+          "observed_at": "2026-05-26T11:36:34.989Z"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek-v4-pro",
+      "model": "DeepSeek V4 Pro",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "streamlake",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 1.74,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 3.48,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-26T11:36:34.989Z",
+          "raw_pricing": {
+            "prompt": "0.00000174",
+            "completion": "0.00000348",
+            "input_cache_read": "0.0000000145",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "deepseek/deepseek-v4-pro",
+        "endpoint_tag": "streamlake",
+        "context_length": 1024000,
+        "max_output_tokens": 384000,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "frequency_penalty",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": -2
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "deepseek/deepseek-v4-pro#StreamLake | deepseek/deepseek-v4-pro-20260423",
+          "observed_at": "2026-05-26T11:36:34.989Z"
+        }
+      ]
+    },
+    {
+      "model_id": "glm-4.7",
+      "model": "GLM 4.7",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "streamlake",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.42,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.54,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-26T11:36:34.989Z",
+          "raw_pricing": {
+            "prompt": "0.00000042",
+            "completion": "0.00000154",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "z-ai/glm-4.7",
+        "endpoint_tag": "streamlake",
+        "context_length": 200000,
+        "max_output_tokens": 128000,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "frequency_penalty",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "z-ai/glm-4.7#StreamLake | z-ai/glm-4.7-20251222",
+          "observed_at": "2026-05-26T11:36:34.989Z"
+        }
+      ]
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "model": "Kimi K2.5",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "streamlake",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.57,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 2.85,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-26T11:36:34.989Z",
+          "raw_pricing": {
+            "prompt": "0.00000057",
+            "completion": "0.00000285",
+            "input_cache_read": "0.000000095",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "moonshotai/kimi-k2.5",
+        "endpoint_tag": "streamlake",
+        "context_length": 256000,
+        "max_output_tokens": 256000,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "frequency_penalty",
+          "stop",
+          "presence_penalty",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "moonshotai/kimi-k2.5#StreamLake | moonshotai/kimi-k2.5-0127",
+          "observed_at": "2026-05-26T11:36:34.989Z"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen3-235b-a22b-2507",
+      "model": "Qwen3 235B A22B Instruct 2507",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "streamlake",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.28,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.12,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-26T11:36:34.989Z",
+          "raw_pricing": {
+            "prompt": "0.00000028",
+            "completion": "0.00000112",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "qwen/qwen3-235b-a22b-2507",
+        "endpoint_tag": "streamlake",
+        "context_length": 128000,
+        "max_output_tokens": 32000,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "frequency_penalty",
+          "stop",
+          "presence_penalty",
+          "tools",
+          "tool_choice"
+        ],
+        "status": -2
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "qwen/qwen3-235b-a22b-2507#StreamLake | qwen/qwen3-235b-a22b-07-25",
+          "observed_at": "2026-05-26T11:36:34.989Z"
+        }
+      ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T21:36:01.873Z",
+  "last_updated": "2026-05-26T11:36:34.989Z",
   "sources": []
 }

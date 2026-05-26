@@ -2,25 +2,10 @@
   "schema_version": 1,
   "id": "openrouter",
   "provider": "OpenRouter",
-  "currency": "USD",
   "icon": "/assets/provider-icons/openrouter.svg",
-  "base_url": "https://openrouter.ai/api/v1",
   "domain": "openrouter.ai",
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 358,
-      "doc": "https://openrouter.ai/models",
-      "npm": "@openrouter/ai-sdk-provider",
-      "env": [
-        "OPENROUTER_API_KEY"
-      ],
-      "remote_icon": "https://models.dev/logos/openrouter.svg"
-    },
-    "basellm_newapi": {
-      "vendor_name": "OpenRouter"
-    }
-  },
-  "last_updated": "2026-05-22T19:21:26.714Z",
+  "base_url": "https://openrouter.ai/api/v1",
+  "currency": "USD",
   "offers": [
     {
       "model_id": "aion-1.0",
@@ -1395,20 +1380,20 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.32,
+              "amount": 0.2288,
               "unit": "per_1m_tokens"
             },
             "output": {
-              "amount": 0.89,
+              "amount": 0.9144,
               "unit": "per_1m_tokens"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-26T11:36:34.989Z",
           "raw_pricing": {
-            "prompt": "0.00000032",
-            "completion": "0.00000089"
+            "prompt": "0.0000002288",
+            "completion": "0.0000009144"
           }
         }
       ],
@@ -1416,12 +1401,13 @@
         "source_id": "deepseek/deepseek-chat",
         "canonical_slug": "deepseek/deepseek-chat-v3",
         "endpoint_providers": [
+          "StreamLake",
           "DeepInfra",
           "Novita"
         ],
-        "endpoint_count": 2,
-        "context_length": 163840,
-        "max_completion_tokens": 16384
+        "endpoint_count": 3,
+        "context_length": 131072,
+        "max_completion_tokens": 16000
       },
       "sources": [
         {
@@ -1865,6 +1851,7 @@
         "canonical_slug": "deepseek/deepseek-v3.2-20251201",
         "endpoint_providers": [
           "Baidu",
+          "StreamLake",
           "SiliconFlow",
           "DeepInfra",
           "AtlasCloud",
@@ -1875,7 +1862,7 @@
           "Google",
           "SambaNova"
         ],
-        "endpoint_count": 10,
+        "endpoint_count": 11,
         "context_length": 131072,
         "max_completion_tokens": 65536
       },
@@ -2006,10 +1993,11 @@
           "AkashML",
           "Alibaba",
           "Novita",
+          "StreamLake",
           "Venice",
           "Morph"
         ],
-        "endpoint_count": 12,
+        "endpoint_count": 13,
         "context_length": 1048576,
         "max_completion_tokens": 384000
       },
@@ -2070,10 +2058,11 @@
           "AkashML",
           "Alibaba",
           "Novita",
+          "StreamLake",
           "Venice",
           "Morph"
         ],
-        "endpoint_count": 12,
+        "endpoint_count": 13,
         "context_length": 1048576,
         "max_completion_tokens": 16384
       },
@@ -2123,16 +2112,17 @@
           "DeepInfra",
           "GMICloud",
           "Baidu",
-          "SiliconFlow",
           "Novita",
+          "SiliconFlow",
           "Alibaba",
           "AtlasCloud",
           "Venice",
           "Parasail",
           "Fireworks",
+          "StreamLake",
           "Together"
         ],
-        "endpoint_count": 12,
+        "endpoint_count": 13,
         "context_length": 1048576,
         "max_completion_tokens": 384000
       },
@@ -2576,7 +2566,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-07,
+              "amount": 1e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -2641,7 +2631,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 7.5e-08,
+              "amount": 7.5e-8,
               "unit": "per_image"
             },
             "web_search": {
@@ -2704,7 +2694,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-07,
+              "amount": 3e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -2769,7 +2759,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 3e-07,
+              "amount": 3e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -2834,7 +2824,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-07,
+              "amount": 1e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -2899,7 +2889,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1e-07,
+              "amount": 1e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -2964,7 +2954,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.25e-06,
+              "amount": 0.00000125,
               "unit": "per_image"
             },
             "web_search": {
@@ -3029,7 +3019,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.25e-06,
+              "amount": 0.00000125,
               "unit": "per_image"
             },
             "web_search": {
@@ -3094,7 +3084,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.25e-06,
+              "amount": 0.00000125,
               "unit": "per_image"
             },
             "web_search": {
@@ -3159,7 +3149,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 5e-07,
+              "amount": 5e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -3224,7 +3214,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2e-06,
+              "amount": 0.000002,
               "unit": "per_image"
             },
             "web_search": {
@@ -3341,7 +3331,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2.5e-07,
+              "amount": 2.5e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -3406,7 +3396,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2.5e-07,
+              "amount": 2.5e-7,
               "unit": "per_image"
             },
             "web_search": {
@@ -3471,7 +3461,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2e-06,
+              "amount": 0.000002,
               "unit": "per_image"
             },
             "web_search": {
@@ -3536,7 +3526,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2e-06,
+              "amount": 0.000002,
               "unit": "per_image"
             },
             "web_search": {
@@ -3658,8 +3648,8 @@
         "canonical_slug": "google/gemma-3-12b-it",
         "endpoint_providers": [
           "DeepInfra",
-          "SambaNova",
-          "Cloudflare"
+          "Cloudflare",
+          "SambaNova"
         ],
         "endpoint_count": 3,
         "context_length": 131072,
@@ -3837,11 +3827,10 @@
           "Parasail",
           "Novita",
           "NextBit",
-          "Io Net",
           "Google",
           "Venice"
         ],
-        "endpoint_count": 10,
+        "endpoint_count": 9,
         "context_length": 262144,
         "max_completion_tokens": 32768
       },
@@ -3898,11 +3887,10 @@
           "Parasail",
           "Novita",
           "NextBit",
-          "Io Net",
           "Google",
           "Venice"
         ],
-        "endpoint_count": 10,
+        "endpoint_count": 9,
         "context_length": 262144,
         "max_completion_tokens": null
       },
@@ -3932,10 +3920,11 @@
           "SiliconFlow",
           "Novita",
           "Parasail",
+          "Phala",
           "Venice",
           "Together"
         ],
-        "endpoint_count": 10,
+        "endpoint_count": 11,
         "context_length": 262144,
         "max_completion_tokens": 32768
       },
@@ -3991,10 +3980,11 @@
           "SiliconFlow",
           "Novita",
           "Parasail",
+          "Phala",
           "Venice",
           "Together"
         ],
-        "endpoint_count": 10,
+        "endpoint_count": 11,
         "context_length": 262144,
         "max_completion_tokens": 16384
       },
@@ -4115,10 +4105,11 @@
         "canonical_slug": "z-ai/glm-4.5-air",
         "endpoint_providers": [
           "Novita",
+          "Io Net",
           "SiliconFlow",
           "Z.AI"
         ],
-        "endpoint_count": 3,
+        "endpoint_count": 4,
         "context_length": 131072,
         "max_completion_tokens": 96000
       },
@@ -4170,10 +4161,11 @@
         "canonical_slug": "z-ai/glm-4.5-air",
         "endpoint_providers": [
           "Novita",
+          "Io Net",
           "SiliconFlow",
           "Z.AI"
         ],
-        "endpoint_count": 3,
+        "endpoint_count": 4,
         "context_length": 131072,
         "max_completion_tokens": 98304
       },
@@ -4272,10 +4264,9 @@
           "Novita",
           "Z.AI",
           "AtlasCloud",
-          "Io Net",
           "Venice"
         ],
-        "endpoint_count": 6,
+        "endpoint_count": 5,
         "context_length": 202752,
         "max_completion_tokens": 131072
       },
@@ -4371,6 +4362,7 @@
         "canonical_slug": "z-ai/glm-4.7-20251222",
         "endpoint_providers": [
           "DeepInfra",
+          "StreamLake",
           "Parasail",
           "SiliconFlow",
           "AtlasCloud",
@@ -4381,7 +4373,7 @@
           "Phala",
           "Cerebras"
         ],
-        "endpoint_count": 10,
+        "endpoint_count": 11,
         "context_length": 202752,
         "max_completion_tokens": 131072
       },
@@ -4596,11 +4588,11 @@
           "DeepInfra",
           "Chutes",
           "Phala",
-          "StreamLake",
           "Io Net",
+          "StreamLake",
+          "AtlasCloud",
           "BaseTen",
           "Novita",
-          "AtlasCloud",
           "Parasail",
           "Together",
           "Fireworks",
@@ -4651,47 +4643,9 @@
             "completion": "0.000004",
             "input_cache_read": "0.00000024"
           }
-        },
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 1.2,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 4,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.24,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "basellm-newapi",
-          "observed_at": "2026-05-23T17:49:59.198Z",
-          "raw_pricing": {
-            "price_per_m_input": 1.2,
-            "price_per_m_output": 4,
-            "price_per_m_cache_read": 0.24,
-            "price_per_m_cache_write": null,
-            "ratio_model": 0.6,
-            "ratio_completion": 3.3333333333333335,
-            "ratio_cache": 0.2,
-            "base_rule": "500000 tokens = 1 USD; ratio=1 => $2 / 1M tokens"
-          }
         }
       ],
       "other_parameters": {
-        "source_id": "z-ai/glm-5v-turbo",
-        "canonical_slug": "z-ai/glm-5v-turbo-20260401",
-        "endpoint_providers": [
-          "Z.AI"
-        ],
-        "endpoint_count": 1,
-        "context_length": 202752,
-        "max_completion_tokens": 131072,
         "basellm_newapi": {
           "source": "basellm-newapi",
           "vendor_name": "OpenRouter",
@@ -4703,7 +4657,15 @@
             "202.8K"
           ],
           "match": "exact_source_id"
-        }
+        },
+        "source_id": "z-ai/glm-5v-turbo",
+        "canonical_slug": "z-ai/glm-5v-turbo-20260401",
+        "endpoint_providers": [
+          "Z.AI"
+        ],
+        "endpoint_count": 1,
+        "context_length": 202752,
+        "max_completion_tokens": 131072
       },
       "sources": [
         {
@@ -8534,6 +8496,7 @@
           "SiliconFlow",
           "AtlasCloud",
           "Venice",
+          "StreamLake",
           "Novita",
           "Parasail",
           "Phala",
@@ -8541,7 +8504,7 @@
           "Fireworks",
           "Cloudflare"
         ],
-        "endpoint_count": 12,
+        "endpoint_count": 13,
         "context_length": 262144,
         "max_completion_tokens": 262144
       },
@@ -8590,18 +8553,18 @@
           "Io Net",
           "Chutes",
           "Cloudflare",
+          "Inceptron",
           "Parasail",
           "DeepInfra",
           "SiliconFlow",
-          "Inceptron",
           "Novita",
           "Venice",
+          "StreamLake",
           "Fireworks",
           "Moonshot AI",
           "WandB",
           "AtlasCloud",
           "AkashML",
-          "StreamLake",
           "Nebius",
           "Phala",
           "Together"
@@ -10661,11 +10624,12 @@
         "endpoint_providers": [
           "Morph",
           "Fireworks",
+          "Mara",
           "Together",
           "Minimax",
           "SambaNova"
         ],
-        "endpoint_count": 6,
+        "endpoint_count": 7,
         "context_length": 204800,
         "max_completion_tokens": 131072
       },
@@ -13556,9 +13520,10 @@
           "Friendli",
           "AtlasCloud",
           "Google",
+          "StreamLake",
           "Cerebras"
         ],
-        "endpoint_count": 11,
+        "endpoint_count": 12,
         "context_length": 262144,
         "max_completion_tokens": 16384
       },
@@ -14783,12 +14748,11 @@
           "SiliconFlow",
           "Alibaba",
           "DeepInfra",
-          "Ambient",
           "AtlasCloud",
           "Novita",
           "Venice"
         ],
-        "endpoint_count": 7,
+        "endpoint_count": 6,
         "context_length": 262144,
         "max_completion_tokens": 262144
       },
@@ -15175,16 +15139,17 @@
               "unit": "per_1m_tokens"
             },
             "output": {
-              "amount": 3.2,
+              "amount": 2,
               "unit": "per_1m_tokens"
             }
           },
           "currency": "USD",
           "source": "openrouter",
-          "observed_at": "2026-05-22T19:21:26.714Z",
+          "observed_at": "2026-05-26T11:36:34.989Z",
           "raw_pricing": {
             "prompt": "0.0000003",
-            "completion": "0.0000032"
+            "completion": "0.000002",
+            "input_cache_read": "0.00000015"
           }
         }
       ],
@@ -15192,6 +15157,7 @@
         "source_id": "qwen/qwen3.6-27b",
         "canonical_slug": "qwen/qwen3.6-27b-20260422",
         "endpoint_providers": [
+          "Chutes",
           "SiliconFlow",
           "Io Net",
           "DeepInfra",
@@ -15199,12 +15165,11 @@
           "Venice",
           "Alibaba",
           "Morph",
-          "Chutes",
           "WandB"
         ],
         "endpoint_count": 9,
         "context_length": 262144,
-        "max_completion_tokens": 262144
+        "max_completion_tokens": 65536
       },
       "sources": [
         {
@@ -16422,10 +16387,9 @@
         "endpoint_providers": [
           "DeepInfra",
           "SiliconFlow",
-          "StepFun",
-          "Ambient"
+          "StepFun"
         ],
-        "endpoint_count": 4,
+        "endpoint_count": 3,
         "context_length": 262144,
         "max_completion_tokens": 16384
       },
@@ -16434,54 +16398,6 @@
           "source": "openrouter",
           "source_id": "stepfun/step-3.5-flash",
           "url": "https://openrouter.ai/stepfun/step-3.5-flash",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    },
-    {
-      "model_id": "tongyi-deepresearch-30b-a3b",
-      "model": "Tongyi DeepResearch 30B A3B",
-      "endpoint_path": "/chat/completions",
-      "api_model_id": "alibaba/tongyi-deepresearch-30b-a3b",
-      "mode": "chat",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.09,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.45,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "openrouter",
-          "observed_at": "2026-05-19T22:11:55.841Z",
-          "raw_pricing": {
-            "prompt": "0.00000009",
-            "completion": "0.00000045",
-            "input_cache_read": "0.00000009"
-          }
-        }
-      ],
-      "other_parameters": {
-        "source_id": "alibaba/tongyi-deepresearch-30b-a3b",
-        "canonical_slug": "alibaba/tongyi-deepresearch-30b-a3b",
-        "endpoint_providers": [
-          "AtlasCloud"
-        ],
-        "endpoint_count": 1,
-        "context_length": 131072,
-        "max_completion_tokens": 131072
-      },
-      "sources": [
-        {
-          "source": "openrouter",
-          "source_id": "alibaba/tongyi-deepresearch-30b-a3b",
-          "url": "https://openrouter.ai/alibaba/tongyi-deepresearch-30b-a3b",
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
@@ -16924,7 +16840,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.5e-06,
+              "amount": 0.0000015,
               "unit": "per_image"
             },
             "web_search": {
@@ -17246,7 +17162,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 2e-06,
+              "amount": 0.000002,
               "unit": "per_image"
             },
             "web_search": {
@@ -17309,7 +17225,7 @@
               "unit": "per_1m_tokens"
             },
             "image": {
-              "amount": 1.5e-06,
+              "amount": 0.0000015,
               "unit": "per_image"
             },
             "web_search": {
@@ -25555,45 +25471,6 @@
       ]
     },
     {
-      "model_id": "tongyi-deepresearch-30b-a3b",
-      "model": "Tongyi DeepResearch 30B A3B",
-      "api_model_id": "alibaba/tongyi-deepresearch-30b-a3b",
-      "endpoint_path": "alibaba/tongyi-deepresearch-30b-a3b",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.09,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.45,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.09,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "openrouter/alibaba/tongyi-deepresearch-30b-a3b",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "step-3.5-flash",
       "model": "Step 3.5 Flash",
       "api_model_id": "stepfun/step-3.5-flash",
@@ -29664,6 +29541,21 @@
       ]
     }
   ],
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 358,
+      "doc": "https://openrouter.ai/models",
+      "npm": "@openrouter/ai-sdk-provider",
+      "env": [
+        "OPENROUTER_API_KEY"
+      ],
+      "remote_icon": "https://models.dev/logos/openrouter.svg"
+    },
+    "basellm_newapi": {
+      "vendor_name": "OpenRouter"
+    }
+  },
+  "last_updated": "2026-05-26T11:36:34.989Z",
   "sources": [
     {
       "source": "models.dev",

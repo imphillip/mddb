@@ -176,7 +176,7 @@
           "structured_outputs",
           "response_format"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -790,9 +790,67 @@
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
+    },
+    {
+      "model_id": "gemma-4-31b-it",
+      "model": "Gemma 4 31B",
+      "endpoint_path": "/images/generations",
+      "api_model_id": "phala",
+      "mode": "image",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.15,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 0.46,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-26T11:36:34.989Z",
+          "raw_pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.00000046",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "google/gemma-4-31b-it:free",
+        "endpoint_tag": "phala",
+        "context_length": 262144,
+        "max_output_tokens": 262144,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "seed",
+          "top_k",
+          "min_p",
+          "repetition_penalty"
+        ],
+        "status": -2
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "google/gemma-4-31b-it:free#Phala | google/gemma-4-31b-it-20260402",
+          "observed_at": "2026-05-26T11:36:34.989Z"
+        }
+      ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-22T19:56:54.990Z",
+  "last_updated": "2026-05-26T11:36:34.989Z",
   "sources": []
 }

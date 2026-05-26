@@ -2,25 +2,10 @@
   "schema_version": 1,
   "id": "siliconflow",
   "provider": "SiliconFlow",
-  "currency": "USD",
   "icon": "/assets/provider-icons/siliconflow.svg",
-  "base_url": "https://api.siliconflow.com/v1",
   "domain": "cloud.siliconflow.com",
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 81,
-      "remote_icon": "https://models.dev/logos/siliconflow.svg",
-      "doc": "https://cloud.siliconflow.com/models",
-      "npm": "@ai-sdk/openai-compatible",
-      "env": [
-        "SILICONFLOW_CN_API_KEY"
-      ]
-    },
-    "basellm_newapi": {
-      "vendor_name": "SiliconFlow"
-    }
-  },
-  "last_updated": "2026-05-22T19:56:54.990Z",
+  "base_url": "https://api.siliconflow.com/v1",
+  "currency": "USD",
   "offers": [
     {
       "model_id": "deepseek-chat-v3-0324",
@@ -912,7 +897,7 @@
           "frequency_penalty",
           "max_tokens"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -1309,7 +1294,7 @@
           "tool_choice",
           "max_tokens"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -1366,7 +1351,7 @@
           "tool_choice",
           "max_tokens"
         ],
-        "status": -5
+        "status": -2
       },
       "sources": [
         {
@@ -1421,7 +1406,7 @@
           "tool_choice",
           "max_tokens"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -1588,7 +1573,7 @@
           "tool_choice",
           "max_tokens"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -3981,7 +3966,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -4096,7 +4081,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -5
       },
       "sources": [
         {
@@ -4154,7 +4139,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -4211,7 +4196,7 @@
           "structured_outputs",
           "response_format"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -4222,6 +4207,21 @@
       ]
     }
   ],
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 81,
+      "remote_icon": "https://models.dev/logos/siliconflow.svg",
+      "doc": "https://cloud.siliconflow.com/models",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [
+        "SILICONFLOW_CN_API_KEY"
+      ]
+    },
+    "basellm_newapi": {
+      "vendor_name": "SiliconFlow"
+    }
+  },
+  "last_updated": "2026-05-26T11:36:34.989Z",
   "sources": [
     {
       "source": "models.dev",

@@ -1665,41 +1665,6 @@
       ]
     },
     {
-      "model_id": "tongyi-deepresearch-30b-a3b",
-      "model": "Tongyi DeepResearch 30B A3B",
-      "api_model_id": "Alibaba-NLP/Tongyi-DeepResearch-30B-A3B",
-      "endpoint_path": "Alibaba-NLP/Tongyi-DeepResearch-30B-A3B",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.08,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.24000000000000002,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "nano-gpt/Alibaba-NLP/Tongyi-DeepResearch-30B-A3B",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "cogito-v2.1-671b",
       "model": "Deep Cogito: Cogito v2.1 671B",
       "api_model_id": "deepcogito/cogito-v2.1-671b",

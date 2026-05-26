@@ -113,9 +113,66 @@
           "observed_at": "2026-05-21T19:00:07.736Z"
         }
       ]
+    },
+    {
+      "model_id": "minimax-m2.7",
+      "model": "MiniMax M2.7",
+      "endpoint_path": "/chat/completions",
+      "api_model_id": "mara",
+      "mode": "chat",
+      "prices": [
+        {
+          "conditions": {},
+          "prices": {
+            "input": {
+              "amount": 0.3,
+              "unit": "per_1m_tokens"
+            },
+            "output": {
+              "amount": 1.2,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "currency": "USD",
+          "source": "openrouter-endpoint",
+          "observed_at": "2026-05-26T11:36:34.989Z",
+          "raw_pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000012",
+            "discount": 0
+          }
+        }
+      ],
+      "other_parameters": {
+        "source_model_id": "minimax/minimax-m2.7",
+        "endpoint_tag": "mara",
+        "context_length": 196608,
+        "max_output_tokens": 196608,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "stop",
+          "top_k",
+          "top_p",
+          "tool_choice",
+          "tools",
+          "structured_outputs",
+          "response_format"
+        ],
+        "status": 0
+      },
+      "sources": [
+        {
+          "source": "openrouter:endpoints",
+          "source_id": "minimax/minimax-m2.7#Mara | minimax/minimax-m2.7-20260318",
+          "observed_at": "2026-05-26T11:36:34.989Z"
+        }
+      ]
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-21T21:36:01.873Z",
+  "last_updated": "2026-05-26T11:36:34.989Z",
   "sources": []
 }

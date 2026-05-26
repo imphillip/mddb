@@ -2,21 +2,9 @@
   "schema_version": 1,
   "id": "venice",
   "provider": "Venice",
-  "currency": "USD",
   "icon": "/assets/provider-icons/venice.svg",
   "domain": "docs.venice.ai",
-  "other_parameters": {
-    "models_dev": {
-      "model_count": 67,
-      "doc": "https://docs.venice.ai",
-      "npm": "venice-ai-sdk-provider",
-      "env": [
-        "VENICE_API_KEY"
-      ],
-      "remote_icon": "https://models.dev/logos/venice.svg"
-    }
-  },
-  "last_updated": "2026-05-22T19:56:54.990Z",
+  "currency": "USD",
   "offers": [
     {
       "model_id": "deepseek-v4-flash",
@@ -210,20 +198,20 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.175,
+              "amount": 0.155,
               "unit": "per_1m_tokens"
             },
             "output": {
-              "amount": 0.5,
+              "amount": 0.44,
               "unit": "per_1m_tokens"
             }
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-26T11:36:34.989Z",
           "raw_pricing": {
-            "prompt": "0.000000175",
-            "completion": "0.0000005",
+            "prompt": "0.000000155",
+            "completion": "0.00000044",
             "discount": 0
           }
         }
@@ -611,7 +599,7 @@
           "logprobs",
           "top_logprobs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -1165,7 +1153,7 @@
         "source_model_id": "qwen/qwen3.5-35b-a3b",
         "endpoint_tag": "venice",
         "context_length": 256000,
-        "max_output_tokens": 65536,
+        "max_output_tokens": 16384,
         "supported_parameters": [
           "reasoning",
           "include_reasoning",
@@ -2533,6 +2521,18 @@
       ]
     }
   ],
+  "other_parameters": {
+    "models_dev": {
+      "model_count": 67,
+      "doc": "https://docs.venice.ai",
+      "npm": "venice-ai-sdk-provider",
+      "env": [
+        "VENICE_API_KEY"
+      ],
+      "remote_icon": "https://models.dev/logos/venice.svg"
+    }
+  },
+  "last_updated": "2026-05-26T11:36:34.989Z",
   "sources": [
     {
       "source": "models.dev",

@@ -11470,41 +11470,6 @@
       ]
     },
     {
-      "model_id": "tongyi-deepresearch-30b-a3b",
-      "model": "Tongyi DeepResearch 30B A3B",
-      "api_model_id": "alibaba/tongyi-deepresearch-30b-a3b",
-      "endpoint_path": "alibaba/tongyi-deepresearch-30b-a3b",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.09,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.45,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "kilo/alibaba/tongyi-deepresearch-30b-a3b",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "step-3.5-flash",
       "model": "Step 3.5 Flash",
       "api_model_id": "stepfun/step-3.5-flash",
