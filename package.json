@@ -15,6 +15,8 @@
     "data:openrouter:models-only": "OPENROUTER_FETCH_ENDPOINTS=0 node scripts/fetch-openrouter-models.mjs",
     "data:models-dev": "node scripts/fetch-models-dev-api.mjs",
     "data:litellm": "node scripts/fetch-litellm-model-prices.mjs",
+    "data:bailian": "node scripts/fetch-bailian-model-market.mjs --incremental --limit 50",
+    "data:volcengine": "node scripts/fetch-volcengine-ark-docs.mjs --incremental",
     "registry:populate:litellm": "node scripts/populate-litellm-models.mjs",
     "registry:populate:openrouter": "node scripts/populate-registry-openrouter.mjs",
     "registry:populate:models-dev": "node scripts/populate-models-dev-providers.mjs",
