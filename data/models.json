@@ -555,7 +555,7 @@
           "source": "litellm",
           "source_id": "amazon.titan-embed-image-v1",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -698,19 +698,19 @@
           "source": "litellm",
           "source_id": "amazon.titan-embed-text-v1",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "bedrock/us-gov-east-1/amazon.titan-embed-text-v1",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "bedrock/us-gov-west-1/amazon.titan-embed-text-v1",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -812,7 +812,7 @@
           "source": "litellm",
           "source_id": "aws_polly/generative",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ]
     },
@@ -849,7 +849,7 @@
           "source": "litellm",
           "source_id": "aws_polly/long-form",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ]
     },
@@ -886,7 +886,7 @@
           "source": "litellm",
           "source_id": "aws_polly/neural",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ]
     },
@@ -923,7 +923,7 @@
           "source": "litellm",
           "source_id": "aws_polly/standard",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ]
     },
@@ -1416,7 +1416,7 @@
           "source": "models.dev",
           "source_id": "anthropic",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -1500,7 +1500,7 @@
           "source": "models.dev",
           "source_id": "anthropic",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -1594,7 +1594,7 @@
           "source": "models.dev",
           "source_id": "anthropic",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -1711,7 +1711,7 @@
           "source": "models.dev",
           "source_id": "anthropic",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -1803,7 +1803,7 @@
           "source": "models.dev",
           "source_id": "anthropic",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -1895,7 +1895,7 @@
           "source": "models.dev",
           "source_id": "anthropic",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -1989,7 +1989,7 @@
           "source": "models.dev",
           "source_id": "anthropic",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -2081,7 +2081,7 @@
           "source": "models.dev",
           "source_id": "anthropic",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -2171,7 +2171,7 @@
           "source": "models.dev",
           "source_id": "anthropic",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -2263,7 +2263,7 @@
           "source": "models.dev",
           "source_id": "anthropic",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -2380,7 +2380,7 @@
           "source": "models.dev",
           "source_id": "anthropic",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -2472,7 +2472,7 @@
           "source": "models.dev",
           "source_id": "anthropic",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -2568,7 +2568,7 @@
           "source": "models.dev",
           "source_id": "anthropic",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -2856,11 +2856,9 @@
       "model": "Trinity Large Thinking",
       "name": "Trinity Large Thinking",
       "alias": [
-        "arcee-ai/trinity-large-thinking:free",
         "arcee-ai/trinity-large-thinking"
       ],
       "aliases": [
-        "arcee-ai/trinity-large-thinking:free",
         "arcee-ai/trinity-large-thinking"
       ],
       "author": "arcee-ai",
@@ -2874,15 +2872,23 @@
       "reasoning": true,
       "tool_calling": true,
       "context_length": 262144,
-      "max_output_tokens": 80000,
+      "max_output_tokens": 262144,
       "release_timestamp": 1775058318,
       "other_parameters": {
         "tokenizer": "Other",
         "instruct_type": null,
         "supported_parameters": [
+          "frequency_penalty",
           "include_reasoning",
+          "logit_bias",
           "max_tokens",
+          "presence_penalty",
           "reasoning",
+          "repetition_penalty",
+          "response_format",
+          "seed",
+          "stop",
+          "structured_outputs",
           "temperature",
           "tool_choice",
           "tools",
@@ -2894,9 +2900,9 @@
       "sources": [
         {
           "source": "openrouter",
-          "source_id": "arcee-ai/trinity-large-thinking:free",
-          "url": "https://openrouter.ai/arcee-ai/trinity-large-thinking:free",
-          "observed_at": "2026-05-19T22:11:55.841Z"
+          "source_id": "arcee-ai/trinity-large-thinking",
+          "url": "https://openrouter.ai/arcee-ai/trinity-large-thinking",
+          "observed_at": "2026-05-26T18:18:12.375Z"
         }
       ],
       "prices": [
@@ -3122,7 +3128,7 @@
           "source": "litellm",
           "source_id": "assemblyai/best",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -3193,7 +3199,7 @@
           "source": "litellm",
           "source_id": "assemblyai/nano",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -4211,13 +4217,13 @@
           "source": "litellm",
           "source_id": "azure_ai/Cohere-embed-v3-english",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -4295,13 +4301,13 @@
           "source": "litellm",
           "source_id": "azure_ai/Cohere-embed-v3-multilingual",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -4385,13 +4391,13 @@
           "source": "litellm",
           "source_id": "azure_ai/cohere-rerank-v3-english",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -4479,13 +4485,13 @@
           "source": "litellm",
           "source_id": "azure_ai/cohere-rerank-v3-multilingual",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -4573,13 +4579,13 @@
           "source": "litellm",
           "source_id": "azure_ai/cohere-rerank-v3.5",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -4667,13 +4673,13 @@
           "source": "litellm",
           "source_id": "azure_ai/cohere-rerank-v4.0-fast",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -4761,13 +4767,13 @@
           "source": "litellm",
           "source_id": "azure_ai/cohere-rerank-v4.0-pro",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -4848,13 +4854,13 @@
           "source": "litellm",
           "source_id": "cohere.embed-english-v3",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -4931,13 +4937,13 @@
           "source": "litellm",
           "source_id": "cohere.embed-multilingual-v3",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -5021,7 +5027,7 @@
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -5107,7 +5113,7 @@
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -5193,7 +5199,7 @@
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -5277,7 +5283,7 @@
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -5355,13 +5361,13 @@
           "source": "litellm",
           "source_id": "embed-english-light-v2.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -5437,13 +5443,13 @@
           "source": "litellm",
           "source_id": "embed-english-light-v3.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -5519,13 +5525,13 @@
           "source": "litellm",
           "source_id": "embed-english-v2.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -5608,13 +5614,13 @@
           "source": "litellm",
           "source_id": "embed-english-v3.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -5695,13 +5701,13 @@
           "source": "litellm",
           "source_id": "embed-multilingual-light-v3.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -5777,13 +5783,13 @@
           "source": "litellm",
           "source_id": "embed-multilingual-v2.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -5860,13 +5866,13 @@
           "source": "litellm",
           "source_id": "embed-multilingual-v3.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -5951,13 +5957,13 @@
           "source": "litellm",
           "source_id": "azure_ai/embed-v-4-0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -6035,13 +6041,13 @@
           "source": "litellm",
           "source_id": "cohere/embed-v4.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -6125,13 +6131,13 @@
           "source": "litellm",
           "source_id": "rerank-english-v2.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -6219,13 +6225,13 @@
           "source": "litellm",
           "source_id": "rerank-english-v3.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -6313,13 +6319,13 @@
           "source": "litellm",
           "source_id": "rerank-multilingual-v2.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -6407,13 +6413,13 @@
           "source": "litellm",
           "source_id": "rerank-multilingual-v3.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -6501,13 +6507,13 @@
           "source": "litellm",
           "source_id": "rerank-v3.5",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "cohere",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -6588,13 +6594,13 @@
           "source": "litellm",
           "source_id": "databricks/databricks-bge-large-en",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "databricks",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -6671,13 +6677,13 @@
           "source": "litellm",
           "source_id": "databricks/databricks-gte-large-en",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "databricks",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -6831,7 +6837,7 @@
           "source": "litellm",
           "source_id": "deepgram/base-conversationalai",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -6905,7 +6911,7 @@
           "source": "litellm",
           "source_id": "deepgram/base-finance",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -6979,7 +6985,7 @@
           "source": "litellm",
           "source_id": "deepgram/base-general",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -7053,7 +7059,7 @@
           "source": "litellm",
           "source_id": "deepgram/base-meeting",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -7127,7 +7133,7 @@
           "source": "litellm",
           "source_id": "deepgram/base-phonecall",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -7201,7 +7207,7 @@
           "source": "litellm",
           "source_id": "deepgram/base-video",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -7275,7 +7281,7 @@
           "source": "litellm",
           "source_id": "deepgram/base-voicemail",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -7349,7 +7355,7 @@
           "source": "litellm",
           "source_id": "deepgram/base",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -7423,7 +7429,7 @@
           "source": "litellm",
           "source_id": "deepgram/enhanced",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -7497,7 +7503,7 @@
           "source": "litellm",
           "source_id": "deepgram/enhanced-finance",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -7571,7 +7577,7 @@
           "source": "litellm",
           "source_id": "deepgram/enhanced-general",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -7645,7 +7651,7 @@
           "source": "litellm",
           "source_id": "deepgram/enhanced-meeting",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -7719,7 +7725,7 @@
           "source": "litellm",
           "source_id": "deepgram/enhanced-phonecall",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -7793,7 +7799,7 @@
           "source": "litellm",
           "source_id": "deepgram/nova",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -7867,7 +7873,7 @@
           "source": "litellm",
           "source_id": "deepgram/nova-2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -7941,7 +7947,7 @@
           "source": "litellm",
           "source_id": "deepgram/nova-2-atc",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -8015,7 +8021,7 @@
           "source": "litellm",
           "source_id": "deepgram/nova-2-automotive",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -8089,7 +8095,7 @@
           "source": "litellm",
           "source_id": "deepgram/nova-2-conversationalai",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -8163,7 +8169,7 @@
           "source": "litellm",
           "source_id": "deepgram/nova-2-drivethru",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -8237,7 +8243,7 @@
           "source": "litellm",
           "source_id": "deepgram/nova-2-finance",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -8311,7 +8317,7 @@
           "source": "litellm",
           "source_id": "deepgram/nova-2-general",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -8385,7 +8391,7 @@
           "source": "litellm",
           "source_id": "deepgram/nova-2-meeting",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -8459,7 +8465,7 @@
           "source": "litellm",
           "source_id": "deepgram/nova-2-phonecall",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -8533,7 +8539,7 @@
           "source": "litellm",
           "source_id": "deepgram/nova-2-video",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -8607,7 +8613,7 @@
           "source": "litellm",
           "source_id": "deepgram/nova-2-voicemail",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -8681,7 +8687,7 @@
           "source": "litellm",
           "source_id": "deepgram/nova-3",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -8755,7 +8761,7 @@
           "source": "litellm",
           "source_id": "deepgram/nova-3-general",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -8829,7 +8835,7 @@
           "source": "litellm",
           "source_id": "deepgram/nova-3-medical",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -8903,7 +8909,7 @@
           "source": "litellm",
           "source_id": "deepgram/nova-general",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -8977,7 +8983,7 @@
           "source": "litellm",
           "source_id": "deepgram/nova-phonecall",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -9051,7 +9057,7 @@
           "source": "litellm",
           "source_id": "deepgram/whisper",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -9125,7 +9131,7 @@
           "source": "litellm",
           "source_id": "deepgram/whisper-base",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -9199,7 +9205,7 @@
           "source": "litellm",
           "source_id": "deepgram/whisper-large",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -9273,7 +9279,7 @@
           "source": "litellm",
           "source_id": "deepgram/whisper-medium",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -9347,7 +9353,7 @@
           "source": "litellm",
           "source_id": "deepgram/whisper-small",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -9421,7 +9427,7 @@
           "source": "litellm",
           "source_id": "deepgram/whisper-tiny",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -9513,7 +9519,7 @@
           "source": "models.dev",
           "source_id": "deepseek",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -9616,7 +9622,7 @@
           "source": "models.dev",
           "source_id": "deepseek",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -9715,7 +9721,7 @@
           "source": "models.dev",
           "source_id": "deepseek",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -9935,7 +9941,7 @@
           "source": "models.dev",
           "source_id": "deepseek",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -10040,7 +10046,7 @@
           "source": "models.dev",
           "source_id": "deepseek",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -10140,7 +10146,7 @@
           "source": "models.dev",
           "source_id": "deepseek",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -10318,7 +10324,7 @@
           "source": "models.dev",
           "source_id": "deepseek",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -10464,7 +10470,7 @@
           "source": "models.dev",
           "source_id": "deepseek",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -10571,7 +10577,7 @@
           "source": "models.dev",
           "source_id": "deepseek",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -10798,7 +10804,7 @@
           "source": "models.dev",
           "source_id": "deepseek",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -10941,7 +10947,7 @@
           "source": "models.dev",
           "source_id": "deepseek",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -11076,7 +11082,7 @@
           "source": "models.dev",
           "source_id": "deepseek",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -11246,7 +11252,7 @@
           "source": "models.dev",
           "source_id": "deepseek",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -11398,13 +11404,13 @@
           "source": "litellm",
           "source_id": "elevenlabs/eleven_multilingual_v2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "runwayml/eleven_multilingual_v2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ]
     },
@@ -11441,7 +11447,7 @@
           "source": "litellm",
           "source_id": "elevenlabs/eleven_v3",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ]
     },
@@ -11492,7 +11498,7 @@
           "source": "litellm",
           "source_id": "elevenlabs/scribe_v1",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -11566,7 +11572,7 @@
           "source": "litellm",
           "source_id": "elevenlabs/scribe_v1_experimental",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -11719,13 +11725,13 @@
           "source": "litellm",
           "source_id": "fireworks_ai/accounts/fireworks/models/fireworks-asr-large",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "fireworks-ai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -11802,13 +11808,13 @@
           "source": "litellm",
           "source_id": "fireworks_ai/accounts/fireworks/models/fireworks-asr-v2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "fireworks-ai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -11884,13 +11890,13 @@
           "source": "litellm",
           "source_id": "fireworks_ai/thenlper/gte-base",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "fireworks-ai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -11966,13 +11972,13 @@
           "source": "litellm",
           "source_id": "fireworks_ai/thenlper/gte-large",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "fireworks-ai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -12048,13 +12054,13 @@
           "source": "litellm",
           "source_id": "fireworks_ai/nomic-ai/nomic-embed-text-v1",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "fireworks-ai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -12130,13 +12136,13 @@
           "source": "litellm",
           "source_id": "fireworks_ai/nomic-ai/nomic-embed-text-v1.5",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "fireworks-ai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -12213,13 +12219,13 @@
           "source": "litellm",
           "source_id": "fireworks_ai/accounts/fireworks/models/qwen3-embedding-0p6b",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "fireworks-ai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -12296,13 +12302,13 @@
           "source": "litellm",
           "source_id": "fireworks_ai/accounts/fireworks/models/qwen3-embedding-4b",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "fireworks-ai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -12379,13 +12385,13 @@
           "source": "litellm",
           "source_id": "fireworks_ai/accounts/fireworks/models/qwen3-reranker-0p6b",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "fireworks-ai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -12462,13 +12468,13 @@
           "source": "litellm",
           "source_id": "fireworks_ai/accounts/fireworks/models/qwen3-reranker-4b",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "fireworks-ai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -12587,19 +12593,19 @@
           "source": "litellm",
           "source_id": "fireworks_ai/accounts/fireworks/models/qwen3-reranker-8b",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "novita/qwen/qwen3-reranker-8b",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "fireworks-ai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -12696,13 +12702,13 @@
           "source": "litellm",
           "source_id": "fireworks_ai/WhereIsAI/UAE-Large-V1",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "fireworks-ai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -12779,13 +12785,13 @@
           "source": "litellm",
           "source_id": "fireworks_ai/accounts/fireworks/models/whisper-v3",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "fireworks-ai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -12862,13 +12868,13 @@
           "source": "litellm",
           "source_id": "fireworks_ai/accounts/fireworks/models/whisper-v3-turbo",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "fireworks-ai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -12942,7 +12948,7 @@
           "source": "litellm",
           "source_id": "gigachat/Embeddings",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -13015,7 +13021,7 @@
           "source": "litellm",
           "source_id": "gigachat/Embeddings-2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -13088,7 +13094,7 @@
           "source": "litellm",
           "source_id": "gigachat/EmbeddingsGigaR",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -13149,13 +13155,13 @@
           "source": "litellm",
           "source_id": "github_copilot/text-embedding-3-small-inference",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "github-copilot",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "icon": "/assets/provider-icons/github-copilot.svg"
@@ -13196,13 +13202,13 @@
           "source": "litellm",
           "source_id": "vertex_ai/chirp",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "icon": "/assets/provider-icons/google.svg"
@@ -13266,13 +13272,13 @@
           "source": "litellm",
           "source_id": "gemini/gemini-1.5-flash",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -13362,7 +13368,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -13460,7 +13466,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -13560,7 +13566,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -13654,7 +13660,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -13754,7 +13760,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -13854,7 +13860,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -13996,19 +14002,19 @@
           "source": "litellm",
           "source_id": "gemini/gemini-2.5-flash-preview-tts",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "gemini-2.5-flash-preview-tts",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -14117,7 +14123,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -14253,7 +14259,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -14355,7 +14361,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -14457,7 +14463,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -14555,7 +14561,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -14653,7 +14659,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -14747,7 +14753,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -14849,7 +14855,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -14951,7 +14957,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -15053,7 +15059,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -15157,7 +15163,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -15349,25 +15355,25 @@
           "source": "litellm",
           "source_id": "gemini-embedding-001",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "gemini/gemini-embedding-001",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "vercel_ai_gateway/google/gemini-embedding-001",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -15630,25 +15636,25 @@
           "source": "litellm",
           "source_id": "gemini-embedding-2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "vertex_ai/gemini-embedding-2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "gemini/gemini-embedding-2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -15947,25 +15953,25 @@
           "source": "litellm",
           "source_id": "gemini-embedding-2-preview",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "vertex_ai/gemini-embedding-2-preview",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "gemini/gemini-embedding-2-preview",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -16125,7 +16131,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -16215,7 +16221,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -16305,7 +16311,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -16393,7 +16399,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -16476,7 +16482,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -16563,7 +16569,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -16650,7 +16656,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -16733,7 +16739,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "icon": "/assets/provider-icons/google.svg"
@@ -16791,7 +16797,7 @@
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "icon": "/assets/provider-icons/google.svg"
@@ -16880,13 +16886,13 @@
           "source": "litellm",
           "source_id": "multimodalembedding",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -17016,13 +17022,13 @@
           "source": "litellm",
           "source_id": "multimodalembedding@001",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -17118,13 +17124,13 @@
           "source": "litellm",
           "source_id": "text-embedding-004",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -17244,19 +17250,19 @@
           "source": "litellm",
           "source_id": "text-embedding-005",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "vercel_ai_gateway/google/text-embedding-005",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -17354,13 +17360,13 @@
           "source": "litellm",
           "source_id": "text-embedding-large-exp-03-07",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -17444,13 +17450,13 @@
           "source": "litellm",
           "source_id": "text-embedding-preview-0409",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -17574,19 +17580,19 @@
           "source": "litellm",
           "source_id": "text-multilingual-embedding-002",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "vercel_ai_gateway/google/text-multilingual-embedding-002",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -17725,19 +17731,19 @@
           "source": "litellm",
           "source_id": "gemini/veo-2.0-generate-001",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "vertex_ai/veo-2.0-generate-001",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -17826,13 +17832,13 @@
           "source": "litellm",
           "source_id": "vertex_ai/veo-3.0-fast-generate-001",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -17904,13 +17910,13 @@
           "source": "litellm",
           "source_id": "vertex_ai/veo-3.0-generate-001",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -18024,19 +18030,19 @@
           "source": "litellm",
           "source_id": "gemini/veo-3.1-fast-generate-001",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "vertex_ai/veo-3.1-fast-generate-001",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -18167,19 +18173,19 @@
           "source": "litellm",
           "source_id": "gemini/veo-3.1-fast-generate-preview",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "vertex_ai/veo-3.1-fast-generate-preview",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -18310,19 +18316,19 @@
           "source": "litellm",
           "source_id": "gemini/veo-3.1-generate-001",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "vertex_ai/veo-3.1-generate-001",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -18453,19 +18459,19 @@
           "source": "litellm",
           "source_id": "gemini/veo-3.1-generate-preview",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "vertex_ai/veo-3.1-generate-preview",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -18561,13 +18567,13 @@
           "source": "litellm",
           "source_id": "gemini/veo-3.1-lite-generate-preview",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "google",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -18631,13 +18637,13 @@
           "source": "litellm",
           "source_id": "groq/playai-tts",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "groq",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "icon": "/assets/provider-icons/groq.svg"
@@ -18689,13 +18695,13 @@
           "source": "litellm",
           "source_id": "groq/whisper-large-v3",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "groq",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -18818,19 +18824,19 @@
           "source": "litellm",
           "source_id": "groq/whisper-large-v3-turbo",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "watsonx/whisper-large-v3-turbo",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "groq",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -19543,7 +19549,7 @@
           "source": "models.dev",
           "source_id": "inception",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -19994,7 +20000,7 @@
           "source": "litellm",
           "source_id": "jina-reranker-v2-base-multilingual",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -20467,7 +20473,7 @@
           "source": "litellm",
           "source_id": "llamagate/nomic-embed-text",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -21867,7 +21873,7 @@
           "source": "models.dev",
           "source_id": "minimax-coding-plan",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -21954,7 +21960,7 @@
           "source": "models.dev",
           "source_id": "minimax-coding-plan",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -22045,7 +22051,7 @@
           "source": "models.dev",
           "source_id": "minimax-coding-plan",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -22124,7 +22130,7 @@
           "source": "models.dev",
           "source_id": "minimax-coding-plan",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -22217,7 +22223,7 @@
           "source": "models.dev",
           "source_id": "minimax-coding-plan",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -22317,7 +22323,7 @@
           "source": "models.dev",
           "source_id": "minimax-coding-plan",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -22493,7 +22499,7 @@
           "source": "models.dev",
           "source_id": "minimax-coding-plan",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -22565,13 +22571,13 @@
           "source": "litellm",
           "source_id": "minimax/speech-02-hd",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "minimax-coding-plan",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -22620,13 +22626,13 @@
           "source": "litellm",
           "source_id": "minimax/speech-02-turbo",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "minimax-coding-plan",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -22675,13 +22681,13 @@
           "source": "litellm",
           "source_id": "minimax/speech-2.6-hd",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "minimax-coding-plan",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "icon": "/assets/provider-icons/minimax.svg"
@@ -22722,13 +22728,13 @@
           "source": "litellm",
           "source_id": "minimax/speech-2.6-turbo",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "minimax-coding-plan",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "icon": "/assets/provider-icons/minimax.svg"
@@ -22787,7 +22793,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -22859,13 +22865,13 @@
           "source": "litellm",
           "source_id": "mistral/codestral-embed",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -22931,13 +22937,13 @@
           "source": "litellm",
           "source_id": "mistral/codestral-embed-2505",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -23015,7 +23021,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -23101,7 +23107,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -23187,7 +23193,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -23275,7 +23281,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -23363,7 +23369,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -23451,7 +23457,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -23536,7 +23542,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -23608,13 +23614,13 @@
           "source": "litellm",
           "source_id": "mistral/mistral-embed",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -23692,7 +23698,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -23776,7 +23782,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -23860,7 +23866,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -23945,7 +23951,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -24030,7 +24036,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -24119,7 +24125,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -24204,7 +24210,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -24292,7 +24298,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -24378,7 +24384,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -24465,7 +24471,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -24553,7 +24559,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -24641,7 +24647,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -24733,7 +24739,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -24817,7 +24823,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -24902,7 +24908,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -24987,7 +24993,7 @@
           "source": "models.dev",
           "source_id": "mistral",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -25072,7 +25078,7 @@
           "source": "models.dev",
           "source_id": "moonshotai-cn",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -25161,7 +25167,7 @@
           "source": "models.dev",
           "source_id": "moonshotai-cn",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -25254,7 +25260,7 @@
           "source": "models.dev",
           "source_id": "moonshotai-cn",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -25427,7 +25433,7 @@
           "source": "models.dev",
           "source_id": "moonshotai-cn",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -25539,7 +25545,7 @@
           "source": "models.dev",
           "source_id": "moonshotai-cn",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -25748,7 +25754,7 @@
           "source": "models.dev",
           "source_id": "morph",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -25825,7 +25831,7 @@
           "source": "models.dev",
           "source_id": "morph",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -25903,13 +25909,13 @@
           "source": "litellm",
           "source_id": "nebius/BAAI/bge-en-icl",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "nebius",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -25985,13 +25991,13 @@
           "source": "litellm",
           "source_id": "nebius/BAAI/bge-multilingual-gemma2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "nebius",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -26067,13 +26073,13 @@
           "source": "litellm",
           "source_id": "nebius/intfloat/e5-mistral-7b-instruct",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "nebius",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -26590,7 +26596,7 @@
           "source": "litellm",
           "source_id": "novita/baai/bge-m3",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -26663,7 +26669,7 @@
           "source": "litellm",
           "source_id": "novita/baai/bge-reranker-v2-m3",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -26736,7 +26742,7 @@
           "source": "litellm",
           "source_id": "novita/qwen/qwen3-embedding-0.6b",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -26851,13 +26857,13 @@
           "source": "litellm",
           "source_id": "novita/qwen/qwen3-embedding-8b",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "llamagate/qwen3-embedding-8b",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -26965,7 +26971,7 @@
           "source": "models.dev",
           "source_id": "nvidia",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -27048,7 +27054,7 @@
           "source": "models.dev",
           "source_id": "nvidia",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -27135,7 +27141,7 @@
           "source": "models.dev",
           "source_id": "nvidia",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "icon": "/assets/provider-icons/nvidia.svg"
@@ -27196,7 +27202,7 @@
           "source": "models.dev",
           "source_id": "nvidia",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -27282,7 +27288,7 @@
           "source": "models.dev",
           "source_id": "nvidia",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "icon": "/assets/provider-icons/nvidia.svg"
@@ -27342,7 +27348,7 @@
           "source": "models.dev",
           "source_id": "nvidia",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -27476,13 +27482,13 @@
           "source": "litellm",
           "source_id": "nvidia_nim/nvidia/llama-3_2-nv-rerankqa-1b-v2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "nvidia_nim/ranking/nvidia/llama-3.2-nv-rerankqa-1b-v2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -27588,7 +27594,7 @@
           "source": "litellm",
           "source_id": "nvidia_nim/nvidia/nv-rerankqa-mistral-4b-v3",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -27666,7 +27672,7 @@
           "source": "litellm",
           "source_id": "oci/cohere.embed-english-image-v3.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -27740,7 +27746,7 @@
           "source": "litellm",
           "source_id": "oci/cohere.embed-english-light-image-v3.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -27813,7 +27819,7 @@
           "source": "litellm",
           "source_id": "oci/cohere.embed-english-light-v3.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -27886,7 +27892,7 @@
           "source": "litellm",
           "source_id": "oci/cohere.embed-english-v3.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -27909,6 +27915,69 @@
             "provider_id": "oci",
             "provider_name": "Oci",
             "api_model_id": "oci/cohere.embed-english-v3.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cohere.embed-multilingual-image-v3.0",
+      "model": "Cohere.embed Multilingual Image v3.0",
+      "name": "Cohere.embed Multilingual Image v3.0",
+      "alias": [
+        "oci/cohere.embed-multilingual-image-v3.0"
+      ],
+      "aliases": [
+        "oci/cohere.embed-multilingual-image-v3.0"
+      ],
+      "author": "oci",
+      "author_id": "oci",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "embeddings"
+      ],
+      "context_length": 512,
+      "other_parameters": {
+        "litellm": {
+          "mode": "embedding",
+          "provider": "oci",
+          "raw_id": "oci/cohere.embed-multilingual-image-v3.0",
+          "output_vector_size": 1024,
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.1,
+              "unit": "per_1m_tokens",
+              "source_key": "input_cost_per_token"
+            }
+          ]
+        }
+      },
+      "sources": [
+        {
+          "source": "litellm",
+          "source_id": "oci/cohere.embed-multilingual-image-v3.0",
+          "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
+          "observed_at": "2026-05-26T18:18:13.156Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "litellm",
+          "source_id": "oci/cohere.embed-multilingual-image-v3.0",
+          "source_url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
+          "currency": "USD",
+          "unit_prices": {
+            "input_cost_per_token": {
+              "amount": 0.1,
+              "unit": "per_1m_tokens"
+            }
+          },
+          "endpoint": {
+            "provider_id": "oci",
+            "provider_name": "Oci",
+            "api_model_id": "oci/cohere.embed-multilingual-image-v3.0"
           }
         }
       ]
@@ -27960,7 +28029,7 @@
           "source": "litellm",
           "source_id": "oci/cohere.embed-multilingual-light-image-v3.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -28033,7 +28102,7 @@
           "source": "litellm",
           "source_id": "oci/cohere.embed-multilingual-light-v3.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -28106,7 +28175,7 @@
           "source": "litellm",
           "source_id": "oci/cohere.embed-multilingual-v3.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -28180,7 +28249,7 @@
           "source": "litellm",
           "source_id": "oci/cohere.embed-v4.0",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -28255,13 +28324,13 @@
           "source": "litellm",
           "source_id": "azure/ada",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -28284,6 +28353,90 @@
             "provider_id": "openai",
             "provider_name": "Openai",
             "api_model_id": "azure/ada"
+          }
+        }
+      ],
+      "icon": "/assets/provider-icons/openai.svg"
+    },
+    {
+      "id": "azure-stt",
+      "model": "Azure Stt",
+      "name": "Azure Stt",
+      "alias": [
+        "azure/speech/azure-stt"
+      ],
+      "aliases": [
+        "azure/speech/azure-stt"
+      ],
+      "author": "openai",
+      "author_id": "openai",
+      "input_modalities": [
+        "audio"
+      ],
+      "output_modalities": [
+        "transcription"
+      ],
+      "other_parameters": {
+        "litellm": {
+          "mode": "audio_transcription",
+          "provider": "azure",
+          "raw_id": "azure/speech/azure-stt",
+          "supported_endpoints": [
+            "/v1/audio/transcriptions"
+          ],
+          "prices": [
+            {
+              "kind": "input",
+              "amount": 0.0002777778,
+              "unit": "per_second",
+              "source_key": "input_cost_per_second"
+            },
+            {
+              "kind": "output",
+              "amount": 0,
+              "unit": "per_second",
+              "source_key": "output_cost_per_second"
+            }
+          ]
+        },
+        "models_dev": {
+          "remote_icon": "https://models.dev/logos/openai.svg"
+        }
+      },
+      "sources": [
+        {
+          "source": "litellm",
+          "source_id": "azure/speech/azure-stt",
+          "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
+          "observed_at": "2026-05-26T18:18:13.156Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "openai",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-26T18:18:14.292Z"
+        }
+      ],
+      "prices": [
+        {
+          "source": "litellm",
+          "source_id": "azure/speech/azure-stt",
+          "source_url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
+          "currency": "USD",
+          "unit_prices": {
+            "input_cost_per_second": {
+              "amount": 0.0002777778,
+              "unit": "per_second"
+            },
+            "output_cost_per_second": {
+              "amount": 0,
+              "unit": "per_second"
+            }
+          },
+          "endpoint": {
+            "provider_id": "openai",
+            "provider_name": "Openai",
+            "api_model_id": "azure/speech/azure-stt"
           }
         }
       ],
@@ -28347,7 +28500,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -28435,7 +28588,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -28524,7 +28677,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -28610,7 +28763,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -28699,7 +28852,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -28787,7 +28940,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -28875,7 +29028,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -28968,7 +29121,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -29056,7 +29209,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -29141,7 +29294,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -29231,7 +29384,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -29321,7 +29474,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -29416,7 +29569,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -29507,7 +29660,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -29598,7 +29751,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -29688,7 +29841,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -29777,7 +29930,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -29868,7 +30021,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -29958,7 +30111,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -30038,7 +30191,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -30190,19 +30343,19 @@
           "source": "litellm",
           "source_id": "azure/gpt-4o-mini-transcribe",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "gpt-4o-mini-transcribe",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -30317,13 +30470,13 @@
           "source": "litellm",
           "source_id": "gpt-4o-mini-transcribe-2025-03-20",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -30413,13 +30566,13 @@
           "source": "litellm",
           "source_id": "gpt-4o-mini-transcribe-2025-12-15",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -30607,19 +30760,19 @@
           "source": "litellm",
           "source_id": "azure/gpt-4o-mini-tts",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "gpt-4o-mini-tts",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -30754,13 +30907,13 @@
           "source": "litellm",
           "source_id": "gpt-4o-mini-tts-2025-03-20",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -30866,13 +31019,13 @@
           "source": "litellm",
           "source_id": "gpt-4o-mini-tts-2025-12-15",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -30958,7 +31111,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -31110,19 +31263,19 @@
           "source": "litellm",
           "source_id": "azure/gpt-4o-transcribe",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "gpt-4o-transcribe",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -31297,19 +31450,19 @@
           "source": "litellm",
           "source_id": "azure/gpt-4o-transcribe-diarize",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "gpt-4o-transcribe-diarize",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -31422,7 +31575,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -31507,7 +31660,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -31594,7 +31747,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -31687,7 +31840,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -31780,7 +31933,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -31870,7 +32023,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -31959,7 +32112,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -32048,7 +32201,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -32138,7 +32291,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -32226,7 +32379,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -32316,7 +32469,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -32406,7 +32559,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -32496,7 +32649,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -32586,7 +32739,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -32674,7 +32827,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -32764,7 +32917,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -32853,7 +33006,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -32945,7 +33098,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -33062,7 +33215,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -33152,7 +33305,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -33245,7 +33398,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -33337,7 +33490,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -33454,7 +33607,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -33544,7 +33697,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -33634,7 +33787,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -33725,7 +33878,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -33845,7 +33998,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -33934,7 +34087,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -34018,7 +34171,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -34102,7 +34255,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -34186,7 +34339,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -34271,7 +34424,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -34356,7 +34509,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -34445,7 +34598,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -34542,7 +34695,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -34630,7 +34783,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -34718,7 +34871,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -34807,7 +34960,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -34896,7 +35049,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -34993,7 +35146,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -35082,7 +35235,7 @@
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -35230,25 +35383,25 @@
           "source": "litellm",
           "source_id": "openai/sora-2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "azure/sora-2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "sora-2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -35420,25 +35573,25 @@
           "source": "litellm",
           "source_id": "openai/sora-2-pro",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "azure/sora-2-pro",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "sora-2-pro",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -35610,25 +35763,25 @@
           "source": "litellm",
           "source_id": "openai/sora-2-pro-high-res",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "azure/sora-2-pro-high-res",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "sora-2-pro-high-res",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -35812,25 +35965,25 @@
           "source": "litellm",
           "source_id": "azure/text-embedding-3-large",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "text-embedding-3-large",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "vercel_ai_gateway/openai/text-embedding-3-large",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -36044,31 +36197,31 @@
           "source": "litellm",
           "source_id": "azure/text-embedding-3-small",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "github_copilot/text-embedding-3-small",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "text-embedding-3-small",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "vercel_ai_gateway/openai/text-embedding-3-small",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -36268,31 +36421,31 @@
           "source": "litellm",
           "source_id": "azure/text-embedding-ada-002",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "github_copilot/text-embedding-ada-002",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "text-embedding-ada-002",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "vercel_ai_gateway/openai/text-embedding-ada-002",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -36424,13 +36577,13 @@
           "source": "litellm",
           "source_id": "text-embedding-ada-002-v2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -36521,19 +36674,19 @@
           "source": "litellm",
           "source_id": "azure/tts-1",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "tts-1",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "icon": "/assets/provider-icons/openai.svg"
@@ -36574,13 +36727,13 @@
           "source": "litellm",
           "source_id": "tts-1-1106",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "icon": "/assets/provider-icons/openai.svg"
@@ -36638,19 +36791,19 @@
           "source": "litellm",
           "source_id": "azure/tts-1-hd",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "tts-1-hd",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "icon": "/assets/provider-icons/openai.svg"
@@ -36691,13 +36844,13 @@
           "source": "litellm",
           "source_id": "tts-1-hd-1106",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "icon": "/assets/provider-icons/openai.svg"
@@ -36797,19 +36950,19 @@
           "source": "litellm",
           "source_id": "azure/whisper-1",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "whisper-1",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "openai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -36984,13 +37137,13 @@
           "source": "litellm",
           "source_id": "perplexity/pplx-embed-v1-0.6b",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "perplexity",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -37067,13 +37220,13 @@
           "source": "litellm",
           "source_id": "perplexity/pplx-embed-v1-4b",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "models.dev",
           "source_id": "perplexity",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -37152,7 +37305,7 @@
           "source": "models.dev",
           "source_id": "perplexity",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -37238,7 +37391,7 @@
           "source": "models.dev",
           "source_id": "perplexity",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -37328,7 +37481,7 @@
           "source": "models.dev",
           "source_id": "perplexity",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -37417,7 +37570,7 @@
           "source": "models.dev",
           "source_id": "perplexity",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -37504,7 +37657,7 @@
           "source": "models.dev",
           "source_id": "perplexity",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -38089,8 +38242,8 @@
       ],
       "reasoning": true,
       "tool_calling": true,
-      "context_length": 131072,
-      "max_output_tokens": 8192,
+      "context_length": 262144,
+      "max_output_tokens": 32768,
       "release_timestamp": 1777388504,
       "other_parameters": {
         "tokenizer": "Other",
@@ -38102,7 +38255,10 @@
           "temperature",
           "tool_choice",
           "tools"
-        ]
+        ],
+        "models_dev": {
+          "remote_icon": "https://models.dev/logos/poolside.svg"
+        }
       },
       "last_updated": "2026-05-19T22:11:55.841Z",
       "sources": [
@@ -38111,8 +38267,15 @@
           "source_id": "poolside/laguna-m.1:free",
           "url": "https://openrouter.ai/poolside/laguna-m.1:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "poolside",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
-      ]
+      ],
+      "icon": "/assets/provider-icons/poolside.svg"
     },
     {
       "id": "laguna-xs.2",
@@ -38149,7 +38312,10 @@
           "temperature",
           "tool_choice",
           "tools"
-        ]
+        ],
+        "models_dev": {
+          "remote_icon": "https://models.dev/logos/poolside.svg"
+        }
       },
       "last_updated": "2026-05-19T22:11:55.841Z",
       "sources": [
@@ -38158,8 +38324,15 @@
           "source_id": "poolside/laguna-xs.2:free",
           "url": "https://openrouter.ai/poolside/laguna-xs.2:free",
           "observed_at": "2026-05-19T22:11:55.841Z"
+        },
+        {
+          "source": "models.dev",
+          "source_id": "poolside",
+          "url": "https://models.dev/api.json",
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
-      ]
+      ],
+      "icon": "/assets/provider-icons/poolside.svg"
     },
     {
       "id": "intellect-3",
@@ -60508,7 +60681,7 @@
           "source": "litellm",
           "source_id": "runwayml/gen3a_turbo",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -60577,7 +60750,7 @@
           "source": "litellm",
           "source_id": "runwayml/gen4_aleph",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -60646,7 +60819,7 @@
           "source": "litellm",
           "source_id": "runwayml/gen4_turbo",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -61112,7 +61285,7 @@
           "source": "models.dev",
           "source_id": "stepfun-ai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -61195,7 +61368,7 @@
           "source": "models.dev",
           "source_id": "tencent-tokenhub",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -61282,7 +61455,7 @@
           "source": "models.dev",
           "source_id": "tencent-tokenhub",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -61709,13 +61882,13 @@
           "source": "litellm",
           "source_id": "together_ai/baai/bge-base-en-v1.5",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         },
         {
           "source": "litellm",
           "source_id": "together_ai/BAAI/bge-base-en-v1.5",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -61807,7 +61980,7 @@
           "source": "litellm",
           "source_id": "together-ai-embedding-151m-to-350m",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -61878,7 +62051,7 @@
           "source": "litellm",
           "source_id": "together-ai-embedding-up-to-150m",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -62118,7 +62291,7 @@
           "source": "models.dev",
           "source_id": "upstage",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -62195,7 +62368,7 @@
           "source": "litellm",
           "source_id": "gemini-flash-experimental",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -63620,7 +63793,7 @@
           "source": "litellm",
           "source_id": "doubao-embedding",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -63693,7 +63866,7 @@
           "source": "litellm",
           "source_id": "doubao-embedding-large",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -63766,7 +63939,7 @@
           "source": "litellm",
           "source_id": "doubao-embedding-large-text-240915",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -63839,7 +64012,7 @@
           "source": "litellm",
           "source_id": "doubao-embedding-large-text-250515",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -63912,7 +64085,7 @@
           "source": "litellm",
           "source_id": "doubao-embedding-text-240715",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -69384,7 +69557,7 @@
           "source": "litellm",
           "source_id": "voyage/rerank-2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -69458,7 +69631,7 @@
           "source": "litellm",
           "source_id": "voyage/rerank-2-lite",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -69532,7 +69705,7 @@
           "source": "litellm",
           "source_id": "voyage/rerank-2.5",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -69606,7 +69779,7 @@
           "source": "litellm",
           "source_id": "voyage/rerank-2.5-lite",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -69678,7 +69851,7 @@
           "source": "litellm",
           "source_id": "voyage/voyage-2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -69750,7 +69923,7 @@
           "source": "litellm",
           "source_id": "voyage/voyage-3",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -69822,7 +69995,7 @@
           "source": "litellm",
           "source_id": "voyage/voyage-3-large",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -69894,7 +70067,7 @@
           "source": "litellm",
           "source_id": "voyage/voyage-3-lite",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -69966,7 +70139,7 @@
           "source": "litellm",
           "source_id": "voyage/voyage-3.5",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -70038,7 +70211,7 @@
           "source": "litellm",
           "source_id": "voyage/voyage-3.5-lite",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -70110,7 +70283,7 @@
           "source": "litellm",
           "source_id": "voyage/voyage-code-2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -70182,7 +70355,7 @@
           "source": "litellm",
           "source_id": "voyage/voyage-code-3",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -70254,7 +70427,7 @@
           "source": "litellm",
           "source_id": "voyage/voyage-context-3",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -70326,7 +70499,7 @@
           "source": "litellm",
           "source_id": "voyage/voyage-finance-2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -70398,7 +70571,7 @@
           "source": "litellm",
           "source_id": "voyage/voyage-large-2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -70470,7 +70643,7 @@
           "source": "litellm",
           "source_id": "voyage/voyage-law-2",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -70542,7 +70715,7 @@
           "source": "litellm",
           "source_id": "voyage/voyage-lite-01",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -70614,7 +70787,7 @@
           "source": "litellm",
           "source_id": "voyage/voyage-lite-02-instruct",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -70686,7 +70859,7 @@
           "source": "litellm",
           "source_id": "voyage/voyage-multimodal-3",
           "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
-          "observed_at": "2026-05-26T11:36:35.850Z"
+          "observed_at": "2026-05-26T18:18:13.156Z"
         }
       ],
       "prices": [
@@ -73958,7 +74131,7 @@
           "source": "models.dev",
           "source_id": "xai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -74048,7 +74221,7 @@
           "source": "models.dev",
           "source_id": "xai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -74143,7 +74316,7 @@
           "source": "models.dev",
           "source_id": "xai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -74238,7 +74411,7 @@
           "source": "models.dev",
           "source_id": "xai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -74332,7 +74505,7 @@
           "source": "models.dev",
           "source_id": "xiaomi",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -74422,7 +74595,7 @@
           "source": "models.dev",
           "source_id": "xiaomi",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -74509,7 +74682,7 @@
           "source": "models.dev",
           "source_id": "xiaomi",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -74599,7 +74772,7 @@
           "source": "models.dev",
           "source_id": "xiaomi",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -74610,11 +74783,11 @@
           "currency": "USD",
           "unit_prices": {
             "input": {
-              "amount": 0.4,
+              "amount": 0.14,
               "unit": "per_1m_tokens"
             },
             "output": {
-              "amount": 2,
+              "amount": 0.28,
               "unit": "per_1m_tokens"
             }
           },
@@ -74652,7 +74825,7 @@
       "reasoning": true,
       "tool_calling": true,
       "context_length": 1048576,
-      "max_output_tokens": 16384,
+      "max_output_tokens": 131072,
       "release_timestamp": 1776874273,
       "other_parameters": {
         "tokenizer": "Other",
@@ -74692,7 +74865,7 @@
           "source": "models.dev",
           "source_id": "xiaomi",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -74709,11 +74882,11 @@
           "currency": "USD",
           "unit_prices": {
             "input": {
-              "amount": 1,
+              "amount": 0.435,
               "unit": "per_1m_tokens"
             },
             "output": {
-              "amount": 3,
+              "amount": 0.87,
               "unit": "per_1m_tokens"
             }
           },
@@ -74778,7 +74951,7 @@
           "source": "models.dev",
           "source_id": "zhipuai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -74866,7 +75039,7 @@
           "source": "models.dev",
           "source_id": "zhipuai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -74955,7 +75128,7 @@
           "source": "models.dev",
           "source_id": "zhipuai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -75050,7 +75223,7 @@
           "source": "models.dev",
           "source_id": "zhipuai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -75141,7 +75314,7 @@
           "source": "models.dev",
           "source_id": "zhipuai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -75293,7 +75466,7 @@
           "source": "models.dev",
           "source_id": "zhipuai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -75388,7 +75561,7 @@
           "source": "models.dev",
           "source_id": "zhipuai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -75658,7 +75831,7 @@
           "source": "models.dev",
           "source_id": "zhipuai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -75752,7 +75925,7 @@
           "source": "models.dev",
           "source_id": "zhipuai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -75857,7 +76030,7 @@
           "source": "models.dev",
           "source_id": "zhipuai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -75955,7 +76128,7 @@
           "source": "models.dev",
           "source_id": "zhipuai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         },
         {
           "source": "bailian_model_market",
@@ -76054,7 +76227,7 @@
           "source": "models.dev",
           "source_id": "zhipuai",
           "url": "https://models.dev/api.json",
-          "observed_at": "2026-05-26T11:36:37.011Z"
+          "observed_at": "2026-05-26T18:18:14.292Z"
         }
       ],
       "prices": [
@@ -76085,5 +76258,5 @@
       "icon": "/assets/provider-icons/z-ai.svg"
     }
   ],
-  "last_updated": "2026-05-26T11:36:34.989Z"
+  "last_updated": "2026-05-26T18:18:12.375Z"
 }

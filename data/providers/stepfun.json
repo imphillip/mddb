@@ -86,25 +86,6 @@
             }
           },
           "currency": "USD",
-          "source": "models.dev"
-        },
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.096,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.288,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.019,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
           "source": "basellm-newapi",
           "observed_at": "2026-05-23T17:49:59.198Z",
           "raw_pricing": {
@@ -120,8 +101,6 @@
         }
       ],
       "other_parameters": {
-        "source": "models.dev",
-        "match": "exact",
         "basellm_newapi": {
           "source": "basellm-newapi",
           "vendor_name": "StepFun",
@@ -135,11 +114,6 @@
         }
       },
       "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "stepfun/step-3.5-flash",
-          "url": "https://models.dev/api.json"
-        },
         {
           "source": "basellm-newapi",
           "source_id": "StepFun/step-3.5-flash",

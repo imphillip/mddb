@@ -18,21 +18,21 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.13,
+              "amount": 0.15,
               "unit": "per_1m_tokens"
             },
             "output": {
-              "amount": 0.38,
+              "amount": 0.42,
               "unit": "per_1m_tokens"
             }
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-19T22:11:55.841Z",
+          "observed_at": "2026-05-26T18:18:12.375Z",
           "raw_pricing": {
-            "prompt": "0.00000013",
-            "completion": "0.00000038",
-            "input_cache_read": "0.000000065",
+            "prompt": "0.00000015",
+            "completion": "0.00000042",
+            "input_cache_read": "0.000000075",
             "discount": 0
           }
         }
@@ -242,7 +242,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -499,70 +499,12 @@
       ]
     },
     {
-      "model_id": "deepseek-r1-distill-llama-70b",
-      "model": "R1 Distill Llama 70B",
-      "api_model_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
-      "endpoint_path": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.0272,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.1087,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.0136,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "chutes/deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "glm-5-turbo",
       "model": "GLM 5 Turbo",
       "api_model_id": "zai-org/GLM-5-Turbo",
       "endpoint_path": "zai-org/GLM-5-Turbo",
       "mode": "api",
       "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.4891,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 1.9565,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.24455,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        },
         {
           "conditions": {},
           "prices": {
@@ -595,8 +537,6 @@
         }
       ],
       "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized",
         "basellm_newapi": {
           "source": "basellm-newapi",
           "vendor_name": "Chutes",
@@ -611,366 +551,10 @@
       },
       "sources": [
         {
-          "source": "models.dev",
-          "source_id": "chutes/zai-org/GLM-5-Turbo",
-          "url": "https://models.dev/api.json"
-        },
-        {
           "source": "basellm-newapi",
           "source_id": "Chutes/zai-org/GLM-5-Turbo",
           "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
           "observed_at": "2026-05-22T23:59:49.266Z"
-        }
-      ]
-    },
-    {
-      "model_id": "glm-4.6v",
-      "model": "GLM 4.6V",
-      "api_model_id": "zai-org/GLM-4.6V",
-      "endpoint_path": "zai-org/GLM-4.6V",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.3,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.9,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.15,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "chutes/zai-org/GLM-4.6V",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "gemma-3-27b-it",
-      "model": "Gemma 3 27B",
-      "api_model_id": "unsloth/gemma-3-27b-it",
-      "endpoint_path": "unsloth/gemma-3-27b-it",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.0272,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.1087,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.0136,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "chutes/unsloth/gemma-3-27b-it",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "llama-3.2-3b-instruct",
-      "model": "Llama 3.2 3B Instruct",
-      "api_model_id": "unsloth/Llama-3.2-3B-Instruct",
-      "endpoint_path": "unsloth/Llama-3.2-3B-Instruct",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.01,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.0136,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.005,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "chutes/unsloth/Llama-3.2-3B-Instruct",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "gemma-3-12b-it",
-      "model": "Gemma 3 12B",
-      "api_model_id": "unsloth/gemma-3-12b-it",
-      "endpoint_path": "unsloth/gemma-3-12b-it",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.03,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.1,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.015,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "chutes/unsloth/gemma-3-12b-it",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "llama-3.2-1b-instruct",
-      "model": "Llama 3.2 1B Instruct",
-      "api_model_id": "unsloth/Llama-3.2-1B-Instruct",
-      "endpoint_path": "unsloth/Llama-3.2-1B-Instruct",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.01,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.0109,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.005,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "chutes/unsloth/Llama-3.2-1B-Instruct",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "gemma-3-4b-it",
-      "model": "Gemma 3 4B",
-      "api_model_id": "unsloth/gemma-3-4b-it",
-      "endpoint_path": "unsloth/gemma-3-4b-it",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.01,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.0272,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.005,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "chutes/unsloth/gemma-3-4b-it",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "qwen3-235b-a22b-thinking-2507",
-      "model": "Qwen3 235B A22B Thinking 2507",
-      "api_model_id": "Qwen/Qwen3-235B-A22B-Thinking-2507",
-      "endpoint_path": "Qwen/Qwen3-235B-A22B-Thinking-2507",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.11,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.6,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.055,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "chutes/Qwen/Qwen3-235B-A22B-Thinking-2507",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "qwen3-next-80b-a3b-instruct",
-      "model": "Qwen3 Next 80B A3B Instruct",
-      "api_model_id": "Qwen/Qwen3-Next-80B-A3B-Instruct",
-      "endpoint_path": "Qwen/Qwen3-Next-80B-A3B-Instruct",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.1,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.8,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.05,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "chutes/Qwen/Qwen3-Next-80B-A3B-Instruct",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "qwen3-30b-a3b",
-      "model": "Qwen3 30B A3B",
-      "api_model_id": "Qwen/Qwen3-30B-A3B",
-      "endpoint_path": "Qwen/Qwen3-30B-A3B",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.06,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.22,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.03,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "chutes/Qwen/Qwen3-30B-A3B",
-          "url": "https://models.dev/api.json"
         }
       ]
     }
@@ -989,7 +573,7 @@
       "vendor_name": "Chutes"
     }
   },
-  "last_updated": "2026-05-26T11:36:34.989Z",
+  "last_updated": "2026-05-26T18:18:12.375Z",
   "sources": [
     {
       "source": "models.dev",

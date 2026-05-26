@@ -18,43 +18,7 @@
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",
-  "offers": [
-    {
-      "model_id": "gpt-oss-20b",
-      "model": "gpt-oss-20b",
-      "api_model_id": "openai/gpt-oss-20b",
-      "endpoint_path": "openai/gpt-oss-20b",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "lmstudio/openai/gpt-oss-20b",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    }
-  ],
+  "offers": [],
   "sources": [
     {
       "source": "models.dev",

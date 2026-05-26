@@ -59,7 +59,7 @@
           "response_format",
           "structured_outputs"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -309,7 +309,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -382,232 +382,6 @@
           "observed_at": "2026-05-19T22:11:55.841Z"
         }
       ]
-    },
-    {
-      "model_id": "gpt-oss-20b",
-      "model": "gpt-oss-20b",
-      "api_model_id": "accounts/fireworks/models/gpt-oss-20b",
-      "endpoint_path": "accounts/fireworks/models/gpt-oss-20b",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.05,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.2,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "fireworks-ai/accounts/fireworks/models/gpt-oss-20b",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "kimi-k2-thinking",
-      "model": "Kimi K2 Thinking",
-      "api_model_id": "accounts/fireworks/models/kimi-k2-thinking",
-      "endpoint_path": "accounts/fireworks/models/kimi-k2-thinking",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.6,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 2.5,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.3,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "fireworks-ai/accounts/fireworks/models/kimi-k2-thinking",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "gpt-oss-120b",
-      "model": "gpt-oss-120b",
-      "api_model_id": "accounts/fireworks/models/gpt-oss-120b",
-      "endpoint_path": "accounts/fireworks/models/gpt-oss-120b",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.15,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.6,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "fireworks-ai/accounts/fireworks/models/gpt-oss-120b",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "glm-5",
-      "model": "GLM 5",
-      "api_model_id": "accounts/fireworks/models/glm-5",
-      "endpoint_path": "accounts/fireworks/models/glm-5",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 1,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 3.2,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.5,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "fireworks-ai/accounts/fireworks/models/glm-5",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "deepseek-v4-pro",
-      "model": "DeepSeek V4 Pro",
-      "api_model_id": "accounts/fireworks/models/deepseek-v4-pro",
-      "endpoint_path": "accounts/fireworks/models/deepseek-v4-pro",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 1.74,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 3.48,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.15,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "fireworks-ai/accounts/fireworks/models/deepseek-v4-pro",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "deepseek-v4-flash",
-      "model": "DeepSeek V4 Flash",
-      "api_model_id": "accounts/fireworks/models/deepseek-v4-flash",
-      "endpoint_path": "accounts/fireworks/models/deepseek-v4-flash",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.14,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.28,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.03,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "fireworks-ai/accounts/fireworks/models/deepseek-v4-flash",
-          "url": "https://models.dev/api.json"
-        }
-      ]
     }
   ],
   "other_parameters": {
@@ -621,7 +395,7 @@
       "remote_icon": "https://models.dev/logos/fireworks.svg"
     }
   },
-  "last_updated": "2026-05-26T11:36:34.989Z",
+  "last_updated": "2026-05-26T18:18:12.375Z",
   "sources": [
     {
       "source": "models.dev",

@@ -274,21 +274,6 @@
             }
           },
           "currency": "USD",
-          "source": "models.dev"
-        },
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.25,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.69,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
           "source": "basellm-newapi",
           "observed_at": "2026-05-23T17:49:59.198Z",
           "raw_pricing": {
@@ -304,8 +289,6 @@
         }
       ],
       "other_parameters": {
-        "source": "models.dev",
-        "match": "exact",
         "basellm_newapi": {
           "source": "basellm-newapi",
           "vendor_name": "Cerebras",
@@ -319,11 +302,6 @@
         }
       },
       "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "cerebras/gpt-oss-120b",
-          "url": "https://models.dev/api.json"
-        },
         {
           "source": "basellm-newapi",
           "source_id": "Cerebras/gpt-oss-120b",

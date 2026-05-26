@@ -18,43 +18,7 @@
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",
-  "offers": [
-    {
-      "model_id": "nova-2-lite-v1",
-      "model": "Nova 2 Lite",
-      "api_model_id": "nova-2-lite-v1",
-      "endpoint_path": "nova-2-lite-v1",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "nova/nova-2-lite-v1",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    }
-  ],
+  "offers": [],
   "sources": [
     {
       "source": "models.dev",

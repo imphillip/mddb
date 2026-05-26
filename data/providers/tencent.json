@@ -6,51 +6,7 @@
   "domain": "cloud.tencent.com",
   "base_url": "https://tokenhub.tencentmaas.com/v1",
   "currency": "USD",
-  "offers": [
-    {
-      "model_id": "hy3-preview",
-      "model": "Hy3 preview",
-      "api_model_id": "hy3-preview",
-      "endpoint_path": "hy3-preview",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            },
-            "cache_write": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "tencent-tokenhub/hy3-preview",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    }
-  ],
+  "offers": [],
   "other_parameters": {
     "models_dev": {
       "model_count": 1,

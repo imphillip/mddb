@@ -48,5 +48,6 @@ function summary(report) {
       withContextWindow: report.coverage?.withContextWindow,
     },
     observations: report.observations,
+    secondarySources: report.secondarySources,
   }
 }

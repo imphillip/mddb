@@ -23,97 +23,12 @@
   "last_updated": "2026-05-21T22:27:33.665Z",
   "offers": [
     {
-      "model_id": "deepseek-r1-0528",
-      "model": "R1 0528",
-      "api_model_id": "deepseek-ai/DeepSeek-R1-0528",
-      "endpoint_path": "deepseek-ai/DeepSeek-R1-0528",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.5,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 2.15,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "submodel/deepseek-ai/DeepSeek-R1-0528",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "gpt-oss-120b",
-      "model": "gpt-oss-120b",
-      "api_model_id": "openai/gpt-oss-120b",
-      "endpoint_path": "openai/gpt-oss-120b",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.1,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.5,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "submodel/openai/gpt-oss-120b",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "glm-4.5-air",
       "model": "GLM 4.5 Air",
       "api_model_id": "zai-org/GLM-4.5-Air",
       "endpoint_path": "zai-org/GLM-4.5-Air",
       "mode": "api",
       "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.1,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.5,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        },
         {
           "conditions": {},
           "prices": {
@@ -142,8 +57,6 @@
         }
       ],
       "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized",
         "basellm_newapi": {
           "source": "basellm-newapi",
           "vendor_name": "submodel",
@@ -157,50 +70,10 @@
       },
       "sources": [
         {
-          "source": "models.dev",
-          "source_id": "submodel/zai-org/GLM-4.5-Air",
-          "url": "https://models.dev/api.json"
-        },
-        {
           "source": "basellm-newapi",
           "source_id": "submodel/zai-org/GLM-4.5-Air",
           "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
           "observed_at": "2026-05-22T23:59:49.266Z"
-        }
-      ]
-    },
-    {
-      "model_id": "qwen3-235b-a22b-thinking-2507",
-      "model": "Qwen3 235B A22B Thinking 2507",
-      "api_model_id": "Qwen/Qwen3-235B-A22B-Thinking-2507",
-      "endpoint_path": "Qwen/Qwen3-235B-A22B-Thinking-2507",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.2,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.6,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "submodel/Qwen/Qwen3-235B-A22B-Thinking-2507",
-          "url": "https://models.dev/api.json"
         }
       ]
     }

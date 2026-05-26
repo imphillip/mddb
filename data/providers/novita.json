@@ -51,7 +51,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -109,7 +109,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -171,7 +171,7 @@
           "response_format",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -473,7 +473,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -534,7 +534,7 @@
           "response_format",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -595,7 +595,7 @@
           "tools",
           "response_format"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -656,7 +656,7 @@
           "tool_choice",
           "response_format"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -997,7 +997,7 @@
           "top_k",
           "repetition_penalty"
         ],
-        "status": -2
+        "status": -5
       },
       "sources": [
         {
@@ -1057,7 +1057,7 @@
           "tool_choice",
           "response_format"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -1723,7 +1723,7 @@
           "response_format",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -1782,7 +1782,7 @@
           "response_format",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -1955,7 +1955,7 @@
           "tool_choice",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -2255,7 +2255,7 @@
           "top_k",
           "repetition_penalty"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -2545,7 +2545,7 @@
           "repetition_penalty",
           "response_format"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -2659,7 +2659,7 @@
           "tool_choice",
           "response_format"
         ],
-        "status": 0
+        "status": -5
       },
       "sources": [
         {
@@ -2716,7 +2716,7 @@
           "structured_outputs",
           "response_format"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -2771,7 +2771,7 @@
           "top_k",
           "repetition_penalty"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -3131,7 +3131,7 @@
           "response_format",
           "structured_outputs"
         ],
-        "status": -2
+        "status": -5
       },
       "sources": [
         {
@@ -3189,7 +3189,7 @@
           "tool_choice",
           "response_format"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -3421,7 +3421,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -5
+        "status": 0
       },
       "sources": [
         {
@@ -3830,7 +3830,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": -5
       },
       "sources": [
         {
@@ -3948,7 +3948,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": -5
       },
       "sources": [
         {
@@ -4068,7 +4068,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -5
       },
       "sources": [
         {
@@ -4377,6 +4377,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-26T11:36:34.989Z",
+  "last_updated": "2026-05-26T18:18:12.375Z",
   "sources": []
 }

@@ -52,8 +52,8 @@ describe('data quality report', () => {
 
 describe('refresh diff gate', () => {
   it('blocks deploy when source model count drops sharply or pricing coverage regresses', () => {
-    const previous = { coverage: { totalSourceModels: 100, withAnyPricing: 90 }, observations: { pricing: 1000, providers: 500 } }
-    const current = { coverage: { totalSourceModels: 70, withAnyPricing: 40 }, observations: { pricing: 500, providers: 490 } }
+    const previous = { coverage: { totalSourceModels: 100, withAnyPricing: 90 }, observations: { pricing: 1000, providers: 500 }, secondarySources: { modelsDev: { brandLogos: 0 } } }
+    const current = { coverage: { totalSourceModels: 70, withAnyPricing: 40 }, observations: { pricing: 500, providers: 490 }, secondarySources: { modelsDev: { brandLogos: 0 } } }
 
     const gate = evaluateRefreshGate(previous, current)
 
@@ -63,6 +63,14 @@ describe('refresh diff gate', () => {
       expect.stringContaining('withAnyPricing dropped'),
       expect.stringContaining('pricing observations dropped'),
     ]))
+  })
+  it('allows observation-count drops when models.dev is intentionally cleaned to icon-only enrichment', () => {
+    const previous = { coverage: { totalSourceModels: 100, withAnyPricing: 90 }, observations: { pricing: 1000, providers: 500 }, secondarySources: { modelsDev: { brandLogos: 100 } } }
+    const current = { coverage: { totalSourceModels: 100, withAnyPricing: 90 }, observations: { pricing: 200, providers: 100 }, secondarySources: { modelsDev: { brandLogos: 100 } } }
+
+    const gate = evaluateRefreshGate(previous, current)
+
+    expect(gate).toEqual({ status: 'ok', reasons: [] })
   })
 })
 

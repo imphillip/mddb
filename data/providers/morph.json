@@ -384,21 +384,6 @@
             }
           },
           "currency": "USD",
-          "source": "models.dev"
-        },
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.9,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 1.9,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
           "source": "basellm-newapi",
           "observed_at": "2026-05-23T17:49:59.198Z",
           "raw_pricing": {
@@ -414,8 +399,6 @@
         }
       ],
       "other_parameters": {
-        "source": "models.dev",
-        "match": "exact",
         "basellm_newapi": {
           "source": "basellm-newapi",
           "vendor_name": "Morph",
@@ -427,50 +410,10 @@
       },
       "sources": [
         {
-          "source": "models.dev",
-          "source_id": "morph/morph-v3-large",
-          "url": "https://models.dev/api.json"
-        },
-        {
           "source": "basellm-newapi",
           "source_id": "Morph/morph-v3-large",
           "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
           "observed_at": "2026-05-22T23:59:49.266Z"
-        }
-      ]
-    },
-    {
-      "model_id": "morph-v3-fast",
-      "model": "Morph V3 Fast",
-      "api_model_id": "morph-v3-fast",
-      "endpoint_path": "morph-v3-fast",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.8,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 1.2,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "morph/morph-v3-fast",
-          "url": "https://models.dev/api.json"
         }
       ]
     }

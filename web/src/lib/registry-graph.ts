@@ -131,6 +131,7 @@ export function buildRegistryGraphFromFiles(root = process.cwd()): OpenRouterRaw
       apiNodeIds: sourceNodes.map((node) => node.id),
     },
     observations: { pricing: dedupeById(pricing), providers: dedupeById(providerObservations) },
+    enrichment: buildRegistryEnrichment(providers),
   }
 }
 
@@ -350,6 +351,21 @@ function timestampSeconds(value: unknown): number | undefined {
   }
   return undefined
 }
+function buildRegistryEnrichment(providers: RegistryProvider[]): NonNullable<OpenRouterRawGraph['enrichment']> {
+  const brandLogos = Object.fromEntries(providers.flatMap((provider) => {
+    const icon = typeof provider.icon === 'string' && provider.icon.startsWith('/assets/provider-icons/') ? provider.icon : null
+    const enrichedByModelsDev = (provider.sources ?? []).some((source) => source.source === 'models.dev')
+    return icon && enrichedByModelsDev ? [[normalizeSlug(provider.id), icon] as const] : []
+  }).sort((left, right) => left[0].localeCompare(right[0])))
+  return {
+    modelsDev: {
+      path: 'data/providers/*.json',
+      providerRows: providers.length,
+      brandLogos,
+    },
+  }
+}
+
 function nodeIdForSource(sourceId: string): string { return `registry-source:${sourceId}` }
 function nodeIdForEndpoint(sourceId: string): string { return `registry-endpoint:${sourceId}` }
 function dedupeById<T extends { id: string }>(rows: T[]): T[] { return Array.from(new Map(rows.map((row) => [row.id, row])).values()) }

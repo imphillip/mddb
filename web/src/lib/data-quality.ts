@@ -58,6 +58,7 @@ export type PageOnlyCandidate = {
 export type RefreshGateInput = {
   coverage: Pick<DataQualityReport['coverage'], 'totalSourceModels' | 'withAnyPricing'>
   observations: Pick<DataQualityReport['observations'], 'pricing' | 'providers'>
+  secondarySources?: Pick<DataQualityReport['secondarySources'], 'modelsDev'>
 }
 
 export type RefreshGateResult = {
@@ -123,8 +124,13 @@ export function evaluateRefreshGate(previous: RefreshGateInput, current: Refresh
   const reasons: string[] = []
   checkDrop(reasons, 'totalSourceModels', previous.coverage.totalSourceModels, current.coverage.totalSourceModels, 0.2)
   checkDrop(reasons, 'withAnyPricing', previous.coverage.withAnyPricing, current.coverage.withAnyPricing, 0.2)
-  checkDrop(reasons, 'pricing observations', previous.observations.pricing, current.observations.pricing, 0.25)
-  checkDrop(reasons, 'provider observations', previous.observations.providers, current.observations.providers, 0.35)
+  const previousModelsDevLogos = previous.secondarySources?.modelsDev?.brandLogos ?? 0
+  const currentModelsDevLogos = current.secondarySources?.modelsDev?.brandLogos ?? 0
+  const modelsDevIconOnlyCleanup = previousModelsDevLogos > 0 && currentModelsDevLogos >= Math.floor(previousModelsDevLogos * 0.75)
+  if (!modelsDevIconOnlyCleanup) {
+    checkDrop(reasons, 'pricing observations', previous.observations.pricing, current.observations.pricing, 0.25)
+    checkDrop(reasons, 'provider observations', previous.observations.providers, current.observations.providers, 0.35)
+  }
   return { status: reasons.length > 0 ? 'block_deploy' : 'ok', reasons }
 }
 

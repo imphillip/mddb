@@ -145,25 +145,6 @@
             }
           },
           "currency": "USD",
-          "source": "models.dev"
-        },
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.95,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 4,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.16,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
           "source": "basellm-newapi",
           "observed_at": "2026-05-23T17:49:59.198Z",
           "raw_pricing": {
@@ -179,8 +160,6 @@
         }
       ],
       "other_parameters": {
-        "source": "models.dev",
-        "match": "exact",
         "basellm_newapi": {
           "source": "basellm-newapi",
           "vendor_name": "Moonshot AI",
@@ -197,93 +176,10 @@
       },
       "sources": [
         {
-          "source": "models.dev",
-          "source_id": "moonshotai-cn/kimi-k2.6",
-          "url": "https://models.dev/api.json"
-        },
-        {
           "source": "basellm-newapi",
           "source_id": "Moonshot AI/kimi-k2.6",
           "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
           "observed_at": "2026-05-22T23:59:49.266Z"
-        }
-      ]
-    },
-    {
-      "model_id": "kimi-k2-thinking",
-      "model": "Kimi K2 Thinking",
-      "api_model_id": "kimi-k2-thinking",
-      "endpoint_path": "kimi-k2-thinking",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.6,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 2.5,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.15,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "moonshotai-cn/kimi-k2-thinking",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "kimi-k2.5",
-      "model": "Kimi K2.5",
-      "api_model_id": "kimi-k2.5",
-      "endpoint_path": "kimi-k2.5",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.6,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 3,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.1,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "moonshotai-cn/kimi-k2.5",
-          "url": "https://models.dev/api.json"
         }
       ]
     }

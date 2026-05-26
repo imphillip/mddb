@@ -309,97 +309,12 @@
       ]
     },
     {
-      "model_id": "sonar",
-      "model": "Sonar",
-      "api_model_id": "sonar",
-      "endpoint_path": "sonar",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 1,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 1,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "perplexity/sonar",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "sonar-deep-research",
-      "model": "Sonar Deep Research",
-      "api_model_id": "sonar-deep-research",
-      "endpoint_path": "sonar-deep-research",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 2,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 8,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "perplexity/sonar-deep-research",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "sonar-reasoning-pro",
       "model": "Sonar Reasoning Pro",
       "api_model_id": "sonar-reasoning-pro",
       "endpoint_path": "sonar-reasoning-pro",
       "mode": "api",
       "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 2,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 8,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        },
         {
           "conditions": {},
           "prices": {
@@ -428,8 +343,6 @@
         }
       ],
       "other_parameters": {
-        "source": "models.dev",
-        "match": "exact",
         "basellm_newapi": {
           "source": "basellm-newapi",
           "vendor_name": "Perplexity",
@@ -444,50 +357,10 @@
       },
       "sources": [
         {
-          "source": "models.dev",
-          "source_id": "perplexity/sonar-reasoning-pro",
-          "url": "https://models.dev/api.json"
-        },
-        {
           "source": "basellm-newapi",
           "source_id": "Perplexity/sonar-reasoning-pro",
           "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
           "observed_at": "2026-05-22T23:59:49.266Z"
-        }
-      ]
-    },
-    {
-      "model_id": "sonar-pro",
-      "model": "Sonar Pro",
-      "api_model_id": "sonar-pro",
-      "endpoint_path": "sonar-pro",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 3,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 15,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "perplexity/sonar-pro",
-          "url": "https://models.dev/api.json"
         }
       ]
     }

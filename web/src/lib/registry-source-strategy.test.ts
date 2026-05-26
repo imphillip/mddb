@@ -65,20 +65,19 @@ describe('registry source strategy invariants', () => {
     const modelsDevProviders = rows.filter((provider) => hasSource(provider, 'models.dev'))
     expect(modelsDevProviders.some((provider) => typeof provider.icon === 'string' && provider.icon.startsWith('/assets/provider-icons/'))).toBe(true)
 
-    const modelsDevOnlyProvidersWithoutOffers = modelsDevProviders
-      .filter((provider) => !hasNonModelsDevSource(provider) && (!Array.isArray(provider.offers) || provider.offers.length === 0))
+    const modelsDevProvidersWithOffers = modelsDevProviders
+      .filter((provider) => Array.isArray(provider.offers) && provider.offers.some((offer: JsonRecord) => hasSource(offer, 'models.dev') || (offer.prices ?? []).some((price: JsonRecord) => price.source === 'models.dev')))
       .map((provider) => provider.id)
-    expect(modelsDevOnlyProvidersWithoutOffers).toEqual([])
+    expect(modelsDevProvidersWithOffers).toEqual([])
 
     const basellmOffers = rows.flatMap((provider) => (provider.offers ?? []).filter((offer: JsonRecord) =>
       Array.isArray(offer.sources) && offer.sources.some((source: JsonRecord) => source.source === 'basellm-newapi'),
     ))
     expect(basellmOffers.length).toBeGreaterThan(0)
-    const basellmWithoutDistinctPrice = basellmOffers
-      .filter((offer) => !Array.isArray(offer.prices) || !offer.prices.some((price: JsonRecord) => price.source === 'basellm-newapi'))
-      .filter((offer) => !samePriceAsSource(offer, 'basellm-newapi'))
-      .map((offer) => `${offer.model_id}:${offer.api_model_id ?? ''}`)
-    expect(basellmWithoutDistinctPrice).toEqual([])
+    const basellmAuthoredModels = modelPayload().models
+      .filter((model) => hasSource(model, 'basellm-newapi') || hasSource(model, 'basellm'))
+      .map((model) => model.id)
+    expect(basellmAuthoredModels).toEqual([])
   })
 
   it('keeps LiteLLM as a non-chat model and complex pricing supplement', () => {
@@ -112,21 +111,10 @@ function hasSource(record: JsonRecord, source: string): boolean {
   return Array.isArray(record.sources) && record.sources.some((entry) => entry?.source === source)
 }
 
-function hasNonModelsDevSource(record: JsonRecord): boolean {
-  return Array.isArray(record.sources) && record.sources.some((entry) => entry?.source !== 'models.dev')
-}
-
 function litellmPriceRows(model: JsonRecord): JsonRecord[] {
   const params = model.other_parameters?.litellm
   const observations = [params, ...(Array.isArray(params?.observations) ? params.observations : [])].filter(Boolean)
   return observations.flatMap((entry) => Array.isArray(entry.prices) ? entry.prices : [])
-}
-
-function samePriceAsSource(offer: JsonRecord, source: string): boolean {
-  const sourceMeta = offer.other_parameters?.basellm_newapi
-  if (source !== 'basellm-newapi' || !sourceMeta) return false
-  const prices = Array.isArray(offer.prices) ? offer.prices : []
-  return prices.some((price) => price.source !== source && JSON.stringify(price.prices ?? {}) !== '{}')
 }
 
 function duplicates(values: string[]): string[] {

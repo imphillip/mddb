@@ -57,7 +57,7 @@
           "seed",
           "tools"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -269,29 +269,6 @@
             "cache_read": {
               "amount": 0.2,
               "unit": "per_1m_tokens"
-            },
-            "cache_write": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        },
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.78,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 3.5,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.2,
-              "unit": "per_1m_tokens"
             }
           },
           "currency": "USD",
@@ -310,8 +287,6 @@
         }
       ],
       "other_parameters": {
-        "source": "models.dev",
-        "match": "exact",
         "basellm_newapi": {
           "source": "basellm-newapi",
           "vendor_name": "Inceptron",
@@ -328,58 +303,10 @@
       },
       "sources": [
         {
-          "source": "models.dev",
-          "source_id": "inceptron/moonshotai/Kimi-K2.6",
-          "url": "https://models.dev/api.json"
-        },
-        {
           "source": "basellm-newapi",
           "source_id": "Inceptron/moonshotai/Kimi-K2.6",
           "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
           "observed_at": "2026-05-22T23:59:49.266Z"
-        }
-      ]
-    },
-    {
-      "model_id": "minimax-m2.5",
-      "model": "MiniMax M2.5",
-      "api_model_id": "MiniMaxAI/MiniMax-M2.5",
-      "endpoint_path": "MiniMaxAI/MiniMax-M2.5",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.24,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.9,
-              "unit": "per_1m_tokens"
-            },
-            "cache_read": {
-              "amount": 0.03,
-              "unit": "per_1m_tokens"
-            },
-            "cache_write": {
-              "amount": 0,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "inceptron/MiniMaxAI/MiniMax-M2.5",
-          "url": "https://models.dev/api.json"
         }
       ]
     }
@@ -398,7 +325,7 @@
       "vendor_name": "Inceptron"
     }
   },
-  "last_updated": "2026-05-26T11:36:34.989Z",
+  "last_updated": "2026-05-26T18:18:12.375Z",
   "sources": [
     {
       "source": "models.dev",

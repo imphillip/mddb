@@ -35,7 +35,7 @@ Avoid data-only PRs that say only "add model X" without a source URL and classif
 
 ## Identity review rules
 
-mddb.dev is OpenRouter-first for canonical identity and treats secondary sources as controlled enrichment.
+mddb.dev is source-evidence-first for canonical identity. OpenRouter, LiteLLM, Bailian, and Volcengine may all supplement canonical models when the source data fits the current schema. USD-priced sources do not have higher authority than CNY-priced sources; processing order is not authority. models.dev is icon/logo enrichment only and is not a canonical model source.
 
 Reviewers should reject or request changes for PRs that:
 

@@ -18,43 +18,7 @@
     }
   },
   "last_updated": "2026-05-21T22:27:33.665Z",
-  "offers": [
-    {
-      "model_id": "deepseek-r1",
-      "model": "R1",
-      "api_model_id": "public/deepseek-r1",
-      "endpoint_path": "public/deepseek-r1",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.55,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 2.2,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "drun/public/deepseek-r1",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    }
-  ],
+  "offers": [],
   "sources": [
     {
       "source": "models.dev",

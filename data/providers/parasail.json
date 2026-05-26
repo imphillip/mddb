@@ -112,7 +112,7 @@
           "response_format",
           "structured_outputs"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -547,7 +547,7 @@
           "response_format",
           "structured_outputs"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -610,7 +610,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": 0
+        "status": -2
       },
       "sources": [
         {
@@ -1809,7 +1809,7 @@
         }
       ],
       "other_parameters": {
-        "source_model_id": "arcee-ai/trinity-large-thinking:free",
+        "source_model_id": "arcee-ai/trinity-large-thinking",
         "endpoint_tag": "parasail/fp8",
         "context_length": 262144,
         "max_output_tokens": 262144,
@@ -1836,8 +1836,8 @@
       "sources": [
         {
           "source": "openrouter:endpoints",
-          "source_id": "arcee-ai/trinity-large-thinking:free#Parasail | arcee-ai/trinity-large-thinking",
-          "observed_at": "2026-05-19T22:11:55.841Z"
+          "source_id": "arcee-ai/trinity-large-thinking#Parasail | arcee-ai/trinity-large-thinking",
+          "observed_at": "2026-05-26T18:18:12.375Z"
         }
       ]
     },
@@ -1900,6 +1900,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-26T11:36:34.989Z",
+  "last_updated": "2026-05-26T18:18:12.375Z",
   "sources": []
 }

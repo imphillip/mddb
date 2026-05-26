@@ -23,97 +23,12 @@
   "last_updated": "2026-05-21T22:27:33.665Z",
   "offers": [
     {
-      "model_id": "gpt-oss-120b",
-      "model": "gpt-oss-120b",
-      "api_model_id": "gpt-oss-120b",
-      "endpoint_path": "gpt-oss-120b",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.0675,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.27,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "dinference/gpt-oss-120b",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "glm-5.1",
-      "model": "GLM 5.1",
-      "api_model_id": "glm-5.1",
-      "endpoint_path": "glm-5.1",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 1.25,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 3.89,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "dinference/glm-5.1",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "minimax-m2.5",
       "model": "MiniMax M2.5",
       "api_model_id": "minimax-m2.5",
       "endpoint_path": "minimax-m2.5",
       "mode": "api",
       "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.22,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.88,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        },
         {
           "conditions": {},
           "prices": {
@@ -142,8 +57,6 @@
         }
       ],
       "other_parameters": {
-        "source": "models.dev",
-        "match": "exact",
         "basellm_newapi": {
           "source": "basellm-newapi",
           "vendor_name": "DInference",
@@ -158,85 +71,10 @@
       },
       "sources": [
         {
-          "source": "models.dev",
-          "source_id": "dinference/minimax-m2.5",
-          "url": "https://models.dev/api.json"
-        },
-        {
           "source": "basellm-newapi",
           "source_id": "DInference/minimax-m2.5",
           "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
           "observed_at": "2026-05-22T23:59:49.266Z"
-        }
-      ]
-    },
-    {
-      "model_id": "glm-4.7",
-      "model": "GLM 4.7",
-      "api_model_id": "glm-4.7",
-      "endpoint_path": "glm-4.7",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.45,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 1.65,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "dinference/glm-4.7",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "glm-5",
-      "model": "GLM 5",
-      "api_model_id": "glm-5",
-      "endpoint_path": "glm-5",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.75,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 2.4,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "dinference/glm-5",
-          "url": "https://models.dev/api.json"
         }
       ]
     }

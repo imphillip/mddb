@@ -65,167 +65,12 @@
       ]
     },
     {
-      "model_id": "gpt-oss-20b",
-      "model": "gpt-oss-20b",
-      "api_model_id": "openai/chat-completion/models/gpt-oss-20b",
-      "endpoint_path": "openai/chat-completion/models/gpt-oss-20b",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.045,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.18,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "clarifai/openai/chat-completion/models/gpt-oss-20b",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "trinity-mini",
-      "model": "Trinity Mini",
-      "api_model_id": "arcee_ai/AFM/models/trinity-mini",
-      "endpoint_path": "arcee_ai/AFM/models/trinity-mini",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.045,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.15,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "clarifai/arcee_ai/AFM/models/trinity-mini",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "qwen3-coder-30b-a3b-instruct",
-      "model": "Qwen3 Coder 30B A3B Instruct",
-      "api_model_id": "qwen/qwenCoder/models/Qwen3-Coder-30B-A3B-Instruct",
-      "endpoint_path": "qwen/qwenCoder/models/Qwen3-Coder-30B-A3B-Instruct",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.11458,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.74812,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "clarifai/qwen/qwenCoder/models/Qwen3-Coder-30B-A3B-Instruct",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "qwen3-30b-a3b-instruct-2507",
-      "model": "Qwen3 30B A3B Instruct 2507",
-      "api_model_id": "qwen/qwenLM/models/Qwen3-30B-A3B-Instruct-2507",
-      "endpoint_path": "qwen/qwenLM/models/Qwen3-30B-A3B-Instruct-2507",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.3,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.5,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "clarifai/qwen/qwenLM/models/Qwen3-30B-A3B-Instruct-2507",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "qwen3-30b-a3b-thinking-2507",
       "model": "Qwen3 30B A3B Thinking 2507",
       "api_model_id": "qwen/qwenLM/models/Qwen3-30B-A3B-Thinking-2507",
       "endpoint_path": "qwen/qwenLM/models/Qwen3-30B-A3B-Thinking-2507",
       "mode": "api",
       "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.36,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 1.3,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        },
         {
           "conditions": {},
           "prices": {
@@ -254,8 +99,6 @@
         }
       ],
       "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized",
         "basellm_newapi": {
           "source": "basellm-newapi",
           "vendor_name": "Clarifai",
@@ -270,50 +113,10 @@
       },
       "sources": [
         {
-          "source": "models.dev",
-          "source_id": "clarifai/qwen/qwenLM/models/Qwen3-30B-A3B-Thinking-2507",
-          "url": "https://models.dev/api.json"
-        },
-        {
           "source": "basellm-newapi",
           "source_id": "Clarifai/qwen/qwenLM/models/Qwen3-30B-A3B-Thinking-2507",
           "url": "https://basellm.github.io/llm-metadata/api/newapi/models.json",
           "observed_at": "2026-05-22T23:59:49.266Z"
-        }
-      ]
-    },
-    {
-      "model_id": "kimi-k2.6",
-      "model": "Kimi K2.6",
-      "api_model_id": "moonshotai/chat-completion/models/Kimi-K2_6",
-      "endpoint_path": "moonshotai/chat-completion/models/Kimi-K2_6",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.95,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 4,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "normalized"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "clarifai/moonshotai/chat-completion/models/Kimi-K2_6",
-          "url": "https://models.dev/api.json"
         }
       ]
     }

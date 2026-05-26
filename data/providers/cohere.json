@@ -110,7 +110,7 @@
           "tools",
           "tool_choice"
         ],
-        "status": -2
+        "status": 0
       },
       "sources": [
         {
@@ -235,132 +235,12 @@
       ]
     },
     {
-      "model_id": "command-r-08-2024",
-      "model": "Command R (08-2024)",
-      "api_model_id": "command-r-08-2024",
-      "endpoint_path": "command-r-08-2024",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.15,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.6,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "cohere/command-r-08-2024",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "command-a",
-      "model": "Command A",
-      "api_model_id": "command-a-03-2025",
-      "endpoint_path": "command-a-03-2025",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 2.5,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 10,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "cohere/command-a-03-2025",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
-      "model_id": "command-r-plus-08-2024",
-      "model": "Command R+ (08-2024)",
-      "api_model_id": "command-r-plus-08-2024",
-      "endpoint_path": "command-r-plus-08-2024",
-      "mode": "api",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 2.5,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 10,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        }
-      ],
-      "other_parameters": {
-        "source": "models.dev",
-        "match": "exact"
-      },
-      "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "cohere/command-r-plus-08-2024",
-          "url": "https://models.dev/api.json"
-        }
-      ]
-    },
-    {
       "model_id": "command-r7b-12-2024",
       "model": "Command R7B (12-2024)",
       "api_model_id": "command-r7b-12-2024",
       "endpoint_path": "command-r7b-12-2024",
       "mode": "api",
       "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.0375,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.15,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "models.dev"
-        },
         {
           "conditions": {},
           "prices": {
@@ -389,8 +269,6 @@
         }
       ],
       "other_parameters": {
-        "source": "models.dev",
-        "match": "exact",
         "basellm_newapi": {
           "source": "basellm-newapi",
           "vendor_name": "Cohere",
@@ -403,11 +281,6 @@
         }
       },
       "sources": [
-        {
-          "source": "models.dev",
-          "source_id": "cohere/command-r7b-12-2024",
-          "url": "https://models.dev/api.json"
-        },
         {
           "source": "basellm-newapi",
           "source_id": "Cohere/command-r7b-12-2024",
@@ -431,7 +304,7 @@
       "vendor_name": "Cohere"
     }
   },
-  "last_updated": "2026-05-26T11:36:34.989Z",
+  "last_updated": "2026-05-26T18:18:12.375Z",
   "sources": [
     {
       "source": "models.dev",

@@ -70,7 +70,7 @@
           "conditions": {},
           "prices": {
             "input": {
-              "amount": 0.35,
+              "amount": 0.22,
               "unit": "per_1m_tokens"
             },
             "output": {
@@ -80,9 +80,9 @@
           },
           "currency": "USD",
           "source": "openrouter-endpoint",
-          "observed_at": "2026-05-26T11:36:34.989Z",
+          "observed_at": "2026-05-26T18:18:12.375Z",
           "raw_pricing": {
-            "prompt": "0.00000035",
+            "prompt": "0.00000022",
             "completion": "0.00000059",
             "discount": 0
           }
@@ -142,61 +142,6 @@
       "other_parameters": {
         "source_model_id": "openai/gpt-oss-120b:free",
         "endpoint_tag": "sambanova",
-        "context_length": 131072,
-        "max_output_tokens": 131072,
-        "supported_parameters": [
-          "reasoning",
-          "include_reasoning",
-          "max_tokens",
-          "temperature",
-          "top_p",
-          "top_k",
-          "stop",
-          "tools",
-          "tool_choice"
-        ],
-        "status": 0
-      },
-      "sources": [
-        {
-          "source": "openrouter:endpoints",
-          "source_id": "openai/gpt-oss-120b:free#SambaNova | openai/gpt-oss-120b",
-          "observed_at": "2026-05-19T22:11:55.841Z"
-        }
-      ]
-    },
-    {
-      "model_id": "gpt-oss-120b",
-      "model": "gpt-oss-120b",
-      "endpoint_path": "/chat/completions",
-      "api_model_id": "sambanova/dedicated",
-      "mode": "chat",
-      "prices": [
-        {
-          "conditions": {},
-          "prices": {
-            "input": {
-              "amount": 0.12,
-              "unit": "per_1m_tokens"
-            },
-            "output": {
-              "amount": 0.9,
-              "unit": "per_1m_tokens"
-            }
-          },
-          "currency": "USD",
-          "source": "openrouter-endpoint",
-          "observed_at": "2026-05-21T20:53:40.809Z",
-          "raw_pricing": {
-            "prompt": "0.00000012",
-            "completion": "0.0000009",
-            "discount": 0
-          }
-        }
-      ],
-      "other_parameters": {
-        "source_model_id": "openai/gpt-oss-120b:free",
-        "endpoint_tag": "sambanova/dedicated",
         "context_length": 131072,
         "max_output_tokens": 131072,
         "supported_parameters": [
@@ -483,6 +428,6 @@
     }
   ],
   "other_parameters": {},
-  "last_updated": "2026-05-26T11:36:34.989Z",
+  "last_updated": "2026-05-26T18:18:12.375Z",
   "sources": []
 }
