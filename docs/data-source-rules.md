@@ -8,8 +8,33 @@
 - 数据源没有按币种划分的权限等级：USD 来源不天然高于 CNY 来源，CNY 来源也不天然低于 USD 来源。
 - OpenRouter、LiteLLM、百炼、火山引擎都可以在证据充分且能适配当前 schema 时补充 canonical model rows。
 - 处理顺序只表示工程 pipeline 的先后，不表示事实权威等级。
+- canonical `model_id` 的选择有身份优先级：优先沿用 OpenRouter 身份；没有 OpenRouter 身份时，优先采用人民币官方计价来源（百炼 / 火山）的身份；最后才采用 LiteLLM 身份。
 - 不为了单个来源或一次回填新增 schema；源数据无法干净落入现有 schema 时，先停止并说明缺口。
 - 保留 source/provenance；避免 alias、gateway、wrapper、router product 污染 canonical model identity。
+
+## Canonical model-id 选择规则
+
+本节只规定模型身份选择，不改变各数据源能补充 facts/prices/offers 的资格。即：一个来源可以补充价格、上下文、modality 或 provider offer，不代表它可以覆盖已有 canonical `model_id`。
+
+1. **OpenRouter 优先**
+   - 如果已有模型与 OpenRouter model identity 匹配，canonical `model_id` 应继续使用 OpenRouter 归一化后的身份。
+   - 后续百炼、火山、LiteLLM 命中该模型时，只能追加 source/provenance、prices、offers、limits 等补充事实，不应重写 canonical `model_id`。
+   - OpenRouter source ID、route ID、alias 可作为 provenance 保留，但 canonical display/name 清理仍需避免 free/router/product 污染。
+
+2. **人民币官方计价来源次之**
+   - 当没有可靠 OpenRouter identity 时，百炼 / 火山这类人民币官方计价来源可以提供 canonical `model_id`。
+   - 百炼 / 火山身份优先于 LiteLLM 身份，尤其是在 LiteLLM 行看起来像 adapter、gateway、vendor route 或 wrapper 时。
+   - 百炼 / 火山创建或确认 canonical row 时，必须保留 source/provenance，且仍受当前 schema 与 canonical cleanup 约束。
+
+3. **LiteLLM 最后**
+   - LiteLLM 可以补规格、mode、复杂 USD 价格、非 chat 模型候选和 provider offer。
+   - 只有在没有 OpenRouter 身份、也没有百炼 / 火山等官方人民币来源身份，并且 ID 不是低置信 adapter/gateway/wrapper 形态时，LiteLLM 才可作为 canonical `model_id` 来源。
+   - LiteLLM 命中已有 OpenRouter 或人民币官方来源模型时，应作为 enrichment/offer source，而不是改名来源。
+
+4. **冲突处理**
+   - 同一模型多源命中但 model IDs 不一致时，先按上述身份优先级保留 canonical `model_id`，其他 ID 进入 aliases/source provenance；不要自动改 schema。
+   - 如果无法判断是否同一模型，宁可进入 review / waiting，也不要猜测归并。
+   - 发现具体反例后，先补文档案例，再按用户确认修改 importer 或审计脚本。
 
 ## 数据源角色
 
