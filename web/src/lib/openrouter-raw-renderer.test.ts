@@ -136,6 +136,26 @@ describe('mobile responsive layout', () => {
   })
 })
 
+describe('renderOpenRouterRawDetail metadata code block', () => {
+  it('renders metadata as a horizontally scrollable code block with a copy button for the whole JSON section', () => {
+    const testGraph = graph()
+    const node = testGraph.nodes[0]!
+    node.raw.model = {
+      ...node.raw.model as Record<string, unknown>,
+      long_unbroken_value: 'x'.repeat(240),
+    }
+
+    const html = renderOpenRouterRawDetail(testGraph, node)
+
+    expect(html).toContain('<div class="codeBlockShell rawBlockShell">')
+    expect(html).toContain('<button class="copyCodeBtn" type="button" data-copy-code-target="metadata-json"')
+    expect(html).toContain('<pre id="metadata-json" class="raw codeBlock" tabindex="0"><code>')
+    expect(html).toContain('white-space:pre;overflow-x:auto')
+    expect(html).toContain('const codeButtons=Array.from(document.querySelectorAll(\'[data-copy-code-target]\'));')
+    expect(html).toContain('document.getElementById(targetId)')
+  })
+})
+
 describe('renderOpenRouterRawHome price display', () => {
   it('renders registry CNY prices from Bailian in plaza and detail pages instead of only OpenRouter USD endpoint prices', () => {
     const testGraph = graph()
