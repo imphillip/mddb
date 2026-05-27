@@ -49,8 +49,10 @@ describe('liteLLM embedding fragment', () => {
     expect(fragment.facts.output_modalities).toEqual(['embedding'])
     expect(fragment.offer?.endpoints).toBe('openai/embeddings')
   })
-  it('keeps embedding-specific specs and per-image cost', () => {
+  it('maps per-image cost into a price component (not bucketed in other_params)', () => {
     expect(fragment.facts.other_parameters).toEqual({ output_vector_size: 1024 })
-    expect(fragment.offer?.other_params).toMatchObject({ input_cost_per_image: 6e-5 })
+    expect(fragment.offer?.prices[0]?.image_input).toEqual({ amount: 6e-5, unit: 'per_image' })
+    expect(fragment.offer?.prices[0]?.input).toEqual({ amount: 0.8, unit: 'per_1m_tokens' })
+    expect(fragment.offer?.other_params).not.toHaveProperty('input_cost_per_image')
   })
 })

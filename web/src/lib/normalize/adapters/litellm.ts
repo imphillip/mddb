@@ -3,8 +3,8 @@
 // USD specs and complex pricing. Canonical identity ONLY for clean, non-gateway-shaped
 // ids (LiteLLM is last in identity precedence); gateway/config-shaped keys are
 // enrichment-only. Non-token costs that have no Price slot are bucketed, never dropped.
-import type { Modality, ModelFacts, Offer, Price, PriceComponentKey, SourceFragment } from '../schema.js'
-import { canonicalId, matchKey, usdPerTokenTo1m } from '../primitives.js'
+import type { Modality, ModelFacts, Offer, Price, PriceComponentKey, PriceUnit, SourceFragment } from '../schema.js'
+import { canonicalId, matchKey, roundMoney, usdPerTokenTo1m } from '../primitives.js'
 
 export interface LiteLLMModel {
   model_name: string
@@ -125,25 +125,54 @@ function buildOffer(raw: LiteLLMModel, mode: string, options: LiteLLMAdapterOpti
     price[target] = { amount: usdPerTokenTo1m(value), unit: 'per_1m_tokens' }
   }
 
-  // Non-token costs (per_image, per_second, above_1hr tiers...) have no Price slot yet:
-  // bucket the raw numbers rather than drop them.
+  // Map non-token costs (per_image / per_second / per_character / per_query ...) into real
+  // price components. Long-tail / conditional variants we can't safely place are bucketed.
   const otherParams: Record<string, unknown> = {}
   if (raw.litellm_provider) otherParams['litellm_provider'] = raw.litellm_provider
   otherParams['mode'] = mode
   for (const [key, value] of Object.entries(raw)) {
     if (typeof value !== 'number') continue
-    if (key in TOKEN_PRICE_MAP) continue
-    if (key.includes('cost')) otherParams[key] = value
+    if (key in TOKEN_PRICE_MAP || !key.includes('cost')) continue
+    const mapped = liteLLMCostComponent(key)
+    if (mapped && price[mapped.component] === undefined) {
+      const amount = mapped.perToken ? usdPerTokenTo1m(value) : roundMoney(value)
+      if (Number.isFinite(amount)) {
+        price[mapped.component] = { amount, unit: mapped.unit }
+        continue
+      }
+    }
+    otherParams[key] = value // unmapped / conditional tier -> keep, don't drop
   }
 
   const offer: Offer = {
     source: 'litellm',
     currency: 'USD',
-    prices: Object.keys(price).length ? [price] : [],
+    prices: Object.keys(price).some((k) => k !== 'conditions') ? [price] : [],
     other_params: otherParams,
   }
   const endpoints = MODE_ENDPOINTS[mode]
   if (endpoints) offer.endpoints = endpoints
   if (options.observedAt) offer.observed_at = options.observedAt
   return offer
+}
+
+/** Map a LiteLLM `*_cost_per_*` field name to a price component + unit (null = bucket). */
+function liteLLMCostComponent(key: string): { component: PriceComponentKey; unit: PriceUnit; perToken: boolean } | null {
+  // Conditional / resolution / batch / session variants can't be placed on a flat tier safely.
+  if (/above_|premium|priority|_1024|_512|interval|batch|no_audio|code_interpreter|file_search|vector_store|computer_use|per_credit|per_page|per_gb/u.test(key)) {
+    return null
+  }
+  const io: 'input' | 'output' = key.startsWith('output') ? 'output' : 'input'
+  if (/per_reasoning_token$/u.test(key)) return { component: 'reasoning', unit: 'per_1m_tokens', perToken: true }
+  if (/per_audio_token$/u.test(key)) return { component: io === 'output' ? 'audio_output' : 'audio_input', unit: 'per_1m_tokens', perToken: true }
+  if (/per_image_token$/u.test(key)) return { component: io === 'output' ? 'image_output' : 'image_input', unit: 'per_1m_tokens', perToken: true }
+  if (/per_token$/u.test(key)) return null // plain text tokens handled by TOKEN_PRICE_MAP
+  if (/per_video_per_second$/u.test(key)) return { component: 'video', unit: 'per_second', perToken: false }
+  if (/per_second$/u.test(key)) return { component: io === 'output' ? 'audio_output' : 'audio_input', unit: 'per_second', perToken: false }
+  if (/per_image$/u.test(key)) return { component: io === 'output' ? 'image_output' : 'image_input', unit: 'per_image', perToken: false }
+  if (/per_pixel$/u.test(key)) return { component: io === 'output' ? 'image_output' : 'image_input', unit: 'per_pixel', perToken: false }
+  if (/per_character$/u.test(key)) return { component: 'character', unit: 'per_character', perToken: false }
+  if (/per_query$/u.test(key)) return { component: 'request', unit: 'per_query', perToken: false }
+  if (/per_request$/u.test(key)) return { component: 'request', unit: 'per_request', perToken: false }
+  return null
 }

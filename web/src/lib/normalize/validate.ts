@@ -3,6 +3,7 @@
 // (the repo has no JSON-Schema runtime dep); the formal contract lives in
 // data/schema/models.v2.schema.json.
 import type { ModelEntry, Offer, Price } from './schema.js'
+import { PRICE_COMPONENT_KEYS } from './schema.js'
 import { isNonCanonicalId } from './primitives.js'
 
 export { isNonCanonicalId }
@@ -13,12 +14,15 @@ const PRICE_UNITS = new Set([
   'per_image',
   'per_video',
   'per_request',
+  'per_query',
   'per_second',
   'per_audio_minute',
   'per_character',
+  'per_pixel',
+  'per_page',
 ])
 const MODALITIES = new Set(['text', 'image', 'audio', 'video', 'embedding', 'file', 'tool', 'json', 'other'])
-const PRICE_COMPONENTS = ['input', 'output', 'cache_write', 'cache_read'] as const
+const PRICE_COMPONENTS = PRICE_COMPONENT_KEYS
 
 export interface ValidationResult {
   ok: boolean

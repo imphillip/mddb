@@ -19,16 +19,53 @@ export type PriceUnit =
   | 'per_image'
   | 'per_video'
   | 'per_request'
+  | 'per_query'
   | 'per_second'
   | 'per_audio_minute'
   | 'per_character'
+  | 'per_pixel'
+  | 'per_page'
 
 export interface PriceComponent {
   amount: number
   unit: PriceUnit
 }
 
-export type PriceComponentKey = 'input' | 'output' | 'cache_write' | 'cache_read'
+/**
+ * Billing dimension of a price component. Token text I/O + cache, plus non-token
+ * dimensions whose metering is carried by the component's `unit` (per_image, per_second,
+ * per_request, ...). Direction (input/output) is encoded in the key where it matters.
+ */
+export type PriceComponentKey =
+  | 'input'
+  | 'output'
+  | 'cache_write'
+  | 'cache_read'
+  | 'image_input'
+  | 'image_output'
+  | 'audio_input'
+  | 'audio_output'
+  | 'video'
+  | 'request'
+  | 'web_search'
+  | 'reasoning'
+  | 'character'
+
+export const PRICE_COMPONENT_KEYS: readonly PriceComponentKey[] = [
+  'input',
+  'output',
+  'cache_read',
+  'cache_write',
+  'reasoning',
+  'image_input',
+  'image_output',
+  'audio_input',
+  'audio_output',
+  'video',
+  'character',
+  'request',
+  'web_search',
+]
 
 export interface PriceCondition {
   label?: string
@@ -40,13 +77,7 @@ export interface PriceCondition {
 }
 
 /** A single pricing tier. Absent `conditions` = applies unconditionally. */
-export interface Price {
-  conditions?: PriceCondition[]
-  input?: PriceComponent
-  output?: PriceComponent
-  cache_write?: PriceComponent
-  cache_read?: PriceComponent
-}
+export type Price = { conditions?: PriceCondition[] } & Partial<Record<PriceComponentKey, PriceComponent>>
 
 /** One data source's commercial/route observation of a model. */
 export interface Offer {

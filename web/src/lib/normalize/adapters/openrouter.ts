@@ -1,11 +1,12 @@
 // OpenRouter adapter (see ../../../../../normalizer-spec.md §4.1).
 // Primary identity source; USD flat pricing. Raw per-token decimal prices are ×1e6.
-import type { Modality, ModelFacts, Offer, Price, PriceComponent, PriceComponentKey, SourceFragment } from '../schema.js'
+import type { Modality, ModelFacts, Offer, Price, PriceComponent, PriceComponentKey, PriceUnit, SourceFragment } from '../schema.js'
 import {
   canonicalId,
   cleanName,
   endpointsFromBaseUrl,
   matchKey,
+  roundMoney,
   uniq,
   usdPerTokenTo1m,
   vendorPrefix,
@@ -35,11 +36,18 @@ export interface OpenRouterAdapterOptions {
   observedAt?: string
 }
 
-const PRICE_COMPONENT_MAP: Record<string, PriceComponentKey> = {
-  prompt: 'input',
-  completion: 'output',
-  input_cache_write: 'cache_write',
-  input_cache_read: 'cache_read',
+// OpenRouter pricing keys: prompt/completion/cache/image/audio/internal_reasoning are
+// per-token decimals (×1e6 -> per 1M); web_search/request are per-call (used as-is).
+const PRICE_COMPONENT_MAP: Record<string, { component: PriceComponentKey; unit: PriceUnit; perToken: boolean }> = {
+  prompt: { component: 'input', unit: 'per_1m_tokens', perToken: true },
+  completion: { component: 'output', unit: 'per_1m_tokens', perToken: true },
+  input_cache_read: { component: 'cache_read', unit: 'per_1m_tokens', perToken: true },
+  input_cache_write: { component: 'cache_write', unit: 'per_1m_tokens', perToken: true },
+  image: { component: 'image_input', unit: 'per_1m_tokens', perToken: true },
+  audio: { component: 'audio_input', unit: 'per_1m_tokens', perToken: true },
+  internal_reasoning: { component: 'reasoning', unit: 'per_1m_tokens', perToken: true },
+  web_search: { component: 'web_search', unit: 'per_request', perToken: false },
+  request: { component: 'request', unit: 'per_request', perToken: false },
 }
 
 export function openRouterFragment(
@@ -99,13 +107,13 @@ export function openRouterFragment(
 function buildPrice(pricing: Record<string, string> | undefined): Price | null {
   if (!pricing) return null
   const price: Price = {}
-  for (const [rawKey, target] of Object.entries(PRICE_COMPONENT_MAP)) {
+  for (const [rawKey, spec] of Object.entries(PRICE_COMPONENT_MAP)) {
     const value = pricing[rawKey]
     if (value === undefined) continue
-    const amount = usdPerTokenTo1m(value)
-    if (!Number.isFinite(amount)) continue
-    const component: PriceComponent = { amount, unit: 'per_1m_tokens' }
-    price[target] = component
+    const amount = spec.perToken ? usdPerTokenTo1m(value) : roundMoney(Number(value))
+    if (!Number.isFinite(amount) || amount === 0) continue
+    const component: PriceComponent = { amount, unit: spec.unit }
+    price[spec.component] = component
   }
   return Object.keys(price).length ? price : null
 }

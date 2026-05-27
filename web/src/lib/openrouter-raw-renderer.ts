@@ -1,4 +1,5 @@
 import type { OpenRouterRawEdge, OpenRouterRawGraph, OpenRouterRawNode } from './openrouter-raw-graph.js'
+import { PRICE_COMPONENT_KEYS } from './normalize/schema.js'
 
 const css = String.raw`
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap');
@@ -292,8 +293,12 @@ function offerCard(offer: Record<string, unknown>): string {
 }
 
 function offerTier(price: Record<string, unknown>, currency: string): string {
-  const rows = ['input', 'output', 'cache_read', 'cache_write']
-    .map((kind) => (isRecord(price[kind]) ? registryPriceRow(kind, price[kind], currency) : ''))
+  const rows = PRICE_COMPONENT_KEYS
+    .map((kind) => {
+      const component = price[kind]
+      if (!isRecord(component) || Number(component.amount) === 0) return '' // hide free/0 rows
+      return registryPriceRow(kind, component, currency)
+    })
     .filter(Boolean)
     .join('')
   if (!rows) return ''
@@ -345,7 +350,8 @@ function registryPriceUnit(unit: string, currency: string): string {
   if (unit === 'per_second') return `${currency}/second`
   if (unit === 'per_query') return `${currency}/query`
   if (unit === 'per_image') return `${currency}/image`
-  if (unit === 'per_second') return `${currency}/second`
+  if (unit === 'per_pixel') return `${currency}/pixel`
+  if (unit === 'per_page') return `${currency}/page`
   if (unit === 'per_audio_second') return `${currency}/audio_second`
   if (unit === 'per_video_second') return `${currency}/video_second`
   if (unit === 'per_request') return `${currency}/request`
@@ -403,7 +409,7 @@ function registryPriceRows(node: OpenRouterRawNode): Record<string, unknown>[] {
 
 function pickPriceComponents(price: Record<string, unknown>): Record<string, unknown> | undefined {
   const out: Record<string, unknown> = {}
-  for (const key of ['input', 'output', 'cache_read', 'cache_write']) {
+  for (const key of PRICE_COMPONENT_KEYS) {
     if (isRecord(price[key])) out[key] = price[key]
   }
   return Object.keys(out).length ? out : undefined
