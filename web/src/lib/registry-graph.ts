@@ -215,10 +215,15 @@ function makeEndpointNode(provider: RegistryProvider, offer: RegistryOffer, targ
 }
 
 function registryModelToRawModel(model: RegistryModel): JsonRecord {
+  // The clean v2 model IS the source of truth: spread its facts at the top level
+  // (knowledge_cutoff, max_input_tokens, reasoning, tool_calling, alias, alias_id,
+  // offers, other_parameters, ...) so consumers read them directly. The extra keys
+  // below are v1-compat aliases still read by the plaza renderer/tests. We no longer
+  // re-nest facts under a separate `mddb_model` object.
   return {
+    ...(model as unknown as JsonRecord),
     id: primarySourceId(model),
     name: model.model,
-    context_length: model.context_length,
     created: timestampSeconds(model.release_timestamp ?? releaseDateFromSources(model)),
     architecture: {
       input_modalities: model.input_modalities ?? [],
@@ -232,22 +237,7 @@ function registryModelToRawModel(model: RegistryModel): JsonRecord {
     supported_parameters: model.other_parameters?.supported_parameters,
     pricing: rawPricingFromModelPrices(model.prices ?? []),
     offers: registryOffersForModel(model),
-    mddb_model: registryModelFacts(model),
   }
-}
-
-function registryModelFacts(model: RegistryModel): JsonRecord {
-  const out: JsonRecord = {}
-  const passthroughKeys = [
-    'id', 'model', 'name', 'alias', 'aliases', 'author', 'author_id', 'input_modalities', 'output_modalities',
-    'reasoning', 'tool_calling', 'context_length', 'max_output_tokens', 'release_timestamp', 'other_parameters',
-    'last_updated', 'sources',
-  ] as const
-  for (const key of passthroughKeys) {
-    const value = model[key]
-    if (value !== undefined) out[key] = value
-  }
-  return out
 }
 
 function registryOffersForModel(model: RegistryModel): JsonRecord[] {

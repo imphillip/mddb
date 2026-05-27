@@ -168,7 +168,20 @@ function renderEdgeNodeLink(graph: OpenRouterRawGraph, nodeId: string, fallback:
 }
 
 function renderSpecSection(node: OpenRouterRawNode): string {
-  return `<section id="spec" class="panel"><h2>规格</h2><div class="specRows"><div class="specRow">${kv('Input modalities', node.derived.inputModalities.join(' · ') || '—')}${kv('Output modalities', node.derived.outputModalities.join(' · ') || '—')}</div><div class="specRow">${kv('Context length', modelContextLength(node))}${kv('Max output tokens', modelMaxOutputTokens(node))}${kv('Tokenizer', rawModelField(node, 'architecture.tokenizer'))}</div><div class="specRow">${kv('Author', node.derived.author ?? '—')}${kv('Knowledge cutoff', rawModelField(node, 'knowledge_cutoff'))}${kv('Released', modelReleasedDate(node))}</div><div class="specRow">${kv('Supported parameters', rawModelArray(node, 'supported_parameters').join(' · ') || '—')}</div></div></section>`
+  return `<section id="spec" class="panel"><h2>规格</h2><div class="specRows">`
+    + `<div class="specRow">${kv('Input modalities', node.derived.inputModalities.join(' · ') || '—')}${kv('Output modalities', node.derived.outputModalities.join(' · ') || '—')}</div>`
+    + `<div class="specRow">${kv('Context length', modelContextLength(node))}${kv('Max input tokens', rawModelField(node, 'max_input_tokens'))}${kv('Max output tokens', modelMaxOutputTokens(node))}</div>`
+    + `<div class="specRow">${kv('Reasoning', modelCapability(node, 'reasoning'))}${kv('Tool calling', modelCapability(node, 'tool_calling'))}${kv('Tokenizer', rawModelField(node, 'architecture.tokenizer'))}</div>`
+    + `<div class="specRow">${kv('Author', node.derived.author ?? '—')}${kv('Knowledge cutoff', rawModelField(node, 'knowledge_cutoff'))}${kv('Released', modelReleasedDate(node))}</div>`
+    + `<div class="specRow">${kv('Supported parameters', rawModelArray(node, 'supported_parameters').join(' · ') || '—')}</div>`
+    + `</div></section>`
+}
+
+function modelCapability(node: OpenRouterRawNode, key: string): string {
+  const model = isRecord(node.raw.model) ? node.raw.model : {}
+  if (model[key] === true) return '是'
+  if (model[key] === false) return '否'
+  return '—'
 }
 
 function modelContextLength(node: OpenRouterRawNode): string {
@@ -225,10 +238,11 @@ function renderPricingSection(graph: OpenRouterRawGraph, node: OpenRouterRawNode
   void inEdges
   const canonicalLink = node.nodeKind === 'endpoint_deployment' ? canonicalModelLink(graph, node, outEdges) : ''
   const fallbackEndpoint = node.nodeKind === 'endpoint_deployment' ? undefined : sampleDeploymentPricingEndpoint(graph, node)
-  const endpointPricing = endpointPricingCards(node)
-  const fallbackPricing = endpointPricing ? '' : fallbackDeploymentPricingCards(fallbackEndpoint, node)
-  const registryPricing = endpointPricing || fallbackPricing ? '' : registryPricingCards(node)
-  const litellmPricing = endpointPricing || fallbackPricing || registryPricing ? '' : litellmSupplementalPricingCards(node)
+  // For canonical model pages, the embedded v2 offers are the source of truth.
+  const registryPricing = node.nodeKind === 'source_model' ? registryPricingCards(node) : ''
+  const endpointPricing = registryPricing ? '' : endpointPricingCards(node)
+  const fallbackPricing = registryPricing || endpointPricing ? '' : fallbackDeploymentPricingCards(fallbackEndpoint, node)
+  const litellmPricing = registryPricing || endpointPricing || fallbackPricing ? '' : litellmSupplementalPricingCards(node)
   const empty = canonicalLink ? '' : '<p class="muted">无结构化官方价格；如本节点为 alias/snapshot/deployment，请先看上方关联模型跳转到 anchor。</p>'
   return `<section id="pricing" class="panel"><h2>价格</h2>${canonicalLink}${endpointPricing || fallbackPricing || registryPricing || litellmPricing || empty}</section>`
 }
@@ -241,8 +255,7 @@ function canonicalModelLink(graph: OpenRouterRawGraph, node: OpenRouterRawNode, 
 }
 
 function registryPricingCards(node: OpenRouterRawNode): string {
-  const registry = registryModel(node)
-  const prices = Array.isArray(registry.prices) ? registry.prices : []
+  const prices = registryPriceRows(node)
   if (prices.length === 0) return ''
   const cards = prices.map((price) => registryPriceCard(price)).filter(Boolean).join('')
   return cards ? `<div class="priceVariantGrid">${cards}</div>` : ''
@@ -256,8 +269,9 @@ function registryPriceCard(price: unknown): string {
   if (!rows) return ''
   const source = String(price.source ?? 'registry')
   const label = displayRegistryPriceSource(source)
-  const condition = isRecord(price.conditions) && typeof price.conditions.label === 'string' ? ` · ${price.conditions.label}` : ''
-  return `<div class="priceVariantCard"><h3>${escapeHtml(label)}${escapeHtml(condition)}</h3><dl class="priceList">${rows}</dl></div>`
+  const condition = conditionLabel(price.conditions)
+  const conditionSuffix = condition ? ` · ${condition}` : ''
+  return `<div class="priceVariantCard"><h3>${escapeHtml(label)}${escapeHtml(conditionSuffix)}</h3><dl class="priceList">${rows}</dl></div>`
 }
 
 function registryPriceRow(kind: string, value: unknown, currency: string): string {
@@ -287,17 +301,27 @@ function registryPriceUnit(unit: string, currency: string): string {
   return unit
 }
 
+function conditionLabel(conditions: unknown): string {
+  const first = Array.isArray(conditions) ? conditions[0] : conditions
+  return isRecord(first) && typeof first.label === 'string' ? first.label : ''
+}
+
 function displayRegistryPriceSource(source: string): string {
   if (source === 'litellm') return 'LiteLLM'
   if (source === 'bailian_model_market') return 'Bailian Model Market'
+  if (source === 'bailian') return '阿里云百炼'
+  if (source === 'volcengine' || source === 'volcengine_ark') return '火山方舟'
   if (source === 'openrouter') return 'OpenRouter'
   return source.split(/[_-]/u).map((part) => part ? `${part.slice(0, 1).toUpperCase()}${part.slice(1)}` : part).join(' ')
 }
 
 function registryModel(node: OpenRouterRawNode): Record<string, unknown> {
   const model = isRecord(node.raw.model) ? node.raw.model : {}
+  // v1 fixtures nested facts under mddb_model/mddb_registry; v2 spreads them at top level
+  // (and carries offers), so fall back to the model itself when no nested object exists.
   if (isRecord(model.mddb_model)) return model.mddb_model
-  return isRecord(model.mddb_registry) ? model.mddb_registry : {}
+  if (isRecord(model.mddb_registry)) return model.mddb_registry
+  return model
 }
 
 function registryPriceRows(node: OpenRouterRawNode): Record<string, unknown>[] {
@@ -310,18 +334,28 @@ function registryPriceRows(node: OpenRouterRawNode): Record<string, unknown>[] {
     const prices = Array.isArray(offer.prices) ? offer.prices : []
     for (const price of prices) {
       if (!isRecord(price)) continue
+      // v2 offers carry flat components ({input, output, cache_*}); v1 nested them under prices/unit_prices.
+      const unitPrices = (isRecord(price.unit_prices) ? price.unit_prices : isRecord(price.prices) ? price.prices : undefined) ?? pickPriceComponents(price)
       rows.push({
         source: price.source ?? offer.source,
         source_id: price.source_id ?? offer.source_id,
         source_url: price.source_url ?? offer.url,
         currency: price.currency ?? offer.currency,
         conditions: price.conditions,
-        unit_prices: price.unit_prices ?? price.prices,
-        prices: price.prices ?? price.unit_prices,
+        unit_prices: unitPrices,
+        prices: unitPrices,
       })
     }
   }
   return rows
+}
+
+function pickPriceComponents(price: Record<string, unknown>): Record<string, unknown> | undefined {
+  const out: Record<string, unknown> = {}
+  for (const key of ['input', 'output', 'cache_read', 'cache_write']) {
+    if (isRecord(price[key])) out[key] = price[key]
+  }
+  return Object.keys(out).length ? out : undefined
 }
 
 function litellmSupplementalPricingCards(node: OpenRouterRawNode): string {
