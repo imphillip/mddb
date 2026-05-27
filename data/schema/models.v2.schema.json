@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mddb.dev/schemas/models.v2.schema.json",
+  "title": "mddb normalized models (v2 draft)",
+  "description": "Output contract of the rewritten normalizer. Facts are source-agnostic and merged per-field; commercial data lives in per-source offers. Draft: not yet the deployed data/models.json (schema_version 1).",
+  "type": "object",
+  "required": ["schema_version", "models"],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": { "type": "integer" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "count": { "type": "integer" },
+    "models": { "type": "array", "items": { "$ref": "#/$defs/model" } }
+  },
+  "$defs": {
+    "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+    "modality": {
+      "type": "string",
+      "enum": ["text", "image", "audio", "video", "embedding", "file", "tool", "json", "other"]
+    },
+    "priceUnit": {
+      "type": "string",
+      "enum": ["per_1m_tokens", "per_image", "per_video", "per_request", "per_second", "per_audio_minute", "per_character"]
+    },
+    "priceComponent": {
+      "type": "object",
+      "required": ["amount", "unit"],
+      "additionalProperties": false,
+      "properties": {
+        "amount": { "type": "number" },
+        "unit": { "$ref": "#/$defs/priceUnit" }
+      }
+    },
+    "condition": {
+      "type": "object",
+      "required": ["type"],
+      "additionalProperties": false,
+      "properties": {
+        "label": { "type": "string" },
+        "type": { "type": "string", "enum": ["input_token", "output_token", "total_token"] },
+        "gt": { "type": "number" },
+        "gte": { "type": "number" },
+        "lt": { "type": "number" },
+        "lte": { "type": "number" }
+      }
+    },
+    "price": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "conditions": { "type": "array", "items": { "$ref": "#/$defs/condition" } },
+        "input": { "$ref": "#/$defs/priceComponent" },
+        "output": { "$ref": "#/$defs/priceComponent" },
+        "cache_write": { "$ref": "#/$defs/priceComponent" },
+        "cache_read": { "$ref": "#/$defs/priceComponent" }
+      }
+    },
+    "offer": {
+      "type": "object",
+      "required": ["source", "currency", "prices"],
+      "additionalProperties": false,
+      "properties": {
+        "source": { "type": "string" },
+        "url": { "type": "string" },
+        "observed_at": { "type": "string" },
+        "currency": { "type": "string" },
+        "prices": { "type": "array", "items": { "$ref": "#/$defs/price" } },
+        "endpoints": { "type": "string" },
+        "other_params": { "type": "object" }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source", "contributed"],
+      "additionalProperties": false,
+      "properties": {
+        "source": { "type": "string" },
+        "source_id": { "type": "string" },
+        "url": { "type": "string" },
+        "observed_at": { "type": "string" },
+        "contributed": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "model": {
+      "type": "object",
+      "required": ["id", "model", "offers"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "model": { "type": "string" },
+        "alias_id": { "type": "array", "items": { "type": "string" } },
+        "alias": { "type": "array", "items": { "type": "string" } },
+        "author": { "type": "string" },
+        "author_id": { "type": "string" },
+        "input_modalities": { "type": "array", "items": { "$ref": "#/$defs/modality" } },
+        "output_modalities": { "type": "array", "items": { "$ref": "#/$defs/modality" } },
+        "reasoning": { "type": "boolean" },
+        "tool_calling": { "type": "boolean" },
+        "context_length": { "type": ["integer", "null"] },
+        "max_input_tokens": { "type": ["integer", "null"] },
+        "max_output_tokens": { "type": ["integer", "null"] },
+        "release_timestamp": { "type": ["integer", "null"] },
+        "knowledge_cutoff": { "type": ["integer", "string", "null"] },
+        "last_updated": { "type": "string" },
+        "offers": { "type": "array", "items": { "$ref": "#/$defs/offer" } },
+        "other_parameters": { "type": "object" }
+      }
+    }
+  }
+}

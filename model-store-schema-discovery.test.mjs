@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 
 const discoveryDoc = readFileSync(new URL('./docs/model-store-schema-discovery.md', import.meta.url), 'utf8')
-const referenceItem = JSON.parse(readFileSync('/home/phillip_wu/.hermes/cache/documents/doc_e387eb2ee3f9_model_item.json', 'utf8'))
+const referenceItem = JSON.parse(readFileSync(new URL('./docs/model-store-reference-item.json', import.meta.url), 'utf8'))
 
 function hasForbiddenNestedRegistry(value, path = []) {
   if (Array.isArray(value)) return value.some((item, index) => hasForbiddenNestedRegistry(item, [...path, String(index)]))

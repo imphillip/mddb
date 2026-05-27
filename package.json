@@ -21,6 +21,8 @@
     "registry:populate:openrouter": "node scripts/populate-registry-openrouter.mjs",
     "registry:populate:models-dev": "node scripts/populate-models-dev-providers.mjs",
     "data:fx": "node scripts/fetch-exchange-rate.mjs",
+    "data:normalize": "node dist/scripts/build-models.js",
+    "data:normalize:coverage": "node scripts/normalize-coverage.mjs",
     "data:quality": "npm run build && node scripts/check-refresh-gate.mjs",
     "data:gate": "node scripts/check-refresh-gate.mjs",
     "serve": "npx http-server public -p 4173 -c-1",

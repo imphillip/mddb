@@ -1,0 +1,103 @@
+{
+  "id": "qwen3.6-max-preview",
+  "model": "Qwen 3.6 Max",
+  "alias_id": [
+    "qwen/qwen3.6-max-preview",
+    "qwen/qwen3.6-max-preview-20260420"
+  ],
+  "alias": [
+    "Qwen3.6 Max Preview"
+  ],
+  "author": "qwen",
+  "author_id": "qwen",
+  "input_modalities": ["text"],
+  "output_modalities": ["text"],
+  "reasoning": true,
+  "tool_calling": true,
+  "context_length": 262144,
+  "max_input_tokens": 245760,
+  "max_output_tokens": 65536,
+  "release_timestamp": 1777260242,
+  "knowledge_cutoff": 1776643200,
+  "last_updated": "2026-05-24T18:19:06Z",
+  "offers": [
+    {
+      "source": "openrouter",
+      "url": "https://openrouter.ai/qwen/qwen3.6-max-preview",
+      "observed_at": "2026-05-19T22:11:55.841Z",
+      "currency": "USD",
+      "prices": [
+        {
+          "input": {
+            "amount": 1.04,
+            "unit": "per_1m_tokens"
+          },
+          "output": {
+            "amount": 6.24,
+            "unit": "per_1m_tokens"
+          }
+        }
+      ]
+    },
+    {
+      "source": "bailian",
+      "url": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/detail/qwen3.6-max-preview?serviceSite=asia-pacific-china",
+      "observed_at": "2026-05-24T18:19:06Z",
+      "currency": "CNY",
+      "prices": [
+        {
+          "conditions": [{
+            "label": "输入<=128k",
+            "type": "input_token",
+            "lte": 131072
+          }],
+          "input": {
+            "amount": 9,
+            "unit": "per_1m_tokens"
+          },
+          "output": {
+            "amount": 54,
+            "unit": "per_1m_tokens"
+          },
+          "cache_write": {
+            "amount": 11.25,
+            "unit": "per_1m_tokens"
+          },
+          "cache_read": {
+            "amount": 0.9,
+            "unit": "per_1m_tokens"
+          }
+        },
+        {
+          "conditions": [{
+            "label": "128k<输入<=256k",
+            "type": "input_token",
+            "gt": 131072,
+            "lte": 262144
+          }],
+          "input": {
+            "amount": 15,
+            "unit": "per_1m_tokens"
+          },
+          "output": {
+            "amount": 90,
+            "unit": "per_1m_tokens"
+          },
+          "cache_write": {
+            "amount": 18.75,
+            "unit": "per_1m_tokens"
+          },
+          "cache_read": {
+            "amount": 1.5,
+            "unit": "per_1m_tokens"
+          }
+        }
+      ],
+      "endpoints": "openai/chat.completions",
+      "other_params": {
+        "RPM": 600,
+        "TPM": 1000000
+      }
+    }
+  ]
+}

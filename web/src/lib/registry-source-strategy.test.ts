@@ -1,120 +1,18 @@
-import { existsSync, readdirSync, readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 
+// v2 registry invariants. The store is single-entity (offers embedded in the model), so
+// these check offer/source responsibilities directly on models.json rather than on the
+// legacy data/providers/*.json catalogs.
+
 type JsonRecord = Record<string, any>
 
-function readJson(path: string): any {
-  return JSON.parse(readFileSync(path, 'utf8'))
-}
-
-function providers(root = process.cwd()): JsonRecord[] {
-  const dir = join(root, 'data', 'providers')
-  return readdirSync(dir).filter((file) => file.endsWith('.json')).map((file) => readJson(join(dir, file)))
-}
-
-function modelPayload(root = process.cwd()): { models: JsonRecord[] } {
-  return readJson(join(root, 'data', 'models.json'))
-}
-
-describe('registry source strategy invariants', () => {
-  it('keeps canonical model identities unique and backed by approved model sources', () => {
-    const models = modelPayload().models
-    const duplicateModelIds = duplicates(models.map((model) => model.id))
-    expect(duplicateModelIds).toEqual([])
-
-    const duplicateAliases = duplicates(models.flatMap((model) => Array.isArray(model.alias) ? model.alias : []))
-    expect(duplicateAliases).toEqual([])
-
-    const approvedSources = ['openrouter', 'litellm', 'bailian_model_market', 'volcengine_ark']
-    const invalidModelSources = models
-      .filter((model) => !approvedSources.some((source) => hasSource(model, source)))
-      .map((model) => model.id)
-    expect(invalidModelSources).toEqual([])
-
-    const basellmAuthoredModels = models
-      .filter((model) => hasSource(model, 'basellm-newapi') || hasSource(model, 'basellm'))
-      .map((model) => model.id)
-    expect(basellmAuthoredModels).toEqual([])
-  })
-
-  it('keeps provider files unique and provider offers attached to canonical models', () => {
-    const models = modelPayload().models
-    const modelIds = new Set(models.map((model) => model.id))
-    const rows = providers()
-    expect(duplicates(rows.map((provider) => provider.id))).toEqual([])
-
-    const badOffers: string[] = []
-    const duplicateOffers: string[] = []
-    for (const provider of rows) {
-      const seen = new Set<string>()
-      for (const offer of provider.offers ?? []) {
-        if (!modelIds.has(offer.model_id)) badOffers.push(`${provider.id}:${offer.model_id}`)
-        const key = `${offer.model_id}|${offer.api_model_id ?? ''}|${offer.endpoint_path ?? ''}`
-        if (seen.has(key)) duplicateOffers.push(`${provider.id}:${key}`)
-        seen.add(key)
-      }
-    }
-
-    expect(badOffers).toEqual([])
-    expect(duplicateOffers).toEqual([])
-  })
-
-  it('keeps source responsibilities separated after backfills', () => {
-    const rows = providers()
-    const modelsDevProviders = rows.filter((provider) => hasSource(provider, 'models.dev'))
-    expect(modelsDevProviders.some((provider) => typeof provider.icon === 'string' && provider.icon.startsWith('/assets/provider-icons/'))).toBe(true)
-
-    const modelsDevProvidersWithOffers = modelsDevProviders
-      .filter((provider) => Array.isArray(provider.offers) && provider.offers.some((offer: JsonRecord) => hasSource(offer, 'models.dev') || (offer.prices ?? []).some((price: JsonRecord) => price.source === 'models.dev')))
-      .map((provider) => provider.id)
-    expect(modelsDevProvidersWithOffers).toEqual([])
-
-    const basellmOffers = rows.flatMap((provider) => (provider.offers ?? []).filter((offer: JsonRecord) =>
-      Array.isArray(offer.sources) && offer.sources.some((source: JsonRecord) => source.source === 'basellm-newapi'),
-    ))
-    expect(basellmOffers.length).toBeGreaterThan(0)
-    const basellmAuthoredModels = modelPayload().models
-      .filter((model) => hasSource(model, 'basellm-newapi') || hasSource(model, 'basellm'))
-      .map((model) => model.id)
-    expect(basellmAuthoredModels).toEqual([])
-  })
-
-  it('keeps LiteLLM as a non-chat model and complex pricing supplement', () => {
-    const models = modelPayload().models
-    const litellmModels = models.filter((model) => hasSource(model, 'litellm'))
-    expect(litellmModels.length).toBeGreaterThan(0)
-
-    const litellmManagedChatModels = litellmModels
-      .filter((model) => !hasSource(model, 'openrouter'))
-      .filter((model) => model.output_modalities?.includes('text'))
-      .map((model) => model.id)
-    expect(litellmManagedChatModels).toEqual([])
-
-    const deprecationModels = litellmModels.filter((model) => typeof model.deprecation_date === 'string')
-    expect(deprecationModels.length).toBeGreaterThan(0)
-
-    const complexPricingRows = litellmModels.flatMap((model) => litellmPriceRows(model))
-      .filter((price) => price.condition || !['per_1m_tokens'].includes(price.unit))
-    expect(complexPricingRows.length).toBeGreaterThan(0)
-  })
-
-  it('does not expose stale schema draft fields in current model data', () => {
-    const models = modelPayload().models
-    const staleFields = ['released', 'deprecation', 'max_input_tokens']
-    const offenders = models.flatMap((model) => staleFields.filter((field) => model[field] !== undefined).map((field) => `${model.id}.${field}`))
-    expect(offenders).toEqual([])
-  })
-})
-
-function hasSource(record: JsonRecord, source: string): boolean {
-  return Array.isArray(record.sources) && record.sources.some((entry) => entry?.source === source)
-}
-
-function litellmPriceRows(model: JsonRecord): JsonRecord[] {
-  const params = model.other_parameters?.litellm
-  const observations = [params, ...(Array.isArray(params?.observations) ? params.observations : [])].filter(Boolean)
-  return observations.flatMap((entry) => Array.isArray(entry.prices) ? entry.prices : [])
+function readModels(): JsonRecord[] {
+  const modelsPath = join(process.cwd(), 'data', 'models.json')
+  expect(existsSync(modelsPath)).toBe(true)
+  const payload = JSON.parse(readFileSync(modelsPath, 'utf8')) as JsonRecord
+  return payload.models
 }
 
 function duplicates(values: string[]): string[] {
@@ -126,3 +24,57 @@ function duplicates(values: string[]): string[] {
   }
   return [...dupes].sort()
 }
+
+describe('registry source strategy invariants (v2)', () => {
+  const models = readModels()
+
+  it('keeps canonical model ids unique and deterministically sorted', () => {
+    const ids = models.map((model) => String(model.id))
+    expect(duplicates(ids)).toEqual([])
+    expect(ids).toEqual([...ids].sort((a, b) => a.localeCompare(b)))
+  })
+
+  it('attaches offers with a unique source/endpoint key per model', () => {
+    const bad: string[] = []
+    for (const model of models) {
+      const seen = new Set<string>()
+      for (const offer of model.offers ?? []) {
+        if (!offer.source) bad.push(`${model.id}:missing-source`)
+        const key = `${offer.source}|${offer.endpoints ?? ''}`
+        if (seen.has(key)) bad.push(`${model.id}:${key}`)
+        seen.add(key)
+      }
+    }
+    expect(bad).toEqual([])
+  })
+
+  it('never lets models.dev create an offer or price (icons + fact whitelist only)', () => {
+    const offenders = models.flatMap((model) =>
+      (model.offers ?? []).filter((offer: JsonRecord) => offer.source === 'models-dev').map(() => model.id),
+    )
+    expect(offenders).toEqual([])
+  })
+
+  it('keeps LiteLLM as a non-chat model and complex-pricing supplement', () => {
+    const nonChat = models.filter((model) =>
+      (model.offers ?? []).some(
+        (offer: JsonRecord) => offer.source === 'litellm' && offer.other_params?.mode && offer.other_params.mode !== 'chat',
+      ),
+    )
+    expect(nonChat.length).toBeGreaterThan(0)
+  })
+
+  it('preserves tiered/conditional pricing through normalization', () => {
+    const tiered = models.filter((model) =>
+      (model.offers ?? []).some((offer: JsonRecord) =>
+        (offer.prices ?? []).some((price: JsonRecord) => Array.isArray(price.conditions) && price.conditions.length > 0),
+      ),
+    )
+    expect(tiered.length).toBeGreaterThan(0)
+  })
+
+  it('supports max_input_tokens as a first-class v2 fact (replaces the old stale-field rule)', () => {
+    const qwen = models.find((model) => model.id === 'qwen3.6-max-preview')
+    expect(typeof qwen?.max_input_tokens).toBe('number')
+  })
+})

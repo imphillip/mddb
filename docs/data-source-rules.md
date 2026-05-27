@@ -54,11 +54,15 @@
 
 ### models.dev
 
-- 仅用于补充厂牌/logo/icon 相关信息。
-- 不作为 canonical model 来源。
-- 不根据 models.dev model rows 创建 canonical models。
-- 不根据 models.dev offers/prices 覆盖官方商业价格。
-- 若记录 models.dev provenance，应限于 icon/logo/enrichment 语境，避免让它看起来像模型身份来源。
+- 用于补充厂牌/logo/icon 相关信息，以及**窄白名单 facts 补空**。
+- 不作为 canonical model 来源；不根据 models.dev model rows 创建 canonical models。
+- 不根据 models.dev offers/prices 覆盖官方商业价格（其 `cost` 字段禁用）。
+- **窄白名单补空**：models.dev 可作为**最低优先级**来源，仅补空以下字段，且永不覆盖结构化源已有值：
+  - `knowledge_cutoff` ← `knowledge`（其他源都不提供，价值最大；月精度按 `YYYY-MM` 字符串保留，不伪造日精度 epoch）；
+  - `release_date`（可选，仅当 OpenRouter/百炼/火山/LiteLLM 均缺失发布时间时）。
+- models.dev 数据按 provider 分条、同一 id 多条且不一致：每个白名单字段按**非空值多数表决**（字母序打破平票）确定，冲突无法判定时留空。
+- 与 OR/百炼权威字段打架的字段（如 `limit.context`、`cost`）一律不采用。
+- models.dev 的贡献记入**单独的来源旁路文件**（不内嵌进 `models.json`，后者保持干净），且不得伪装成模型身份来源。
 
 ### 百炼 / Alibaba Bailian
 
@@ -90,6 +94,7 @@
 
 - models.dev 不应成为 canonical model source。
 - models.dev 不应创建模型价格或 provider offer 价格。
+- models.dev 只能在白名单字段（`knowledge_cutoff`、可选 `release_date`）上以最低优先级补空，且永不覆盖结构化源已有值。
 - 百炼与火山允许出现在 canonical model `sources[]`，包括新增模型。
 - canonical model source 不应被限制为 OpenRouter/LiteLLM。
 - provider offers 的 `model_id` 必须全部指向现有 canonical model。
