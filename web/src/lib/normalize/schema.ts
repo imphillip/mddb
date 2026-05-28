@@ -129,6 +129,12 @@ export interface ModelFacts {
   other_parameters?: Record<string, unknown>
 }
 
+/** Lifecycle marker set by the daily update when a model disappears from every source. */
+export interface Deprecation {
+  status: 'delisted'
+  since: string // YYYY-MM-DD, first day the model was absent from all sources
+}
+
 export interface ModelEntry extends ModelFacts {
   id: string
   model: string
@@ -136,6 +142,7 @@ export interface ModelEntry extends ModelFacts {
   alias?: string[]
   last_updated?: string
   offers: Offer[]
+  deprecation?: Deprecation
 }
 
 /**
