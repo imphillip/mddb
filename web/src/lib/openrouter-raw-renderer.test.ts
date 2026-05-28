@@ -175,7 +175,7 @@ describe('renderOpenRouterRawHome price display', () => {
     const detailHtml = renderOpenRouterRawDetail(testGraph, qwen)
 
     expect(plazaHtml).not.toContain('<h1>模型广场</h1>')
-    expect(plazaHtml).toContain('<th>模型</th><th>上下文</th><th>条件</th><th>价格</th><th>发布时间</th>')
+    expect(plazaHtml).toContain('<th>模型</th><th>上下文</th><th>价格</th><th>发布</th>')
     expect(plazaHtml).not.toContain('<th>来源</th>')
     expect(plazaHtml).toContain('<span class="priceLabel">Input</span>')
     expect(plazaHtml).toContain('<span class="priceLabel">Output</span>')
@@ -234,7 +234,8 @@ describe('renderOpenRouterRawHome price display', () => {
 
     const plazaHtml = renderOpenRouterRawHome(testGraph)
 
-    expect(plazaHtml).toContain('<td class="conditionCell"><span class="tierCondition">输入&lt;=128k</span> <span class="tierCount">2 档</span></td>')
+    // Option B: tier condition folded into the price cell (no separate 条件 column).
+    expect(plazaHtml).toContain('<span class="priceLine priceTier"><span class="tierCondition">输入&lt;=128k</span> <span class="tierCount">2 档</span></span>')
     expect(plazaHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">9</span>')
     expect(plazaHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">54</span>')
     expect(plazaHtml).not.toContain('<span class="priceCurrencySymbol">$</span><span class="priceAmount">1.04</span>')
