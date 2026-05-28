@@ -218,7 +218,7 @@ describe('renderOpenRouterRawHome price display', () => {
     expect(plazaHtml).not.toContain('<span class="tierCondition">输入</span>')
   })
 
-  it('keeps list condition and prices from the same selected CNY tiered price group', () => {
+  it('shows tiered list prices as two price lines plus a compact tier marker', () => {
     const testGraph = graph()
     const qwen = testGraph.nodes[1]!
     qwen.raw.model = {
@@ -234,10 +234,12 @@ describe('renderOpenRouterRawHome price display', () => {
 
     const plazaHtml = renderOpenRouterRawHome(testGraph)
 
-    // Option B: tier condition folded into the price cell (no separate 条件 column).
-    expect(plazaHtml).toContain('<span class="priceLine priceTier"><span class="tierCondition">输入&lt;=128k</span> <span class="tierCount">2 档</span></span>')
-    expect(plazaHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">9</span>')
-    expect(plazaHtml).toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">54</span>')
+    expect(plazaHtml).toContain('<span class="priceLine"><span class="priceLabel">Input</span> <code class="priceValue"><span class="priceCurrencySymbol">￥</span><span class="priceAmount">9</span></code>')
+    expect(plazaHtml).toContain('<span class="priceLine"><span class="priceLabel">Output</span> <code class="priceValue"><span class="priceCurrencySymbol">￥</span><span class="priceAmount">54</span></code>')
+    expect(plazaHtml).toContain('<span class="tierIcon" title="阶梯价格：2 档" aria-label="阶梯价格：2 档">↕</span>')
+    expect(plazaHtml).not.toContain('<span class="priceLine priceTier">')
+    expect(plazaHtml).not.toContain('<span class="tierCondition">输入&lt;=128k</span>')
+    expect(plazaHtml).not.toContain('<span class="priceCurrencySymbol">￥</span><span class="priceAmount">15</span>')
     expect(plazaHtml).not.toContain('<span class="priceCurrencySymbol">$</span><span class="priceAmount">1.04</span>')
   })
 })
