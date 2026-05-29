@@ -3,12 +3,12 @@
 //
 // Usage:
 //   node dist/scripts/build-models.js \
-//     --sources=<dir with source-data/ and sources/> \
+//     --sources=<assembled dir, e.g. sources/assembled> \
 //     [--overrides=<overrides.json>] \
 //     [--out=.internal/normalize/models.json]
 //
 // Defaults to a NON-destructive output path; it never clobbers the live data/models.json.
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { openRouterFragment, type OpenRouterModel } from '../lib/normalize/adapters/openrouter.js'
 import { bailianFragment, type BailianModel } from '../lib/normalize/adapters/bailian.js'
@@ -54,14 +54,14 @@ function collect(root: unknown, match: (o: Record<string, unknown>) => boolean):
 }
 
 function loadOpenRouter(dir: string): SourceFragment[] {
-  const path = join(dir, 'source-data', 'openrouter-models.raw.json')
+  const path = join(dir, 'openrouter.json')
   if (!existsSync(path)) return []
   const payload = readJson<{ data?: OpenRouterModel[] }>(path)
   return (payload.data ?? []).filter((m) => m?.id).map((m) => openRouterFragment(m))
 }
 
 function loadBailian(dir: string): SourceFragment[] {
-  const path = join(dir, 'sources', 'bailian-model-market.json')
+  const path = join(dir, 'bailian.json')
   if (!existsSync(path)) return []
   const records = collect(readJson(path), (o) => 'model_id' in o && 'tiered_pricing' in o)
   return records
@@ -70,7 +70,7 @@ function loadBailian(dir: string): SourceFragment[] {
 }
 
 function loadModelsDev(dir: string): SourceFragment[] {
-  const path = join(dir, 'source-data', 'models-dev-api.raw.json')
+  const path = join(dir, 'models-dev.json')
   if (!existsSync(path)) return []
   const providers = readJson<Record<string, { models?: Record<string, ModelsDevRecord> }>>(path)
   const byId = new Map<string, ModelsDevRecord[]>()
@@ -89,7 +89,7 @@ function loadModelsDev(dir: string): SourceFragment[] {
 }
 
 function loadLiteLLM(dir: string): SourceFragment[] {
-  const path = join(dir, 'source-data', 'litellm-model-prices.raw.json')
+  const path = join(dir, 'litellm.json')
   if (!existsSync(path)) return []
   const payload = readJson<{ data?: Record<string, Record<string, unknown>> }>(path)
   const data = payload.data ?? {}
@@ -102,11 +102,11 @@ function loadLiteLLM(dir: string): SourceFragment[] {
 }
 
 function loadVolcengine(dir: string): SourceFragment[] {
-  const vdir = join(dir, 'sources', 'volcengine')
-  if (!existsSync(vdir)) return []
+  const path = join(dir, 'volcengine.json')
+  if (!existsSync(path)) return []
+  const payload = readJson<{ docs?: Array<{ md_content?: string; url?: string }> }>(path)
   const fragments: SourceFragment[] = []
-  for (const file of readdirSync(vdir).filter((f) => f.endsWith('.json'))) {
-    const doc = readJson<{ md_content?: string; url?: string }>(join(vdir, file))
+  for (const doc of payload.docs ?? []) {
     if (!doc.md_content || !doc.md_content.includes('最大 RPM')) continue
     const opts = doc.url ? { sourceUrl: doc.url } : {}
     for (const spec of parseVolcengineSpecs(doc.md_content)) {
@@ -122,7 +122,7 @@ function loadVolcengine(dir: string): SourceFragment[] {
 function main(): void {
   const sources = arg('sources')
   if (!sources) {
-    console.error('build-models: --sources=<dir> is required (dir containing source-data/ and sources/)')
+    console.error('build-models: --sources=<dir> is required (assembled dir, e.g. sources/assembled)')
     process.exit(2)
   }
   const out = arg('out', join(process.cwd(), '.internal', 'normalize', 'models.json'))!

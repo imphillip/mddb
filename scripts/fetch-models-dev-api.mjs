@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url'
 
 const source = process.env.MODELS_DEV_URL ?? 'https://models.dev/api.json'
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..')
-const outputPath = process.env.MODELS_DEV_TARGET ?? join(repoRoot, '.internal', 'source-data', 'models-dev-api.raw.json')
+const outputPath = process.env.MODELS_DEV_TARGET ?? join(repoRoot, 'sources', 'raw', 'models-dev-api.raw.json')
 
 const response = await fetch(source, { headers: { Accept: 'application/json', 'User-Agent': 'mddb.dev source fetch' } })
 if (!response.ok) throw new Error(`Failed to fetch models.dev metadata: ${response.status} ${response.statusText}`)

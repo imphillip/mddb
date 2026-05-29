@@ -20,7 +20,7 @@ import {
 
 const DEFAULT_REGION = process.env.BAILIAN_REGION || 'cn-beijing'
 const DEFAULT_SERVICE_SITE = process.env.BAILIAN_SERVICE_SITE || 'asia-pacific-china'
-const DEFAULT_OUTPUT = process.env.BAILIAN_OUTPUT || '.internal/sources/bailian-model-market.json'
+const DEFAULT_OUTPUT = process.env.BAILIAN_OUTPUT || 'sources/raw/bailian-model-market.json'
 const GATEWAY_URL = 'https://bailian-cs.console.aliyun.com/data/api.json'
 const LIST_API = 'zeldaHttp.dashscopeModel./zelda/api/v1/modelCenter/listFoundationModels'
 const REFERER_BASE = `https://bailian.console.aliyun.com/${DEFAULT_REGION}/?tab=model`

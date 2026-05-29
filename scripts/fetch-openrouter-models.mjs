@@ -92,11 +92,11 @@ const MODEL_PAGE_KEYS = [
 ]
 
 const paths = {
-  models: process.argv[2] ?? join(process.cwd(), '.internal', 'source-data', 'openrouter-models.raw.json'),
-  raw: process.env.OPENROUTER_RAW_TARGET ?? join(process.cwd(), '.internal', 'source-data', 'openrouter.raw.json'),
-  endpoints: process.env.OPENROUTER_ENDPOINTS_TARGET ?? join(process.cwd(), '.internal', 'source-data', 'openrouter-endpoints.raw.json'),
-  sitemap: process.env.OPENROUTER_SITEMAP_TARGET ?? join(process.cwd(), '.internal', 'source-data', 'openrouter-sitemap-models.raw.json'),
-  pages: process.env.OPENROUTER_PAGES_TARGET ?? join(process.cwd(), '.internal', 'source-data', 'openrouter-model-pages.raw.json'),
+  models: process.argv[2] ?? join(process.cwd(), 'sources', 'raw', 'openrouter-models.raw.json'),
+  raw: process.env.OPENROUTER_RAW_TARGET ?? join(process.cwd(), 'sources', 'raw', 'openrouter.raw.json'),
+  endpoints: process.env.OPENROUTER_ENDPOINTS_TARGET ?? join(process.cwd(), 'sources', 'raw', 'openrouter-endpoints.raw.json'),
+  sitemap: process.env.OPENROUTER_SITEMAP_TARGET ?? join(process.cwd(), 'sources', 'raw', 'openrouter-sitemap-models.raw.json'),
+  pages: process.env.OPENROUTER_PAGES_TARGET ?? join(process.cwd(), 'sources', 'raw', 'openrouter-model-pages.raw.json'),
 }
 
 const jsonHeaders = { Accept: 'application/json', 'User-Agent': USER_AGENT }

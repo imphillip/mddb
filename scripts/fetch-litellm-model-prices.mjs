@@ -3,7 +3,7 @@ import { mkdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 
 const LITELLM_URL = process.env.LITELLM_MODEL_PRICES_URL ?? 'https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json'
-const OUT_DIR = process.env.MDDB_WORKING_DATA_DIR ?? join(process.cwd(), '.internal', 'source-data')
+const OUT_DIR = process.env.MDDB_WORKING_DATA_DIR ?? join(process.cwd(), 'sources', 'raw')
 const TARGET = process.env.LITELLM_RAW_TARGET ?? join(OUT_DIR, 'litellm-model-prices.raw.json')
 const USER_AGENT = process.env.MDDB_USER_AGENT ?? 'mddb.dev source fetch'
 

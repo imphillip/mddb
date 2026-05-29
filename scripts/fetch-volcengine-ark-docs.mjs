@@ -4,8 +4,8 @@ import { dirname, resolve } from 'node:path'
 import { extractVolcengineDocFromHtml, fingerprint } from './lib/incremental-source-fetch.mjs'
 
 const DEFAULT_DOCS = [
-  { document_id: 1330310, library_id: 82379, title: '模型列表', target: '.internal/sources/volcengine/1330310.json' },
-  { document_id: 1544106, library_id: 82379, title: '模型价格', target: '.internal/sources/volcengine/1544106.json' },
+  { document_id: 1330310, library_id: 82379, title: '模型列表', target: 'sources/raw/volcengine/1330310.json' },
+  { document_id: 1544106, library_id: 82379, title: '模型价格', target: 'sources/raw/volcengine/1544106.json' },
 ]
 const USER_AGENT = process.env.MDDB_USER_AGENT ?? 'mddb.dev source fetch'
 const args = parseArgs(process.argv.slice(2))
