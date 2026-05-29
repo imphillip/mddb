@@ -114,10 +114,9 @@ export function bailianFragment(
   }
   if (raw.source_url) offer.url = raw.source_url
   if (options.observedAt) offer.observed_at = options.observedAt
-  const endpoints = endpointsFromBaseUrl(raw.api_base_url)
-  if (endpoints) offer.endpoints = endpoints
   const limits = deriveRateLimits(raw.qpm_info)
   if (limits) offer.other_params = limits
+  const endpoint = endpointsFromBaseUrl(raw.api_base_url)
 
   return {
     source: 'bailian',
@@ -126,6 +125,7 @@ export function bailianFragment(
     aliasIds: [],
     aliasNames: raw.name ? [raw.name] : [],
     facts,
+    ...(endpoint ? { endpoint } : {}),
     offer,
     provenance: null,
   }

@@ -184,7 +184,6 @@ export function volcengineFragment(spec: VolcengineSpec, options: VolcengineAdap
     source: 'volcengine',
     currency: 'CNY',
     prices: [],
-    endpoints: 'chat',
     other_params: otherParams,
   }
   if (options.sourceUrl) offer.url = options.sourceUrl
@@ -197,6 +196,7 @@ export function volcengineFragment(spec: VolcengineSpec, options: VolcengineAdap
     aliasIds: [],
     aliasNames: [],
     facts,
+    endpoint: 'chat',
     offer,
     provenance: null,
   }
@@ -285,7 +285,6 @@ export function volcengineMediaFragment(
     source: 'volcengine',
     currency: 'CNY',
     prices: [],
-    endpoints: MEDIA_ENDPOINTS[spec.kind],
     other_params: { pricing_status: 'needs_review' },
   }
   if (options.sourceUrl) offer.url = options.sourceUrl
@@ -298,6 +297,7 @@ export function volcengineMediaFragment(
     aliasIds: spec.aliasIds.map((a) => canonicalId(a)),
     aliasNames: [],
     facts,
+    endpoint: MEDIA_ENDPOINTS[spec.kind],
     offer,
     provenance: null,
   }

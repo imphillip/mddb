@@ -200,7 +200,7 @@ function renderSpecSection(node: OpenRouterRawNode): string {
   return `<section id="spec" class="panel"><h2>规格</h2><div class="specRows">`
     + `<div class="specRow">${kv('Input modalities', node.derived.inputModalities.join(' · ') || '—')}${kv('Output modalities', node.derived.outputModalities.join(' · ') || '—')}</div>`
     + `<div class="specRow">${kv('Context length', modelContextLength(node))}${kv('Max input tokens', rawModelField(node, 'max_input_tokens'))}${kv('Max output tokens', modelMaxOutputTokens(node))}${kv('Max reasoning tokens', rawModelField(node, 'other_parameters.max_reasoning_tokens'))}</div>`
-    + `<div class="specRow">${kv('Reasoning', modelCapability(node, 'reasoning'))}${kv('Tool calling', modelCapability(node, 'tool_calling'))}${kv('Tokenizer', rawModelField(node, 'architecture.tokenizer'))}</div>`
+    + `<div class="specRow">${kv('Reasoning', modelCapability(node, 'reasoning'))}${kv('Tool calling', modelCapability(node, 'tool_calling'))}${kv('API operations', modelEndpoints(node))}${kv('Tokenizer', rawModelField(node, 'architecture.tokenizer'))}</div>`
     + `<div class="specRow">${kv('Author', node.derived.author ?? '—')}${kv('Knowledge cutoff', rawModelField(node, 'knowledge_cutoff'))}${kv('Released', modelReleasedDate(node))}</div>`
     + `<div class="specRow">${kv('Supported parameters', rawModelArray(node, 'supported_parameters').join(' · ') || '—')}</div>`
     + `</div></section>`
@@ -211,6 +211,12 @@ function modelCapability(node: OpenRouterRawNode, key: string): string {
   if (model[key] === true) return '是'
   if (model[key] === false) return '否'
   return '—'
+}
+
+function modelEndpoints(node: OpenRouterRawNode): string {
+  const model = isRecord(node.raw.model) ? node.raw.model : {}
+  const ops = Array.isArray(model.endpoints) ? model.endpoints.map(String) : []
+  return ops.length ? ops.map((op) => `<span class="pill">${escapeHtml(op)}</span>`).join(' ') : '—'
 }
 
 function modelContextLength(node: OpenRouterRawNode): string {
@@ -328,7 +334,6 @@ function offerTier(price: Record<string, unknown>, currency: string): string {
 
 function offerMeta(offer: Record<string, unknown>): string {
   const chips: string[] = []
-  if (typeof offer.endpoints === 'string' && offer.endpoints) chips.push(`<span class="badge">${escapeHtml(offer.endpoints)}</span>`)
   const params = isRecord(offer.other_params) ? offer.other_params : {}
   if (typeof params.RPM === 'number') chips.push(`<span class="badge">RPM ${params.RPM.toLocaleString('en-US')}</span>`)
   if (typeof params.TPM === 'number') chips.push(`<span class="badge">TPM ${params.TPM.toLocaleString('en-US')}</span>`)

@@ -59,7 +59,6 @@ describe('golden case: qwen3.6-max-preview (OpenRouter + Bailian)', () => {
       url: bailianRaw.source_url as string,
       observed_at: '2026-05-24T18:19:06Z',
       currency: 'CNY',
-      endpoints: 'chat',
       other_params: { RPM: 600, TPM: 1000000 },
       prices: [
         {
@@ -84,7 +83,7 @@ describe('golden case: qwen3.6-max-preview (OpenRouter + Bailian)', () => {
   it('captures the OpenRouter USD offer (incl. cache_write the sample omitted)', () => {
     const orOffer = entry.offers.find((o) => o.source === 'openrouter')
     expect(orOffer?.currency).toBe('USD')
-    expect(orOffer?.endpoints).toBe('chat')
+    expect(entry.endpoints).toEqual(['chat']) // model-level union (OpenRouter + Bailian both chat)
     expect(orOffer?.prices[0]?.input).toEqual({ amount: 1.04, unit: 'per_1m_tokens' })
     expect(orOffer?.prices[0]?.output).toEqual({ amount: 6.24, unit: 'per_1m_tokens' })
     expect(orOffer?.prices[0]?.cache_write).toEqual({ amount: 1.3, unit: 'per_1m_tokens' })

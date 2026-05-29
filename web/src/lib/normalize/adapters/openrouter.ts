@@ -88,7 +88,6 @@ export function openRouterFragment(
     url: `https://openrouter.ai/${raw.id}`,
     currency: 'USD',
     prices: price ? [price] : [],
-    endpoints: endpointsFromBaseUrl('https://openrouter.ai/api/v1') ?? 'chat',
   }
   if (options.observedAt) offer.observed_at = options.observedAt
 
@@ -99,6 +98,7 @@ export function openRouterFragment(
     aliasIds: uniq([raw.id, raw.canonical_slug].filter((v): v is string => Boolean(v))),
     aliasNames: raw.name ? [cleanName(raw.name)] : [],
     facts,
+    endpoint: endpointsFromBaseUrl('https://openrouter.ai/api/v1') ?? 'chat',
     offer,
     provenance: null,
   }

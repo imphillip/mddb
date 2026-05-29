@@ -86,7 +86,6 @@ export interface Offer {
   observed_at?: string
   currency: string
   prices: Price[]
-  endpoints?: string
   other_params?: Record<string, unknown>
 }
 
@@ -140,6 +139,9 @@ export interface ModelEntry extends ModelFacts {
   model: string
   alias_id?: string[]
   alias?: string[]
+  // Supported API operations (model-level fact, union across sources): chat / responses /
+  // embeddings / images / audio.transcription / audio.speech / rerank / video / 3d.
+  endpoints?: string[]
   last_updated?: string
   offers: Offer[]
   deprecation?: Deprecation
@@ -156,6 +158,8 @@ export interface SourceFragment {
   aliasIds: string[]
   aliasNames: string[]
   facts: ModelFacts
+  /** API operation this source exposes the model under (aggregated to model-level endpoints[]). */
+  endpoint?: string
   offer: Offer | null
   provenance: ProvenanceEntry | null
 }

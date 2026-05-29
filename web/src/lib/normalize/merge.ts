@@ -101,6 +101,10 @@ export function mergeGroup(group: readonly SourceFragment[], options: MergeOptio
   const aliasNames = uniqNames(byIdentity.flatMap((f) => f.aliasNames)).filter((name) => nameKey(name) !== modelKey)
   if (aliasNames.length) entry.alias = aliasNames
 
+  // endpoints is a model-level fact: union of the API operations every source exposes.
+  const endpoints = uniq(byIdentity.map((f) => f.endpoint).filter((e): e is string => Boolean(e))).sort()
+  if (endpoints.length) entry.endpoints = endpoints
+
   const otherParameters = mergeOtherParameters(byFact)
   if (otherParameters) entry.other_parameters = otherParameters
 
@@ -152,13 +156,12 @@ function suppressRedundantLiteLLM(offers: readonly Offer[]): Offer[] {
   return openRouterPriced ? offers.filter((o) => o.source !== 'litellm') : [...offers]
 }
 
-/** Keep one offer per (source, endpoints); prefer the one carrying more pricing detail. */
+/** One offer per source; prefer the one carrying more pricing detail. */
 function dedupeOffers(offers: readonly Offer[]): Offer[] {
   const byKey = new Map<string, Offer>()
   for (const offer of offers) {
-    const key = `${offer.source}|${offer.endpoints ?? ''}`
-    const existing = byKey.get(key)
-    if (!existing || offer.prices.length > existing.prices.length) byKey.set(key, offer)
+    const existing = byKey.get(offer.source)
+    if (!existing || offer.prices.length > existing.prices.length) byKey.set(offer.source, offer)
   }
   return [...byKey.values()]
 }

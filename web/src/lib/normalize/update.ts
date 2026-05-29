@@ -78,13 +78,23 @@ function nameKey(value: string | undefined): string {
 /** Re-apply entry-local format invariants to a carried-forward (frozen) model. */
 function normalizeCarried(model: ModelEntry): ModelEntry {
   const out: ModelEntry = { ...model }
+  // Migrate any legacy offer-level `endpoints` up to model-level endpoints[] (enum), then
+  // strip it from offers and keep one offer per source.
+  const ops = new Set<string>(out.endpoints ?? [])
   if (Array.isArray(out.offers)) {
-    out.offers = out.offers.map((offer) =>
-      typeof offer.endpoints === 'string' && LEGACY_ENDPOINT[offer.endpoints]
-        ? { ...offer, endpoints: LEGACY_ENDPOINT[offer.endpoints]! }
-        : offer,
-    )
+    const bySource = new Map<string, ModelEntry['offers'][number]>()
+    for (const offer of out.offers) {
+      const legacy = (offer as unknown as Record<string, unknown>)['endpoints']
+      if (typeof legacy === 'string') ops.add(LEGACY_ENDPOINT[legacy] ?? legacy)
+      const cleaned = { ...offer } as unknown as Record<string, unknown>
+      delete cleaned['endpoints']
+      const next = cleaned as unknown as ModelEntry['offers'][number]
+      const existing = bySource.get(next.source)
+      if (!existing || next.prices.length > existing.prices.length) bySource.set(next.source, next)
+    }
+    out.offers = [...bySource.values()]
   }
+  if (ops.size) out.endpoints = [...ops].sort()
   if (Array.isArray(out.alias)) {
     const mk = nameKey(out.model)
     const filtered = out.alias.filter((a) => nameKey(a) !== mk)

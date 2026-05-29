@@ -22,6 +22,7 @@ const PRICE_UNITS = new Set([
   'per_page',
 ])
 const MODALITIES = new Set(['text', 'image', 'audio', 'video', 'embedding', 'file', 'tool', 'json', 'other'])
+const ENDPOINT_OPERATIONS = new Set(['chat', 'responses', 'embeddings', 'images', 'audio.transcription', 'audio.speech', 'rerank', 'video', '3d'])
 const PRICE_COMPONENTS = PRICE_COMPONENT_KEYS
 
 export interface ValidationResult {
@@ -47,13 +48,15 @@ export function validateModels(entries: readonly ModelEntry[]): ValidationResult
     for (const mod of [...(entry.input_modalities ?? []), ...(entry.output_modalities ?? [])]) {
       if (!MODALITIES.has(mod)) errors.push(`${where}: invalid modality "${mod}"`)
     }
+    for (const op of entry.endpoints ?? []) {
+      if (!ENDPOINT_OPERATIONS.has(op)) errors.push(`${where}: invalid endpoint operation "${op}"`)
+    }
 
-    const offerKeys = new Set<string>()
+    const sources = new Set<string>()
     for (const offer of entry.offers) {
       validateOffer(offer, where, errors)
-      const key = `${offer.source}|${offer.endpoints ?? ''}`
-      if (offerKeys.has(key)) errors.push(`${where}: duplicate offer key ${key}`)
-      offerKeys.add(key)
+      if (sources.has(offer.source)) errors.push(`${where}: duplicate offer source ${offer.source}`)
+      sources.add(offer.source)
     }
   }
 

@@ -13,7 +13,7 @@ const frag = (source: string, offer: Offer | null, identityId: string | null = n
   provenance: null,
 })
 
-const priced = (source: string): Offer => ({ source, currency: 'USD', endpoints: 'chat', prices: [{ input: { amount: 1, unit: 'per_1m_tokens' } }] })
+const priced = (source: string): Offer => ({ source, currency: 'USD', prices: [{ input: { amount: 1, unit: 'per_1m_tokens' } }] })
 
 describe('mergeGroup offer assembly', () => {
   it('drops the LiteLLM offer when OpenRouter already prices the model', () => {
@@ -25,7 +25,7 @@ describe('mergeGroup offer assembly', () => {
   })
 
   it('keeps the LiteLLM offer when OpenRouter has no priced offer', () => {
-    const orUnpriced: Offer = { source: 'openrouter', currency: 'USD', endpoints: 'chat', prices: [] }
+    const orUnpriced: Offer = { source: 'openrouter', currency: 'USD', prices: [] }
     const entry = mergeGroup([
       frag('openrouter', orUnpriced, 'm'),
       frag('litellm', priced('litellm')),

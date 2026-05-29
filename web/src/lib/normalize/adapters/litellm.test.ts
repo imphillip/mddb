@@ -31,7 +31,7 @@ describe('liteLLM chat fragment', () => {
     expect(fragment.facts.output_modalities).toEqual(['text'])
     expect(fragment.facts.context_length).toBe(200000)
     expect(fragment.facts.max_output_tokens).toBe(64000)
-    expect(fragment.offer?.endpoints).toBe('chat')
+    expect(fragment.endpoint).toBe('chat')
   })
   it('buckets non-token cost tiers into other_params (never dropped)', () => {
     expect(fragment.offer?.other_params).toMatchObject({
@@ -47,7 +47,7 @@ describe('liteLLM embedding fragment', () => {
 
   it('classifies output modality as embedding and routes the endpoint', () => {
     expect(fragment.facts.output_modalities).toEqual(['embedding'])
-    expect(fragment.offer?.endpoints).toBe('embeddings')
+    expect(fragment.endpoint).toBe('embeddings')
   })
   it('maps per-image cost into a price component (not bucketed in other_params)', () => {
     expect(fragment.facts.other_parameters).toEqual({ output_vector_size: 1024 })

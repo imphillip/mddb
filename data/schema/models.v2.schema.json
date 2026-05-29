@@ -20,7 +20,11 @@
     },
     "priceUnit": {
       "type": "string",
-      "enum": ["per_1m_tokens", "per_image", "per_video", "per_request", "per_second", "per_audio_minute", "per_character"]
+      "enum": ["per_1m_tokens", "per_image", "per_video", "per_request", "per_query", "per_second", "per_audio_minute", "per_character", "per_pixel", "per_page"]
+    },
+    "endpointOperation": {
+      "type": "string",
+      "enum": ["chat", "responses", "embeddings", "images", "audio.transcription", "audio.speech", "rerank", "video", "3d"]
     },
     "priceComponent": {
       "type": "object",
@@ -52,7 +56,16 @@
         "input": { "$ref": "#/$defs/priceComponent" },
         "output": { "$ref": "#/$defs/priceComponent" },
         "cache_write": { "$ref": "#/$defs/priceComponent" },
-        "cache_read": { "$ref": "#/$defs/priceComponent" }
+        "cache_read": { "$ref": "#/$defs/priceComponent" },
+        "reasoning": { "$ref": "#/$defs/priceComponent" },
+        "image_input": { "$ref": "#/$defs/priceComponent" },
+        "image_output": { "$ref": "#/$defs/priceComponent" },
+        "audio_input": { "$ref": "#/$defs/priceComponent" },
+        "audio_output": { "$ref": "#/$defs/priceComponent" },
+        "video": { "$ref": "#/$defs/priceComponent" },
+        "character": { "$ref": "#/$defs/priceComponent" },
+        "request": { "$ref": "#/$defs/priceComponent" },
+        "web_search": { "$ref": "#/$defs/priceComponent" }
       }
     },
     "offer": {
@@ -65,7 +78,6 @@
         "observed_at": { "type": "string" },
         "currency": { "type": "string" },
         "prices": { "type": "array", "items": { "$ref": "#/$defs/price" } },
-        "endpoints": { "type": "string" },
         "other_params": { "type": "object" }
       }
     },
@@ -90,6 +102,7 @@
         "model": { "type": "string" },
         "alias_id": { "type": "array", "items": { "type": "string" } },
         "alias": { "type": "array", "items": { "type": "string" } },
+        "endpoints": { "type": "array", "items": { "$ref": "#/$defs/endpointOperation" } },
         "author": { "type": "string" },
         "author_id": { "type": "string" },
         "input_modalities": { "type": "array", "items": { "$ref": "#/$defs/modality" } },
@@ -103,7 +116,16 @@
         "knowledge_cutoff": { "type": ["integer", "string", "null"] },
         "last_updated": { "type": "string" },
         "offers": { "type": "array", "items": { "$ref": "#/$defs/offer" } },
-        "other_parameters": { "type": "object" }
+        "other_parameters": { "type": "object" },
+        "deprecation": {
+          "type": "object",
+          "required": ["status", "since"],
+          "additionalProperties": false,
+          "properties": {
+            "status": { "type": "string", "enum": ["delisted"] },
+            "since": { "type": "string" }
+          }
+        }
       }
     }
   }

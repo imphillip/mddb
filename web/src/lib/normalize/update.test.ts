@@ -31,19 +31,21 @@ describe('mergeWithDeprecations', () => {
     expect(r.models[0]?.deprecation).toBeUndefined()
   })
 
-  it('re-normalizes carried-forward (frozen) entries: drops alias==model and migrates legacy endpoints', () => {
+  it('re-normalizes carried-forward (frozen) entries: drops alias==model, lifts legacy offer endpoints to model level', () => {
+    // Simulate an old-format published entry: offer-level `endpoints`, legacy string.
     const current = [
       m('legacy', {
         model: 'Legacy Model',
         alias: ['Legacy Model', 'Old Name'],
-        offers: [{ source: 'litellm', currency: 'USD', prices: [], endpoints: 'openai/chat.completions' }],
+        offers: [{ source: 'litellm', currency: 'USD', prices: [], endpoints: 'openai/chat.completions' } as unknown as ModelEntry['offers'][number]],
       }),
     ]
     const r = mergeWithDeprecations(current, [], { today: '2026-05-29' })
     const carried = r.models[0]!
     expect(carried.deprecation).toEqual({ status: 'delisted', since: '2026-05-29' })
     expect(carried.alias).toEqual(['Old Name']) // 'Legacy Model' == model dropped
-    expect(carried.offers[0]?.endpoints).toBe('chat') // legacy endpoint migrated
+    expect(carried.endpoints).toEqual(['chat']) // legacy offer endpoint migrated to model level
+    expect((carried.offers[0] as unknown as Record<string, unknown>)['endpoints']).toBeUndefined() // stripped from offer
   })
 
   it('adds brand-new candidate models and sorts output by id', () => {

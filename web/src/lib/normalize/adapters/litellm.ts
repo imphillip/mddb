@@ -91,6 +91,7 @@ export function liteLLMFragment(raw: LiteLLMModel, options: LiteLLMAdapterOption
   }
 
   const offer = buildOffer(raw, mode, options)
+  const endpoint = MODE_ENDPOINTS[mode]
 
   return {
     source: 'litellm',
@@ -99,6 +100,7 @@ export function liteLLMFragment(raw: LiteLLMModel, options: LiteLLMAdapterOption
     aliasIds: [],
     aliasNames: [],
     facts,
+    ...(endpoint ? { endpoint } : {}),
     offer,
     provenance: null,
   }
@@ -151,8 +153,6 @@ function buildOffer(raw: LiteLLMModel, mode: string, options: LiteLLMAdapterOpti
     prices: Object.keys(price).some((k) => k !== 'conditions') ? [price] : [],
     other_params: otherParams,
   }
-  const endpoints = MODE_ENDPOINTS[mode]
-  if (endpoints) offer.endpoints = endpoints
   if (options.observedAt) offer.observed_at = options.observedAt
   return offer
 }
