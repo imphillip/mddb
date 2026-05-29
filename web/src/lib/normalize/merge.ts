@@ -69,7 +69,7 @@ export function mergeGroup(group: readonly SourceFragment[], options: MergeOptio
   const entry: ModelEntry = {
     id,
     model: (pick('model') as string | null) ?? id,
-    offers: dedupeOffers(byIdentity.filter((f) => f.offer !== null).map((f) => f.offer as Offer)),
+    offers: dedupeOffers(suppressRedundantLiteLLM(byIdentity.filter((f) => f.offer !== null).map((f) => f.offer as Offer))),
     // nullable facts always surface (default null), matching the target sample
     context_length: pick('context_length') as number | null,
     max_input_tokens: pick('max_input_tokens') as number | null,
@@ -140,6 +140,16 @@ export function mergeFragments(fragments: readonly SourceFragment[], options: Me
     if (entry) entries.push(entry)
   }
   return entries.sort((a, b) => a.id.localeCompare(b.id))
+}
+
+/**
+ * LiteLLM is a USD *supplement*, not a second pricing source: if OpenRouter already
+ * prices this model, drop the LiteLLM offer entirely (its facts still merge at the field
+ * level). LiteLLM offers survive when OpenRouter has no priced offer (non-chat types, etc.).
+ */
+function suppressRedundantLiteLLM(offers: readonly Offer[]): Offer[] {
+  const openRouterPriced = offers.some((o) => o.source === 'openrouter' && o.prices.length > 0)
+  return openRouterPriced ? offers.filter((o) => o.source !== 'litellm') : [...offers]
 }
 
 /** Keep one offer per (source, endpoints); prefer the one carrying more pricing detail. */
