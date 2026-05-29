@@ -162,7 +162,7 @@ function makeSourceNode(model: RegistryModel): OpenRouterRawNode {
     namespace: provider,
     modelIdWithinNamespace: modelId,
     displayName: model.model ?? model.id,
-    raw: { model: registryModelToRawModel(model) },
+    raw: { model: model as unknown as JsonRecord, displayModel: registryModelToRawModel(model) },
     derived: {
       author: model.author ?? provider,
       canonicalSlug: null,

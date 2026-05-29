@@ -137,6 +137,7 @@ export type OpenRouterRawNode = {
   displayName: string
   raw: {
     model?: unknown
+    displayModel?: unknown
     endpointWrapper?: unknown
     endpoint?: unknown
     page?: unknown

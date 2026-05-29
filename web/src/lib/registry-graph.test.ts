@@ -1,6 +1,37 @@
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { buildRegistryGraphFromFiles } from './registry-graph.js'
 import { renderOpenRouterRawDetail, renderOpenRouterRawHome } from './openrouter-raw-renderer.js'
+
+type JsonRecord = Record<string, unknown>
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/gu, '&amp;')
+    .replace(/</gu, '&lt;')
+    .replace(/>/gu, '&gt;')
+    .replace(/"/gu, '&quot;')
+    .replace(/'/gu, '&#39;')
+}
+
+function htmlEscapedJson(value: unknown): string {
+  return escapeHtml(JSON.stringify(value, null, 2))
+}
+
+function rawBlockHtml(value: unknown, id?: string): string {
+  const blockId = id ? ` id="${escapeHtml(id)}"` : ''
+  const target = id ? ` data-copy-code-target="${escapeHtml(id)}"` : ''
+  const label = id === 'metadata-json' ? 'metadata.json' : 'json'
+  return `<div class="codeBlockShell rawBlockShell"><div class="codeBlockToolbar"><span>${escapeHtml(label)}</span><button class="copyCodeBtn" type="button"${target} aria-label="复制 ${escapeHtml(label)}" title="复制整段 JSON">复制</button></div><pre${blockId} class="raw codeBlock" tabindex="0"><code>${htmlEscapedJson(value ?? null)}</code></pre></div>`
+}
+
+function modelFromModelsJson(id: string): JsonRecord {
+  const payload = JSON.parse(readFileSync(join(process.cwd(), 'data', 'models.json'), 'utf8')) as { models?: JsonRecord[] }
+  const model = payload.models?.find((candidate) => candidate.id === id)
+  if (!model) throw new Error(`Missing fixture model ${id}`)
+  return model
+}
 
 describe('registry graph adapter', () => {
   const graph = buildRegistryGraphFromFiles()
@@ -43,7 +74,7 @@ describe('registry graph adapter', () => {
     expect(home).not.toContain('<img src="/assets/provider-icons/evroc.svg" alt="evroc logo" loading="lazy"></span><div><a class="modelLink" href="/evroc/gpt-oss-120b/">')
     expect(home).toContain('GPT-5.5')
     expect(home.indexOf('Claude Opus 4.6')).toBeLessThan(home.indexOf('Palmyra X5'))
-    expect((node!.raw.model as { created?: unknown }).created).toBe(1777051893)
+    expect((node!.raw.displayModel as { created?: unknown }).created).toBe(1777051893)
     expect(detail).toContain('<span>Released</span><b>2026-04-24</b>')
     expect(home).not.toContain('/new-models/')
     expect(detail).toContain('Model ID')
@@ -82,6 +113,12 @@ describe('registry graph adapter', () => {
     expect(selfProviderEndpointDetail).not.toContain('Outgoing raw edges')
     expect(selfProviderEndpointDetail).not.toContain('Incoming raw edges')
     expect(selfProviderEndpointDetail).toContain('<summary><h2>元数据</h2><span class="detailsChevron" aria-hidden="true">⌄</span></summary>')
+    const originalGpt55Model = modelFromModelsJson('gpt-5.5')
+    expect(selfProviderEndpointDetail).toContain(rawBlockHtml(originalGpt55Model, 'metadata-json'))
+    expect(selfProviderEndpointDetail).not.toContain('&quot;created&quot;: 1777051893')
+    expect(selfProviderEndpointDetail).not.toContain('&quot;top_provider&quot;')
+    expect(selfProviderEndpointDetail).not.toContain('&quot;architecture&quot;')
+    expect(selfProviderEndpointDetail).not.toContain('&quot;pricing&quot;')
     expect(selfProviderEndpointDetail).not.toContain('Raw data')
     expect(selfProviderEndpointDetail).not.toContain('Data source')
     expect(selfProviderEndpointDetail).not.toContain('Source ID')

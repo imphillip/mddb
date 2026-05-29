@@ -183,13 +183,17 @@ function delistedBadge(node: OpenRouterRawNode): string {
 }
 
 function renderAliasHero(node: OpenRouterRawNode): string {
-  const model = isRecord(node.raw.model) ? node.raw.model : {}
+  const model = isRecord(rawModelForDisplay(node)) ? rawModelForDisplay(node) as Record<string, unknown> : {}
   const aliases = (Array.isArray(model.alias) ? model.alias : []).map(String).filter(Boolean)
   const aliasIds = (Array.isArray(model.alias_id) ? model.alias_id : []).map(String).filter(Boolean)
   const lines: string[] = []
   if (aliases.length) lines.push(`<div class="aliasRow"><span class="aliasKey">别名</span><span class="aliasVals">${aliases.map((alias) => `<span class="pill">${escapeHtml(alias)}</span>`).join(' ')}</span></div>`)
   if (aliasIds.length) lines.push(`<div class="aliasRow"><span class="aliasKey">路由 / 快照 ID</span><span class="aliasVals">${aliasIds.map(renderModelTagCopy).join(' ')}</span></div>`)
   return lines.length ? `<div class="aliasHero">${lines.join('')}</div>` : ''
+}
+
+function rawModelForDisplay(node: OpenRouterRawNode): unknown {
+  return node.raw.displayModel ?? node.raw.model
 }
 
 function renderSpecSection(node: OpenRouterRawNode): string {
@@ -203,7 +207,7 @@ function renderSpecSection(node: OpenRouterRawNode): string {
 }
 
 function modelCapability(node: OpenRouterRawNode, key: string): string {
-  const model = isRecord(node.raw.model) ? node.raw.model : {}
+  const model = isRecord(rawModelForDisplay(node)) ? rawModelForDisplay(node) as Record<string, unknown> : {}
   if (model[key] === true) return '是'
   if (model[key] === false) return '否'
   return '—'
@@ -246,7 +250,7 @@ function modelMaxOutputTokens(node: OpenRouterRawNode): string {
 }
 
 function rawModelField(node: OpenRouterRawNode, path: string): string {
-  let value: unknown = node.raw.model
+  let value: unknown = rawModelForDisplay(node)
   for (const part of path.split('.')) {
     if (!isRecord(value)) return '—'
     value = value[part]
@@ -255,8 +259,9 @@ function rawModelField(node: OpenRouterRawNode, path: string): string {
 }
 
 function rawModelArray(node: OpenRouterRawNode, key: string): string[] {
-  if (!isRecord(node.raw.model) || !Array.isArray(node.raw.model[key])) return []
-  return node.raw.model[key].map(String)
+  const model = rawModelForDisplay(node)
+  if (!isRecord(model) || !Array.isArray(model[key])) return []
+  return model[key].map(String)
 }
 
 function renderPricingSection(graph: OpenRouterRawGraph, node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[], inEdges: OpenRouterRawEdge[]): string {
@@ -280,7 +285,7 @@ function canonicalModelLink(graph: OpenRouterRawGraph, node: OpenRouterRawNode, 
 }
 
 function registryPricingCards(node: OpenRouterRawNode): string {
-  const model = isRecord(node.raw.model) ? node.raw.model : {}
+  const model = isRecord(rawModelForDisplay(node)) ? rawModelForDisplay(node) as Record<string, unknown> : {}
   const offers = Array.isArray(model.offers) ? model.offers.filter((offer): offer is Record<string, unknown> => isRecord(offer)) : []
   if (offers.length > 0) {
     const cards = offers.map((offer) => offerCard(offer)).filter(Boolean).join('')
@@ -387,7 +392,7 @@ function displayRegistryPriceSource(source: string): string {
 }
 
 function registryModel(node: OpenRouterRawNode): Record<string, unknown> {
-  const model = isRecord(node.raw.model) ? node.raw.model : {}
+  const model = isRecord(rawModelForDisplay(node)) ? rawModelForDisplay(node) as Record<string, unknown> : {}
   // v1 fixtures nested facts under mddb_model/mddb_registry; v2 spreads them at top level
   // (and carries offers), so fall back to the model itself when no nested object exists.
   if (isRecord(model.mddb_model)) return model.mddb_model
@@ -398,7 +403,7 @@ function registryModel(node: OpenRouterRawNode): Record<string, unknown> {
 function registryPriceRows(node: OpenRouterRawNode): Record<string, unknown>[] {
   const registry = registryModel(node)
   if (Array.isArray(registry.prices)) return registry.prices.filter((price): price is Record<string, unknown> => isRecord(price))
-  const model = isRecord(node.raw.model) ? node.raw.model : {}
+  const model = isRecord(rawModelForDisplay(node)) ? rawModelForDisplay(node) as Record<string, unknown> : {}
   const offers = Array.isArray(model.offers) ? model.offers.filter((offer): offer is Record<string, unknown> => isRecord(offer)) : []
   const rows: Record<string, unknown>[] = []
   for (const offer of offers) {
@@ -442,7 +447,7 @@ function litellmSupplementalPricingCards(node: OpenRouterRawNode): string {
 }
 
 function registryLitellm(node: OpenRouterRawNode): Record<string, unknown> | null {
-  const model = isRecord(node.raw.model) ? node.raw.model : {}
+  const model = isRecord(rawModelForDisplay(node)) ? rawModelForDisplay(node) as Record<string, unknown> : {}
   const registry = isRecord(model.mddb_registry) ? model.mddb_registry : {}
   const other = isRecord(registry.other_parameters) ? registry.other_parameters : {}
   return isRecord(other.litellm) ? other.litellm : null
@@ -593,7 +598,7 @@ function formatCompactNumber(value: number): string {
 }
 
 function sourcePricingBlocks(node: OpenRouterRawNode): string {
-  const modelPricing = rawPricingValue(node.raw.model, 'pricing')
+  const modelPricing = rawPricingValue(rawModelForDisplay(node), 'pricing')
   const pagePricing = rawPricingValue(node.raw.page, 'pricing') ?? rawPricingValue(node.raw.page, 'pricing_json')
   const blocks = [
     modelPricing ? `<div class="specVariant"><strong>OpenRouter models API pricing</strong>${rawBlock(modelPricing)}</div>` : '',
@@ -607,7 +612,7 @@ function rawPricingValue(value: unknown, key: string): unknown | null {
 }
 
 function renderSourceSection(node: OpenRouterRawNode, outEdges: OpenRouterRawEdge[], inEdges: OpenRouterRawEdge[]): string {
-  return `<section id="source" class="panel subtlePanel metadataPanel"><details><summary><h2>元数据</h2><span class="detailsChevron" aria-hidden="true">⌄</span></summary>${rawBlock(node.raw, 'metadata-json')}</details></section>`
+  return `<section id="source" class="panel subtlePanel metadataPanel"><details><summary><h2>元数据</h2><span class="detailsChevron" aria-hidden="true">⌄</span></summary>${rawBlock(node.raw.model, 'metadata-json')}</details></section>`
 }
 
 function renderModelRow(node: OpenRouterRawNode, searchOnly = false, graph?: OpenRouterRawGraph): string {
@@ -642,7 +647,7 @@ function modelPriceSummaryCell(node: OpenRouterRawNode, graph?: OpenRouterRawGra
 }
 
 function hasNeedsReviewPricing(node: OpenRouterRawNode): boolean {
-  const model = isRecord(node.raw.model) ? node.raw.model : {}
+  const model = isRecord(rawModelForDisplay(node)) ? rawModelForDisplay(node) as Record<string, unknown> : {}
   const offers = Array.isArray(model.offers) ? model.offers : []
   return offers.some((offer) => isRecord(offer) && isRecord(offer.other_params) && offer.other_params.pricing_status === 'needs_review')
 }
@@ -885,7 +890,7 @@ function modelPriceCell(node: OpenRouterRawNode, key: string, graph?: OpenRouter
 }
 
 function sourceModelPriceCell(node: OpenRouterRawNode, key: string): string {
-  const model = isRecord(node.raw.model) ? node.raw.model : {}
+  const model = isRecord(rawModelForDisplay(node)) ? rawModelForDisplay(node) as Record<string, unknown> : {}
   const pricing = isRecord(model.pricing) ? model.pricing : undefined
   if (pricing) {
     const value = pricing[key]
