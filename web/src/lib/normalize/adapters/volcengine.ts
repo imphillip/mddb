@@ -26,9 +26,6 @@ export interface VolcengineAdapterOptions {
   sourceUrl?: string
 }
 
-const MODEL_ID = /^[a-z][a-z0-9]+(?:[.-][a-z0-9]+)+$/u
-// Lines that mark the end of a model's contiguous spec list (start of a new section).
-const BOUNDARY = /限流|长度限制|能力支持|模型 ?ID|文生|图生|产物|分辨率|帧率|时长/u
 const CAPABILITY_VOCAB = new Set([
   '深度思考',
   '文本生成',
@@ -44,33 +41,31 @@ const CAPABILITY_VOCAB = new Set([
 
 const KB = 1024
 
-/** Extract text-model spec blocks from the Volcengine "模型列表" markdown. */
+/**
+ * Extract text-model spec blocks from the Volcengine "模型列表" markdown.
+ *
+ * The doc layout drifts (an id may be followed by spec lines in any order, with
+ * `最大 RPM` appearing later or as a tiered 企业用户/个人用户 sub-block, and ids may
+ * repeat or be glued to trailing text). So we parse by BLOCKS: every id-shaped line
+ * (extracted leniently from the line start) opens a block that runs to the next
+ * id-shaped line; fields are scanned order-independently; duplicate ids are merged
+ * (first non-null wins). Media families (Seedream/Seedance/3D) are excluded here and
+ * handled by parseVolcengineMediaModels.
+ */
 export function parseVolcengineSpecs(markdown: string): VolcengineSpec[] {
-  const lines = markdown.split('\n').map((l) => l.trimEnd())
-  const nextNonEmpty = (i: number): string => {
-    for (let j = i + 1; j < Math.min(i + 3, lines.length); j += 1) {
-      const s = lines[j]?.trim()
-      if (s) return s
-    }
-    return ''
-  }
-  const starts: number[] = []
-  for (let i = 0; i < lines.length; i += 1) {
-    const s = lines[i]?.trim() ?? ''
-    if (MODEL_ID.test(s) && nextNonEmpty(i).startsWith('最大 RPM')) starts.push(i)
-  }
+  const lines = markdown.split('\n').map((l) => l.trim())
+  const idAt = lines.map((l) => ID_CORE.exec(l)?.[1] ?? null)
+  const boundaries = idAt.map((id, i) => (id ? i : -1)).filter((i) => i >= 0)
 
-  const specs: VolcengineSpec[] = []
-  const seen = new Set<string>()
-  for (let k = 0; k < starts.length; k += 1) {
-    const start = starts[k]!
-    const end = starts[k + 1] ?? lines.length
-    const id = lines[start]!.trim()
-    if (seen.has(id)) continue
-    seen.add(id)
-    specs.push(parseBlock(id, lines.slice(start + 1, end)))
+  const merged = new Map<string, VolcengineSpec>()
+  for (let b = 0; b < boundaries.length; b += 1) {
+    const start = boundaries[b]!
+    const id = idAt[start]!
+    if (mediaFamilyKind(id)) continue // media handled separately
+    const end = boundaries[b + 1] ?? lines.length
+    mergeSpec(merged, parseBlock(id, lines.slice(start + 1, end)))
   }
-  return specs
+  return [...merged.values()].filter(hasSpecSignal)
 }
 
 function parseBlock(id: string, blockLines: string[]): VolcengineSpec {
@@ -85,43 +80,68 @@ function parseBlock(id: string, blockLines: string[]): VolcengineSpec {
     maxReasoningTokens: null,
     capabilities,
   }
-  for (const raw of blockLines) {
-    const line = raw.trim()
+  const setOnce = (key: 'rpm' | 'tpm' | 'contextLength' | 'maxInputTokens' | 'maxOutputTokens' | 'maxReasoningTokens', value: number | null): void => {
+    if (value !== null && spec[key] === null) spec[key] = value
+  }
+  for (let i = 0; i < blockLines.length; i += 1) {
+    const line = blockLines[i]!
     if (!line) continue
-    if (BOUNDARY.test(line)) break // stop at the next section
-    const rpm = line.match(/^最大 RPM:\s*(\d+)/u)
-    if (rpm) {
-      spec.rpm = Number(rpm[1])
-      continue
-    }
-    const tpm = line.match(/^最大 TPM:\s*(\d+)/u)
-    if (tpm) {
-      spec.tpm = Number(tpm[1])
-      continue
-    }
-    const ctx = line.match(/^上下文窗口:\s*(\d+)k/u)
-    if (ctx) {
-      spec.contextLength = Number(ctx[1]) * KB
-      continue
-    }
-    const input = line.match(/^最大输入:\s*(\d+)k/u)
-    if (input) {
-      spec.maxInputTokens = Number(input[1]) * KB
-      continue
-    }
-    const output = line.match(/^最大回答[^:]*:\s*(\d+)k/u)
-    if (output) {
-      spec.maxOutputTokens = Number(output[1]) * KB
-      continue
-    }
-    const reasoning = line.match(/^最大思维链:\s*(\d+)k/u)
-    if (reasoning) {
-      spec.maxReasoningTokens = Number(reasoning[1]) * KB
-      continue
-    }
-    if (CAPABILITY_VOCAB.has(line)) capabilities.push(line)
+    let m
+    if ((m = line.match(/^最大 ?RPM[:：]\s*(\d+)/u))) setOnce('rpm', Number(m[1]))
+    else if (/^最大 ?RPM[:：]\s*$/u.test(line)) setOnce('rpm', tieredValue(blockLines, i))
+    else if ((m = line.match(/^最大 ?TPM[:：]\s*(\d+)/u))) setOnce('tpm', Number(m[1]))
+    else if (/^最大 ?TPM[:：]\s*$/u.test(line)) setOnce('tpm', tieredValue(blockLines, i))
+    else if ((m = line.match(/^上下文窗口[:：]\s*([\d.]+)\s*([kmKM])/u))) setOnce('contextLength', kTokens(m[1]!, m[2]!))
+    else if ((m = line.match(/^最大输入[:：]\s*([\d.]+)\s*([kmKM])/u))) setOnce('maxInputTokens', kTokens(m[1]!, m[2]!))
+    else if ((m = line.match(/^最大回答[^:：]*[:：]\s*([\d.]+)\s*([kmKM])/u))) setOnce('maxOutputTokens', kTokens(m[1]!, m[2]!))
+    else if ((m = line.match(/^最大思维链[:：]\s*([\d.]+)\s*([kmKM])/u))) setOnce('maxReasoningTokens', kTokens(m[1]!, m[2]!))
+    else if (CAPABILITY_VOCAB.has(line) && !capabilities.includes(line)) capabilities.push(line)
   }
   return spec
+}
+
+/** k/m token suffix -> token count (k = 1024 tokens, m = 1024k). */
+function kTokens(num: string, unit: string): number {
+  return Math.round(Number(num) * (unit.toLowerCase() === 'm' ? KB * KB : KB))
+}
+
+/** A bare `最大 RPM:` / `最大 TPM:` header is followed by tiered 企业用户/个人用户 values. */
+function tieredValue(blockLines: string[], from: number): number | null {
+  for (let j = from + 1; j < Math.min(from + 6, blockLines.length); j += 1) {
+    const ent = blockLines[j]?.match(/企业用户[:：]\s*(\d+)/u)
+    if (ent) return Number(ent[1])
+  }
+  for (let j = from + 1; j < Math.min(from + 6, blockLines.length); j += 1) {
+    const per = blockLines[j]?.match(/个人用户[:：]\s*(\d+)/u)
+    if (per) return Number(per[1])
+  }
+  return null
+}
+
+/** Merge a parsed block into the accumulator by id: first non-null per field wins; capabilities union. */
+function mergeSpec(acc: Map<string, VolcengineSpec>, spec: VolcengineSpec): void {
+  const prev = acc.get(spec.id)
+  if (!prev) {
+    acc.set(spec.id, spec)
+    return
+  }
+  for (const key of ['rpm', 'tpm', 'contextLength', 'maxInputTokens', 'maxOutputTokens', 'maxReasoningTokens'] as const) {
+    if (prev[key] === null && spec[key] !== null) prev[key] = spec[key]
+  }
+  for (const cap of spec.capabilities) if (!prev.capabilities.includes(cap)) prev.capabilities.push(cap)
+}
+
+/** Keep only blocks that carry a real spec signal (drops bare id mentions / noise). */
+function hasSpecSignal(spec: VolcengineSpec): boolean {
+  return (
+    spec.contextLength !== null ||
+    spec.maxInputTokens !== null ||
+    spec.maxOutputTokens !== null ||
+    spec.maxReasoningTokens !== null ||
+    spec.rpm !== null ||
+    spec.tpm !== null ||
+    spec.capabilities.length > 0
+  )
 }
 
 const AUTHOR_BY_PREFIX: ReadonlyArray<[string, string]> = [

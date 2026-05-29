@@ -15,12 +15,13 @@ const specs = parseVolcengineSpecs(specsMd)
 const byId = new Map(specs.map((s) => [s.id, s]))
 
 describe('parseVolcengineSpecs', () => {
-  it('extracts only clean text-model blocks (no markdown noise)', () => {
-    expect(specs.length).toBe(20)
+  it('extracts text-model blocks regardless of field order (no markdown noise / no media)', () => {
+    expect(specs.length).toBe(23)
     expect(specs.every((s) => /^[a-z][a-z0-9.-]+$/u.test(s.id))).toBe(true)
     expect(byId.has('doubao-seed-1-6-250615')).toBe(true)
+    expect(byId.has('deepseek-v4-pro-260425')).toBe(true)
     // image/video/3D blocks must not leak in as text models
-    expect(specs.some((s) => s.id.includes('seedream') || s.id.includes('seedance'))).toBe(false)
+    expect(specs.some((s) => s.id.includes('seedream') || s.id.includes('seedance') || s.id.includes('3d'))).toBe(false)
   })
 
   it('parses limits and k-suffixed token sizes for doubao-seed-1-6-250615', () => {
