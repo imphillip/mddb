@@ -31,7 +31,7 @@ https://raw.githubusercontent.com/imphillip/mddb/main/data/models.json
 - `other_parameters`：暂未归类但值得保留的参数；
 - `sources`：来源证据。
 
-`data/providers/*.json` 仍可作为采集和校验过程中的辅助数据，但项目的公开重点是 `models.json`。
+价格与调用信息以 `offers[]` 内嵌在每个模型上（每个数据源一条 offer，含币种、计价、endpoint、限流）；各源的原始与合并视图见 `sources/`。项目的公开重点是 `models.json`。
 
 ## 前端
 
@@ -42,29 +42,33 @@ https://raw.githubusercontent.com/imphillip/mddb/main/data/models.json
 
 前端不是项目核心，只是 `models.json` 的浏览器视图。
 
-## 数据脚本
+## 数据管线
 
-`scripts/` 保存数据采集、清洗、合并和质量检查脚本。当前主要覆盖：
+`models.json` 由一条四阶段管线从各数据源生成 / 更新：
 
-- 从 OpenRouter 拉取模型和 endpoint 数据；
-- 从 LiteLLM 补充非聊天模型和参数；
-- 从 models.dev 补充厂牌 / 图标等轻量信息；
-- 归一化组织名、模型 ID、模态和价格字段；
-- 生成静态站点；
-- 运行数据质量检查。
+```text
+① fetch     抓取各源原始数据         → sources/raw/<…>            (scripts/fetch-*.mjs)
+② assemble  同一源的多个文件合并为一份 → sources/assembled/<source>.json  (scripts/assemble-sources.mjs)
+③ diff      候选 ↔ 现有 models.json   → 变更报告(新增 / 更新 / 下架)   (scripts/diff-models.mjs)
+④ apply     合并写入:更新替换、消失模型标 deprecation 保留、护栏拦截异常 → data/models.json
+```
 
-常用命令：
+数据源:OpenRouter（身份 + 美元价 / endpoint）、LiteLLM（规格与复杂美元价、非聊天模型）、models.dev（图标 + 知识截止白名单）、阿里云百炼 / 火山方舟（人民币官方计价）。归一化逻辑在 `web/src/lib/normalize/`（每源一个 adapter → 字段级合并）。
+
+### 日常更新流程（SOP）
 
 ```bash
-npm run data:openrouter
-npm run data:litellm
-npm run data:models-dev
-npm run registry:populate:openrouter
-npm run registry:populate:litellm
-npm run registry:populate:models-dev
-npm run data:quality
-npm run build
+npm run update          # ① fetch → ② assemble → ③ diff（只读,打印新增 / 更新 / 下架报告）
+# 审阅报告:确认无异常下架(guardrail 默认 removed>5% 时拦截 apply)
+npm run update:apply    # ④ 合并写入 data/models.json（自动标记 deprecation、护栏保护）
+git add data/models.json sources/ && git commit
 ```
+
+- `npm run update` 只读、非破坏:候选写到 `.internal/update/`，不动 `data/models.json`。
+- 消失的模型**不删除**,标记 `deprecation: { status: "delisted", since }` 保留。
+- 若某源抓取失败 / 版式突变导致大批模型“消失”,护栏会拦截 `apply`，避免误判下架。
+- 单源命令(按需单独刷新):`npm run data:openrouter | data:litellm | data:models-dev | data:bailian | data:volcengine`，随后 `npm run data:assemble`。
+- 首次运行(无既有 `models.json`)等同重建:diff 把全部模型计为“新增”。
 
 ## 本地开发
 
@@ -92,12 +96,15 @@ cp .env.example .env.local
 
 ```text
 data/
-  models.json                    核心模型参数表
-  providers/*.json               采集 / 校验辅助数据
-  schema/*.schema.json           JSON Schema（核心 schema：data/schema/models.schema.json）
-scripts/                         数据采集、处理、质量检查脚本
+  models.json                    核心模型参数表（最终产物）
+  schema/*.schema.json           JSON Schema
+sources/
+  raw/<source>…                  ① 各源抓取的原始数据（已入库，可追溯源端变动）
+  assembled/<source>.json        ② 每源合并后的单一视图（供 build 消费）
+scripts/                         fetch-*（抓取）/ assemble-sources / diff-models 等管线脚本
+web/src/lib/normalize/           归一化器（每源 adapter + 合并 + 校验）
 web/src/                         两页静态前端源码
-public/                          构建产物，不提交
+public/, dist/                   构建产物，不提交
 ```
 
 ## License
