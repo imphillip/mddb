@@ -64,7 +64,7 @@ describe('volcengineFragment', () => {
       TPM: 5000000,
     })
     expect(fragment.offer?.prices).toEqual([])
-    expect(fragment.offer?.endpoints).toBe('openai/chat.completions')
+    expect(fragment.offer?.endpoints).toBe('chat')
   })
 })
 
@@ -92,6 +92,6 @@ describe('parseVolcengineMediaModels', () => {
 
     const seedance = volcengineMediaFragment(byId.get('doubao-seedance-1-0-pro-250528')!)
     expect(seedance.facts.output_modalities).toEqual(['video'])
-    expect(seedance.offer?.endpoints).toBe('volcengine/video.generation')
+    expect(seedance.offer?.endpoints).toBe('video')
   })
 })

@@ -33,6 +33,8 @@ https://raw.githubusercontent.com/imphillip/mddb/main/data/models.json
 
 价格与调用信息以 `offers[]` 内嵌在每个模型上（每个数据源一条 offer，含币种、计价、endpoint、限流）；各源的原始与合并视图见 `sources/`。项目的公开重点是 `models.json`。
 
+`offer.endpoints` 用与协议无关的 API 操作枚举表示，取值：`chat`、`responses`、`embeddings`、`images`、`audio.transcription`、`audio.speech`、`rerank`、`video`、`3d`。人民币官方价只收录**原价**（滤除限时促销折扣）。
+
 ## 前端
 
 前端只保留两类页面：
@@ -97,7 +99,7 @@ cp .env.example .env.local
 ```text
 data/
   models.json                    核心模型参数表（最终产物）
-  schema/*.schema.json           JSON Schema
+  schema/                        JSON Schema（核心契约：data/schema/models.schema.json）
 sources/
   raw/<source>…                  ① 各源抓取的原始数据（已入库，可追溯源端变动）
   assembled/<source>.json        ② 每源合并后的单一视图（供 build 消费）

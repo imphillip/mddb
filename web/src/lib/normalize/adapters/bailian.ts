@@ -18,6 +18,9 @@ interface BailianTierPrice {
   label?: string
   price?: number
   unit?: string
+  // `price` is the standard list price; `discount` is a promotional ratio we DO NOT apply
+  // (we record original prices, not promo prices).
+  discount?: number | null
 }
 interface BailianTier {
   range_name?: string
@@ -46,6 +49,7 @@ export interface BailianModel {
   name?: string
   provider?: string
   pricing_currency?: string
+  pricing?: BailianTierPrice[]
   tiered_pricing?: BailianTier[]
   limits?: BailianLimits
   qpm_info?: Record<string, BailianQpm>
@@ -99,11 +103,14 @@ export function bailianFragment(
   }
   if (Object.keys(extra).length) facts.other_parameters = extra
 
+  // Prefer tiered pricing (input-length tiers); otherwise fall back to the flat pricing[]
+  // list (single unconditional tier). List prices only — the promo `discount` is ignored.
+  const tieredPrices = (raw.tiered_pricing ?? []).map(buildTierPrice).filter(hasComponents)
+  const flatPrice = tieredPrices.length === 0 ? buildFlatPrice(raw.pricing ?? []) : null
   const offer: Offer = {
     source: 'bailian',
     currency: raw.pricing_currency ?? 'CNY',
-    // Some source tiers carry only a range label with no price entries -> drop them.
-    prices: (raw.tiered_pricing ?? []).map(buildTierPrice).filter(hasComponents),
+    prices: tieredPrices.length > 0 ? tieredPrices : flatPrice && hasComponents(flatPrice) ? [flatPrice] : [],
   }
   if (raw.source_url) offer.url = raw.source_url
   if (options.observedAt) offer.observed_at = options.observedAt
@@ -145,6 +152,18 @@ function buildTierPrice(tier: BailianTier): Price {
     if (!target) continue
     const component: PriceComponent = { amount: entry.price, unit: cnyUnit(entry.unit ?? '') }
     price[target] = component
+  }
+  return price
+}
+
+/** Flat (non-tiered) pricing[] -> one unconditional Price. List prices; discount ignored. */
+function buildFlatPrice(entries: BailianTierPrice[]): Price {
+  const price: Price = {}
+  for (const entry of entries) {
+    if (entry.type === undefined || entry.price === undefined) continue
+    const target = PRICE_TYPE_MAP[entry.type]
+    if (!target) continue
+    price[target] = { amount: entry.price, unit: cnyUnit(entry.unit ?? '') }
   }
   return price
 }

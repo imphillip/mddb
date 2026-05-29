@@ -40,15 +40,56 @@ export function mergeWithDeprecations(
   const stillDeprecated: string[] = []
   for (const model of current) {
     if (candidateById.has(model.id)) continue
+    // Carried-forward (delisted) entries are frozen — they aren't re-derived from sources,
+    // so re-apply the pure-function format invariants (alias≠model, endpoints enum) to keep
+    // historical records consistent with current rules.
+    const carried = normalizeCarried(model)
     if (model.deprecation) {
       stillDeprecated.push(model.id)
-      models.push(model)
+      models.push(carried)
     } else {
       newlyDeprecated.push(model.id)
-      models.push({ ...model, deprecation: { status: 'delisted', since: options.today } })
+      models.push({ ...carried, deprecation: { status: 'delisted', since: options.today } })
     }
   }
 
   models.sort((a, b) => a.id.localeCompare(b.id))
   return { models, newlyDeprecated: newlyDeprecated.sort(), stillDeprecated: stillDeprecated.sort(), reactivated: reactivated.sort() }
+}
+
+// Legacy endpoints values (pre-enum) -> normalized operation enum (README endpoints standard).
+const LEGACY_ENDPOINT: Record<string, string> = {
+  'openai/chat.completions': 'chat',
+  'openai/responses': 'responses',
+  'openai/embeddings': 'embeddings',
+  'openai/images.generations': 'images',
+  'openai/images.edits': 'images',
+  'openai/audio.transcriptions': 'audio.transcription',
+  'openai/audio.speech': 'audio.speech',
+  'openai/rerank': 'rerank',
+  'volcengine/video.generation': 'video',
+  'volcengine/3d.generation': '3d',
+}
+
+function nameKey(value: string | undefined): string {
+  return (value ?? '').toLowerCase().replace(/[\s._-]+/gu, '')
+}
+
+/** Re-apply entry-local format invariants to a carried-forward (frozen) model. */
+function normalizeCarried(model: ModelEntry): ModelEntry {
+  const out: ModelEntry = { ...model }
+  if (Array.isArray(out.offers)) {
+    out.offers = out.offers.map((offer) =>
+      typeof offer.endpoints === 'string' && LEGACY_ENDPOINT[offer.endpoints]
+        ? { ...offer, endpoints: LEGACY_ENDPOINT[offer.endpoints]! }
+        : offer,
+    )
+  }
+  if (Array.isArray(out.alias)) {
+    const mk = nameKey(out.model)
+    const filtered = out.alias.filter((a) => nameKey(a) !== mk)
+    if (filtered.length) out.alias = filtered
+    else delete out.alias
+  }
+  return out
 }

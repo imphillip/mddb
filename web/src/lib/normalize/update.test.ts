@@ -31,6 +31,21 @@ describe('mergeWithDeprecations', () => {
     expect(r.models[0]?.deprecation).toBeUndefined()
   })
 
+  it('re-normalizes carried-forward (frozen) entries: drops alias==model and migrates legacy endpoints', () => {
+    const current = [
+      m('legacy', {
+        model: 'Legacy Model',
+        alias: ['Legacy Model', 'Old Name'],
+        offers: [{ source: 'litellm', currency: 'USD', prices: [], endpoints: 'openai/chat.completions' }],
+      }),
+    ]
+    const r = mergeWithDeprecations(current, [], { today: '2026-05-29' })
+    const carried = r.models[0]!
+    expect(carried.deprecation).toEqual({ status: 'delisted', since: '2026-05-29' })
+    expect(carried.alias).toEqual(['Old Name']) // 'Legacy Model' == model dropped
+    expect(carried.offers[0]?.endpoints).toBe('chat') // legacy endpoint migrated
+  })
+
   it('adds brand-new candidate models and sorts output by id', () => {
     const current = [m('b')]
     const candidate = [m('b'), m('a'), m('c')]

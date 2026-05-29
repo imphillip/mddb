@@ -88,7 +88,7 @@ export function openRouterFragment(
     url: `https://openrouter.ai/${raw.id}`,
     currency: 'USD',
     prices: price ? [price] : [],
-    endpoints: endpointsFromBaseUrl('https://openrouter.ai/api/v1') ?? 'openai/chat.completions',
+    endpoints: endpointsFromBaseUrl('https://openrouter.ai/api/v1') ?? 'chat',
   }
   if (options.observedAt) offer.observed_at = options.observedAt
 

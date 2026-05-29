@@ -38,16 +38,17 @@ const TOKEN_PRICE_MAP: Record<string, PriceComponentKey> = {
   cache_read_input_token_cost: 'cache_read',
 }
 
+// Normalized API-operation enum (see README endpoints standard): protocol-agnostic.
 const MODE_ENDPOINTS: Record<string, string> = {
-  chat: 'openai/chat.completions',
-  completion: 'openai/chat.completions',
-  responses: 'openai/responses',
-  embedding: 'openai/embeddings',
-  image_generation: 'openai/images.generations',
-  image_edit: 'openai/images.edits',
-  audio_transcription: 'openai/audio.transcriptions',
-  audio_speech: 'openai/audio.speech',
-  rerank: 'openai/rerank',
+  chat: 'chat',
+  completion: 'chat',
+  responses: 'responses',
+  embedding: 'embeddings',
+  image_generation: 'images',
+  image_edit: 'images',
+  audio_transcription: 'audio.transcription',
+  audio_speech: 'audio.speech',
+  rerank: 'rerank',
 }
 
 const MODE_OUTPUT_MODALITY: Record<string, Modality> = {

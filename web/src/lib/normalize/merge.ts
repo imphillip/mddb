@@ -95,9 +95,10 @@ export function mergeGroup(group: readonly SourceFragment[], options: MergeOptio
 
   const aliasIds = uniq(byIdentity.flatMap((f) => f.aliasIds)).filter((alias) => alias !== id)
   if (aliasIds.length) entry.alias_id = aliasIds
-  // Keep upstream display names even when they equal the (possibly un-curated) model
-  // name — they are naming provenance and must not blink in/out with name overrides.
-  const aliasNames = uniqNames(byIdentity.flatMap((f) => f.aliasNames))
+  // alias holds OTHER display names; drop any that merely repeat the model name
+  // (case/separator-insensitive) so model and alias never carry the same value.
+  const modelKey = nameKey(entry.model)
+  const aliasNames = uniqNames(byIdentity.flatMap((f) => f.aliasNames)).filter((name) => nameKey(name) !== modelKey)
   if (aliasNames.length) entry.alias = aliasNames
 
   const otherParameters = mergeOtherParameters(byFact)
@@ -160,4 +161,9 @@ function mergeOtherParameters(byFact: readonly SourceFragment[]): Record<string,
     if (extra) Object.assign(merged, extra)
   }
   return Object.keys(merged).length ? merged : null
+}
+
+/** Case/separator-insensitive key for comparing a display name to the model name. */
+function nameKey(value: string): string {
+  return value.toLowerCase().replace(/[\s._-]+/gu, '')
 }

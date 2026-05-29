@@ -59,7 +59,7 @@ export function cnyUnit(label: string): 'per_1m_tokens' {
 /** Map an OpenAI-compatible base URL to its call shape. */
 export function endpointsFromBaseUrl(baseUrl: string | null | undefined): string | null {
   if (!baseUrl) return null
-  if (/compatible-mode|\/v1\b|openai/iu.test(baseUrl)) return 'openai/chat.completions'
+  if (/compatible-mode|\/v1\b|openai/iu.test(baseUrl)) return 'chat'
   return null
 }
 

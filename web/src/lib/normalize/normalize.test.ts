@@ -32,7 +32,9 @@ describe('golden case: qwen3.6-max-preview (OpenRouter + Bailian)', () => {
       'qwen/qwen3.6-max-preview',
       'qwen/qwen3.6-max-preview-20260420',
     ])
-    expect(entry.alias).toEqual(['Qwen3.6 Max Preview'])
+    // Without an override the model name is the upstream "Qwen3.6 Max Preview", so the only
+    // display alias equals the model name and is dropped (model/alias never duplicate).
+    expect(entry.alias).toBeUndefined()
   })
 
   it('merges scalar facts across both sources', () => {
@@ -57,7 +59,7 @@ describe('golden case: qwen3.6-max-preview (OpenRouter + Bailian)', () => {
       url: bailianRaw.source_url as string,
       observed_at: '2026-05-24T18:19:06Z',
       currency: 'CNY',
-      endpoints: 'openai/chat.completions',
+      endpoints: 'chat',
       other_params: { RPM: 600, TPM: 1000000 },
       prices: [
         {
@@ -82,7 +84,7 @@ describe('golden case: qwen3.6-max-preview (OpenRouter + Bailian)', () => {
   it('captures the OpenRouter USD offer (incl. cache_write the sample omitted)', () => {
     const orOffer = entry.offers.find((o) => o.source === 'openrouter')
     expect(orOffer?.currency).toBe('USD')
-    expect(orOffer?.endpoints).toBe('openai/chat.completions')
+    expect(orOffer?.endpoints).toBe('chat')
     expect(orOffer?.prices[0]?.input).toEqual({ amount: 1.04, unit: 'per_1m_tokens' })
     expect(orOffer?.prices[0]?.output).toEqual({ amount: 6.24, unit: 'per_1m_tokens' })
     expect(orOffer?.prices[0]?.cache_write).toEqual({ amount: 1.3, unit: 'per_1m_tokens' })

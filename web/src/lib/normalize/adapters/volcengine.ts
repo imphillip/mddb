@@ -184,7 +184,7 @@ export function volcengineFragment(spec: VolcengineSpec, options: VolcengineAdap
     source: 'volcengine',
     currency: 'CNY',
     prices: [],
-    endpoints: 'openai/chat.completions',
+    endpoints: 'chat',
     other_params: otherParams,
   }
   if (options.sourceUrl) offer.url = options.sourceUrl
@@ -257,9 +257,9 @@ const MEDIA_OUTPUT: Record<VolcengineMediaKind, Modality> = {
   '3d': 'other',
 }
 const MEDIA_ENDPOINTS: Record<VolcengineMediaKind, string> = {
-  image: 'openai/images.generations',
-  video: 'volcengine/video.generation',
-  '3d': 'volcengine/3d.generation',
+  image: 'images',
+  video: 'video',
+  '3d': '3d',
 }
 
 export function volcengineMediaFragment(
