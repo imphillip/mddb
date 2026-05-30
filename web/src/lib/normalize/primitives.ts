@@ -13,6 +13,28 @@ export function canonicalId(rawId: string): string {
     .replace(/^[-.]+|[-.]+$/gu, '')
 }
 
+/**
+ * Strip a trailing snapshot date suffix to get the base id. Handles the three standard
+ * forms; the `-` anchor + month/day validation prevents folding non-date numeric suffixes:
+ *   -YYYY-MM-DD  (e.g. -2026-05-20)
+ *   -YYYYMMDD    (e.g. -20260520)
+ *   -YYMMDD      (e.g. -260520)
+ * Returns the id unchanged when no plausible date suffix is present.
+ */
+const MD = '(0[1-9]|1[0-2])(0[1-9]|[12]\\d|3[01])'
+const SNAPSHOT_SUFFIXES = [
+  new RegExp(`-(?:19|20)\\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$`, 'u'),
+  new RegExp(`-(?:19|20)\\d{2}${MD}$`, 'u'),
+  new RegExp(`-\\d{2}${MD}$`, 'u'),
+]
+export function foldSnapshotId(id: string): string {
+  for (const re of SNAPSHOT_SUFFIXES) {
+    const folded = id.replace(re, '')
+    if (folded !== id) return folded
+  }
+  return id
+}
+
 /** Vendor segment of a route id ("qwen/qwen3.6-max" -> "qwen"); null when unprefixed. */
 export function vendorPrefix(rawId: string): string | null {
   if (!rawId.includes('/')) return null

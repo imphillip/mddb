@@ -11,7 +11,7 @@ import type {
   PriceCondition,
   SourceFragment,
 } from '../schema.js'
-import { canonicalId, cnyUnit, endpointsFromBaseUrl, matchKey, toEpochSeconds } from '../primitives.js'
+import { canonicalId, cnyUnit, endpointsFromBaseUrl, foldSnapshotId, matchKey, toEpochSeconds } from '../primitives.js'
 
 interface BailianTierPrice {
   type?: string
@@ -75,7 +75,8 @@ export function bailianFragment(
   options: BailianAdapterOptions = {},
 ): SourceFragment | null {
   if (raw.model_id.startsWith('group-')) return null
-  const id = canonicalId(raw.model_id)
+  const fullId = canonicalId(raw.model_id)
+  const id = foldSnapshotId(fullId) // dated snapshots fold to base; original kept as alias
   const caps = raw.capabilities ?? []
   const features = raw.features ?? []
 
@@ -122,7 +123,7 @@ export function bailianFragment(
     source: 'bailian',
     matchKey: matchKey(id),
     identityId: id,
-    aliasIds: [],
+    aliasIds: id !== fullId ? [fullId] : [],
     aliasNames: raw.name ? [raw.name] : [],
     facts,
     ...(endpoint ? { endpoint } : {}),

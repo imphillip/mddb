@@ -28,7 +28,11 @@ const current = indexById(readModels(currentPath))
 const candidate = indexById(readModels(candidatePath))
 
 const addedIds = [...candidate.keys()].filter((id) => !current.has(id)).sort()
-const removedIds = [...current.keys()].filter((id) => !candidate.has(id)).sort()
+// A current id that a candidate now lists as an alias_id was folded (e.g. a dated snapshot
+// into its base), not removed — exclude it from removals so the guardrail doesn't false-alarm.
+const foldedAway = new Set([...candidate.values()].flatMap((m) => m.alias_id ?? []))
+const foldedIds = [...current.keys()].filter((id) => !candidate.has(id) && foldedAway.has(id)).sort()
+const removedIds = [...current.keys()].filter((id) => !candidate.has(id) && !foldedAway.has(id)).sort()
 const changed = []
 for (const [id, before] of current) {
   const after = candidate.get(id)
@@ -43,10 +47,11 @@ const report = {
   generated_at: new Date().toISOString(),
   current: { path: rel(currentPath), count: current.size },
   candidate: { path: rel(candidatePath), count: candidate.size },
-  summary: { added: addedIds.length, removed: removedIds.length, changed: changed.length, removed_pct: round(removedPct) },
+  summary: { added: addedIds.length, removed: removedIds.length, folded: foldedIds.length, changed: changed.length, removed_pct: round(removedPct) },
   guardrail: { max_removed_pct: maxRemovedPct, tripped: guardrailTripped },
   added: addedIds,
   removed: removedIds,
+  folded: foldedIds,
   changed,
 }
 mkdirSync(dirname(reportPath), { recursive: true })
@@ -120,7 +125,7 @@ function offerChanges(before, after) {
 function printReport(r) {
   const s = r.summary
   console.log(`\ndiff-models: current ${r.current.count} → candidate ${r.candidate.count}`)
-  console.log(`  +${s.added} added   -${s.removed} removed   ~${s.changed} changed   (removed ${s.removed_pct}%)`)
+  console.log(`  +${s.added} added   -${s.removed} removed   ⊙${s.folded} folded   ~${s.changed} changed   (removed ${s.removed_pct}%)`)
   console.log(`  guardrail max-removed ${r.guardrail.max_removed_pct}%: ${r.guardrail.tripped ? 'TRIPPED ⛔ (likely a source outage — do NOT apply)' : 'ok'}`)
   if (r.added.length) console.log(`\n  NEW (${r.added.length}): ${r.added.slice(0, 40).join(', ')}${r.added.length > 40 ? ' …' : ''}`)
   if (r.removed.length) console.log(`\n  REMOVED / possible delist (${r.removed.length}): ${r.removed.slice(0, 40).join(', ')}${r.removed.length > 40 ? ' …' : ''}`)

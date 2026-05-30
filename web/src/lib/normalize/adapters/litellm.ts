@@ -4,7 +4,7 @@
 // ids (LiteLLM is last in identity precedence); gateway/config-shaped keys are
 // enrichment-only. Non-token costs that have no Price slot are bucketed, never dropped.
 import type { Modality, ModelFacts, Offer, Price, PriceComponentKey, PriceUnit, SourceFragment } from '../schema.js'
-import { canonicalId, matchKey, roundMoney, usdPerTokenTo1m } from '../primitives.js'
+import { canonicalId, foldSnapshotId, matchKey, roundMoney, usdPerTokenTo1m } from '../primitives.js'
 
 export interface LiteLLMModel {
   model_name: string
@@ -71,7 +71,10 @@ export function liteLLMCanonicalEligible(name: string): boolean {
 
 export function liteLLMFragment(raw: LiteLLMModel, options: LiteLLMAdapterOptions = {}): SourceFragment {
   const mode = raw.mode ?? 'chat'
-  const id = canonicalId(raw.model_name)
+  // Fold dated snapshots to the base id (e.g. gpt-4.1-2025-04-14 -> gpt-4.1) so they merge
+  // with the base instead of duplicating it; keep the dated id as an alias.
+  const fullId = canonicalId(raw.model_name)
+  const id = foldSnapshotId(fullId)
   const eligible = liteLLMCanonicalEligible(raw.model_name)
 
   const facts: ModelFacts = {}
@@ -97,7 +100,7 @@ export function liteLLMFragment(raw: LiteLLMModel, options: LiteLLMAdapterOption
     source: 'litellm',
     matchKey: matchKey(id),
     identityId: eligible ? id : null,
-    aliasIds: [],
+    aliasIds: id !== fullId ? [fullId] : [],
     aliasNames: [],
     facts,
     ...(endpoint ? { endpoint } : {}),

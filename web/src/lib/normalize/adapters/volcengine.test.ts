@@ -44,7 +44,8 @@ describe('volcengineFragment', () => {
   })
 
   it('mints a low-confidence canonical fragment with derived facts', () => {
-    expect(fragment.identityId).toBe('doubao-seed-1-6-250615')
+    expect(fragment.identityId).toBe('doubao-seed-1-6') // dated snapshot folded to base
+    expect(fragment.aliasIds).toEqual(['doubao-seed-1-6-250615']) // snapshot kept as alias
     expect(fragment.facts.reasoning).toBe(true)
     expect(fragment.facts.tool_calling).toBe(true)
     expect(fragment.facts.author).toBe('bytedance')

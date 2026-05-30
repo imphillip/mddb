@@ -35,6 +35,8 @@ https://raw.githubusercontent.com/imphillip/mddb/main/data/models.json
 
 `endpoints` 是模型级字段（各源支持的 API 操作并集，与协议无关），取值：`chat`、`responses`、`embeddings`、`images`、`audio.transcription`、`audio.speech`、`rerank`、`video`、`3d`。人民币官方价只收录**原价**（滤除限时促销折扣）。
 
+**身份与计价归并**：带日期的快照 id（`-YYMMDD` / `-YYYYMMDD` / `-YYYY-MM-DD`）统一折叠到基名，快照 id 进 `alias_id`（折叠不会被误判为下架）。计价主源优先、补充源去重：OpenRouter 已计价则不再收录 LiteLLM 的 offer；Bailian 已用 CNY 计价则不再收录火山的 offer（补充源的事实仍按字段级合并）。
+
 ## 前端
 
 前端只保留两类页面：

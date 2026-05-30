@@ -69,7 +69,7 @@ export function mergeGroup(group: readonly SourceFragment[], options: MergeOptio
   const entry: ModelEntry = {
     id,
     model: (pick('model') as string | null) ?? id,
-    offers: dedupeOffers(suppressRedundantLiteLLM(byIdentity.filter((f) => f.offer !== null).map((f) => f.offer as Offer))),
+    offers: dedupeOffers(suppressRedundantOffers(byIdentity.filter((f) => f.offer !== null).map((f) => f.offer as Offer))),
     // nullable facts always surface (default null), matching the target sample
     context_length: pick('context_length') as number | null,
     max_input_tokens: pick('max_input_tokens') as number | null,
@@ -146,14 +146,24 @@ export function mergeFragments(fragments: readonly SourceFragment[], options: Me
   return entries.sort((a, b) => a.id.localeCompare(b.id))
 }
 
-/**
- * LiteLLM is a USD *supplement*, not a second pricing source: if OpenRouter already
- * prices this model, drop the LiteLLM offer entirely (its facts still merge at the field
- * level). LiteLLM offers survive when OpenRouter has no priced offer (non-chat types, etc.).
- */
-function suppressRedundantLiteLLM(offers: readonly Offer[]): Offer[] {
-  const openRouterPriced = offers.some((o) => o.source === 'openrouter' && o.prices.length > 0)
-  return openRouterPriced ? offers.filter((o) => o.source !== 'litellm') : [...offers]
+// A supplement source's offer is dropped when its primary already prices the model:
+//   - LiteLLM (USD supplement)   is redundant when OpenRouter prices the model
+//   - Volcengine (CNY supplement) is redundant when Bailian prices the model
+// The supplement's facts still merge at the field level; its offer survives when the
+// primary has no priced offer.
+const SUPPLEMENT_RULES: ReadonlyArray<{ primary: string; supplement: string }> = [
+  { primary: 'openrouter', supplement: 'litellm' },
+  { primary: 'bailian', supplement: 'volcengine' },
+]
+
+function suppressRedundantOffers(offers: readonly Offer[]): Offer[] {
+  let out = [...offers]
+  for (const { primary, supplement } of SUPPLEMENT_RULES) {
+    if (out.some((o) => o.source === primary && o.prices.length > 0)) {
+      out = out.filter((o) => o.source !== supplement)
+    }
+  }
+  return out
 }
 
 /** One offer per source; prefer the one carrying more pricing detail. */

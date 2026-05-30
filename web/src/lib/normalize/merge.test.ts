@@ -24,6 +24,23 @@ describe('mergeGroup offer assembly', () => {
     expect(entry!.offers.map((o) => o.source)).toEqual(['openrouter'])
   })
 
+  it('drops the Volcengine offer when Bailian already prices the model (CNY)', () => {
+    const entry = mergeGroup([
+      frag('bailian', priced('bailian'), 'm'),
+      frag('volcengine', priced('volcengine')),
+    ])
+    expect(entry!.offers.map((o) => o.source)).toEqual(['bailian'])
+  })
+
+  it('keeps the Volcengine offer when Bailian has no priced offer', () => {
+    const bailianUnpriced: Offer = { source: 'bailian', currency: 'CNY', prices: [] }
+    const entry = mergeGroup([
+      frag('bailian', bailianUnpriced, 'm'),
+      frag('volcengine', priced('volcengine')),
+    ])
+    expect(entry!.offers.map((o) => o.source).sort()).toEqual(['bailian', 'volcengine'])
+  })
+
   it('keeps the LiteLLM offer when OpenRouter has no priced offer', () => {
     const orUnpriced: Offer = { source: 'openrouter', currency: 'USD', prices: [] }
     const entry = mergeGroup([

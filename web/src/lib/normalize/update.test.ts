@@ -48,6 +48,14 @@ describe('mergeWithDeprecations', () => {
     expect((carried.offers[0] as unknown as Record<string, unknown>)['endpoints']).toBeUndefined() // stripped from offer
   })
 
+  it('treats a folded snapshot (now a candidate alias_id) as folded, not delisted', () => {
+    const current = [m('gpt-4o-2024-08-06')] // old dated canonical id
+    const candidate = [m('gpt-4o', { alias_id: ['gpt-4o-2024-08-06'] })] // folded to base
+    const r = mergeWithDeprecations(current, candidate, { today: '2026-05-29' })
+    expect(r.models.map((x) => x.id)).toEqual(['gpt-4o']) // old id dropped, not carried as delisted
+    expect(r.newlyDeprecated).toEqual([])
+  })
+
   it('adds brand-new candidate models and sorts output by id', () => {
     const current = [m('b')]
     const candidate = [m('b'), m('a'), m('c')]

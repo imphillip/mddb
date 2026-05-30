@@ -22,6 +22,9 @@ export function mergeWithDeprecations(
 ): MergeResult {
   const currentById = new Map(current.map((m) => [m.id, m]))
   const candidateById = new Map(candidate.map((m) => [m.id, m]))
+  // Ids that a candidate now folds in as an alias (e.g. a dated snapshot folded to its base).
+  // A current model with such an id was renamed/folded, not delisted.
+  const foldedAway = new Set(candidate.flatMap((m) => m.alias_id ?? []))
   const models: ModelEntry[] = []
   const reactivated: string[] = []
 
@@ -40,6 +43,7 @@ export function mergeWithDeprecations(
   const stillDeprecated: string[] = []
   for (const model of current) {
     if (candidateById.has(model.id)) continue
+    if (foldedAway.has(model.id)) continue // folded into a candidate base; not a delisting
     // Carried-forward (delisted) entries are frozen — they aren't re-derived from sources,
     // so re-apply the pure-function format invariants (alias≠model, endpoints enum) to keep
     // historical records consistent with current rules.

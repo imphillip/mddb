@@ -5,6 +5,7 @@ import {
   canonicalId,
   cleanName,
   endpointsFromBaseUrl,
+  foldSnapshotId,
   matchKey,
   roundMoney,
   uniq,
@@ -54,7 +55,9 @@ export function openRouterFragment(
   raw: OpenRouterModel,
   options: OpenRouterAdapterOptions = {},
 ): SourceFragment {
-  const id = canonicalId(raw.id)
+  // Fold dated snapshots to the base id; the raw route id + canonical_slug (which carry the
+  // dated form) are preserved in aliasIds below.
+  const id = foldSnapshotId(canonicalId(raw.id))
   const vendor = vendorPrefix(raw.id)
   const displayName = raw.name ? cleanName(raw.name) : id
   const params = raw.supported_parameters ?? []

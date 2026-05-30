@@ -8,7 +8,7 @@
 // (seedream / seedance / hitem3d) use entirely different field patterns and are a
 // flagged follow-up — see parseVolcengineSpecs notes.
 import type { Modality, ModelFacts, Offer, SourceFragment } from '../schema.js'
-import { canonicalId, matchKey } from '../primitives.js'
+import { canonicalId, foldSnapshotId, matchKey, uniq as uniqStrings } from '../primitives.js'
 
 export interface VolcengineSpec {
   id: string
@@ -151,7 +151,10 @@ const AUTHOR_BY_PREFIX: ReadonlyArray<[string, string]> = [
 ]
 
 export function volcengineFragment(spec: VolcengineSpec, options: VolcengineAdapterOptions = {}): SourceFragment {
-  const id = canonicalId(spec.id)
+  // Volcengine spec ids are dated snapshots (e.g. -260428); fold to the base id so they
+  // merge with the price doc (which keys by base) and with each other.
+  const fullId = canonicalId(spec.id)
+  const id = foldSnapshotId(fullId)
   const caps = spec.capabilities
 
   const facts: ModelFacts = {
@@ -193,7 +196,7 @@ export function volcengineFragment(spec: VolcengineSpec, options: VolcengineAdap
     source: 'volcengine',
     matchKey: matchKey(id),
     identityId: id, // CNY official source may mint canonical (low confidence; human-reviewed)
-    aliasIds: [],
+    aliasIds: id !== fullId ? [fullId] : [],
     aliasNames: [],
     facts,
     endpoint: 'chat',
@@ -266,7 +269,8 @@ export function volcengineMediaFragment(
   spec: VolcengineMediaSpec,
   options: VolcengineAdapterOptions = {},
 ): SourceFragment {
-  const id = canonicalId(spec.id)
+  const fullId = canonicalId(spec.id)
+  const id = foldSnapshotId(fullId)
   const author = inferAuthor(id)
 
   const facts: ModelFacts = {
@@ -294,7 +298,7 @@ export function volcengineMediaFragment(
     source: 'volcengine',
     matchKey: matchKey(id),
     identityId: id,
-    aliasIds: spec.aliasIds.map((a) => canonicalId(a)),
+    aliasIds: uniqStrings([...(id !== fullId ? [fullId] : []), ...spec.aliasIds.map((a) => canonicalId(a))]),
     aliasNames: [],
     facts,
     endpoint: MEDIA_ENDPOINTS[spec.kind],
