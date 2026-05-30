@@ -65,18 +65,24 @@ https://raw.githubusercontent.com/imphillip/mddb/main/data/models.json
 
 ### 日常更新流程（SOP）
 
+一条命令跑完整条链(① fetch → ② assemble → ③ diff 护栏 → ④ apply → ⑤ 重建站点 + 覆盖率门):
+
 ```bash
-npm run update          # ① fetch → ② assemble → ③ diff（只读,打印新增 / 更新 / 下架报告）
-# 审阅报告:确认无异常下架(guardrail 默认 removed>5% 时拦截 apply)
-npm run update:apply    # ④ 合并写入 data/models.json（自动标记 deprecation、护栏保护）
-git add data/models.json sources/ && git commit
+npm run update:all            # 全量刷新,apply 后停下,提交交给你
+DRY_RUN=1 npm run update:all   # 只预览(fetch + diff 报告,不写 data/models.json)
+PUSH=1   npm run update:all    # cron:全量刷新 + commit + push
 ```
 
-- `npm run update` 只读、非破坏:候选写到 `.internal/update/`，不动 `data/models.json`。
+环境开关(默认全关):`DRY_RUN` / `SKIP_FETCH`(复用已入库 raw)/ `SKIP_VOLCENGINE` / `COMMIT` / `PUSH`。脚本:[`scripts/update-all.sh`](scripts/update-all.sh)。
+
+要点:
+
+- **火山自动跳过**:`update:all` 检测到没装 Playwright 时跳过火山浏览器抓取,复用已入库的 `sources/raw/volcengine/*`,因此任何机器都能跑;装了 Playwright 的主机会顺带刷新火山。
+- **双护栏**:③ `update:check` 在疑似源故障(removed>5%)时 `exit 1` 拦住 apply;⑤ 覆盖率门在退化时 `exit 1` 拦住提交。
 - 消失的模型**不删除**,标记 `deprecation: { status: "delisted", since }` 保留。
-- 若某源抓取失败 / 版式突变导致大批模型“消失”,护栏会拦截 `apply`，避免误判下架。
-- 单源命令(按需单独刷新):`npm run data:openrouter | data:litellm | data:bailian`，随后 `npm run data:assemble`。
-- 火山方舟单独刷新(需 Playwright 主机):`npm run data:volcengine`(抓 markdown + 解析);仅重跑解析(已有 `.md`)用 `npm run data:volcengine:parse`。
+- 拆分命令(按需):`npm run update`(只读到 diff)/ `npm run update:apply`(只写入)/ 单源 `npm run data:openrouter | data:litellm | data:bailian`。
+- 火山单独刷新(需 Playwright 主机):`npm run data:volcengine`(抓 markdown + 解析);仅重跑解析用 `npm run data:volcengine:parse`。
+- 百炼为增量抓取(`--incremental --limit 200`,只取新增 / 变更);要全量重抓目录详情用 `node scripts/fetch-bailian-model-market.mjs --from-list --limit 2000`。
 - 首次运行(无既有 `models.json`)等同重建:diff 把全部模型计为“新增”。
 
 ## 本地开发
