@@ -125,12 +125,14 @@ async function fetchDocMarkdown(page, doc) {
     .catch(() => {})
   await settle(page)
 
-  // Open the per-document "···" overflow menu, then click the "复制markdown" item.
-  // TODO(playwright-host): these are BEST-GUESS selectors — confirm against the live DOM.
-  //   - The overflow trigger is usually an icon button near the doc title / toolbar.
-  //   - The menu item text is "复制markdown" (may render as "复制 Markdown" / "Copy as Markdown").
-  await openOverflowMenu(page)
-  await clickCopyMarkdown(page)
+  // Live Volcengine docs currently expose a top-of-document "复制全文" control that writes the
+  // same rendered markdown/plaintext serialization we need. Older Lark-style pages used a
+  // "···" overflow menu with "复制 markdown", so keep that path as fallback.
+  const copied = await clickDirectCopyControl(page)
+  if (!copied) {
+    await openOverflowMenu(page)
+    await clickCopyMarkdown(page)
+  }
 
   // The action writes markdown to the clipboard; read it back.
   await settle(page, 500)
@@ -142,6 +144,21 @@ async function fetchDocMarkdown(page, doc) {
     }
   })
   return md
+}
+
+async function clickDirectCopyControl(page) {
+  const candidates = [
+    page.getByText(/^复制全文$/u).first(),
+    page.getByText(/^复制全篇$/u).first(),
+    page.getByText(/^Copy full text$/iu).first(),
+  ]
+  for (const item of candidates) {
+    if (await item.isVisible().catch(() => false)) {
+      await item.click({ timeout: 5000 })
+      return true
+    }
+  }
+  return false
 }
 
 async function openOverflowMenu(page) {

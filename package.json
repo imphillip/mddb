@@ -41,6 +41,7 @@
   "license": "AGPL-3.0-or-later",
   "devDependencies": {
     "@types/node": "^25.7.0",
+    "playwright": "^1.60.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.6"
   },
