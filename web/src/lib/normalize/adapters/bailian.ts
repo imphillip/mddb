@@ -65,6 +65,14 @@ export interface BailianAdapterOptions {
   observedAt?: string
 }
 
+// Normalize Bailian `provider` values to OpenRouter's canonical author ids (avoid double spellings).
+// `qwen-domain-model` is a category (industry-tuned Qwen variants), not a developer.
+const PROVIDER_ALIAS: Record<string, string> = {
+  'qwen-domain-model': 'qwen',
+  'mini-max': 'minimax',
+  'moonshot-ai': 'moonshotai',
+}
+
 // CNY unit label -> { canonical PriceUnit, amount scale }. Bailian quotes in mixed units
 // (每百万tokens / 每千tokens / 每张 / 每秒 / 每万字符 / 次), so we normalize both unit and amount.
 const CNY_UNIT_RULES: ReadonlyArray<[RegExp, { unit: PriceUnit; scale: number }]> = [
@@ -174,8 +182,9 @@ export function bailianFragment(
   }
   if (raw.name) facts.model = raw.name
   if (raw.provider) {
-    facts.author = raw.provider
-    facts.author_id = raw.provider
+    const author = PROVIDER_ALIAS[raw.provider.toLowerCase()] ?? raw.provider
+    facts.author = author
+    facts.author_id = author
   }
   const modalities = modalitiesFromCapabilities(caps)
   if (modalities.input.length) facts.input_modalities = modalities.input

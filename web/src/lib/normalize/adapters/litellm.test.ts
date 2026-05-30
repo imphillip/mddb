@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
-import { liteLLMCanonicalEligible, liteLLMFragment, type LiteLLMModel } from './litellm.js'
+import { authorFromLiteLLM, liteLLMCanonicalEligible, liteLLMFragment, type LiteLLMModel } from './litellm.js'
 
 const load = (name: string): LiteLLMModel =>
   JSON.parse(readFileSync(new URL(`../__fixtures__/${name}`, import.meta.url), 'utf8')) as LiteLLMModel
@@ -54,6 +54,26 @@ describe('liteLLM embedding fragment', () => {
     expect(fragment.offer?.prices[0]?.image_input).toEqual({ amount: 6e-5, unit: 'per_image' })
     expect(fragment.offer?.prices[0]?.input).toEqual({ amount: 0.8, unit: 'per_1m_tokens' })
     expect(fragment.offer?.other_params).not.toHaveProperty('input_cost_per_image')
+  })
+})
+
+describe('authorFromLiteLLM', () => {
+  it('derives the developer from the id prefix, incl. bedrock/vertex/databricks-prefixed ids', () => {
+    expect(authorFromLiteLLM('anthropic.claude-3-opus', 'bedrock')).toBe('anthropic')
+    expect(authorFromLiteLLM('amazon.titan-embed-text-v1', 'bedrock')).toBe('amazon')
+    expect(authorFromLiteLLM('us.anthropic.claude-opus-4-7', 'bedrock')).toBe('anthropic')
+    expect(authorFromLiteLLM('databricks-claude-opus-4', 'databricks')).toBe('anthropic')
+    expect(authorFromLiteLLM('codellama-70b', 'fireworks_ai')).toBe('meta-llama')
+    expect(authorFromLiteLLM('codestral-2', 'mistral')).toBe('mistralai')
+    expect(authorFromLiteLLM('grok-2', 'xai')).toBe('x-ai')
+    expect(authorFromLiteLLM('flux-pro', 'fal_ai')).toBe('black-forest-labs')
+    expect(authorFromLiteLLM('kimi-k2-0905-preview', 'moonshot')).toBe('moonshotai')
+  })
+
+  it('falls back to litellm_provider only when it is itself a developer (not a gateway)', () => {
+    expect(authorFromLiteLLM('base', 'deepgram')).toBe('deepgram') // generic ASR name, dev via provider
+    expect(authorFromLiteLLM('mystery-model', 'bedrock')).toBeNull() // gateway provider -> no guess
+    expect(authorFromLiteLLM('some-thing', undefined)).toBeNull()
   })
 })
 

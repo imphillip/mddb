@@ -59,6 +59,74 @@ const MODE_OUTPUT_MODALITY: Record<string, Modality> = {
   video_generation: 'video',
 }
 
+// LiteLLM does not carry a `author` field, and `litellm_provider` is mostly the GATEWAY/host
+// (bedrock / azure / fireworks_ai / vertex_ai …), not the model developer. So derive the developer
+// from the id prefix (bedrock/vertex ids encode it: anthropic.claude-*, amazon.titan-*, ai21.*),
+// falling back to litellm_provider only when it is itself a developer. Outputs match OpenRouter's
+// canonical author ids so the same developer never gets two spellings.
+const ID_GATEWAY_PREFIX = /^(us|eu|apac|au|global|sa|ca|me|jp|in|databricks|google|aws)[.\-]/u
+const AUTHOR_BY_ID: ReadonlyArray<[RegExp, string]> = [
+  [/^(anthropic|claude)/u, 'anthropic'],
+  [/^(amazon|nova-|titan)/u, 'amazon'],
+  [/^(ai21|jamba|j2-)/u, 'ai21'],
+  [/^(cohere|command|embed-|rerank-)/u, 'cohere'],
+  [/^(meta|llama|codellama)/u, 'meta-llama'],
+  [/^(gpt|chatgpt|o[1345]([.\-]|$)|ada|babbage|davinci|curie|text-(embedding|davinci|curie|ada|babbage|moderation)|codex|dall-e|whisper|tts-|gpt-image|computer-use|omni-moderation)/u, 'openai'],
+  [/^(mistral|mixtral|codestral|pixtral|ministral|magistral|devstral)/u, 'mistralai'],
+  [/^(gemini|gemma|codegemma|palm|chat-bison|text-bison|imagen|veo|medlm|learnlm)/u, 'google'],
+  [/^deepseek/u, 'deepseek'],
+  [/^(qwen|qwq|qvq|tongyi|farui|alibaba|gte-)/u, 'qwen'],
+  [/^(kimi|moonshot)/u, 'moonshotai'],
+  [/^minimax/u, 'minimax'],
+  [/^hermes/u, 'nousresearch'],
+  [/^(doubao|seedream|seedance|seed-|seed3d|hitem|hyper3d)/u, 'bytedance'],
+  [/^(phi-|phi3|phi4)/u, 'microsoft'],
+  [/^granite/u, 'ibm-granite'],
+  [/^grok/u, 'x-ai'],
+  [/^(glm|chatglm|codegeex)/u, 'z-ai'],
+  [/^yi-/u, '01-ai'],
+  [/^jina/u, 'jina-ai'],
+  [/^(stability|sd-|sdxl|stable-)/u, 'stability-ai'],
+  [/^eleven/u, 'elevenlabs'],
+  [/^(bge-|baai)/u, 'baai'],
+  [/^voyage/u, 'voyage-ai'],
+  [/^mpt-/u, 'mosaicml'],
+  [/^flux/u, 'black-forest-labs'],
+  [/^gen[34]/u, 'runwayml'],
+]
+const AUTHOR_BY_PROVIDER: Record<string, string> = {
+  openai: 'openai',
+  anthropic: 'anthropic',
+  mistral: 'mistralai',
+  cohere: 'cohere',
+  gemini: 'google',
+  xai: 'x-ai',
+  perplexity: 'perplexity',
+  deepseek: 'deepseek',
+  deepgram: 'deepgram',
+  dashscope: 'qwen',
+  ai21: 'ai21',
+  voyage: 'voyage-ai',
+  jina_ai: 'jina-ai',
+  elevenlabs: 'elevenlabs',
+  cerebras: 'cerebras',
+  'vertex_ai-anthropic_models': 'anthropic',
+  'vertex_ai-language-models': 'google',
+  'vertex_ai-mistral_models': 'mistralai',
+  'vertex_ai-ai21_models': 'ai21',
+  'vertex_ai-llama_models': 'meta-llama',
+}
+
+export function authorFromLiteLLM(rawId: string, provider: string | undefined): string | null {
+  const id = rawId.toLowerCase().replace(ID_GATEWAY_PREFIX, '')
+  for (const [re, author] of AUTHOR_BY_ID) if (re.test(id)) return author
+  if (provider) {
+    const mapped = AUTHOR_BY_PROVIDER[provider.toLowerCase()]
+    if (mapped) return mapped
+  }
+  return null
+}
+
 /** True for clean, model-shaped ids; false for arn/config/multi-segment gateway keys. */
 export function liteLLMCanonicalEligible(name: string): boolean {
   if (/[\s:]/u.test(name)) return false
@@ -78,6 +146,11 @@ export function liteLLMFragment(raw: LiteLLMModel, options: LiteLLMAdapterOption
   const eligible = liteLLMCanonicalEligible(raw.model_name)
 
   const facts: ModelFacts = {}
+  const author = authorFromLiteLLM(fullId, raw.litellm_provider)
+  if (author) {
+    facts.author = author
+    facts.author_id = author
+  }
   if (raw.supports_reasoning !== undefined) facts.reasoning = raw.supports_reasoning
   if (raw.supports_function_calling !== undefined) facts.tool_calling = raw.supports_function_calling
   const input = inputModalities(raw)
