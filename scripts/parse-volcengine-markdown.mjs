@@ -176,12 +176,12 @@ function parseEmbedding(md, out) {
     addFlat(out, name, 'embedding', { input: comp(textIn), image_input: comp(imgIn) })
   })
 }
-// Seedance video pricing. Simple rows (1.0-pro, 1.0-pro-fast) are a single 元/百万token value and
-// fit the schema. Complex rows (2.0, 2.0-fast, 1.5-pro) price by output resolution / audio / whether
-// input contains video — conditions the token-based PriceCondition schema does NOT model. Rather
-// than fabricate a single price (the old code grabbed "480" from "480p"!), we leave those unpriced,
-// flag needs_review, and preserve the raw tier text in pricing_note so nothing is lost. We read RAW
-// cells here (keeping <br>) instead of the <br>-stripped cells() helper, so the note is complete.
+// Seedance video pricing (元/百万token). Simple rows (1.0-pro, 1.0-pro-fast) are a single bare price.
+// The rest tier by output resolution / audio / whether input contains video — axes the token-based
+// PriceCondition can't express, so each tier becomes a `video` price with a {type:'variant', label}
+// condition (the label carries the human-readable axis). The old code wrongly read "480" (a 480p
+// resolution) as a price; we never do that. The 离线推理 (batch) column is secondary — kept as a note.
+// Read RAW cells here (keeping <br>) so multi-bullet tiers survive the <br>-stripping cells() helper.
 function parseVideo(md, out) {
   const start = md.indexOf('# 视频生成模型')
   if (start < 0) return
@@ -197,16 +197,23 @@ function parseVideo(md, out) {
     const id = canonId(name)
     const rec = out.get(matchKey(id)) ?? { id, name, kind: 'video', prices: [] }
     rec.kind = 'video'
-    const simple = simpleVideoPrice(raw[1] ?? '')
+    const online = raw[1] ?? ''
+    const simple = simpleVideoPrice(online)
     if (simple != null) {
-      rec.prices.push(clean({ video: { amount: simple, unit: 'per_1m_tokens' } }))
+      rec.prices.push({ video: { amount: simple, unit: 'per_1m_tokens' } })
     } else {
-      rec.pricing_status = 'needs_review'
-      const note = videoNote(raw[1] ?? '')
-      if (note) rec.pricing_note = note
-      const offline = videoNote(raw[2] ?? '')
-      if (offline && !/暂不支持/u.test(offline)) rec.pricing_note_offline = offline
+      const tiers = parseVideoTiers(online)
+      for (const t of tiers) {
+        rec.prices.push({ conditions: [{ type: 'variant', label: t.label }], video: { amount: t.amount, unit: 'per_1m_tokens' } })
+      }
+      if (!tiers.length) {
+        rec.pricing_status = 'needs_review'
+        const note = videoNote(online)
+        if (note) rec.pricing_note = note
+      }
     }
+    const offline = videoNote(raw[2] ?? '')
+    if (offline && !/暂不支持/u.test(offline)) rec.pricing_note_offline = offline
     out.set(matchKey(rec.id), rec)
   }
 }
@@ -216,6 +223,27 @@ function simpleVideoPrice(cell) {
   if (!s || /[*：:~～]|输入|输出|有声|无声|不含|包含|分辨率/u.test(s)) return null
   const m = s.match(/^\D*(\d+(?:\.\d+)?)/u)
   return m ? Number(m[1]) : null
+}
+// Parse a bulleted online-price cell into { label, amount } tiers. A bullet "<axis>：<price>" is a
+// priced tier; a bullet that is a resolution group header ("输出视频分辨率为 480p，720p") sets the
+// group prefix carried onto the sub-tiers under it.
+function parseVideoTiers(cell) {
+  const bullets = String(cell)
+    .split(/<br>+/u)
+    .map((s) => s.replace(/^[\s>*]+/u, '').trim())
+    .filter(Boolean)
+  const tiers = []
+  let group = ''
+  for (const b of bullets) {
+    const priced = b.match(/^(.+?)[：:]\s*([\d.]+)/u)
+    if (priced && Number.isFinite(Number(priced[2]))) {
+      const label = [group, priced[1].trim()].filter(Boolean).join(' · ')
+      tiers.push({ label, amount: Number(priced[2]) })
+    } else {
+      group = b.replace(/输出视频分辨率为\s*/u, '输出').replace(/\s+/gu, '')
+    }
+  }
+  return tiers
 }
 function videoNote(cell) {
   return String(cell)

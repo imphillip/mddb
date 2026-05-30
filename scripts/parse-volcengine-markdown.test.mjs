@@ -85,21 +85,26 @@ describe('buildModels: tiered LLM prices', () => {
   })
 })
 
-describe('buildModels: video pricing never fabricates', () => {
-  it('keeps a single bare per-1M-token price for simple rows', () => {
+describe('buildModels: video pricing — structured tiers, never fabricated', () => {
+  it('keeps a single bare per-1M-token price for simple rows; offline kept as a note', () => {
     const pro = byId.get('doubao-seedance-1-0-pro')
     expect(pro.prices).toEqual([{ video: { amount: 15, unit: 'per_1m_tokens' } }])
     expect(pro.pricing_status).toBeUndefined()
+    expect(pro.pricing_note_offline).toBe('7.50')
   })
 
-  it('does NOT mistake a resolution (480p) for a price; flags needs_review and keeps raw text', () => {
+  it('captures multi-axis tiers as video prices with a {type:variant,label} condition', () => {
     const m = byId.get('doubao-seedance-2-0')
-    expect(m.prices).toEqual([]) // no fabricated price
-    expect(m.pricing_status).toBe('needs_review')
-    expect(m.pricing_note).toContain('46.00')
-    expect(m.pricing_note).not.toMatch(/^480/) // resolution must not lead as if it were a price
-    // 480 must never appear as a price amount anywhere
-    expect(models.flatMap((x) => x.prices ?? []).some((p) => p.video?.amount === 480)).toBe(false)
+    expect(m.pricing_status).toBeUndefined() // no longer needs_review — prices are captured
+    expect(m.prices).toEqual([
+      { conditions: [{ type: 'variant', label: '输出480p，720p · 输入不含视频' }], video: { amount: 46, unit: 'per_1m_tokens' } },
+      { conditions: [{ type: 'variant', label: '输出480p，720p · 输入包含视频' }], video: { amount: 28, unit: 'per_1m_tokens' } },
+    ])
+  })
+
+  it('never reads a resolution (480p / 720p / 1080p) as a price amount', () => {
+    const amounts = models.flatMap((x) => x.prices ?? []).map((p) => p.video?.amount)
+    expect(amounts.some((a) => [480, 720, 1080].includes(a))).toBe(false)
   })
 })
 

@@ -82,7 +82,7 @@ function validatePrice(price: Price, where: string, errors: string[]): void {
   }
   if (!hasComponent) errors.push(`${where}: price tier has no components`)
   for (const condition of price.conditions ?? []) {
-    if (!['input_token', 'output_token', 'total_token'].includes(condition.type)) {
+    if (!['input_token', 'output_token', 'total_token', 'variant'].includes(condition.type)) {
       errors.push(`${where}: invalid condition type "${condition.type}"`)
     }
   }

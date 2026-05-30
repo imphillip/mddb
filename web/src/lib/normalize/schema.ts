@@ -69,7 +69,10 @@ export const PRICE_COMPONENT_KEYS: readonly PriceComponentKey[] = [
 
 export interface PriceCondition {
   label?: string
-  type: 'input_token' | 'output_token' | 'total_token'
+  // Token-count thresholds use input/output/total_token with gt/gte/lt/lte. `variant` is for tiers
+  // that vary by a non-numeric axis (e.g. video resolution / audio / whether input contains video);
+  // the human-readable axis lives in `label` and no numeric bound applies.
+  type: 'input_token' | 'output_token' | 'total_token' | 'variant'
   gt?: number
   gte?: number
   lt?: number

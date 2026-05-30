@@ -106,10 +106,33 @@ function norm(v) {
 function offerSig(model) {
   const sig = {}
   for (const offer of model.offers ?? []) {
-    const tier = (offer.prices ?? [])[0] ?? {}
-    sig[offer.source] = { currency: offer.currency ?? null, input: tier.input?.amount ?? null, output: tier.output?.amount ?? null }
+    sig[offer.source] = {
+      currency: offer.currency ?? null,
+      prices: priceFingerprint(offer.prices),
+      status: offer.other_params?.pricing_status ?? null,
+    }
   }
   return sig
+}
+// Compact, order-stable fingerprint of EVERY price component across EVERY tier — so changes to
+// non-token components (video / image_output / request / cache) and multi-tier / variant pricing
+// are not missed (the old version only looked at input/output of the first tier).
+function priceFingerprint(prices) {
+  return (
+    (prices ?? [])
+      .map((p) => {
+        const comps = Object.keys(p)
+          .filter((k) => k !== 'conditions')
+          .sort()
+          .map((k) => `${k}=${p[k]?.amount}`)
+          .join(',')
+        const cond = (p.conditions ?? [])
+          .map((c) => c.label ?? [c.type, c.gt, c.gte, c.lt, c.lte].filter((v) => v != null).join(''))
+          .join('|')
+        return cond ? `${cond}{${comps}}` : comps
+      })
+      .join(' ; ') || null
+  )
 }
 function offerChanges(before, after) {
   const a = offerSig(before)

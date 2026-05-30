@@ -41,7 +41,7 @@
       "additionalProperties": false,
       "properties": {
         "label": { "type": "string" },
-        "type": { "type": "string", "enum": ["input_token", "output_token", "total_token"] },
+        "type": { "type": "string", "enum": ["input_token", "output_token", "total_token", "variant"] },
         "gt": { "type": "number" },
         "gte": { "type": "number" },
         "lt": { "type": "number" },

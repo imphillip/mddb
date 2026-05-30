@@ -75,6 +75,9 @@
 - 人民币计价数据源。
 - 可以匹配、补充或创建 canonical model rows，前提是源数据能安全适配当前 `models.json` schema。
 - 重点保留 CNY 官方商业价格、输入长度条件、上下文、限流、modality 与 source/provenance。
+- 抓取走无头浏览器导出的 markdown（见 `docs/volcengine-pricing-fetch.md`），由 `scripts/parse-volcengine-markdown.mjs` 确定性解析。
+- **视频（Seedance）按变体分档计价**：部分模型价格按「输出分辨率 / 是否含视频输入 / 有无声音」分档，不能用 `input_token` 这类按 token 数的条件表达。为此 `PriceCondition.type` 新增取值 `variant`：每个档位是一条 `video` 价格，配 `conditions:[{type:"variant", label:"<档位中文描述>"}]`，分档维度放在 `label`，不带数值阈值。**绝不**把分辨率数字（480/720/1080）当成价格；无法结构化的复杂档位仍标 `pricing_status:needs_review` 并在 `pricing_note` 留原文。离线推理（批量）列为次要信息，保留在 `pricing_note_offline`，不进 `prices[]`。
+- 新增 `variant` 取值时已同步：`web/src/lib/normalize/schema.ts`、`web/src/lib/normalize/validate.ts`、`data/schema/models.v2.schema.json` 与解析器测试。
 
 ## 推荐处理顺序
 

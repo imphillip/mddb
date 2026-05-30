@@ -1418,7 +1418,8 @@
             "unit": "per_1m_tokens"
           }
         }
-      ]
+      ],
+      "pricing_note_offline": "7.50"
     },
     {
       "source_kind": "video",
@@ -1440,7 +1441,8 @@
             "unit": "per_1m_tokens"
           }
         }
-      ]
+      ],
+      "pricing_note_offline": "2.10"
     },
     {
       "source_kind": "video",
@@ -1456,9 +1458,32 @@
         "doubao-seedance-1-5-pro-251215"
       ],
       "rpm": 600,
-      "prices": [],
-      "pricing_status": "needs_review",
-      "pricing_note": "* 有声视频：16.00; * 无声视频：8.00",
+      "prices": [
+        {
+          "conditions": [
+            {
+              "type": "variant",
+              "label": "有声视频"
+            }
+          ],
+          "video": {
+            "amount": 16,
+            "unit": "per_1m_tokens"
+          }
+        },
+        {
+          "conditions": [
+            {
+              "type": "variant",
+              "label": "无声视频"
+            }
+          ],
+          "video": {
+            "amount": 8,
+            "unit": "per_1m_tokens"
+          }
+        }
+      ],
       "pricing_note_offline": "* 有声视频：8.00; * 无声视频：4.00"
     },
     {
@@ -1477,9 +1502,56 @@
       "snapshots": [
         "doubao-seedance-2-0-260128"
       ],
-      "prices": [],
-      "pricing_status": "needs_review",
-      "pricing_note": "* 输出视频分辨率为 480p，720p; * 输入不含视频：46.00; * 输入包含视频：28.00; * 输出视频分辨率为 1080p; * 输入不含视频：51.00; * 输入包含视频：31.00"
+      "prices": [
+        {
+          "conditions": [
+            {
+              "type": "variant",
+              "label": "输出480p，720p · 输入不含视频"
+            }
+          ],
+          "video": {
+            "amount": 46,
+            "unit": "per_1m_tokens"
+          }
+        },
+        {
+          "conditions": [
+            {
+              "type": "variant",
+              "label": "输出480p，720p · 输入包含视频"
+            }
+          ],
+          "video": {
+            "amount": 28,
+            "unit": "per_1m_tokens"
+          }
+        },
+        {
+          "conditions": [
+            {
+              "type": "variant",
+              "label": "输出1080p · 输入不含视频"
+            }
+          ],
+          "video": {
+            "amount": 51,
+            "unit": "per_1m_tokens"
+          }
+        },
+        {
+          "conditions": [
+            {
+              "type": "variant",
+              "label": "输出1080p · 输入包含视频"
+            }
+          ],
+          "video": {
+            "amount": 31,
+            "unit": "per_1m_tokens"
+          }
+        }
+      ]
     },
     {
       "source_kind": "video",
@@ -1497,9 +1569,32 @@
       "snapshots": [
         "doubao-seedance-2-0-fast-260128"
       ],
-      "prices": [],
-      "pricing_status": "needs_review",
-      "pricing_note": "* 输入不含视频：37.00; * 输入包含视频：22.00"
+      "prices": [
+        {
+          "conditions": [
+            {
+              "type": "variant",
+              "label": "输入不含视频"
+            }
+          ],
+          "video": {
+            "amount": 37,
+            "unit": "per_1m_tokens"
+          }
+        },
+        {
+          "conditions": [
+            {
+              "type": "variant",
+              "label": "输入包含视频"
+            }
+          ],
+          "video": {
+            "amount": 22,
+            "unit": "per_1m_tokens"
+          }
+        }
+      ]
     },
     {
       "source_kind": "image",
