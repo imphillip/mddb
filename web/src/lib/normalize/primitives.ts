@@ -71,13 +71,6 @@ export function toEpochSeconds(value: string | number | null | undefined): numbe
   return Number.isNaN(ms) ? null : Math.trunc(ms / 1000)
 }
 
-/** Bailian/Volcengine token-price unit label -> canonical PriceUnit. */
-export function cnyUnit(label: string): 'per_1m_tokens' {
-  // Currently only "每百万tokens" is observed; assert and normalize.
-  if (label.includes('百万')) return 'per_1m_tokens'
-  return 'per_1m_tokens'
-}
-
 /** Map an OpenAI-compatible base URL to its call shape. */
 export function endpointsFromBaseUrl(baseUrl: string | null | undefined): string | null {
   if (!baseUrl) return null

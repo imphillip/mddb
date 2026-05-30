@@ -60,13 +60,24 @@ if (modelSlugs.length === 0 && !catalog) {
   process.exit(1)
 }
 
+const delayMs = args.delayMs === undefined ? 120 : Number(args.delayMs)
 const models = []
-for (const slug of modelSlugs) {
+const failures = []
+for (let i = 0; i < modelSlugs.length; i += 1) {
+  const slug = modelSlugs[i]
   const url = `${DETAIL_BASE}${encodeURIComponent(slug)}?serviceSite=${encodeURIComponent(serviceSite)}`
-  console.error(`Fetching ${slug} ...`)
-  const detail = await fetchDetail(slug, { serviceSite })
-  models.push({ source_url: url, service_site: serviceSite, ...detail })
+  console.error(`Fetching ${slug} (${i + 1}/${modelSlugs.length}) ...`)
+  try {
+    const detail = await fetchDetailWithRetry(slug, { serviceSite })
+    models.push({ source_url: url, service_site: serviceSite, ...detail })
+  } catch (error) {
+    // One bad row must not abort a 1000+ request bulk fetch; log and continue.
+    failures.push(slug)
+    console.error(`  ! skipped ${slug}: ${error?.message ?? error}`)
+  }
+  if (delayMs > 0 && i < modelSlugs.length - 1) await sleep(delayMs)
 }
+if (failures.length) console.error(`Detail fetch failures: ${failures.length} (${failures.slice(0, 20).join(', ')}${failures.length > 20 ? ', …' : ''})`)
 
 const payload = catalog
   ? mergeBailianPayload(previousPayload, { catalog, details: models, fetchedAt, region: DEFAULT_REGION, serviceSite })
@@ -131,6 +142,24 @@ async function fetchList({ serviceSite }) {
     list.push(...(page.list || []))
   }
   return { total, count: list.length, models: list.flatMap((row) => [row, ...(row.items || [])]).map((row) => ({ ...row, slug: slugFromModelCode(row.model || row.modelId), service_site: serviceSite })) }
+}
+
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms))
+}
+
+// Retry a detail fetch a couple times with backoff (handles transient throttling/5xx).
+async function fetchDetailWithRetry(model, opts, attempts = 3) {
+  let lastError
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      return await fetchDetail(model, opts)
+    } catch (error) {
+      lastError = error
+      if (attempt < attempts) await sleep(attempt * 600)
+    }
+  }
+  throw lastError
 }
 
 async function fetchDetail(model, { serviceSite }) {
