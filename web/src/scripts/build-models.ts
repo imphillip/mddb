@@ -14,12 +14,7 @@ import { openRouterFragment, type OpenRouterModel } from '../lib/normalize/adapt
 import { bailianFragment, type BailianModel } from '../lib/normalize/adapters/bailian.js'
 import { modelsDevFragment, type ModelsDevRecord } from '../lib/normalize/adapters/models-dev.js'
 import { liteLLMFragment, type LiteLLMModel } from '../lib/normalize/adapters/litellm.js'
-import {
-  parseVolcengineMediaModels,
-  parseVolcengineSpecs,
-  volcengineFragment,
-  volcengineMediaFragment,
-} from '../lib/normalize/adapters/volcengine.js'
+import { volcengineFragments, type VolcengineModel } from '../lib/normalize/adapters/volcengine.js'
 import { buildProvenanceIndex, mergeFragments } from '../lib/normalize/merge.js'
 import { checkOverrideStaleness, overrideFragment, type OverrideRecord } from '../lib/normalize/overrides.js'
 import { validateModels } from '../lib/normalize/validate.js'
@@ -104,19 +99,8 @@ function loadLiteLLM(dir: string): SourceFragment[] {
 function loadVolcengine(dir: string): SourceFragment[] {
   const path = join(dir, 'volcengine.json')
   if (!existsSync(path)) return []
-  const payload = readJson<{ docs?: Array<{ md_content?: string; url?: string }> }>(path)
-  const fragments: SourceFragment[] = []
-  for (const doc of payload.docs ?? []) {
-    if (!doc.md_content || !doc.md_content.includes('最大 RPM')) continue
-    const opts = doc.url ? { sourceUrl: doc.url } : {}
-    for (const spec of parseVolcengineSpecs(doc.md_content)) {
-      fragments.push(volcengineFragment(spec, opts))
-    }
-    for (const spec of parseVolcengineMediaModels(doc.md_content)) {
-      fragments.push(volcengineMediaFragment(spec, opts))
-    }
-  }
-  return fragments
+  const payload = readJson<{ models?: VolcengineModel[] }>(path)
+  return volcengineFragments(payload.models ?? [])
 }
 
 function main(): void {

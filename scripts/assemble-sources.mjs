@@ -5,7 +5,7 @@
 // and normalization steps. Single-file sources pass through; multi-file sources merge.
 //
 // Usage: node scripts/assemble-sources.mjs [--raw=sources/raw] [--out=sources/assembled]
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 
 const root = process.cwd()
@@ -45,17 +45,14 @@ function assembleOpenRouter() {
   }, parts)
 }
 
-// Volcengine emits one markdown-doc file per document id; merge them into a docs[] array.
+// Volcengine: the markdown parser (scripts/parse-volcengine-markdown.mjs) already produces a
+// structured sources/raw/volcengine/volcengine.json; pass it through.
 function assembleVolcengine() {
-  const dir = join(rawDir, 'volcengine')
-  if (!existsSync(dir)) return skip('volcengine', 'no volcengine/ dir')
-  const files = readdirSync(dir).filter((f) => f.endsWith('.json')).sort()
-  if (files.length === 0) return skip('volcengine', 'no docs')
-  const docs = files.map((f) => {
-    const d = readJson(join(dir, f))
-    return { document_id: d.document_id ?? null, title: d.title ?? null, url: d.url ?? null, updated_time: d.updated_time ?? null, md_content: d.md_content ?? '' }
-  })
-  return write('volcengine', { docs }, files.length)
+  const structured = join(rawDir, 'volcengine', 'volcengine.json')
+  if (!existsSync(structured)) return skip('volcengine', 'no volcengine.json (run parse-volcengine-markdown)')
+  const payload = readJson(structured)
+  const models = Array.isArray(payload.models) ? payload.models : []
+  return write('volcengine', { models }, 1)
 }
 
 // Single-file source: pass the raw payload through unchanged under the canonical name.
