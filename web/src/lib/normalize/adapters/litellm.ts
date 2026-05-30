@@ -127,7 +127,9 @@ function buildOffer(raw: LiteLLMModel, mode: string, options: LiteLLMAdapterOpti
   const price: Price = {}
   for (const [rawKey, target] of Object.entries(TOKEN_PRICE_MAP)) {
     const value = raw[rawKey]
-    if (typeof value !== 'number') continue
+    // A 0 cost is "no charge for this dimension" (e.g. embeddings have no output) — not a real
+    // price; omit it rather than recording a meaningless amount:0 component.
+    if (typeof value !== 'number' || value === 0) continue
     price[target] = { amount: usdPerTokenTo1m(value), unit: 'per_1m_tokens' }
   }
 
@@ -137,7 +139,7 @@ function buildOffer(raw: LiteLLMModel, mode: string, options: LiteLLMAdapterOpti
   if (raw.litellm_provider) otherParams['litellm_provider'] = raw.litellm_provider
   otherParams['mode'] = mode
   for (const [key, value] of Object.entries(raw)) {
-    if (typeof value !== 'number') continue
+    if (typeof value !== 'number' || value === 0) continue
     if (key in TOKEN_PRICE_MAP || !key.includes('cost')) continue
     const mapped = liteLLMCostComponent(key)
     if (mapped && price[mapped.component] === undefined) {

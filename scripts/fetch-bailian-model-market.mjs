@@ -40,6 +40,9 @@ const serviceSite = args.serviceSite || DEFAULT_SERVICE_SITE
 const fetchedAt = new Date().toISOString()
 
 const previousPayload = await readJsonIfExists(outputPath)
+// The detail API keys on the EXACT catalog model_id (case + vendor prefix preserved). A lowercased
+// slug is rejected ("参数错误:model") for mixed-case ids like MiniMax/MiniMax-M2.5, so we fetch by
+// model_id and only use the slug for change-detection / display.
 let modelSlugs = []
 let catalog = null
 if (args.model) modelSlugs.push(args.model)
@@ -47,10 +50,12 @@ if (args.models) modelSlugs.push(...String(args.models).split(',').map((s) => s.
 if (args.incremental || args.fromList) {
   const list = await fetchList({ serviceSite })
   catalog = buildBailianCatalog(list.models, fetchedAt)
+  const idBySlug = new Map(catalog.models.map((m) => [m.slug, m.model_id]).filter(([, id]) => id))
   if (args.incremental) {
-    modelSlugs.push(...selectChangedBailianSlugs(catalog, previousPayload, { force: args.forceDetails, limit }))
+    const changed = selectChangedBailianSlugs(catalog, previousPayload, { force: args.forceDetails, limit })
+    modelSlugs.push(...changed.map((slug) => idBySlug.get(slug) ?? slug))
   } else {
-    modelSlugs.push(...catalog.models.map((m) => m.slug || slugFromModelCode(m.model_id) || slugFromName(m.name)).filter(Boolean))
+    modelSlugs.push(...catalog.models.map((m) => m.model_id).filter(Boolean))
   }
 }
 

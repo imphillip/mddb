@@ -56,3 +56,16 @@ describe('liteLLM embedding fragment', () => {
     expect(fragment.offer?.other_params).not.toHaveProperty('input_cost_per_image')
   })
 })
+
+describe('liteLLM fragment: zero costs are not prices', () => {
+  it('omits an amount:0 component (e.g. embedding output cost) but keeps real ones', () => {
+    const f = liteLLMFragment({
+      model_name: 'amazon.titan-embed-text-v1',
+      mode: 'embedding',
+      input_cost_per_token: 1e-7,
+      output_cost_per_token: 0,
+    } as unknown as LiteLLMModel)
+    expect(f.offer?.prices).toEqual([{ input: { amount: 0.1, unit: 'per_1m_tokens' } }])
+    expect(f.offer?.prices[0]).not.toHaveProperty('output')
+  })
+})
