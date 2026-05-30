@@ -2,11 +2,9 @@ import { describe, expect, it } from 'vitest'
 import {
   bailianApiEnvelopeData,
   buildBailianCatalog,
-  extractVolcengineDocFromHtml,
   mergeBailianPayload,
   normalizeBailianModelDetail,
   selectChangedBailianSlugs,
-  volcengineContentToMarkdown,
 } from './lib/incremental-source-fetch.mjs'
 
 describe('incremental China provider fetch helpers', () => {
@@ -77,26 +75,5 @@ describe('incremental China provider fetch helpers', () => {
       tool_pricing: [expect.objectContaining({ name: 'web_search' })],
       limits: expect.objectContaining({ context_window: 131072 }),
     })
-  })
-
-  it('extracts Volcengine SSR doc content and converts rich ops to markdown text', () => {
-    const content = {
-      version: '1.2.57',
-      data: {
-        0: { ops: [
-          { insert: '*', attributes: { lmkr: '1' } },
-          { insert: '模型列表\n', attributes: { heading: 'h1' } },
-          { insert: 'doubao-seed-2-0\n' },
-        ] },
-      },
-    }
-    const html = `<script>window._SSR_DATA = {"context":{"loaderData":{"x":{"curDoc":{"BusinessID":1330310,"LibraryID":82379,"Title":"模型列表","UpdateTime":"2026-05-26T00:00:00Z","Content":${JSON.stringify(JSON.stringify(content))}}}}}}</script>`
-
-    const doc = extractVolcengineDocFromHtml(html, { url: 'https://www.volcengine.com/docs/82379/1330310?lang=zh' })
-
-    expect(doc).toMatchObject({ library_id: 82379, document_id: 1330310, title: '模型列表', updated_time: '2026-05-26T00:00:00.000Z' })
-    expect(doc.md_content).toContain('# 模型列表')
-    expect(doc.md_content).toContain('doubao-seed-2-0')
-    expect(volcengineContentToMarkdown(content)).toContain('# 模型列表')
   })
 })

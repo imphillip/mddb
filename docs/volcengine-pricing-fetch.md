@@ -16,7 +16,7 @@ URL 形如 `https://www.volcengine.com/docs/82379/<document_id>?lang=zh`。
 
 这两篇文档是 **Feishu/Lark 客户端渲染的 SPA**：原始 HTML 是打乱的 SSR，没有 markdown API，`fetch()` 拿不到表格内容。但页面在每篇文档的 **"···" 溢出菜单**里提供 **"复制 markdown"** 动作，它会把渲染后的表格序列化成**干净的 markdown 表格**。我们要的就是这个 markdown。
 
-> 之前基于普通 `fetch()` 的脚本 `scripts/fetch-volcengine-ark-docs.mjs` 拿到的是打乱的 SSR，已废弃，不要再用它。
+> 之前基于普通 `fetch()` 的脚本（`scripts/fetch-volcengine-ark-docs.mjs`）拿到的是打乱的 SSR，已删除；不要再走 `fetch()` 抓 SSR 这条路。
 
 ## 2. 你要交付什么
 
