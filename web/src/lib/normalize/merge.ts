@@ -7,14 +7,13 @@ import { isNonCanonicalId, uniq, uniqNames } from './primitives.js'
 /** Who may supply the canonical id, best first. models.dev never appears. */
 export const IDENTITY_PRECEDENCE = ['overrides', 'openrouter', 'bailian', 'volcengine', 'litellm']
 
-/** Per-field fact precedence, best first. models.dev is whitelist-only (§4.5). */
+/** Per-field fact precedence, best first. */
 export const FACT_PRECEDENCE = [
   'overrides',
   'openrouter',
   'bailian',
   'volcengine',
   'litellm',
-  'models-dev',
 ]
 
 export interface MergeOptions {
@@ -75,7 +74,8 @@ export function mergeGroup(group: readonly SourceFragment[], options: MergeOptio
     max_input_tokens: pick('max_input_tokens') as number | null,
     max_output_tokens: pick('max_output_tokens') as number | null,
     release_timestamp: pick('release_timestamp') as number | null,
-    knowledge_cutoff: pick('knowledge_cutoff') as number | string | null,
+    // knowledge_cutoff is no longer a live-source field; it is injected into other_parameters
+    // from data/models-dev-frozen.json after merge (see build-models.ts).
     last_updated: options.now ?? new Date().toISOString(),
   }
 

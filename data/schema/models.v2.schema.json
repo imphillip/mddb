@@ -113,7 +113,6 @@
         "max_input_tokens": { "type": ["integer", "null"] },
         "max_output_tokens": { "type": ["integer", "null"] },
         "release_timestamp": { "type": ["integer", "null"] },
-        "knowledge_cutoff": { "type": ["integer", "string", "null"] },
         "last_updated": { "type": "string" },
         "offers": { "type": "array", "items": { "$ref": "#/$defs/offer" } },
         "other_parameters": { "type": "object" },

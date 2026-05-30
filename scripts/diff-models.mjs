@@ -21,7 +21,7 @@ const candidatePath = arg('candidate') ?? join(root, '.internal', 'update', 'mod
 const reportPath = arg('report') ?? join(root, '.internal', 'update', 'change-report.json')
 const maxRemovedPct = Number(arg('max-removed-pct') ?? '5')
 
-const SCALAR_FACTS = ['model', 'author', 'context_length', 'max_input_tokens', 'max_output_tokens', 'reasoning', 'tool_calling', 'knowledge_cutoff', 'release_timestamp']
+const SCALAR_FACTS = ['model', 'author', 'context_length', 'max_input_tokens', 'max_output_tokens', 'reasoning', 'tool_calling', 'release_timestamp']
 const ARRAY_FACTS = ['input_modalities', 'output_modalities', 'alias', 'alias_id']
 
 const current = indexById(readModels(currentPath))

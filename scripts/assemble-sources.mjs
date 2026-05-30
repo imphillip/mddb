@@ -16,7 +16,6 @@ mkdirSync(outDir, { recursive: true })
 const results = []
 results.push(assembleOpenRouter())
 results.push(assembleSingle('litellm', 'litellm-model-prices.raw.json'))
-results.push(assembleSingle('models-dev', 'models-dev-api.raw.json'))
 results.push(assembleSingle('bailian', 'bailian-model-market.json'))
 results.push(assembleVolcengine())
 
@@ -79,7 +78,7 @@ function readRaw(name) {
 }
 function write(source, body, parts) {
   const out = join(outDir, `${source}.json`)
-  const payload = source === 'models-dev' || source === 'bailian' ? body : { source, ...body }
+  const payload = source === 'bailian' ? body : { source, ...body }
   writeFileSync(out, `${JSON.stringify(payload, null, 2)}\n`)
   return { source, out, parts }
 }

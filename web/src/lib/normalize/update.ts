@@ -105,5 +105,16 @@ function normalizeCarried(model: ModelEntry): ModelEntry {
     if (filtered.length) out.alias = filtered
     else delete out.alias
   }
+  // knowledge_cutoff is no longer a top-level field; migrate any legacy value into
+  // other_parameters (fill-only) and strip the top-level key.
+  const legacyCutoff = (out as unknown as Record<string, unknown>)['knowledge_cutoff']
+  if ('knowledge_cutoff' in out) {
+    if (legacyCutoff != null) {
+      const op = { ...(out.other_parameters ?? {}) }
+      if (op['knowledge_cutoff'] == null) op['knowledge_cutoff'] = legacyCutoff
+      out.other_parameters = op
+    }
+    delete (out as unknown as Record<string, unknown>)['knowledge_cutoff']
+  }
   return out
 }

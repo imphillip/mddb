@@ -99,9 +99,9 @@ describe('golden case: qwen3.6-max-preview (OpenRouter + Bailian)', () => {
 
   // Known, intentional deltas vs the hand-curated model_item.json (resolved later):
   //  - model name: auto = upstream "Qwen3.6 Max Preview"; curated "Qwen 3.6 Max" comes via overrides (phase 3)
-  //  - knowledge_cutoff: null here; filled by models.dev whitelist (phase 2), overridable (phase 3)
+  //  - knowledge_cutoff: not a live fact; frozen into other_parameters post-merge (build-models.ts)
   it('leaves curated-only fields for later phases', () => {
     expect(entry.model).toBe('Qwen3.6 Max Preview')
-    expect(entry.knowledge_cutoff).toBeNull()
+    expect(entry).not.toHaveProperty('knowledge_cutoff')
   })
 })

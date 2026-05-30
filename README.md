@@ -27,8 +27,8 @@ https://raw.githubusercontent.com/imphillip/mddb/main/data/models.json
 - `input_modalities` / `output_modalities`：输入、输出模态；
 - `context_length` / `max_output_tokens`：关键上下文参数；
 - `reasoning` / `tool_calling`：能力标记；
-- `knowledge_cutoff` / `released` / `deprecation`：时间信息；
-- `other_parameters`：暂未归类但值得保留的参数；
+- `release_timestamp` / `deprecation`：时间信息；
+- `other_parameters`：暂未归类但值得保留的参数（含 `knowledge_cutoff` 知识截止日期）；
 - `sources`：来源证据。
 
 价格与调用信息以 `offers[]` 内嵌在每个模型上（每个数据源一条 offer，含币种、计价、endpoint、限流）；各源的原始与合并视图见 `sources/`。项目的公开重点是 `models.json`。
@@ -57,7 +57,9 @@ https://raw.githubusercontent.com/imphillip/mddb/main/data/models.json
 ④ apply     合并写入:更新替换、消失模型标 deprecation 保留、护栏拦截异常 → data/models.json
 ```
 
-数据源:OpenRouter（身份 + 美元价 / endpoint）、LiteLLM（规格与复杂美元价、非聊天模型）、models.dev（图标 + 知识截止白名单）、阿里云百炼 / 火山方舟（人民币官方计价）。归一化逻辑在 `web/src/lib/normalize/`（每源一个 adapter → 字段级合并）。
+数据源:OpenRouter（身份 + 美元价 / endpoint）、LiteLLM（规格与复杂美元价、非聊天模型）、阿里云百炼 / 火山方舟（人民币官方计价）。归一化逻辑在 `web/src/lib/normalize/`（每源一个 adapter → 字段级合并）。
+
+`knowledge_cutoff`（知识截止）不再来自任何活动数据源，作为冻结的 maintainer 静态数据保存在 `data/models-dev-frozen.json`，构建时注入到 `other_parameters.knowledge_cutoff`（仅补空）；同文件还保存了无活动源提供的 `release_timestamp` 兜底值。provider 图标是 `data/provider-icons/*.svg` 静态资源，由站点构建直接拷贝。
 
 **火山方舟例外**:火山的两篇文档是 Feishu/Lark 客户端渲染的 SPA,`fetch()` 拿不到表格,需用无头浏览器触发"复制 markdown"导出 `sources/raw/volcengine/ark-models.md` + `ark-pricing.md`,再由 `scripts/parse-volcengine-markdown.mjs` 解析为结构化 `volcengine.json`。因此火山的**抓取**是一个独立的浏览器步骤(`npm run data:volcengine`,需 Playwright),不进 `data:fetch` 自动链;`.md` 与解析产物均已入库,日常 `assemble → normalize` 直接消费。详见 [`docs/volcengine-pricing-fetch.md`](docs/volcengine-pricing-fetch.md)。
 
@@ -73,7 +75,7 @@ git add data/models.json sources/ && git commit
 - `npm run update` 只读、非破坏:候选写到 `.internal/update/`，不动 `data/models.json`。
 - 消失的模型**不删除**,标记 `deprecation: { status: "delisted", since }` 保留。
 - 若某源抓取失败 / 版式突变导致大批模型“消失”,护栏会拦截 `apply`，避免误判下架。
-- 单源命令(按需单独刷新):`npm run data:openrouter | data:litellm | data:models-dev | data:bailian`，随后 `npm run data:assemble`。
+- 单源命令(按需单独刷新):`npm run data:openrouter | data:litellm | data:bailian`，随后 `npm run data:assemble`。
 - 火山方舟单独刷新(需 Playwright 主机):`npm run data:volcengine`(抓 markdown + 解析);仅重跑解析(已有 `.md`)用 `npm run data:volcengine:parse`。
 - 首次运行(无既有 `models.json`)等同重建:diff 把全部模型计为“新增”。
 

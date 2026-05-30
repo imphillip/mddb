@@ -63,7 +63,6 @@
         "context_length": { "type": "integer", "minimum": 0 },
         "max_input_tokens": { "type": "integer", "minimum": 0 },
         "max_output_tokens": { "type": "integer", "minimum": 0 },
-        "knowledge_cutoff": { "$ref": "#/$defs/dateLike" },
         "released": { "$ref": "#/$defs/dateLike" },
         "deprecation": { "$ref": "#/$defs/dateLike" },
         "other_parameters": {

@@ -2,8 +2,7 @@ import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { openRouterFragment, type OpenRouterModel } from './adapters/openrouter.js'
 import { bailianFragment, type BailianModel } from './adapters/bailian.js'
-import { modelsDevFragment, type ModelsDevRecord } from './adapters/models-dev.js'
-import { buildProvenanceIndex, mergeFragments } from './merge.js'
+import { mergeFragments } from './merge.js'
 import { checkOverrideStaleness, overrideFragment, type OverrideRecord } from './overrides.js'
 import type { ModelEntry, SourceFragment } from './schema.js'
 
@@ -12,45 +11,31 @@ const load = <T>(name: string): T =>
 
 const orRaw = load<OpenRouterModel>('openrouter-qwen3.6-max-preview.json')
 const bailianRaw = load<BailianModel>('bailian-qwen3.6-max-preview.json')
-const modelsDevRaw = load<ModelsDevRecord[]>('models-dev-qwen3.6-max-preview.json')
 
 function baseFragments(): SourceFragment[] {
   const or = openRouterFragment(orRaw, { observedAt: '2026-05-19T22:11:55.841Z' })
   const bailian = bailianFragment(bailianRaw, { observedAt: '2026-05-24T18:19:06Z' })
-  const modelsDev = modelsDevFragment(modelsDevRaw, { observedAt: '2026-05-26T21:03:51.956Z' })
-  if (!bailian || !modelsDev) throw new Error('fragment unexpectedly dropped')
-  return [or, bailian, modelsDev]
+  if (!bailian) throw new Error('fragment unexpectedly dropped')
+  return [or, bailian]
 }
 
 const byId = (entries: ModelEntry[]): Map<string, ModelEntry> =>
   new Map(entries.map((e) => [e.id, e]))
 
-describe('full pipeline: OpenRouter + Bailian + models.dev', () => {
+describe('full pipeline: OpenRouter + Bailian', () => {
   const auto = mergeFragments(baseFragments(), { now: '2026-05-26T21:03:51.956Z' })
   const entry = auto[0]!
 
-  it('fills knowledge_cutoff from models.dev (month precision, nobody else has it)', () => {
-    expect(entry.knowledge_cutoff).toBe('2025-04')
+  it('keeps OpenRouter release_timestamp', () => {
+    expect(entry.release_timestamp).toBe(1777260242)
   })
 
-  it('keeps OpenRouter release_timestamp over the models.dev fallback', () => {
-    expect(entry.release_timestamp).toBe(1777260242)
+  it('does not carry a top-level knowledge_cutoff (now frozen into other_parameters)', () => {
+    expect(entry).not.toHaveProperty('knowledge_cutoff')
   })
 
   it('keeps the published entry clean (no embedded provenance)', () => {
     expect(entry).not.toHaveProperty('provenance')
-  })
-
-  it('tracks facts-only contributors in a SEPARATE provenance sidecar', () => {
-    const index = buildProvenanceIndex(baseFragments())
-    expect(index['qwen3.6-max-preview']).toEqual([
-      {
-        source: 'models-dev',
-        source_ids: ['qwen3.6-max-preview'],
-        contributed: ['knowledge_cutoff', 'release_timestamp'],
-        observed_at: '2026-05-26T21:03:51.956Z',
-      },
-    ])
   })
 })
 

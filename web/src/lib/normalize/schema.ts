@@ -127,7 +127,8 @@ export interface ModelFacts {
   max_input_tokens?: number | null
   max_output_tokens?: number | null
   release_timestamp?: number | null
-  knowledge_cutoff?: number | string | null
+  // knowledge_cutoff is not a live-source fact; it is frozen maintainer data injected into
+  // other_parameters post-merge (data/models-dev-frozen.json). See build-models.ts.
   other_parameters?: Record<string, unknown>
 }
 

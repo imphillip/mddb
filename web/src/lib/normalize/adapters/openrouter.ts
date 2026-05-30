@@ -67,7 +67,7 @@ export function openRouterFragment(
     context_length: raw.context_length ?? raw.top_provider?.context_length ?? null,
     max_output_tokens: raw.top_provider?.max_completion_tokens ?? null,
     release_timestamp: raw.created ?? null,
-    knowledge_cutoff: raw.knowledge_cutoff ?? null,
+    // knowledge_cutoff is no longer a live fact (frozen into other_parameters; see build-models.ts).
     reasoning: params.includes('reasoning') || params.includes('include_reasoning'),
     tool_calling: params.includes('tools') || params.includes('tool_choice'),
   }

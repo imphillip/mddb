@@ -52,17 +52,14 @@
 - 可补充 USD 阶梯式或条件式计价。
 - 可以在高置信匹配或 importer 明确允许的模式下补充 canonical model rows；adapter/gateway-shaped IDs 需要严格过滤。
 
-### models.dev
+### models.dev（已作为活动数据源移除）
 
-- 用于补充厂牌/logo/icon 相关信息，以及**窄白名单 facts 补空**。
-- 不作为 canonical model 来源；不根据 models.dev model rows 创建 canonical models。
-- 不根据 models.dev offers/prices 覆盖官方商业价格（其 `cost` 字段禁用）。
-- **窄白名单补空**：models.dev 可作为**最低优先级**来源，仅补空以下字段，且永不覆盖结构化源已有值：
-  - `knowledge_cutoff` ← `knowledge`（其他源都不提供，价值最大；月精度按 `YYYY-MM` 字符串保留，不伪造日精度 epoch）；
-  - `release_date`（可选，仅当 OpenRouter/百炼/火山/LiteLLM 均缺失发布时间时）。
-- models.dev 数据按 provider 分条、同一 id 多条且不一致：每个白名单字段按**非空值多数表决**（字母序打破平票）确定，冲突无法判定时留空。
-- 与 OR/百炼权威字段打架的字段（如 `limit.context`、`cost`）一律不采用。
-- models.dev 的贡献记入**单独的来源旁路文件**（不内嵌进 `models.json`，后者保持干净），且不得伪装成模型身份来源。
+- models.dev **不再是 `models.json` 的活动数据源**：归一化管线不再抓取/合并它。
+- 它原来贡献的两类字段被一次性**冻结**为 maintainer 静态数据 `data/models-dev-frozen.json`，构建时由 `applyFrozenFacts`（合并之后、仅补空）注入：
+  - `knowledge_cutoff` → `other_parameters.knowledge_cutoff`（不再是顶层字段；月精度 `YYYY-MM` 原样保留，不伪造日精度 epoch）；
+  - `release_timestamp` → 顶层字段，**仅补空**那些无任何活动源提供发布时间的模型。
+- 冻结快照永不覆盖活动源已产出的值；未来新模型不会自动获得 `knowledge_cutoff`（需要时手动补 `data/models-dev-frozen.json`）。
+- provider **图标**是另一条独立路径：`data/provider-icons/*.svg` 静态资源，由站点构建直接拷贝，不依赖 models.dev 活动抓取。
 
 ### 百炼 / Alibaba Bailian
 
@@ -83,21 +80,19 @@
 
 推荐顺序如下；它是稳定合并顺序，不是权限排序：
 
-1. 拉取 raw source data：OpenRouter、LiteLLM、models.dev，以及百炼/火山的本地或抓取来源。
+1. 拉取 raw source data：OpenRouter、LiteLLM，以及百炼/火山的本地或抓取来源。
 2. OpenRouter populate：生成/刷新 OpenRouter 拥有的模型与 provider offer 事实，并保留已有非 OpenRouter 补充事实。
 3. LiteLLM populate：补充允许模式的 canonical rows、规格与复杂 USD 计价。
-4. models.dev icon enrichment：只补 icon/logo 相关字段。
-5. noncanonical prune：移除 router/product/free/latest 等不应作为 canonical model 的行。
-6. 百炼 merge：补 CNY facts/prices，必要时补 canonical rows。
-7. 火山 merge：补 CNY facts/prices，必要时补 canonical rows。
+4. noncanonical prune：移除 router/product/free/latest 等不应作为 canonical model 的行。
+5. 百炼 merge：补 CNY facts/prices，必要时补 canonical rows。
+6. 火山 merge：补 CNY facts/prices，必要时补 canonical rows。
+7. frozen facts 注入：从 `data/models-dev-frozen.json` 仅补空 `other_parameters.knowledge_cutoff` 与兜底 `release_timestamp`。
 8. dangling provider offer cleanup：清理所有指向缺失 canonical model IDs 的 provider offers。
 9. 运行测试、quality gate、diff check。
 
 ## 必须验证的规则
 
-- models.dev 不应成为 canonical model source。
-- models.dev 不应创建模型价格或 provider offer 价格。
-- models.dev 只能在白名单字段（`knowledge_cutoff`、可选 `release_date`）上以最低优先级补空，且永不覆盖结构化源已有值。
+- `knowledge_cutoff` 不是任何活动源的字段；只能由冻结快照注入 `other_parameters`，永不覆盖活动源已有值。
 - 百炼与火山允许出现在 canonical model `sources[]`，包括新增模型。
 - canonical model source 不应被限制为 OpenRouter/LiteLLM。
 - provider offers 的 `model_id` 必须全部指向现有 canonical model。

@@ -12,11 +12,11 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { openRouterFragment, type OpenRouterModel } from '../lib/normalize/adapters/openrouter.js'
 import { bailianFragment, type BailianModel } from '../lib/normalize/adapters/bailian.js'
-import { modelsDevFragment, type ModelsDevRecord } from '../lib/normalize/adapters/models-dev.js'
 import { liteLLMFragment, type LiteLLMModel } from '../lib/normalize/adapters/litellm.js'
 import { volcengineFragments, type VolcengineModel } from '../lib/normalize/adapters/volcengine.js'
 import { buildProvenanceIndex, mergeFragments } from '../lib/normalize/merge.js'
 import { checkOverrideStaleness, overrideFragment, type OverrideRecord } from '../lib/normalize/overrides.js'
+import { applyFrozenFacts, type FrozenFacts } from '../lib/normalize/frozen-facts.js'
 import { validateModels } from '../lib/normalize/validate.js'
 import type { ModelEntry, SourceFragment } from '../lib/normalize/schema.js'
 
@@ -64,25 +64,6 @@ function loadBailian(dir: string): SourceFragment[] {
     .filter((f): f is SourceFragment => f !== null)
 }
 
-function loadModelsDev(dir: string): SourceFragment[] {
-  const path = join(dir, 'models-dev.json')
-  if (!existsSync(path)) return []
-  const providers = readJson<Record<string, { models?: Record<string, ModelsDevRecord> }>>(path)
-  const byId = new Map<string, ModelsDevRecord[]>()
-  for (const [providerId, provider] of Object.entries(providers)) {
-    if (!isRecord(provider) || !isRecord(provider.models)) continue
-    for (const [modelId, record] of Object.entries(provider.models)) {
-      const enriched: ModelsDevRecord = { ...record, id: record.id ?? modelId, provider: providerId }
-      const bucket = byId.get(enriched.id)
-      if (bucket) bucket.push(enriched)
-      else byId.set(enriched.id, [enriched])
-    }
-  }
-  return [...byId.values()]
-    .map((records) => modelsDevFragment(records))
-    .filter((f): f is SourceFragment => f !== null)
-}
-
 function loadLiteLLM(dir: string): SourceFragment[] {
   const path = join(dir, 'litellm.json')
   if (!existsSync(path)) return []
@@ -103,6 +84,11 @@ function loadVolcengine(dir: string): SourceFragment[] {
   return volcengineFragments(payload.models ?? [])
 }
 
+/** Load the frozen maintainer facts snapshot (see frozen-facts.ts). */
+function loadFrozen(path: string): Record<string, FrozenFacts> {
+  return existsSync(path) ? readJson<Record<string, FrozenFacts>>(path) : {}
+}
+
 function main(): void {
   const sources = arg('sources')
   if (!sources) {
@@ -116,7 +102,6 @@ function main(): void {
   const bySource = {
     openrouter: loadOpenRouter(sources),
     bailian: loadBailian(sources),
-    'models-dev': loadModelsDev(sources),
     litellm: loadLiteLLM(sources),
     volcengine: loadVolcengine(sources),
   }
@@ -129,6 +114,9 @@ function main(): void {
   const finalEntries = mergeFragments([...sourceFragments, ...overrideFrags], { now })
   const autoById = new Map(autoEntries.map((e) => [e.id, e]))
   const staleness = checkOverrideStaleness(overrides, autoById)
+
+  const frozenPath = arg('frozen', join(process.cwd(), 'data', 'models-dev-frozen.json'))!
+  const frozenApplied = applyFrozenFacts(finalEntries, loadFrozen(frozenPath))
 
   const validation = validateModels(finalEntries)
 
@@ -145,7 +133,7 @@ function main(): void {
   const withOffers = finalEntries.filter((e: ModelEntry) => e.offers.length > 0).length
   console.log('build-models: wrote', out, '+', provenancePath)
   console.log('  fragments:', Object.entries(bySource).map(([s, f]) => `${s}=${f.length}`).join(' '))
-  console.log('  canonical models:', finalEntries.length, '| with offers:', withOffers)
+  console.log('  canonical models:', finalEntries.length, '| with offers:', withOffers, '| frozen facts applied:', frozenApplied)
   console.log('  overrides:', overrides.length, '| stale audits:', staleness.length)
   for (const audit of staleness.filter((a) => a.status !== 'active')) {
     console.log(`  override ${audit.status}: ${audit.id}.${audit.field}`)

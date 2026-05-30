@@ -52,7 +52,7 @@ describe('deployment separation', () => {
     expect(readme).toContain('scripts/')
     expect(readme).toContain('OpenRouter')
     expect(readme).toContain('LiteLLM')
-    expect(readme).toContain('models.dev')
+    expect(readme).toContain('火山方舟')
     expect(readme).not.toContain('BaseLLM / NewAPI')
     expect(readme).not.toContain('AIHOT')
     expect(readme).not.toContain('项目的核心不是前端站点')

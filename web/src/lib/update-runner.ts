@@ -19,10 +19,6 @@ const UPDATE_SOURCES = {
     id: 'openrouter',
     defaultShellCommand: 'npm run data:openrouter && npm run registry:populate:openrouter',
   },
-  modelsDev: {
-    id: 'models-dev',
-    defaultShellCommand: 'npm run data:models-dev && npm run registry:populate:models-dev',
-  },
 } satisfies Record<string, UpdateSourceConfig>
 
 export type PreviewResult = {
@@ -45,11 +41,6 @@ const DEFAULT_TIMEOUT_MS = 15 * 60 * 1000
 export async function previewOpenRouterUpdate(options: UpdateOptions): Promise<PreviewResult> {
   return previewUpdate({ ...options, source: UPDATE_SOURCES.openrouter })
 }
-
-export async function previewModelsDevUpdate(options: UpdateOptions): Promise<PreviewResult> {
-  return previewUpdate({ ...options, source: UPDATE_SOURCES.modelsDev })
-}
-
 
 async function previewUpdate(options: UpdateOptions & { source: UpdateSourceConfig }): Promise<PreviewResult> {
   const repoRoot = resolve(options.repoRoot)
