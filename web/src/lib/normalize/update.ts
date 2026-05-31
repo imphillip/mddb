@@ -1,6 +1,7 @@
 // Daily-update apply step: merge a freshly-normalized candidate with the current
 // published models, marking models that disappeared from every source as `delisted`
 // (kept, not deleted) and clearing the mark when a model reappears.
+import { matchKey } from './primitives.js'
 import type { ModelEntry } from './schema.js'
 
 export interface MergeResult {
@@ -24,7 +25,9 @@ export function mergeWithDeprecations(
   const candidateById = new Map(candidate.map((m) => [m.id, m]))
   // Ids that a candidate now folds in as an alias (e.g. a dated snapshot folded to its base).
   // A current model with such an id was renamed/folded, not delisted.
-  const foldedAway = new Set(candidate.flatMap((m) => m.alias_id ?? []))
+  // Separator-insensitive (matchKey): a current id like `anthropic.claude-haiku-4-5` (dot) is folded
+  // when a candidate alias is `anthropic-claude-haiku-4-5` (dash) — same model, different id form.
+  const foldedAway = new Set(candidate.flatMap((m) => m.alias_id ?? []).map(matchKey))
   const models: ModelEntry[] = []
   const reactivated: string[] = []
 
@@ -43,7 +46,7 @@ export function mergeWithDeprecations(
   const stillDeprecated: string[] = []
   for (const model of current) {
     if (candidateById.has(model.id)) continue
-    if (foldedAway.has(model.id)) continue // folded into a candidate base; not a delisting
+    if (foldedAway.has(matchKey(model.id))) continue // folded into a candidate base; not a delisting
     // Carried-forward (delisted) entries are frozen — they aren't re-derived from sources,
     // so re-apply the pure-function format invariants (alias≠model, endpoints enum) to keep
     // historical records consistent with current rules.

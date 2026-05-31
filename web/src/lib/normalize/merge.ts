@@ -93,7 +93,13 @@ export function mergeGroup(group: readonly SourceFragment[], options: MergeOptio
   const outMod = pick('output_modalities')
   if (outMod) entry.output_modalities = outMod
 
-  const aliasIds = uniq(byIdentity.flatMap((f) => f.aliasIds)).filter((alias) => alias !== id)
+  // alias_id = every fragment's own aliasIds PLUS any fragment identityId that differs from the
+  // chosen canonical id (so matchKey-merged id-forms like claude-3-5-sonnet ⟷ claude-3.5-sonnet are
+  // recorded as aliases — and a later id change registers as a fold, not a delist).
+  const aliasIds = uniq([
+    ...byIdentity.flatMap((f) => f.aliasIds),
+    ...byIdentity.map((f) => f.identityId).filter((x): x is string => Boolean(x)),
+  ]).filter((alias) => alias !== id)
   if (aliasIds.length) entry.alias_id = aliasIds
   // alias holds OTHER display names; drop any that merely repeat the model name
   // (case/separator-insensitive) so model and alias never carry the same value.

@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
-import { authorFromLiteLLM, liteLLMCanonicalEligible, liteLLMFragment, type LiteLLMModel } from './litellm.js'
+import { authorFromLiteLLM, cleanLiteLLMId, liteLLMCanonicalEligible, liteLLMFragment, type LiteLLMModel } from './litellm.js'
 
 const load = (name: string): LiteLLMModel =>
   JSON.parse(readFileSync(new URL(`../__fixtures__/${name}`, import.meta.url), 'utf8')) as LiteLLMModel
@@ -74,6 +74,26 @@ describe('authorFromLiteLLM', () => {
     expect(authorFromLiteLLM('base', 'deepgram')).toBe('deepgram') // generic ASR name, dev via provider
     expect(authorFromLiteLLM('mystery-model', 'bedrock')).toBeNull() // gateway provider -> no guess
     expect(authorFromLiteLLM('some-thing', undefined)).toBeNull()
+  })
+})
+
+describe('cleanLiteLLMId', () => {
+  it('strips bedrock/vertex/databricks/region vendor namespace prefixes', () => {
+    expect(cleanLiteLLMId('amazon.titan-embed-text-v1')).toBe('titan-embed-text-v1')
+    expect(cleanLiteLLMId('anthropic.claude-opus-4-7')).toBe('claude-opus-4-7')
+    expect(cleanLiteLLMId('us.anthropic.claude-opus-4-7')).toBe('claude-opus-4-7')
+    expect(cleanLiteLLMId('databricks-claude-opus-4')).toBe('claude-opus-4')
+    expect(cleanLiteLLMId('databricks-meta-llama-3-70b-instruct')).toBe('llama-3-70b-instruct')
+    expect(cleanLiteLLMId('anthropic-claude-3-opus')).toBe('claude-3-opus')
+    expect(cleanLiteLLMId('cohere.command-r-08-2024')).toBe('command-r-08-2024')
+    expect(cleanLiteLLMId('qwen.qwen3-coder-next')).toBe('qwen3-coder-next')
+  })
+
+  it('does NOT strip a dash-vendor that is the model-name root', () => {
+    expect(cleanLiteLLMId('mistral-7b-instruct-v0.1')).toBe('mistral-7b-instruct-v0.1')
+    expect(cleanLiteLLMId('qwen-3-32b')).toBe('qwen-3-32b')
+    expect(cleanLiteLLMId('deepseek-coder')).toBe('deepseek-coder')
+    expect(cleanLiteLLMId('databricks-mistral-large')).toBe('mistral-large')
   })
 })
 

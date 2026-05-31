@@ -127,6 +127,21 @@ export function authorFromLiteLLM(rawId: string, provider: string | undefined): 
   return null
 }
 
+// Many LiteLLM ids carry a redundant vendor namespace prefix (bedrock / vertex / databricks routes).
+// The vendor is now the `author` field, so strip the prefix to get the clean canonical id — this also
+// folds gateway/region duplicates (us.anthropic.claude-opus-4-7, anthropic.claude-..., databricks-
+// claude-... → claude-opus-4-7). CAUTION: only strip where the vendor is a pure NAMESPACE, never the
+// model-name root — so a DOT prefix is always safe (amazon.titan, qwen.qwen3), but a DASH prefix is
+// stripped only for namespace-only vendors (anthropic-claude, meta-llama), NOT mistral-7b / qwen-3 /
+// deepseek-coder where the vendor IS the name.
+const VENDOR_DOT_PREFIX = /^(amazon|anthropic|ai21|cohere|meta|mistral|minimax|qwen|deepseek|moonshot|bytedance)\./u
+const VENDOR_DASH_PREFIX = /^(amazon|anthropic|ai21|cohere|meta)-/u
+
+export function cleanLiteLLMId(id: string): string {
+  const stripped = id.replace(ID_GATEWAY_PREFIX, '').replace(VENDOR_DOT_PREFIX, '').replace(VENDOR_DASH_PREFIX, '')
+  return stripped.length > 0 ? stripped : id
+}
+
 /** True for clean, model-shaped ids; false for arn/config/multi-segment gateway keys. */
 export function liteLLMCanonicalEligible(name: string): boolean {
   if (/[\s:]/u.test(name)) return false
@@ -139,14 +154,16 @@ export function liteLLMCanonicalEligible(name: string): boolean {
 
 export function liteLLMFragment(raw: LiteLLMModel, options: LiteLLMAdapterOptions = {}): SourceFragment {
   const mode = raw.mode ?? 'chat'
-  // Fold dated snapshots to the base id (e.g. gpt-4.1-2025-04-14 -> gpt-4.1) so they merge
-  // with the base instead of duplicating it; keep the dated id as an alias.
-  const fullId = canonicalId(raw.model_name)
+  // Strip redundant vendor/gateway/region prefixes (author is its own field), then fold dated
+  // snapshots (gpt-4.1-2025-04-14 -> gpt-4.1). Keep the original id as an alias.
+  const rawId = canonicalId(raw.model_name)
+  const fullId = cleanLiteLLMId(rawId)
   const id = foldSnapshotId(fullId)
   const eligible = liteLLMCanonicalEligible(raw.model_name)
 
   const facts: ModelFacts = {}
-  const author = authorFromLiteLLM(fullId, raw.litellm_provider)
+  // derive author from the ORIGINAL id (more signal than the cleaned one)
+  const author = authorFromLiteLLM(rawId, raw.litellm_provider)
   if (author) {
     facts.author = author
     facts.author_id = author
@@ -173,7 +190,7 @@ export function liteLLMFragment(raw: LiteLLMModel, options: LiteLLMAdapterOption
     source: 'litellm',
     matchKey: matchKey(id),
     identityId: eligible ? id : null,
-    aliasIds: id !== fullId ? [fullId] : [],
+    aliasIds: [...new Set([rawId, fullId].filter((a) => a !== id))],
     aliasNames: [],
     facts,
     ...(endpoint ? { endpoint } : {}),

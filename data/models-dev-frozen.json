@@ -5,74 +5,36 @@
   "alibaba-qwen3-32b": {
     "release_timestamp": 1745971200
   },
-  "anthropic-claude-3-opus": {
-    "knowledge_cutoff": "2023-08",
-    "release_timestamp": 1709164800
-  },
-  "anthropic-claude-3.5-haiku": {
-    "knowledge_cutoff": "2024-07",
-    "release_timestamp": 1730764800
-  },
-  "anthropic-claude-3.5-sonnet": {
-    "knowledge_cutoff": "2024-04",
-    "release_timestamp": 1718841600
-  },
-  "anthropic-claude-3.7-sonnet": {
-    "knowledge_cutoff": "2024-11",
-    "release_timestamp": 1740355200
-  },
-  "anthropic.claude-haiku-4-5": {
-    "knowledge_cutoff": "2025-02-28",
-    "release_timestamp": 1760486400
-  },
-  "anthropic.claude-opus-4-6-v1": {
-    "knowledge_cutoff": "2025-05-31",
-    "release_timestamp": 1770249600
-  },
-  "anthropic.claude-opus-4-7": {
-    "knowledge_cutoff": "2026-01-31",
-    "release_timestamp": 1776297600
-  },
-  "anthropic.claude-sonnet-4-6": {
-    "knowledge_cutoff": "2025-08-31",
-    "release_timestamp": 1771286400
-  },
-  "au.anthropic.claude-opus-4-6-v1": {
-    "knowledge_cutoff": "2025-05",
-    "release_timestamp": 1770249600
-  },
-  "au.anthropic.claude-sonnet-4-6": {
-    "knowledge_cutoff": "2025-08",
-    "release_timestamp": 1771286400
-  },
-  "claude-3-5-sonnet": {
-    "knowledge_cutoff": "2024-04-30",
-    "release_timestamp": 1729555200
-  },
   "claude-3-7-sonnet": {
-    "knowledge_cutoff": "2024-10-31",
+    "knowledge_cutoff": "2024-11",
     "release_timestamp": 1740355200
   },
   "claude-3-haiku": {
     "knowledge_cutoff": "2023-08-31"
   },
   "claude-3-opus": {
-    "knowledge_cutoff": "2023-08-31",
-    "release_timestamp": 1709510400
+    "knowledge_cutoff": "2023-08",
+    "release_timestamp": 1709164800
   },
   "claude-3-sonnet": {
     "knowledge_cutoff": "2023-08-31",
     "release_timestamp": 1709510400
   },
   "claude-3.5-haiku": {
-    "knowledge_cutoff": "2024-07-31"
+    "knowledge_cutoff": "2024-07",
+    "release_timestamp": 1730764800
+  },
+  "claude-3.5-sonnet": {
+    "knowledge_cutoff": "2024-04",
+    "release_timestamp": 1718841600
   },
   "claude-4-opus": {
     "knowledge_cutoff": "2025-03-31",
     "release_timestamp": 1749686400
   },
   "claude-haiku-4.5": {
-    "knowledge_cutoff": "2025-02-28"
+    "knowledge_cutoff": "2025-02-28",
+    "release_timestamp": 1760486400
   },
   "claude-opus-4": {
     "knowledge_cutoff": "2025-01-31"
@@ -81,15 +43,21 @@
     "knowledge_cutoff": "2025-05-31",
     "release_timestamp": 1770249600
   },
+  "claude-opus-4-6-v1": {
+    "knowledge_cutoff": "2025-05-31",
+    "release_timestamp": 1770249600
+  },
   "claude-opus-4-7-default": {
     "knowledge_cutoff": "2026-01-31",
     "release_timestamp": 1776297600
   },
   "claude-opus-4.1": {
-    "knowledge_cutoff": "2025-01-31"
+    "knowledge_cutoff": "2025-01-31",
+    "release_timestamp": 1754352000
   },
   "claude-opus-4.5": {
-    "knowledge_cutoff": "2025-03-31"
+    "knowledge_cutoff": "2025-03-31",
+    "release_timestamp": 1763942400
   },
   "claude-opus-4.6": {
     "knowledge_cutoff": "2025-05-31"
@@ -98,20 +66,24 @@
     "knowledge_cutoff": "2025-05-31"
   },
   "claude-opus-4.7": {
-    "knowledge_cutoff": "2026-01-31"
+    "knowledge_cutoff": "2026-01-31",
+    "release_timestamp": 1776297600
   },
   "claude-sonnet-4": {
-    "knowledge_cutoff": "2025-01-31"
+    "knowledge_cutoff": "2025-01-31",
+    "release_timestamp": 1759104000
   },
   "claude-sonnet-4-6-default": {
     "knowledge_cutoff": "2025-08-31",
     "release_timestamp": 1771286400
   },
   "claude-sonnet-4.5": {
-    "knowledge_cutoff": "2025-01-31"
+    "knowledge_cutoff": "2025-01-31",
+    "release_timestamp": 1759104000
   },
   "claude-sonnet-4.6": {
-    "knowledge_cutoff": "2025-08-31"
+    "knowledge_cutoff": "2025-08-31",
+    "release_timestamp": 1771286400
   },
   "codellama-7b-instruct-solidity": {
     "knowledge_cutoff": "2023-06-30"
@@ -133,23 +105,6 @@
     "knowledge_cutoff": "2024-04",
     "release_timestamp": 1747353600
   },
-  "cohere-embed-v3-english": {
-    "release_timestamp": 1699315200
-  },
-  "cohere-embed-v3-multilingual": {
-    "release_timestamp": 1699315200
-  },
-  "cohere.command-r-08-2024": {
-    "knowledge_cutoff": "2024-06-01",
-    "release_timestamp": 1724976000
-  },
-  "cohere.command-r-plus-08-2024": {
-    "knowledge_cutoff": "2024-06-01",
-    "release_timestamp": 1724976000
-  },
-  "cohere.embed-v4.0": {
-    "release_timestamp": 1744675200
-  },
   "command-a": {
     "knowledge_cutoff": "2024-08-31"
   },
@@ -161,10 +116,12 @@
     "release_timestamp": 1710115200
   },
   "command-r-08-2024": {
-    "knowledge_cutoff": "2024-03-31"
+    "knowledge_cutoff": "2024-06-01",
+    "release_timestamp": 1724976000
   },
   "command-r-plus-08-2024": {
-    "knowledge_cutoff": "2024-03-31"
+    "knowledge_cutoff": "2024-06-01",
+    "release_timestamp": 1724976000
   },
   "command-r7b-12-2024": {
     "knowledge_cutoff": "2024-08-31"
@@ -174,56 +131,6 @@
   },
   "dall-e-3": {
     "release_timestamp": 1699228800
-  },
-  "databricks-claude-haiku-4-5": {
-    "knowledge_cutoff": "2025-02-28",
-    "release_timestamp": 1760486400
-  },
-  "databricks-claude-opus-4-1": {
-    "knowledge_cutoff": "2025-03-31",
-    "release_timestamp": 1754352000
-  },
-  "databricks-claude-opus-4-5": {
-    "knowledge_cutoff": "2025-03-31",
-    "release_timestamp": 1763942400
-  },
-  "databricks-claude-sonnet-4": {
-    "knowledge_cutoff": "2025-07-31",
-    "release_timestamp": 1759104000
-  },
-  "databricks-claude-sonnet-4-5": {
-    "knowledge_cutoff": "2025-07-31",
-    "release_timestamp": 1759104000
-  },
-  "databricks-gemini-2-5-flash": {
-    "knowledge_cutoff": "2025-01",
-    "release_timestamp": 1742428800
-  },
-  "databricks-gemini-2-5-pro": {
-    "knowledge_cutoff": "2025-01",
-    "release_timestamp": 1742428800
-  },
-  "databricks-gpt-5": {
-    "knowledge_cutoff": "2024-09-30",
-    "release_timestamp": 1754524800
-  },
-  "databricks-gpt-5-1": {
-    "knowledge_cutoff": "2024-09-30",
-    "release_timestamp": 1762992000
-  },
-  "databricks-gpt-5-mini": {
-    "knowledge_cutoff": "2024-05-30",
-    "release_timestamp": 1754524800
-  },
-  "databricks-gpt-5-nano": {
-    "knowledge_cutoff": "2024-05-30",
-    "release_timestamp": 1754524800
-  },
-  "databricks-gpt-oss-120b": {
-    "release_timestamp": 1754352000
-  },
-  "databricks-gpt-oss-20b": {
-    "release_timestamp": 1754352000
   },
   "deepseek-chat": {
     "knowledge_cutoff": "2024-07-31"
@@ -277,6 +184,9 @@
   },
   "deepseek-v4-pro": {
     "knowledge_cutoff": "2025-05"
+  },
+  "devstral-2-123b": {
+    "release_timestamp": 1771286400
   },
   "devstral-2512": {
     "knowledge_cutoff": "2025-12"
@@ -344,6 +254,12 @@
   "embed-v-4-0": {
     "release_timestamp": 1744675200
   },
+  "embed-v3-english": {
+    "release_timestamp": 1699315200
+  },
+  "embed-v3-multilingual": {
+    "release_timestamp": 1699315200
+  },
   "ernie-4.5-21b-a3b": {
     "knowledge_cutoff": "2025-03-31"
   },
@@ -358,18 +274,6 @@
   },
   "ernie-4.5-vl-424b-a47b": {
     "knowledge_cutoff": "2025-03-31"
-  },
-  "eu.anthropic.claude-opus-4-6-v1": {
-    "knowledge_cutoff": "2025-05-31",
-    "release_timestamp": 1770249600
-  },
-  "eu.anthropic.claude-opus-4-7": {
-    "knowledge_cutoff": "2026-01-31",
-    "release_timestamp": 1776297600
-  },
-  "eu.anthropic.claude-sonnet-4-6": {
-    "knowledge_cutoff": "2025-08-31",
-    "release_timestamp": 1771286400
   },
   "flux-kontext-max": {
     "release_timestamp": 1748736000
@@ -404,7 +308,8 @@
     "knowledge_cutoff": "2024-08-31"
   },
   "gemini-2.5-flash": {
-    "knowledge_cutoff": "2025-01-31"
+    "knowledge_cutoff": "2025-01",
+    "release_timestamp": 1742428800
   },
   "gemini-2.5-flash-image": {
     "knowledge_cutoff": "2025-01-31"
@@ -428,7 +333,8 @@
     "release_timestamp": 1746057600
   },
   "gemini-2.5-pro": {
-    "knowledge_cutoff": "2025-01-31"
+    "knowledge_cutoff": "2025-01",
+    "release_timestamp": 1742428800
   },
   "gemini-2.5-pro-preview": {
     "knowledge_cutoff": "2025-01-31"
@@ -482,13 +388,16 @@
     "knowledge_cutoff": "2024-06-30"
   },
   "gemma-3-12b-it": {
-    "knowledge_cutoff": "2024-08-31"
+    "knowledge_cutoff": "2024-08-31",
+    "release_timestamp": 1733011200
   },
   "gemma-3-27b-it": {
-    "knowledge_cutoff": "2024-08-31"
+    "knowledge_cutoff": "2024-08-31",
+    "release_timestamp": 1762214400
   },
   "gemma-3-4b-it": {
-    "knowledge_cutoff": "2024-08-31"
+    "knowledge_cutoff": "2024-08-31",
+    "release_timestamp": 1733011200
   },
   "gemma-3n-e4b-it": {
     "knowledge_cutoff": "2024-08-31"
@@ -549,29 +458,6 @@
   },
   "glm-5.1": {
     "knowledge_cutoff": "2025-04"
-  },
-  "global.anthropic.claude-opus-4-6-v1": {
-    "knowledge_cutoff": "2025-05-31",
-    "release_timestamp": 1770249600
-  },
-  "global.anthropic.claude-opus-4-7": {
-    "knowledge_cutoff": "2026-01-31",
-    "release_timestamp": 1776297600
-  },
-  "global.anthropic.claude-sonnet-4-6": {
-    "knowledge_cutoff": "2025-08-31",
-    "release_timestamp": 1771286400
-  },
-  "google.gemma-3-12b-it": {
-    "knowledge_cutoff": "2024-12",
-    "release_timestamp": 1733011200
-  },
-  "google.gemma-3-27b-it": {
-    "knowledge_cutoff": "2025-07",
-    "release_timestamp": 1762214400
-  },
-  "google.gemma-3-4b-it": {
-    "release_timestamp": 1733011200
   },
   "gpt-3.5-turbo": {
     "knowledge_cutoff": "2021-09-30"
@@ -637,7 +523,8 @@
     "knowledge_cutoff": "2023-10-31"
   },
   "gpt-5": {
-    "knowledge_cutoff": "2024-09-30"
+    "knowledge_cutoff": "2024-09-30",
+    "release_timestamp": 1754524800
   },
   "gpt-5-chat": {
     "knowledge_cutoff": "2024-09-30"
@@ -649,16 +536,19 @@
     "knowledge_cutoff": "2024-10-01"
   },
   "gpt-5-mini": {
-    "knowledge_cutoff": "2024-05-31"
+    "knowledge_cutoff": "2024-05-30",
+    "release_timestamp": 1754524800
   },
   "gpt-5-nano": {
-    "knowledge_cutoff": "2024-05-31"
+    "knowledge_cutoff": "2024-05-30",
+    "release_timestamp": 1754524800
   },
   "gpt-5-pro": {
     "knowledge_cutoff": "2024-09-30"
   },
   "gpt-5.1": {
-    "knowledge_cutoff": "2024-09-30"
+    "knowledge_cutoff": "2024-09-30",
+    "release_timestamp": 1762992000
   },
   "gpt-5.1-chat": {
     "knowledge_cutoff": "2024-09-30"
@@ -728,9 +618,11 @@
     "release_timestamp": 1776729600
   },
   "gpt-oss-120b": {
+    "release_timestamp": 1754352000,
     "knowledge_cutoff": "2024-06-30"
   },
   "gpt-oss-20b": {
+    "release_timestamp": 1754352000,
     "knowledge_cutoff": "2024-06-30"
   },
   "gpt-oss-safeguard-20b": {
@@ -860,10 +752,6 @@
   "jamba-mini-1.7": {
     "release_timestamp": 1752019200
   },
-  "jp.anthropic.claude-sonnet-4-6": {
-    "knowledge_cutoff": "2025-08-31",
-    "release_timestamp": 1771286400
-  },
   "kimi-k2": {
     "knowledge_cutoff": "2024-12-31"
   },
@@ -879,7 +767,8 @@
     "release_timestamp": 1757030400
   },
   "kimi-k2-thinking": {
-    "knowledge_cutoff": "2024-08"
+    "knowledge_cutoff": "2024-08",
+    "release_timestamp": 1764633600
   },
   "kimi-k2-thinking-turbo": {
     "knowledge_cutoff": "2024-08",
@@ -921,29 +810,39 @@
     "release_timestamp": 1715644800
   },
   "llama-3-70b-instruct": {
-    "knowledge_cutoff": "2023-12-31"
+    "knowledge_cutoff": "2023-12-31",
+    "release_timestamp": 1713398400
   },
   "llama-3-8b-instruct": {
     "knowledge_cutoff": "2023-12-31"
   },
+  "llama-3.1-405b-instruct": {
+    "knowledge_cutoff": "2023-12",
+    "release_timestamp": 1721692800
+  },
   "llama-3.1-70b-instruct": {
-    "knowledge_cutoff": "2023-12-31"
+    "knowledge_cutoff": "2023-12-31",
+    "release_timestamp": 1721692800
   },
   "llama-3.1-8b-instant": {
     "knowledge_cutoff": "2023-12",
     "release_timestamp": 1719792000
   },
   "llama-3.1-8b-instruct": {
-    "knowledge_cutoff": "2023-12-31"
+    "knowledge_cutoff": "2023-12-31",
+    "release_timestamp": 1721692800
   },
   "llama-3.2-11b-vision-instruct": {
-    "knowledge_cutoff": "2023-12-31"
+    "knowledge_cutoff": "2023-12-31",
+    "release_timestamp": 1727222400
   },
   "llama-3.2-1b-instruct": {
-    "knowledge_cutoff": "2023-12-31"
+    "knowledge_cutoff": "2023-12-31",
+    "release_timestamp": 1727222400
   },
   "llama-3.2-3b-instruct": {
-    "knowledge_cutoff": "2023-12-31"
+    "knowledge_cutoff": "2023-12-31",
+    "release_timestamp": 1727222400
   },
   "llama-3.2-90b-vision-instruct": {
     "knowledge_cutoff": "2023-12",
@@ -954,7 +853,8 @@
     "release_timestamp": 1751500800
   },
   "llama-3.3-70b-instruct": {
-    "knowledge_cutoff": "2023-12-31"
+    "knowledge_cutoff": "2023-12-31",
+    "release_timestamp": 1743465600
   },
   "llama-3.3-70b-versatile": {
     "knowledge_cutoff": "2023-12",
@@ -990,7 +890,8 @@
     "release_timestamp": 1743811200
   },
   "llama-guard-3-8b": {
-    "knowledge_cutoff": "2023-12-31"
+    "knowledge_cutoff": "2023-12-31",
+    "release_timestamp": 1737504000
   },
   "llama-guard-4-12b": {
     "knowledge_cutoff": "2024-08-31"
@@ -1022,6 +923,9 @@
     "knowledge_cutoff": "2025-01",
     "release_timestamp": 1758758400
   },
+  "magistral-small-2509": {
+    "release_timestamp": 1764633600
+  },
   "magnum-v4-72b": {
     "knowledge_cutoff": "2024-06-30"
   },
@@ -1031,40 +935,6 @@
   },
   "mercury-2": {
     "knowledge_cutoff": "2025-01-01"
-  },
-  "meta-llama-3-70b-instruct": {
-    "knowledge_cutoff": "2023-12",
-    "release_timestamp": 1713398400
-  },
-  "meta-llama-3.1-405b-instruct": {
-    "knowledge_cutoff": "2023-12",
-    "release_timestamp": 1721692800
-  },
-  "meta-llama-3.1-70b-instruct": {
-    "knowledge_cutoff": "2023-12",
-    "release_timestamp": 1721692800
-  },
-  "meta-llama-3.1-8b-instruct": {
-    "knowledge_cutoff": "2023-12",
-    "release_timestamp": 1721692800
-  },
-  "meta-llama-3.2-1b-instruct": {
-    "release_timestamp": 1727222400
-  },
-  "meta-llama-3.2-3b-instruct": {
-    "release_timestamp": 1727222400
-  },
-  "meta-llama-guard-3-8b": {
-    "release_timestamp": 1737504000
-  },
-  "meta.llama-3.2-11b-vision-instruct": {
-    "release_timestamp": 1727222400
-  },
-  "meta.llama-3.3-70b-instruct": {
-    "release_timestamp": 1743465600
-  },
-  "meta.llama-4-scout-17b-16e-instruct": {
-    "release_timestamp": 1744761600
   },
   "mimo-v2-flash": {
     "knowledge_cutoff": "2024-12-01"
@@ -1088,17 +958,20 @@
     "knowledge_cutoff": "2024-06-30"
   },
   "minimax-m2": {
-    "knowledge_cutoff": "2024-11"
+    "knowledge_cutoff": "2024-11",
+    "release_timestamp": 1761523200
   },
   "minimax-m2.1": {
-    "knowledge_cutoff": "2025-01"
+    "knowledge_cutoff": "2025-01",
+    "release_timestamp": 1766448000
   },
   "minimax-m2.1-lightning": {
     "knowledge_cutoff": "2024-10",
     "release_timestamp": 1766448000
   },
   "minimax-m2.5": {
-    "knowledge_cutoff": "2025-01"
+    "knowledge_cutoff": "2025-01",
+    "release_timestamp": 1773792000
   },
   "minimax-m2.5-lightning": {
     "knowledge_cutoff": "2025-01-01",
@@ -1107,17 +980,17 @@
   "minimax-m2.7": {
     "knowledge_cutoff": "2025-01"
   },
-  "minimax.minimax-m2": {
-    "release_timestamp": 1761523200
-  },
-  "minimax.minimax-m2.1": {
-    "release_timestamp": 1766448000
-  },
-  "minimax.minimax-m2.5": {
-    "release_timestamp": 1773792000
-  },
   "ministral-14b-2512": {
     "knowledge_cutoff": "2024-12"
+  },
+  "ministral-3-14b-instruct": {
+    "release_timestamp": 1733011200
+  },
+  "ministral-3-3b-instruct": {
+    "release_timestamp": 1764633600
+  },
+  "ministral-3-8b-instruct": {
+    "release_timestamp": 1733011200
   },
   "ministral-3b": {
     "knowledge_cutoff": "2024-03",
@@ -1150,6 +1023,9 @@
   "mistral-large-3": {
     "knowledge_cutoff": "2024-11",
     "release_timestamp": 1730419200
+  },
+  "mistral-large-3-675b-instruct": {
+    "release_timestamp": 1764633600
   },
   "mistral-medium": {
     "knowledge_cutoff": "2024-10",
@@ -1202,30 +1078,6 @@
   "mistral-tiny": {
     "release_timestamp": 1702252800
   },
-  "mistral.devstral-2-123b": {
-    "release_timestamp": 1771286400
-  },
-  "mistral.magistral-small-2509": {
-    "release_timestamp": 1764633600
-  },
-  "mistral.ministral-3-14b-instruct": {
-    "release_timestamp": 1733011200
-  },
-  "mistral.ministral-3-3b-instruct": {
-    "release_timestamp": 1764633600
-  },
-  "mistral.ministral-3-8b-instruct": {
-    "release_timestamp": 1733011200
-  },
-  "mistral.mistral-large-3-675b-instruct": {
-    "release_timestamp": 1764633600
-  },
-  "mistral.voxtral-mini-3b-2507": {
-    "release_timestamp": 1733011200
-  },
-  "mistral.voxtral-small-24b-2507": {
-    "release_timestamp": 1751328000
-  },
   "mixtral-8x22b-instruct": {
     "knowledge_cutoff": "2024-01-31"
   },
@@ -1238,9 +1090,6 @@
   "mixtral-8x7b-instruct-v0.1": {
     "knowledge_cutoff": "2023-09",
     "release_timestamp": 1765411200
-  },
-  "moonshot.kimi-k2-thinking": {
-    "release_timestamp": 1764633600
   },
   "moonshotai.kimi-k2-thinking": {
     "release_timestamp": 1762473600
@@ -1436,9 +1285,6 @@
   "pixtral-large-2411": {
     "knowledge_cutoff": "2024-07-31"
   },
-  "qianfan-ocr-fast": {
-    "release_timestamp": 1776707472
-  },
   "qwen-2.5-72b-instruct": {
     "knowledge_cutoff": "2024-06-30"
   },
@@ -1464,15 +1310,6 @@
   "qwen-turbo": {
     "knowledge_cutoff": "2024-04",
     "release_timestamp": 1730419200
-  },
-  "qwen.qwen3-coder-next": {
-    "release_timestamp": 1770336000
-  },
-  "qwen.qwen3-next-80b-a3b": {
-    "release_timestamp": 1758153600
-  },
-  "qwen.qwen3-vl-235b-a22b": {
-    "release_timestamp": 1759536000
   },
   "qwen2.5-coder-7b": {
     "release_timestamp": 1726704000
@@ -1527,6 +1364,7 @@
     "knowledge_cutoff": "2025-06-30"
   },
   "qwen3-coder-next": {
+    "release_timestamp": 1770336000,
     "knowledge_cutoff": "2025-04"
   },
   "qwen3-coder-plus": {
@@ -1546,6 +1384,9 @@
   "qwen3-max-thinking": {
     "knowledge_cutoff": "2025-01"
   },
+  "qwen3-next-80b-a3b": {
+    "release_timestamp": 1758153600
+  },
   "qwen3-next-80b-a3b-instruct": {
     "knowledge_cutoff": "2025-09-30"
   },
@@ -1554,6 +1395,9 @@
   },
   "qwen3-omni-flash": {
     "knowledge_cutoff": "2024-04"
+  },
+  "qwen3-vl-235b-a22b": {
+    "release_timestamp": 1759536000
   },
   "qwen3-vl-235b-a22b-instruct": {
     "knowledge_cutoff": "2025-03-31"
@@ -1589,13 +1433,11 @@
     "knowledge_cutoff": "2025-04"
   },
   "qwen3.5-plus": {
-    "knowledge_cutoff": "2025-04"
+    "knowledge_cutoff": "2025-04",
+    "release_timestamp": 1777261368
   },
   "qwen3.5-plus-02-15": {
     "knowledge_cutoff": "2025-04"
-  },
-  "qwen3.5-plus-20260420": {
-    "release_timestamp": 1777261368
   },
   "qwen3.6-35b-a3b": {
     "knowledge_cutoff": "2025-04"
@@ -1702,18 +1544,6 @@
   "unslopnemo-12b": {
     "knowledge_cutoff": "2024-04-30"
   },
-  "us.anthropic.claude-opus-4-6-v1": {
-    "knowledge_cutoff": "2025-05-31",
-    "release_timestamp": 1770249600
-  },
-  "us.anthropic.claude-opus-4-7": {
-    "knowledge_cutoff": "2026-01-31",
-    "release_timestamp": 1776297600
-  },
-  "us.anthropic.claude-sonnet-4-6": {
-    "knowledge_cutoff": "2025-08-31",
-    "release_timestamp": 1771286400
-  },
   "v0-1.0-md": {
     "release_timestamp": 1747872000
   },
@@ -1725,6 +1555,12 @@
   },
   "virtuoso-large": {
     "knowledge_cutoff": "2025-03-31"
+  },
+  "voxtral-mini-3b-2507": {
+    "release_timestamp": 1733011200
+  },
+  "voxtral-small-24b-2507": {
+    "release_timestamp": 1751328000
   },
   "voyage-3-large": {
     "release_timestamp": 1725148800
