@@ -148,7 +148,7 @@ const VENDOR_NAMESPACE: ReadonlyArray<[RegExp, string]> = [
   [/^minimax[.\-]/u, 'minimax'],
   [/^qwen[.\-]/u, 'qwen'],
   [/^deepseek[.\-]/u, 'deepseek'],
-  [/^moonshotai?[.\-]/u, 'moonshotai'],
+  [/^moonshot(?:ai)?[.\-]/u, 'moonshotai'],
   [/^bytedance[.\-]/u, 'bytedance'],
   [/^openai[.\-]/u, 'openai'],
   [/^xai[.\-]/u, 'x-ai'],
@@ -174,11 +174,15 @@ export function authorFromLiteLLM(rawId: string, provider: string | undefined): 
 // model-name root — so a DOT prefix is always safe (amazon.titan, qwen.qwen3), but a DASH prefix is
 // stripped only for namespace-only vendors (anthropic-claude, meta-llama), NOT mistral-7b / qwen-3 /
 // deepseek-coder where the vendor IS the name.
-const VENDOR_DOT_PREFIX = /^(amazon|anthropic|ai21|cohere|meta|mistral|minimax|qwen|deepseek|moonshotai?|bytedance|openai|xai|nvidia|zai)\./u
+const VENDOR_DOT_PREFIX = /^(amazon|anthropic|ai21|cohere|meta|mistral|minimax|qwen|deepseek|moonshot(?:ai)?|bytedance|openai|xai|nvidia|zai)\./u
 const VENDOR_DASH_PREFIX = /^(amazon|anthropic|ai21|cohere|meta)-/u
 
 export function cleanLiteLLMId(id: string): string {
-  const stripped = id.replace(ID_GATEWAY_PREFIX, '').replace(VENDOR_DOT_PREFIX, '').replace(VENDOR_DASH_PREFIX, '')
+  const stripped = id
+    .replace(ID_GATEWAY_PREFIX, '')
+    .replace(VENDOR_DOT_PREFIX, '')
+    .replace(VENDOR_DASH_PREFIX, '')
+    .replace(/(\d)p(\d)/gu, '$1.$2') // litellm writes version decimals with 'p': k2p5 -> k2.5, glm-4p7 -> glm-4.7
   return stripped.length > 0 ? stripped : id
 }
 
