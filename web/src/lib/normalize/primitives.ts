@@ -19,6 +19,8 @@ export function canonicalId(rawId: string): string {
  *   -YYYY-MM-DD  (e.g. -2026-05-20)
  *   -YYYYMMDD    (e.g. -20260520)
  *   -YYMMDD      (e.g. -260520)
+ *   -MM-YYYY     (e.g. -08-2024; Cohere/Gemini monthly snapshots — NOT the compact `-YYMM`
+ *                version suffix like codestral-2405, which is a version and is left intact)
  * Returns the id unchanged when no plausible date suffix is present.
  */
 const MD = '(0[1-9]|1[0-2])(0[1-9]|[12]\\d|3[01])'
@@ -26,6 +28,7 @@ const SNAPSHOT_SUFFIXES = [
   new RegExp(`-(?:19|20)\\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$`, 'u'),
   new RegExp(`-(?:19|20)\\d{2}${MD}$`, 'u'),
   new RegExp(`-\\d{2}${MD}$`, 'u'),
+  new RegExp(`-(0[1-9]|1[0-2])-(?:19|20)\\d{2}$`, 'u'),
 ]
 export function foldSnapshotId(id: string): string {
   for (const re of SNAPSHOT_SUFFIXES) {

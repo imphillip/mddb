@@ -20,6 +20,14 @@ describe('foldSnapshotId', () => {
     expect(foldSnapshotId('qwen-plus-2025-04-28')).toBe('qwen-plus')
   })
 
+  it('folds the Cohere/Gemini -MM-YYYY monthly snapshot but not the compact -YYMM version', () => {
+    expect(foldSnapshotId('command-r-08-2024')).toBe('command-r')
+    expect(foldSnapshotId('command-r-plus-08-2024')).toBe('command-r-plus')
+    expect(foldSnapshotId('command-a-03-2025')).toBe('command-a')
+    expect(foldSnapshotId('codestral-2405')).toBe('codestral-2405') // -YYMM version, NOT a snapshot
+    expect(foldSnapshotId('mistral-large-2402')).toBe('mistral-large-2402')
+  })
+
   it('leaves non-date numeric suffixes untouched', () => {
     expect(foldSnapshotId('doubao-1-5-pro-32k')).toBe('doubao-1-5-pro-32k') // 32k is not a date
     expect(foldSnapshotId('llama-3-70b')).toBe('llama-3-70b')
