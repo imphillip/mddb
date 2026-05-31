@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-05-28T18:38:07.470Z",
+  "fetchedAt": "2026-05-31T10:39:59.454Z",
   "source": {
     "sitemapUrl": "https://openrouter.ai/sitemap.xml",
-    "modelPages": 438,
-    "apiRows": 357,
+    "modelPages": 431,
+    "apiRows": 350,
     "pageOnly": 93,
     "apiOnly": 12
   },
@@ -37,12 +37,6 @@
       "namespace": "aion-labs",
       "modelId": "aion-rp-llama-3.1-8b",
       "url": "https://openrouter.ai/aion-labs/aion-rp-llama-3.1-8b"
-    },
-    {
-      "id": "alfredpros/codellama-7b-instruct-solidity",
-      "namespace": "alfredpros",
-      "modelId": "codellama-7b-instruct-solidity",
-      "url": "https://openrouter.ai/alfredpros/codellama-7b-instruct-solidity"
     },
     {
       "id": "alibaba/wan-2.6",
@@ -241,18 +235,6 @@
       "namespace": "baai",
       "modelId": "bge-m3",
       "url": "https://openrouter.ai/baai/bge-m3"
-    },
-    {
-      "id": "baidu/ernie-4.5-21b-a3b",
-      "namespace": "baidu",
-      "modelId": "ernie-4.5-21b-a3b",
-      "url": "https://openrouter.ai/baidu/ernie-4.5-21b-a3b"
-    },
-    {
-      "id": "baidu/ernie-4.5-21b-a3b-thinking",
-      "namespace": "baidu",
-      "modelId": "ernie-4.5-21b-a3b-thinking",
-      "url": "https://openrouter.ai/baidu/ernie-4.5-21b-a3b-thinking"
     },
     {
       "id": "baidu/ernie-4.5-300b-a47b",
@@ -469,12 +451,6 @@
       "namespace": "deepseek",
       "modelId": "deepseek-v3.2-exp",
       "url": "https://openrouter.ai/deepseek/deepseek-v3.2-exp"
-    },
-    {
-      "id": "deepseek/deepseek-v3.2-speciale",
-      "namespace": "deepseek",
-      "modelId": "deepseek-v3.2-speciale",
-      "url": "https://openrouter.ai/deepseek/deepseek-v3.2-speciale"
     },
     {
       "id": "deepseek/deepseek-v4-flash",
@@ -987,12 +963,6 @@
       "url": "https://openrouter.ai/minimax/minimax-m2.5"
     },
     {
-      "id": "minimax/minimax-m2.5:free",
-      "namespace": "minimax",
-      "modelId": "minimax-m2.5:free",
-      "url": "https://openrouter.ai/minimax/minimax-m2.5:free"
-    },
-    {
       "id": "minimax/minimax-m2.7",
       "namespace": "minimax",
       "modelId": "minimax-m2.7",
@@ -1045,12 +1015,6 @@
       "namespace": "mistralai",
       "modelId": "ministral-8b-2512",
       "url": "https://openrouter.ai/mistralai/ministral-8b-2512"
-    },
-    {
-      "id": "mistralai/mistral-7b-instruct-v0.1",
-      "namespace": "mistralai",
-      "modelId": "mistral-7b-instruct-v0.1",
-      "url": "https://openrouter.ai/mistralai/mistral-7b-instruct-v0.1"
     },
     {
       "id": "mistralai/mistral-embed-2312",
@@ -1417,12 +1381,6 @@
       "namespace": "openai",
       "modelId": "gpt-4o-2024-11-20",
       "url": "https://openrouter.ai/openai/gpt-4o-2024-11-20"
-    },
-    {
-      "id": "openai/gpt-4o-audio-preview",
-      "namespace": "openai",
-      "modelId": "gpt-4o-audio-preview",
-      "url": "https://openrouter.ai/openai/gpt-4o-audio-preview"
     },
     {
       "id": "openai/gpt-4o-mini",
@@ -2403,6 +2361,12 @@
       "url": "https://openrouter.ai/stepfun/step-3.5-flash"
     },
     {
+      "id": "stepfun/step-3.7-flash",
+      "namespace": "stepfun",
+      "modelId": "step-3.7-flash",
+      "url": "https://openrouter.ai/stepfun/step-3.7-flash"
+    },
+    {
       "id": "switchpoint/router",
       "namespace": "switchpoint",
       "modelId": "router",
@@ -2461,12 +2425,6 @@
       "namespace": "undi95",
       "modelId": "remm-slerp-l2-13b",
       "url": "https://openrouter.ai/undi95/remm-slerp-l2-13b"
-    },
-    {
-      "id": "upstage/solar-pro-3",
-      "namespace": "upstage",
-      "modelId": "solar-pro-3",
-      "url": "https://openrouter.ai/upstage/solar-pro-3"
     },
     {
       "id": "writer/palmyra-x5",
