@@ -1,5 +1,16 @@
 import { describe, expect, it } from 'vitest'
-import { foldSnapshotId } from './primitives.js'
+import { foldBrandAlias, foldSnapshotId } from './primitives.js'
+
+describe('foldBrandAlias', () => {
+  it('folds deepseek-chat-v<ver> to deepseek-v<ver> (OpenRouter brand token)', () => {
+    expect(foldBrandAlias('deepseek-chat-v3-0324')).toBe('deepseek-v3-0324')
+    expect(foldBrandAlias('deepseek-chat-v3.1')).toBe('deepseek-v3.1')
+  })
+  it('leaves the bare deepseek-chat moving pointer untouched', () => {
+    expect(foldBrandAlias('deepseek-chat')).toBe('deepseek-chat')
+    expect(foldBrandAlias('deepseek-v3-0324')).toBe('deepseek-v3-0324')
+  })
+})
 
 describe('foldSnapshotId', () => {
   it('folds the three standard snapshot date suffixes to the base id', () => {

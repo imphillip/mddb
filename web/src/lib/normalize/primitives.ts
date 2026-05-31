@@ -35,6 +35,16 @@ export function foldSnapshotId(id: string): string {
   return id
 }
 
+/**
+ * Fold a redundant vendor brand token that splits ONE model into two ids across sources.
+ * DeepSeek: OpenRouter labels DeepSeek-V3 as `deepseek-chat-v3-*`, while Bailian/LiteLLM use
+ * `deepseek-v3-*` — same model. We drop the `chat-` only when a version follows (`deepseek-chat-v3`),
+ * leaving the bare `deepseek-chat` moving pointer untouched. The original is kept as an alias.
+ */
+export function foldBrandAlias(id: string): string {
+  return id.replace(/^deepseek-chat-v(\d)/u, 'deepseek-v$1')
+}
+
 /** Vendor segment of a route id ("qwen/qwen3.6-max" -> "qwen"); null when unprefixed. */
 export function vendorPrefix(rawId: string): string | null {
   if (!rawId.includes('/')) return null

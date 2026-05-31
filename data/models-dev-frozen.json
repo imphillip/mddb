@@ -135,12 +135,6 @@
   "deepseek-chat": {
     "knowledge_cutoff": "2024-07-31"
   },
-  "deepseek-chat-v3-0324": {
-    "knowledge_cutoff": "2024-07-31"
-  },
-  "deepseek-chat-v3.1": {
-    "knowledge_cutoff": "2025-03-31"
-  },
   "deepseek-r1": {
     "knowledge_cutoff": "2024-07-31"
   },
@@ -161,11 +155,11 @@
     "knowledge_cutoff": "2024-07"
   },
   "deepseek-v3-0324": {
-    "knowledge_cutoff": "2024-07",
+    "knowledge_cutoff": "2024-07-31",
     "release_timestamp": 1742774400
   },
   "deepseek-v3.1": {
-    "knowledge_cutoff": "2024-07"
+    "knowledge_cutoff": "2025-03-31"
   },
   "deepseek-v3.1-terminus": {
     "knowledge_cutoff": "2025-03-31"

@@ -5,6 +5,7 @@ import {
   canonicalId,
   cleanName,
   endpointsFromBaseUrl,
+  foldBrandAlias,
   foldSnapshotId,
   matchKey,
   roundMoney,
@@ -55,9 +56,9 @@ export function openRouterFragment(
   raw: OpenRouterModel,
   options: OpenRouterAdapterOptions = {},
 ): SourceFragment {
-  // Fold dated snapshots to the base id; the raw route id + canonical_slug (which carry the
-  // dated form) are preserved in aliasIds below.
-  const id = foldSnapshotId(canonicalId(raw.id))
+  // Fold dated snapshots + redundant brand tokens (deepseek-chat-v3 -> deepseek-v3) to the base id;
+  // the raw route id + canonical_slug (which carry the original form) are preserved in aliasIds below.
+  const id = foldSnapshotId(foldBrandAlias(canonicalId(raw.id)))
   const vendor = vendorPrefix(raw.id)
   const displayName = raw.name ? cleanName(raw.name) : id
   const params = raw.supported_parameters ?? []
