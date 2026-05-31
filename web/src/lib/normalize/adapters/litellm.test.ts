@@ -70,6 +70,13 @@ describe('authorFromLiteLLM', () => {
     expect(authorFromLiteLLM('kimi-k2-0905-preview', 'moonshot')).toBe('moonshotai')
   })
 
+  it('reads a vendor namespace prefix as the author even when the model part is opaque', () => {
+    expect(authorFromLiteLLM('openai.gpt-5', 'azure')).toBe('openai')
+    expect(authorFromLiteLLM('nvidia.nemotron-nano-9b-v2', 'bedrock')).toBe('nvidia')
+    expect(authorFromLiteLLM('zai.glm-5', 'fireworks_ai')).toBe('z-ai')
+    expect(authorFromLiteLLM('xai.grok-3', 'bedrock')).toBe('x-ai')
+  })
+
   it('falls back to litellm_provider only when it is itself a developer (not a gateway)', () => {
     expect(authorFromLiteLLM('base', 'deepgram')).toBe('deepgram') // generic ASR name, dev via provider
     expect(authorFromLiteLLM('mystery-model', 'bedrock')).toBeNull() // gateway provider -> no guess
@@ -94,6 +101,18 @@ describe('cleanLiteLLMId', () => {
     expect(cleanLiteLLMId('qwen-3-32b')).toBe('qwen-3-32b')
     expect(cleanLiteLLMId('deepseek-coder')).toBe('deepseek-coder')
     expect(cleanLiteLLMId('databricks-mistral-large')).toBe('mistral-large')
+  })
+
+  it('strips openai/xai/nvidia/zai namespaces but never a version dot', () => {
+    expect(cleanLiteLLMId('openai.gpt-5')).toBe('gpt-5')
+    expect(cleanLiteLLMId('xai.grok-3')).toBe('grok-3')
+    expect(cleanLiteLLMId('nvidia.nemotron-nano-9b-v2')).toBe('nemotron-nano-9b-v2')
+    expect(cleanLiteLLMId('zai.glm-5')).toBe('glm-5')
+    // version dots must survive (qwen3.5, llama3.1, wan2.2, sd3.5, flux.2 are NOT vendor prefixes)
+    expect(cleanLiteLLMId('qwen3.5-27b')).toBe('qwen3.5-27b')
+    expect(cleanLiteLLMId('llama3.1-405b')).toBe('llama3.1-405b')
+    expect(cleanLiteLLMId('wan2.2-i2v-flash')).toBe('wan2.2-i2v-flash')
+    expect(cleanLiteLLMId('sd3.5-large')).toBe('sd3.5-large')
   })
 })
 

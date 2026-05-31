@@ -448,10 +448,12 @@
     "knowledge_cutoff": "2025-04"
   },
   "glm-4.7-flash": {
-    "knowledge_cutoff": "2025-04"
+    "knowledge_cutoff": "2025-04",
+    "release_timestamp": 1768780800
   },
   "glm-5": {
-    "knowledge_cutoff": "2025-04"
+    "knowledge_cutoff": "2025-04",
+    "release_timestamp": 1773792000
   },
   "glm-5-turbo": {
     "knowledge_cutoff": "2025-01-01"
@@ -618,15 +620,19 @@
     "release_timestamp": 1776729600
   },
   "gpt-oss-120b": {
-    "release_timestamp": 1754352000,
-    "knowledge_cutoff": "2024-06-30"
+    "knowledge_cutoff": "2024-06-30",
+    "release_timestamp": 1754352000
   },
   "gpt-oss-20b": {
-    "release_timestamp": 1754352000,
-    "knowledge_cutoff": "2024-06-30"
+    "knowledge_cutoff": "2024-06-30",
+    "release_timestamp": 1754352000
+  },
+  "gpt-oss-safeguard-120b": {
+    "release_timestamp": 1761696000
   },
   "gpt-oss-safeguard-20b": {
-    "knowledge_cutoff": "2024-10"
+    "knowledge_cutoff": "2024-10",
+    "release_timestamp": 1761696000
   },
   "grok-3": {
     "knowledge_cutoff": "2024-10",
@@ -655,10 +661,6 @@
   "grok-4-0709": {
     "release_timestamp": 1752019200
   },
-  "grok-4-1-fast": {
-    "knowledge_cutoff": "2025-01-01",
-    "release_timestamp": 1763596800
-  },
   "grok-4-1-fast-non-reasoning": {
     "knowledge_cutoff": "2025-11",
     "release_timestamp": 1763337600
@@ -674,6 +676,10 @@
   "grok-4-fast-reasoning": {
     "knowledge_cutoff": "2025-07",
     "release_timestamp": 1758240000
+  },
+  "grok-4.1-fast": {
+    "knowledge_cutoff": "2025-01-01",
+    "release_timestamp": 1763596800
   },
   "grok-4.20": {
     "knowledge_cutoff": "2025-09-01"
@@ -779,7 +785,8 @@
     "release_timestamp": 1757030400
   },
   "kimi-k2.5": {
-    "knowledge_cutoff": "2025-01"
+    "knowledge_cutoff": "2025-01",
+    "release_timestamp": 1769472000
   },
   "kimi-k2.6": {
     "knowledge_cutoff": "2025-01"
@@ -1091,13 +1098,6 @@
     "knowledge_cutoff": "2023-09",
     "release_timestamp": 1765411200
   },
-  "moonshotai.kimi-k2-thinking": {
-    "release_timestamp": 1762473600
-  },
-  "moonshotai.kimi-k2.5": {
-    "knowledge_cutoff": "2025-01",
-    "release_timestamp": 1769472000
-  },
   "mythomax-l2-13b": {
     "knowledge_cutoff": "2023-06-30"
   },
@@ -1107,8 +1107,18 @@
   "nemotron-3-super-120b-a12b": {
     "knowledge_cutoff": "2024-04"
   },
+  "nemotron-nano-12b-v2": {
+    "release_timestamp": 1733011200
+  },
+  "nemotron-nano-3-30b": {
+    "release_timestamp": 1766448000
+  },
   "nemotron-nano-9b-v2": {
-    "knowledge_cutoff": "2025-03-31"
+    "knowledge_cutoff": "2025-03-31",
+    "release_timestamp": 1755475200
+  },
+  "nemotron-super-3-120b": {
+    "release_timestamp": 1773187200
   },
   "nova-lite-v1": {
     "knowledge_cutoff": "2024-10-31"
@@ -1118,19 +1128,6 @@
   },
   "nova-pro-v1": {
     "knowledge_cutoff": "2024-10-31"
-  },
-  "nvidia.nemotron-nano-12b-v2": {
-    "release_timestamp": 1733011200
-  },
-  "nvidia.nemotron-nano-3-30b": {
-    "release_timestamp": 1766448000
-  },
-  "nvidia.nemotron-nano-9b-v2": {
-    "knowledge_cutoff": "2024-09",
-    "release_timestamp": 1755475200
-  },
-  "nvidia.nemotron-super-3-120b": {
-    "release_timestamp": 1773187200
   },
   "o1": {
     "knowledge_cutoff": "2023-10-31"
@@ -1197,32 +1194,6 @@
   "openai-o3-mini": {
     "knowledge_cutoff": "2024-05",
     "release_timestamp": 1734652800
-  },
-  "openai.gpt-5": {
-    "knowledge_cutoff": "2024-09-30",
-    "release_timestamp": 1754524800
-  },
-  "openai.gpt-5-mini": {
-    "knowledge_cutoff": "2024-05-30",
-    "release_timestamp": 1754524800
-  },
-  "openai.gpt-5-nano": {
-    "knowledge_cutoff": "2024-05-30",
-    "release_timestamp": 1754524800
-  },
-  "openai.gpt-oss-120b": {
-    "knowledge_cutoff": "2024-06",
-    "release_timestamp": 1754352000
-  },
-  "openai.gpt-oss-20b": {
-    "knowledge_cutoff": "2024-06",
-    "release_timestamp": 1754352000
-  },
-  "openai.gpt-oss-safeguard-120b": {
-    "release_timestamp": 1761696000
-  },
-  "openai.gpt-oss-safeguard-20b": {
-    "release_timestamp": 1761696000
   },
   "phi-3-medium-128k-instruct": {
     "knowledge_cutoff": "2023-10",
@@ -1364,8 +1335,8 @@
     "knowledge_cutoff": "2025-06-30"
   },
   "qwen3-coder-next": {
-    "release_timestamp": 1770336000,
-    "knowledge_cutoff": "2025-04"
+    "knowledge_cutoff": "2025-04",
+    "release_timestamp": 1770336000
   },
   "qwen3-coder-plus": {
     "knowledge_cutoff": "2025-06-30"
@@ -1600,12 +1571,5 @@
   "zai-glm-4.7": {
     "knowledge_cutoff": "2025-04",
     "release_timestamp": 1766361600
-  },
-  "zai.glm-4.7-flash": {
-    "knowledge_cutoff": "2025-04",
-    "release_timestamp": 1768780800
-  },
-  "zai.glm-5": {
-    "release_timestamp": 1773792000
   }
 }

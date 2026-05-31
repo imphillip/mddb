@@ -117,8 +117,29 @@ const AUTHOR_BY_PROVIDER: Record<string, string> = {
   'vertex_ai-llama_models': 'meta-llama',
 }
 
+// A leading `<vendor>.`/`<vendor>-` namespace directly names the author (handles ids whose model
+// part doesn't self-identify the vendor, e.g. openai.gpt-5, nvidia.nemotron, zai.glm-5, xai.grok-3).
+const VENDOR_NAMESPACE: ReadonlyArray<[RegExp, string]> = [
+  [/^amazon[.\-]/u, 'amazon'],
+  [/^anthropic[.\-]/u, 'anthropic'],
+  [/^ai21[.\-]/u, 'ai21'],
+  [/^cohere[.\-]/u, 'cohere'],
+  [/^meta[.\-]/u, 'meta-llama'],
+  [/^mistral[.\-]/u, 'mistralai'],
+  [/^minimax[.\-]/u, 'minimax'],
+  [/^qwen[.\-]/u, 'qwen'],
+  [/^deepseek[.\-]/u, 'deepseek'],
+  [/^moonshotai?[.\-]/u, 'moonshotai'],
+  [/^bytedance[.\-]/u, 'bytedance'],
+  [/^openai[.\-]/u, 'openai'],
+  [/^xai[.\-]/u, 'x-ai'],
+  [/^nvidia[.\-]/u, 'nvidia'],
+  [/^zai[.\-]/u, 'z-ai'],
+]
+
 export function authorFromLiteLLM(rawId: string, provider: string | undefined): string | null {
   const id = rawId.toLowerCase().replace(ID_GATEWAY_PREFIX, '')
+  for (const [re, author] of VENDOR_NAMESPACE) if (re.test(id)) return author
   for (const [re, author] of AUTHOR_BY_ID) if (re.test(id)) return author
   if (provider) {
     const mapped = AUTHOR_BY_PROVIDER[provider.toLowerCase()]
@@ -134,7 +155,7 @@ export function authorFromLiteLLM(rawId: string, provider: string | undefined): 
 // model-name root — so a DOT prefix is always safe (amazon.titan, qwen.qwen3), but a DASH prefix is
 // stripped only for namespace-only vendors (anthropic-claude, meta-llama), NOT mistral-7b / qwen-3 /
 // deepseek-coder where the vendor IS the name.
-const VENDOR_DOT_PREFIX = /^(amazon|anthropic|ai21|cohere|meta|mistral|minimax|qwen|deepseek|moonshot|bytedance)\./u
+const VENDOR_DOT_PREFIX = /^(amazon|anthropic|ai21|cohere|meta|mistral|minimax|qwen|deepseek|moonshotai?|bytedance|openai|xai|nvidia|zai)\./u
 const VENDOR_DASH_PREFIX = /^(amazon|anthropic|ai21|cohere|meta)-/u
 
 export function cleanLiteLLMId(id: string): string {
