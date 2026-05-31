@@ -308,11 +308,11 @@ function hasComponents(price: Price): boolean {
 function buildCondition(tier: BailianTier): PriceCondition | null {
   const start = tier.range_start_tokens
   const end = tier.range_end_tokens
-  if (start === undefined && end === undefined) return null
+  if (start == null && end == null) return null
   const condition: PriceCondition = { type: 'input_token' }
   if (tier.range_name) condition.label = tier.range_name
-  if (start !== undefined && start > 0) condition.gt = start
-  if (end !== undefined) condition.lte = end
+  if (start != null && start > 0) condition.gt = start
+  if (end != null) condition.lte = end // open-ended tier (no upper bound) -> omit lte, never null
   return condition
 }
 

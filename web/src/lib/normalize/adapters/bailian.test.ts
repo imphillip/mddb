@@ -92,6 +92,22 @@ describe('bailianFragment: variant grouping (omni)', () => {
   })
 })
 
+describe('bailianFragment: open-ended tier', () => {
+  it('omits lte for a tier with no upper bound (never emits lte:null)', () => {
+    const f = bailianFragment(make({
+      model_id: 'aitryon-refiner',
+      capabilities: ['IG'],
+      tiered_pricing: [
+        { range_name: '0<图片生成数量<=25000', range_start_tokens: 0, range_end_tokens: 25000, prices: [{ type: 'image_number', price: 0.2, unit: '每张' }] },
+        { range_name: '25000<图片生成数量', range_start_tokens: 25000, prices: [{ type: 'image_number', price: 0.15, unit: '每张' }] },
+      ],
+    }))!
+    const open = f.offer!.prices.find((p) => p.conditions?.[0]?.gt === 25000)!
+    expect(open.conditions![0]).not.toHaveProperty('lte')
+    expect(open.conditions![0]).toEqual({ type: 'input_token', label: '25000<图片生成数量', gt: 25000 })
+  })
+})
+
 describe('bailianFragment: empties', () => {
   it('drops a null-priced entry rather than recording amount 0', () => {
     const f = bailianFragment(make({
