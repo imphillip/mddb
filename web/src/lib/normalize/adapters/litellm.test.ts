@@ -84,6 +84,20 @@ describe('authorFromLiteLLM', () => {
   })
 })
 
+describe('liteLLM canonical eligibility requires an identifiable author', () => {
+  it('does NOT mint a canonical model for a no-author row (search_api / sample_spec)', () => {
+    const f = liteLLMFragment({ model_name: 'search_api', mode: 'search', input_cost_per_query: 0.005 } as unknown as LiteLLMModel)
+    expect(f.facts.author).toBeUndefined()
+    expect(f.identityId).toBeNull() // litellm-only no-author -> dropped, not canonical
+  })
+
+  it('still mints a canonical model when the author is identifiable', () => {
+    const f = liteLLMFragment({ model_name: 'mistral-large-3-675b-instruct', mode: 'chat', input_cost_per_token: 1e-6 } as unknown as LiteLLMModel)
+    expect(f.facts.author).toBe('mistralai')
+    expect(f.identityId).toBe('mistral-large-3-675b-instruct')
+  })
+})
+
 describe('cleanLiteLLMId', () => {
   it('strips bedrock/vertex/databricks/region vendor namespace prefixes', () => {
     expect(cleanLiteLLMId('amazon.titan-embed-text-v1')).toBe('titan-embed-text-v1')

@@ -47,6 +47,10 @@ export function mergeWithDeprecations(
   for (const model of current) {
     if (candidateById.has(model.id)) continue
     if (foldedAway.has(matchKey(model.id))) continue // folded into a candidate base; not a delisting
+    // A model with no identifiable author is EXCLUDED by the inclusion rule (search_api, sample_spec,
+    // together-ai-* pricing tiers, …) — it was rejected, not delisted by a provider, so DROP it
+    // rather than carrying a junk record forward.
+    if (model.author == null) continue
     // Carried-forward (delisted) entries are frozen — they aren't re-derived from sources,
     // so re-apply the pure-function format invariants (alias≠model, endpoints enum) to keep
     // historical records consistent with current rules.

@@ -86,13 +86,32 @@ const AUTHOR_BY_ID: ReadonlyArray<[RegExp, string]> = [
   [/^(glm|chatglm|codegeex)/u, 'z-ai'],
   [/^yi-/u, '01-ai'],
   [/^jina/u, 'jina-ai'],
-  [/^(stability|sd-|sdxl|stable-)/u, 'stability-ai'],
+  [/^(stability|stable-|sdxl|sd3|sd-)/u, 'stability-ai'],
   [/^eleven/u, 'elevenlabs'],
   [/^(bge-|baai)/u, 'baai'],
   [/^voyage/u, 'voyage-ai'],
   [/^mpt-/u, 'mosaicml'],
   [/^flux/u, 'black-forest-labs'],
   [/^gen[34]/u, 'runwayml'],
+  [/^(text-unicorn|text-multilingual|multimodalembedding|imagegeneration|chirp)/u, 'google'],
+  [/^reka/u, 'rekaai'],
+  [/^lfm/u, 'liquid'],
+  [/^vicuna/u, 'lmsys'],
+  [/^nomic/u, 'nomic-ai'],
+  [/^internlm/u, 'internlm'],
+  [/^mamba-codestral/u, 'mistralai'],
+  [/^snowflake-arctic/u, 'snowflake'],
+  [/^recraft/u, 'recraft'],
+  [/^playai/u, 'playai'],
+  [/^orca/u, 'microsoft'],
+  [/^(dolphin|chatdolphin)/u, 'cognitivecomputations'],
+  [/^snowflake-llama/u, 'meta-llama'],
+  [/^snowflake/u, 'snowflake'],
+  [/^(mai-|phi)/u, 'microsoft'],
+  [/^v0-/u, 'vercel'],
+  [/^llava/u, 'llava-hf'],
+  [/^sarvam/u, 'sarvam-ai'],
+  [/^jais/u, 'inceptionai'],
 ]
 const AUTHOR_BY_PROVIDER: Record<string, string> = {
   openai: 'openai',
@@ -210,7 +229,11 @@ export function liteLLMFragment(raw: LiteLLMModel, options: LiteLLMAdapterOption
   return {
     source: 'litellm',
     matchKey: matchKey(id),
-    identityId: eligible ? id : null,
+    // LiteLLM may only MINT a canonical model when its developer is identifiable. A no-author
+    // litellm row (search_api, sample_spec, together-ai-* pricing tiers, generic service tiers)
+    // is not a trustworthy model — it can still attach facts/offers to a model another source owns
+    // (matchKey), but never becomes canonical on its own.
+    identityId: eligible && author !== null ? id : null,
     aliasIds: [...new Set([rawId, fullId].filter((a) => a !== id))],
     aliasNames: [],
     facts,

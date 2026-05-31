@@ -2,7 +2,8 @@ import { describe, expect, it } from 'vitest'
 import { mergeWithDeprecations } from './update.js'
 import type { ModelEntry } from './schema.js'
 
-const m = (id: string, extra: Partial<ModelEntry> = {}): ModelEntry => ({ id, model: id, offers: [], ...extra })
+// Real models carry an author; a no-author entry is excluded by the inclusion rule (dropped, not delisted).
+const m = (id: string, extra: Partial<ModelEntry> = {}): ModelEntry => ({ id, model: id, author: 'acme', offers: [], ...extra })
 
 describe('mergeWithDeprecations', () => {
   it('keeps disappeared models and marks them delisted with today as since', () => {
@@ -13,6 +14,14 @@ describe('mergeWithDeprecations', () => {
     expect(r.newlyDeprecated).toEqual(['gone'])
     expect(r.models.find((x) => x.id === 'gone')?.deprecation).toEqual({ status: 'delisted', since: '2026-05-29' })
     expect(r.models.find((x) => x.id === 'a')?.deprecation).toBeUndefined()
+  })
+
+  it('drops a disappeared no-author model (excluded by the rule, not delisted)', () => {
+    const current = [m('a'), { id: 'search_api', model: 'search_api', offers: [] } as ModelEntry] // no author
+    const candidate = [m('a')]
+    const r = mergeWithDeprecations(current, candidate, { today: '2026-05-29' })
+    expect(r.models.map((x) => x.id)).toEqual(['a']) // search_api dropped, not carried as delisted
+    expect(r.newlyDeprecated).toEqual([])
   })
 
   it('preserves the original since date for a model that stays delisted', () => {
